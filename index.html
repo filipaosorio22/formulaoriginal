@@ -6,105 +6,369 @@
   <title>Fórmula Original · Filipa Osório</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: #faf8f4; color: #2c2620; font-family: 'Cormorant Garamond', Georgia, serif; min-height: 100vh; }
-    .page { max-width: 640px; margin: 0 auto; padding: 5rem 2rem 4rem; }
-    .eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: #9a8060; margin-bottom: 1.5rem; }
-    h1 { font-size: 50px; font-weight: 600; line-height: 1.1; color: #2c2620; margin-bottom: 0.5rem; }
-    .h1-sub { font-size: 22px; font-weight: 400; font-style: italic; color: #6b5e50; margin-bottom: 0.75rem; }
-    .tagline { font-size: 19px; font-weight: 400; font-style: italic; color: #9a8060; margin-bottom: 2.5rem; line-height: 1.5; }
-    hr { border: none; border-top: 0.5px solid #c9b99a; opacity: 0.5; margin: 2.5rem 0; }
-    .aside { background: rgba(201,185,154,0.1); border-left: 2px solid #c9b99a; border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
-    .aside p { font-size: 18px; font-weight: 400; line-height: 1.85; color: #2c2620; }
-    .aside p + p { margin-top: 0.75rem; }
-    .aside.centered { text-align: center; border-left: none; border: 0.5px solid rgba(201,185,154,0.5); border-radius: 8px; background: rgba(201,185,154,0.07); }
-    .aside.centered p { font-style: italic; color: #6b5e50; }
-    h2 { font-size: 28px; font-weight: 600; color: #2c2620; margin-bottom: 1rem; margin-top: 2rem; letter-spacing: 0.01em; }
-    .body-text { font-size: 18px; font-weight: 400; line-height: 1.85; color: #2c2620; margin-bottom: 1rem; }
-    ul.clean { list-style: none; padding: 0; margin: 0 0 1rem; }
-    ul.clean li { font-size: 17px; font-weight: 400; color: #2c2620; padding: 0.65rem 0; border-bottom: 0.5px solid rgba(201,185,154,0.3); display: flex; gap: 14px; line-height: 1.65; }
+
+    body {
+      background-color: #f7f3ee;
+      color: #1a1410;
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9a7e52;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Spectral', serif;
+      font-size: 48px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.15;
+      color: #1a1410;
+      margin-bottom: 0.5rem;
+    }
+
+    .h1-sub {
+      font-family: 'Spectral', serif;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: #6b5040;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .tagline {
+      font-family: 'Spectral', serif;
+      font-size: 22px;
+      font-weight: 400;
+      font-style: italic;
+      color: #7a2535;
+      margin-bottom: 2.5rem;
+      line-height: 1.55;
+      border-left: 2px solid #c9a86c;
+      padding-left: 1.25rem;
+    }
+
+    .divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      margin: 2.5rem 0;
+    }
+
+    .divider-line {
+      width: 100%;
+      height: 0.5px;
+      background: #c9a86c;
+      opacity: 0.7;
+    }
+
+    .divider-line-thin {
+      width: 85%;
+      height: 0.5px;
+      background: #c9a86c;
+      opacity: 0.35;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #1a1410;
+      margin-bottom: 1.1rem;
+      
+      
+      -webkit-
+      
+    }
+
+    h2 {
+      color: #7a2535 !important;
+      font-family: 'Spectral', serif;
+      font-size: 26px;
+      font-weight: 300;
+      font-style: italic;
+      color: #1a1410;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .aside {
+      background: rgba(201,168,108,0.07);
+      border-left: 1.5px solid #c9a86c;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .aside p {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: #1a1410;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      
+      
+      -webkit-
+    }
+
+    .aside.centered {
+      text-align: center;
+      border-left: none;
+      border: 0.5px solid rgba(201,168,108,0.4);
+      border-radius: 8px;
+      background: rgba(201,168,108,0.05);
+    }
+
+    .aside.centered p {
+      color: #6b5040;
+      text-align: center;
+      hyphens: none;
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    ul.clean li {
+      font-size: 16px;
+      font-weight: 400;
+      color: #1a1410;
+      padding: 0.65rem 0;
+      border-bottom: 0.5px solid rgba(201,168,108,0.25);
+      display: flex;
+      gap: 14px;
+      line-height: 1.65;
+    }
+
     ul.clean li:last-child { border-bottom: none; }
-    .marker { color: #9a8060; flex-shrink: 0; font-size: 14px; margin-top: 3px; }
-    .themes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
-    .theme-pill { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; color: #7a6348; background: rgba(201,185,154,0.12); border: 0.5px solid rgba(201,185,154,0.55); border-radius: 30px; padding: 6px 16px; letter-spacing: 0.03em; }
-    .format-card { border: 0.5px solid rgba(201,185,154,0.5); border-radius: 12px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; background: rgba(255,253,248,0.7); }
-    .format-marker { font-size: 15px; color: #9a8060; margin-bottom: 0.4rem; }
-    .format-title { font-size: 22px; font-weight: 600; color: #2c2620; margin-bottom: 0.5rem; }
-    .format-body { font-size: 17px; font-weight: 400; color: #2c2620; line-height: 1.75; margin-bottom: 0.5rem; }
-    .format-includes { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; color: #9a8060; font-style: italic; line-height: 1.6; }
+
+    .marker {
+      color: #c9a86c;
+      flex-shrink: 0;
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .themes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 0.75rem;
+    }
+
+    .theme-pill {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #7a2535;
+      background: rgba(122,37,53,0.06);
+      border: 0.5px solid rgba(122,37,53,0.25);
+      border-radius: 30px;
+      padding: 6px 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .format-card {
+      border: 0.5px solid rgba(201,168,108,0.4);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      background: rgba(255,251,245,0.6);
+    }
+
+    .format-title {
+      font-family: 'Spectral', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: #1a1410;
+      margin-bottom: 0.5rem;
+    }
+
+    .format-body {
+      font-size: 16px;
+      font-weight: 400;
+      color: #1a1410;
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+      
+      
+      -webkit-
+    }
+
+    .format-includes {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #9a7e52;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
     .steps { margin-top: 0.5rem; }
-    .step { display: flex; gap: 18px; padding: 0.9rem 0; border-bottom: 0.5px solid rgba(201,185,154,0.25); }
+
+    .step {
+      display: flex;
+      gap: 18px;
+      padding: 0.9rem 0;
+      border-bottom: 0.5px solid rgba(201,168,108,0.2);
+    }
+
     .step:last-child { border-bottom: none; }
-    .step-num { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 400; color: #9a8060; letter-spacing: 0.1em; flex-shrink: 0; width: 22px; padding-top: 4px; }
-    .step-title { font-size: 17px; font-weight: 600; color: #2c2620; margin-bottom: 0.15rem; }
-    .step-text { font-size: 16px; font-weight: 400; color: #6b5e50; line-height: 1.6; }
-    .cta-link { display: inline-block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #7a6348; border: 0.5px solid #c9b99a; border-radius: 40px; padding: 12px 36px; text-decoration: none; margin-top: 0.75rem; transition: background 0.2s ease; }
-    .cta-link:hover { background: rgba(201,185,154,0.12); }
-    .footer { text-align: center; margin-top: 3rem; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; letter-spacing: 0.1em; }
-    @media (max-width: 480px) { h1 { font-size: 36px; } .page { padding: 3.5rem 1.25rem 3rem; } .body-text, .aside p { font-size: 17px; } }
+
+    .step-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: #c9a86c;
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+      width: 22px;
+      padding-top: 4px;
+    }
+
+    .step-title {
+      font-family: 'Spectral', serif;
+      font-size: 17px;
+      font-weight: 300;
+      font-style: italic;
+      color: #1a1410;
+      margin-bottom: 0.15rem;
+    }
+
+    .step-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: #6b5040;
+      line-height: 1.6;
+    }
+
+    .cta-link {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #7a2535;
+      border: 0.5px solid #c9a86c;
+      border-radius: 40px;
+      padding: 13px 40px;
+      text-decoration: none;
+      margin-top: 0.75rem;
+      transition: background 0.2s ease;
+    }
+
+    .cta-link:hover { background: rgba(201,168,108,0.1); }
+
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: #b0a090;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 34px; }
+      .page { padding: 3.5rem 1.25rem 3rem; }
+      .body-text { font-size: 16px; }
+      .tagline { font-size: 19px; }
+    }
   </style>
 </head>
 <body>
-  <main class="page">
+  <main class="page" lang="pt">
 
     <p class="eyebrow">Filipa Osório</p>
-    <h1>A tua Fórmula Original ⚜️</h1>
-    <p class="h1-sub">Uma Leitura Alquímica da tua alma</p>
-    <p class="tagline">Quem és antes de o mundo te dizer quem deverias ser?</p>
+    <h1>A tua Fórmula Original</h1>
+    <p class="h1-sub">A leitura que revela a versão de ti que a tua próxima fase de vida te pede</p>
+    <div style="text-align:center; padding: 1.5rem 0; border-top: 0.5px solid #c9a86c; border-bottom: 0.5px solid #c9a86c; margin-bottom: 2.5rem;">
+      <p style="font-family:'Spectral',serif; font-size:22px; font-weight:400; font-style:italic; color:#7a2535; line-height:1.6;">Quem és antes de o mundo te dizer quem deverias ser?</p>
+    </div>
 
-    <p class="body-text">Existe uma forma única de te moveres pela vida. O teu corpo tem o seu próprio ritmo. Tens uma maneira de tomar decisões, de te relacionares, de criar só tua. A tua energia tem a sua própria linguagem. Mas, ao longo do caminho, foste aprendendo a adaptar-te ao mundo. A fazer como os outros fazem. A encaixar em fórmulas que nunca foram verdadeiramente tuas.</p>
-    <p class="body-text">E é por isso que, por vezes, sentes que estás a esforçar-te mais do que precisavas. Como se houvesse algo que não encaixa. Como se uma parte de ti soubesse que existe outra forma. Esta leitura é um convite para regressares à tua natureza. À tua frequência original. À forma como foste desenhada para funcionar. Porque quando te recordas de quem és, tudo deixa de ser uma tentativa e começa a tornar-se um regresso. À tua Fórmula Original.</p>
+    <p class="body-text">Existe em ti uma forma única de te moveres pela vida.</p>
+    <p class="body-text">E essa forma não se revela apenas no teu ritmo ou na tua energia, revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
+    <p class="body-text">Há padrões que se repetem ao longo da tua vida.</p>
+    <p class="body-text">Na forma como te relacionas. Nas oportunidades que atrais. Nas decisões que tomas. Nos desafios que encontras e na forma como respondes a eles. Mesmo quando os temas parecem diferentes, existe uma mesma dinâmica que se manifesta nas diferentes áreas da tua vida.</p>
+    <p class="body-text">Mas ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de outras lentes. Sobre amor. Sobre valor. Sobre segurança. Sobre sucesso, liberdade, expressão.</p>
+    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti. Foste aprendendo novas formas de te adaptares. De te ajustares. De responderes ao que era esperado.</p>
+    <p class="body-text">A Fórmula Original é um convite para te recentrares, é uma leitura que te mostra essa estrutura interna. Os padrões. As crenças. As dinâmicas que estão ativas no teu campo energético neste momento e como estão a influenciar a forma como vives as diferentes áreas da tua vida.</p>
+    <p class="body-text">E quando vês o que está a operar por trás das tuas escolhas… tornas-te mais livre e consciente para escolher de forma diferente. E é aí que a tua vida começa a reorganizar-se porque ganhas mais espaço para seres tu.</p>
 
-    <hr>
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <h2>Se sentes que...</h2>
     <ul class="clean">
-      <li><span class="marker">⚜</span><span>Há uma versão de ti a chegar que desejas conhecer e ativar</span></li>
-      <li><span class="marker">⚜</span><span>Tens desafios que se repetem e queres perceber o padrão por trás</span></li>
-      <li><span class="marker">⚜</span><span>Queres manifestar com mais confiança e coerência, a partir da tua essência</span></li>
-      <li><span class="marker">⚜</span><span>Estás num momento de transição e queres clareza sobre o que está a acontecer</span></li>
-      <li><span class="marker">⚜</span><span>Queres tomar decisões alinhadas com quem realmente és, sem te perderes na mente</span></li>
+      <li><span class="marker">✦</span><span>Há uma versão tua que está a emergir e desejas conhecê-la melhor</span></li>
+      <li><span class="marker">✦</span><span>Existem desafios que se repetem e queres perceber o padrão por trás</span></li>
+      <li><span class="marker">✦</span><span>Desejas criar a tua realidade com mais consciência, confiança e leveza</span></li>
+      <li><span class="marker">✦</span><span>Estás a viver uma transição e procuras mais clareza sobre o teu processo</span></li>
+      <li><span class="marker">✦</span><span>Queres tomar decisões alinhadas, sem te perderes no ruído da mente</span></li>
     </ul>
 
-    <hr>
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <h2>O que é a Fórmula Original</h2>
-    <p class="body-text">A Fórmula Original é a leitura alquímica do teu momento presente, revelando os padrões, as crenças e os potenciais que estão a influenciar a tua experiência neste momento. Não é uma leitura sobre quem és. É uma leitura sobre onde estás.</p>
-    <p class="body-text">Sobre aquilo que está a pedir consciência, integração e movimento. Só precisas de trazer o tema que te chama e a disponibilidade para te veres com mais verdade.</p>
-    <p class="body-text">Porque aquilo que procuras compreender fora, descobres apenas dentro de ti.</p>
+    <p class="body-text">A Fórmula Original é uma leitura alquímica do teu momento presente.</p>
+    <p class="body-text">A leitura do campo energético e os teus mapas energéticos revelam os padrões, crenças, potenciais e convites que estão ativos na tua vida neste momento. Esta é a leitura sobre o exato momento em que estás.</p>
+    <p class="body-text">Sobre aquilo que está a pedir consciência. Sobre aquilo que está à espera de ser visto. Sobre aquilo que está pronto para ser transformado para viveres o teu próximo nível de expansão, em alinhamento com a tua essência.</p>
+    <p class="body-text">Só precisas de trazer um tema que seja importante para ti neste momento. O resto revelamo-lo em conjunto. Porque aquilo que procuras compreender fora está só à espera de ser reconhecido dentro de ti.</p>
 
     <div class="aside">
-      <p>🪄 Não te é pedido que acredites em nada. Só precisas de chegar disponível para a possibilidade de existir uma nova forma de olhar para a tua realidade. Porque a transformação começa logo nesse mesmo momento em que nos permitimos ver aquilo que antes estava invisível para nós.</p>
+      <p>🪄 Vem com disponibilidade e abertura para te conheceres a um outro nível e a transformação começa no instante em que te permites ver aquilo que antes estava invisível, a partir daí é entre ti e a tua versão mais consciente.</p>
     </div>
 
-    <hr>
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <h2>O que podes levar desta experiência</h2>
     <ul class="clean">
-      <li><span class="marker">⚜</span><span>Autoconhecimento de uma forma leve, amorosa e prática</span></li>
-      <li><span class="marker">⚜</span><span>Identificação de crenças que te estão a travar, à luz do teu mapa</span></li>
-      <li><span class="marker">⚜</span><span>Clareza profunda sobre o teu momento atual e o tema que escolheres</span></li>
-      <li><span class="marker">⚜</span><span>Consciência da tua forma única de funcionar no corpo, na energia, nas decisões</span></li>
-      <li><span class="marker">⚜</span><span>Reconhecimento dos teus potenciais e de como os podes trazer para o teu dia a dia</span></li>
-      <li><span class="marker">⚜</span><span>Fórmulas práticas para cuidares da tua energia em alinhamento com a tua essência</span></li>
-      <li><span class="marker">⚜</span><span>A permissão de seres quem és e partilhares a tua frequência original com o mundo</span></li>
+      <li><span class="marker">✦</span><span>Autoconhecimento de uma forma leve e amorosa</span></li>
+      <li><span class="marker">✦</span><span>Confiança para tomares decisões alinhadas contigo</span></li>
+      <li><span class="marker">✦</span><span>Reconhecimento das crenças que limitam a tua expansão</span></li>
+      <li><span class="marker">✦</span><span>Clareza profunda sobre o teu momento atual e o tema que escolheres</span></li>
+      <li><span class="marker">✦</span><span>Orientações práticas para integrares aquilo que aprenderes no teu dia a dia</span></li>
+      <li><span class="marker">✦</span><span>A permissão de ser quem és e espalhares a tua nova frequência pelo mundo</span></li>
     </ul>
 
-    <hr>
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <h2>Sugestões de temas</h2>
     <div class="themes">
-      <span class="theme-pill">Relações e amor</span>
+      <span class="theme-pill">Relações amorosas</span>
+      <span class="theme-pill">Relações familiares</span>
+      <span class="theme-pill">Identidade e autoimagem</span>
       <span class="theme-pill">Propósito e direção</span>
-      <span class="theme-pill">Trabalho e dinheiro</span>
-      <span class="theme-pill">Autoconfiança e expressão</span>
-      <span class="theme-pill">Mudanças, decisões e transições</span>
-      <span class="theme-pill">Bloqueios repetidos e padrões emocionais</span>
+      <span class="theme-pill">Trabalho e carreira</span>
+      <span class="theme-pill">Dinheiro e segurança material</span>
     </div>
 
-    <hr>
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <h2>Como funciona</h2>
     <div class="steps">
@@ -112,7 +376,7 @@
         <span class="step-num">01</span>
         <div>
           <p class="step-title">Entras em contacto</p>
-          <p class="step-text">Conversamos brevemente para eu conhecer o teu momento de vida atual e percebermos se a leitura faz mais sentido para ti nesta fase</p>
+          <p class="step-text">Conversamos brevemente para eu conhecer o teu momento de vida atual</p>
         </div>
       </div>
       <div class="step">
@@ -139,40 +403,37 @@
       <div class="step">
         <span class="step-num">05</span>
         <div>
-          <p class="step-title">A tua nova realidade começa</p>
+          <p class="step-title">O regresso a ti começa</p>
           <p class="step-text">Começas a viver com mais consciência, ação e confiança 💃🏻</p>
         </div>
       </div>
     </div>
 
-    <hr>
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <h2>Formatos disponíveis</h2>
 
     <div class="format-card">
-      <p class="format-marker">✦</p>
       <p class="format-title">Leitura em Áudio</p>
-      <p class="format-body">Recebes a tua leitura alquímica completa em formato áudio, para ouvires no teu tempo, quantas vezes quiseres.</p>
+      <p class="format-body">Faço a tua leitura e envio-a em áudio. Ouves no teu tempo, quantas vezes quiseres.</p>
       <p class="format-includes">Inclui: leitura energética com análise à luz do tema escolhido</p>
     </div>
 
     <div class="format-card">
-      <p class="format-marker">✦</p>
-      <p class="format-title">Sessão ao Vivo</p>
-      <p class="format-body">Uma sessão online comigo, onde com a tua leitura alquímica trabalhamos em conjunto uma crença impactante identificada, transformando-a em direção, evolução e ação.</p>
-      <p class="format-includes">Inclui: leitura energética com análise + trabalho de crenças com ThetaHealing®</p>
+      <p class="format-title">Leitura + ThetaHealing®</p>
+      <p class="format-body">Faço a tua leitura e envio-ta antes do nosso encontro. Depois trabalhamos juntas online durante 30 minutos com ThetaHealing® sobre a crença principal que emergiu.</p>
+      <p class="format-includes">Inclui: leitura energética em áudio + 30 minutos de ThetaHealing® ao vivo</p>
     </div>
 
-    <hr>
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="aside centered">
-      <p>💌 Para me enviares mensagem:</p>
+      <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.4rem;">Se ressoou contigo, vamos conversar 💌</p>
       <a class="cta-link" href="https://www.instagram.com/filipaosorio/" target="_blank">@filipaosorio</a>
     </div>
 
     <div class="aside centered" style="margin-top: 1rem;">
-      <p>É o que acreditamos ser possível para nós, que molda toda a nossa vida. E está nas nossas mãos fazer esse trabalho.</p>
-      <p style="margin-top: 0.5rem;">Se quiseres fazê-lo comigo, será com todo o amor, magia e leveza 🫧</p>
+      <p>A realidade que vives hoje nasceu das histórias que acreditaste sobre ti. A boa notícia é que nenhuma delas é definitiva, vem cocriar em amor, magia e leveza 🫧</p>
     </div>
 
     <p class="footer">Filipa Osório · Junho 2026</p>
