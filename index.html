@@ -534,26 +534,31 @@
       padding: 0;
     }
     .carousel-dot.active { background: #c9a86c; }
-    .carousel-arrows {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.75rem;
+    .carousel-wrapper {
+      position: relative;
     }
     .carousel-arrow {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #9a7e52;
-      background: transparent;
-      border: 0.5px solid rgba(201,168,108,0.4);
-      border-radius: 20px;
-      padding: 6px 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(247,243,238,0.92);
+      border: 0.5px solid rgba(201,168,108,0.5);
+      color: #7a2535;
+      font-size: 16px;
       cursor: pointer;
-      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .carousel-arrow:hover { background: rgba(201,168,108,0.1); }
+    .carousel-arrow:hover { background: rgba(201,168,108,0.15); transform: translateY(-50%) scale(1.05); }
+    .carousel-arrow-left { left: -18px; }
+    .carousel-arrow-right { right: -18px; }
 
     @media (max-width: 480px) {
       .carousel-slide { flex: 0 0 85%; }
@@ -719,11 +724,10 @@
       </div>
       <audio id="audioPlayer" src="audio.mp3"></audio>
 
-      <div class="carousel-arrows">
-        <button class="carousel-arrow" onclick="moveCarousel(-1)">← anterior</button>
-        <button class="carousel-arrow" onclick="moveCarousel(1)">seguinte →</button>
-      </div>
-      <div class="carousel">
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow carousel-arrow-left" onclick="moveCarousel(-1)" aria-label="anterior">&#8592;</button>
+        <button class="carousel-arrow carousel-arrow-right" onclick="moveCarousel(1)" aria-label="seguinte">&#8594;</button>
+        <div class="carousel">
         <div class="carousel-track" id="carouselTrack">
           <div class="carousel-slide">
             <img src="feedback1.png" alt="Feedback de cliente" loading="lazy">
@@ -737,6 +741,7 @@
           <div class="carousel-slide">
             <img src="feedback4.png" alt="Feedback de cliente" loading="lazy">
           </div>
+        </div>
         </div>
       </div>
       <div class="carousel-nav">
