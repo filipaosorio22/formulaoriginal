@@ -692,16 +692,21 @@
     <div class="fade-section">
     <h2>Formatos disponíveis</h2>
 
-    <div class="format-card">
-      <p class="format-title">Leitura em Áudio</p>
-      <p class="format-body">Faço a tua leitura e envio-a em áudio. Ouves no teu tempo, quantas vezes quiseres.</p>
-      <p class="format-includes">Inclui: leitura energética com análise à luz do tema escolhido</p>
-    </div>
-
-    <div class="format-card">
-      <p class="format-title">Leitura + ThetaHealing®</p>
-      <p class="format-body">Faço a tua leitura e envio-ta antes do nosso encontro. Depois trabalhamos juntas online durante 30 minutos com ThetaHealing® sobre a crença principal que emergiu.</p>
-      <p class="format-includes">Inclui: leitura energética em áudio + 30 minutos de ThetaHealing® ao vivo</p>
+    <div style="border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; overflow: hidden;">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem;">
+        <div>
+          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio</p>
+          <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Faço a tua leitura e envio-a em áudio. Ouves no teu tempo, quantas vezes quiseres.</p>
+        </div>
+        <p style="font-family:'Spectral',serif; font-size:28px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€147</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border-top: 0.5px solid rgba(201,168,108,0.25);">
+        <div>
+          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura + ThetaHealing®</p>
+          <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Leitura em áudio enviada antes do nosso encontro + 30 minutos de ThetaHealing® ao vivo sobre a crença principal que emergiu.</p>
+        </div>
+        <p style="font-family:'Spectral',serif; font-size:28px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€197</p>
+      </div>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
@@ -823,7 +828,7 @@
     }
 
     function moveCarousel(dir) {
-      currentSlide = Math.max(0, Math.min(3, currentSlide + dir));
+      currentSlide = Math.max(0, Math.min(4, currentSlide + dir));
       updateCarousel();
     }
 
