@@ -663,19 +663,20 @@
 
     .texto-fundo {
       position: relative;
-      overflow: hidden;
-      border-radius: 8px;
+      margin: 0 -2rem;
+      padding: 0 2rem;
     }
     .texto-fundo::before {
       content: '';
       position: absolute;
-      inset: 0;
+      inset: -3rem 0;
       background-image: url('fotofundo.png');
       background-size: cover;
       background-position: center top;
-      opacity: 0.08;
+      opacity: 0.14;
       z-index: 0;
-      border-radius: 8px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     }
     .texto-fundo > * {
       position: relative;
@@ -717,10 +718,6 @@
       <p style="font-family:'Spectral',serif; font-size:26px; font-weight:300; font-style:italic; color:#7a2535; line-height:1.5; max-width:500px; margin:0 auto;">O que acreditas sobre ti muda tudo o que crias!</p>
     </div>
 
-    <div class="mid-cta">
-      <a class="mid-cta-btn" href="https://ig.me/m/filipaosorio" target="_blank">Já me identifico, vamos conversar!</a>
-    </div>
-
     <div class="fade-section">
     <h2>Se sentes que...</h2>
     <ul class="icon-list">
@@ -730,6 +727,10 @@
       <li><span class="icon-marker">✦</span><span>Estás a viver uma transição e procuras clareza sobre o teu processo</span></li>
       <li><span class="icon-marker">✦</span><span>Queres tomar decisões alinhadas, sem te perderes no ruído da mente</span></li>
     </ul>
+
+    <div class="mid-cta">
+      <a class="mid-cta-btn" href="https://ig.me/m/filipaosorio" target="_blank">Já me identifico, vamos conversar!</a>
+    </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
