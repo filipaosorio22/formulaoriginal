@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leitura de Alma: A tua Fórmula Original · Filipa Osório</title>
@@ -652,6 +660,27 @@
       border-color: rgba(122,37,53,0.3);
       color: #7a2535;
     }
+
+    .texto-fundo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .texto-fundo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('fotofundo.png');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.08;
+      z-index: 0;
+      border-radius: 8px;
+    }
+    .texto-fundo > * {
+      position: relative;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -670,6 +699,7 @@
       </div>
     </div>
 
+    <div class="texto-fundo">
     <p class="body-text">Existe em ti uma forma única de te moveres pela vida.</p>
     <p class="body-text">E essa forma não se revela apenas no teu ritmo ou na tua energia, revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
     <p class="body-text">Há padrões que se repetem ao longo da tua vida.</p>
@@ -680,6 +710,8 @@
     <p class="body-text">E quando vês o que está a operar por trás das tuas escolhas… tornas-te mais livre e consciente para escolher de forma diferente. E é aí que a tua vida começa a reorganizar-se porque ganhas mais espaço para seres tu.</p>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    </div>
 
     <div style="text-align:center; padding: 1rem 1rem 0.5rem; margin: 0;">
       <p style="font-family:'Spectral',serif; font-size:26px; font-weight:300; font-style:italic; color:#7a2535; line-height:1.5; max-width:500px; margin:0 auto;">O que acreditas sobre ti muda tudo o que crias!</p>
@@ -802,6 +834,7 @@
         <p style="font-family:'Spectral',serif; font-size:28px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€197</p>
       </div>
     </div>
+    <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#b0a090; font-style:italic; margin-top:0.75rem; text-align:center;">Poderás adicionar a tua sessão de ThetaHealing® ao vivo de 30 minutos pelo valor de €65.</p>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
@@ -867,7 +900,7 @@
       <p>A realidade que vives hoje nasceu das histórias que acreditaste sobre ti. A boa notícia é que nenhuma delas é definitiva, vem cocriar em amor, magia e leveza 🫧</p>
     </div>
 
-    <p class="footer">Filipa Osório · Junho 2026</p>
+    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a></p>
 
   </main>
   <div class="popup" id="popup">
