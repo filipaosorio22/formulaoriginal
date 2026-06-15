@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <!-- Google Analytics -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filipa Osório</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,805 +14,157 @@
     gtag('js', new Date());
     gtag('config', 'G-5CX792T8H9');
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leitura de Alma: A tua Fórmula Original · Filipa Osório</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
 
-    body {
-      background-color: #faf6ef;
-      color: #1a1410;
-      font-family: 'Lora', serif;
-      font-weight: 400;
-      min-height: 100vh;
-    }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #1a1410; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #7a2535; }
+    .nav-links a.active { color: #7a2535; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: rgba(201,168,108,0.1); }
 
-    .page {
-      max-width: 660px;
-      margin: 0 auto;
-      padding: 5rem 2rem 4rem;
-    }
+    /* HAMBURGER */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1px; background: #1a1410; display: block; transition: all 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
+    .mobile-menu a:hover { color: #7a2535; }
 
-    .eyebrow {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #9a7e52;
-      margin-bottom: 1.5rem;
-    }
+    .page { max-width: 660px; margin: 0 auto; padding: 7rem 2rem 4rem; }
 
-    h1 {
-      font-family: 'Spectral', serif;
-      font-size: 48px;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.15;
-      color: #1a1410;
-      margin-bottom: 0.5rem;
-    }
+    .divider { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 2.5rem 0; }
+    .divider-line { width: 100%; height: 0.5px; background: #c9a86c; opacity: 0.7; }
+    .divider-line-thin { width: 85%; height: 0.5px; background: #c9a86c; opacity: 0.35; }
 
-    .h1-sub {
-      font-family: 'Spectral', serif;
-      font-size: 18px;
-      font-weight: 300;
-      font-style: italic;
-      color: #6b5040;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
+    /* HERO */
+    .hero { text-align: center; margin-bottom: 2.5rem; }
+    .hero-img { width: 160px; height: 160px; object-fit: cover; object-position: center 15%; border-radius: 50%; border: 1.5px solid rgba(201,168,108,0.4); display: inline-block; margin-bottom: 1.5rem; }
+    .hero-title { font-family: 'Spectral', serif; font-size: 38px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.2; margin-bottom: 0.75rem; }
+    .hero-sub { font-family: 'Spectral', serif; font-size: 18px; font-weight: 300; font-style: italic; color: #7a2535; line-height: 1.6; }
 
-    .tagline {
-      font-family: 'Spectral', serif;
-      font-size: 22px;
-      font-weight: 400;
-      font-style: italic;
-      color: #7a2535;
-      margin-bottom: 2.5rem;
-      line-height: 1.55;
-      border-left: 2px solid #c9a86c;
-      padding-left: 1.25rem;
-    }
+    .body-text { font-size: 17px; font-weight: 400; line-height: 1.9; color: #1a1410; margin-bottom: 1.1rem; }
 
-    .divider {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      margin: 2.5rem 0;
-    }
+    /* PILARES */
+    .pilares { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+    .pilar { border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; padding: 1.25rem; background: rgba(255,251,245,0.6); }
+    .pilar-num { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a86c; margin-bottom: 0.4rem; }
+    .pilar-title { font-family: 'Spectral', serif; font-size: 18px; font-weight: 400; font-style: italic; color: #7a2535; margin-bottom: 0.4rem; }
+    .pilar-text { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6b5040; line-height: 1.65; }
 
-    .divider-line {
-      width: 100%;
-      height: 0.5px;
-      background: #c9a86c;
-      opacity: 0.7;
-    }
+    /* FRASE IMPACTO */
+    .impacto { text-align: center; padding: 1.75rem 1rem; margin: 2rem 0; border-top: 2px solid #c9a86c; border-bottom: 2px solid #c9a86c; }
+    .impacto p { font-family: 'Spectral', serif; font-size: 22px; font-weight: 500; font-style: italic; color: #7a2535; line-height: 1.5; }
 
-    .divider-line-thin {
-      width: 85%;
-      height: 0.5px;
-      background: #c9a86c;
-      opacity: 0.35;
-    }
+    /* TESTEMUNHO */
+    .testemunho { background: rgba(201,168,108,0.07); border-left: 2px solid #c9a86c; border-radius: 0 8px 8px 0; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+    .testemunho-texto { font-family: 'Spectral', serif; font-size: 18px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.8; margin-bottom: 0.75rem; }
+    .testemunho-nome { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.1em; color: #9a7e52; text-transform: uppercase; }
 
-    .body-text {
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.9;
-      color: #1a1410;
-      margin-bottom: 1.1rem;
-      
-      
-      -webkit-
-      
-    }
+    /* CTA */
+    .cta-box { text-align: center; padding: 2.5rem 1rem; }
+    .cta-title { font-family: 'Spectral', serif; font-size: 24px; font-weight: 300; font-style: italic; color: #1a1410; margin-bottom: 0.5rem; line-height: 1.5; }
+    .cta-sub { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6b5040; margin-bottom: 1.25rem; }
+    .cta-btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border: none; border-radius: 40px; padding: 14px 40px; text-decoration: none; transition: background 0.2s; }
+    .cta-btn:hover { background: #5c1c28; }
 
-    h2 {
-      color: #7a2535 !important;
-      font-family: 'Spectral', serif;
-      font-size: 26px;
-      font-weight: 300;
-      font-style: italic;
-      color: #1a1410;
-      margin-bottom: 1rem;
-      margin-top: 0.5rem;
-      line-height: 1.3;
-    }
-
-    .aside {
-      background: rgba(201,168,108,0.07);
-      border-left: 1.5px solid #c9a86c;
-      border-radius: 0 8px 8px 0;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .aside p {
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.85;
-      color: #1a1410;
-      font-family: 'Spectral', serif;
-      font-style: italic;
-    }
-
-    .aside.centered {
-      text-align: center;
-      border-left: none;
-      border: 0.5px solid rgba(201,168,108,0.4);
-      border-radius: 8px;
-      background: rgba(201,168,108,0.05);
-    }
-
-    .aside.centered p {
-      color: #6b5040;
-      text-align: center;
-      hyphens: none;
-    }
-
-    ul.clean {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem;
-    }
-
-    ul.clean li {
-      font-size: 16px;
-      font-weight: 400;
-      color: #1a1410;
-      padding: 0.65rem 0;
-      border-bottom: 0.5px solid rgba(201,168,108,0.25);
-      display: flex;
-      gap: 14px;
-      line-height: 1.65;
-    }
-
-    ul.clean li:last-child { border-bottom: none; }
-
-    .marker {
-      color: #c9a86c;
-      flex-shrink: 0;
-      font-size: 13px;
-      margin-top: 3px;
-    }
-
-    .themes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 0.75rem;
-    }
-
-    .theme-pill {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 300;
-      color: #7a2535;
-      background: rgba(122,37,53,0.06);
-      border: 0.5px solid rgba(122,37,53,0.25);
-      border-radius: 30px;
-      padding: 6px 16px;
-      letter-spacing: 0.02em;
-    }
-
-    .format-card {
-      border: 0.5px solid rgba(201,168,108,0.4);
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1rem;
-      background: rgba(255,251,245,0.6);
-    }
-
-    .format-title {
-      font-family: 'Spectral', serif;
-      font-size: 20px;
-      font-weight: 300;
-      font-style: italic;
-      color: #1a1410;
-      margin-bottom: 0.5rem;
-    }
-
-    .format-body {
-      font-size: 16px;
-      font-weight: 400;
-      color: #1a1410;
-      line-height: 1.75;
-      margin-bottom: 0.5rem;
-      
-      
-      -webkit-
-    }
-
-    .format-includes {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
-      color: #9a7e52;
-      font-style: italic;
-      line-height: 1.6;
-    }
-
-    .steps { margin-top: 0.5rem; }
-
-    .step {
-      display: flex;
-      gap: 18px;
-      padding: 0.9rem 0;
-      border-bottom: 0.5px solid rgba(201,168,108,0.2);
-    }
-
-    .step:last-child { border-bottom: none; }
-
-    .step-num {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      color: #c9a86c;
-      letter-spacing: 0.1em;
-      flex-shrink: 0;
-      width: 22px;
-      padding-top: 4px;
-    }
-
-    .step-title {
-      font-family: 'Spectral', serif;
-      font-size: 17px;
-      font-weight: 300;
-      font-style: italic;
-      color: #1a1410;
-      margin-bottom: 0.15rem;
-    }
-
-    .step-text {
-      font-size: 15px;
-      font-weight: 400;
-      color: #6b5040;
-      line-height: 1.6;
-    }
-
-    .cta-link {
-      display: inline-block;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #7a2535;
-      border: 0.5px solid #c9a86c;
-      border-radius: 40px;
-      padding: 13px 40px;
-      text-decoration: none;
-      margin-top: 0.75rem;
-      transition: background 0.2s ease;
-    }
-
-    .cta-link:hover { background: rgba(201,168,108,0.1); }
-
-    .footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      color: #b0a090;
-      letter-spacing: 0.1em;
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 34px; }
-      .page { padding: 3.5rem 1.25rem 3rem; }
-      .body-text { font-size: 16px; }
-      .tagline { font-size: 19px; }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .fade-section {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .sticky-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(247,243,238,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 0.5px solid rgba(201,168,108,0.3);
-      padding: 0.75rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      opacity: 0;
-      transform: translateY(-100%);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .sticky-header.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .sticky-name {
-      font-family: 'Spectral', serif;
-      font-size: 16px;
-      font-weight: 300;
-      font-style: italic;
-      color: #1a1410;
-    }
-    .sticky-btn {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #7a2535;
-      border: 0.5px solid #c9a86c;
-      border-radius: 40px;
-      padding: 8px 20px;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-    .sticky-btn:hover { background: rgba(201,168,108,0.1); }
-
-    .mid-cta {
-      text-align: center;
-      margin: 2rem 0;
-      animation: fadeIn 0.8s ease both;
-    }
-    .mid-cta-btn {
-      display: inline-block;
-      font-family: 'Spectral', serif;
-      font-size: 17px;
-      font-weight: 400;
-      font-style: italic;
-      color: #f7f3ee;
-      background: #7a2535;
-      border: none;
-      border-radius: 40px;
-      padding: 14px 36px;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.15s ease;
-      line-height: 1.4;
-    }
-    .mid-cta-btn:hover {
-      background: #5c1c28;
-      transform: scale(1.02);
-    }
-
-    .icon-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem;
-    }
-    .icon-list li {
-      font-size: 16px;
-      font-weight: 400;
-      color: #1a1410;
-      padding: 0.85rem 1rem;
-      border-bottom: 0.5px solid rgba(201,168,108,0.2);
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      line-height: 1.65;
-      background: rgba(201,168,108,0.04);
-      border-radius: 6px;
-      margin-bottom: 6px;
-      border: 0.5px solid rgba(201,168,108,0.15);
-    }
-    .icon-list li:last-child { border-bottom: none; }
-    .icon-marker {
-      color: #c9a86c;
-      flex-shrink: 0;
-      font-size: 16px;
-      margin-top: 2px;
-    }
-
-    .testimonials-section { margin: 0; }
-
-    .audio-player {
-      background: rgba(201,168,108,0.08);
-      border: 0.5px solid rgba(201,168,108,0.4);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .play-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #7a2535;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.2s ease;
-    }
-    .play-btn:hover { background: #5c1c28; }
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 7px 0 7px 13px;
-      border-color: transparent transparent transparent #f7f3ee;
-      margin-left: 3px;
-    }
-    .pause-icon {
-      display: none;
-      gap: 3px;
-    }
-    .pause-icon span {
-      width: 4px;
-      height: 14px;
-      background: #f7f3ee;
-      border-radius: 2px;
-    }
-    .audio-info { flex: 1; }
-    .audio-label {
-      font-family: 'Spectral', serif;
-      font-size: 15px;
-      font-style: italic;
-      color: #1a1410;
-      margin-bottom: 0.25rem;
-    }
-    .audio-progress {
-      width: 100%;
-      height: 3px;
-      background: rgba(201,168,108,0.3);
-      border-radius: 3px;
-      cursor: pointer;
-      position: relative;
-    }
-    .audio-progress-bar {
-      height: 100%;
-      background: #c9a86c;
-      border-radius: 3px;
-      width: 0%;
-      transition: width 0.1s linear;
-    }
-    .audio-time {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      color: #9a7e52;
-      margin-top: 0.25rem;
-    }
-
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    .carousel-track {
-      display: flex;
-      gap: 1rem;
-      transition: transform 0.4s ease;
-      cursor: grab;
-      user-select: none;
-    }
-    .carousel-track:active { cursor: grabbing; }
-    .carousel-slide {
-      flex: 0 0 calc(50% - 0.5rem);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 0.5px solid rgba(201,168,108,0.2);
-    }
-    .carousel-slide img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-    .carousel-nav {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 1rem;
-    }
-    .carousel-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(201,168,108,0.3);
-      cursor: pointer;
-      transition: background 0.2s;
-      border: none;
-      padding: 0;
-    }
-    .carousel-dot.active { background: #c9a86c; }
-    .carousel-wrapper {
-      position: relative;
-    }
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(247,243,238,0.92);
-      border: 0.5px solid rgba(201,168,108,0.5);
-      color: #7a2535;
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, transform 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .carousel-arrow:hover { background: rgba(201,168,108,0.15); transform: translateY(-50%) scale(1.05); }
-    .carousel-arrow-left { left: -18px; }
-    .carousel-arrow-right { right: -18px; }
-
-    @media (max-width: 480px) {
-      .carousel-slide { flex: 0 0 85%; }
-    }
-
-    .popup {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 200;
-      max-width: 340px;
-      background: #f7f3ee;
-      border: 0.5px solid #c9a86c;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      box-shadow: 0 4px 24px rgba(26,20,16,0.1);
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      pointer-events: none;
-    }
-    .popup.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-    .popup-close {
-      position: absolute;
-      top: 0.6rem;
-      right: 0.75rem;
-      background: none;
-      border: none;
-      font-size: 16px;
-      color: #9a7e52;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0;
-    }
-    .popup-eyebrow {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #c9a86c;
-      margin-bottom: 0.5rem;
-    }
-    .popup-title {
-      font-family: 'Spectral', serif;
-      font-size: 17px;
-      font-weight: 300;
-      font-style: italic;
-      color: #1a1410;
-      line-height: 1.4;
-      margin-bottom: 0.75rem;
-    }
-    .popup-btn {
-      display: block;
-      width: 100%;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #f7f3ee;
-      background: #7a2535;
-      border: none;
-      border-radius: 30px;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
+    /* POPUP */
+    .popup { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; max-width: 340px; background: #f7f3ee; border: 0.5px solid #c9a86c; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 4px 24px rgba(26,20,16,0.1); opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+    .popup.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .popup-close { position: absolute; top: 0.6rem; right: 0.75rem; background: none; border: none; font-size: 16px; color: #9a7e52; cursor: pointer; }
+    .popup-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a86c; margin-bottom: 0.5rem; }
+    .popup-title { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.4; margin-bottom: 0.75rem; }
+    .popup-btn { display: block; width: 100%; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border: none; border-radius: 30px; padding: 10px; text-align: center; text-decoration: none; transition: background 0.2s; }
     .popup-btn:hover { background: #5c1c28; }
 
-    .theme-btn {
-      display: block;
-      font-family: 'Lora', serif;
-      font-size: 16px;
-      font-weight: 400;
-      font-style: italic;
-      color: #1a1410;
-      background: rgba(201,168,108,0.07);
-      border: 0.5px solid rgba(201,168,108,0.4);
-      border-radius: 40px;
-      padding: 0.9rem 1.5rem;
-      text-decoration: none;
-      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-      text-align: center;
-    }
-    .theme-btn:hover {
-      background: rgba(122,37,53,0.06);
-      border-color: rgba(122,37,53,0.3);
-      color: #7a2535;
-    }
+    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; letter-spacing: 0.1em; }
 
-    .texto-fundo {
-      position: relative;
-      margin: 0 -2rem;
-      padding: 0 2rem;
-    }
-    .texto-fundo::before {
-      content: '';
-      position: absolute;
-      inset: -3rem 0;
-      background-image: url('fotofundo.png');
-      background-size: cover;
-      background-position: center 20%;
-      opacity: 0.28;
-      z-index: 0;
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
-    }
-    .texto-fundo > * {
-      position: relative;
-      z-index: 1;
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero { animation: fadeUp 1s ease both; }
+    .fade-section { opacity: 0; transform: translateY(16px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-title { font-size: 28px; }
+      .pilares { grid-template-columns: 1fr; }
+      .page { padding: 5rem 1.25rem 3rem; }
     }
   </style>
 </head>
 <body>
-  <header class="sticky-header" id="stickyHeader">
-    <span class="sticky-name">Leitura de Alma · Filipa Osório</span>
-    <a class="sticky-btn" href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
-  </header>
-  <main class="page" lang="pt">
+
+  <nav>
+    <a href="index.html" class="nav-logo">Filipa Osório</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Início</a>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="formula_original.html">Leituras de Alma</a>
+      <a href="mentoria.html">Mentoria de Alinhamento</a>
+      <a href="consultoria.html">O teu Negócio de Alma</a>
+      <a href="eventos.html" style="opacity:0.5; cursor:default;">Eventos (em breve)</a>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos 💌</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="formula_original.html">Leituras de Alma</a>
+    <a href="mentoria.html">Mentoria de Alinhamento</a>
+    <a href="consultoria.html">O teu Negócio de Alma</a>
+    <a href="eventos.html" style="opacity:0.5; cursor:default;">Eventos (em breve)</a>
+    <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos 💌</a>
+  </div>
+
+  <main class="page">
 
     <div class="hero">
-      <p class="eyebrow">Filipa Osório</p>
-      <h1>Leitura de Alma:<br>A tua Fórmula Original</h1>
-      <p class="h1-sub">A leitura que revela a versão de ti que a tua próxima fase de vida te pede</p>
-      <div class="tagline-wrap" style="padding: 1.5rem 0; border-top: 0.5px solid #c9a86c; border-bottom: 0.5px solid #c9a86c; margin-top: 1.5rem; margin-bottom: 2.5rem;">
-        <p style="font-family:'Spectral',serif; font-size:22px; font-weight:400; font-style:italic; color:#7a2535; line-height:1.6;">Quem és antes de o mundo te dizer quem deverias ser?</p>
-      </div>
-    </div>
-
-    <div class="texto-fundo">
-    <p class="body-text">Existe em ti uma forma única de te moveres pela vida.</p>
-    <p class="body-text">E essa forma não se revela apenas no teu ritmo ou na tua energia, revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
-    <p class="body-text">Há padrões que se repetem ao longo da tua vida.</p>
-    <p class="body-text">Na forma como te relacionas. Nas oportunidades que atrais. Nas decisões que tomas. Nos desafios que encontras e na forma como respondes a eles. Mesmo quando os temas parecem diferentes, existe uma mesma dinâmica que se manifesta nas diferentes áreas da tua vida.</p>
-    <p class="body-text">Mas ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de outras lentes. Sobre amor. Sobre valor. Sobre segurança. Sobre sucesso, liberdade, expressão.</p>
-    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti. Foste aprendendo novas formas de te adaptares. De te ajustares. De responderes ao que era esperado.</p>
-    <p class="body-text">A Fórmula Original é um convite para te recentrares, é uma leitura que te mostra essa estrutura interna. Os padrões. As crenças. As dinâmicas que estão ativas no teu campo energético neste momento e como estão a influenciar a forma como vives as diferentes áreas da tua vida.</p>
-    <p class="body-text">E quando vês o que está a operar por trás das tuas escolhas… tornas-te mais livre e consciente para escolher de forma diferente. E é aí que a tua vida começa a reorganizar-se porque ganhas mais espaço para seres tu.</p>
-
-    </div>
-
-    <div style="text-align:center; padding:1.5rem 1rem; margin: 2rem 0; border-top: 2px solid #c9a86c; border-bottom: 2px solid #c9a86c;">
-      <p style="font-family:'Spectral',serif; font-size:24px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">O que acreditas sobre ti muda tudo o que crias!</p>
-    </div>
-
-    <div class="fade-section">
-    <h2>Se sentes que...</h2>
-    <ul class="icon-list">
-      <li><span class="icon-marker">✦</span><span>Há uma versão tua que está a emergir e desejas conhecê-la melhor</span></li>
-      <li><span class="icon-marker">✦</span><span>Existem desafios que se repetem e queres perceber o padrão por trás</span></li>
-      <li><span class="icon-marker">✦</span><span>Desejas criar a tua realidade com mais consciência, confiança e leveza</span></li>
-      <li><span class="icon-marker">✦</span><span>Estás a viver uma transição e procuras clareza sobre o teu processo</span></li>
-      <li><span class="icon-marker">✦</span><span>Queres tomar decisões alinhadas, sem te perderes no ruído da mente</span></li>
-    </ul>
-
-    <div class="mid-cta">
-      <a class="mid-cta-btn" href="https://ig.me/m/filipaosorio" target="_blank">Já me identifico, vamos conversar!</a>
+      <img src="f1.png" alt="Filipa Osório" class="hero-img">
+      <h1 class="hero-title">Aqui começa o teu regresso a ti.</h1>
+      <p class="hero-sub">O meu trabalho é entrar contigo na jornada<br>de te recordares de quem és.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-    <h2>O que é a Fórmula Original</h2>
-    <p class="body-text">A Fórmula Original é uma leitura alquímica do teu momento presente.</p>
-    <p class="body-text">A leitura do campo energético e os teus mapas energéticos revelam os padrões, crenças, potenciais e convites que estão ativos na tua vida neste momento. Esta é a leitura sobre o exato momento em que estás.</p>
-    <p class="body-text">Sobre aquilo que está a pedir consciência. Sobre aquilo que está à espera de ser visto. Sobre aquilo que está pronto para ser transformado para viveres o teu próximo nível de expansão, em alinhamento com a tua essência.</p>
-    <p class="body-text">Só precisas de trazer um tema que seja importante para ti neste momento. O resto revelamo-lo em conjunto. Porque aquilo que procuras compreender fora está só à espera de ser reconhecido dentro de ti.</p>
-
-    <div class="aside">
-      <p>🪄 Vem com disponibilidade e abertura para te conheceres a um outro nível e a transformação começa no instante em que te permites ver aquilo que antes estava invisível, a partir daí é entre ti e a tua versão mais consciente.</p>
+      <p class="body-text">Talvez estejas num daqueles momentos da vida em que muita coisa está a mudar ao mesmo tempo. Há decisões para tomar. Caminhos para escolher. Partes de ti a pedir mais espaço. Sonhos que começam a chamar mais alto.</p>
+      <p class="body-text">E uma sensação subtil de que a vida pode ser diferente da forma como a tens vivido até agora. Não porque haja algo de errado contigo. Mas porque sentes que existe uma versão mais verdadeira de quem és à espera de ser vivida.</p>
+      <p class="body-text">Existe uma voz dentro de ti. Uma sabedoria tranquila. Uma verdade que não vem da mente, nem das opiniões dos outros, mas de um lugar mais profundo. Este espaço é para regressares a essa escuta.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-    <h2>O que podes levar desta experiência</h2>
-    <ul class="clean">
-      <li><span class="marker">✦</span><span>Autoconhecimento de uma forma leve e amorosa</span></li>
-      <li><span class="marker">✦</span><span>Confiança para tomares decisões alinhadas contigo</span></li>
-      <li><span class="marker">✦</span><span>Reconhecimento das crenças que limitam a tua expansão</span></li>
-      <li><span class="marker">✦</span><span>Clareza profunda sobre o teu momento atual e o tema que escolheres</span></li>
-      <li><span class="marker">✦</span><span>Orientações práticas para integrares aquilo que aprenderes no teu dia a dia</span></li>
-      <li><span class="marker">✦</span><span>A permissão de ser quem és e espalhares a tua nova frequência pelo mundo</span></li>
-    </ul>
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-    <div class="fade-section">
-    <h2>Sugestões de temas</h2>
-    <div class="themes">
-      <span class="theme-pill">Relações amorosas</span>
-      <span class="theme-pill">Relações familiares</span>
-      <span class="theme-pill">Identidade e autoimagem</span>
-      <span class="theme-pill">Propósito e direção</span>
-      <span class="theme-pill">Trabalho e carreira</span>
-      <span class="theme-pill">Dinheiro e segurança material</span>
-    </div>
-      <p style="font-family:'Spectral',serif; font-size:17px; font-weight:300; font-style:italic; color:#c9a86c; margin-top:1rem;">Qual deles ressoa mais contigo agora? Ou tens outro que desejas explorar?</p>
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-    <div class="fade-section">
-    <h2>Como funciona</h2>
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <div>
-          <p class="step-title">Entras em contacto</p>
-          <p class="step-text">Conversamos brevemente para eu conhecer o teu momento de vida atual</p>
+      <div class="pilares">
+        <div class="pilar">
+          <p class="pilar-num">01</p>
+          <p class="pilar-title">Conhecer-te</p>
+          <p class="pilar-text">Compreender a tua energia, os teus ritmos, os teus padrões e o desenho único da tua alma.</p>
         </div>
-      </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <div>
-          <p class="step-title">Escolhes o teu tema</p>
-          <p class="step-text">O tema da tua vida sobre o qual desejas receber clareza e orientações</p>
+        <div class="pilar">
+          <p class="pilar-num">02</p>
+          <p class="pilar-title">Reprogramar-te</p>
+          <p class="pilar-text">Transformar crenças e narrativas que já não servem a mulher que estás a tornar-te.</p>
         </div>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <div>
-          <p class="step-title">Faço a tua leitura</p>
-          <p class="step-text">Leio o teu campo energético e os teus mapas à luz do tema escolhido</p>
+        <div class="pilar">
+          <p class="pilar-num">03</p>
+          <p class="pilar-title">Alinhar-te</p>
+          <p class="pilar-text">Aprender a ouvir o corpo, a intuição e a tua verdade antes do ruído exterior.</p>
         </div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div>
-          <p class="step-title">Escolhes como receber</p>
-          <p class="step-text">Decides o formato que ressoa mais contigo neste momento</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">05</span>
-        <div>
-          <p class="step-title">O regresso a ti começa</p>
-          <p class="step-text">Começas a viver com mais consciência, ação e confiança 💃🏻</p>
+        <div class="pilar">
+          <p class="pilar-num">04</p>
+          <p class="pilar-title">Criar</p>
+          <p class="pilar-text">Manifestar uma vida mais autêntica, abundante e coerente com quem realmente és.</p>
         </div>
       </div>
     </div>
@@ -815,195 +172,52 @@
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-    <h2>Formatos disponíveis</h2>
-
-    <div style="border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; overflow: hidden;">
-      <div style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem;">
-        <div>
-          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio</p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Faço a tua leitura e envio-a em áudio. Ouves no teu tempo, quantas vezes quiseres.</p>
-        </div>
-        <p style="font-family:'Spectral',serif; font-size:28px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€147</p>
-      </div>
-      <div style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border-top: 0.5px solid rgba(201,168,108,0.25);">
-        <div>
-          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio + ThetaHealing®</p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Leitura em áudio enviada antes do nosso encontro + 30 minutos de ThetaHealing® ao vivo sobre a crença principal que emergiu.</p>
-        </div>
-        <p style="font-family:'Spectral',serif; font-size:28px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€197</p>
+      <div class="impacto">
+        <p>Existe uma mulher antes deste processo.<br>E existe uma mulher depois.</p>
       </div>
     </div>
-    <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#b0a090; font-style:italic; margin-top:0.75rem; text-align:center;">Poderás adicionar a tua sessão de ThetaHealing® ao vivo de 30 minutos pelo valor de €65.</p>
 
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-    <div class="fade-section testimonials-section">
-      <h2>O que dizem as minhas clientes</h2>
-
-      <div class="audio-player">
-        <button class="play-btn" id="playBtn" onclick="toggleAudio()">
-          <div class="play-icon" id="playIcon"></div>
-          <div class="pause-icon" id="pauseIcon"><span></span><span></span></div>
-        </button>
-        <div class="audio-info">
-          <p class="audio-label">Feedback em voz — ouve na primeira pessoa</p>
-          <div class="audio-progress" id="progressBar" onclick="seekAudio(event)">
-            <div class="audio-progress-bar" id="progressFill"></div>
-          </div>
-          <p class="audio-time" id="audioTime">0:00</p>
-        </div>
-      </div>
-      <audio id="audioPlayer" src="audio.mp3"></audio>
-
-      <div class="carousel-wrapper">
-        <button class="carousel-arrow carousel-arrow-left" onclick="moveCarousel(-1)" aria-label="anterior">&#8592;</button>
-        <button class="carousel-arrow carousel-arrow-right" onclick="moveCarousel(1)" aria-label="seguinte">&#8594;</button>
-        <div class="carousel">
-        <div class="carousel-track" id="carouselTrack">
-          <div class="carousel-slide">
-            <img src="feedback1.png" alt="Feedback de cliente" loading="lazy">
-          </div>
-          <div class="carousel-slide">
-            <img src="feedback2.png" alt="Feedback de cliente" loading="lazy">
-          </div>
-          <div class="carousel-slide">
-            <img src="feedback3.png" alt="Feedback de cliente" loading="lazy">
-          </div>
-          <div class="carousel-slide">
-            <img src="feedback4.png" alt="Feedback de cliente" loading="lazy">
-          </div>
-        </div>
-        </div>
-      </div>
-      <div class="carousel-nav">
-        <button class="carousel-dot active" onclick="goToSlide(0)"></button>
-        <button class="carousel-dot" onclick="goToSlide(1)"></button>
-        <button class="carousel-dot" onclick="goToSlide(2)"></button>
-        <button class="carousel-dot" onclick="goToSlide(3)"></button>
+    <div class="fade-section">
+      <div class="testemunho">
+        <p class="testemunho-texto">"[Frase de impacto de uma cliente — a substituir]"</p>
+        <p class="testemunho-nome">Nome da cliente</p>
       </div>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
-    <div style="text-align:center; margin-bottom:2rem;">
-      <img src="foto.png" alt="Filipa Osório" style="width:100%; max-width:480px; height:340px; object-fit:cover; object-position:center 20%; border-radius:12px; display:inline-block; opacity:0.75;">
-    </div>
-
-    <div class="aside centered">
-      <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.75rem;">Será esta a leitura que procuravas? Vem saber mais 💌</p>
-      <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#c9a86c; margin-bottom:0.75rem;">Descobre se uma das 3 vagas de junho é para ti 💃🏻</p>
-      <a class="cta-link" href="https://ig.me/m/filipaosorio" target="_blank">@filipaosorio</a>
-    </div>
-
-    <div class="aside centered" style="margin-top: 1rem;">
-      <p>A realidade que vives hoje nasceu das histórias que acreditaste sobre ti. A boa notícia é que nenhuma delas é definitiva, vem cocriar em amor, magia e leveza 🫧</p>
+    <div class="fade-section cta-box">
+      <p class="cta-title">Pronta para começar o teu regresso?</p>
+      <p class="cta-sub">Envia-me mensagem e descobrimos juntas qual é o teu próximo passo.</p>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="cta-btn">Conversamos 💌</a>
     </div>
 
     <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a></p>
 
   </main>
+
   <div class="popup" id="popup">
     <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
-    <p class="popup-eyebrow">✦ Apenas 3 vagas para junho</p>
+    <p class="popup-eyebrow">Apenas 3 vagas para junho</p>
     <p class="popup-title">Será esta a leitura que procuravas?</p>
-    <a class="popup-btn" href="https://ig.me/m/filipaosorio" target="_blank">Vamos descobrir juntas. 💌</a>
+    <a class="popup-btn" href="formula_original.html">Descobrir a Leitura de Alma ✦</a>
   </div>
+
   <script>
-
-
-    // Audio player
-    const audio = document.getElementById('audioPlayer');
-    const playIcon = document.getElementById('playIcon');
-    const pauseIcon = document.getElementById('pauseIcon');
-    const progressFill = document.getElementById('progressFill');
-    const audioTime = document.getElementById('audioTime');
-
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'flex';
-      } else {
-        audio.pause();
-        playIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
-      }
-    }
-
-    audio.addEventListener('timeupdate', () => {
-      if (audio.duration) {
-        const pct = (audio.currentTime / audio.duration) * 100;
-        progressFill.style.width = pct + '%';
-        const m = Math.floor(audio.currentTime / 60);
-        const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
-        audioTime.textContent = m + ':' + s;
-      }
-    });
-
-    audio.addEventListener('ended', () => {
-      playIcon.style.display = 'block';
-      pauseIcon.style.display = 'none';
-      progressFill.style.width = '0%';
-    });
-
-    function seekAudio(e) {
-      const bar = document.getElementById('progressBar');
-      const rect = bar.getBoundingClientRect();
-      const pct = (e.clientX - rect.left) / rect.width;
-      audio.currentTime = pct * audio.duration;
-    }
-
-    // Carousel
-    let currentSlide = 0;
-    const track = document.getElementById('carouselTrack');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const slideWidth = () => track.children[0].offsetWidth + 16;
-
-    function updateCarousel() {
-      track.style.transform = 'translateX(-' + (currentSlide * slideWidth()) + 'px)';
-      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-    }
-
-    function moveCarousel(dir) {
-      currentSlide = Math.max(0, Math.min(4, currentSlide + dir));
-      updateCarousel();
-    }
-
-    function goToSlide(i) {
-      currentSlide = i;
-      updateCarousel();
-    }
-
-    // Touch/drag support
-    let startX = 0;
-    track.addEventListener('mousedown', e => { startX = e.clientX; });
-    track.addEventListener('mouseup', e => {
-      const diff = startX - e.clientX;
-      if (Math.abs(diff) > 50) moveCarousel(diff > 0 ? 1 : -1);
-    });
-    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-    track.addEventListener('touchend', e => {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) moveCarousel(diff > 0 ? 1 : -1);
-    });
-
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 
     setTimeout(() => {
       document.getElementById('popup').classList.add('visible');
-    }, 8000);
-    const header = document.getElementById('stickyHeader');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        header.classList.add('visible');
-      } else {
-        header.classList.remove('visible');
-      }
-    });
+    }, 6000);
+
     const sections = document.querySelectorAll('.fade-section');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.01, rootMargin: "0px 0px 100px 0px" });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
     sections.forEach(s => observer.observe(s));
   </script>
+
 </body>
 </html>
