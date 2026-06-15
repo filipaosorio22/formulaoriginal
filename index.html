@@ -13,6 +13,40 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-5CX792T8H9');
+
+    const audioHome = document.getElementById('audioPlayerHome');
+    const playBtnHome = document.getElementById('playBtnHome');
+    const playIconHome = document.getElementById('playIconHome');
+    const pauseIconHome = document.getElementById('pauseIconHome');
+    const progressFillHome = document.getElementById('progressFillHome');
+    const audioTimeHome = document.getElementById('audioTimeHome');
+
+    function toggleAudioHome() {
+      if (audioHome.paused) {
+        audioHome.play();
+        playIconHome.style.display = 'none';
+        pauseIconHome.style.display = 'flex';
+      } else {
+        audioHome.pause();
+        playIconHome.style.display = 'block';
+        pauseIconHome.style.display = 'none';
+      }
+    }
+
+    audioHome.addEventListener('timeupdate', () => {
+      if (audioHome.duration) {
+        progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
+        const m = Math.floor(audioHome.currentTime / 60);
+        const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
+        audioTimeHome.textContent = m + ':' + s;
+      }
+    });
+
+    function seekAudioHome(e) {
+      const bar = document.getElementById('progressBarHome');
+      const rect = bar.getBoundingClientRect();
+      audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
+    }
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -85,8 +119,8 @@
     .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; letter-spacing: 0.1em; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .hero { animation: fadeUp 1s ease both; }
-    .fade-section { opacity: 0; transform: translateY(16px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .hero { }
+    .fade-section { opacity: 1; transform: translateY(0); transition: opacity 0.4s ease, transform 0.4s ease; }
     .fade-section.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 600px) {
@@ -96,6 +130,17 @@
       .pilares { grid-template-columns: 1fr; }
       .page { padding: 5rem 1.25rem 3rem; }
     }
+
+    .audio-player-home { background: rgba(201,168,108,0.08); border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1rem; margin: 1rem 0; }
+    .play-btn-home { width: 44px; height: 44px; border-radius: 50%; background: #7a2535; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+    .play-btn-home:hover { background: #5c1c28; }
+    .play-icon-home { width: 0; height: 0; border-style: solid; border-width: 7px 0 7px 13px; border-color: transparent transparent transparent #f7f3ee; margin-left: 3px; }
+    .pause-icon-home { display: none; gap: 3px; }
+    .pause-icon-home span { width: 4px; height: 14px; background: #f7f3ee; border-radius: 2px; }
+    .audio-info-home { flex: 1; }
+    .audio-progress-home { width: 100%; height: 3px; background: rgba(201,168,108,0.3); border-radius: 3px; cursor: pointer; position: relative; }
+    .audio-progress-bar-home { height: 100%; background: #c9a86c; border-radius: 3px; width: 0%; transition: width 0.1s linear; }
+    .audio-time-home { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #9a7e52; margin-top: 0.25rem; }
   </style>
 </head>
 <body>
@@ -131,74 +176,81 @@
     <div class="hero">
       <img src="f1.png" alt="Filipa Osório" class="hero-img">
       <h1 class="hero-title">Aqui começa o regresso a ti.</h1>
-      <p class="hero-sub">Esta é a jornada de recordares quem és,<br>de verdade, em amor e leveza.</p>
+      <p class="hero-sub">Uma jornada para recordares quem és e manifestares amor, clareza e leveza.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-      <p class="body-text">Talvez estejas num daqueles momentos da vida que pede uma mudança. Sentes essa vontade interna, que desejas exteriorizar, mas há decisões a tomar. Caminhos para escolher. Velhos padrões e crenças a libertar. Partes de ti a pedir mais espaço. Sonhos que começam a chamar mais alto. A tua versão que vive essa realidade reclama o teu poder pessoal e mais amor por ti.</p>
-      <p class="body-text">Tens uma sensação subtil de que a vida pode ser diferente do que foi até agora. Não porque haja algo de errado contigo. Mas porque sentes que existe uma versão mais verdadeira de quem és à espera de ser vivida. E com ela vem uma vida mais abundante, livre, leve e prazerosa.</p>
+      <p class="body-text" style="text-align:justify;">Talvez estejas num daqueles momentos da vida que pede uma mudança. Sentes essa vontade interna, que desejas exteriorizar, mas há decisões a tomar. Caminhos a escolher. Velhos padrões e crenças a libertar. Partes de ti a pedir mais espaço. Sonhos que começam a chamar mais alto. E a versão que vive essa realidade reclama o teu poder pessoal e mais amor por ti.</p>
+      <p class="body-text" style="text-align:justify;">Tens uma sensação subtil de que pode ser diferente do que foi até agora. Essa realidade vem da reconexão à tua intuição, da magia do simbolismo, da libertação do que já não te serve. Existe essa versão de ti à espera de ser vivida. E com ela vem essa vida mais abundante, livre, leve e prazerosa.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
       <div style="text-align:center; padding: 1.5rem 1rem; margin: 1rem 0; border-top: 2px solid #c9a86c; border-bottom: 2px solid #c9a86c;">
-        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">"Não é a vida que dá esse passo por ti, és tu e a vida acompanha ❤️"</p>
+        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">Não é a vida que dá esse passo por ti, és tu e a vida acompanha ❤️</p>
       </div>
     </div>
+
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:1.25rem; text-align:center;">O caminho tem quatro momentos</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:1.25rem; text-align:center;">O caminho é um ciclo com quatro momentos</p>
       <div class="pilares">
         <div class="pilar">
           <p class="pilar-num">01</p>
-          <p class="pilar-title">Conheceres-te</p>
-          <p class="pilar-text">Compreender a tua energia, os teus ritmos, os teus padrões, os teus dons e o desenho único da tua alma.</p>
+          <p class="pilar-title">Autoconhecimento</p>
+          <p class="pilar-text">Compreender melhor a tua energia única, os teus ritmos, os teus padrões, os teus dons e o desenho único da tua alma.</p>
         </div>
         <div class="pilar">
           <p class="pilar-num">02</p>
-          <p class="pilar-title">Reprogramar</p>
-          <p class="pilar-text">Transformar crenças e narrativas que já não servem a mulher que te estás a tornar para sustentar a nova versão que quer nascer.</p>
+          <p class="pilar-title">Alinhamento</p>
+          <p class="pilar-text">Conectares-te mais com o teu corpo, intuição, coração e com a tua verdade, silenciando o ruído exterior.</p>
         </div>
         <div class="pilar">
           <p class="pilar-num">03</p>
-          <p class="pilar-title">Alinhares-te</p>
-          <p class="pilar-text">Aprender a ouvir o corpo, a intuição, o coração e a tua verdade antes do ruído exterior.</p>
+          <p class="pilar-title">Reprogramação</p>
+          <p class="pilar-text">Transformar crenças e narrativas que<br>já não te servem e criar novas que sustentem as novas criações.</p>
         </div>
         <div class="pilar">
           <p class="pilar-num">04</p>
-          <p class="pilar-title">Criar</p>
-          <p class="pilar-text">Manifestar uma vida mais autêntica, abundante e coerente com quem realmente queres ser e colocar a tua voz no mundo.</p>
+          <p class="pilar-title">Criação</p>
+          <p class="pilar-text">Manifestar uma vida mais autêntica, abundante e coerente com quem és e colocares a tua voz no mundo.</p>
         </div>
       </div>
     </div>
     </div>
 
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
     <div class="fade-section">
       <div class="impacto">
-        <p>Existe uma mulher antes deste processo.<br>E existe uma mulher depois.</p>
+        <p style="font-size:22px; color:#7a2535;">O que ofereço é a abertura a uma nova frequência energética:</p>
+        <p style="font-size:19px; margin-top:0.5rem; font-weight:300; color:#c9a86c;">As minhas clientes chamam-lhe magia. Eu chamo-lhe alinhamento.</p>
       </div>
     </div>
 
-    <div class="fade-section">
-      <div class="testemunho">
-        <p class="testemunho-texto">"[Frase de impacto de uma cliente — a substituir]"</p>
-        <p class="testemunho-nome">Nome da cliente</p>
+    <div class="fade-section" style="text-align:center; margin: 1.5rem 0;">
+      <div class="audio-player-home">
+        <button class="play-btn-home" id="playBtnHome" onclick="toggleAudioHome()">
+          <div class="play-icon-home" id="playIconHome"></div>
+          <div class="pause-icon-home" id="pauseIconHome"><span></span><span></span></div>
+        </button>
+        <div class="audio-info-home">
+          <div class="audio-progress-home" id="progressBarHome" onclick="seekAudioHome(event)">
+            <div class="audio-progress-bar-home" id="progressFillHome"></div>
+          </div>
+          <p class="audio-time-home" id="audioTimeHome">0:00</p>
+        </div>
       </div>
+      <audio id="audioPlayerHome" src="magico.mp3"></audio>
+      <div style="width:100%; height:2px; background:#c9a86c; opacity:0.7; margin-top:1.5rem; border-radius:1px;"></div>
     </div>
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section cta-box">
-      <p class="cta-title">Pronta para começar o teu regresso?</p>
-      <p class="cta-sub">Envia-me mensagem e descobrimos juntas qual é o teu próximo passo.</p>
-      <a href="https://ig.me/m/filipaosorio" target="_blank" class="cta-btn">Conversamos 💌</a>
+      <p class="cta-title">Pronta para viver a magia?</p>
+      <a href="formula_original.html" class="cta-btn" style="background:#7a2535;">Conhece o primeiro portal ⚜️</a>
     </div>
 
     <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a></p>
@@ -226,6 +278,40 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
     sections.forEach(s => observer.observe(s));
+
+    const audioHome = document.getElementById('audioPlayerHome');
+    const playBtnHome = document.getElementById('playBtnHome');
+    const playIconHome = document.getElementById('playIconHome');
+    const pauseIconHome = document.getElementById('pauseIconHome');
+    const progressFillHome = document.getElementById('progressFillHome');
+    const audioTimeHome = document.getElementById('audioTimeHome');
+
+    function toggleAudioHome() {
+      if (audioHome.paused) {
+        audioHome.play();
+        playIconHome.style.display = 'none';
+        pauseIconHome.style.display = 'flex';
+      } else {
+        audioHome.pause();
+        playIconHome.style.display = 'block';
+        pauseIconHome.style.display = 'none';
+      }
+    }
+
+    audioHome.addEventListener('timeupdate', () => {
+      if (audioHome.duration) {
+        progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
+        const m = Math.floor(audioHome.currentTime / 60);
+        const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
+        audioTimeHome.textContent = m + ':' + s;
+      }
+    });
+
+    function seekAudioHome(e) {
+      const bar = document.getElementById('progressBarHome');
+      const rect = bar.getBoundingClientRect();
+      audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
+    }
   </script>
 
 </body>
