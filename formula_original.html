@@ -955,11 +955,10 @@
         </div>
         </div>
       </div>
-      <div class="carousel-nav">
+      <div class="carousel-nav" style="display:flex; justify-content:center; gap:8px; margin-top:1rem;">
         <button class="carousel-dot active" onclick="goToSlide(0)"></button>
         <button class="carousel-dot" onclick="goToSlide(1)"></button>
         <button class="carousel-dot" onclick="goToSlide(2)"></button>
-        <button class="carousel-dot" onclick="goToSlide(3)"></button>
       </div>
     </div>
 
@@ -1043,7 +1042,7 @@
     }
 
     function moveCarousel(dir) {
-      currentSlide = Math.max(0, Math.min(3, currentSlide + dir));
+      currentSlide = Math.max(0, Math.min(2, currentSlide + dir));
       updateCarousel();
     }
 
