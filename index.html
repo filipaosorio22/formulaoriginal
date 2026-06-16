@@ -14,93 +14,7 @@
     gtag('js', new Date());
     gtag('config', 'G-5CX792T8H9');
 
-    const audioHome = document.getElementById('audioPlayerHome');
-    const playBtnHome = document.getElementById('playBtnHome');
-    const playIconHome = document.getElementById('playIconHome');
-    const pauseIconHome = document.getElementById('pauseIconHome');
-    const progressFillHome = document.getElementById('progressFillHome');
-    const audioTimeHome = document.getElementById('audioTimeHome');
-
-    function toggleAudioHome() {
-      if (audioHome.paused) {
-        audioHome.play();
-        playIconHome.style.display = 'none';
-        pauseIconHome.style.display = 'flex';
-      } else {
-        audioHome.pause();
-        playIconHome.style.display = 'block';
-        pauseIconHome.style.display = 'none';
-      }
-    }
-
-    audioHome.addEventListener('timeupdate', () => {
-      if (audioHome.duration) {
-        progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
-        const m = Math.floor(audioHome.currentTime / 60);
-        const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
-        audioTimeHome.textContent = m + ':' + s;
-      }
-    });
-
-    function seekAudioHome(e) {
-      const bar = document.getElementById('progressBarHome');
-      const rect = bar.getBoundingClientRect();
-      audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
-    }
-
-    const audio2 = document.getElementById('audio2');
-    const audio3 = document.getElementById('audio3');
-
-    function toggleAudio2() {
-      if (audio2.paused) {
-        audio2.play();
-        document.getElementById('playIcon2').style.display = 'none';
-        document.getElementById('pauseIcon2').style.display = 'flex';
-      } else {
-        audio2.pause();
-        document.getElementById('playIcon2').style.display = 'block';
-        document.getElementById('pauseIcon2').style.display = 'none';
-      }
-    }
-    audio2.addEventListener('timeupdate', () => {
-      if (audio2.duration) {
-        document.getElementById('fill2').style.width = (audio2.currentTime / audio2.duration * 100) + '%';
-        const m = Math.floor(audio2.currentTime / 60);
-        const s = Math.floor(audio2.currentTime % 60).toString().padStart(2, '0');
-        document.getElementById('time2').textContent = m + ':' + s;
-      }
-    });
-    function seekAudio2(e) {
-      const bar = document.getElementById('progress2');
-      const rect = bar.getBoundingClientRect();
-      audio2.currentTime = ((e.clientX - rect.left) / rect.width) * audio2.duration;
-    }
-
-    function toggleAudio3() {
-      if (audio3.paused) {
-        audio3.play();
-        document.getElementById('playIcon3').style.display = 'none';
-        document.getElementById('pauseIcon3').style.display = 'flex';
-      } else {
-        audio3.pause();
-        document.getElementById('playIcon3').style.display = 'block';
-        document.getElementById('pauseIcon3').style.display = 'none';
-      }
-    }
-    audio3.addEventListener('timeupdate', () => {
-      if (audio3.duration) {
-        document.getElementById('fill3').style.width = (audio3.currentTime / audio3.duration * 100) + '%';
-        const m = Math.floor(audio3.currentTime / 60);
-        const s = Math.floor(audio3.currentTime % 60).toString().padStart(2, '0');
-        document.getElementById('time3').textContent = m + ':' + s;
-      }
-    });
-    function seekAudio3(e) {
-      const bar = document.getElementById('progress3');
-      const rect = bar.getBoundingClientRect();
-      audio3.currentTime = ((e.clientX - rect.left) / rect.width) * audio3.duration;
-    }
-  </script>
+      </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
@@ -284,60 +198,20 @@
     </div>
 
     <div class="fade-section" style="margin: 1.5rem 0;">
-      <div style="display:flex; flex-direction:column; gap:1rem;">
-
-        <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
-          <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.75rem;">A magia que se sente</p>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <button class="play-btn-home" id="playBtnHome" onclick="toggleAudioHome()" style="flex-shrink:0;">
-              <div class="play-icon-home" id="playIconHome"></div>
-              <div class="pause-icon-home" id="pauseIconHome"><span></span><span></span></div>
-            </button>
-            <div class="audio-info-home" style="flex:1;">
-              <div class="audio-progress-home" id="progressBarHome" onclick="seekAudioHome(event)">
-                <div class="audio-progress-bar-home" id="progressFillHome"></div>
-              </div>
-              <p class="audio-time-home" id="audioTimeHome">0:00</p>
-            </div>
+      <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem; text-align:center;">A magia que se sente</p>
+      <div class="audio-player-home">
+        <button class="play-btn-home" id="playBtnHome" onclick="toggleAudioHome()" style="flex-shrink:0;">
+          <div class="play-icon-home" id="playIconHome"></div>
+          <div class="pause-icon-home" id="pauseIconHome"><span></span><span></span></div>
+        </button>
+        <div class="audio-info-home">
+          <div class="audio-progress-home" id="progressBarHome" onclick="seekAudioHome(event)">
+            <div class="audio-progress-bar-home" id="progressFillHome"></div>
           </div>
-          <audio id="audioPlayerHome" src="magico.mp3" preload="metadata"></audio>
+          <p class="audio-time-home" id="audioTimeHome">0:00</p>
         </div>
-
-        <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
-          <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.75rem;">O ouro das crenças</p>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <button onclick="toggleAudio2()" style="width:44px; height:44px; border-radius:50%; background:#7a2535; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <div id="playIcon2" style="width:0; height:0; border-style:solid; border-width:7px 0 7px 13px; border-color:transparent transparent transparent #f7f3ee; margin-left:3px;"></div>
-              <div id="pauseIcon2" style="display:none; gap:3px;"><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span></div>
-            </button>
-            <div style="flex:1;">
-              <div id="progress2" onclick="seekAudio2(event)" style="width:100%; height:3px; background:rgba(201,168,108,0.3); border-radius:3px; cursor:pointer; position:relative;">
-                <div id="fill2" style="height:100%; background:#c9a86c; border-radius:3px; width:0%;"></div>
-              </div>
-              <p id="time2" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-top:0.25rem;">0:00</p>
-            </div>
-          </div>
-          <audio id="audio2" src="feedbackcristianacrenças.mp3" preload="metadata"></audio>
-        </div>
-
-        <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
-          <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.75rem;">Ao teu próprio ritmo</p>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <button onclick="toggleAudio3()" style="width:44px; height:44px; border-radius:50%; background:#7a2535; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <div id="playIcon3" style="width:0; height:0; border-style:solid; border-width:7px 0 7px 13px; border-color:transparent transparent transparent #f7f3ee; margin-left:3px;"></div>
-              <div id="pauseIcon3" style="display:none; gap:3px;"><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span></div>
-            </button>
-            <div style="flex:1;">
-              <div id="progress3" onclick="seekAudio3(event)" style="width:100%; height:3px; background:rgba(201,168,108,0.3); border-radius:3px; cursor:pointer; position:relative;">
-                <div id="fill3" style="height:100%; background:#c9a86c; border-radius:3px; width:0%;"></div>
-              </div>
-              <p id="time3" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-top:0.25rem;">0:00</p>
-            </div>
-          </div>
-          <audio id="audio3" src="feedbackcristianatempo.mp3" preload="metadata"></audio>
-        </div>
-
       </div>
+      <audio id="audioPlayerHome" src="magico.mp3" preload="metadata"></audio>
       <div style="width:100%; height:2px; background:#c9a86c; opacity:0.7; margin-top:1.5rem; border-radius:1px;"></div>
     </div>
 
@@ -406,58 +280,6 @@
       audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
     }
 
-    const audio2 = document.getElementById('audio2');
-    const audio3 = document.getElementById('audio3');
-
-    function toggleAudio2() {
-      if (audio2.paused) {
-        audio2.play();
-        document.getElementById('playIcon2').style.display = 'none';
-        document.getElementById('pauseIcon2').style.display = 'flex';
-      } else {
-        audio2.pause();
-        document.getElementById('playIcon2').style.display = 'block';
-        document.getElementById('pauseIcon2').style.display = 'none';
-      }
-    }
-    audio2.addEventListener('timeupdate', () => {
-      if (audio2.duration) {
-        document.getElementById('fill2').style.width = (audio2.currentTime / audio2.duration * 100) + '%';
-        const m = Math.floor(audio2.currentTime / 60);
-        const s = Math.floor(audio2.currentTime % 60).toString().padStart(2, '0');
-        document.getElementById('time2').textContent = m + ':' + s;
-      }
-    });
-    function seekAudio2(e) {
-      const bar = document.getElementById('progress2');
-      const rect = bar.getBoundingClientRect();
-      audio2.currentTime = ((e.clientX - rect.left) / rect.width) * audio2.duration;
-    }
-
-    function toggleAudio3() {
-      if (audio3.paused) {
-        audio3.play();
-        document.getElementById('playIcon3').style.display = 'none';
-        document.getElementById('pauseIcon3').style.display = 'flex';
-      } else {
-        audio3.pause();
-        document.getElementById('playIcon3').style.display = 'block';
-        document.getElementById('pauseIcon3').style.display = 'none';
-      }
-    }
-    audio3.addEventListener('timeupdate', () => {
-      if (audio3.duration) {
-        document.getElementById('fill3').style.width = (audio3.currentTime / audio3.duration * 100) + '%';
-        const m = Math.floor(audio3.currentTime / 60);
-        const s = Math.floor(audio3.currentTime % 60).toString().padStart(2, '0');
-        document.getElementById('time3').textContent = m + ':' + s;
-      }
-    });
-    function seekAudio3(e) {
-      const bar = document.getElementById('progress3');
-      const rect = bar.getBoundingClientRect();
-      audio3.currentTime = ((e.clientX - rect.left) / rect.width) * audio3.duration;
-    }
   </script>
 
 </body>
