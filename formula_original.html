@@ -720,31 +720,26 @@
   </style>
 </head>
 <body>
-  <nav id="stickyHeader" class="sticky-header" style="opacity:1; transform:none;">
-    
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Início</a>
-      <a href="sobre.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Sobre mim</a>
-      <a href="formula_original.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#7a2535; text-decoration:none;">Leitura de Alma</a>
-      <a href="mentoria.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Mentoria de Alinhamento</a>
-      <a href="consultoria.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">O teu Negócio de Alma</a>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="formula_original.html" class="active">Leitura de Alma</a>
+      <a href="consultoria.html">O teu Negócio de Alma</a>
+      <a href="mentoria.html">Mentoria de Alinhamento</a>
       <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos (em breve)</span>
-      <a href="https://ig.me/m/filipaosorio" target="_blank" class="sticky-btn">Conversamos? 💌</a>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos 💌</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')" style="display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none;">
-      <span style="width:22px; height:1px; background:#1a1410; display:block;"></span>
-      <span style="width:22px; height:1px; background:#1a1410; display:block;"></span>
-      <span style="width:22px; height:1px; background:#1a1410; display:block;"></span>
-    </button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
-  <div id="mobileMenu" style="display:none; position:fixed; top:56px; left:0; right:0; background:#faf6ef; border-bottom:0.5px solid rgba(201,168,108,0.3); padding:1.5rem 2rem; z-index:99; flex-direction:column; gap:1.25rem;">
-    <a href="index.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Início</a>
-    <a href="sobre.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Sobre mim</a>
-    <a href="formula_original.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#7a2535; text-decoration:none;">Leitura de Alma</a>
-    <a href="mentoria.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Mentoria de Alinhamento</a>
-    <a href="consultoria.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">O teu Negócio de Alma</a>
-    <span style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos (em breve)</span>
-    <a href="https://ig.me/m/filipaosorio" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#7a2535; text-decoration:none;">Conversamos 💌</a>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="formula_original.html">Leitura de Alma</a>
+    <a href="consultoria.html">O teu Negócio de Alma</a>
+    <a href="mentoria.html">Mentoria de Alinhamento</a>
+    <span style="opacity:0.5; font-family:'DM Sans',sans-serif; font-size:13px;">Eventos (em breve)</span>
+    <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos 💌</a>
   </div>
   <main class="page" lang="pt">
 
@@ -978,6 +973,7 @@
     </div>
 
     <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a></p>
+      <p class="footer" style="margin-top:0.5rem;"><a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">✦ Substack — Reflexões, insights e magia 🖋️</a></p>
 
   </main>
   <div class="popup" id="popup">
