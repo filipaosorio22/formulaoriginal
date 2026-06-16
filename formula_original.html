@@ -778,7 +778,7 @@
     </ul>
 
     <div class="mid-cta">
-      <a class="mid-cta-btn" href="#cta-final" onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'}); return false;">Já me identifico, vamos marcar!</a>
+      <a class="mid-cta-btn" href="#cta-final" onclick="event.preventDefault(); const target = document.getElementById('cta-final'); const start = window.scrollY; const end = target.getBoundingClientRect().top + start; const duration = 1800; const startTime = performance.now(); function scroll(now){ const elapsed = now - startTime; const progress = Math.min(elapsed/duration, 1); const ease = progress < 0.5 ? 2*progress*progress : -1+(4-2*progress)*progress; window.scrollTo(0, start + (end-start)*ease); if(progress < 1) requestAnimationFrame(scroll); } requestAnimationFrame(scroll);">Já me identifico, vamos marcar!</a>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
