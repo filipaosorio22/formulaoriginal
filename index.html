@@ -47,6 +47,59 @@
       const rect = bar.getBoundingClientRect();
       audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
     }
+
+    const audio2 = document.getElementById('audio2');
+    const audio3 = document.getElementById('audio3');
+
+    function toggleAudio2() {
+      if (audio2.paused) {
+        audio2.play();
+        document.getElementById('playIcon2').style.display = 'none';
+        document.getElementById('pauseIcon2').style.display = 'flex';
+      } else {
+        audio2.pause();
+        document.getElementById('playIcon2').style.display = 'block';
+        document.getElementById('pauseIcon2').style.display = 'none';
+      }
+    }
+    audio2.addEventListener('timeupdate', () => {
+      if (audio2.duration) {
+        document.getElementById('fill2').style.width = (audio2.currentTime / audio2.duration * 100) + '%';
+        const m = Math.floor(audio2.currentTime / 60);
+        const s = Math.floor(audio2.currentTime % 60).toString().padStart(2, '0');
+        document.getElementById('time2').textContent = m + ':' + s;
+      }
+    });
+    function seekAudio2(e) {
+      const bar = document.getElementById('progress2');
+      const rect = bar.getBoundingClientRect();
+      audio2.currentTime = ((e.clientX - rect.left) / rect.width) * audio2.duration;
+    }
+
+    function toggleAudio3() {
+      if (audio3.paused) {
+        audio3.play();
+        document.getElementById('playIcon3').style.display = 'none';
+        document.getElementById('pauseIcon3').style.display = 'flex';
+      } else {
+        audio3.pause();
+        document.getElementById('playIcon3').style.display = 'block';
+        document.getElementById('pauseIcon3').style.display = 'none';
+      }
+    }
+    audio3.addEventListener('timeupdate', () => {
+      if (audio3.duration) {
+        document.getElementById('fill3').style.width = (audio3.currentTime / audio3.duration * 100) + '%';
+        const m = Math.floor(audio3.currentTime / 60);
+        const s = Math.floor(audio3.currentTime % 60).toString().padStart(2, '0');
+        document.getElementById('time3').textContent = m + ':' + s;
+      }
+    });
+    function seekAudio3(e) {
+      const bar = document.getElementById('progress3');
+      const rect = bar.getBoundingClientRect();
+      audio3.currentTime = ((e.clientX - rect.left) / rect.width) * audio3.duration;
+    }
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,7 +131,7 @@
 
     /* HERO */
     .hero { text-align: center; margin-bottom: 2.5rem; padding-left: 2rem; }
-    .hero-img { width: 160px; height: 160px; object-fit: cover; object-position: center 15%; border-radius: 50%; border: 1.5px solid rgba(201,168,108,0.4); display: inline-block; margin-bottom: 1.5rem; }
+    .hero-img { width: 220px; height: 220px; object-fit: cover; object-position: right 10%; border-radius: 50%; border: 1.5px solid rgba(201,168,108,0.4); display: inline-block; margin-bottom: 1.5rem; }
     .hero-title { font-family: 'Spectral', serif; font-size: 38px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.2; margin-bottom: 0.75rem; }
     .hero-sub { font-family: 'Spectral', serif; font-size: 18px; font-weight: 300; font-style: italic; color: #7a2535; line-height: 1.6; }
 
@@ -176,7 +229,7 @@
     <div class="hero">
       <img src="f1.png" alt="Filipa Osório" class="hero-img">
       <h1 class="hero-title">Aqui começa o regresso a ti. Vens?</h1>
-      <p class="hero-sub">Uma jornada para recordares quem és<br>e manifestares amor, leveza e abundância.</p>
+      <p class="hero-sub">Uma jornada para recordares quem és na tua pura essência<br>e manifestares amor, leveza e abundância a todos os níveis.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
@@ -198,7 +251,7 @@
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:1.25rem; text-align:center;">Este caminho é um ciclo contínuo de quatro momentos</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:1.25rem; text-align:center;">Este caminho é um ciclo contínuo de quatro momentos</p>
       <div class="pilares">
         <div class="pilar">
           <p class="pilar-num">01</p>
@@ -328,6 +381,59 @@
       const bar = document.getElementById('progressBarHome');
       const rect = bar.getBoundingClientRect();
       audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
+    }
+
+    const audio2 = document.getElementById('audio2');
+    const audio3 = document.getElementById('audio3');
+
+    function toggleAudio2() {
+      if (audio2.paused) {
+        audio2.play();
+        document.getElementById('playIcon2').style.display = 'none';
+        document.getElementById('pauseIcon2').style.display = 'flex';
+      } else {
+        audio2.pause();
+        document.getElementById('playIcon2').style.display = 'block';
+        document.getElementById('pauseIcon2').style.display = 'none';
+      }
+    }
+    audio2.addEventListener('timeupdate', () => {
+      if (audio2.duration) {
+        document.getElementById('fill2').style.width = (audio2.currentTime / audio2.duration * 100) + '%';
+        const m = Math.floor(audio2.currentTime / 60);
+        const s = Math.floor(audio2.currentTime % 60).toString().padStart(2, '0');
+        document.getElementById('time2').textContent = m + ':' + s;
+      }
+    });
+    function seekAudio2(e) {
+      const bar = document.getElementById('progress2');
+      const rect = bar.getBoundingClientRect();
+      audio2.currentTime = ((e.clientX - rect.left) / rect.width) * audio2.duration;
+    }
+
+    function toggleAudio3() {
+      if (audio3.paused) {
+        audio3.play();
+        document.getElementById('playIcon3').style.display = 'none';
+        document.getElementById('pauseIcon3').style.display = 'flex';
+      } else {
+        audio3.pause();
+        document.getElementById('playIcon3').style.display = 'block';
+        document.getElementById('pauseIcon3').style.display = 'none';
+      }
+    }
+    audio3.addEventListener('timeupdate', () => {
+      if (audio3.duration) {
+        document.getElementById('fill3').style.width = (audio3.currentTime / audio3.duration * 100) + '%';
+        const m = Math.floor(audio3.currentTime / 60);
+        const s = Math.floor(audio3.currentTime % 60).toString().padStart(2, '0');
+        document.getElementById('time3').textContent = m + ':' + s;
+      }
+    });
+    function seekAudio3(e) {
+      const bar = document.getElementById('progress3');
+      const rect = bar.getBoundingClientRect();
+      audio3.currentTime = ((e.clientX - rect.left) / rect.width) * audio3.duration;
     }
   </script>
 
