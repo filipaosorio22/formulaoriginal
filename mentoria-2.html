@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentoria de Alinhamento · Filipa Osório</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+
+    function toggleA1() {
+      const a = document.getElementById('audioA1');
+      if (a.paused) { a.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
+    }
+    document.getElementById('audioA1').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
+    });
+    function seekA1(e) { const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); document.getElementById('audioA1').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA1').duration; }
+
+    function toggleA2() {
+      const a = document.getElementById('audioA2');
+      if (a.paused) { a.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
+    }
+    document.getElementById('audioA2').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+    });
+    function seekA2(e) { const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); document.getElementById('audioA2').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA2').duration; }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: center; gap: 2rem; }
+    .nav-logo { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #1a1410; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #7a2535; }
+    .nav-links a.active { color: #7a2535; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; text-decoration: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1px; background: #1a1410; display: block; }
+    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
+
+    .page { max-width: 660px; margin: 0 auto; padding: 7rem 2rem 4rem; text-align: center; }
+
+    .divider { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 2.5rem 0; }
+    .divider-line { width: 100%; height: 0.5px; background: #c9a86c; opacity: 0.7; }
+    .divider-line-thin { width: 85%; height: 0.5px; background: #c9a86c; opacity: 0.35; }
+
+    .lock { font-size: 52px; margin-bottom: 1.5rem; opacity: 0.7; }
+    .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: #9a7e52; margin-bottom: 1rem; }
+    .title { font-family: 'Spectral', serif; font-size: 32px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.3; margin-bottom: 1.5rem; }
+    .body-text { font-family: 'Spectral', serif; font-size: 18px; font-weight: 300; font-style: italic; color: #6b5040; line-height: 1.8; margin-bottom: 1rem; }
+    .sub-text { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #9a7e52; line-height: 1.7; margin-bottom: 2rem; }
+    .cta-btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border-radius: 40px; padding: 14px 36px; text-decoration: none; }
+    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Filipa Osório</a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="formula_original.html">Leitura de Alma</a>
+      <a href="mentoria.html" class="active">Mentoria de Alinhamento</a>
+      <a href="consultoria.html">O teu Negócio de Alma</a>
+      <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos (em breve)</span>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos 💌</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="formula_original.html">Leitura de Alma</a>
+    <a href="consultoria.html">O teu Negócio de Alma</a>
+    <a href="mentoria.html">Mentoria de Alinhamento</a>
+    <span style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos (em breve)</span>
+    <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos 💌</a>
+  </div>
+
+  <main class="page">
+
+    <p class="eyebrow">Filipa Osório</p>
+    <h1 style="font-family:'Spectral',serif; font-size:38px; font-weight:300; font-style:italic; color:#1a1410; line-height:1.2; margin-bottom:2rem;">Mentoria de Alinhamento</h1>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <div class="lock">🔒</div>
+
+    <p class="body-text" style="font-size:18px; margin-bottom:1rem;">Neste momento a viver a jornada profunda da<br>Travessia de Verão com as minhas clientes de sempre!</p>
+
+    <p class="sub-text" style="margin-bottom:2rem;">Este é um processo profundo e transformador, reservado para<br>quem deseja um nível de profundidade e acompanhamento 🫧</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem; text-align:left;">
+
+      <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
+        <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">O ouro das crenças</p>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <button onclick="toggleA1()" id="btnA1" style="width:44px; height:44px; border-radius:50%; background:#7a2535; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <div id="playA1" style="width:0; height:0; border-style:solid; border-width:7px 0 7px 13px; border-color:transparent transparent transparent #f7f3ee; margin-left:3px;"></div>
+            <div id="pauseA1" style="display:none; gap:3px;"><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span></div>
+          </button>
+          <div style="flex:1;">
+            <div id="progA1" onclick="seekA1(event)" style="width:100%; height:3px; background:rgba(201,168,108,0.3); border-radius:3px; cursor:pointer;">
+              <div id="fillA1" style="height:100%; background:#c9a86c; border-radius:3px; width:0%;"></div>
+            </div>
+            <p id="timeA1" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-top:0.25rem;">0:00</p>
+          </div>
+        </div>
+        <audio id="audioA1" src="feedbackcristianacrenças.mp3" preload="metadata"></audio>
+      </div>
+
+      <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
+        <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">Ao teu próprio ritmo</p>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <button onclick="toggleA2()" id="btnA2" style="width:44px; height:44px; border-radius:50%; background:#7a2535; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <div id="playA2" style="width:0; height:0; border-style:solid; border-width:7px 0 7px 13px; border-color:transparent transparent transparent #f7f3ee; margin-left:3px;"></div>
+            <div id="pauseA2" style="display:none; gap:3px;"><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span></div>
+          </button>
+          <div style="flex:1;">
+            <div id="progA2" onclick="seekA2(event)" style="width:100%; height:3px; background:rgba(201,168,108,0.3); border-radius:3px; cursor:pointer;">
+              <div id="fillA2" style="height:100%; background:#c9a86c; border-radius:3px; width:0%;"></div>
+            </div>
+            <p id="timeA2" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-top:0.25rem;">0:00</p>
+          </div>
+        </div>
+        <audio id="audioA2" src="feedbackcristianatempo.mp3" preload="metadata"></audio>
+      </div>
+
+    </div>
+
+    <a href="https://ig.me/m/filipaosorio" target="_blank" class="cta-btn" style="margin-bottom:1rem; display:inline-block; background:transparent; color:#7a2535; border:0.5px solid #7a2535;">Abertura de vagas em breve</a>
+
+    <p class="sub-text" style="margin-top:0.75rem; font-style:italic;">Envia-me mensagem com a palavra "MENTORIA"<br>se quiseres ser a primeira a saber das novidades 💌</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <p class="sub-text" style="margin-bottom:1.25rem;">Enquanto isso, apresento-te o primeiro portal</p>
+
+    <a href="formula_original.html" class="cta-btn" style="background:#7a2535; color:#f7f3ee;">Conhece a Leitura de Alma</a>
+
+    <p class="footer" style="margin-top:3rem;">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a></p>
+
+  </main>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+    function toggleA1() {
+      const a = document.getElementById('audioA1');
+      if (a.paused) { a.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
+    }
+    document.getElementById('audioA1').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
+    });
+    function seekA1(e) { const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); document.getElementById('audioA1').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA1').duration; }
+
+    function toggleA2() {
+      const a = document.getElementById('audioA2');
+      if (a.paused) { a.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
+    }
+    document.getElementById('audioA2').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+    });
+    function seekA2(e) { const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); document.getElementById('audioA2').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA2').duration; }
+  </script>
+
+</body>
+</html>
