@@ -234,7 +234,9 @@
 
     <div class="fade-section" style="margin: 1.5rem 0;">
       <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">Sente a magia</p>
-      <div class="audio-player-home">
+      <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem;">
+        <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">Sente a magia</p>
+        <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
         <button class="play-btn-home" id="playBtnHome" onclick="toggleAudioHome()" style="flex-shrink:0;">
           <div class="play-icon-home" id="playIconHome"></div>
           <div class="pause-icon-home" id="pauseIconHome"><span></span><span></span></div>
@@ -246,6 +248,7 @@
           <p class="audio-time-home" id="audioTimeHome">0:00</p>
         </div>
       </div>
+        </div>
       <audio id="audioPlayerHome" src="magicas.mp3" preload="metadata"></audio>
       <div style="width:100%; height:2px; background:#c9a86c; opacity:0.7; margin-top:1.5rem; border-radius:1px;"></div>
     </div>
