@@ -14,25 +14,30 @@
     gtag('js', new Date());
     gtag('config', 'G-5CX792T8H9');
 
-    function toggleA1() {
-      const a = document.getElementById('audioA1');
-      if (a.paused) { a.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
-      else { a.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
-    }
-    document.getElementById('audioA1').addEventListener('timeupdate', function() {
-      if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
-    });
-    function seekA1(e) { const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); document.getElementById('audioA1').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA1').duration; }
+    document.addEventListener('DOMContentLoaded', function() {
+      const a1 = document.getElementById('audioA1');
+      const a2 = document.getElementById('audioA2');
 
-    function toggleA2() {
-      const a = document.getElementById('audioA2');
-      if (a.paused) { a.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
-      else { a.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
-    }
-    document.getElementById('audioA2').addEventListener('timeupdate', function() {
-      if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+      window.toggleA1 = function() {
+        if (!a1) return;
+        if (a1.paused) { a1.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
+        else { a1.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
+      }
+      if (a1) a1.addEventListener('timeupdate', function() {
+        if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
+      });
+      window.seekA1 = function(e) { if (!a1) return; const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); a1.currentTime=((e.clientX-r.left)/r.width)*a1.duration; }
+
+      window.toggleA2 = function() {
+        if (!a2) return;
+        if (a2.paused) { a2.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
+        else { a2.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
+      }
+      if (a2) a2.addEventListener('timeupdate', function() {
+        if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+      });
+      window.seekA2 = function(e) { if (!a2) return; const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); a2.currentTime=((e.clientX-r.left)/r.width)*a2.duration; }
     });
-    function seekA2(e) { const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); document.getElementById('audioA2').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA2').duration; }
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -176,25 +181,30 @@
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 
-    function toggleA1() {
-      const a = document.getElementById('audioA1');
-      if (a.paused) { a.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
-      else { a.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
-    }
-    document.getElementById('audioA1').addEventListener('timeupdate', function() {
-      if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
-    });
-    function seekA1(e) { const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); document.getElementById('audioA1').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA1').duration; }
+    document.addEventListener('DOMContentLoaded', function() {
+      const a1 = document.getElementById('audioA1');
+      const a2 = document.getElementById('audioA2');
 
-    function toggleA2() {
-      const a = document.getElementById('audioA2');
-      if (a.paused) { a.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
-      else { a.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
-    }
-    document.getElementById('audioA2').addEventListener('timeupdate', function() {
-      if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+      window.toggleA1 = function() {
+        if (!a1) return;
+        if (a1.paused) { a1.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
+        else { a1.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
+      }
+      if (a1) a1.addEventListener('timeupdate', function() {
+        if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
+      });
+      window.seekA1 = function(e) { if (!a1) return; const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); a1.currentTime=((e.clientX-r.left)/r.width)*a1.duration; }
+
+      window.toggleA2 = function() {
+        if (!a2) return;
+        if (a2.paused) { a2.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
+        else { a2.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
+      }
+      if (a2) a2.addEventListener('timeupdate', function() {
+        if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+      });
+      window.seekA2 = function(e) { if (!a2) return; const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); a2.currentTime=((e.clientX-r.left)/r.width)*a2.duration; }
     });
-    function seekA2(e) { const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); document.getElementById('audioA2').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA2').duration; }
   </script>
 
 </body>
