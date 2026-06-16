@@ -132,12 +132,12 @@
       .page { padding: 5rem 1.25rem 3rem; }
     }
 
-    .audio-player-home { background: rgba(201,168,108,0.08); border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1rem; margin: 1rem 0; }
-    .play-btn-home { width: 44px; height: 44px; border-radius: 50%; background: #7a2535; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+    .audio-player-home { background: rgba(201,168,108,0.06); border: 1px solid rgba(201,168,108,0.3); border-radius: 8px; padding: 0.65rem 0.9rem; display: flex; align-items: center; gap: 0.6rem; margin: 1rem 0; }
+    .play-btn-home { width: 28px; height: 28px; border-radius: 50%; background: #7a2535; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
     .play-btn-home:hover { background: #5c1c28; }
-    .play-icon-home { width: 0; height: 0; border-style: solid; border-width: 7px 0 7px 13px; border-color: transparent transparent transparent #f7f3ee; margin-left: 3px; }
+    .play-icon-home { width: 0; height: 0; border-style: solid; border-width: 4px 0 4px 8px; border-color: transparent transparent transparent #f7f3ee; margin-left: 2px; }
     .pause-icon-home { display: none; gap: 3px; }
-    .pause-icon-home span { width: 4px; height: 14px; background: #f7f3ee; border-radius: 2px; }
+    .pause-icon-home span { width: 3px; height: 10px; background: #f7f3ee; border-radius: 2px; }
     .audio-info-home { flex: 1; }
     .audio-progress-home { width: 100%; height: 3px; background: rgba(201,168,108,0.3); border-radius: 3px; cursor: pointer; position: relative; }
     .audio-progress-bar-home { height: 100%; background: #c9a86c; border-radius: 3px; width: 0%; transition: width 0.1s linear; }
@@ -153,7 +153,7 @@
       <a href="sobre.html">Sobre mim</a>
       <a href="formula_original.html">Leitura de Alma</a>
       <a href="consultoria.html">O teu Negócio de Alma</a>
-      <a href="mentoria.html">Mentoria de Alinhamento</a>
+      <a href="mentoria.html">🔒 Mentoria de Alinhamento</a>
       <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos (em breve)</span>
       <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos 💌</a>
     </div>
@@ -167,7 +167,7 @@
     <a href="sobre.html">Sobre mim</a>
     <a href="formula_original.html">Leitura de Alma</a>
     <a href="consultoria.html">O teu Negócio de Alma</a>
-    <a href="mentoria.html">Mentoria de Alinhamento</a>
+    <a href="mentoria.html">🔒 Mentoria de Alinhamento</a>
     <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos (em breve)</span>
     <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos 💌</a>
   </div>
@@ -233,12 +233,13 @@
     </div>
 
     <div class="fade-section" style="margin: 1.5rem 0;">
+      <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">Sente a magia</p>
       <div class="audio-player-home">
         <button class="play-btn-home" id="playBtnHome" onclick="toggleAudioHome()" style="flex-shrink:0;">
           <div class="play-icon-home" id="playIconHome"></div>
           <div class="pause-icon-home" id="pauseIconHome"><span></span><span></span></div>
         </button>
-        <div class="audio-info-home">
+        <div class="audio-info-home" style="display:flex; flex-direction:column; justify-content:center;">
           <div class="audio-progress-home" id="progressBarHome" onclick="seekAudioHome(event)">
             <div class="audio-progress-bar-home" id="progressFillHome"></div>
           </div>
