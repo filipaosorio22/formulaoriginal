@@ -682,6 +682,45 @@
       position: relative;
       z-index: 1;
     }
+
+    .foto-alquimica {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .foto-alquimica img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      border-radius: 12px;
+      filter: sepia(30%) contrast(1.1) brightness(0.95) saturate(1.2);
+    }
+    .foto-alquimica::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(122,37,53,0.25) 100%);
+      z-index: 1;
+      border-radius: 12px;
+      pointer-events: none;
+    }
+    .foto-alquimica::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(135deg, rgba(201,168,108,0.15) 0%, transparent 50%, rgba(122,37,53,0.1) 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+      z-index: 2;
+      border-radius: 12px;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
   </style>
 </head>
 <body>
@@ -886,13 +925,12 @@
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div style="text-align:center; margin-bottom:2rem;">
-      <img src="foto.png" alt="Filipa Osório" style="width:100%; max-width:480px; height:340px; object-fit:cover; object-position:center 20%; border-radius:12px; display:inline-block; opacity:0.75;">
+      <div class="foto-alquimica"><img src="foto.png" alt="Filipa Osório"></div>
     </div>
 
     <div class="aside centered">
-      <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.75rem;">Se é esta a leitura que procuravas</p>
-      <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#c9a86c; margin-bottom:0.75rem;">Descobre se uma das 3 vagas de junho é para ti 💃🏻</p>
-      <a class="cta-link" href="https://ig.me/m/filipaosorio" target="_blank">Vamos conversar 💌</a>
+      <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.4rem;">Se é esta a leitura que procuravas</p>
+      <a class="cta-link" href="https://ig.me/m/filipaosorio" target="_blank">Descobre se uma das vagas de junho é tua 💃🏻</a>
     </div>
 
     <div class="aside centered" style="margin-top: 1rem;">
@@ -906,7 +944,7 @@
     <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
     <p class="popup-eyebrow">✦ Apenas 3 vagas para junho</p>
     <p class="popup-title">Será esta a leitura que procuravas?</p>
-    <a class="popup-btn" href="https://ig.me/m/filipaosorio" target="_blank">Vamos descobrir juntas. 💌</a>
+    <a class="popup-btn" href="https://ig.me/m/filipaosorio" target="_blank">Vamos descobrir juntas 💌</a>
   </div>
   <script>
 
