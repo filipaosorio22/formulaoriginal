@@ -14,7 +14,42 @@
     gtag('js', new Date());
     gtag('config', 'G-5CX792T8H9');
 
-      </script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const audioHome = document.getElementById('audioPlayerHome');
+      const playIconHome = document.getElementById('playIconHome');
+      const pauseIconHome = document.getElementById('pauseIconHome');
+      const progressFillHome = document.getElementById('progressFillHome');
+      const audioTimeHome = document.getElementById('audioTimeHome');
+
+      window.toggleAudioHome = function() {
+        if (audioHome.paused) {
+          audioHome.play();
+          playIconHome.style.display = 'none';
+          pauseIconHome.style.display = 'flex';
+        } else {
+          audioHome.pause();
+          playIconHome.style.display = 'block';
+          pauseIconHome.style.display = 'none';
+        }
+      }
+
+      audioHome.addEventListener('timeupdate', () => {
+        if (audioHome.duration) {
+          progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
+          const m = Math.floor(audioHome.currentTime / 60);
+          const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
+          audioTimeHome.textContent = m + ':' + s;
+        }
+      });
+
+      window.seekAudioHome = function(e) {
+        const bar = document.getElementById('progressBarHome');
+        const rect = bar.getBoundingClientRect();
+        audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
+      }
+    });
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
@@ -245,40 +280,42 @@
     }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
     sections.forEach(s => observer.observe(s));
 
-    const audioHome = document.getElementById('audioPlayerHome');
-    const playBtnHome = document.getElementById('playBtnHome');
-    const playIconHome = document.getElementById('playIconHome');
-    const pauseIconHome = document.getElementById('pauseIconHome');
-    const progressFillHome = document.getElementById('progressFillHome');
-    const audioTimeHome = document.getElementById('audioTimeHome');
 
-    function toggleAudioHome() {
-      if (audioHome.paused) {
-        audioHome.play();
-        playIconHome.style.display = 'none';
-        pauseIconHome.style.display = 'flex';
-      } else {
-        audioHome.pause();
-        playIconHome.style.display = 'block';
-        pauseIconHome.style.display = 'none';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const audioHome = document.getElementById('audioPlayerHome');
+      const playIconHome = document.getElementById('playIconHome');
+      const pauseIconHome = document.getElementById('pauseIconHome');
+      const progressFillHome = document.getElementById('progressFillHome');
+      const audioTimeHome = document.getElementById('audioTimeHome');
+
+      window.toggleAudioHome = function() {
+        if (audioHome.paused) {
+          audioHome.play();
+          playIconHome.style.display = 'none';
+          pauseIconHome.style.display = 'flex';
+        } else {
+          audioHome.pause();
+          playIconHome.style.display = 'block';
+          pauseIconHome.style.display = 'none';
+        }
       }
-    }
 
-    audioHome.addEventListener('timeupdate', () => {
-      if (audioHome.duration) {
-        progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
-        const m = Math.floor(audioHome.currentTime / 60);
-        const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
-        audioTimeHome.textContent = m + ':' + s;
+      audioHome.addEventListener('timeupdate', () => {
+        if (audioHome.duration) {
+          progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
+          const m = Math.floor(audioHome.currentTime / 60);
+          const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
+          audioTimeHome.textContent = m + ':' + s;
+        }
+      });
+
+      window.seekAudioHome = function(e) {
+        const bar = document.getElementById('progressBarHome');
+        const rect = bar.getBoundingClientRect();
+        audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
       }
     });
-
-    function seekAudioHome(e) {
-      const bar = document.getElementById('progressBarHome');
-      const rect = bar.getBoundingClientRect();
-      audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
-    }
-
   </script>
 
 </body>
