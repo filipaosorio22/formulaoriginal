@@ -13,6 +13,26 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-5CX792T8H9');
+
+    function toggleA1() {
+      const a = document.getElementById('audioA1');
+      if (a.paused) { a.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
+    }
+    document.getElementById('audioA1').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
+    });
+    function seekA1(e) { const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); document.getElementById('audioA1').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA1').duration; }
+
+    function toggleA2() {
+      const a = document.getElementById('audioA2');
+      if (a.paused) { a.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
+    }
+    document.getElementById('audioA2').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+    });
+    function seekA2(e) { const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); document.getElementById('audioA2').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA2').duration; }
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -92,26 +112,47 @@
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
+    <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem; text-align:left;">
+
+      <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
+        <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">O ouro das crenças</p>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <button onclick="toggleA1()" id="btnA1" style="width:44px; height:44px; border-radius:50%; background:#7a2535; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <div id="playA1" style="width:0; height:0; border-style:solid; border-width:7px 0 7px 13px; border-color:transparent transparent transparent #f7f3ee; margin-left:3px;"></div>
+            <div id="pauseA1" style="display:none; gap:3px;"><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span></div>
+          </button>
+          <div style="flex:1;">
+            <div id="progA1" onclick="seekA1(event)" style="width:100%; height:3px; background:rgba(201,168,108,0.3); border-radius:3px; cursor:pointer;">
+              <div id="fillA1" style="height:100%; background:#c9a86c; border-radius:3px; width:0%;"></div>
+            </div>
+            <p id="timeA1" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-top:0.25rem;">0:00</p>
+          </div>
+        </div>
+        <audio id="audioA1" src="feedbackcristianacrenças.mp3" preload="metadata"></audio>
+      </div>
+
+      <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
+        <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">Ao teu próprio ritmo</p>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <button onclick="toggleA2()" id="btnA2" style="width:44px; height:44px; border-radius:50%; background:#7a2535; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <div id="playA2" style="width:0; height:0; border-style:solid; border-width:7px 0 7px 13px; border-color:transparent transparent transparent #f7f3ee; margin-left:3px;"></div>
+            <div id="pauseA2" style="display:none; gap:3px;"><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span><span style="width:4px; height:14px; background:#f7f3ee; border-radius:2px; display:block;"></span></div>
+          </button>
+          <div style="flex:1;">
+            <div id="progA2" onclick="seekA2(event)" style="width:100%; height:3px; background:rgba(201,168,108,0.3); border-radius:3px; cursor:pointer;">
+              <div id="fillA2" style="height:100%; background:#c9a86c; border-radius:3px; width:0%;"></div>
+            </div>
+            <p id="timeA2" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-top:0.25rem;">0:00</p>
+          </div>
+        </div>
+        <audio id="audioA2" src="feedbackcristianatempo.mp3" preload="metadata"></audio>
+      </div>
+
+    </div>
+
     <a href="https://ig.me/m/filipaosorio" target="_blank" class="cta-btn" style="margin-bottom:1rem; display:inline-block; background:transparent; color:#7a2535; border:0.5px solid #7a2535;">Abertura de vagas em breve</a>
 
     <p class="sub-text" style="margin-top:0.75rem; font-style:italic;">Envia-me mensagem com a palavra "MENTORIA"<br>se quiseres ser a primeira a saber das novidades 💌</p>
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-    <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
-      <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
-        <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">O ouro das crenças</p>
-        <audio controls style="width:100%; accent-color:#7a2535;">
-          <source src="feedbackcristianacrenças.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-      <div style="background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px; padding:0.6rem 1rem;">
-        <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">Ao teu próprio ritmo</p>
-        <audio controls style="width:100%; accent-color:#7a2535;">
-          <source src="feedbackcristianatempo.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
@@ -127,6 +168,26 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+    function toggleA1() {
+      const a = document.getElementById('audioA1');
+      if (a.paused) { a.play(); document.getElementById('playA1').style.display='none'; document.getElementById('pauseA1').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA1').style.display='block'; document.getElementById('pauseA1').style.display='none'; }
+    }
+    document.getElementById('audioA1').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA1').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA1').textContent=m+':'+s; }
+    });
+    function seekA1(e) { const b=document.getElementById('progA1'); const r=b.getBoundingClientRect(); document.getElementById('audioA1').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA1').duration; }
+
+    function toggleA2() {
+      const a = document.getElementById('audioA2');
+      if (a.paused) { a.play(); document.getElementById('playA2').style.display='none'; document.getElementById('pauseA2').style.display='flex'; }
+      else { a.pause(); document.getElementById('playA2').style.display='block'; document.getElementById('pauseA2').style.display='none'; }
+    }
+    document.getElementById('audioA2').addEventListener('timeupdate', function() {
+      if (this.duration) { document.getElementById('fillA2').style.width=(this.currentTime/this.duration*100)+'%'; const m=Math.floor(this.currentTime/60); const s=Math.floor(this.currentTime%60).toString().padStart(2,'0'); document.getElementById('timeA2').textContent=m+':'+s; }
+    });
+    function seekA2(e) { const b=document.getElementById('progA2'); const r=b.getBoundingClientRect(); document.getElementById('audioA2').currentTime=((e.clientX-r.left)/r.width)*document.getElementById('audioA2').duration; }
   </script>
 
 </body>
