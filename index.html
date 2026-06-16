@@ -15,40 +15,6 @@
     gtag('config', 'G-5CX792T8H9');
 
     
-    document.addEventListener('DOMContentLoaded', function() {
-      const audioHome = document.getElementById('audioPlayerHome');
-      const playIconHome = document.getElementById('playIconHome');
-      const pauseIconHome = document.getElementById('pauseIconHome');
-      const progressFillHome = document.getElementById('progressFillHome');
-      const audioTimeHome = document.getElementById('audioTimeHome');
-
-      window.toggleAudioHome = function() {
-        if (audioHome.paused) {
-          audioHome.play();
-          playIconHome.style.display = 'none';
-          pauseIconHome.style.display = 'flex';
-        } else {
-          audioHome.pause();
-          playIconHome.style.display = 'block';
-          pauseIconHome.style.display = 'none';
-        }
-      }
-
-      audioHome.addEventListener('timeupdate', () => {
-        if (audioHome.duration) {
-          progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
-          const m = Math.floor(audioHome.currentTime / 60);
-          const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
-          audioTimeHome.textContent = m + ':' + s;
-        }
-      });
-
-      window.seekAudioHome = function(e) {
-        const bar = document.getElementById('progressBarHome');
-        const rect = bar.getBoundingClientRect();
-        audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
-      }
-    });
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -234,7 +200,7 @@
 
     <div class="fade-section" style="margin: 1.5rem 0;">
       <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem;">
-        <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">Sente a magia</p>
+        <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">Eu sinto que é mesmo mágico...</p>
         <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
         <button class="play-btn-home" id="playBtnHome" onclick="toggleAudioHome()" style="flex-shrink:0;">
           <div class="play-icon-home" id="playIconHome"></div>
@@ -285,6 +251,9 @@
 
 
 
+  </script>
+
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       const audioHome = document.getElementById('audioPlayerHome');
       const playIconHome = document.getElementById('playIconHome');
@@ -320,6 +289,5 @@
       }
     });
   </script>
-
 </body>
 </html>
