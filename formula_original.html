@@ -710,13 +710,41 @@
       pointer-events: none;
     }
     .foto-alquimica::after { display: none; }
+
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      #hamburger { display: flex !important; }
+    }
   </style>
 </head>
 <body>
-  <header class="sticky-header" id="stickyHeader">
-    <span class="sticky-name">Leitura de Alma · Filipa Osório</span>
-    <a class="sticky-btn" href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
-  </header>
+  <nav id="stickyHeader" class="sticky-header" style="opacity:1; transform:none;">
+    <a href="index.html" style="font-family:'Spectral',serif; font-size:17px; font-weight:300; font-style:italic; color:#1a1410; text-decoration:none; flex-shrink:0;">Filipa Osório</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Início</a>
+      <a href="sobre.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Sobre mim</a>
+      <a href="formula_original.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#7a2535; text-decoration:none;">Leitura de Alma</a>
+      <a href="mentoria.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Mentoria de Alinhamento</a>
+      <a href="consultoria.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">O teu Negócio de Alma</a>
+      <a href="eventos.html" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none; opacity:0.5;">Eventos (em breve)</a>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="sticky-btn">Conversamos? 💌</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')" style="display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none;">
+      <span style="width:22px; height:1px; background:#1a1410; display:block;"></span>
+      <span style="width:22px; height:1px; background:#1a1410; display:block;"></span>
+      <span style="width:22px; height:1px; background:#1a1410; display:block;"></span>
+    </button>
+  </nav>
+  <div id="mobileMenu" style="display:none; position:fixed; top:56px; left:0; right:0; background:#faf6ef; border-bottom:0.5px solid rgba(201,168,108,0.3); padding:1.5rem 2rem; z-index:99; flex-direction:column; gap:1.25rem;">
+    <a href="index.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Início</a>
+    <a href="sobre.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Sobre mim</a>
+    <a href="formula_original.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#7a2535; text-decoration:none;">Leitura de Alma</a>
+    <a href="mentoria.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">Mentoria de Alinhamento</a>
+    <a href="consultoria.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none;">O teu Negócio de Alma</a>
+    <a href="eventos.html" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; text-decoration:none; opacity:0.5;">Eventos (em breve)</a>
+    <a href="https://ig.me/m/filipaosorio" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#7a2535; text-decoration:none;">Conversamos 💌</a>
+  </div>
   <main class="page" lang="pt">
 
     <div class="hero">
@@ -768,7 +796,7 @@
     <p class="body-text">Só precisas de trazer um tema que seja importante para ti neste momento. O resto revelamo-lo em conjunto. Porque aquilo que procuras compreender fora está só à espera de ser reconhecido dentro de ti.</p>
 
     <div class="aside">
-      <p>🪄 Vem com abertura para te conheceres a um outro nível e disponibilidade para começares a integrar uma nova identidade porque a transformação começa logo no instante em que te permites ver aquilo que antes estava invisível.</p>
+      <p>🪄 Vem com abertura para te conheceres a um outro nível e disponibilidade para começares a integrar uma nova identidade porque a transformação começa no instante em que te permites ver aquilo que antes estava invisível.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
@@ -807,33 +835,47 @@
       <div class="step">
         <span class="step-num">01</span>
         <div>
-          <p class="step-title">Entras em contacto</p>
-          <p class="step-text">Conversamos brevemente para eu conhecer o teu momento de vida atual</p>
+          <p class="step-title">Sentes se é para ti</p>
+          <p class="step-text">Podes enviar mensagem se tiveres alguma questão.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">02</span>
         <div>
           <p class="step-title">Escolhes o teu tema</p>
-          <p class="step-text">O tema da tua vida sobre o qual desejas receber clareza e orientações</p>
+          <p class="step-text">O tema mais presente sobre o qual desejas receber clareza e orientações.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">03</span>
         <div>
-          <p class="step-title">Faço a tua leitura</p>
-          <p class="step-text">Leio o teu campo energético e os teus mapas à luz do tema escolhido</p>
+          <p class="step-title">Marcas a tua sessão</p>
+          <p class="step-text">Através do <a href="https://calendly.com/filipaosorio/alinhamento" target="_blank" style="color:#7a2535; text-decoration:underline;">link presente aqui abaixo na página</a>.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">04</span>
         <div>
           <p class="step-title">Escolhes como receber</p>
-          <p class="step-text">Decides o formato que ressoa mais contigo neste momento</p>
+          <p class="step-text">Decides o formato que ressoa mais contigo neste momento.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">05</span>
+        <div>
+          <p class="step-title">Faço a tua leitura</p>
+          <p class="step-text">Leio o teu campo energético e os teus mapas à luz do tema escolhido.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">06</span>
+        <div>
+          <p class="step-title">Recebes a tua leitura</p>
+          <p class="step-text">E a tua sessão de ThetaHealing®, se escolheres essa opção.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">07</span>
         <div>
           <p class="step-title">O regresso a ti começa</p>
           <p class="step-text">Começas a viver com mais consciência, ação e confiança 💃🏻</p>
@@ -846,20 +888,25 @@
     <div class="fade-section">
     <h2>Formatos disponíveis</h2>
 
-    <div style="border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; overflow: hidden;">
-      <div style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem;">
+    <div style="border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; padding: 1.25rem 1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
         <div>
           <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio</p>
           <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Faço a tua leitura e envio-a em áudio. Ouves no teu tempo, quantas vezes quiseres.</p>
         </div>
-        <p style="font-family:'Spectral',serif; font-size:28px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€147</p>
+        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€147</p>
       </div>
-      <div style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border-top: 0.5px solid rgba(201,168,108,0.25);">
+      <div style="display:flex; align-items:center; gap:0.75rem; margin:0.75rem 0;">
+        <div style="flex:1; height:0.5px; background:rgba(201,168,108,0.4);"></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#c9a86c;">ou</span>
+        <div style="flex:1; height:0.5px; background:rgba(201,168,108,0.4);"></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
         <div>
-          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio + ThetaHealing®</p>
+          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio <strong style="font-weight:400; color:#7a2535;">+ ThetaHealing®</strong></p>
           <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Leitura em áudio enviada antes do nosso encontro + 30 minutos de ThetaHealing®<br>ao vivo sobre as crenças principais que emergiram na leitura.</p>
         </div>
-        <p style="font-family:'Spectral',serif; font-size:28px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€197</p>
+        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€197</p>
       </div>
     </div>
     <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#b0a090; font-style:italic; margin-top:0.75rem; text-align:center;">Poderás adicionar a tua sessão de ThetaHealing® posteriormente pelo valor de €65.</p>
@@ -872,7 +919,7 @@
       </div>
       <h2>O que dizem as minhas clientes</h2>
 
-      <div class="audio-player" style="flex-direction:column; align-items:flex-start; padding:1rem 1.25rem; background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px;">
+      <div class="audio-player" style="flex-direction:column; align-items:flex-start; padding:0.6rem 1rem; background:rgba(201,168,108,0.08); border:0.5px solid rgba(201,168,108,0.4); border-radius:12px;">
         <p style="font-family:'Spectral',serif; font-size:14px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem; width:100%;">Sente a energia</p>
         <div style="display:flex; align-items:center; gap:1rem; width:100%;">
         <button class="play-btn" id="playBtn" onclick="toggleAudio()">
@@ -926,7 +973,7 @@
 
     <div class="aside centered">
       <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.4rem;">Se esta é a leitura que procuravas</p>
-      <a class="cta-link" href="https://calendly.com/filipaosorio/alinhamento" target="_blank" style="background:#c0392b; font-size:13px; letter-spacing:0.08em; color:#f7f3ee;">Descobre se uma das vagas de julho é tua 💃🏻</a>
+      <a class="cta-link" href="https://calendly.com/filipaosorio/alinhamento" target="_blank" style="background:#7a2535; font-size:13px; letter-spacing:0.08em; color:#f7f3ee;">Descobre se uma das vagas de julho é tua 💃🏻</a>
     </div>
 
     <div class="aside centered" style="margin-top: 1rem;">
