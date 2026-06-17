@@ -115,8 +115,43 @@
 
     <div style="text-align:center; margin-top:3rem;">
       <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#6b5040; line-height:1.6; margin-bottom:1rem;">Neste momento estou a iniciar a jornada mágica da<br>Travessia de Verão com as minhas clientes de sempre!</p>
-      <a href="https://ig.me/m/filipaosorio" target="_blank" class="cta-btn" style="margin-bottom:0.75rem; display:inline-block; background:#7a2535; color:#f7f3ee;">Abertura de novas vagas em breve</a>
-      <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; font-style:italic; color:#9a7e52; line-height:1.6; margin-top:0.5rem;">Envia-me mensagem com a palavra "MENTORIA"<br>se quiseres ser a primeira a saber das novidades 💌</p>
+      <a href="#" onclick="event.preventDefault(); document.getElementById('waitlistForm').style.display='block'; this.style.display='none';" class="cta-btn" style="margin-bottom:0.75rem; display:inline-block; background:#7a2535; color:#f7f3ee;">Abertura de novas vagas em breve</a>
+
+      <div id="waitlistForm" style="display:none; text-align:left; max-width:380px; margin:0 auto;">
+        <p style="font-family:'Spectral',serif; font-size:17px; font-weight:300; font-style:italic; color:#7a2535; line-height:1.5; margin-bottom:1.25rem; text-align:center;">Este é um processo de alinhamento antes da entrada na mentoria</p>
+
+        <form action="https://formspree.io/f/xwvjjkeg" method="POST">
+          <input type="hidden" name="_subject" value="Lista de espera - Mentoria de Alinhamento">
+
+          <label style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">O teu nome e apelido</label>
+          <input type="text" name="nome" required style="width:100%; padding:11px 14px; margin-bottom:1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:14px; color:#1a1410; outline:none;">
+
+          <label style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">O teu WhatsApp</label>
+          <input type="tel" name="whatsapp" required style="width:100%; padding:11px 14px; margin-bottom:1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:14px; color:#1a1410; outline:none;">
+
+          <label style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">Já trabalhaste comigo antes?</label>
+          <select name="trabalhou_antes" required style="width:100%; padding:11px 14px; margin-bottom:1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:14px; color:#1a1410; outline:none;">
+            <option value="" disabled selected>Escolhe uma opção</option>
+            <option value="Já sim">Já sim</option>
+            <option value="Ainda não">Ainda não</option>
+          </select>
+
+          <label style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">Que fase da tua vida estás a atravessar neste momento?</label>
+          <textarea name="fase_vida" required rows="3" style="width:100%; padding:11px 14px; margin-bottom:1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:14px; color:#1a1410; outline:none; resize:none;"></textarea>
+
+          <label style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">O que nesta fase da tua vida está a pedir transformação?</label>
+          <textarea name="pedido_transformacao" required rows="3" style="width:100%; padding:11px 14px; margin-bottom:1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:14px; color:#1a1410; outline:none; resize:none;"></textarea>
+
+          <label style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">Estás disponível para um processo de acompanhamento profundo neste momento?</label>
+          <select name="disponibilidade" required style="width:100%; padding:11px 14px; margin-bottom:1.25rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:14px; color:#1a1410; outline:none;">
+            <option value="" disabled selected>Escolhe uma opção</option>
+            <option value="Sim, estou">Sim, estou</option>
+            <option value="Ainda estou a sentir isso">Ainda estou a sentir isso</option>
+          </select>
+
+          <button type="submit" style="width:100%; padding:13px; border:none; border-radius:30px; background:#7a2535; color:#f7f3ee; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer;">Enviar</button>
+        </form>
+      </div>
     </div>
 
 
