@@ -24,6 +24,63 @@
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: center; gap: 2rem; }
+
+    .summer-popup {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: #e8d9b8;
+      border-bottom: 0.5px solid #c9a86c;
+      box-shadow: 0 4px 16px rgba(26,20,16,0.06);
+      padding: 12px 1.5rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+    }
+    .summer-popup.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .summer-popup a {
+      font-family: 'Spectral', serif;
+      font-size: 17px;
+      font-style: italic;
+      color: #7a2535;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .summer-popup a span.cta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-style: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9a7e52;
+      text-decoration: underline;
+      margin-left: 6px;
+    }
+    .summer-popup-close {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 15px;
+      color: #9a7e52;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+    @media (max-width: 600px) {
+      .summer-popup a { font-size: 12px; white-space: normal; }
+    }
+
     .nav-logo { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #1a1410; text-decoration: none; }
     .nav-links { display: flex; gap: 1.75rem; align-items: center; }
     .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
@@ -114,6 +171,11 @@
 </head>
 <body>
 
+  <div class="summer-popup" id="summerPopup">
+    <button class="summer-popup-close" onclick="document.getElementById('summerPopup').classList.remove('visible')">×</button>
+    <a href="mapa_essencial.html">A pausa do verão é um portal de manifestação e criação 🪄</a>
+  </div>
+
   <nav>
     
     <div class="nav-links">
@@ -140,15 +202,6 @@
     <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
   </div>
 
-  <div id="summerPopupOverlay" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.55); z-index:300; align-items:center; justify-content:center;">
-    <div style="max-width:340px; background:#faf6ef; border:1px solid #c9a86c; border-radius:16px; padding:2rem 1.75rem; text-align:center; position:relative;">
-      <button onclick="document.getElementById('summerPopupOverlay').style.display='none';" style="position:absolute; top:12px; right:14px; background:none; border:none; font-size:18px; color:#9a7e52; cursor:pointer;">×</button>
-      <p style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:0.75rem;">✦ Verão 2026 ✦</p>
-      <p style="font-family:'Spectral',serif; font-size:19px; font-weight:300; font-style:italic; color:#7a2535; line-height:1.5; margin-bottom:1.25rem;">A pausa do verão é um portal<br>de manifestação e criação 🪄</p>
-      <a href="mapa_essencial.html" style="display:inline-block; background:#7a2535; color:#f7f3ee; padding:10px 26px; border-radius:30px; font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none;">Descobre como</a>
-    </div>
-  </div>
-
   <main class="page">
 
     <div class="hero">
@@ -160,8 +213,8 @@
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-      <p class="body-text" style="text-align:justify;">Talvez estejas num daqueles momentos da vida que pede uma mudança. Ou talvez <em>simplesmente</em> sintas o desejo de te conheceres melhor e de cuidares mais de ti.</p>
-      <p class="body-text" style="text-align:justify;">Seja qual for o teu momento, há decisões a tomar. Caminhos a escolher. Velhos padrões a libertar. Partes de ti a pedir mais espaço. Sonhos que começam a chamar mais alto. Uma nova identidade tua a querer revelar-se.</p>
+      <p class="body-text" style="text-align:justify;">Talvez estejas num daqueles momentos da vida que pede uma mudança. Ou talvez <em>simplesmente</em> sintas o desejo de te conheceres melhor e de cuidares mais de ti. Seja qual for o teu momento, há decisões a tomar.</p>
+      <p class="body-text" style="text-align:justify;">Caminhos a escolher. Velhos padrões a libertar. Partes de ti a pedir mais espaço. Sonhos que começam a chamar mais alto. Uma nova identidade tua a querer revelar-se.</p>
       <p class="body-text" style="text-align:justify;">Tens a sensação subtil de que existe uma forma mais alinhada, mais leve, mais abundante e mais <em>tua</em> de viver a vida. A tua versão que vive essa realidade já existe. Está apenas à espera de ser reconhecida por ti. E é aí que tudo começa.</p>
       <p class="body-text" style="text-align:justify;">É uma mudança de frequência energética. E é essa porta que se abre quando entras neste Universo. Os diferentes portais que encontras aqui existem para honrar exatamente isso: <em>a tua fórmula única.</em></p>
       <p class="body-text" style="text-align:justify;">Quando conheces a tua energia, confias mais em ti. Quando te alinhas contigo, novas possibilidades se abrem. E com elas vem a vida que desejas, mais livre, abundante e prazerosa.</p>
@@ -305,10 +358,10 @@
     });
   </script>
   <script>
-    setTimeout(function() {
-      const popup = document.getElementById('summerPopupOverlay');
-      if (popup) popup.style.display = 'flex';
-    }, 2500);
+    setTimeout(() => {
+      const popup = document.getElementById('summerPopup');
+      if (popup) popup.classList.add('visible');
+    }, 2000);
   </script>
 </body>
 </html>
