@@ -116,31 +116,31 @@
     <div class="divider" style="margin:0.75rem 0;"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div style="text-align:center; margin-top:3rem;">
-      <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#6b5040; line-height:1.6; margin-bottom:1rem;">Neste momento estou a iniciar a jornada mágica da<br>Travessia de Verão com as minhas clientes de sempre!</p>
-      <a href="#" onclick="event.preventDefault(); document.getElementById('waitlistForm').style.display='block'; this.style.display='none';" class="cta-btn" style="margin-bottom:0.75rem; display:inline-block; background:#7a2535; color:#f7f3ee;">Abertura de novas vagas em breve</a>
+      <p id="journeyText" style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#6b5040; line-height:1.6; margin-bottom:1rem;">Neste momento estou a iniciar a jornada mágica da<br>Travessia de Verão com as minhas clientes de sempre!</p>
+      <a href="#" onclick="event.preventDefault(); document.getElementById('waitlistForm').style.display='block'; document.getElementById('journeyText').style.display='none'; this.style.display='none';" class="cta-btn" style="margin-bottom:0.75rem; display:inline-block; background:#7a2535; color:#f7f3ee;">Abertura de novas vagas em breve</a>
 
       <div id="waitlistForm" style="display:none; text-align:left; max-width:380px; margin:0 auto;">
         <div style="text-align:center; padding:1.25rem 1rem; margin-bottom:1.5rem; border-top:2px solid #c9a86c; border-bottom:2px solid #c9a86c;">
-          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">Este é o processo de alinhamento para a entrada na mentoria</p>
+          <p style="font-family:'Spectral',serif; font-size:15px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">Este é o processo de alinhamento para a entrada na mentoria</p>
         </div>
 
         <form action="https://formspree.io/f/xwvjjkeg" method="POST">
           <input type="hidden" name="_subject" value="Lista de espera - Mentoria de Alinhamento">
 
           <label style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">Nome e apelido</label>
-          <input type="text" name="nome" required style="width:100%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none;">
+          <input type="text" name="nome" required style="width:90%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none;">
 
           <label style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">O teu WhatsApp e @ do Instagram, se aplicável</label>
-          <input type="text" name="contacto" required style="width:100%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none;">
+          <input type="text" name="contacto" required style="width:90%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none;">
 
           <label style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.6rem;">Já trabalhaste comigo antes?</label>
           <div style="display:flex; gap:1.5rem; margin-bottom:1.1rem;">
-            <label style="display:flex; align-items:center; gap:8px; font-size:15px; color:#1a1410; cursor:pointer;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:#1a1410; cursor:pointer;">
               <input type="radio" name="trabalhou_antes" value="Já sim" required style="display:none;" onchange="this.parentElement.querySelector('.radio-dot').style.background='#7a2535'; this.parentElement.parentElement.querySelectorAll('.radio-dot').forEach(d=>{if(d!==this.parentElement.querySelector('.radio-dot'))d.style.background='transparent';})">
               <span class="radio-circle" style="width:18px; height:18px; border-radius:50%; border:1.5px solid #7a2535; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span class="radio-dot" style="width:9px; height:9px; border-radius:50%; background:transparent;"></span></span>
               Já sim
             </label>
-            <label style="display:flex; align-items:center; gap:8px; font-size:15px; color:#1a1410; cursor:pointer;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:#1a1410; cursor:pointer;">
               <input type="radio" name="trabalhou_antes" value="Ainda não" required style="display:none;" onchange="this.parentElement.querySelector('.radio-dot').style.background='#7a2535'; this.parentElement.parentElement.querySelectorAll('.radio-dot').forEach(d=>{if(d!==this.parentElement.querySelector('.radio-dot'))d.style.background='transparent';})">
               <span class="radio-circle" style="width:18px; height:18px; border-radius:50%; border:1.5px solid #c9a86c; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span class="radio-dot" style="width:9px; height:9px; border-radius:50%; background:transparent;"></span></span>
               Ainda não
@@ -148,19 +148,19 @@
           </div>
 
           <label style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">Que fase da tua vida estás a atravessar neste momento?</label>
-          <textarea name="fase_vida" required rows="3" style="width:100%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none; resize:none;"></textarea>
+          <textarea name="fase_vida" required rows="3" style="width:90%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none; resize:none;"></textarea>
 
           <label style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.4rem;">O que nesta fase da tua vida está a pedir transformação?</label>
-          <textarea name="pedido_transformacao" required rows="3" style="width:100%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none; resize:none;"></textarea>
+          <textarea name="pedido_transformacao" required rows="3" style="width:90%; padding:12px 14px; margin-bottom:1.1rem; border:0.5px solid rgba(201,168,108,0.5); border-radius:8px; background:rgba(201,168,108,0.06); font-family:'DM Sans',sans-serif; font-size:15px; color:#1a1410; outline:none; resize:none;"></textarea>
 
-          <label style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.6rem;">Estás disponível para um processo de acompanhamento profundo neste momento?</label>
+          <label style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; display:block; margin-bottom:0.6rem;">Estás disponível para um processo de transformação neste momento?</label>
           <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.4rem;">
-            <label style="display:flex; align-items:center; gap:8px; font-size:15px; color:#1a1410; cursor:pointer;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:#1a1410; cursor:pointer;">
               <input type="radio" name="disponibilidade" value="Sim, estou" required style="display:none;" onchange="this.parentElement.querySelector('.radio-dot').style.background='#7a2535'; this.parentElement.parentElement.querySelectorAll('.radio-dot').forEach(d=>{if(d!==this.parentElement.querySelector('.radio-dot'))d.style.background='transparent';})">
               <span class="radio-circle" style="width:18px; height:18px; border-radius:50%; border:1.5px solid #7a2535; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span class="radio-dot" style="width:9px; height:9px; border-radius:50%; background:transparent;"></span></span>
               Sim, estou
             </label>
-            <label style="display:flex; align-items:center; gap:8px; font-size:15px; color:#1a1410; cursor:pointer;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:#1a1410; cursor:pointer;">
               <input type="radio" name="disponibilidade" value="Ainda estou a sentir isso" required style="display:none;" onchange="this.parentElement.querySelector('.radio-dot').style.background='#7a2535'; this.parentElement.parentElement.querySelectorAll('.radio-dot').forEach(d=>{if(d!==this.parentElement.querySelector('.radio-dot'))d.style.background='transparent';})">
               <span class="radio-circle" style="width:18px; height:18px; border-radius:50%; border:1.5px solid #c9a86c; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span class="radio-dot" style="width:9px; height:9px; border-radius:50%; background:transparent;"></span></span>
               Ainda estou a sentir isso
