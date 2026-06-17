@@ -140,6 +140,15 @@
     <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
   </div>
 
+  <div id="summerPopupOverlay" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.55); z-index:300; align-items:center; justify-content:center;">
+    <div style="max-width:340px; background:#faf6ef; border:1px solid #c9a86c; border-radius:16px; padding:2rem 1.75rem; text-align:center; position:relative;">
+      <button onclick="document.getElementById('summerPopupOverlay').style.display='none';" style="position:absolute; top:12px; right:14px; background:none; border:none; font-size:18px; color:#9a7e52; cursor:pointer;">×</button>
+      <p style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:0.75rem;">✦ Verão 2026 ✦</p>
+      <p style="font-family:'Spectral',serif; font-size:19px; font-weight:300; font-style:italic; color:#7a2535; line-height:1.5; margin-bottom:1.25rem;">A pausa do Verão é um portal de manifestação em ação 🪄</p>
+      <a href="mapa_essencial.html" style="display:inline-block; background:#7a2535; color:#f7f3ee; padding:10px 26px; border-radius:30px; font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none;">Descobre</a>
+    </div>
+  </div>
+
   <main class="page">
 
     <div class="hero">
@@ -291,6 +300,12 @@
         audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
       }
     });
+  </script>
+  <script>
+    setTimeout(function() {
+      const popup = document.getElementById('summerPopupOverlay');
+      if (popup) popup.style.display = 'flex';
+    }, 2500);
   </script>
 </body>
 </html>
