@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigada · Filipa Osório</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23faf6ef%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2244%22 fill=%22%237a2535%22>FO</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; min-height: 100vh; }
+    .page { max-width: 620px; margin: 0 auto; padding: 5rem 2rem 4rem; text-align: center; }
+
+    h1 { font-family: 'Spectral', serif; font-size: 32px; font-weight: 300; font-style: italic; color: #1a1410; margin-bottom: 0.5rem; line-height: 1.3; }
+    .h1-sub { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #6b5040; margin-bottom: 1rem; line-height: 1.6; }
+    .body-text { font-size: 16px; line-height: 1.9; color: #1a1410; margin-bottom: 1rem; }
+
+    .divider { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 2rem 0; }
+    .divider-line { width: 100%; height: 0.5px; background: #c9a86c; opacity: 0.7; }
+    .divider-line-thin { width: 85%; height: 0.5px; background: #c9a86c; opacity: 0.35; }
+
+    /* Type selector */
+    .type-selector { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; text-align: left; }
+    .type-option { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 0.9rem 1.25rem; border: 0.5px solid rgba(201,168,108,0.4); border-radius: 10px; transition: border-color 0.2s, background 0.2s; }
+    .type-option:hover { background: rgba(201,168,108,0.05); }
+    .type-option.selected { border-color: #7a2535; background: rgba(122,37,53,0.03); }
+    .type-option input { display: none; }
+    .type-circle { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid #c9a86c; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color 0.2s; }
+    .type-option.selected .type-circle { border-color: #7a2535; }
+    .type-dot { width: 9px; height: 9px; border-radius: 50%; background: transparent; transition: background 0.2s; }
+    .type-option.selected .type-dot { background: #7a2535; }
+    .type-label { font-family: 'Spectral', serif; font-size: 17px; font-style: italic; color: #1a1410; }
+    .type-sub { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9a7e52; margin-top: 2px; }
+
+    /* Form */
+    .form-wrap { text-align: left; }
+    .form-section { margin-bottom: 1.5rem; }
+    .form-section-title { font-family: 'DM Sans', sans-serif; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; color: #9a7e52; margin-bottom: 1rem; display: block; }
+    .form-label { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; color: #9a7e52; display: block; margin-bottom: 0.4rem; margin-top: 0.9rem; }
+    .form-input { width: 100%; padding: 13px 15px; border: 0.5px solid rgba(201,168,108,0.5); border-radius: 8px; background: rgba(201,168,108,0.04); font-family: 'DM Sans', sans-serif; font-size: 16px; color: #1a1410; outline: none; transition: border-color 0.2s; }
+    .form-input:focus { border-color: #c9a86c; }
+    textarea.form-input { resize: vertical; min-height: 90px; }
+
+    /* Present section */
+    #presenteSection { display: none; background: rgba(201,168,108,0.06); border: 0.5px solid rgba(201,168,108,0.35); border-radius: 12px; padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
+    #presenteSection.visible { display: block; }
+
+    .cta-btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border-radius: 40px; padding: 14px 36px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; margin-top: 1.5rem; width: 100%; }
+    .cta-btn:hover { background: #5c1c28; }
+
+    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; }
+
+    @media (max-width: 600px) {
+      .page { padding: 3rem 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" lang="pt">
+
+    <p style="font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:1rem;">Pagamento confirmado</p>
+    <h1 style="margin-bottom:0.25rem;">🪄 O mapa está a caminho!</h1>
+    <p class="body-text" style="margin-top:0; text-align:center;">Agora avançamos para os dados para a criação do Mapa Essencial 🧪</p>
+
+    <div class="divider" style="margin: 1.25rem 0;"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <p class="body-text" style="text-align:left;">Preenche o formulário abaixo e enviarei o Mapa, em até 14 dias úteis.</p>
+    <p class="body-text" style="text-align:left; font-size:15px; color:#6b5040; line-height:1.85;">Se gostavas de receber o mapa mais cedo e não adicionaste a opção de entrega prioritária (+20€), entra em contacto comigo pelo WhatsApp: <a href="https://wa.me/351939479755" target="_blank" style="color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c;">+351 939 479 755</a>, para avaliarmos essa possibilidade.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <form action="https://formspree.io/f/xwvjjkeg" method="POST" class="form-wrap">
+      <input type="hidden" name="_subject" value="Novo Mapa Essencial — dados de nascimento">
+      <input type="hidden" name="_next" value="https://filipaosorio.com/confirmacao-mapa.html">
+
+      <div class="form-section">
+        <span class="form-section-title" style="color:#7a2535;">Que mapa adquiriste?</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:15px; color:#9a7e52; margin-bottom:1rem; text-transform:none; letter-spacing:normal;">Se adquiriste mais do que um mapa, vais poder adicionar os dados abaixo</p>
+        <div class="type-selector">
+
+          <label class="type-option" id="opt-pessoal" onclick="selectType('pessoal')">
+            <input type="radio" name="tipo_mapa" value="Mapa Essencial (para mim)" required>
+            <span class="type-circle"><span class="type-dot"></span></span>
+            <span>
+              <span class="type-label">Mapa Essencial</span>
+              <span class="type-sub">para mim</span>
+            </span>
+          </label>
+
+          <label class="type-option" id="opt-presente" onclick="selectType('presente')">
+            <input type="radio" name="tipo_mapa" value="Mapa de Presente (para oferecer)">
+            <span class="type-circle"><span class="type-dot"></span></span>
+            <span>
+              <span class="type-label">Mapa de Presente</span>
+              <span class="type-sub">para oferecer a alguém</span>
+            </span>
+          </label>
+
+          <label class="type-option" id="opt-infantil" onclick="selectType('infantil')">
+            <input type="radio" name="tipo_mapa" value="Mapa Infantil (criança até 14 anos)">
+            <span class="type-circle"><span class="type-dot"></span></span>
+            <span>
+              <span class="type-label">Mapa Infantil</span>
+              <span class="type-sub">do meu filho / da minha filha</span>
+            </span>
+          </label>
+
+          <label class="type-option" id="opt-infantilpresente" onclick="selectType('infantilpresente')">
+            <input type="radio" name="tipo_mapa" value="Mapa Infantil de Presente">
+            <span class="type-circle"><span class="type-dot"></span></span>
+            <span>
+              <span class="type-label">Mapa Infantil de Presente</span>
+              <span class="type-sub">para oferecer a uma criança / mãe / pai especial</span>
+            </span>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="form-section">
+        <span class="form-section-title" style="color:#7a2535;">Os teus dados de contacto</span>
+        <label class="form-label">O teu nome e apelido</label>
+        <input type="text" name="nome_contacto" class="form-input" required>
+        <label class="form-label">O teu email</label>
+        <input type="email" name="email_contacto" class="form-input" required>
+        <label class="form-label">O teu WhatsApp / telefone</label>
+        <input type="tel" name="telefone" class="form-input" required>
+      </div>
+
+      <div class="form-section">
+        <span class="form-section-title" style="color:#7a2535;">Dados de nascimento para o mapa</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:15px; color:#9a7e52; margin-bottom:1rem;">Se é um mapa de presente surpresa tenta perguntar-lhe subtilmente ☺️</p>
+
+        <div id="mapasContainer">
+          <!-- Mapa 1 inserido via JS -->
+        </div>
+
+        <button type="button" onclick="adicionarMapa()" style="font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#7a2535; background:transparent; border:0.5px solid #c9a86c; border-radius:30px; padding:8px 20px; cursor:pointer; margin-top:0.5rem;">+ Adicionar outro mapa</button>
+      </div>
+
+      <button type="submit" class="cta-btn">Enviar</button>
+    </form>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <p class="body-text" style="text-align:center; font-family:'Spectral',serif; font-style:italic; color:#6b5040; font-size:17px;">Receberás o(s) mapa(s) em até 14 dias úteis.</p>
+    <p class="body-text" style="text-align:center; font-family:'Spectral',serif; font-style:italic; color:#6b5040; font-size:17px;">Se tiveres qualquer dúvida, <a href="https://ig.me/m/filipaosorio" target="_blank" style="color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c;">estou por aqui</a> ❤️</p>
+
+    <p class="footer" style="margin-top:2rem;"><a href="https://filipaosorio.com" style="color:#9a7e52; text-decoration:none;">© 2026 Filipa Osório</a> · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.instagram.com/filipaosorio" target="_blank" style="color:#9a7e52; text-decoration:none;">Instagram</a></p>
+
+  </main>
+
+  <script>
+    let mapaCount = 0;
+
+    function mapaHTML(n) {
+      return `
+        <div class="mapa-entry" id="mapa-${n}" style="background:rgba(201,168,108,0.04); border:0.5px solid rgba(201,168,108,0.3); border-radius:10px; padding:1.25rem; margin-bottom:1rem; position:relative;">
+          ${n > 1 ? `<button type="button" onclick="removerMapa(${n})" style="position:absolute; top:0.75rem; right:0.75rem; background:none; border:none; font-size:16px; color:#9a7e52; cursor:pointer;">×</button>` : ''}
+          <label class="form-label" style="margin-top:0;">Nome e apelido</label>
+          <input type="text" name="nome_${n}" class="form-input" required>
+          <label class="form-label">Data de nascimento</label>
+          <input type="text" name="data_${n}" class="form-input" placeholder="dd/mm/aaaa" required>
+          <label class="form-label">Hora de nascimento</label>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-bottom:0.4rem; line-height:1.5;">É importante saberes a hora exata — podes consultar na <a href="https://justica.gov.pt/Cidadaos/Documentos-e-servicos/Nascimento" target="_blank" style="color:#7a2535; text-decoration:underline;">certidão de nascimento</a>.</p>
+          <input type="text" name="hora_${n}" class="form-input" placeholder="ex: 14h30 (8h de manhã, 20h, se for à noite)" required>
+          <label class="form-label">Local de nascimento</label>
+          <input type="text" name="local_${n}" class="form-input" placeholder="Cidade e país" required>
+          <label class="form-label">Queres partilhar algo?</label>
+          <textarea name="nota_${n}" class="form-input" placeholder="Sobre a tua fase de vida atual ✨"></textarea>
+        </div>`;
+    }
+
+    function adicionarMapa() {
+      mapaCount++;
+      document.getElementById('mapasContainer').insertAdjacentHTML('beforeend', mapaHTML(mapaCount));
+    }
+
+    function removerMapa(n) {
+      const el = document.getElementById('mapa-' + n);
+      if (el) el.remove();
+    }
+
+    function selectType(type) {
+      document.querySelectorAll('.type-option').forEach(el => el.classList.remove('selected'));
+      document.getElementById('opt-' + type).classList.add('selected');
+      document.getElementById('opt-' + type).querySelector('input').checked = true;
+    }
+
+    // Init first mapa on load
+    document.addEventListener('DOMContentLoaded', function() {
+      mapaCount = 1;
+      document.getElementById('mapasContainer').innerHTML = mapaHTML(1);
+    });
+  </script>
+</body>
+</html>
