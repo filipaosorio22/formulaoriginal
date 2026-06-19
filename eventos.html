@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos Presenciais · Filipa Osório</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23faf6ef%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2244%22 fill=%22%237a2535%22>FO</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #faf6ef;
+      color: #1a1410;
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 7rem 2rem 4rem;
+      text-align: center;
+    }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #7a2535; }
+    .nav-links a.active { color: #7a2535; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; text-decoration: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1px; background: #1a1410; display: block; }
+    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9a7e52;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Spectral', serif;
+      font-size: 32px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.3;
+      color: #1a1410;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .h1-sub {
+      font-family: 'Spectral', serif;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: #6b5040;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      margin: 2.5rem 0;
+    }
+
+    .divider-line {
+      width: 100%;
+      height: 0.5px;
+      background: #c9a86c;
+      opacity: 0.7;
+    }
+
+    .divider-line-thin {
+      width: 85%;
+      height: 0.5px;
+      background: #c9a86c;
+      opacity: 0.35;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #1a1410;
+      margin-bottom: 1.1rem;
+      text-align: left;
+    }
+
+    h2 {
+      font-family: 'Spectral', serif;
+      font-size: 24px;
+      font-weight: 300;
+      font-style: italic;
+      color: #7a2535;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .tagline {
+      font-family: 'Spectral', serif;
+      font-size: 22px;
+      font-weight: 400;
+      font-style: italic;
+      color: #7a2535;
+      margin-bottom: 1.5rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .aside {
+      background: rgba(201,168,108,0.07);
+      border-left: 1.5px solid #c9a86c;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .aside p {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: #1a1410;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+    }
+
+    .aside.centered {
+      text-align: center;
+      border-left: none;
+      border: 0.5px solid rgba(201,168,108,0.4);
+      border-radius: 8px;
+      background: rgba(201,168,108,0.05);
+    }
+
+    .aside.centered p {
+      color: #6b5040;
+      text-align: center;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 0.5px solid rgba(201,168,108,0.4);
+    }
+    .video-wrap iframe {
+      width: 100%;
+      aspect-ratio: 9/16;
+      display: block;
+      border: none;
+    }
+    .video-wrap.youtube iframe {
+      aspect-ratio: 16/9;
+    }
+    .video-caption {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      font-style: italic;
+      color: #9a7e52;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #f7f3ee;
+      background: #7a2535;
+      border-radius: 40px;
+      padding: 14px 36px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .cta-btn:hover { background: #5c1c28; }
+
+    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; }
+
+    /* Audio player */
+    .audio-box {
+      background: rgba(201,168,108,0.06);
+      border: 1px solid rgba(201,168,108,0.3);
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    /* Gift popup */
+    .gift-popup {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      max-width: 340px;
+      background: #f7f3ee;
+      border: 0.5px solid #c9a86c;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 24px rgba(26,20,16,0.1);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+    }
+    .gift-popup.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .gift-popup-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.75rem;
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #9a7e52;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+    .gift-popup-title {
+      font-family: 'Spectral', serif;
+      font-size: 15px;
+      font-weight: 300;
+      font-style: italic;
+      color: #7a2535;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .gift-popup-btn {
+      display: block;
+      width: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f7f3ee;
+      background: #7a2535;
+      border: none;
+      border-radius: 30px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .gift-popup-btn:hover { background: #5c1c28; }
+    @media (max-width: 600px) {
+      .gift-popup { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; }
+    }
+
+    /* Form */
+    .form-wrap { text-align: left; max-width: 380px; margin: 0 auto; }
+    .form-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #9a7e52;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .form-input {
+      width: 90%;
+      padding: 12px 14px;
+      margin-bottom: 1.1rem;
+      border: 0.5px solid rgba(201,168,108,0.5);
+      border-radius: 8px;
+      background: rgba(201,168,108,0.06);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: #1a1410;
+      outline: none;
+    }
+    .radio-row { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.4rem; }
+    .radio-label { display: flex; align-items: center; gap: 8px; font-size: 15px; color: #1a1410; cursor: pointer; }
+    .radio-circle { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid #c9a86c; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .radio-circle.active-border { border-color: #7a2535; }
+    .radio-dot { width: 9px; height: 9px; border-radius: 50%; background: transparent; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="formula_original.html">Leitura de Alma</a>
+      <a href="mentoria.html">🔒 Mentoria Alquimia</a>
+      <a href="consultoria.html">O teu Negócio de Alma</a>
+      <a href="eventos.html" class="active">Eventos presenciais</a>
+      <a href="artigos.html">Artigos</a>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="formula_original.html">Leitura de Alma</a>
+    <a href="mentoria.html">🔒 Mentoria Alquimia</a>
+    <a href="consultoria.html">O teu Negócio de Alma</a>
+    <a href="eventos.html">Eventos presenciais</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
+  </div>
+
+  <main class="page" lang="pt">
+
+    <h1>Eventos Presenciais <span style="color:#9a7e52;">•</span> <span style="color:#7a2535;">Innerdance</span></h1>
+    <p class="h1-sub">O melhor presente que podes dar a ti mesma</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <p class="tagline">E se o corpo soubesse curar-se a si mesmo, antes ainda de a mente entender como?</p>
+
+    <p class="body-text">O Innerdance é uma prática de movimento e respiração que convida o corpo a entrar em estados alterados de consciência — onde liberta tensões, emoções e padrões antigos que já não servem.</p>
+    <p class="body-text">Não precisas de saber dançar. Não precisas de entender o que vai acontecer. Precisas apenas de te permitires sentir, e deixar o corpo conduzir.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">A ciência por detrás da experiência</h2>
+    <p class="body-text">Joe Dispenza, no seu livro <em>"Sobrenatural"</em>, fala sobre como estados de meditação profunda e ondas cerebrais Theta permitem ao corpo entrar num estado de cura e reprogramação além da mente consciente.</p>
+    <p class="body-text">É exatamente nesse território que o Innerdance opera — e é também por isso que o meu trabalho de crenças, com base no ThetaHealing<sup style="font-size:0.6em;">®</sup>, encontra aqui um terreno tão fértil: ambos trabalham a partir desse mesmo estado de onda Theta, onde a mudança profunda se torna possível.</p>
+
+    <div class="aside">
+      <p>Quando o corpo entra em Theta, a mente deixa de estar no comando. E é aí que a verdadeira transformação acontece — não pelo esforço, mas pela entrega.</p>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">Ouve a minha experiência sobre o Innerdance</h2>
+    <div class="audio-box">
+      <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; margin-bottom:0.5rem;">O que acontece quando o corpo dança sozinho</p>
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <button id="btnInner" onclick="toggleInner()" style="width:28px; height:28px; border-radius:50%; background:#7a2535; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <div id="playInner" style="width:0; height:0; border-style:solid; border-width:4px 0 4px 8px; border-color:transparent transparent transparent #f7f3ee; margin-left:2px;"></div>
+          <div id="pauseInner" style="display:none; gap:3px;"><span style="width:3px; height:10px; background:#f7f3ee; border-radius:2px; display:block;"></span><span style="width:3px; height:10px; background:#f7f3ee; border-radius:2px; display:block;"></span></div>
+        </button>
+        <div style="flex:1;">
+          <div id="progInner" onclick="seekInner(event)" style="width:100%; height:3px; background:rgba(201,168,108,0.3); border-radius:3px; cursor:pointer;">
+            <div id="fillInner" style="height:100%; background:#c9a86c; border-radius:3px; width:0%;"></div>
+          </div>
+          <p id="timeInner" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9a7e52; margin-top:0.25rem;">0:00</p>
+        </div>
+      </div>
+      <audio id="audioInner" src="innerdance.mp3" preload="metadata"></audio>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">Momentos de sessões anteriores</h2>
+
+    <div class="video-wrap">
+      <iframe src="" title="Vídeo de evento Innerdance 1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <p class="video-caption">Um momento do último encontro presencial</p>
+
+    <div class="video-wrap">
+      <iframe src="" title="Vídeo de evento Innerdance 2" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <p class="video-caption">A energia de uma sessão em grupo</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <div class="aside centered">
+      <p>Ainda não há data marcada para o próximo encontro — mas se isto te chamou, deixa aqui o teu lugar na lista de espera. Serás a primeira a saber quando a porta abrir.</p>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">Quero ser avisada do próximo encontro</h2>
+
+    <div class="form-wrap">
+      <form action="https://formspree.io/f/xwvjjkeg" method="POST">
+        <input type="hidden" name="_subject" value="Lista de espera - Eventos Innerdance">
+
+        <label class="form-label">O teu nome</label>
+        <input type="text" name="nome" class="form-input" required>
+
+        <label class="form-label">O teu WhatsApp</label>
+        <input type="tel" name="whatsapp" class="form-input" required>
+
+        <label class="form-label">Já experimentaste uma sessão de Innerdance ou Kundalini?</label>
+        <div class="radio-row">
+          <label class="radio-label">
+            <input type="radio" name="experiencia" value="Innerdance" required style="display:none;" onchange="this.parentElement.querySelector('.radio-dot').style.background='#7a2535'; this.parentElement.querySelector('.radio-circle').classList.add('active-border'); this.parentElement.parentElement.querySelectorAll('.radio-dot').forEach(d=>{if(d!==this.parentElement.querySelector('.radio-dot')){d.style.background='transparent'; d.parentElement.classList.remove('active-border');}})">
+            <span class="radio-circle"><span class="radio-dot"></span></span>
+            Innerdance
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="experiencia" value="Kundalini" required style="display:none;" onchange="this.parentElement.querySelector('.radio-dot').style.background='#7a2535'; this.parentElement.querySelector('.radio-circle').classList.add('active-border'); this.parentElement.parentElement.querySelectorAll('.radio-dot').forEach(d=>{if(d!==this.parentElement.querySelector('.radio-dot')){d.style.background='transparent'; d.parentElement.classList.remove('active-border');}})">
+            <span class="radio-circle"><span class="radio-dot"></span></span>
+            Kundalini
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="experiencia" value="Ainda não, tenho muita curiosidade" required style="display:none;" onchange="this.parentElement.querySelector('.radio-dot').style.background='#7a2535'; this.parentElement.querySelector('.radio-circle').classList.add('active-border'); this.parentElement.parentElement.querySelectorAll('.radio-dot').forEach(d=>{if(d!==this.parentElement.querySelector('.radio-dot')){d.style.background='transparent'; d.parentElement.classList.remove('active-border');}})">
+            <span class="radio-circle"><span class="radio-dot"></span></span>
+            Ainda não, tenho muita curiosidade
+          </label>
+        </div>
+
+        <div style="text-align:center;">
+          <button type="submit" class="cta-btn">Quero ser avisada</button>
+        </div>
+      </form>
+    </div>
+
+    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.instagram.com/filipaosorio" target="_blank" style="color:#9a7e52; text-decoration:none;">Instagram</a></p>
+    <p class="footer" style="margin-top:0.5rem;"><a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">✦ Substack — Reflexões, insights e magia 🖋️</a></p>
+
+  </main>
+
+  <div class="gift-popup" id="giftPopup">
+    <button class="gift-popup-close" onclick="document.getElementById('giftPopup').classList.remove('visible')">×</button>
+    <p class="gift-popup-title">O melhor presente que podes dar a ti mesma 🪄</p>
+    <a class="gift-popup-btn" href="#" onclick="event.preventDefault(); document.getElementById('giftPopup').classList.remove('visible'); window.scrollTo({top:0, behavior:'smooth'});">Descobre o Innerdance ✦</a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+      // Audio player
+      const audio = document.getElementById('audioInner');
+      const playIcon = document.getElementById('playInner');
+      const pauseIcon = document.getElementById('pauseInner');
+      const progressFill = document.getElementById('fillInner');
+      const audioTime = document.getElementById('timeInner');
+      const progressBar = document.getElementById('progInner');
+
+      window.toggleInner = function() {
+        if (audio.paused) {
+          audio.play();
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'flex';
+        } else {
+          audio.pause();
+          playIcon.style.display = 'block';
+          pauseIcon.style.display = 'none';
+        }
+      };
+
+      window.seekInner = function(event) {
+        const rect = progressBar.getBoundingClientRect();
+        const percent = (event.clientX - rect.left) / rect.width;
+        audio.currentTime = percent * audio.duration;
+      };
+
+      audio.addEventListener('timeupdate', () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = percent + '%';
+        const mins = Math.floor(audio.currentTime / 60);
+        const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+        audioTime.textContent = mins + ':' + secs;
+      });
+
+      audio.addEventListener('ended', () => {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      });
+    });
+
+    setTimeout(() => {
+      const popup = document.getElementById('giftPopup');
+      if (popup) popup.classList.add('visible');
+    }, 3000);
+  </script>
+</body>
+</html>
