@@ -176,7 +176,7 @@
 
   <div class="summer-popup" id="summerPopup">
     <button class="summer-popup-close" onclick="document.getElementById('summerPopup').classList.remove('visible'); document.querySelector('nav').style.top='0';">×</button>
-    <a href="mapa_essencial.html">A pausa do verão é um portal de manifestação e criação 🪄</a>
+    <a href="mapa_essencial.html">O ritmo leve do verão é um portal de manifestação e criação 🪄</a>
   </div>
 
   <nav>
@@ -185,9 +185,10 @@
       <a href="index.html" class="active">Início</a>
       <a href="sobre.html">Sobre mim</a>
       <a href="formula_original.html">Leitura de Alma</a>
-      <a href="mentoria.html">Mentoria Alquimia</a>
+      <a href="mentoria.html">🔒 Mentoria Alquimia</a>
       <a href="consultoria.html">O teu Negócio de Alma</a>
-      <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos presenciais</span>
+      <a href="eventos.html">Eventos presenciais</a>
+      <a href="artigos.html">Artigos</a>
       <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -199,9 +200,10 @@
     <a href="index.html">Início</a>
     <a href="sobre.html">Sobre mim</a>
     <a href="formula_original.html">Leitura de Alma</a>
-    <a href="mentoria.html">Mentoria Alquimia</a>
+    <a href="mentoria.html">🔒 Mentoria Alquimia</a>
     <a href="consultoria.html">O teu Negócio de Alma</a>
-    <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#6b5040; opacity:0.5;">Eventos presenciais</span>
+    <a href="eventos.html">Eventos presenciais</a>
+      <a href="artigos.html">Artigos</a>
     <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
   </div>
 
@@ -221,13 +223,15 @@
       <p class="body-text" style="text-align:justify;">Tens a sensação subtil de que existe uma forma mais alinhada, mais leve, mais abundante e mais <em>tua</em> de viver a vida. A tua versão que vive essa realidade já existe. Está apenas à espera de ser reconhecida por ti. E é aí que tudo começa.</p>
       <p class="body-text" style="text-align:justify;">É uma mudança de frequência energética. E é essa porta que se abre quando entras neste Universo. Os diferentes portais que encontras aqui existem para honrar exatamente isso: <em>a tua fórmula única.</em></p>
       <p class="body-text" style="text-align:justify;">Quando conheces a tua energia, confias mais em ti. Quando te alinhas contigo, novas possibilidades se abrem. E com elas vem a vida que desejas, mais livre, abundante e prazerosa.</p>
+      <p class="body-text" style="text-align:justify;">Vamos preparar o terreno para a tua manifestação acontecer?</p>
+      <p style="font-family:'Spectral',serif; font-size:18px; font-style:italic; color:#7a2535; text-align:center; margin:1.5rem 0;">O que procuras não está a chegar. Já é. Só precisas de o saber reconhecer.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
       <div style="text-align:center; padding: 1.5rem 1rem; margin: 1rem 0; border-top: 2px solid #c9a86c; border-bottom: 2px solid #c9a86c;">
-        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">Não é a vida que dá esse passo, és tu e a vida acompanha ❤️</p>
+        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">Não é a vida que dá o primeiro passo, és tu e a vida acompanha ❤️</p>
       </div>
     </div>
 
@@ -285,6 +289,24 @@
       </div>
         </div>
       <audio id="audioPlayerHome" src="magicas.MP3" preload="metadata"></audio>
+
+      <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem; margin-top:1rem;">
+        <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Os nossos momentos são para tudo o que vier..."</p>
+        <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
+        <button class="play-btn-home" id="playBtnHome2" onclick="toggleAudioHome2()" style="flex-shrink:0;">
+          <div class="play-icon-home" id="playIconHome2"></div>
+          <div class="pause-icon-home" id="pauseIconHome2"><span></span><span></span></div>
+        </button>
+        <div class="audio-info-home" style="display:flex; flex-direction:column; justify-content:center;">
+          <div class="audio-progress-home" id="progressBarHome2" onclick="seekAudioHome2(event)">
+            <div class="audio-progress-bar-home" id="progressFillHome2"></div>
+          </div>
+          <p class="audio-time-home" id="audioTimeHome2">0:00</p>
+        </div>
+      </div>
+        </div>
+      <audio id="audioPlayerHome2" src="energia da filipa.MP3" preload="metadata"></audio>
+
       <div class="divider" style="margin-top:1.5rem;"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
     </div>
 
@@ -360,7 +382,7 @@
       <a href="formula_original.html" class="cta-btn" style="background:#7a2535;">Conhece o primeiro portal ⚜️</a>
     </div>
 
-    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a></p>
+    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.instagram.com/filipaosorio" target="_blank" style="color:#9a7e52; text-decoration:none;">Instagram</a></p>
       <p class="footer" style="margin-top:0.5rem;"><a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">✦ Substack — Reflexões, insights e magia 🖋️</a></p>
 
   </main>
@@ -369,7 +391,7 @@
     <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
     <p class="popup-eyebrow">Apenas 3 vagas para julho</p>
     <p class="popup-title">Será esta a leitura que procuravas?</p>
-    <a class="popup-btn" href="formula_original.html">Descobrir a Leitura de Alma ✦</a>
+    <a class="popup-btn" href="formula_original.html">Descobre a Leitura de Alma</a>
   </div>
 
   <script>
@@ -424,6 +446,39 @@
         const bar = document.getElementById('progressBarHome');
         const rect = bar.getBoundingClientRect();
         audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
+      }
+
+      const audioHome2 = document.getElementById('audioPlayerHome2');
+      const playIconHome2 = document.getElementById('playIconHome2');
+      const pauseIconHome2 = document.getElementById('pauseIconHome2');
+      const progressFillHome2 = document.getElementById('progressFillHome2');
+      const audioTimeHome2 = document.getElementById('audioTimeHome2');
+
+      window.toggleAudioHome2 = function() {
+        if (audioHome2.paused) {
+          audioHome2.play();
+          playIconHome2.style.display = 'none';
+          pauseIconHome2.style.display = 'flex';
+        } else {
+          audioHome2.pause();
+          playIconHome2.style.display = 'block';
+          pauseIconHome2.style.display = 'none';
+        }
+      }
+
+      audioHome2.addEventListener('timeupdate', () => {
+        if (audioHome2.duration) {
+          progressFillHome2.style.width = (audioHome2.currentTime / audioHome2.duration * 100) + '%';
+          const m2 = Math.floor(audioHome2.currentTime / 60);
+          const s2 = Math.floor(audioHome2.currentTime % 60).toString().padStart(2, '0');
+          audioTimeHome2.textContent = m2 + ':' + s2;
+        }
+      });
+
+      window.seekAudioHome2 = function(e) {
+        const bar2 = document.getElementById('progressBarHome2');
+        const rect2 = bar2.getBoundingClientRect();
+        audioHome2.currentTime = ((e.clientX - rect2.left) / rect2.width) * audioHome2.duration;
       }
     });
   </script>
