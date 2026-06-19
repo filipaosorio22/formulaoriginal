@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Essencial · Filipa Osório</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23faf6ef%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2244%22 fill=%22%237a2535%22>FO</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #faf6ef;
+      color: #1a1410;
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 7rem 2rem 4rem;
+      text-align: center;
+    }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: center; gap: 2rem; }
+
+    .gift-popup {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      max-width: 340px;
+      background: #f7f3ee;
+      border: 0.5px solid #c9a86c;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 24px rgba(26,20,16,0.1);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+    }
+    .gift-popup.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .gift-popup-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.75rem;
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #9a7e52;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+    .gift-popup-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #9a7e52;
+      margin-bottom: 0.5rem;
+    }
+    .gift-popup-title {
+      font-family: 'Spectral', serif;
+      font-size: 15px;
+      font-weight: 300;
+      font-style: italic;
+      color: #7a2535;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .gift-popup-btn {
+      display: block;
+      width: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f7f3ee;
+      background: #7a2535;
+      border: none;
+      border-radius: 30px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .gift-popup-btn:hover { background: #5c1c28; }
+    @media (max-width: 600px) {
+      .gift-popup { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; }
+    }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #7a2535; }
+    .nav-links a.active { color: #7a2535; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; text-decoration: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1px; background: #1a1410; display: block; }
+    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9a7e52;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Spectral', serif;
+      font-size: 38px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.2;
+      color: #1a1410;
+      margin-bottom: 0.5rem;
+    }
+
+    .h1-sub {
+      font-family: 'Spectral', serif;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: #6b5040;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      margin: 2.5rem 0;
+    }
+
+    .divider-line {
+      width: 100%;
+      height: 0.5px;
+      background: #c9a86c;
+      opacity: 0.7;
+    }
+
+    .divider-line-thin {
+      width: 85%;
+      height: 0.5px;
+      background: #c9a86c;
+      opacity: 0.35;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #1a1410;
+      margin-bottom: 1.1rem;
+      text-align: left;
+    }
+
+    h2 {
+      font-family: 'Spectral', serif;
+      font-size: 24px;
+      font-weight: 300;
+      font-style: italic;
+      color: #7a2535;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .tagline {
+      font-family: 'Spectral', serif;
+      font-size: 22px;
+      font-weight: 400;
+      font-style: italic;
+      color: #7a2535;
+      margin-bottom: 1.5rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .aside {
+      background: rgba(201,168,108,0.07);
+      border-left: 1.5px solid #c9a86c;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .aside p {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: #1a1410;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+    }
+
+    .aside.centered {
+      text-align: center;
+      border-left: none;
+      border: 0.5px solid rgba(201,168,108,0.4);
+      border-radius: 8px;
+      background: rgba(201,168,108,0.05);
+    }
+
+    .aside.centered p {
+      color: #6b5040;
+      text-align: center;
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      text-align: left;
+    }
+
+    ul.clean li {
+      font-size: 16px;
+      font-weight: 400;
+      color: #1a1410;
+      padding: 0.65rem 0;
+      border-bottom: 0.5px solid rgba(201,168,108,0.25);
+      display: flex;
+      gap: 14px;
+      line-height: 1.65;
+    }
+
+    ul.clean li:last-child { border-bottom: none; }
+
+    .marker {
+      color: #c9a86c;
+      flex-shrink: 0;
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .cta-link {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #f7f3ee;
+      background: #7a2535;
+      border-radius: 40px;
+      padding: 14px 36px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .cta-link:hover { background: #5c1c28; }
+
+    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; }
+
+    .preco-tag {
+      font-family: 'Spectral', serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: #7a2535;
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .format-card {
+      border: 0.5px solid rgba(201,168,108,0.4);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      background: rgba(255,251,245,0.6);
+      text-align: left;
+    }
+
+    .format-title {
+      font-family: 'Spectral', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: #1a1410;
+      margin-bottom: 0.5rem;
+    }
+
+    .format-includes {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #9a7e52;
+      font-style: italic;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="formula_original.html">Leitura de Alma</a>
+      <a href="mentoria.html">🔒 Mentoria Alquimia</a>
+      <a href="consultoria.html">O teu Negócio de Alma</a>
+      <a href="eventos.html">Eventos presenciais</a>
+      <a href="artigos.html">Artigos</a>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="formula_original.html">Leitura de Alma</a>
+    <a href="mentoria.html">🔒 Mentoria Alquimia</a>
+    <a href="consultoria.html">O teu Negócio de Alma</a>
+    <a href="eventos.html">Eventos presenciais</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
+  </div>
+
+  <main class="page" lang="pt">
+
+    <h1 style="font-family:'Spectral',serif; font-size:32px; font-weight:300; font-style:italic; color:#1a1410; line-height:1.3; margin-bottom:0.5rem; text-align:center;">Mapa Essencial <span style="color:#9a7e52;">•</span> <span style="color:#7a2535;">A tua Frequência Original</span></h1>
+    <p class="h1-sub" style="text-align:center;">A tua energia, o teu ritmo, a tua forma natural de te cuidares</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <p class="tagline">Quem és quando estás alinhada contigo?</p>
+
+    <p class="body-text">Existe em ti uma forma única de funcionar no mundo. E quando a conheces, tudo começa a ficar mais simples:</p>
+    <ul class="clean">
+      <li><span class="marker">✦</span> Como decides</li>
+      <li><span class="marker">✦</span> Como te organizas</li>
+      <li><span class="marker">✦</span> Como te relacionas contigo</li>
+      <li><span class="marker">✦</span> Como geres a tua energia no dia a dia</li>
+    </ul>
+    <p class="body-text">Mas muitas vezes essa forma fica escondida por expectativas, hábitos, pressa, comparação e ruído externo. E começas a viver de forma desconectada do teu próprio ritmo.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">O Mapa Essencial é um regresso à tua base</h2>
+    <p class="body-text" style="text-align:center;">Este não é um mapa para te transformar.<br>É um mapa para te reconheceres.</p>
+
+    <p class="body-text">Uma leitura onde te explico, de forma clara e aplicada:</p>
+    <ul class="clean">
+      <li><span class="marker">✦</span> Qual é o teu tipo de energia</li>
+      <li><span class="marker">✦</span> Como funciona o teu ritmo natural</li>
+      <li><span class="marker">✦</span> Como tomas decisões de forma mais alinhada</li>
+      <li><span class="marker">✦</span> Como cuidares da tua energia no dia a dia</li>
+      <li><span class="marker">✦</span> Como o teu sistema responde ao mundo</li>
+      <li><span class="marker">✦</span> O que te desequilibra e o que te centra</li>
+    </ul>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">Para começares a viver contigo de forma mais simples</h2>
+    <p class="body-text">Quando começas a ver isto, algo muda:</p>
+    <ul class="clean">
+      <li><span class="marker">✦</span> Deixas de te forçar a funcionar como os outros</li>
+      <li><span class="marker">✦</span> Começas a confiar mais no teu corpo e no teu ritmo</li>
+      <li><span class="marker">✦</span> Ganhas clareza sobre o que te drena e o que te nutre</li>
+      <li><span class="marker">✦</span> Começas a tomar decisões mais alinhadas contigo</li>
+    </ul>
+
+    <div class="aside">
+      <p>Não é informação. É auto-reconhecimento aplicado à vida real.</p>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">Se sentes que…</h2>
+    <ul class="clean">
+      <li><span class="marker">✦</span> Estás a começar a explorar o teu autoconhecimento</li>
+      <li><span class="marker">✦</span> Queres compreender melhor a tua energia antes de mergulhar em processos mais profundos</li>
+      <li><span class="marker">✦</span> Sentes que precisas de clareza sobre o teu ritmo e forma de funcionar</li>
+      <li><span class="marker">✦</span> Queres começar a confiar mais em ti no dia a dia</li>
+    </ul>
+    <p class="body-text" style="text-align:center; font-style:italic; color:#7a2535;">👉 então este é o teu ponto de entrada</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">O que é o Mapa Essencial</h2>
+    <p class="body-text">É uma leitura personalizada do teu mapa energético, com base no <a href="o-que-e-human-design.html" style="color:#7a2535; text-decoration:underline;">Human Design</a> — um sistema que cruza a tua data, hora e local de nascimento para revelar a tua forma única de funcionar. Onde te explico de forma simples e prática:</p>
+    <ul class="clean">
+      <li><span class="marker">✦</span> Como funcionas energeticamente</li>
+      <li><span class="marker">✦</span> Qual é o teu ritmo natural</li>
+      <li><span class="marker">✦</span> Como tomar decisões alinhadas contigo</li>
+      <li><span class="marker">✦</span> Como cuidares da tua energia no dia a dia</li>
+    </ul>
+    <p class="body-text">Recebes tudo em formato de áudio + documento estruturado no Notion.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">O que levas desta experiência</h2>
+    <ul class="clean">
+      <li><span class="marker">✦</span> Mais clareza sobre ti</li>
+      <li><span class="marker">✦</span> Mais confiança nas tuas decisões</li>
+      <li><span class="marker">✦</span> Mais consciência do teu ritmo</li>
+      <li><span class="marker">✦</span> Mais alinhamento no dia a dia</li>
+      <li><span class="marker">✦</span> Mais segurança interna</li>
+    </ul>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <div id="presente" style="background: rgba(201,168,108,0.08); border: 0.5px solid rgba(201,168,108,0.45); border-radius: 16px; padding: 2rem 1.75rem; text-align: center;">
+      <p style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#9a7e52; margin-bottom:1rem;">O mapa que é o melhor presente</p>
+      <h2 style="text-align:center; margin-bottom:1rem;">A última prenda que faltava dar</h2>
+      <p class="body-text" style="text-align:center;">Há presentes que se usam e se esquecem. E há presentes que ficam — porque dizem "vejo-te, e quero que te vejas também".</p>
+      <p class="body-text" style="text-align:center;">O Mapa Essencial é isso. Para a tua mãe, que nunca teve tempo para parar e olhar para si. Para o teu marido, que não sabe que existe outra forma de viver além do esforço constante. Para a tua amiga, num momento de viragem. Para o teu filho, desde pequenino até aos 14 anos — para que cresça já a conhecer-se.</p>
+      <div class="divider" style="margin: 1.5rem 0;"><div class="divider-line-thin" style="width:60%;"></div></div>
+      <p class="body-text" style="text-align:center; font-style:italic; color:#7a2535;">Só precisas do nome, data, hora e local de nascimento da pessoa. Cada mapa é feito individualmente, com a mesma atenção e cuidado.</p>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <div class="aside centered">
+      <p>Este mapa é o ponto de partida. Quando sentires que há um tema específico da tua vida a pedir mais profundidade — e não apenas mais clareza — terás a <a href="formula_original.html" style="color:#7a2535;">Leitura de Alma</a> à tua espera.</p>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center;">Formato</h2>
+
+    <p style="font-family:'Spectral',serif; font-size:15px; font-style:italic; color:#7a2535; text-align:center; margin-bottom:0.5rem;">✦ Estou a abrir as portas a apenas 5 Mapas Essenciais este mês, para poder dar a cada um o tempo e presença que merece.</p>
+
+    <p class="body-text" style="text-align:center; font-family:'DM Sans',sans-serif; font-size:13px; color:#9a7e52; margin-bottom:1.5rem;">Leitura personalizada em áudio + documento Notion · Entrega em até 14 dias úteis</p>
+
+    <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem;">
+
+      <div style="border:0.5px solid rgba(201,168,108,0.5); border-radius:12px; padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+        <div style="text-align:left;">
+          <p style="font-family:'Spectral',serif; font-size:17px; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Mapa Essencial</p>
+          <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#9a7e52;">Para ti</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem; flex-shrink:0;">
+          <p style="font-family:'Spectral',serif; font-size:22px; color:#7a2535;">€125</p>
+          <a href="https://buy.stripe.com/3cIbJ1c7z14ng4Z6jkfw409" target="_blank" class="cta-link" style="padding:10px 20px; font-size:11px;">Comprar</a>
+        </div>
+      </div>
+
+      <div style="border:0.5px solid rgba(201,168,108,0.5); border-radius:12px; padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+        <div style="text-align:left;">
+          <p style="font-family:'Spectral',serif; font-size:17px; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Mapa de Presente</p>
+          <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#9a7e52;">Para oferecer a alguém que amas</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem; flex-shrink:0;">
+          <p style="font-family:'Spectral',serif; font-size:22px; color:#7a2535;">€125</p>
+          <a href="https://buy.stripe.com/7sY5kD8VndR93idcHIfw40a" target="_blank" class="cta-link" style="padding:10px 20px; font-size:11px;">Oferecer</a>
+        </div>
+      </div>
+
+      <div style="border:0.5px solid rgba(201,168,108,0.5); border-radius:12px; padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+        <div style="text-align:left;">
+          <p style="font-family:'Spectral',serif; font-size:17px; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Mapa Infantil</p>
+          <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#9a7e52;">Para crianças até aos 14 anos</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem; flex-shrink:0;">
+          <p style="font-family:'Spectral',serif; font-size:22px; color:#7a2535;">€89</p>
+          <a href="https://buy.stripe.com/28E4gzc7zfZh3id4bcfw405" target="_blank" class="cta-link" style="padding:10px 20px; font-size:11px;">Comprar</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#9a7e52; text-align:center; margin-top:0.5rem; line-height:1.7;">Precisas do teu mapa com urgência? Existe a opção de entrega prioritária (48-72h) com uma taxa adicional — <a href="https://ig.me/m/filipaosorio" target="_blank" style="color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c;">fala comigo antes de comprar a ver se é possível.</a></p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <div class="aside centered">
+      <p>Isto foi só o mapa. Quando estiveres pronta para perguntar ao mapa sobre a tua vida, sabes onde estou 🪄</p>
+    </div>
+
+    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.instagram.com/filipaosorio" target="_blank" style="color:#9a7e52; text-decoration:none;">Instagram</a></p>
+    <p class="footer" style="margin-top:0.5rem;"><a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">✦ Substack — Reflexões, insights e magia 🖋️</a></p>
+
+  </main>
+
+  <div class="gift-popup" id="vagasPopup">
+    <button class="gift-popup-close" onclick="document.getElementById('vagasPopup').classList.remove('visible')">×</button>
+    <p class="gift-popup-eyebrow">APENAS 5 VAGAS ESTE MÊS</p>
+    <p class="gift-popup-title">Garante já o teu Mapa Essencial</p>
+    <a class="gift-popup-btn" href="#" onclick="event.preventDefault(); document.getElementById('vagasPopup').classList.remove('visible'); window.scrollTo({top: document.body.scrollHeight, behavior:'smooth'});">Quero cuidar da minha energia</a>
+  </div>
+
+  <div class="gift-popup" id="giftPopup">
+    <button class="gift-popup-close" onclick="document.getElementById('giftPopup').classList.remove('visible')">×</button>
+    <p class="gift-popup-eyebrow">O mapa que é o melhor presente</p>
+    <p class="gift-popup-title">Já pensaste em oferecer a quem amas?</p>
+    <a class="gift-popup-btn" href="#presente" onclick="event.preventDefault(); document.getElementById('giftPopup').classList.remove('visible'); document.getElementById('presente').scrollIntoView({behavior:'smooth', block:'center'});">Descobre como</a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    });
+    setTimeout(() => {
+      const popup = document.getElementById('vagasPopup');
+      if (popup) popup.classList.add('visible');
+    }, 3000);
+    setTimeout(() => {
+      const vagasPopup = document.getElementById('vagasPopup');
+      const giftPopup = document.getElementById('giftPopup');
+      if (vagasPopup) vagasPopup.classList.remove('visible');
+      if (giftPopup) giftPopup.classList.add('visible');
+    }, 30000);
+  </script>
+</body>
+</html>
