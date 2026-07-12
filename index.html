@@ -107,7 +107,7 @@
 
     /* HERO */
     .hero { text-align: center; margin-bottom: 2.5rem; }
-    .hero-img { width: 260px; height: 320px; object-fit: cover; object-position: center -70px; border-radius: 130px 130px 0 0; border: 1.5px solid rgba(201,168,108,0.4); display: inline-block; margin-bottom: 1.5rem; }
+    .hero-img { width: 260px; height: 320px; object-fit: cover; object-position: -15px -40px; border-radius: 130px 130px 0 0; border: 1.5px solid rgba(201,168,108,0.4); display: inline-block; margin-bottom: 1.5rem; }
     .hero-title { font-family: 'Spectral', serif; font-size: 38px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.2; margin-bottom: 0.75rem; }
     .hero-sub { font-family: 'Spectral', serif; font-size: 16px; font-weight: 300; font-style: italic; color: #7a2535; line-height: 1.6; max-width: 460px; margin: 0 auto; }
 
@@ -121,7 +121,7 @@
     .pilar-text { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6b5040; line-height: 1.65; }
 
     /* FRASE IMPACTO */
-    .impacto { text-align: center; padding: 1.75rem 1rem; margin: 2rem 0; }
+    .impacto { text-align: center; padding: 0.75rem 1rem; margin: 1rem 0 0.25rem; }
     .impacto p { font-family: 'Spectral', serif; font-size: 22px; font-weight: 500; font-style: italic; color: #7a2535; line-height: 1.5; }
 
     /* TESTEMUNHO */
@@ -184,12 +184,14 @@
     <div class="nav-links">
       <a href="index.html" class="active">Início</a>
       <a href="sobre.html">Sobre mim</a>
-      <a href="mapa_essencial.html">Mapa Essencial</a>
-      <a href="formula_original.html">Leitura de Alma</a>
-      <a href="mentoria.html">🔒 Mentoria Alquimia</a>
-      <a href="consultoria.html">O teu Negócio de Alma</a>
-      <a href="eventos.html">Eventos presenciais</a>
-      <a href="artigos.html">Artigos</a>
+    <a href="alquimia.html">Alquimia</a>
+      <a href="mapa_essencial.html">Travessia Essencial</a>
+      <a href="mapa_vivo.html">Travessia Viva</a>
+      <a href="mapa_alquimico.html">Travessia Alquímica</a>
+      <a href="consultoria.html">Negócio de Alma</a>
+      <a href="mentoria.html">🔒 Mentoria</a>
+      <a href="eventos.html">Eventos Presenciais (em breve)</a>
+      <a href="artigos.html">Expressão Livre</a>
       <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -200,32 +202,40 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Início</a>
     <a href="sobre.html">Sobre mim</a>
-    <a href="mapa_essencial.html">Mapa Essencial</a>
-    <a href="formula_original.html">Leitura de Alma</a>
-    <a href="mentoria.html">🔒 Mentoria Alquimia</a>
-    <a href="consultoria.html">O teu Negócio de Alma</a>
-    <a href="eventos.html">Eventos presenciais</a>
-      <a href="artigos.html">Artigos</a>
+    <a href="alquimia.html">Alquimia</a>
+    <a href="mapa_essencial.html">Travessia Essencial</a>
+    <a href="mapa_vivo.html">Travessia Viva</a>
+    <a href="mapa_alquimico.html">Travessia Alquímica</a>
+    <a href="consultoria.html">Negócio de Alma</a>
+    <a href="mentoria.html">🔒 Mentoria</a>
+    <a href="eventos.html">Eventos Presenciais (em breve)</a>
+    <a href="artigos.html">Expressão Livre</a>
     <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
   </div>
+
+  <button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);">🔊 Entrar na frequência</button>
+  <audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
 
   <main class="page">
 
     <div class="hero">
       <img src="novahero.png" alt="Filipa Osório" class="hero-img">
-      <h1 class="hero-title">Aqui começa o regresso a ti. Vens?</h1>
-      <p class="hero-sub">Uma jornada para recordares quem és na tua essência e manifestares na tua realidade leveza, amor, liberdade e abundância a todos os níveis.</p>
+      <h1 class="hero-title">Aqui começa o regresso a ti!</h1>
+      <p class="hero-sub">A jornada de recordares quem és na tua essência e criares na tua realidade amor, leveza, liberdade e abundância a todos os níveis.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
     <div class="fade-section">
-      <p class="body-text" style="text-align:justify;">Talvez estejas num daqueles momentos da vida que pede uma mudança. Ou talvez <em>simplesmente</em> sintas o desejo de te conheceres melhor e de cuidares mais de ti. Seja qual for o teu momento, há decisões a tomar.</p>
-      <p class="body-text" style="text-align:justify;">Caminhos a escolher. Velhos padrões a libertar. Partes de ti a pedir mais espaço. Sonhos que começam a chamar mais alto. Uma nova identidade tua a querer revelar-se.</p>
-      <p class="body-text" style="text-align:justify;">Tens a sensação subtil de que existe uma forma mais alinhada, mais leve, mais abundante e mais <em>tua</em> de viver a vida. A tua versão que vive essa realidade já existe. Está apenas à espera de ser reconhecida por ti. E é aí que tudo começa.</p>
-      <p class="body-text" style="text-align:justify;">É uma mudança de frequência energética. E é essa porta que se abre quando entras neste Universo. Os diferentes portais que encontras aqui existem para honrar exatamente isso: <em>a tua fórmula única.</em></p>
-      <p class="body-text" style="text-align:justify;">Quando conheces a tua energia, confias mais em ti. Quando te alinhas contigo, novas possibilidades se abrem. E com elas vem a vida que desejas, mais livre, abundante e prazerosa.</p>
-      <p class="body-text" style="text-align:justify;">Vamos preparar o terreno para a tua manifestação acontecer?</p>
+      <p class="body-text" style="text-align:justify;">Talvez estejas num daqueles momentos da vida que pede uma mudança. Ou talvez sintas <em>apenas</em> o desejo de te conheceres melhor, de cuidares mais de ti e de viveres de uma forma mais leve. Seja qual for o teu momento, há algo dentro de ti a pedir movimento. Há decisões a tomar. Antigos padrões a libertar. Partes de ti a pedir mais espaço. Sonhos que começam a chamar mais alto. Uma nova identidade a querer revelar-se.</p>
+      <p class="body-text" style="text-align:justify;">E sentes isso porque existe uma versão de <em>ti</em> que já vive com mais leveza, confiança, abundância e alinhamento. Uma versão que existe no teu campo de possibilidades, à espera de ser reconhecida, sentida e escolhida por ti.</p>
+      <p class="body-text" style="text-align:justify;">Na prática, isto significa começares a viver com mais consciência: compreenderes melhor a tua energia, reconheceres os padrões que já não te servem, escutares o teu corpo, tomares decisões mais alinhadas e criares espaço para receberes mais daquilo que desejas.</p>
+      <p class="body-text" style="text-align:justify;">A consciência é o primeiro ato da criação porque sem ela quem conduz a nossa vida é o nosso subconsciente: através dos padrões que repetes, das crenças que herdaste, das histórias que aprendeste sobre quem precisas de ser para ser amado e aceite, as memórias emocionais que o teu corpo ainda guarda, as narrativas familiares e coletivas que te ensinaram o que era possível para ti.</p>
+      <p class="body-text" style="text-align:justify;">Quando começas a trazer consciência a esses lugares, algo muda. Deixas de viver em piloto automático e começas a recuperar poder de escolha. E esse é o início da verdadeira transformação: quando aquilo que estava escondido começa a ser visto, sentido e integrado. É essa a porta que se abre quando entras no meu <em>Universo</em>.</p>
+      <p class="body-text" style="text-align:justify;">Cada portal que encontras aqui foi criado para te ajudar a reconhecer o que vive em ti: o visível e o invisível, o consciente e o inconsciente, o teu e o herdado, para que possas libertar o que já não te serve e abrir espaço para uma forma mais <em>tua</em>, mais leve e mais alinhada de viveres.</p>
+      <p class="body-text" style="text-align:justify;">Aqui, a vida também é olhada como símbolo. Cada padrão, repetição, desconforto, desejo ou encontro pode revelar algo sobre ti. Este é também um convite a veres a vida como uma linguagem viva, que te mostra onde há algo a reconhecer, transformar e integrar.</p>
+      <p class="body-text" style="text-align:justify;">Quando te conheces com profundidade, confias mais em ti. Quando reconheces os teus padrões, recuperas poder de escolha. Quando te alinhas contigo, novas possibilidades se abrem. E, com elas, a vida que desejas começa a revelar-se.</p>
+      <p class="body-text" style="text-align:justify;"><strong>Vamos preparar o terreno para a tua manifestação acontecer?</strong></p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
@@ -244,38 +254,38 @@
       <div class="pilares">
         <div class="pilar">
           <p class="pilar-num">01</p>
-          <p class="pilar-title">Autoconhecimento</p>
-          <p class="pilar-text">Compreender melhor a tua energia única, os teus ritmos, os teus padrões, os teus dons e o desenho único da tua alma.</p>
+          <p class="pilar-title">Reconhecimento</p>
+          <p class="pilar-text">Reconheces a tua energia, os teus ritmos, padrões, desejos e o que foi ficando escondido pelo caminho.</p>
         </div>
         <div class="pilar">
           <p class="pilar-num">02</p>
-          <p class="pilar-title">Alinhamento</p>
-          <p class="pilar-text">Conectares-te mais com o teu corpo, intuição, coração e com a tua verdade, silenciando o ruído exterior.</p>
+          <p class="pilar-title">Revelação</p>
+          <p class="pilar-text">Escutas o corpo, a intuição, o coração e a verdade que emerge quando o ruído externo silencia.</p>
         </div>
         <div class="pilar">
           <p class="pilar-num">03</p>
-          <p class="pilar-title">Reprogramação</p>
-          <p class="pilar-text">Transformar crenças e narrativas que<br>já não te servem e criar novas que sustentem as novas criações.</p>
+          <p class="pilar-title">Transmutação</p>
+          <p class="pilar-text">Transformas crenças, medos, padrões e narrativas que já não te servem em consciência, direção e poder de escolha.</p>
         </div>
         <div class="pilar">
           <p class="pilar-num">04</p>
           <p class="pilar-title">Criação</p>
-          <p class="pilar-text">Manifestar uma vida mais autêntica, abundante e coerente com quem és e colocares a tua voz no mundo.</p>
+          <p class="pilar-text">Dás forma a uma vida mais autêntica, abundante e coerente com quem és e colocas a tua visão e a tua verdade no mundo.</p>
         </div>
       </div>
     </div>
     </div>
 
-    <div class="divider"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
+    <div class="divider" style="margin: 0.5rem 0;"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
 
     <div class="fade-section">
       <div class="impacto">
         <p style="font-size:19px; color:#7a2535;">Neste espaço, a tua energia acede a uma nova frequência!</p>
-        <p style="font-size:19px; margin-top:0.5rem; font-weight:300; color:#c9a86c;">As minhas clientes chamam-lhe magia. Eu chamo-lhe alinhamento 🪄</p>
+        <p style="font-size:19px; margin-top:0.15rem; font-weight:300; color:#c9a86c;">Os meus clientes chamam-lhe magia. Eu chamo-lhe alinhamento 🪄</p>
       </div>
     </div>
 
-    <div class="fade-section" style="margin: 0.5rem 0 1.5rem;">
+    <div class="fade-section" style="margin: 0 0 1rem;">
       <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem;">
         <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Eu sinto que é mesmo mágico..."</p>
         <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
@@ -314,13 +324,13 @@
     </div>
 
     <div class="fade-section">
-      <p style="font-family:'Spectral',serif; font-size:18px; font-style:italic; color:#7a2535; text-align:center; margin:0;">O que procuras não está a chegar. Já é. Só precisas de o saber reconhecer!</p>
+      <p style="font-family:'Spectral',serif; font-size:18px; font-style:italic; color:#7a2535; text-align:center; margin:0;">O que procuras não está a chegar. Já é. Só precisas de o saber reconhecer.</p>
     </div>
 
     <div class="fade-section">
       <svg width="100%" viewBox="0 0 680 260" role="img" style="display:block; margin:0 auto;">
-        <title>Mapa de jornada com os serviços de Filipa Osório</title>
-        <desc>Pergaminho mostrando o percurso: Mapa Essencial, Leitura de Alma, Mentoria Alquimia, e Negócio de Alma</desc>
+        <title>Mapa da jornada com os serviços de Filipa Osório</title>
+        <desc>Pergaminho mostrando o percurso: Travessia Essencial, Travessia Viva, Travessia Alquímica e Negócio de Alma</desc>
 
         <defs>
           <pattern id="mapTexture" width="30" height="30" patternUnits="userSpaceOnUse">
@@ -343,37 +353,41 @@
           <line x1="510" y1="25" x2="510" y2="210" stroke="#7a5226" stroke-width="0.4"/>
         </g>
 
-        <text x="42" y="48" font-family="'Spectral',serif" font-style="italic" font-size="18" fill="#5c3a1a">Um possível mapa da jornada</text>
+        <text x="42" y="40" font-family="'Spectral',serif" font-style="italic" font-size="18" fill="#5c3a1a">Mapa da jornada</text>
 
-        <path d="M 95 113 Q 185 83, 265 123 Q 345 158, 425 113 Q 485 83, 560 113" 
-          fill="none" stroke="#7a5226" stroke-width="1.3" stroke-dasharray="6 7" opacity="0.7"/>
+        <path d="M 145 110 Q 220 75, 290 120 Q 355 160, 425 110 Q 480 70, 545 110" 
+          fill="none" stroke="#7a5226" stroke-width="1.4" stroke-dasharray="6 7" opacity="0.7"/>
 
         <a href="mapa_essencial.html">
-          <circle cx="95" cy="113" r="9" fill="transparent"/>
-          <circle cx="95" cy="113" r="6.5" fill="#7a2535" fill-opacity="0.6" stroke="#7a2535" stroke-width="1.5"/>
-          <text x="95" y="141" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Mapa Essencial</text>
+          <circle cx="145" cy="110" r="10" fill="transparent"/>
+          <circle cx="145" cy="110" r="7" fill="#a9803e" fill-opacity="0.65" stroke="#7a5226" stroke-width="1.6"/>
+          <text x="145" y="140" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Travessia Essencial</text>
         </a>
 
-        <a href="formula_original.html">
-          <circle cx="265" cy="123" r="9" fill="transparent"/>
-          <circle cx="265" cy="123" r="6.5" fill="#7a2535" fill-opacity="0.6" stroke="#7a2535" stroke-width="1.5"/>
-          <text x="265" y="156" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Leitura de Alma</text>
+        <a href="mapa_vivo.html">
+          <circle cx="290" cy="120" r="10" fill="transparent"/>
+          <circle cx="290" cy="120" r="7" fill="#a9803e" fill-opacity="0.65" stroke="#7a5226" stroke-width="1.6"/>
+          <text x="290" y="150" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Travessia Viva</text>
         </a>
 
-        <a href="mentoria.html">
-          <circle cx="425" cy="113" r="9" fill="transparent"/>
-          <circle cx="425" cy="113" r="6.5" fill="#7a2535" fill-opacity="0.6" stroke="#7a2535" stroke-width="1.5"/>
-          <text x="425" y="86" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Mentoria Alquimia</text>
+        <a href="mapa_alquimico.html">
+          <circle cx="425" cy="110" r="10" fill="transparent"/>
+          <circle cx="425" cy="110" r="7" fill="#a9803e" fill-opacity="0.65" stroke="#7a5226" stroke-width="1.6"/>
+          <text x="425" y="80" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Travessia Alquímica</text>
         </a>
 
         <a href="consultoria.html">
-          <circle cx="560" cy="113" r="9" fill="transparent"/>
-          <circle cx="560" cy="113" r="6.5" fill="#a9803e" fill-opacity="0.6" stroke="#a9803e" stroke-width="1.5"/>
-          <text x="560" y="141" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Negócio de Alma</text>
+          <circle cx="545" cy="110" r="10" fill="transparent"/>
+          <g transform="translate(545,110)">
+            <circle cx="0" cy="0" r="13" fill="none" stroke="#7a5226" stroke-width="1.6"/>
+            <path d="M -7,-9 Q -15,-1, -7,7 Q 1,13, 7,7" fill="none" stroke="#7a5226" stroke-width="1.4"/>
+          </g>
+          <text x="545" y="140" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Negócio de Alma</text>
         </a>
 
-        <g transform="translate(615,185)" opacity="0.7">
-          <circle cx="0" cy="0" r="12" fill="none" stroke="#7a5226" stroke-width="0.4"/>
+        <g transform="translate(615,185)" opacity="0.8">
+          <circle cx="0" cy="0" r="12" fill="none" stroke="#7a5226" stroke-width="0.45"/>
+          <circle cx="0" cy="0" r="9" fill="none" stroke="#7a5226" stroke-width="0.35" opacity="0.6"/>
           <path d="M0,-12 L1.6,-1.6 L0,0 L-1.6,-1.6 Z" fill="#7a2535" opacity="0.8"/>
           <path d="M0,12 L1.6,1.6 L0,0 L-1.6,1.6 Z" fill="#7a5226" opacity="0.55"/>
           <path d="M-12,0 L-1.6,1.6 L0,0 L-1.6,-1.6 Z" fill="#7a5226" opacity="0.45"/>
@@ -383,20 +397,21 @@
     </div>
 
     <div class="fade-section cta-box">
-      <p class="cta-title">Escolhes viver a magia?</p>
-      <a href="mapa_essencial.html" class="cta-btn" style="background:#7a2535;">Conhece o primeiro portal ⚜️</a>
+      <p class="cta-title">Se escolhes viver a magia</p>
+      <a href="mapa_essencial.html" class="cta-btn" style="background:#7a2535;">Conhece o primeiro portal</a>
     </div>
 
-    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.instagram.com/filipaosorio" target="_blank" style="color:#9a7e52; text-decoration:none;">Instagram</a></p>
-      <p class="footer" style="margin-top:0.5rem;"><a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">✦ Substack — Reflexões, insights e magia 🖋️</a></p>
+    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Privacidade & Termos</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a></p>
+      <p class="footer" style="margin-top:0.5rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Instagram</a> &nbsp;•&nbsp; <a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Substack — Reflexões, insights e magia 🖋️</a></p>
+      <p class="footer" style="margin-top:0.5rem;"><a href="mailto:mail@filipaosorio.com" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">💌 Convites e parcerias</a></p>
 
   </main>
 
   <div class="popup" id="popup">
     <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
-    <p class="popup-eyebrow">Apenas 3 vagas para julho</p>
+    <p class="popup-eyebrow" style="text-align:center;">APENAS 3 VAGAS PARA JULHO</p>
     <p class="popup-title">Será esta a leitura que procuravas?</p>
-    <a class="popup-btn" href="formula_original.html">Descobre a Leitura de Alma</a>
+    <a class="popup-btn" href="formula_original.html">Saber mais</a>
   </div>
 
   <script>
@@ -497,6 +512,18 @@
         if (nav) nav.style.top = h + 'px';
       }
     }, 2000);
+
+    function toggleFrequency() {
+      const audio = document.getElementById('freqAudio');
+      const btn = document.getElementById('freqToggle');
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = '🔊 Sentir em silêncio';
+      } else {
+        audio.pause();
+        btn.textContent = '🔊 Entrar na frequência';
+      }
+    }
   </script>
 </body>
 </html>
