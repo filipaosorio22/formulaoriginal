@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alquimia · Filipa Osório</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23faf6ef%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2244%22 fill=%22%237a2535%22>FO</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; min-height: 100vh; }
+    .page { max-width: 660px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #7a2535; }
+    .nav-links a.active { color: #7a2535; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; text-decoration: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1px; background: #1a1410; display: block; }
+    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    h1 { font-family: 'Spectral', serif; font-size: 32px; font-weight: 300; font-style: italic; line-height: 1.3; color: #1a1410; margin-bottom: 0.5rem; text-align: center; }
+    .h1-sub { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #6b5040; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; }
+    .body-text { font-size: 17px; line-height: 1.9; color: #1a1410; margin-bottom: 1.1rem; }
+
+    .divider { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 2.5rem 0; }
+    .divider-line { width: 100%; height: 0.5px; background: #c9a86c; opacity: 0.7; }
+    .divider-line-thin { width: 85%; height: 0.5px; background: #c9a86c; opacity: 0.35; }
+
+    .fase-card { border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; padding: 1.75rem 1.5rem; margin-bottom: 1.25rem; }
+    .fase-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a7e52; margin-bottom: 0.5rem; }
+    .fase-title { font-family: 'Spectral', serif; font-size: 22px; font-style: italic; color: #7a2535; margin-bottom: 0.75rem; }
+    .fase-text { font-size: 16px; line-height: 1.8; color: #1a1410; margin-bottom: 0.75rem; }
+    .fase-master { font-family: 'Spectral', serif; font-size: 15px; font-style: italic; color: #9a7e52; margin-bottom: 0.75rem; }
+    .fase-bridge { border-top: 0.5px solid rgba(201,168,108,0.3); padding-top: 0.85rem; margin-top: 0.85rem; }
+    .fase-bridge-label { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #9a7e52; margin-bottom: 0.4rem; }
+    .fase-bridge a {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f7f3ee;
+      background: #7a2535;
+      border-radius: 30px;
+      padding: 8px 18px;
+      text-decoration: none;
+    }
+
+    .story-block {
+      background: rgba(201,168,108,0.06);
+      border-left: 1.5px solid #c9a86c;
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .story-block p { font-family: 'Spectral', serif; font-style: italic; font-size: 16px; line-height: 1.85; color: #4a3a2a; margin-bottom: 0.75rem; }
+
+    .alch-list { list-style: none; padding: 0; margin: 0 0 1.25rem; }
+    .alch-list li { padding: 0.4rem 0 0.4rem 1.1rem; font-size: 16px; line-height: 1.7; color: #1a1410; position: relative; }
+    .alch-list li:before { content: "—"; position: absolute; left: 0; color: #c9a86c; }
+    .destaque-line { text-align: center; font-style: italic; font-family: 'Spectral', serif; font-size: 19px; color: #7a2535; margin: 1.75rem 0; line-height: 1.5; }
+
+    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; }
+    .footer a { color: #9a7e52; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .page { padding: 5rem 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="alquimia.html" class="active">Alquimia</a>
+      <a href="formula_original.html">Leitura de Alma</a>
+      <a href="sessao_alquimia.html">Sessão de Alquimia</a>
+      <a href="eventos.html">Eventos InnerDance</a>
+      <a href="consultoria.html">Negócio de Alma</a>
+      <a href="mentoria.html">Mentoria</a>
+      <a href="artigos.html">Expressão Livre</a>
+      <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="alquimia.html">Alquimia</a>
+    <a href="formula_original.html">Leitura de Alma</a>
+    <a href="sessao_alquimia.html">Sessão de Alquimia</a>
+    <a href="eventos.html">Eventos InnerDance</a>
+    <a href="consultoria.html">Negócio de Alma</a>
+    <a href="mentoria.html">Mentoria</a>
+    <a href="artigos.html">Expressão Livre</a>
+    <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
+  </div>
+
+  <main class="page" lang="pt">
+
+    <h1>A vida é um constante processo alquímico</h1>
+    <p class="h1-sub">A Alquimia é a arte de ver a vida como um processo de transformação!</p>
+    <p style="text-align:center; font-family:'Spectral',serif; font-style:italic; font-size:14px; color:#9a7e52; margin-bottom:1.5rem;">Opus contra naturam, Deo concedere</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <p class="body-text">Não como uma ideia distante da realidade, pelo contrário: a alquimia acontece na vida concreta: no corpo, nas relações, nos sonhos, nos conflitos, nas escolhas, no dinheiro, nos padrões que repetimos, nas emoções que nos atravessam, nos pequenos sinais do dia a dia que insistem em aparecer.</p>
+    <p class="body-text">A tua vida é o teu laboratório. E tu és, ao mesmo tempo, alquimista e matéria em transformação. Na linguagem alquímica, aquilo que pesa, bloqueia ou dói não é visto como algo errado em ti. É <em>prima materia</em>: a matéria-prima da tua transformação.</p>
+    <p class="body-text">O medo, a escassez, a vergonha, o ressentimento, a confusão, o cansaço, a sensação de não saber para onde ir, tudo isso pode ser o ponto de partida da Obra. Porque é muitas vezes dentro da <em>névoa</em> que começa o caminho <em>do chumbo ao ouro</em>.</p>
+    <p class="body-text">O chumbo representa aquilo que está denso, pesado, inconsciente, repetitivo. Aquilo que nos prende a formas antigas de existir. O ouro representa a integração, a prosperidade no seu sentido mais profundo e uma vida mais inteira, mais consciente e mais verdadeira.</p>
+    <p class="destaque-line">E este caminho acontece através de ti!</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center; font-family:'Spectral',serif; font-style:italic; font-size:24px; color:#1a1410; margin-bottom:1.5rem;">O que é Alquimia, <em>na prática</em>?</h2>
+
+    <p class="body-text">Na prática, a Alquimia aparece quando percebes que estás a repetir o mesmo padrão, mesmo querendo fazer diferente.</p>
+
+    <ul class="alch-list">
+      <li>Quando uma relação ativa feridas antigas.</li>
+      <li>Quando o dinheiro desperta medo, culpa ou controlo.</li>
+      <li>Quando o corpo começa a falar através do cansaço, da ansiedade ou da tensão.</li>
+      <li>Quando sentes que uma versão de ti já não cabe, mas ainda não sabes quem estás a tornar-te.</li>
+      <li>Quando queres avançar, mas algo dentro de ti paralisa.</li>
+      <li>Quando a vida te mostra, várias vezes, o mesmo tema em cenários diferentes.</li>
+    </ul>
+
+    <p class="body-text">É aqui que a Alquimia deixa de ser apenas uma ideia bonita e passa a ser uma ferramenta de consciência. Olhamos para o que está a acontecer e perguntamos:</p>
+
+    <ul class="alch-list">
+      <li>Que padrão está aqui?</li>
+      <li>O que é que isto está a revelar?</li>
+      <li>Que parte de mim está a pedir cuidado?</li>
+      <li>Que crença está a conduzir esta escolha?</li>
+      <li>O que precisa de morrer, limpar, integrar ou ganhar forma?</li>
+    </ul>
+
+    <p class="body-text">Não para analisares tudo até à exaustão, mas para deixares de viver em piloto automático. É um treino, é um hábito, é uma nova forma de estar na vida, mais consciente, amorosa e responsável.</p>
+    <p class="destaque-line">Porque quando assumes responsabilidade pela tua própria vida, recuperas um poder que nada fora de ti te pode dar!</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center; font-family:'Spectral',serif; font-style:italic; font-size:24px; color:#1a1410; margin-bottom:1.5rem;">As fases da Alquimia</h2>
+
+    <p class="body-text">Estamos sempre em diferentes fases nas diferentes áreas da nossa vida, já que o caminho não é linear: é cíclico, vivo e em espiral. A evolução dá-se dessa forma.</p>
+    <p class="body-text">Podes estar numa fase de <em>névoa</em>, confronto e reconhecimento na relação com o teu corpo, por exemplo. Ao mesmo tempo, podes estar numa fase de clareza e despertar no teu trabalho ou propósito. E, talvez, numa fase de integração numa relação ou numa mudança que já atravessaste.</p>
+    <p class="body-text">Todas as fases podem coexistir em ti. Agora, neste preciso momento, em diferentes partes da tua vida. Esta lente alquímica aparece nos sonhos, nos padrões que se repetem, nos encontros que te espelham, nas sincronicidades, nos sinais subtis do dia a dia e nas sensações que o corpo guarda antes da mente conseguir explicar. Tudo isso é linguagem simbólica: uma forma de o que vive dentro de ti encontrar forma de se mostrar fora.</p>
+    <p class="body-text">É aí que começa a verdadeira transformação: quando deixas de olhar para a tua vida como uma sequência de acontecimentos soltos e começas a vê-la como uma linguagem viva, que te revela onde há algo a reconhecer, transformar e integrar.</p>
+    <p class="body-text">É esta lente que trago para cada travessia que construo contigo no meu <em>laboratório</em>: não vejo "problemas para resolver", vejo processos alquímicos, onde cada fase tem lugar, mensagem e propósito.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center; font-family:'Spectral',serif; font-style:italic; font-size:24px; color:#1a1410; margin-bottom:1.5rem;">As três fases alquímicas</h2>
+
+    <div class="fase-card">
+      <p class="fase-eyebrow">Fase 01 · Nigredo</p>
+      <p class="fase-title">A fase negra</p>
+      <p class="fase-text">Nigredo é a fase da névoa, do confronto e da verdade que começa a querer ser vista. É a descida, o caos fértil, o encontro com aquilo que estava escondido.</p>
+      <p class="fase-text">É o momento em que o antigo já não serve, mas o novo ainda não tem forma. Pode trazer confusão, cansaço, vazio, irritação, desorientação ou vontade de recolhimento.</p>
+      <p class="fase-text">Na Alquimia, esta fase é passagem. É aqui que a <em>prima materia</em> aparece: medos, ressentimentos, feridas, crenças limitantes, padrões herdados, tudo aquilo que antes parecia apenas peso ou bloqueio pode tornar-se matéria de transformação.</p>
+      <p class="fase-eyebrow" style="margin-top:1.25rem;">A fase de Nigredo pode traduzir-se em…</p>
+      <ul class="alch-list">
+        <li>sentires que algo acabou, mas ainda não saberes o que vem a seguir;</li>
+        <li>estares cansada/o de repetir o mesmo padrão;</li>
+        <li>sentires confusão, peso, apatia ou vontade de te recolheres;</li>
+        <li>o teu corpo parecer pedir pausa;</li>
+        <li>seres confrontada/o com medos, feridas ou verdades que evitaste ver;</li>
+        <li>sentires que uma versão antiga de ti já não cabe, mas a nova ainda não ganhou forma.</li>
+      </ul>
+      <p class="fase-eyebrow">O convite desta fase</p>
+      <p class="fase-text">Antes de qualquer transformação, é preciso ver com honestidade o que está ali, sem julgamento e sem te apressares a resolver tudo. Dar nome ao caos é o primeiro movimento alquímico: quando algo ganha nome, deixa de te possuir em silêncio.</p>
+      <p class="fase-master">"Antes de mudar, é preciso ver, sem anestesia e sem julgamento!"</p>
+      <div class="fase-bridge">
+        <p class="fase-bridge-label">O espaço desta fase</p>
+        <a href="formula_original.html">Leitura de Alma →</a>
+      </div>
+    </div>
+
+    <div class="fase-card">
+      <p class="fase-eyebrow">Fase 02 · Albedo</p>
+      <p class="fase-title">A fase branca</p>
+      <p class="fase-text">Albedo é a fase da clarificação, da limpeza e da reorientação.</p>
+      <p class="fase-text">É quando começas a separar o essencial do ruído. A perceber padrões. A compreender o que a tua energia, o teu corpo, os teus símbolos e a tua vida estão a revelar neste momento.</p>
+      <p class="fase-text">Depois da escuridão, algo começa a ficar mais simples. Começas a distinguir o que é teu do que é dos outros: crenças, medos, sentimentos. Começas a distinguir medo de intuição, e a verdade de agora da história antiga.</p>
+      <p class="fase-text">Não se trata de te definir para sempre. Trata-se de perceber como a tua energia está a <em>operar</em> neste ciclo.</p>
+      <p class="fase-text">Aqui, os símbolos, os mapas, os sonhos e os padrões deixam de ser teoria e tornam-se espelho. Mostram-te o que vives agora, o que pede consciência e o que começa a abrir caminho.</p>
+      <p class="fase-eyebrow" style="margin-top:1.25rem;">A fase de Albedo pode traduzir-se em…</p>
+      <ul class="alch-list">
+        <li>começares a ver com mais clareza o que antes parecia confuso;</li>
+        <li>sentires vontade de simplificar, limpar, organizar ou escolher melhor;</li>
+        <li>conseguires reconhecer alguns padrões sem te confundires tanto com eles;</li>
+        <li>perceberes melhor o que é teu e o que é herdado;</li>
+        <li>sentires que uma nova direção começa a aparecer;</li>
+        <li>o teu corpo, os teus sonhos e as sincronicidades começarem a <em>fazer mais sentido</em>.</li>
+      </ul>
+      <p class="fase-eyebrow">O convite desta fase</p>
+      <p class="fase-text">Aqui, o convite é discernir: separar o que é essencial do que é ruído, o que é verdade do que é medo, o que é teu do que já não precisas carregar.</p>
+      <p class="fase-master">"Agora que vejo, posso escolher com mais verdade!"</p>
+      <div class="fase-bridge">
+        <p class="fase-bridge-label">O espaço desta fase</p>
+        <a href="formula_original.html">Leitura de Alma →</a>
+      </div>
+    </div>
+
+    <div class="fase-card">
+      <p class="fase-eyebrow">Fase 03 · Rubedo</p>
+      <p class="fase-title">A fase vermelha</p>
+      <p class="fase-text">Rubedo é a fase da integração. O ouro no mundo.</p>
+      <p class="fase-text">Aqui, já não estamos apenas a observar, compreender ou interpretar, estamos a mudar. A transformação deixa de ser apenas <em>insight</em> e começa a passar para o corpo, para as escolhas, para os limites, para as decisões, para as relações, para a rotina e para a forma como te posicionas na vida.</p>
+      <p class="fase-text">Rubedo não é um <em>final feliz</em>, é integração. É compromisso com aquilo que foi visto, sentido e atravessado. O <em>ouro</em> torna-se estável porque foi atravessado pelo <em>fogo</em>.</p>
+      <p class="fase-eyebrow" style="margin-top:1.25rem;">A fase de Rubedo pode traduzir-se em…</p>
+      <ul class="alch-list">
+        <li>colocares limites com mais verdade;</li>
+        <li>a consciência começar a aparecer em ações concretas;</li>
+        <li>mudares a forma como te relacionas, trabalhas, descansas ou recebes;</li>
+        <li>saberes o que precisas de escolher e começares a sustentar essa escolha;</li>
+        <li>sentires mais presença, coragem e coerência entre o que sabes e o que vives;</li>
+        <li>começares a dar forma concreta à transformação que antes era apenas interna.</li>
+      </ul>
+      <p class="fase-eyebrow">O convite desta fase</p>
+      <p class="fase-text">Aqui, o convite é dar corpo à transformação. Fazer escolhas concretas. Sustentar novos ritmos. Viver de acordo com aquilo que já viste e o que desejas para ti.</p>
+      <p class="fase-master">"Transformação é quando a consciência vira corpo, decisão e direção!"</p>
+      <div class="fase-bridge">
+        <p class="fase-bridge-label">O espaço desta fase</p>
+        <a href="sessao_alquimia.html">Sessão de Alquimia →</a>
+      </div>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center; font-family:'Spectral',serif; font-style:italic; font-size:24px; color:#1a1410; margin-bottom:1.5rem;">Um processo vivo, não uma linha reta</h2>
+
+    <p class="body-text">Lembra-te: estas fases não acontecem uma única vez, nem da mesma forma em todas as áreas da vida. Podes estar em <em>Nigredo</em> numa área, a confrontar-te com algo que ainda está confuso ou pesado. Em <em>Albedo</em> noutra, onde já começas a ver com mais clareza. E em <em>Rubedo</em> noutro tema, onde a transformação já está a ganhar corpo nas tuas escolhas, limites e forma de viver.</p>
+    <p class="body-text">E mesmo dentro do mesmo tema, o processo é cíclico. À medida que evoluímos, novas camadas aparecem. Algo que já tinhas compreendido pode pedir uma nova integração. Uma escolha que parecia feita pode revelar uma profundidade maior. Uma nova fase da tua vida pode trazer-te de volta ao reconhecimento, à clarificação ou à integração, mas nunca exatamente do mesmo lugar.</p>
+    <p class="destaque-line">Voltamos a lugares parecidos, mas nós nunca somos iguais!</p>
+    <p class="body-text">Cada volta revela uma nova camada. Cada fase aprofunda a tua relação contigo. Cada ciclo te aproxima mais da tua <em>Obra</em>. Não é sobre identificar a fase, é sobre decidires entrar no processo de transformação, seja em que área da vida escolheres neste momento.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center; font-family:'Spectral',serif; font-style:italic; font-size:24px; color:#1a1410; margin-bottom:1.5rem;">As ferramentas são linguagens</h2>
+
+    <p class="body-text">Eu uso ferramentas como linguagens. Elas deixam de ser teoria para se tornarem material vivo de transformação, sempre a partir do ponto em que estás e do que sentes ser verdadeiro para a tua essência.</p>
+    <p class="body-text">A astrologia, o Human Design, o Thetahealing, as Constelações familiares, o Tarot, os sonhos, os símbolos, o corpo e os ciclos — tudo são mapas, espelhos e portas de entrada.</p>
+    <p class="body-text">Não uso ferramentas como previsão, sentença ou autoridade externa. Uso as ferramentas como linguagens simbólicas para ler campo, energia, inconsciente, padrões e possibilidades.</p>
+    <p class="destaque-line">A autoridade é sempre interna e o poder está sempre nas tuas mãos!</p>
+    <p class="body-text">Elas apenas nos ajudam a dar nome ao que talvez já sentias, mas ainda não conseguias organizar. A reconhecer padrões. A escutar o corpo. A compreender a tua energia. A distinguir o que é teu do que é herdado. A perceber o que este momento da tua vida te está a pedir.</p>
+    <p class="body-text">Eu não uso estas ferramentas para te encaixar numa caixa. Para a Alquimia, nós não escolhemos pensar e viver fora da caixa, para a Alquimia nem existe caixa.</p>
+    <p class="body-text">Estas linguagens ajudam-nos a <em>ler</em> a tua vida e as mensagens da tua alma com mais profundidade, para que possas escolher com mais consciência, presença e verdade.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <p style="font-family:'Spectral',serif; font-size:16px; font-style:italic; color:#9a7e52; text-align:center; margin-bottom:1rem;">Uma playlist para sentires esta energia enquanto navegas</p>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6DbBIM8R25ekkzexG0gp6A?utm_source=generator&si=a179d17e69e0436d" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <h2 style="text-align:center; font-family:'Spectral',serif; font-style:italic; font-size:22px; color:#1a1410; margin-bottom:1rem;">Como começou, para mim</h2>
+
+    <p class="body-text">Escrevi sobre isto pela primeira vez em 2024, num texto sobre o fogo — sobre os incêndios que nos rodeavam nesse verão, e sobre o fogo interno que cada um de nós carrega e tantas vezes esquece de cuidar. Já lá vão dois anos, e esta visão só se tornou mais clara: não é uma ideia nova que me ocorreu para um negócio. É a base de tudo o que sou e do que crio.</p>
+
+    <div class="story-block">
+      <p>Nesse verão, vivia um período denso — apática, adormecida, num vazio que parecia escuro e sem saída. E, devagar, através de um processo de calcinação — a quebra do ego, das dúvidas, do orgulho que nos afasta de nós — fui voltando a mim. As pessoas à minha volta diziam-me: "voltaste ao teu sorriso", "a tua luz voltou". O que tinha voltado era o meu fogo interno.</p>
+      <p>Percebi então as três fases que a alquimia atravessa sempre: do nigredo (a fase negra, a morte de uma forma antiga) ao albedo (o despertar, a clareza a entrar) até ao rubedo (a iluminação, a obra realizada). E percebi também que o vazio podia ser visto de duas formas completamente distintas — escuro ou luminoso — sendo vazio na mesma. A diferença estava só em mim.</p>
+    </div>
+
+    <p class="body-text">É esse processo — calcinação, reconexão, regresso à essência — que continuo a atravessar, uma e outra vez. E é esse mesmo processo que trago para cada travessia que construo contigo.</p>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <div style="text-align:center;">
+      <p style="font-family:'Spectral',serif; font-size:16px; font-style:italic; color:#6b5040; margin-bottom:1rem;">Queres ler o texto completo, como foi escrito nesse verão?</p>
+      <a href="https://substack.com/@filipaosorio" target="_blank" style="display:inline-block; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; border:0.5px solid #c9a86c; border-radius:30px; padding:11px 26px; text-decoration:none;">Ler no Substack</a>
+    </div>
+
+    <p class="footer" style="margin-top:3rem;"><a href="https://filipaosorio.com">© 2026 Filipa Osório</a> · <a href="privacidade.html">Privacidade & Termos</a> · <a href="https://www.instagram.com/filipaosorio" target="_blank">Instagram</a></p>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>
