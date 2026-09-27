@@ -1,1 +1,50 @@
-Adiciona termos e condições CEEN
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos e Condições — CEEN | Filipa Osório</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F6F0E4; --ink: #2B241C; --ink-soft: #5A5044;
+    --gold: #A9834F; --gold-soft: #D8B57F; --line: rgba(43,36,28,0.14);
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Work Sans',sans-serif; font-weight:300; line-height:1.75; }
+  .wrap { max-width: 760px; margin:0 auto; padding: 0 28px 80px; }
+  header.top { text-align:center; padding: 40px 0 10px; }
+  header.top a { font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--ink); text-decoration:none; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(26px,4vw,34px); text-align:center; margin: 30px 0 6px; }
+  .subtitle { text-align:center; color:var(--ink-soft); font-size:14px; font-style:italic; font-family:'Cormorant Garamond',serif; margin-bottom:50px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:21px; margin:44px 0 14px; color:var(--gold); }
+  p, li { font-size:15.5px; color:var(--ink-soft); }
+  strong { color:var(--ink); font-weight:500; }
+  ul { padding-left:20px; }
+  li { margin-bottom:8px; }
+  table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14.5px; }
+  th { text-align:left; padding:10px 14px; border-bottom:2px solid var(--gold-soft); font-family:'Cormorant Garamond',serif; font-size:16px; color:var(--ink); }
+  td { padding:10px 14px; border-bottom:1px solid var(--line); color:var(--ink-soft); }
+  hr { border:none; border-top:1px solid var(--line); margin:50px 0; }
+  a { color: var(--gold); }
+  footer { text-align:center; padding:40px 0 60px; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ink-soft); font-size:14px; }
+</style>
+</head>
+<body>
+
+<header class="top"><a href="https://filipaosorio.com">Filipa Osório</a></header>
+
+<div class="wrap">
+  <h1>Termos e Condições</h1>
+  <p class="subtitle">CEEN · Clareza, Estratégia e Energia no Negócio</p>
+
+  <h2>1. Objeto</h2>
+  <p>Os presentes Termos e Condições regulam a prestação do serviço <strong>CEEN · Clareza, Estratégia e Energia no Negócio</strong> (adiante "CEEN"), disponibilizado por Filipa Osório, a clientes que o contratem através do site, do Calendly ou de outro canal indicado para o efeito.</p>
+  <p>Ao fazer a marcação e o pagamento da CEEN, o cliente aceita os termos aqui descritos.</p>
+
+  <h2>2. Natureza do serviço</h2>
+  <p>A CEEN é um processo individual de clareza, estratégia e energia, dirigido a pessoas que gerem um negócio próprio ou estão a transformar uma experiência, competência ou projeto numa atividade profissional.</p>
+  <p>A CEEN:</p>
+  <ul>
+    <li><strong>não é</strong>
