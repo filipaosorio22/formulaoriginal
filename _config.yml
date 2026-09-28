@@ -1,0 +1,15 @@
+# Paginas retiradas do ar (os ficheiros continuam guardados no repositorio).
+# Para voltar a publicar uma pagina, apaga a linha correspondente e faz commit.
+exclude:
+  - Mentoria.html
+  - mentoria.html
+  - mentoria-2.html
+  - mentoria1518.html
+  - alquimia.html
+  - artigos.html
+  - eventos.html
+  - formula_original.html
+  - mapa_essencial.html
+  - preview-inicio.html
+# Mantidas no ar por precaucao (acesso e confirmacao para clientes ja existentes):
+# aula-acesso.html, confirmacao-mapa.html, obrigada-mapa.html
