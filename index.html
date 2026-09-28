@@ -8,13 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-5CX792T8H9');
-</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
@@ -203,7 +196,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
     <a href="ceen/" class="cta-btn">Conhecer a CEEN</a>
   </div>
 
-  <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Privacidade</a> & <a href="termos-ceen.html" style="color:#9a7e52; text-decoration:none;">Termos</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a></p>
+  <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Privacidade</a> & <a href="termos-ceen.html" style="color:#9a7e52; text-decoration:none;">Termos</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a> · <a href="#" onclick="event.preventDefault(); window.fowReopenCookiePrefs && window.fowReopenCookiePrefs();" style="color:#9a7e52; text-decoration:none;">Cookies</a></p>
   <p class="footer" style="margin-top:0.5rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Instagram</a> &nbsp;•&nbsp; <a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Substack — Reflexões, insights e magia 🖋️</a></p>
   <p class="footer" style="margin-top:0.5rem;"><a href="mailto:mail@filipaosorio.com" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">💌 Convites e parcerias</a></p>
 
@@ -285,6 +278,73 @@ document.getElementById('hamburger').addEventListener('click', function () {
   mm.style.top = document.querySelector('nav').getBoundingClientRect().bottom + 'px';
   mm.classList.toggle('open');
 });
+</script>
+
+<div id="cookieVeil" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.35); z-index:998; backdrop-filter:blur(2px);"></div>
+<div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem; box-shadow:0 -4px 24px rgba(26,20,16,0.12);">
+  <div style="max-width:720px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0;">Uso cookies para estatísticas (Google Analytics) e para o calendário de marcações (Calendly) funcionar aqui na página. <a href="privacidade.html" style="color:#7a2535; text-decoration:underline;">Saber mais</a></p>
+    <div style="display:flex; gap:0.6rem; flex-shrink:0;">
+      <button id="cookieReject" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; background:transparent; border:1px solid #7a2535; color:#7a2535; border-radius:30px; padding:10px 20px; cursor:pointer;">Recusar</button>
+      <button id="cookieAccept" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; background:#7a2535; border:1px solid #7a2535; color:#f7f3ee; border-radius:30px; padding:10px 20px; cursor:pointer;">Aceitar</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'fo_cookie_consent';
+  var MAX_AGE = 1000*60*60*24*180;
+  function getConsent(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj.ts || Date.now() - obj.ts > MAX_AGE) return null;
+      return obj.choice;
+    } catch(e){ return null; }
+  }
+  function setConsent(choice){
+    try { localStorage.setItem(KEY, JSON.stringify({choice: choice, ts: Date.now()})); } catch(e){}
+  }
+  window.__loadGA = function(){
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+    window.gtag = gtag;
+  };
+  window.__loadCalendly = function(){
+    if (window.__calLoaded) return;
+    window.__calLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    document.body.appendChild(s);
+  };
+  function hideBanner(){
+    var v = document.getElementById('cookieVeil'); var b = document.getElementById('cookieBanner');
+    if (v) v.style.display = 'none'; if (b) b.style.display = 'none';
+  }
+  function showBanner(){
+    var v = document.getElementById('cookieVeil'); var b = document.getElementById('cookieBanner');
+    if (v) v.style.display = 'block'; if (b) b.style.display = 'block';
+  }
+  window.fowReopenCookiePrefs = showBanner;
+  var choice = getConsent();
+  if (choice === 'accepted') { window.__loadGA(); window.__loadCalendly(); }
+  else if (choice !== 'rejected') { showBanner(); }
+  document.addEventListener('DOMContentLoaded', function(){
+    var a = document.getElementById('cookieAccept'); var r = document.getElementById('cookieReject');
+    if (a) a.addEventListener('click', function(){ setConsent('accepted'); window.__loadGA(); window.__loadCalendly(); hideBanner(); });
+    if (r) r.addEventListener('click', function(){ setConsent('rejected'); hideBanner(); });
+  });
+})();
 </script>
 </body>
 </html>
