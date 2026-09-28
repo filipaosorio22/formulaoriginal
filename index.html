@@ -89,6 +89,18 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
   .page { padding: 5rem 1.25rem 3rem; }
   .popup { right: 1rem; left: 1rem; max-width: none; }
 }
+
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
+.nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #7a2535; }
+.nav-links a.nav-cta { color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; }
+.nav-links a.nav-cta:hover { background: rgba(201,168,108,0.1); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.hamburger span { width: 22px; height: 1px; background: #1a1410; display: block; }
+.mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
+@media (max-width: 600px) { .nav-links { display: none; } .hamburger { display: flex; } }
 </style>
 </head>
 <body>
@@ -99,8 +111,22 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 </div>
 
 <nav>
-  <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
+    <a href="ceen/">CEEN</a>
+    <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Início</a>
+  <a href="sobre.html">Sobre mim</a>
+  <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
+  <a href="ceen/">CEEN</a>
+  <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
+</div>
 
 <button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);">🔊 Entrar na frequência</button>
 <audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
@@ -108,7 +134,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 <main class="page">
 
   <div class="hero">
-    <div class="hero-img-frame"><img src="novahero.png" alt="Filipa Osório" class="hero-img"></div>
     <h1 class="hero-title">O espaço onde a magia acontece: o meu Notion</h1>
     <p class="hero-sub">Clareza, estratégia e energia para o teu negócio, num espaço pensado para veres o que, de dentro, é difícil de ver.</p>
   </div>
@@ -252,6 +277,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   setupPlayer('audioPlayerHome', 'playIconHome', 'pauseIconHome', 'progressFillHome', 'audioTimeHome', 'progressBarHome', 'toggleAudioHome', 'seekAudioHome');
   setupPlayer('audioPlayerHome2', 'playIconHome2', 'pauseIconHome2', 'progressFillHome2', 'audioTimeHome2', 'progressBarHome2', 'toggleAudioHome2', 'seekAudioHome2');
+});
+</script>
+<script>
+document.getElementById('hamburger').addEventListener('click', function () {
+  var mm = document.getElementById('mobileMenu');
+  mm.style.top = document.querySelector('nav').getBoundingClientRect().bottom + 'px';
+  mm.classList.toggle('open');
 });
 </script>
 </body>
