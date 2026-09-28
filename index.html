@@ -1,295 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Filipa Osório</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filipa Osório · CEEN</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5CX792T8H9');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5CX792T8H9');
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: center; gap: 2rem; transition: top 0.5s ease; }
+.nav-cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: rgba(201,168,108,0.1); }
 
-    
-  </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
+.summer-popup { position: fixed; top: 0; left: 0; right: 0; z-index: 101; background: rgba(232,217,184,0.75); backdrop-filter: blur(4px); border-radius: 0 0 10px 10px; box-shadow: 0 2px 8px rgba(26,20,16,0.04); padding: 10px 1.5rem; text-align: center; opacity: 0; transform: translateY(-10px); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+.summer-popup.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.summer-popup a { font-family: 'Spectral', serif; font-size: 17px; font-style: italic; color: #7a2535; text-decoration: none; white-space: nowrap; }
+.summer-popup a span.cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-style: normal; letter-spacing: 0.08em; text-transform: uppercase; color: #9a7e52; text-decoration: underline; margin-left: 6px; }
+.summer-popup-close { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); background: none; border: none; font-size: 15px; color: #9a7e52; cursor: pointer; line-height: 1; padding: 0; }
+@media (max-width: 600px) { .summer-popup a { font-size: 13px; white-space: normal; } }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,239,0.96); backdrop-filter: blur(8px); border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: center; gap: 2rem; transition: top 0.5s ease; }
+.page { max-width: 660px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+.divider { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 2.5rem 0; }
+.divider-line { width: 100%; height: 0.5px; background: #c9a86c; opacity: 0.7; }
+.divider-line-thin { width: 85%; height: 0.5px; background: #c9a86c; opacity: 0.35; }
 
-    .summer-popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 101;
-      background: rgba(232,217,184,0.75);
-      backdrop-filter: blur(4px);
-      border-radius: 0 0 10px 10px;
-      border-bottom: none;
-      box-shadow: 0 2px 8px rgba(26,20,16,0.04);
-      padding: 10px 1.5rem;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      pointer-events: none;
-    }
-    .summer-popup.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-    .summer-popup a {
-      font-family: 'Spectral', serif;
-      font-size: 17px;
-      font-style: italic;
-      color: #7a2535;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .summer-popup a span.cta {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-style: normal;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #9a7e52;
-      text-decoration: underline;
-      margin-left: 6px;
-    }
-    .summer-popup-close {
-      position: absolute;
-      top: 50%;
-      right: 1rem;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      font-size: 15px;
-      color: #9a7e52;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0;
-    }
-    @media (max-width: 600px) {
-      .summer-popup a { font-size: 12px; white-space: normal; }
-    }
+.hero { text-align: center; margin-bottom: 2.5rem; }
+.hero-img-frame { width: 260px; height: 320px; overflow: hidden; border-radius: 130px 130px 0 0; border: 1.5px solid rgba(201,168,108,0.4); display: inline-block; margin-bottom: 1.5rem; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 46%; display: block; }
+.hero-title { font-family: 'Spectral', serif; font-size: 36px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.2; margin-bottom: 0.75rem; }
+.hero-sub { font-family: 'Spectral', serif; font-size: 16px; font-weight: 300; font-style: italic; color: #7a2535; line-height: 1.6; max-width: 460px; margin: 0 auto; }
 
-    .nav-logo { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #1a1410; text-decoration: none; }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: #7a2535; }
-    .nav-links a.active { color: #7a2535; }
-    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 30px; padding: 7px 18px; text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: rgba(201,168,108,0.1); }
+.notion-card { display: block; text-decoration: none; color: inherit; border: 0.5px solid rgba(201,168,108,0.5); border-radius: 14px; overflow: hidden; background: rgba(255,251,245,0.8); box-shadow: 0 6px 28px rgba(26,20,16,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; margin: 1.5rem 0; }
+.notion-card:hover { transform: translateY(-3px); box-shadow: 0 10px 34px rgba(26,20,16,0.12); }
+.nc-cover { height: 96px; background: linear-gradient(100deg, #7d8ea3 0%, #a99aa3 28%, #cf9d8e 52%, #e2b7a6 68%, #a3b6bb 100%); }
+.nc-body { padding: 0 1.75rem 1.9rem; text-align: center; }
+.nc-mirror { display: block; margin: -26px auto 0.9rem; position: relative; }
+.nc-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a86c; margin-bottom: 0.5rem; }
+.nc-title { font-family: 'Spectral', serif; font-size: 24px; font-weight: 400; font-style: italic; color: #1a1410; line-height: 1.3; margin-bottom: 0.6rem; }
+.nc-sub { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6b5040; line-height: 1.65; max-width: 420px; margin: 0 auto 1.25rem; }
+.nc-btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border-radius: 40px; padding: 13px 34px; }
+.notion-card:hover .nc-btn { background: #5c1c28; }
 
-    /* HAMBURGER */
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .hamburger span { width: 22px; height: 1px; background: #1a1410; display: block; transition: all 0.3s; }
-    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
-    .mobile-menu a:hover { color: #7a2535; }
+.impacto { text-align: center; padding: 0.75rem 1rem; margin: 1rem 0 0.25rem; }
+.impacto p { font-family: 'Spectral', serif; font-size: 22px; font-weight: 500; font-style: italic; color: #7a2535; line-height: 1.5; }
 
-    .page { max-width: 660px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+.cta-box { text-align: center; padding: 2.5rem 1rem; }
+.cta-title { font-family: 'Spectral', serif; font-size: 24px; font-weight: 300; font-style: italic; color: #1a1410; margin-bottom: 0.5rem; line-height: 1.5; }
+.cta-btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border: none; border-radius: 40px; padding: 14px 40px; text-decoration: none; transition: background 0.2s; }
+.cta-btn:hover { background: #5c1c28; }
 
-    .divider { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 2.5rem 0; }
-    .divider-line { width: 100%; height: 0.5px; background: #c9a86c; opacity: 0.7; }
-    .divider-line-thin { width: 85%; height: 0.5px; background: #c9a86c; opacity: 0.35; }
+.popup { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; max-width: 340px; background: #f7f3ee; border: 0.5px solid #c9a86c; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 4px 24px rgba(26,20,16,0.1); opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+.popup.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.popup-close { position: absolute; top: 0.6rem; right: 0.75rem; background: none; border: none; font-size: 16px; color: #9a7e52; cursor: pointer; }
+.popup-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a86c; margin-bottom: 0.5rem; }
+.popup-title { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.4; margin-bottom: 0.75rem; }
+.popup-btn { display: block; width: 100%; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border: none; border-radius: 30px; padding: 10px; text-align: center; text-decoration: none; transition: background 0.2s; }
+.popup-btn:hover { background: #5c1c28; }
+.popup-link { display: block; text-align: center; margin-top: 0.7rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.08em; color: #9a7e52; text-decoration: underline; }
 
-    /* HERO */
-    .hero { text-align: center; margin-bottom: 2.5rem; }
-    .hero-img-frame { width: 260px; height: 320px; overflow: hidden; border-radius: 130px 130px 0 0; border: 1.5px solid rgba(201,168,108,0.4); display: inline-block; margin-bottom: 1.5rem; }
-    .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 46%; transform: scale(1); transform-origin: center; display: block; }
-    .hero-title { font-family: 'Spectral', serif; font-size: 38px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.2; margin-bottom: 0.75rem; }
-    .hero-sub { font-family: 'Spectral', serif; font-size: 16px; font-weight: 300; font-style: italic; color: #7a2535; line-height: 1.6; max-width: 460px; margin: 0 auto; }
+.footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; letter-spacing: 0.1em; }
 
-    .body-text { font-size: 17px; font-weight: 400; line-height: 1.9; color: #1a1410; margin-bottom: 1.1rem; }
+.fade-section { opacity: 1; transform: translateY(0); }
 
-    /* PILARES */
-    .pilares { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
-    .pilar { border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; padding: 1.25rem; background: rgba(255,251,245,0.6); }
-    .pilar-num { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a86c; margin-bottom: 0.4rem; }
-    .pilar-title { font-family: 'Spectral', serif; font-size: 18px; font-weight: 400; font-style: italic; color: #7a2535; margin-bottom: 0.4rem; }
-    .pilar-text { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6b5040; line-height: 1.65; }
+.audio-player-home { background: rgba(201,168,108,0.06); border: 1px solid rgba(201,168,108,0.3); border-radius: 8px; padding: 0.65rem 0.9rem; display: flex; align-items: center; gap: 0.6rem; margin: 1rem 0; }
+.play-btn-home { width: 28px; height: 28px; border-radius: 50%; background: #7a2535; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+.play-btn-home:hover { background: #5c1c28; }
+.play-icon-home { width: 0; height: 0; border-style: solid; border-width: 4px 0 4px 8px; border-color: transparent transparent transparent #f7f3ee; margin-left: 2px; }
+.pause-icon-home { display: none; gap: 3px; }
+.pause-icon-home span { width: 3px; height: 10px; background: #f7f3ee; border-radius: 2px; }
+.audio-info-home { flex: 1; }
+.audio-progress-home { width: 100%; height: 3px; background: rgba(201,168,108,0.3); border-radius: 3px; cursor: pointer; position: relative; }
+.audio-progress-bar-home { height: 100%; background: #c9a86c; border-radius: 3px; width: 0%; transition: width 0.1s linear; }
+.audio-time-home { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #9a7e52; margin-top: 0.25rem; }
 
-    /* FRASE IMPACTO */
-    .impacto { text-align: center; padding: 0.75rem 1rem; margin: 1rem 0 0.25rem; }
-    .impacto p { font-family: 'Spectral', serif; font-size: 22px; font-weight: 500; font-style: italic; color: #7a2535; line-height: 1.5; }
-
-    /* TESTEMUNHO */
-    .testemunho { background: rgba(201,168,108,0.07); border-left: 2px solid #c9a86c; border-radius: 0 8px 8px 0; padding: 1.5rem 1.75rem; margin: 2rem 0; }
-    .testemunho-texto { font-family: 'Spectral', serif; font-size: 18px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.8; margin-bottom: 0.75rem; }
-    .testemunho-nome { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.1em; color: #9a7e52; text-transform: uppercase; }
-
-    /* CTA */
-    .cta-box { text-align: center; padding: 2.5rem 1rem; }
-    .cta-title { font-family: 'Spectral', serif; font-size: 24px; font-weight: 300; font-style: italic; color: #1a1410; margin-bottom: 0.5rem; line-height: 1.5; }
-    .cta-sub { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; color: #6b5040; margin-bottom: 1.25rem; }
-    .cta-btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border: none; border-radius: 40px; padding: 14px 40px; text-decoration: none; transition: background 0.2s; }
-    .cta-btn:hover { background: #5c1c28; }
-
-    /* POPUP */
-    .popup { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; max-width: 340px; background: #f7f3ee; border: 0.5px solid #c9a86c; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 4px 24px rgba(26,20,16,0.1); opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
-    .popup.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
-    .popup-close { position: absolute; top: 0.6rem; right: 0.75rem; background: none; border: none; font-size: 16px; color: #9a7e52; cursor: pointer; }
-    .popup-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a86c; margin-bottom: 0.5rem; }
-    .popup-title { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; font-style: italic; color: #1a1410; line-height: 1.4; margin-bottom: 0.75rem; }
-    .popup-btn { display: block; width: 100%; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #f7f3ee; background: #7a2535; border: none; border-radius: 30px; padding: 10px; text-align: center; text-decoration: none; transition: background 0.2s; }
-    .popup-btn:hover { background: #5c1c28; }
-
-    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; letter-spacing: 0.1em; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-section { opacity: 1; transform: translateY(0); transition: opacity 0.4s ease, transform 0.4s ease; }
-    .fade-section.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .hero-title { font-size: 28px; }
-      .pilares { grid-template-columns: 1fr; }
-      .page { padding: 5rem 1.25rem 3rem; }
-    }
-
-    .audio-player-home { background: rgba(201,168,108,0.06); border: 1px solid rgba(201,168,108,0.3); border-radius: 8px; padding: 0.65rem 0.9rem; display: flex; align-items: center; gap: 0.6rem; margin: 1rem 0; }
-    .play-btn-home { width: 28px; height: 28px; border-radius: 50%; background: #7a2535; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
-    .play-btn-home:hover { background: #5c1c28; }
-    .play-icon-home { width: 0; height: 0; border-style: solid; border-width: 4px 0 4px 8px; border-color: transparent transparent transparent #f7f3ee; margin-left: 2px; }
-    .pause-icon-home { display: none; gap: 3px; }
-    .pause-icon-home span { width: 3px; height: 10px; background: #f7f3ee; border-radius: 2px; }
-    .audio-info-home { flex: 1; }
-    .audio-progress-home { width: 100%; height: 3px; background: rgba(201,168,108,0.3); border-radius: 3px; cursor: pointer; position: relative; }
-    .audio-progress-bar-home { height: 100%; background: #c9a86c; border-radius: 3px; width: 0%; transition: width 0.1s linear; }
-    .audio-time-home { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #9a7e52; margin-top: 0.25rem; }
-    svg a { cursor: pointer; }
-  </style>
+@media (max-width: 600px) {
+  .hero-title { font-size: 27px; }
+  .page { padding: 5rem 1.25rem 3rem; }
+  .popup { right: 1rem; left: 1rem; max-width: none; }
+}
+</style>
 </head>
 <body>
 
-  <div class="summer-popup" id="summerPopup">
-    <button class="summer-popup-close" onclick="document.getElementById('summerPopup').classList.remove('visible'); document.querySelector('nav').style.top='0';">×</button>
-    <a href="mapa_essencial.html">O ritmo leve do verão é um portal de manifestação e criação 🪄</a>
+<div class="summer-popup" id="summerPopup">
+  <button class="summer-popup-close" onclick="document.getElementById('summerPopup').classList.remove('visible'); document.querySelector('nav').style.top='0';">×</button>
+  <a href="ceen/">O outono pede reestruturação 🍂 <span class="cta">Conhecer a CEEN</span></a>
+</div>
+
+<nav>
+  <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
+</nav>
+
+<button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);">🔊 Entrar na frequência</button>
+<audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
+
+<main class="page">
+
+  <div class="hero">
+    <div class="hero-img-frame"><img src="novahero.png" alt="Filipa Osório" class="hero-img"></div>
+    <h1 class="hero-title">O espaço onde a magia acontece: o meu Notion</h1>
+    <p class="hero-sub">Clareza, estratégia e energia para o teu negócio, num espaço pensado para veres o que, de dentro, é difícil de ver.</p>
   </div>
 
-  <nav>
-    
-    <div class="nav-links">
-      <a href="index.html" class="active">Início</a>
-      <a href="sobre.html">Sobre mim</a>
-    <a href="alquimia.html">A Base</a>
-      <a href="mapa_essencial.html">Travessia Essencial</a>
-      <a href="mapa_vivo.html">Travessia Viva</a>
-      <a href="mapa_alquimico.html">Travessia Alquímica</a>
-      <a href="consultoria.html">Negócio de Alma</a>
-      <a href="mentoria.html">🔒 Mentoria</a>
-      <a href="eventos.html">Eventos Presenciais (em breve)</a>
-      <a href="artigos.html">Expressão Livre</a>
-      <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre mim</a>
-    <a href="alquimia.html">A Base</a>
-    <a href="mapa_essencial.html">Travessia Essencial</a>
-    <a href="mapa_vivo.html">Travessia Viva</a>
-    <a href="mapa_alquimico.html">Travessia Alquímica</a>
-    <a href="consultoria.html">Negócio de Alma</a>
-    <a href="mentoria.html">🔒 Mentoria</a>
-    <a href="eventos.html">Eventos Presenciais (em breve)</a>
-    <a href="artigos.html">Expressão Livre</a>
-    <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
+  <a class="notion-card fade-section" href="ceen/">
+    <div class="nc-cover"></div>
+    <div class="nc-body">
+      <svg class="nc-mirror" width="36" height="50" viewBox="0 0 36 50" aria-hidden="true"><ellipse cx="18" cy="25" rx="14" ry="22" fill="#e3efff" stroke="#c9a227" stroke-width="2.6"/><ellipse cx="18" cy="25" rx="10.5" ry="18.5" fill="none" stroke="#e8d28a" stroke-width="0.8" opacity="0.8"/><path d="M11 17 L23 34" stroke="#ffffff" stroke-width="2.2" opacity="0.8" stroke-linecap="round"/></svg>
+      <p class="nc-eyebrow">O espaço onde a magia acontece</p>
+      <p class="nc-title">CEEN · Clareza, Estratégia e Energia no Negócio</p>
+      <p class="nc-sub">Uma nova forma de te veres a ti, ao teu negócio e de escolheres como queres ser vista/o.</p>
+      <span class="nc-btn">Entrar no meu Notion</span>
+    </div>
+  </a>
+
+  <div class="divider"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
+
+  <div class="fade-section">
+    <div class="impacto">
+      <p style="font-size:19px; color:#7a2535;">Neste espaço, a tua energia acede a uma nova frequência!</p>
+      <p style="font-size:19px; margin-top:0.15rem; font-weight:300; color:#c9a86c;">Os meus clientes chamam-lhe magia. Eu chamo-lhe alinhamento 🪄</p>
+    </div>
   </div>
 
-  <button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);">🔊 Entrar na frequência</button>
-  <audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
-
-  <main class="page">
-
-    <div class="hero">
-      <div class="hero-img-frame"><img src="novahero.png" alt="Filipa Osório" class="hero-img"></div>
-      <h1 class="hero-title">Aqui começa o regresso a ti!</h1>
-      <p class="hero-sub">A jornada de recordares quem és na tua essência e criares na tua realidade amor, leveza, liberdade e abundância a todos os níveis.</p>
-    </div>
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-    <div class="fade-section">
-      <p class="body-text" style="text-align:justify;">Talvez estejas num daqueles momentos da vida em que algo dentro de ti começa a pedir mudança. Ou talvez sintas <em>apenas</em> o desejo de te conheceres melhor, de cuidares mais de ti e de viveres com mais leveza. Talvez ainda não saibas exatamente o que precisa de mudar, só sabes que há partes de ti a pedir espaço. Padrões repetitivos que já pesam. Sonhos que voltam a chamar. Uma nova identidade a querer revelar-se.</p>
-      <p class="body-text" style="text-align:justify;">E talvez essa versão de <em>ti</em> que procuras não esteja longe. Na verdade, ela já existe no campo de possibilidades, está só à espera de ser reconhecida, sentida e escolhida por ti e começa a ganhar forma quando dás passos em consciência.</p>
-      <p class="body-text" style="text-align:justify;">Viver em consciência passa por compreenderes melhor a tua energia, reconheceres os padrões que já não te servem, escutares o teu corpo, tomares decisões alinhadas com o que sentes e criares espaço para receberes mais daquilo que desejas.</p>
-      <p class="body-text" style="text-align:justify;">Sem consciência, quem conduz a nossa vida é o nosso subconsciente. São as crenças que herdámos e alimentamos sem darmos conta, as histórias que aprendemos sobre quem precisamos de ser para sermos amados e aceites, as memórias que o corpo guarda, as narrativas familiares e coletivas, que nos ensinaram o que era possível e <em>permitido</em>.</p>
-      <p class="body-text" style="text-align:justify;">E, inconscientemente, vamos repetindo formas antigas de ser. Escolhemos a partir do medo e tentamos caber em vidas, relações, ritmos e versões que não nos pertencem. E quando começamos a trazer consciência a esses lugares, algo muda. O que estava escondido começa a mostrar-se. O que estava confuso começa a ganhar linguagem. O que parecia bloqueio começa a revelar uma parte tua que precisava de ser vista e integrada.</p>
-      <p class="body-text" style="text-align:justify;">É essa a porta que se abre quando entras neste meu <em>Universo</em>. Aqui, cada portal é um convite para voltares a ti, para reconheceres e honrares quem desejas ser, com leveza e amor, sem julgamento e ao teu ritmo.</p>
-      <p class="body-text" style="text-align:justify;">Aqui a vida também é olhada com simbolismo. Cada padrão, repetição, desejo ou encontro revela algo e o convite é ver a vida como uma linguagem viva, que nos mostra onde há algo a reconhecer, transformar e integrar.</p>
-      <p class="body-text" style="text-align:justify;">Quando te conheces com profundidade, confias mais em ti. Quando reconheces os teus padrões, recuperas poder de escolha. Quando te alinhas contigo, novas possibilidades se abrem. E, com elas, vem a vida que desejas...</p>
-      <p class="body-text" style="text-align:justify;"><strong>Vamos preparar o terreno para a tua manifestação acontecer?</strong></p>
-    </div>
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-    <div class="fade-section">
-      <div style="text-align:center; padding: 1.5rem 1rem; margin: 1rem 0; border-top: 2px solid #c9a86c; border-bottom: 2px solid #c9a86c;">
-        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">Não é a vida que dá o primeiro passo, és tu e a vida acompanha ❤️</p>
-      </div>
-    </div>
-
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-    <div class="fade-section">
-      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#9a7e52; margin-bottom:1.25rem; text-align:center;">Este caminho é um ciclo contínuo de quatro momentos</p>
-      <div class="pilares">
-        <div class="pilar">
-          <p class="pilar-num">01</p>
-          <p class="pilar-title">Reconhecimento</p>
-          <p class="pilar-text">Reconheces a tua energia, os teus ritmos, padrões, desejos e o que foi ficando escondido pelo caminho.</p>
-        </div>
-        <div class="pilar">
-          <p class="pilar-num">02</p>
-          <p class="pilar-title">Revelação</p>
-          <p class="pilar-text">Escutas o corpo, a intuição, o coração e a verdade que emerge quando o ruído externo silencia.</p>
-        </div>
-        <div class="pilar">
-          <p class="pilar-num">03</p>
-          <p class="pilar-title">Transmutação</p>
-          <p class="pilar-text">Transformas crenças, medos, padrões e narrativas que já não te servem em consciência, direção e poder de escolha.</p>
-        </div>
-        <div class="pilar">
-          <p class="pilar-num">04</p>
-          <p class="pilar-title">Criação</p>
-          <p class="pilar-text">Dás forma a uma vida mais autêntica, abundante e coerente com quem és e colocas a tua verdade no mundo.</p>
-        </div>
-      </div>
-    </div>
-    </div>
-
-    <div class="divider" style="margin: 0.5rem 0;"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
-
-    <div class="fade-section">
-      <div class="impacto">
-        <p style="font-size:19px; color:#7a2535;">Neste espaço, a tua energia acede a uma nova frequência!</p>
-        <p style="font-size:19px; margin-top:0.15rem; font-weight:300; color:#c9a86c;">Os meus clientes chamam-lhe magia. Eu chamo-lhe alinhamento 🪄</p>
-      </div>
-    </div>
-
-    <div class="fade-section" style="margin: 0 0 1rem;">
-      <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem;">
-        <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Eu sinto que é mesmo mágico..."</p>
-        <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
+  <div class="fade-section" style="margin: 0 0 1rem;">
+    <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem;">
+      <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Eu sinto que é mesmo mágico..."</p>
+      <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
         <button class="play-btn-home" id="playBtnHome" onclick="toggleAudioHome()" style="flex-shrink:0;">
           <div class="play-icon-home" id="playIconHome"></div>
           <div class="pause-icon-home" id="pauseIconHome"><span></span><span></span></div>
@@ -301,12 +150,12 @@
           <p class="audio-time-home" id="audioTimeHome">0:00</p>
         </div>
       </div>
-        </div>
-      <audio id="audioPlayerHome" src="magicas.MP3" preload="metadata"></audio>
+    </div>
+    <audio id="audioPlayerHome" src="magicas.MP3" preload="metadata"></audio>
 
-      <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem; margin-top:1rem;">
-        <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Os nossos momentos são para tudo o que vier..."</p>
-        <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
+    <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem; margin-top:1rem;">
+      <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Os nossos momentos são para tudo o que vier..."</p>
+      <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
         <button class="play-btn-home" id="playBtnHome2" onclick="toggleAudioHome2()" style="flex-shrink:0;">
           <div class="play-icon-home" id="playIconHome2"></div>
           <div class="pause-icon-home" id="pauseIconHome2"><span></span><span></span></div>
@@ -318,213 +167,92 @@
           <p class="audio-time-home" id="audioTimeHome2">0:00</p>
         </div>
       </div>
-        </div>
-      <audio id="audioPlayerHome2" src="energia da filipa.MP3" preload="metadata"></audio>
-
-      <div class="divider" style="margin-top:1.5rem;"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
     </div>
+    <audio id="audioPlayerHome2" src="energia da filipa.MP3" preload="metadata"></audio>
 
-    <div class="fade-section">
-      <p style="font-family:'Spectral',serif; font-size:18px; font-style:italic; color:#7a2535; text-align:center; margin:0;">O que procuras não está a chegar. Já é. Só precisas de o saber reconhecer.</p>
-    </div>
-
-    <div class="fade-section">
-      <svg width="100%" viewBox="0 0 680 260" role="img" style="display:block; margin:0 auto;">
-        <title>Mapa da jornada com os serviços de Filipa Osório</title>
-        <desc>Pergaminho mostrando o percurso: Travessia Essencial, Travessia Viva, Travessia Alquímica e Negócio de Alma</desc>
-
-        <defs>
-          <pattern id="mapTexture" width="30" height="30" patternUnits="userSpaceOnUse">
-            <circle cx="5" cy="8" r="0.5" fill="#8a6d3f" opacity="0.2"/>
-            <circle cx="20" cy="4" r="0.4" fill="#8a6d3f" opacity="0.14"/>
-            <circle cx="14" cy="20" r="0.5" fill="#8a6d3f" opacity="0.16"/>
-          </pattern>
-        </defs>
-
-        <rect x="30" y="17" width="620" height="196" rx="3" fill="#d9bc7e" opacity="0.28" transform="rotate(-1.2 340 115)"/>
-        <rect x="20" y="14" width="640" height="200" rx="3" fill="#ecdcae" opacity="0.4" stroke="#a9803e" stroke-width="0.7" transform="rotate(0.8 340 115)"/>
-        <rect x="20" y="14" width="640" height="200" fill="url(#mapTexture)" opacity="0.4" transform="rotate(0.8 340 115)"/>
-
-        <g opacity="0.12">
-          <line x1="40" y1="48" x2="640" y2="48" stroke="#7a5226" stroke-width="0.4"/>
-          <line x1="40" y1="118" x2="640" y2="118" stroke="#7a5226" stroke-width="0.4"/>
-          <line x1="40" y1="190" x2="640" y2="190" stroke="#7a5226" stroke-width="0.4"/>
-          <line x1="170" y1="25" x2="170" y2="210" stroke="#7a5226" stroke-width="0.4"/>
-          <line x1="340" y1="25" x2="340" y2="210" stroke="#7a5226" stroke-width="0.4"/>
-          <line x1="510" y1="25" x2="510" y2="210" stroke="#7a5226" stroke-width="0.4"/>
-        </g>
-
-        <text x="42" y="40" font-family="'Spectral',serif" font-style="italic" font-size="18" fill="#5c3a1a">Mapa da jornada</text>
-
-        <path d="M 145 110 Q 220 75, 290 120 Q 355 160, 425 110 Q 480 70, 545 110" 
-          fill="none" stroke="#7a5226" stroke-width="1.4" stroke-dasharray="6 7" opacity="0.7"/>
-
-        <a href="mapa_essencial.html">
-          <circle cx="145" cy="110" r="10" fill="transparent"/>
-          <circle cx="145" cy="110" r="7" fill="#a9803e" fill-opacity="0.65" stroke="#7a5226" stroke-width="1.6"/>
-          <text x="145" y="140" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Travessia Essencial</text>
-        </a>
-
-        <a href="mapa_vivo.html">
-          <circle cx="290" cy="120" r="10" fill="transparent"/>
-          <circle cx="290" cy="120" r="7" fill="#a9803e" fill-opacity="0.65" stroke="#7a5226" stroke-width="1.6"/>
-          <text x="290" y="150" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Travessia Viva</text>
-        </a>
-
-        <a href="mapa_alquimico.html">
-          <circle cx="425" cy="110" r="10" fill="transparent"/>
-          <circle cx="425" cy="110" r="7" fill="#a9803e" fill-opacity="0.65" stroke="#7a5226" stroke-width="1.6"/>
-          <text x="425" y="80" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Travessia Alquímica</text>
-        </a>
-
-        <a href="consultoria.html">
-          <circle cx="545" cy="110" r="10" fill="transparent"/>
-          <g transform="translate(545,110)">
-            <circle cx="0" cy="0" r="13" fill="none" stroke="#7a5226" stroke-width="1.6"/>
-            <path d="M -7,-9 Q -15,-1, -7,7 Q 1,13, 7,7" fill="none" stroke="#7a5226" stroke-width="1.4"/>
-          </g>
-          <text x="545" y="140" text-anchor="middle" font-family="'Spectral',serif" font-style="italic" font-size="15" fill="#4a2f15">Negócio de Alma</text>
-        </a>
-
-        <g transform="translate(615,185)" opacity="0.8">
-          <circle cx="0" cy="0" r="12" fill="none" stroke="#7a5226" stroke-width="0.45"/>
-          <circle cx="0" cy="0" r="9" fill="none" stroke="#7a5226" stroke-width="0.35" opacity="0.6"/>
-          <path d="M0,-12 L1.6,-1.6 L0,0 L-1.6,-1.6 Z" fill="#7a2535" opacity="0.8"/>
-          <path d="M0,12 L1.6,1.6 L0,0 L-1.6,1.6 Z" fill="#7a5226" opacity="0.55"/>
-          <path d="M-12,0 L-1.6,1.6 L0,0 L-1.6,-1.6 Z" fill="#7a5226" opacity="0.45"/>
-          <path d="M12,0 L1.6,1.6 L0,0 L1.6,-1.6 Z" fill="#7a5226" opacity="0.45"/>
-        </g>
-      </svg>
-    </div>
-
-    <div class="fade-section cta-box">
-      <p class="cta-title">Se escolhes viver a magia</p>
-      <a href="mapa_essencial.html" class="cta-btn" style="background:#7a2535;">Conhece o primeiro portal</a>
-    </div>
-
-    <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Privacidade & Termos</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a></p>
-      <p class="footer" style="margin-top:0.5rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Instagram</a> &nbsp;•&nbsp; <a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Substack — Reflexões, insights e magia 🖋️</a></p>
-      <p class="footer" style="margin-top:0.5rem;"><a href="mailto:mail@filipaosorio.com" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">💌 Convites e parcerias</a></p>
-
-  </main>
-
-  <div class="popup" id="popup">
-    <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
-    <p class="popup-eyebrow" style="text-align:center;">APENAS 3 VAGAS PARA JULHO</p>
-    <p class="popup-title">Será esta a leitura que procuravas?</p>
-    <a class="popup-btn" href="formula_original.html">Saber mais</a>
+    <div class="divider" style="margin-top:1.5rem;"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
   </div>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  <div class="fade-section cta-box">
+    <p class="cta-title">Se escolhes viver a magia</p>
+    <a href="ceen/" class="cta-btn">Entra no meu Notion</a>
+  </div>
 
-    setTimeout(() => {
-      document.getElementById('popup').classList.add('visible');
-    }, 6000);
+  <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Privacidade</a> & <a href="termos-ceen.html" style="color:#9a7e52; text-decoration:none;">Termos</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a></p>
+  <p class="footer" style="margin-top:0.5rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Instagram</a> &nbsp;•&nbsp; <a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Substack — Reflexões, insights e magia 🖋️</a></p>
+  <p class="footer" style="margin-top:0.5rem;"><a href="mailto:mail@filipaosorio.com" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">💌 Convites e parcerias</a></p>
 
-    const sections = document.querySelectorAll('.fade-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
-    sections.forEach(s => observer.observe(s));
+</main>
 
+<div class="popup" id="popup">
+  <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
+  <p class="popup-eyebrow" style="text-align:center;">Apenas 3 vagas para outubro</p>
+  <p class="popup-title">Queres olhar para o teu negócio de outra forma?</p>
+  <a class="popup-btn" href="https://calendly.com/filipaosorio/ceen" target="_blank" rel="noopener">Marcar a minha CEEN</a>
+  <a class="popup-link" href="ceen/">Conhecer a CEEN</a>
+</div>
 
+<script>
+setTimeout(() => {
+  document.getElementById('popup').classList.add('visible');
+}, 6000);
 
-  </script>
+setTimeout(() => {
+  const popup = document.getElementById('summerPopup');
+  const nav = document.querySelector('nav');
+  if (popup) {
+    popup.classList.add('visible');
+    const h = popup.offsetHeight;
+    if (nav) nav.style.top = h + 'px';
+  }
+}, 2000);
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const audioHome = document.getElementById('audioPlayerHome');
-      const playIconHome = document.getElementById('playIconHome');
-      const pauseIconHome = document.getElementById('pauseIconHome');
-      const progressFillHome = document.getElementById('progressFillHome');
-      const audioTimeHome = document.getElementById('audioTimeHome');
+function toggleFrequency() {
+  const audio = document.getElementById('freqAudio');
+  const btn = document.getElementById('freqToggle');
+  if (audio.paused) {
+    audio.play();
+    btn.textContent = '🔊 Sentir em silêncio';
+  } else {
+    audio.pause();
+    btn.textContent = '🔊 Entrar na frequência';
+  }
+}
 
-      window.toggleAudioHome = function() {
-        if (audioHome.paused) {
-          audioHome.play();
-          playIconHome.style.display = 'none';
-          pauseIconHome.style.display = 'flex';
-        } else {
-          audioHome.pause();
-          playIconHome.style.display = 'block';
-          pauseIconHome.style.display = 'none';
-        }
-      }
-
-      audioHome.addEventListener('timeupdate', () => {
-        if (audioHome.duration) {
-          progressFillHome.style.width = (audioHome.currentTime / audioHome.duration * 100) + '%';
-          const m = Math.floor(audioHome.currentTime / 60);
-          const s = Math.floor(audioHome.currentTime % 60).toString().padStart(2, '0');
-          audioTimeHome.textContent = m + ':' + s;
-        }
-      });
-
-      window.seekAudioHome = function(e) {
-        const bar = document.getElementById('progressBarHome');
-        const rect = bar.getBoundingClientRect();
-        audioHome.currentTime = ((e.clientX - rect.left) / rect.width) * audioHome.duration;
-      }
-
-      const audioHome2 = document.getElementById('audioPlayerHome2');
-      const playIconHome2 = document.getElementById('playIconHome2');
-      const pauseIconHome2 = document.getElementById('pauseIconHome2');
-      const progressFillHome2 = document.getElementById('progressFillHome2');
-      const audioTimeHome2 = document.getElementById('audioTimeHome2');
-
-      window.toggleAudioHome2 = function() {
-        if (audioHome2.paused) {
-          audioHome2.play();
-          playIconHome2.style.display = 'none';
-          pauseIconHome2.style.display = 'flex';
-        } else {
-          audioHome2.pause();
-          playIconHome2.style.display = 'block';
-          pauseIconHome2.style.display = 'none';
-        }
-      }
-
-      audioHome2.addEventListener('timeupdate', () => {
-        if (audioHome2.duration) {
-          progressFillHome2.style.width = (audioHome2.currentTime / audioHome2.duration * 100) + '%';
-          const m2 = Math.floor(audioHome2.currentTime / 60);
-          const s2 = Math.floor(audioHome2.currentTime % 60).toString().padStart(2, '0');
-          audioTimeHome2.textContent = m2 + ':' + s2;
-        }
-      });
-
-      window.seekAudioHome2 = function(e) {
-        const bar2 = document.getElementById('progressBarHome2');
-        const rect2 = bar2.getBoundingClientRect();
-        audioHome2.currentTime = ((e.clientX - rect2.left) / rect2.width) * audioHome2.duration;
-      }
-    });
-  </script>
-  <script>
-    setTimeout(() => {
-      const popup = document.getElementById('summerPopup');
-      const nav = document.querySelector('nav');
-      if (popup) {
-        popup.classList.add('visible');
-        const h = popup.offsetHeight;
-        if (nav) nav.style.top = h + 'px';
-      }
-    }, 2000);
-
-    function toggleFrequency() {
-      const audio = document.getElementById('freqAudio');
-      const btn = document.getElementById('freqToggle');
+document.addEventListener('DOMContentLoaded', function() {
+  function setupPlayer(audioId, playId, pauseId, fillId, timeId, barId, toggleName, seekName) {
+    const audio = document.getElementById(audioId);
+    const playIcon = document.getElementById(playId);
+    const pauseIcon = document.getElementById(pauseId);
+    const fill = document.getElementById(fillId);
+    const time = document.getElementById(timeId);
+    window[toggleName] = function() {
       if (audio.paused) {
         audio.play();
-        btn.textContent = '🔊 Sentir em silêncio';
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'flex';
       } else {
         audio.pause();
-        btn.textContent = '🔊 Entrar na frequência';
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
       }
-    }
-  </script>
+    };
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+        time.textContent = m + ':' + s;
+      }
+    });
+    window[seekName] = function(e) {
+      const rect = document.getElementById(barId).getBoundingClientRect();
+      audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+    };
+  }
+  setupPlayer('audioPlayerHome', 'playIconHome', 'pauseIconHome', 'progressFillHome', 'audioTimeHome', 'progressBarHome', 'toggleAudioHome', 'seekAudioHome');
+  setupPlayer('audioPlayerHome2', 'playIconHome2', 'pauseIconHome2', 'progressFillHome2', 'audioTimeHome2', 'progressBarHome2', 'toggleAudioHome2', 'seekAudioHome2');
+});
+</script>
 </body>
 </html>
