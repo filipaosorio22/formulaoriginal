@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5CX792T8H9');
-  </script>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leitura Intuitiva · Filipa Osório</title>
   <meta name="description" content="Leitura Intuitiva: uma leitura feita com intuição e método sobre o momento que estás a viver e o tema que trouxeres.">
@@ -1024,7 +1016,7 @@
 
     <div class="aside centered">
       <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.4rem;">Se esta é a leitura que procuravas</p>
-      <a id="cta-final" class="cta-link" href="#" onclick="event.preventDefault(); document.getElementById('calendlyEmbed').style.display='block'; this.style.display='none'; setTimeout(()=>{document.getElementById('calendlyEmbed').scrollIntoView({behavior:'smooth', block:'start'});}, 100);" style="background:#7a2535; font-size:13px; letter-spacing:0.08em; color:#f7f3ee;">Marcar a minha leitura</a>
+      <a id="cta-final" class="cta-link" href="#" onclick="event.preventDefault(); if (window.__calLoaded) { document.getElementById('calendlyEmbed').style.display='block'; this.style.display='none'; setTimeout(()=>{document.getElementById('calendlyEmbed').scrollIntoView({behavior:'smooth', block:'start'});}, 100); } else { window.open('https://calendly.com/filipaosorio/alinhamento', '_blank'); window.fowReopenCookiePrefs && window.fowReopenCookiePrefs(); }" style="background:#7a2535; font-size:13px; letter-spacing:0.08em; color:#f7f3ee;">Marcar a minha leitura</a>
       <p style="margin-top:0.75rem;"><a href="https://calendly.com/filipaosorio/alinhamento" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; text-decoration:underline;">ou abre numa nova página →</a></p>
       <div id="calendlyEmbed" style="display:none; margin-top:1.5rem; border-radius:12px; overflow:hidden; border:0.5px solid rgba(201,168,108,0.4);">
         <div class="calendly-inline-widget" data-url="https://calendly.com/filipaosorio/alinhamento" style="min-width:280px; height:700px;"></div>
@@ -1174,13 +1166,79 @@
       requestAnimationFrame(step);
     }
   </script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
 document.getElementById('hamburger').addEventListener('click', function () {
   var mm = document.getElementById('mobileMenu');
   mm.style.top = document.querySelector('nav').getBoundingClientRect().bottom + 'px';
   mm.classList.toggle('open');
 });
+</script>
+
+<div id="cookieVeil" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.35); z-index:998; backdrop-filter:blur(2px);"></div>
+<div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem; box-shadow:0 -4px 24px rgba(26,20,16,0.12);">
+  <div style="max-width:720px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0;">Uso cookies para estatísticas (Google Analytics) e para o calendário de marcações (Calendly) funcionar aqui na página. <a href="privacidade.html" style="color:#7a2535; text-decoration:underline;">Saber mais</a></p>
+    <div style="display:flex; gap:0.6rem; flex-shrink:0;">
+      <button id="cookieReject" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; background:transparent; border:1px solid #7a2535; color:#7a2535; border-radius:30px; padding:10px 20px; cursor:pointer;">Recusar</button>
+      <button id="cookieAccept" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; background:#7a2535; border:1px solid #7a2535; color:#f7f3ee; border-radius:30px; padding:10px 20px; cursor:pointer;">Aceitar</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'fo_cookie_consent';
+  var MAX_AGE = 1000*60*60*24*180;
+  function getConsent(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj.ts || Date.now() - obj.ts > MAX_AGE) return null;
+      return obj.choice;
+    } catch(e){ return null; }
+  }
+  function setConsent(choice){
+    try { localStorage.setItem(KEY, JSON.stringify({choice: choice, ts: Date.now()})); } catch(e){}
+  }
+  window.__loadGA = function(){
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+    window.gtag = gtag;
+  };
+  window.__loadCalendly = function(){
+    if (window.__calLoaded) return;
+    window.__calLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    document.body.appendChild(s);
+  };
+  function hideBanner(){
+    var v = document.getElementById('cookieVeil'); var b = document.getElementById('cookieBanner');
+    if (v) v.style.display = 'none'; if (b) b.style.display = 'none';
+  }
+  function showBanner(){
+    var v = document.getElementById('cookieVeil'); var b = document.getElementById('cookieBanner');
+    if (v) v.style.display = 'block'; if (b) b.style.display = 'block';
+  }
+  window.fowReopenCookiePrefs = showBanner;
+  var choice = getConsent();
+  if (choice === 'accepted') { window.__loadGA(); window.__loadCalendly(); }
+  else if (choice !== 'rejected') { showBanner(); }
+  document.addEventListener('DOMContentLoaded', function(){
+    var a = document.getElementById('cookieAccept'); var r = document.getElementById('cookieReject');
+    if (a) a.addEventListener('click', function(){ setConsent('accepted'); window.__loadGA(); window.__loadCalendly(); hideBanner(); });
+    if (r) r.addEventListener('click', function(){ setConsent('rejected'); hideBanner(); });
+  });
+})();
 </script>
 </body>
 </html>
