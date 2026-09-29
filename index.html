@@ -169,7 +169,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
         </div>
       </div>
     </div>
-    <audio id="audioPlayerHome" src="magicas.MP3" preload="metadata"></audio>
+    <audio id="audioPlayerHome" src="feedback.mp3" preload="metadata"></audio>
 
     <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem; margin-top:1rem;">
       <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Os nossos momentos são para tudo o que vier..."</p>
@@ -206,7 +206,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
   <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
   <p class="popup-eyebrow" style="text-align:center;">Apenas 3 vagas para outubro</p>
   <p class="popup-title">O teu negócio pede um novo olhar?</p>
-  <a class="popup-btn" href="https://calendly.com/filipaosorio/ceen" target="_blank" rel="noopener">Marcar a minha CEEN</a>
+  <a class="popup-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha CEEN</a>
   <a class="popup-link" href="ceen/">Conhecer a CEEN</a>
 </div>
 
@@ -280,6 +280,26 @@ document.getElementById('hamburger').addEventListener('click', function () {
 });
 </script>
 
+<div id="ceenCalendlyModal" style="display:none; position:fixed; inset:0; z-index:1000; background:rgba(26,20,16,0.55); align-items:center; justify-content:center; padding:1.5rem;">
+  <div style="background:#faf6ef; border-radius:14px; max-width:640px; width:100%; max-height:88vh; overflow:auto; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <button onclick="document.getElementById('ceenCalendlyModal').style.display='none';" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:22px; color:#9a7e52; cursor:pointer; z-index:2;">×</button>
+    <div style="padding:1.5rem 1rem 1rem;">
+      <p style="font-family:'Spectral',serif; font-style:italic; font-size:18px; color:#1a1410; text-align:center; margin:0 0 1rem;">Marcar a minha CEEN</p>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/filipaosorio/ceen" style="min-width:280px; height:650px;"></div>
+    </div>
+  </div>
+</div>
+<script>
+function openCeenCalendly(){
+  if (window.__calLoaded) {
+    document.getElementById('ceenCalendlyModal').style.display = 'flex';
+  } else {
+    window.open('https://calendly.com/filipaosorio/ceen', '_blank');
+    window.fowReopenCookiePrefs && window.fowReopenCookiePrefs();
+  }
+}
+</script>
+</body>
 <div id="cookieVeil" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.35); z-index:998; backdrop-filter:blur(2px);"></div>
 <div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem; box-shadow:0 -4px 24px rgba(26,20,16,0.12);">
   <div id="cookieSimple" style="max-width:760px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
