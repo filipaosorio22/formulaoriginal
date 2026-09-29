@@ -1270,7 +1270,7 @@ document.getElementById('hamburger').addEventListener('click', function () {
     var back = document.getElementById('cookieBack');
     var save = document.getElementById('cookieSavePrefs');
     if (reject) reject.addEventListener('click', function(){ setConsent(false, false); hideBanner(); });
-    if (acceptAll) acceptAll.addEventListener('click', function(){ setConsent(true, true); applyConsent({analytics:true, calendly:true}); hideBanner(); });
+    if (acceptAll) acceptAll.addEventListener('click', function(){ setConsent(true, true); applyConsent({analytics:true, calendly:true}); hideBanner(); var fb = document.getElementById('calendlyFallbackLink'); if (fb) fb.style.display = 'none'; });
     if (manage) manage.addEventListener('click', function(){ showBanner(true); });
     if (back) back.addEventListener('click', function(){ showBanner(false); });
     if (save) save.addEventListener('click', function(){
@@ -1279,6 +1279,7 @@ document.getElementById('hamburger').addEventListener('click', function () {
       setConsent(a, c);
       applyConsent({analytics:a, calendly:c});
       hideBanner();
+      if (c) { var fb = document.getElementById('calendlyFallbackLink'); if (fb) fb.style.display = 'none'; }
     });
   });
 })();
