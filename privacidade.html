@@ -1,92 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidade · Filipa Osório</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300;1,400&family=Lora:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5CX792T8H9');
-  </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: #faf6ef; color: #1a1410; font-family: 'Lora', serif; font-weight: 400; min-height: 100vh; }
-    .page { max-width: 660px; margin: 0 auto; padding: 5rem 2rem 4rem; }
-    .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: #9a7e52; margin-bottom: 1.5rem; }
-    h1 { font-family: 'Spectral', serif; font-size: 36px; font-weight: 300; font-style: italic; color: #1a1410; margin-bottom: 0.5rem; line-height: 1.2; }
-    .divider { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 2rem 0; }
-    .divider-line { width: 100%; height: 0.5px; background: #c9a86c; opacity: 0.7; }
-    .divider-line-thin { width: 85%; height: 0.5px; background: #c9a86c; opacity: 0.35; }
-    h2 { font-family: 'Spectral', serif; font-size: 20px; font-weight: 300; font-style: italic; color: #7a2535; margin-bottom: 0.75rem; margin-top: 2rem; }
-    p { font-size: 16px; font-weight: 400; line-height: 1.85; color: #1a1410; margin-bottom: 1rem; }
-    ul { margin: 0 0 1rem 1.5rem; }
-    ul li { font-size: 16px; font-weight: 400; line-height: 1.85; color: #1a1410; margin-bottom: 0.5rem; }
-    a { color: #7a2535; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .footer { text-align: center; margin-top: 3rem; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; color: #b0a090; letter-spacing: 0.1em; }
-    .back { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: #7a2535; border: 0.5px solid #c9a86c; border-radius: 40px; padding: 10px 24px; text-decoration: none; margin-bottom: 2rem; }
-    .intro { font-family: 'Spectral', serif; font-size: 17px; font-style: italic; color: #6b5040; line-height: 1.8; margin-bottom: 1.5rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade | Filipa Osório</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F6F0E4; --ink: #2B241C; --ink-soft: #5A5044;
+    --gold: #A9834F; --gold-soft: #D8B57F; --line: rgba(43,36,28,0.14);
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Work Sans',sans-serif; font-weight:300; line-height:1.75; }
+  .wrap { max-width: 760px; margin:0 auto; padding: 0 28px 80px; }
+  header.top { text-align:center; padding: 40px 0 10px; }
+  header.top a { font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--ink); text-decoration:none; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(26px,4vw,34px); text-align:center; margin: 30px 0 6px; }
+  .subtitle { text-align:center; color:var(--ink-soft); font-size:14px; font-style:italic; font-family:'Cormorant Garamond',serif; margin-bottom:50px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:21px; margin:44px 0 14px; color:var(--gold); }
+  h3 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:17px; margin:22px 0 8px; color:var(--ink); }
+  p, li { font-size:15.5px; color:var(--ink-soft); }
+  strong { color:var(--ink); font-weight:500; }
+  ul { padding-left:20px; }
+  li { margin-bottom:8px; }
+  table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14px; }
+  th { text-align:left; padding:10px 12px; border-bottom:2px solid var(--gold-soft); font-family:'Cormorant Garamond',serif; font-size:15px; color:var(--ink); }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); color:var(--ink-soft); vertical-align:top; }
+  hr { border:none; border-top:1px solid var(--line); margin:50px 0; }
+  a { color: var(--gold); }
+  .placeholder { background:#fff3cd; padding:1px 5px; border-radius:3px; color:#7a5c00; font-weight:500; }
+  footer { text-align:center; padding:40px 0 60px; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ink-soft); font-size:14px; }
+</style>
 </head>
 <body>
-  <main class="page">
 
-    <p class="eyebrow">Filipa Osório</p>
-    <h1>Política de Privacidade</h1>
+<header class="top"><a href="https://filipaosorio.com">Filipa Osório</a></header>
 
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+<div class="wrap">
+  <h1>Política de Privacidade</h1>
+  <p class="subtitle">filipaosorio.com</p>
 
-    <p class="intro">Todas as tuas informações pessoais recolhidas, em contactos, compras ou inscrições em eventos, serão usadas exclusivamente para te proporcionar a melhor experiência possível. A confidencialidade dos teus dados é uma prioridade para mim.</p>
+  <h2>1. Quem trata os teus dados</h2>
+  <p>O responsável pelo tratamento dos dados pessoais recolhidos através deste site e dos serviços nele descritos é <strong>Filipa Osório</strong>, com sede em <strong>Porto, Portugal</strong>. Para qualquer questão sobre esta política ou sobre os teus dados, podes contactar-me através de <a href="mailto:mail@filipaosorio.com">mail@filipaosorio.com</a>.</p>
 
-    <p>O uso do site filipaosorio.com pressupõe a aceitação desta Política de Privacidade. Esta política pode ser atualizada sem aviso prévio, sendo sempre disponibilizada a versão mais recente nesta página.</p>
+  <h2>2. A que serviços se aplica esta política</h2>
+  <p>Esta política aplica-se aos dados recolhidos através do site filipaosorio.com e no âmbito dos serviços aqui apresentados, nomeadamente a <strong>CEEN · Clareza, Estratégia e Energia no Negócio</strong> e a <strong>Leitura Intuitiva</strong>. Para a CEEN, aplicam-se também os <a href="termos-ceen.html">Termos e Condições da CEEN</a>.</p>
 
-    <h2>Quem somos</h2>
-    <p>O filipaosorio.com é um website de divulgação de serviços e conteúdo relacionado com as minhas sessões de mentorias, acompanhamentos, leituras e promoção de eventos online e presenciais, operados por Filipa Osório.</p>
+  <h2>3. Que dados recolho</h2>
+  <p>Consoante a forma como interages comigo, posso recolher:</p>
+  <ul>
+    <li><strong>Dados de contacto e marcação:</strong> nome, email, número de telefone/WhatsApp, e as informações que partilhas no momento da marcação de uma sessão.</li>
+    <li><strong>Dados partilhados nas sessões:</strong> tudo o que me contas antes, durante e depois das sessões, incluindo no espaço digital de observação e partilha (quando aplicável).</li>
+    <li><strong>Dados de pagamento:</strong> não guardo diretamente os dados do teu cartão ou conta bancária. Os pagamentos são processados por <strong>Stripe</strong> ou por transferência bancária/MB Way/Revolut, consoante o serviço.</li>
+    <li><strong>Dados de navegação:</strong> através do Google Analytics, apenas se aceitares essa categoria de cookies (ver secção 7).</li>
+    <li><strong>Para a Leitura Intuitiva especificamente:</strong> se optares por partilhar, data de nascimento e outros dados relevantes para a elaboração da leitura.</li>
+  </ul>
 
-    <h2>Dados recolhidos</h2>
+  <h2>4. Porque trato estes dados, e com que base legal</h2>
+  <table>
+    <tr><th>Finalidade</th><th>Base legal</th></tr>
+    <tr><td>Prestar o serviço contratado (sessões, leituras, acompanhamento)</td><td>Execução de um contrato (art. 6.º/1/b RGPD)</td></tr>
+    <tr><td>Emitir faturas e cumprir obrigações fiscais</td><td>Obrigação legal (art. 6.º/1/c RGPD)</td></tr>
+    <tr><td>Estatísticas de utilização do site (Google Analytics)</td><td>Consentimento (art. 6.º/1/a RGPD)</td></tr>
+    <tr><td>Calendário de marcações embutido no site (Calendly)</td><td>Consentimento (art. 6.º/1/a RGPD)</td></tr>
+    <tr><td>Responder a mensagens e pedidos de contacto</td><td>Interesse legítimo em comunicar contigo (art. 6.º/1/f RGPD)</td></tr>
+    <tr><td>Uso de testemunhos e feedback (secção 9)</td><td>Consentimento (art. 6.º/1/a RGPD)</td></tr>
+  </table>
 
-    <p><strong>Cookies</strong></p>
-    <p>Os cookies são pequenos ficheiros armazenados no teu dispositivo quando visitas o site. São utilizados de forma anónima para melhorar a tua experiência de navegação e para fins analíticos. Podes desativar os cookies nas definições do teu browser, embora isso possa afetar algumas funcionalidades do site.</p>
+  <h2>5. Com quem partilho os teus dados</h2>
+  <p>Não vendo nem partilho os teus dados para fins de marketing de terceiros. Para que o site e os serviços funcionem, recorro às seguintes entidades, que tratam dados em meu nome ou no seu próprio âmbito de serviço:</p>
+  <ul>
+    <li><strong>Calendly</strong> — gestão de marcações e calendário.</li>
+    <li><strong>Stripe</strong> — processamento de pagamentos.</li>
+    <li><strong>Notion</strong> — plataforma onde são organizados os espaços de trabalho personalizados (ex.: mapa de integração da CEEN).</li>
+    <li><strong>Google Analytics</strong> — estatísticas de visitas ao site, apenas com consentimento.</li>
+    <li><strong>WhatsApp (Meta)</strong> — comunicação direta contigo, quando optas por esse canal. Guardo o histórico dessas conversas como parte do registo do acompanhamento, nos mesmos prazos indicados na secção 8.</li>
+  </ul>
+  <p>Cada uma destas entidades tem a sua própria política de privacidade, que rege o tratamento que fazem dos dados nos seus sistemas.</p>
 
-    <p><strong>Formulário de inscrição</strong></p>
-    <p>Algumas páginas do site contêm formulários onde podes deixar o teu nome, contacto e respostas a perguntas sobre o teu momento de vida, para efeitos de inscrição em listas de espera ou processos de seleção para serviços específicos. Estes dados são processados através da plataforma Formspree e enviados diretamente para o meu email, sendo utilizados exclusivamente para entrar em contacto contigo sobre o serviço em questão. Se quiseres saber mais informações, podes consultar a política de privacidade da Formspree em <a href="https://formspree.io/legal/privacy-policy/" target="_blank">formspree.io/legal/privacy-policy</a>.</p>
+  <h2>6. Transferências internacionais</h2>
+  <p>Algumas das entidades acima (nomeadamente Google, Stripe, Calendly, Notion e Meta/WhatsApp) têm sede ou processam dados fora do Espaço Económico Europeu, designadamente nos Estados Unidos. Nestes casos, a transferência assenta nos mecanismos de salvaguarda previstos no RGPD, como as Cláusulas Contratuais-Tipo aprovadas pela Comissão Europeia, tal como implementadas por cada uma dessas entidades.</p>
 
-    <p><strong>Marcação de sessões e contacto direto</strong></p>
-    <p>Quando marcas uma sessão diretamente através do widget de marcação disponível no site, os dados que partilhes (nome, email e respostas ao formulário de marcação) são processados pela Calendly. Se preferires entrar em contacto comigo previamente através do Instagram ou WhatsApp, os dados que partilhes nessa conversa (nome, contacto e informações pessoais relevantes) serão utilizados exclusivamente para a prestação do serviço contratado. Em ambos os casos, os dados são tratados com total confidencialidade e nunca partilhados com terceiros para outros fins.</p>
+  <h2>7. Cookies</h2>
+  <p>O site utiliza cookies. Ao visitares filipaosorio.com pela primeira vez, é-te apresentado um aviso onde podes escolher entre <strong>aceitar</strong>, <strong>recusar</strong> ou <strong>gerir as tuas preferências</strong> de forma detalhada, por categoria:</p>
+  <ul>
+    <li><strong>Necessários</strong> — sempre ativos, permitem o funcionamento básico do site e não guardam identificadores.</li>
+    <li><strong>Estatísticas (Google Analytics)</strong> — só são ativados se autorizares.</li>
+    <li><strong>Calendário de marcações (Calendly)</strong> — só carrega, com os cookies próprios que isso implica, se autorizares.</li>
+  </ul>
+  <p>A tua escolha fica guardada no teu próprio browser durante 180 dias, findos os quais o aviso volta a aparecer. Podes alterar a tua escolha a qualquer momento através do link "Cookies" no rodapé do site.</p>
 
-    <h2>Google Analytics</h2>
-    <p>Utilizamos o Google Analytics para recolher informações anónimas sobre as páginas visitadas, hora de acesso, dispositivo utilizado e localização geográfica aproximada. Todas as informações recolhidas são anonimizadas antes de serem enviadas ao Google Analytics para análise.</p>
-    <p>O Google Analytics utiliza cookies primários para registar interações dos visitantes. Os dados recolhidos são retidos por 26 meses. Podes optar por não ser rastreado instalando o <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a>.</p>
-    <p>Se quiseres saber mais informações, podes consultar a política de privacidade da Google em <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
+  <h2>8. Durante quanto tempo guardo os teus dados</h2>
+  <ul>
+    <li><strong>Documentos de faturação:</strong> 10 anos, por exigência legal (Código Comercial e Código do IVA).</li>
+    <li><strong>Dados de sessões e acompanhamento:</strong> até 3 anos após o fim do acompanhamento, salvo se pedires o apagamento antes desse prazo ou se voltares a contratar um serviço, caso em que o prazo é reavaliado a partir desse momento.</li>
+    <li><strong>Dados de navegação (Google Analytics):</strong> de acordo com a configuração da própria ferramenta.</li>
+  </ul>
 
-    <h2>Como utilizamos os teus dados</h2>
-    <p>Utilizamos os teus dados para:</p>
-    <ul>
-      <li>Prestar os serviços contratados: sessões, leituras, acompanhamento e eventos</li>
-      <li>Comunicar contigo sobre marcações e informações relevantes para o teu processo durante o período contratado</li>
-      <li>Melhorar o funcionamento do website, incluindo a gestão e priorização de conteúdos</li>
-      <li>Cumprir obrigações contratuais e legais</li>
-    </ul>
-    <p>Em nenhum momento os teus dados serão partilhados com terceiros ou utilizados para fins diferentes dos descritos acima.</p>
+  <h2>9. Testemunhos e feedback</h2>
+  <p>Ao aceitares os <a href="termos-ceen.html">Termos e Condições</a>, autorizas que eu use comentários, mensagens ou áudios que partilhes comigo como testemunho, <strong>sempre de forma anónima</strong>, no site ou noutros materiais de divulgação. Se, nalgum momento, eu quiser usar o teu nome associado a um testemunho, peço-te uma autorização específica para isso, à parte desta política.</p>
 
-    <h2>Ligações a sites de terceiros</h2>
-    <p>Este website pode conter ligações e widgets de outros sites, nomeadamente Instagram, Substack e Calendly. Quando marcas uma sessão através do Calendly, os dados que partilhas (nome, email e respostas ao formulário de marcação) são processados diretamente pela Calendly. Esta política de privacidade não se aplica a sites ou serviços de terceiros. Se quiseres saber mais informações, podes consultar a política de privacidade da Calendly em <a href="https://calendly.com/privacy" target="_blank">calendly.com/privacy</a>.</p>
+  <h2>10. Os teus direitos</h2>
+  <p>Nos termos do RGPD, tens o direito de:</p>
+  <ul>
+    <li>aceder aos dados que tenho sobre ti;</li>
+    <li>pedir a retificação de dados incorretos ou incompletos;</li>
+    <li>pedir o apagamento dos teus dados, quando aplicável;</li>
+    <li>pedir a limitação do tratamento em certas circunstâncias;</li>
+    <li>opor-te ao tratamento baseado em interesse legítimo;</li>
+    <li>pedir a portabilidade dos dados que me forneceste;</li>
+    <li>retirar o consentimento a qualquer momento, sem afetar a licitude do tratamento anterior;</li>
+    <li>apresentar reclamação junto da <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong>, através de <a href="https://www.cnpd.pt" target="_blank">www.cnpd.pt</a>.</li>
+  </ul>
+  <p>Para exercer qualquer um destes direitos, contacta-me através de <a href="mailto:mail@filipaosorio.com">mail@filipaosorio.com</a>.</p>
 
-    <h2>Os teus direitos</h2>
-    <p>A qualquer momento podes solicitar o acesso, correção ou eliminação dos teus dados pessoais, enviando um email com o pedido para <a href="mailto:mail@filipaosorio.com">mail@filipaosorio.com</a>.</p>
+  <h2>11. Segurança</h2>
+  <p>Adoto medidas técnicas e organizativas razoáveis para proteger os teus dados contra acesso não autorizado, perda ou alteração. Nenhum sistema é, no entanto, totalmente seguro, e não posso garantir segurança absoluta.</p>
 
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+  <h2>12. Alterações a esta política</h2>
+  <p>Esta política pode ser atualizada periodicamente. A versão em vigor é sempre a publicada nesta página, com a data da última atualização indicada no rodapé.</p>
 
-    <a class="back" href="/">← Voltar ao site</a>
+  <hr>
+  <footer>Filipa Osório · Última atualização: 30 de setembro de 2026</footer>
+</div>
 
-    <p class="footer">Filipa Osório · Última atualização: Junho 2026</p>
-
-  </main>
 </body>
 </html>
