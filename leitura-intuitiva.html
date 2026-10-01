@@ -1253,7 +1253,7 @@ document.getElementById('hamburger').addEventListener('click', function () {
   var consent = getConsent();
   if (consent) { applyConsent(consent); }
   else { showBanner(false); }
-  document.addEventListener('DOMContentLoaded', function(){
+  function attachCookieHandlers(){
     var reject = document.getElementById('cookieReject');
     var manage = document.getElementById('cookieManage');
     var acceptAll = document.getElementById('cookieAcceptAll');
@@ -1271,7 +1271,8 @@ document.getElementById('hamburger').addEventListener('click', function () {
       hideBanner();
       if (c) { var fb = document.getElementById('calendlyFallbackLink'); if (fb) fb.style.display = 'none'; }
     });
-  });
+  }
+  attachCookieHandlers();
 })();
 </script>
 </body>
