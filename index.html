@@ -387,7 +387,7 @@ function openCeenCalendly(){
   var consent = getConsent();
   if (consent) { applyConsent(consent); }
   else { showBanner(false); }
-  document.addEventListener('DOMContentLoaded', function(){
+  function attachCookieHandlers(){
     var reject = document.getElementById('cookieReject');
     var manage = document.getElementById('cookieManage');
     var acceptAll = document.getElementById('cookieAcceptAll');
@@ -404,7 +404,8 @@ function openCeenCalendly(){
       applyConsent({analytics:a, calendly:c});
       hideBanner();
     });
-  });
+  }
+  attachCookieHandlers();
 })();
 </script>
 </body>
