@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Leitura Intuitiva · Filipa Osório</title>
   <meta name="description" content="Leitura Intuitiva: uma leitura feita com intuição e método sobre o momento que estás a viver e o tema que trouxeres.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23faf6ef%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-size=%2244%22 fill=%22%237a2535%22>FO</text></svg>">
@@ -1169,7 +1169,7 @@ document.getElementById('hamburger').addEventListener('click', function () {
 </script>
 
 <div id="cookieVeil" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.35); z-index:998; backdrop-filter:blur(2px);"></div>
-<div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem; box-shadow:0 -4px 24px rgba(26,20,16,0.12);">
+<div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem calc(1.25rem + env(safe-area-inset-bottom, 0px)); box-shadow:0 -4px 24px rgba(26,20,16,0.12); max-height:85vh; overflow-y:auto;">
   <div id="cookieSimple" style="max-width:760px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
     <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0;">Uso cookies para estatísticas (Google Analytics). <a href="privacidade.html" style="color:#7a2535; text-decoration:underline;">Saber mais</a></p>
     <div style="display:flex; gap:0.6rem; flex-shrink:0; flex-wrap:wrap;">
