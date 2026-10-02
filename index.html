@@ -105,7 +105,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 <nav>
   <div class="nav-links">
-    <a href="sobre.html">Sobre mim</a>
     <a href="index.html" class="active">CEEN • Negócio</a>
     <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
     <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
@@ -113,7 +112,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="sobre.html">Sobre mim</a>
   <a href="index.html">CEEN • Negócio</a>
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
   <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
@@ -126,23 +124,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
   <div class="hero">
     <h1 class="hero-title">Aproxima o teu negócio de quem és e permite que ele evolua contigo</h1>
-    <p class="hero-sub">Clareza, estratégia e energia para o teu negócio, num espaço pensado para veres o que, de dentro, é difícil de ver.</p>
+    <p class="hero-sub">Clareza, estratégia e energia para o teu negócio,<br>num espaço pensado para veres o que, de dentro, é difícil de reconhecer e mudar.</p>
   </div>
 
   <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-
-  <a class="notion-card fade-section" href="ceen/">
-    <div class="nc-cover"></div>
-    <div class="nc-body">
-      <svg class="nc-mirror" width="36" height="50" viewBox="0 0 36 50" aria-hidden="true"><ellipse cx="18" cy="25" rx="14" ry="22" fill="#e3efff" stroke="#c9a227" stroke-width="2.6"/><ellipse cx="18" cy="25" rx="10.5" ry="18.5" fill="none" stroke="#e8d28a" stroke-width="0.8" opacity="0.8"/><path d="M11 17 L23 34" stroke="#ffffff" stroke-width="2.2" opacity="0.8" stroke-linecap="round"/></svg>
-      <p class="nc-eyebrow">CEEN • Negócio</p>
-      <p class="nc-title">CEEN · Clareza, Estratégia e Energia no Negócio</p>
-      <p class="nc-sub">Uma nova forma de te veres a ti, ao teu negócio e de escolheres como queres ser vista/o.</p>
-      <span class="nc-btn">Conhecer a CEEN</span>
-    </div>
-  </a>
-
-  <div class="divider"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
 
   <div class="fade-section">
     <div class="impacto">
@@ -186,15 +171,62 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
     </div>
     <audio id="audioPlayerHome2" src="energia da filipa.MP3" preload="metadata"></audio>
 
+    <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem; margin-top:1rem;">
+      <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Eu sinto que é mesmo mágico..."</p>
+      <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
+        <button class="play-btn-home" id="playBtnHome3" onclick="toggleAudioHome3()" style="flex-shrink:0;">
+          <div class="play-icon-home" id="playIconHome3"></div>
+          <div class="pause-icon-home" id="pauseIconHome3"><span></span><span></span></div>
+        </button>
+        <div class="audio-info-home" style="display:flex; flex-direction:column; justify-content:center;">
+          <div class="audio-progress-home" id="progressBarHome3" onclick="seekAudioHome3(event)">
+            <div class="audio-progress-bar-home" id="progressFillHome3"></div>
+          </div>
+          <p class="audio-time-home" id="audioTimeHome3">0:00</p>
+        </div>
+      </div>
+    </div>
+    <audio id="audioPlayerHome3" src="magicas.MP3" preload="metadata"></audio>
+
+    <div class="audio-player-home" style="flex-direction:column; align-items:flex-start; gap:0.4rem; margin-top:1rem;">
+      <p style="font-family:'Spectral',serif; font-size:13px; font-weight:300; font-style:italic; color:#9a7e52; width:100%;">"Ter alguém ao meu lado que olha para mim e para o meu negócio como um todo."</p>
+      <div style="display:flex; align-items:center; gap:0.75rem; width:100%;">
+        <button class="play-btn-home" id="playBtnHome4" onclick="toggleAudioHome4()" style="flex-shrink:0;">
+          <div class="play-icon-home" id="playIconHome4"></div>
+          <div class="pause-icon-home" id="pauseIconHome4"><span></span><span></span></div>
+        </button>
+        <div class="audio-info-home" style="display:flex; flex-direction:column; justify-content:center;">
+          <div class="audio-progress-home" id="progressBarHome4" onclick="seekAudioHome4(event)">
+            <div class="audio-progress-bar-home" id="progressFillHome4"></div>
+          </div>
+          <p class="audio-time-home" id="audioTimeHome4">0:00</p>
+        </div>
+      </div>
+    </div>
+    <audio id="audioPlayerHome4" src="feedback cristiana.MP3" preload="metadata"></audio>
+
     <div class="divider" style="margin-top:1.5rem;"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
   </div>
+
+  <div class="divider"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
+
+  <a class="notion-card fade-section" href="ceen/">
+    <div class="nc-cover"></div>
+    <div class="nc-body">
+      <svg class="nc-mirror" width="36" height="50" viewBox="0 0 36 50" aria-hidden="true"><ellipse cx="18" cy="25" rx="14" ry="22" fill="#e3efff" stroke="#c9a227" stroke-width="2.6"/><ellipse cx="18" cy="25" rx="10.5" ry="18.5" fill="none" stroke="#e8d28a" stroke-width="0.8" opacity="0.8"/><path d="M11 17 L23 34" stroke="#ffffff" stroke-width="2.2" opacity="0.8" stroke-linecap="round"/></svg>
+      <p class="nc-eyebrow">CEEN • Negócio</p>
+      <p class="nc-title">CEEN · Clareza, Estratégia e Energia no Negócio</p>
+      <p class="nc-sub">Uma nova forma de te veres a ti, ao teu negócio<br>e de escolheres como queres ser vista/o.</p>
+      <span class="nc-btn">Conhecer a CEEN</span>
+    </div>
+  </a>
 
   <div class="fade-section cta-box">
     <p class="cta-title">Tu &amp; o teu negócio em evolução</p>
     <a href="ceen/" class="cta-btn">Vem descobrir a CEEN</a>
   </div>
 
-  <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Privacidade</a> & <a href="termos-ceen.html" style="color:#9a7e52; text-decoration:none;">Termos</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a> · <a href="#" onclick="event.preventDefault(); window.fowReopenCookiePrefs && window.fowReopenCookiePrefs();" style="color:#9a7e52; text-decoration:none;">Cookies</a></p>
+  <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a> · <a href="#" onclick="event.preventDefault(); window.fowReopenCookiePrefs && window.fowReopenCookiePrefs();" style="color:#9a7e52; text-decoration:none;">Cookies</a></p>
   <p class="footer" style="margin-top:0.5rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Instagram</a> &nbsp;•&nbsp; <a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">Substack — Reflexões, insights e magia 🖋️</a></p>
   <p class="footer" style="margin-top:0.5rem;"><a href="mailto:mail@filipaosorio.com" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">💌 Convites e parcerias</a></p>
 
@@ -203,7 +235,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 <div class="popup" id="popup">
   <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
   <p class="popup-title">Se o teu negócio pede um novo olhar</p>
-  <p class="popup-eyebrow" style="text-align:center;">2 vagas em outubro, vens?</p>
+  <p class="popup-eyebrow" style="text-align:center;">Apenas 3 vagas para outubro</p>
   <a class="popup-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha CEEN</a>
   <a class="popup-link" href="ceen/">Conhecer a CEEN</a>
 </div>
