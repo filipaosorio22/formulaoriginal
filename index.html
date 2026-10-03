@@ -321,6 +321,7 @@ document.getElementById('hamburger').addEventListener('click', function () {
 </div>
 <script>
 function openCeenCalendly(){
+  if (typeof gtag === 'function') { gtag('event', 'marcar_ceen_click'); }
   if (window.__calLoaded) {
     document.getElementById('ceenCalendlyModal').style.display = 'flex';
   } else {
