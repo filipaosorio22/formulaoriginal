@@ -1015,7 +1015,7 @@
 
 
     // Audio player
-    const audio = document.getElementById('audioPlayer');
+    const audio = document.getElementById('audioPlayer') || document.createElement('audio');
     const playIcon = document.getElementById('playIcon');
     const pauseIcon = document.getElementById('pauseIcon');
     const progressFill = document.getElementById('progressFill');
@@ -1102,7 +1102,7 @@
     setTimeout(() => {
       document.getElementById('popup').classList.add('visible');
     }, 8000);
-    const header = document.getElementById('stickyHeader');
+    const header = document.getElementById('stickyHeader') || document.createElement('div');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
         header.classList.add('visible');
