@@ -145,6 +145,8 @@
 
   .quiz-box { margin:1.4rem 0 1.8rem; }
   .quiz-prompt { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:var(--wine); margin:0 0 0.9rem; }
+  .quiz-group { font-family:'Lora',serif; font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-deep); margin:1.1rem 0 0.55rem; }
+  .quiz-group:first-child { margin-top:0; }
   .quiz-pills { display:flex; flex-wrap:wrap; gap:0.6rem; }
   .quiz-pills button { font-family:'Lora',serif; font-size:13.5px; font-style:italic; text-align:left; background:var(--gray); border:1px solid var(--line); border-radius:30px; padding:0.6rem 1.1rem; cursor:pointer; color:var(--ink); transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
   .quiz-pills button:hover { border-color:var(--gold); transform:translateY(-1px); }
@@ -446,13 +448,19 @@
 
     <div class="quiz-box">
       <p class="quiz-prompt">Em qual destas te revês mais agora? Escolhe uma:</p>
-      <div class="quiz-pills" id="quizChips">
-        <button type="button" data-r="sessao">Não sei se devo continuar a investir nesta oferta ou concentrar-me noutra</button>
-        <button type="button" data-r="ciclo">As diferentes partes do negócio deixaram de ser coerentes, entre si e comigo</button>
-        <button type="button" data-r="sessao">Tenho dificuldade em cobrar mais, mesmo reconhecendo o valor do meu trabalho</button>
-        <button type="button" data-r="ciclo">A minha vida mudou, mas o negócio continua organizado para uma fase anterior</button>
-        <button type="button" data-r="sessao">Preciso de rever a forma como estou a entregar este serviço</button>
-        <button type="button" data-r="ciclo">Tenho ofertas, ideias e possibilidades, mas falta-me uma direção que as organize</button>
+      <div id="quizChips">
+        <p class="quiz-group">Uma questão concreta</p>
+        <div class="quiz-pills">
+          <button type="button" data-r="sessao">Não sei se devo continuar a investir nesta oferta ou concentrar-me noutra</button>
+          <button type="button" data-r="sessao">Tenho dificuldade em cobrar mais, mesmo reconhecendo o valor do meu trabalho</button>
+          <button type="button" data-r="sessao">Preciso de rever a forma como estou a entregar este serviço</button>
+        </div>
+        <p class="quiz-group">Várias áreas interligadas</p>
+        <div class="quiz-pills">
+          <button type="button" data-r="ciclo">As diferentes partes do negócio deixaram de ser coerentes, entre si e comigo</button>
+          <button type="button" data-r="ciclo">A minha vida mudou, mas o negócio continua organizado para uma fase anterior</button>
+          <button type="button" data-r="ciclo">Tenho ofertas, ideias e possibilidades, mas falta-me uma direção que as organize</button>
+        </div>
       </div>
       <div class="quiz-answer" id="quizAnswerSessao">
         <p>Isto soa a uma questão concreta — o formato pensado para isto é a <strong>Sessão CEEN</strong>. Aqui tens como funciona:</p>
