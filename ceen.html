@@ -39,13 +39,13 @@
   @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } }
 
   .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:60px; display:flex; align-items:flex-end; }
-  .cover-text { width:100%; max-width:753px; margin:0 auto; padding:0 24px 1.4rem; }
+  .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; }
   .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); margin:0 0 0.3rem; color:var(--wine); }
   .cover-text-bg .eyebrow { color:var(--orange); margin:0; font-style:italic; font-weight:700; font-size:18px; white-space:nowrap; }
   @media (max-width:999px){ .cover-text-bg .eyebrow { white-space:normal; font-size:16px; } }
 
-  .wrap { max-width:753px; margin:0 auto; padding:0 24px; }
-  .wrap-wide { max-width:753px; margin:0 auto; padding:0 24px; }
+  .wrap { max-width:800px; margin:0 auto; padding:0 24px; }
+  .wrap-wide { max-width:800px; margin:0 auto; padding:0 24px; }
 
   section { padding: 76px 0; }
   section.tight { padding: 42px 0; }
@@ -171,9 +171,9 @@
   .ci.shine { position:relative; overflow:hidden; border-radius:6px; }
   .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
-  .pause { background:linear-gradient(120deg,#ecd9c6 0%,#ead9b8 100%); padding:96px 0; text-align:center; }
-  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(30px,5.2vw,48px); line-height:1.2; color:var(--wine); text-align:center; margin:0 auto 1.1rem; max-width:780px; }
-  .pause .pause-attrib { text-align:center; font-size:21px; color:var(--ink-soft); font-style:italic; margin:0; }
+  .pause { background:linear-gradient(120deg,#ecd9c6 0%,#ead9b8 100%); padding:60px 0; text-align:center; }
+  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(23px,3.2vw,32px); line-height:1.25; color:var(--wine); text-align:center; margin:0 auto 1rem; max-width:720px; }
+  .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink-soft); font-style:italic; margin:0; }
   @media (min-width:1000px){
     p, ul.plain li, p.lead { font-size:19px; }
     .callout-label { font-size:19px; }
@@ -186,7 +186,7 @@
     .cta-btn { font-size:15px; padding:14px 26px; }
     h2.section-title { font-size:31px; }
     h1.hero-title { font-size:40px; }
-    .cover-text-bg h2 { font-size:clamp(34px,4.4vw,50px); white-space:nowrap; }
+    .cover-text-bg h2 { font-size:clamp(30px,3.4vw,40px); white-space:nowrap; }
     .eyebrow { font-size:18px; }
     .jump-link, .back-link { font-size:16px; }
   }
@@ -201,11 +201,11 @@
   details.case .fold-close { color:var(--brown-ink); }
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
-  @media (min-width:681px){
-    #quem-te-acompanha .two-col { display:block; }
-    #quem-te-acompanha .bio-photo-ph { float:left; width:44%; min-height:0; margin:0.3rem 1.8rem 1rem 0; padding:0; display:block; background:none; }
-    #quem-te-acompanha .bio-photo-ph img { width:100%; height:auto; object-fit:initial; border-radius:10px; }
-  }
+  #quem-te-acompanha .two-col p { font-size:17px; }
+  .bio-photo-ph img { object-position:50% 18%; }
+  .callout.intro-callout .ctext p { font-size:16.5px; }
+  .two-col .callout-label { font-size:16px; letter-spacing:0; }
+  section .wrap > p, section .wrap-wide > p, details .fold-body > p { text-align:justify; text-justify:inter-word; hyphens:auto; }
   .pause.pause-b { background:linear-gradient(120deg,#e9ddd6 0%,#e6dcc8 100%); }
   @media (prefers-reduced-motion: reduce){ .cover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
 </style>
@@ -242,7 +242,7 @@
 
 <section class="tight" style="padding-top:12px;">
   <div class="wrap">
-    <div class="callout grayD"><div class="ctext">
+    <div class="callout grayD intro-callout"><div class="ctext">
       <p><strong>A CEEN é um trabalho individual de análise e orientação estratégica para reveres a oferta, a comunicação ou a forma de trabalhar no teu negócio, sem separar essas decisões de quem és e da vida que queres construir.</strong></p>
       <p>Podes chegar com uma questão concreta ou com várias áreas que gostarias de rever em conjunto. Enquanto te escuto, presto atenção à forma como falas sobre o negócio, ao que te entusiasma ou retrai, ao peso que atribuis a determinadas decisões e às contradições que possam surgir.</p>
       <p>Esta escuta ajuda-nos a reconhecer crenças, receios e padrões que podem estar a influenciar as tuas escolhas, mesmo quando ainda não os identificas. Relacionamos o que observamos com a realidade do negócio e com aquilo que desejas mudar.</p>
@@ -253,7 +253,7 @@
 
 <section class="pause pause-b">
   <div class="wrap-wide">
-    <p class="pause-quote">Empreender é perceber que a pessoa em que precisas de te tornar é mais difícil de construir do que o próprio negócio.</p>
+    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio. É mudar a forma como te vês e te posicionas nele.</p>
   </div>
 </section>
 
@@ -269,16 +269,19 @@
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">Para quem dá forma ao seu negócio através de si mesmo</h2>
+    <h2 class="section-title">Para quem dá forma ao seu negócio através de si</h2>
     <p>A CEEN é pensada para profissionais independentes e empreendedores que vendem serviços, consultas, sessões, programas, cursos ou produtos e infoprodutos criados a partir do seu conhecimento e experiência.</p>
     <p>As pessoas escolhem-te pelo teu olhar, pela tua abordagem, pelo teu método ou pela forma como entregas o trabalho. Quer o negócio tenha o teu nome ou uma marca própria, és uma parte central do valor que ele oferece.</p>
     <p>Já tens uma atividade em funcionamento, com ofertas, comunicação, clientes ou tentativas de venda. Agora, desejas perceber o que queres continuar a desenvolver, como o apresentar e de que forma o queres entregar, totalmente alinhado contigo.</p>
-    <blockquote class="quote-block big" style="margin-top:3.6rem; margin-bottom:1rem;"><p><strong>Menos fórmulas alheias e tentativas de caber em caixinhas.</strong></p></blockquote>
     <p style="margin-top:1.4rem;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Quem te acompanha na CEEN</a></p>
   </div>
 </section>
 
-<hr class="div">
+<section class="pause pause-b">
+  <div class="wrap-wide">
+    <p class="pause-quote">Menos fórmulas alheias e tentativas de caber em caixinhas.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -330,7 +333,7 @@
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">Um olhar externo para ver além</h2>
+    <h2 class="section-title">Um olhar externo que vê além</h2>
     <p>Quando estás dentro do negócio, pode ser difícil distinguir o que continua a fazer sentido daquilo que manténs por hábito, receio ou expectativa. Ao devolver-te o que reconheço na forma como falas e colocar perguntas sobre o que parece contraditório, ajudo-te a ver diferenças que podem passar despercebidas quando pensas sozinha/o. Não para escolher por ti, mas para que possas reconhecer o que realmente queres continuar a desenvolver.</p>
     <p>Este caso mostra como esse trabalho pode mudar uma decisão sobre a oferta:</p>
 
@@ -423,9 +426,9 @@
         <p>Na CEEN, energia pessoal não significa apenas disposição ou cansaço. É a disponibilidade que resulta da interação entre dimensões físicas, mentais, emocionais, sociais e subtis e que influencia a tua capacidade de criar, decidir, relacionar-te e assumir responsabilidades.</p>
         <p>Uma decisão profissional não depende apenas da análise racional. Também é influenciada pelo que sentes que podes ganhar, perder, provar ou proteger através dela. Por exemplo:</p>
         <ul class="plain">
-          <li><strong>Dinheiro</strong>: segurança, liberdade e escolha, mas também dificuldade em receber, cobrar mais ou lidar com o olhar dos outros;</li>
-          <li><strong>Visibilidade</strong>: reconhecimento e impacto, mas também exposição, crítica ou julgamento;</li>
-          <li><strong>Crescimento</strong>: novas possibilidades, mas também maior responsabilidade ou receio de perder liberdade e qualidade.</li>
+          <li><strong>💰 Dinheiro</strong>: segurança, liberdade e escolha, mas também dificuldade em receber, cobrar mais ou lidar com o olhar dos outros;</li>
+          <li><strong>👁️ Visibilidade</strong>: reconhecimento e impacto, mas também exposição, crítica ou julgamento;</li>
+          <li><strong>🚀 Crescimento</strong>: novas possibilidades, mas também maior responsabilidade ou receio de perder liberdade e qualidade.</li>
         </ul>
         <p>Na CEEN, estes elementos são sempre relacionados com a realidade concreta do negócio e com as escolhas que tens pela frente. Desta forma, aproximamos estratégia, marketing, identidade e intenção.</p>
       </div></div>
@@ -434,7 +437,7 @@
     <div class="callout grayD"><div class="ci">🪞</div><div class="ctext">
       <p><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong> Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, copywriting ou implementação feita por mim.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:18px;">O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</p></blockquote>
+    <blockquote class="quote-block" style="margin-top:5.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:18px;">O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</p></blockquote>
   </div>
 </section>
 
@@ -443,8 +446,8 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p><strong>"Transformam dúvidas em clareza, desalinhamento em alinhamento e confusão mental em clareza."</strong></p>
-      <p class="attrib">— mensagem transcrita de um áudio de uma cliente</p>
+      <p class="attrib" style="margin:0 0 0.6rem;">— mensagem transcrita de um áudio de uma cliente</p>
+      <p><strong>"Transformam dúvidas em clareza, desalinhamento<br>em alinhamento e confusão mental em clareza."</strong></p>
     </blockquote>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente1_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente1_1.png'"></div>
@@ -500,26 +503,24 @@
   </div>
 </section>
 
-<section style="padding-top:24px;">
+<section style="padding-top:0; margin-top:-2.6rem;">
   <div class="wrap-wide">
-    <h2 class="section-title">Uma questão para trabalhar ou várias áreas para reorganizar?</h2>
-    <p><strong>SESSÃO CEEN:</strong> até duas horas para aprofundar uma questão concreta e trabalhar perspetivas, recomendações e próximos passos durante o encontro.</p>
-    <p><strong>CICLO CEEN:</strong> duas sessões e trabalho de análise personalizada entre os encontros, com uma leitura integrada e uma proposta de reorganização no Notion para as áreas analisadas.</p>
+    <h2 class="section-title">Uma questão ou várias áreas para reorganizar?</h2>
 
     <div class="quiz-box">
       <p class="quiz-prompt">O que melhor descreve o teu momento?</p>
       <div id="quizChips">
         <p class="quiz-group">Uma questão concreta · Sessão CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="sessao">“Tenho dois serviços e não sei se devo continuar a promover ambos ou concentrar-me num deles.”</button>
-          <button type="button" data-r="sessao">“Quero aumentar o preço das minhas sessões, mas receio perder clientes e acabo por adiar a decisão.”</button>
+          <button type="button" data-r="sessao">“Tenho dois serviços e não sei se devo continuar<br>a promover ambos ou concentrar-me num deles.”</button>
+          <button type="button" data-r="sessao">“Quero aumentar o preço das minhas sessões,<br>mas receio perder clientes e acabo por adiar a decisão.”</button>
           <button type="button" data-r="sessao">“Este serviço exige demasiadas horas e disponibilidade.<br>Quero rever o formato sem comprometer o valor que entrego.”</button>
         </div>
         <p class="quiz-group">Várias áreas interligadas · Ciclo CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site e a comunicação continuam a apresentar aquilo que fazia antes.”</button>
+          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site<br>e a comunicação continuam a apresentar aquilo que fazia antes.”</button>
           <button type="button" data-r="ciclo">“Já não tenho a mesma disponibilidade, mas mantenho os mesmos serviços,<br>horários e compromissos. Preciso de rever como o negócio funciona.”</button>
-          <button type="button" data-r="ciclo">“Quero juntar várias competências numa nova oferta, mas não sei como organizar<br>os serviços, explicar o que os une e decidir o que deixar de vender.”</button>
+          <button type="button" data-r="ciclo">“Quero juntar várias competências numa nova oferta, mas não sei<br>como organizar os serviços, explicar o que os une e decidir o que deixar de vender.”</button>
         </div>
       </div>
       <div class="quiz-answer" id="quizAnswerSessao">
@@ -532,7 +533,7 @@
       </div>
     </div>
 
-    <p class="lead">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN.<br>Se já reconheces que a questão atravessa várias áreas, podes marcar diretamente o ciclo.</p>
+    <p class="lead" style="font-size:16.5px;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN.<br>Se já reconheces que a questão atravessa várias áreas, podes marcar diretamente o ciclo.</p>
 
     <div class="cta-pair center" style="justify-content:center;">
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a>
@@ -605,10 +606,10 @@
 
 <section class="tight">
   <div class="wrap">
-    <blockquote class="quote-block big">
+    <blockquote class="quote-block">
       <p><strong>"Sinto que ganhei muito mais consciência e ferramentas…"</strong></p>
     </blockquote>
-    <p>Neste testemunho, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
+    <p style="font-size:16px;">Neste testemunho, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
       <div class="ph"><img class="cropt" src="upsell_cliente2_2.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png'"></div>
@@ -646,10 +647,10 @@
 
 <section class="tight">
   <div class="wrap">
-    <blockquote class="quote-block big">
+    <blockquote class="quote-block">
       <p><strong>"Ter alguém ao meu lado que olha para mim e para o meu negócio como um todo."</strong></p>
     </blockquote>
-    <p>É no contacto com a experiência real que novas decisões, dúvidas e possibilidades se tornam visíveis. Este é o testemunho de outra cliente sobre o que tem vivido no seu processo comigo:</p>
+    <p style="font-size:16px;">É no contacto com a experiência real que novas decisões, dúvidas e possibilidades se tornam visíveis. Este é o testemunho de outra cliente sobre o que tem vivido no seu processo comigo:</p>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cristiana_1.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_1.png'"></div>
       <div class="ph"><img src="upsell_cristiana_2.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_2.png'"></div>
