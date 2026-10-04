@@ -60,7 +60,7 @@
   ul.plain { padding-left:1.4rem; margin:0 0 1rem; }
   ul.plain li { font-size:18px; color:var(--ink); margin-bottom:0.65rem; }
 
-  .callout { border-radius:9px; padding:1.3rem 1.5rem; margin:1.8rem 0; display:flex; gap:0.7rem; align-items:flex-start; }
+  .callout { border-radius:9px; padding:1.3rem 0.9rem 1.3rem 1.5rem; margin:1.8rem 0; display:flex; gap:0.7rem; align-items:flex-start; }
   .callout .ci { flex-shrink:0; font-size:17px; line-height:1.65; }
   .callout .ctext { min-width:0; flex:1; }
   .callout .ctext p { text-align:left; hyphens:none; }
@@ -202,6 +202,12 @@
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
   #quem-te-acompanha .two-col p { font-size:17px; }
+  #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
+  .nw { white-space:nowrap; }
+  .callout li, .callout p { hyphens:none; }
+  @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
+  @media (min-width:1000px){ .two-col.widebox { margin-left:-50px; margin-right:-50px; } }
+  @media (min-width:1100px){ #quem-te-acompanha .callout.brown { margin-left:-90px; margin-right:-90px; } }
   .bio-photo-ph img { object-position:50% 18%; }
   .callout.intro-callout .ctext p { font-size:16.5px; }
   .two-col .callout-label { font-size:16px; letter-spacing:0; }
@@ -253,7 +259,7 @@
 
 <section class="pause pause-b">
   <div class="wrap-wide">
-    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio. É mudar a forma como te vês e te posicionas nele.</p>
+    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio.<br>É mudar a forma como te vês e te posicionas nele.</p>
   </div>
 </section>
 
@@ -279,7 +285,7 @@
 
 <section class="pause pause-b">
   <div class="wrap-wide">
-    <p class="pause-quote">Menos fórmulas alheias e tentativas de caber em caixinhas.</p>
+    <p class="pause-quote">Sem fórmulas alheias e tentativas de caber em caixinhas!</p>
   </div>
 </section>
 
@@ -300,7 +306,7 @@
   <div class="wrap-wide">
     <h2 class="section-title">O que pode trazer-te à CEEN</h2>
     <p>Podes querer alcançar novos resultados e, ao mesmo tempo, mudar a forma como os estás a construir. Estas duas necessidades podem fazer parte do mesmo momento do negócio:</p>
-    <div class="two-col">
+    <div class="two-col widebox">
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
         <p class="callout-label">RESULTADOS E DIREÇÃO</p>
         <ul class="plain">
@@ -314,7 +320,7 @@
         <p class="callout-label">COMO ESTÁS NO NEGÓCIO</p>
         <ul class="plain">
           <li>Receias mudar a oferta ou os preços e perder clientes, rendimento ou reconhecimento.</li>
-          <li>Já não desejas entregar um serviço, mas custa-te deixá-lo depois de tudo o que investiste.</li>
+          <li>Já não desejas entregar um serviço, mas <span class="nw">custa-te</span> <span class="nw">deixá-lo</span> depois de tudo o que investiste.</li>
           <li>Queres crescer, mas receias a exposição, as expectativas ou a perda de liberdade.</li>
           <li>Sentes pressão para seguir estratégias que parecem resultar para outras pessoas, mas não fazem sentido para ti.</li>
         </ul>
@@ -446,8 +452,8 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p class="attrib" style="margin:0 0 0.6rem;">— mensagem transcrita de um áudio de uma cliente</p>
       <p><strong>"Transformam dúvidas em clareza, desalinhamento<br>em alinhamento e confusão mental em clareza."</strong></p>
+      <p class="attrib">— mensagem transcrita de um áudio de uma cliente</p>
     </blockquote>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente1_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente1_1.png'"></div>
@@ -934,6 +940,32 @@
       entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
     document.querySelectorAll('section').forEach(function(sec){ sec.classList.add('reveal'); io.observe(sec); });
+  })();
+
+  // foto da bio: largura calculada para nao cortar a imagem e acabar na ultima linha do texto
+  (function(){
+    var grid = document.querySelector('#quem-te-acompanha .two-col');
+    if (!grid || grid.children.length < 2) return;
+    var col = grid.children[1];
+    var RATIO = 2457 / 1780;
+    function fit(){
+      if (window.innerWidth <= 680) { grid.style.gridTemplateColumns = ''; return; }
+      var S = grid.getBoundingClientRect().width - 21;
+      var w = Math.min(300, S / 2);
+      for (var i = 0; i < 8; i++) {
+        grid.style.gridTemplateColumns = w + 'px 1fr';
+        var ps = col.querySelectorAll('p'), last = ps[ps.length - 1];
+        var H = last.getBoundingClientRect().bottom - col.getBoundingClientRect().top;
+        var nw = Math.max(200, Math.min(S / 2, H / RATIO));
+        if (Math.abs(nw - w) < 2) { w = nw; break; }
+        w = nw;
+      }
+      grid.style.gridTemplateColumns = w + 'px 1fr';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   })();
 
   // popup de vagas, igual ao do site
