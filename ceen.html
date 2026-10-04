@@ -40,7 +40,7 @@
 
   .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:60px; display:flex; align-items:flex-end; }
   .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; }
-  .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); margin:0 0 0.3rem; color:var(--wine); }
+  .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); line-height:1; margin:0 0 -0.35rem; color:var(--wine); position:relative; top:0.4rem; }
   .cover-text-bg .eyebrow { color:var(--orange); margin:0; font-style:italic; font-weight:700; font-size:18px; white-space:nowrap; }
   @media (max-width:999px){ .cover-text-bg .eyebrow { white-space:normal; font-size:16px; } }
 
@@ -102,8 +102,8 @@
   details.case[open] summary .tri { transform:rotate(90deg); }
   details.case summary::-webkit-details-marker { display:none; }
   details.case .fold-wrap { overflow:hidden; max-height:0; transition:max-height 0.9s cubic-bezier(.22,.61,.36,1); }
-  details.case .fold-body h4 { font-family:'Lora',serif; font-size:12.5px; font-weight:700; letter-spacing:0.04em; color:var(--brown-ink); margin:1.1rem 0 0.4rem; }
-  details.case .fold-body h4:first-child { margin-top:1rem; }
+  details.case .fold-body h4 { font-family:'Lora',serif; font-size:16px; font-weight:700; letter-spacing:0.05em; color:var(--brown-ink); margin:1.8rem 0 0.5rem; }
+  details.case .fold-body h4:first-child { margin-top:2.2rem; }
 
   .step { display:flex; gap:0.8rem; margin-bottom:0.7rem; background:var(--gray); border-radius:9px; padding:1rem 1.2rem; align-items:flex-start; }
   .step .num { font-size:19px; flex-shrink:0; width:1.3em; padding-top:0.1rem; filter:grayscale(40%) opacity(0.85); }
@@ -144,7 +144,7 @@
   .wa-bubble:hover { transform:scale(1.08); }
   .wa-bubble svg { width:19px; height:19px; }
 
-  .quiz-box { margin:3.6rem 0 2rem; }
+  .quiz-box { margin:1.4rem 0 2rem; }
   .quiz-prompt { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:27px; color:var(--wine); margin:0 0 0.9rem; }
   .quiz-group { font-family:'Lora',serif; font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-deep); margin:2.2rem 0 0.9rem; }
   .quiz-group:first-child { margin-top:0.6rem; }
@@ -171,7 +171,7 @@
   .ci.shine { position:relative; overflow:hidden; border-radius:6px; }
   .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
-  .pause { background:linear-gradient(120deg,#ecd9c6 0%,#ead9b8 100%); padding:60px 0; text-align:center; }
+  .pause { background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; padding:60px 0; text-align:center; }
   .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(23px,3.2vw,32px); line-height:1.25; color:var(--wine); text-align:center; margin:0 auto 1rem; max-width:720px; }
   .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink-soft); font-style:italic; margin:0; }
   @media (min-width:1000px){
@@ -201,20 +201,21 @@
   details.case .fold-close { color:var(--brown-ink); }
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
-  #quem-te-acompanha .two-col p { font-size:17px; }
+  #quem-te-acompanha .two-col p { font-size:16px; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
   .callout li, .callout p { hyphens:none; }
   @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
-  @media (min-width:1000px){ .two-col.widebox { margin-left:-50px; margin-right:-50px; } }
-  @media (min-width:1100px){ #quem-te-acompanha .callout.brown { margin-left:-90px; margin-right:-90px; } }
   .bio-photo-ph img { object-position:50% 18%; }
   .bio-photo-ph { padding:0; }
   .callout.intro-callout .ctext p { font-size:16.5px; }
+  .callout.case-callout .ctext p { font-size:17px; }
+  .callout.case-callout .callout-label { font-size:18px; }
+  .callout.intro-callout { margin-right:3.6rem; }
+  blockquote.quote-block.mid p { font-size:clamp(25px,2.7vw,30px); line-height:1.3; }
   .two-col .callout-label { font-size:16px; letter-spacing:0; }
   section .wrap > p, section .wrap-wide > p, details .fold-body > p { text-align:justify; text-justify:inter-word; hyphens:auto; }
-  .pause.pause-b { background:linear-gradient(120deg,#e9ddd6 0%,#e6dcc8 100%); }
-  @media (prefers-reduced-motion: reduce){ .cover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
+  @media (prefers-reduced-motion: reduce){ .cover, .pause{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
 </style>
 </head>
 <body>
@@ -268,7 +269,7 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
-    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:21px;">O negócio é o centro da CEEN, mas não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:18px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
+    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:29px;">O negócio é o centro da CEEN, mas não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:18px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
   </div>
 </section>
 
@@ -342,9 +343,9 @@
   <div class="wrap">
     <h2 class="section-title">Um olhar externo que vê além</h2>
     <p>Quando estás dentro do negócio, pode ser difícil distinguir o que continua a fazer sentido daquilo que manténs por hábito, receio ou expectativa. Ao devolver-te o que reconheço na forma como falas e colocar perguntas sobre o que parece contraditório, ajudo-te a ver diferenças que podem passar despercebidas quando pensas sozinha/o. Não para escolher por ti, mas para que possas reconhecer o que realmente queres continuar a desenvolver.</p>
-    <p>Este caso mostra como esse trabalho pode mudar uma decisão sobre a oferta:</p>
+    <p><strong>Este caso mostra como esse trabalho pode mudar uma decisão sobre a oferta:</strong></p>
 
-    <div class="callout brown"><div class="ci">🪞</div><div class="ctext">
+    <div class="callout brown case-callout"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Rever a oferta é também reconhecer o que já não te representa</p>
       <p>Esta cliente chegou à sessão convencida de que queria continuar a apostar em determinados serviços. Racionalmente, pareciam-lhe as opções mais seguras e aquelas que faziam mais sentido manter.</p>
       <p>Através das perguntas que lhe coloquei e das devoluções sobre a forma como falava de cada um dos serviços, foi a própria cliente que reconheceu que aquilo que acreditava que "deveria" manter já não correspondia ao que realmente queria desenvolver.</p>
@@ -363,7 +364,7 @@
         <h4>A DECISÃO E O RESULTADO</h4>
         <p>A cliente distinguiu os serviços que acreditava que "deveria" manter daqueles que queria verdadeiramente continuar a desenvolver.</p>
         <p>Decidiu concentrar a oferta e a comunicação nestes últimos e, depois dessa mudança, voltou a receber pedidos e a gerar vendas.</p>
-        <p style="font-style:italic; color:var(--orange);">A CEEN não escolheu por ela. Ajudou-a a ver com clareza para poder escolher.</p>
+        <p style="font-style:italic; color:var(--orange);"><strong>A CEEN não escolheu por ela. Ajudou-a a ver com clareza para poder escolher.</strong></p>
       </div></div>
     </details>
   </div>
@@ -395,7 +396,7 @@
 
 <section class="pause">
   <div class="wrap-wide">
-    <p class="pause-quote">“Nunca ninguém tinha olhado para<br>o meu negócio desta forma!”</p>
+    <p class="pause-quote">“Nunca ninguém tinha olhado para o meu negócio desta forma!”</p>
     <p class="pause-attrib">— comentário de uma cliente durante uma sessão</p>
   </div>
 </section>
@@ -444,7 +445,7 @@
     <div class="callout grayD"><div class="ci">🪞</div><div class="ctext">
       <p><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong> Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, copywriting ou implementação feita por mim.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:5.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:18px;">O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</p></blockquote>
+    <blockquote class="quote-block" style="margin-top:5.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:18px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
   </div>
 </section>
 
@@ -453,7 +454,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p><strong>"Transformam dúvidas em clareza, desalinhamento<br>em alinhamento e confusão mental em clareza."</strong></p>
+      <p><strong>"Transformam dúvidas em clareza, desalinhamento em alinhamento e confusão mental em clareza."</strong></p>
       <p class="attrib">— mensagem transcrita de um áudio de uma cliente</p>
     </blockquote>
     <div class="testimonial-photos-ph">
@@ -540,9 +541,9 @@
       </div>
     </div>
 
-    <p class="lead" style="font-size:16.5px;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN.<br>Se já reconheces que a questão atravessa várias áreas, podes marcar diretamente o ciclo.</p>
+    <p class="lead" style="font-size:16.5px; margin-top:2.8rem;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN.<br>Se já reconheces que a questão atravessa várias áreas, podes marcar diretamente o ciclo.</p>
 
-    <div class="cta-pair center" style="justify-content:center;">
+    <div class="cta-pair">
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a>
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar o meu Ciclo CEEN</a>
     </div>
@@ -602,7 +603,7 @@
       </div></div>
     </div>
     <div class="callout grayD" style="margin-top:1.6rem;"><div class="ctext">
-      <p><strong>O Ciclo CEEN é um processo de análise e direção, não um acompanhamento contínuo.</strong></p>
+      <p><strong>O Ciclo CEEN é um processo de análise e direção,<br>não um acompanhamento contínuo.</strong></p>
       <p>Entre as duas sessões, os três dias de partilha e os esclarecimentos que eu possa pedir servem para completar a leitura do negócio e preparar a proposta. Não incluem apoio contínuo para implementar as recomendações ou trabalhar as novas questões que surjam no dia a dia.</p>
       <p>Depois da segunda sessão, integro os pequenos ajustes definidos no encontro, concluindo a entrega do Ciclo. A partir daí, podes avançar autonomamente ou marcar uma nova Sessão CEEN.</p>
     </div></div>
@@ -613,7 +614,7 @@
 
 <section class="tight">
   <div class="wrap">
-    <blockquote class="quote-block">
+    <blockquote class="quote-block mid">
       <p><strong>"Sinto que ganhei muito mais consciência e ferramentas…"</strong></p>
     </blockquote>
     <p style="font-size:16px;">Neste testemunho, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
