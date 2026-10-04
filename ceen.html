@@ -23,7 +23,7 @@
     --gray: #f1ece2;
   }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.65; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.7; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
   nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(250,246,239,0.96); backdrop-filter:blur(8px); border-bottom:0.5px solid var(--line); padding:16px 28px calc(16px + env(safe-area-inset-top,0px)); display:flex; justify-content:space-between; align-items:center; }
@@ -38,7 +38,7 @@
   .mobile-menu a { font-family:'Lora',serif; font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:#1a1410; text-decoration:none; }
   @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } }
 
-  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#8fa7bd 0%,#d9a9a0 48%,#e3c27f 100%); margin-top:60px; display:flex; align-items:flex-end; }
+  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#8fa7bd,#d9a9a0,#e3c27f,#d9a9a0,#8fa7bd); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:60px; display:flex; align-items:flex-end; }
   .cover-text { width:100%; max-width:740px; margin:0 auto; padding:0 24px 1.4rem; }
   .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); margin:0 0 0.05rem; color:var(--wine); }
   .cover-text-bg .eyebrow { color:var(--orange); margin:0; }
@@ -50,14 +50,14 @@
   section.tight { padding: 28px 0; }
   hr.div { border:none; border-top:1px solid var(--line); margin:0; }
 
-  .eyebrow { font-family:'Lora',serif; font-size:15px; font-weight:700; color:var(--orange); text-align:left; margin:0 0 1.3rem; }
+  .eyebrow { font-family:'Lora',serif; font-size:17px; font-weight:700; color:var(--orange); text-align:left; margin:0 0 1.3rem; }
   h1.hero-title { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; font-size:clamp(26px,4.4vw,36px); line-height:1.08; text-align:left; margin:0; color:var(--wine); }
   h2.section-title { font-family:'Cormorant Garamond',serif; font-weight:600; font-style:normal; font-size:clamp(23px,3.2vw,29px); line-height:1.3; margin:0 0 1rem; text-align:left; color:var(--wine); }
   h3.sub-title { font-family:'Cormorant Garamond',serif; font-style:normal; font-weight:600; font-size:20px; margin:1.6rem 0 0.7rem; color:var(--wine); }
-  p { font-size:16px; color:var(--ink); margin:0 0 1rem; text-align:left; hyphens:none; }
-  p.lead { font-size:16px; color:var(--ink); }
+  p { font-size:18px; color:var(--ink); margin:0 0 1rem; text-align:left; hyphens:none; }
+  p.lead { font-size:18px; color:var(--ink); }
   ul.plain { padding-left:1.4rem; margin:0 0 1rem; }
-  ul.plain li { font-size:16px; color:var(--ink); margin-bottom:0.45rem; }
+  ul.plain li { font-size:18px; color:var(--ink); margin-bottom:0.45rem; }
 
   .callout { border-radius:9px; padding:1.1rem 1.3rem; margin:1.2rem 0; display:flex; gap:0.7rem; align-items:flex-start; }
   .callout .ci { flex-shrink:0; font-size:17px; line-height:1.65; }
@@ -75,18 +75,18 @@
   .callout.grayD { background:#ebe4d6; }
   .callout.infoC { background:#e4e9df; }
   .callout.brown { background:var(--brown); }
-  .callout-label { font-family:'Lora',serif; font-size:16px; font-weight:600; margin-bottom:0.3rem; color:var(--ink); }
+  .callout-label { font-family:'Lora',serif; font-size:18px; font-weight:600; margin-bottom:0.3rem; color:var(--ink); }
 
   blockquote.quote-block { margin:1.3rem 0; padding:0.1rem 0 0.1rem 1.1rem; border-left:3px solid var(--gold); }
-  blockquote.quote-block p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; color:var(--orange); line-height:1.5; margin:0 0 0.3rem; text-align:left; }
+  blockquote.quote-block p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--orange); line-height:1.5; margin:0 0 0.3rem; text-align:left; }
   blockquote.quote-block p strong { font-weight:700; }
-  blockquote.quote-block .attrib { font-family:'Lora',serif; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  blockquote.quote-block .attrib { font-family:'Lora',serif; font-size:14.5px; color:var(--ink-soft); font-style:italic; }
 
   .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; }
   @media (max-width:680px){ .two-col{ grid-template-columns:1fr; } }
 
   details.fold { margin:0.9rem 0; border-bottom:1px solid var(--line); padding-bottom:0.9rem; }
-  details.fold summary { cursor:pointer; font-family:'Lora',serif; font-weight:600; font-size:16px; color:var(--ink); padding:0.2rem 0; list-style:none; display:flex; align-items:center; gap:0.55rem; }
+  details.fold summary { cursor:pointer; font-family:'Lora',serif; font-weight:600; font-size:18px; color:var(--ink); padding:0.2rem 0; list-style:none; display:flex; align-items:center; gap:0.55rem; }
   details.fold summary::-webkit-details-marker { display:none; }
   details.fold summary .tri { font-size:10px; color:var(--ink-soft); flex-shrink:0; display:inline-block; transition:transform 0.25s ease; }
   details.fold[open] summary .tri { transform:rotate(90deg); }
@@ -96,7 +96,7 @@
   details.fold .fold-body { padding:0.8rem 0 0.2rem 1.1rem; }
 
   details.case { background:var(--brown); border-radius:9px; padding:1.1rem 1.3rem; margin:1.2rem 0; }
-  details.case summary { cursor:pointer; font-family:'Lora',serif; font-size:14px; font-weight:600; color:var(--brown-ink); list-style:none; display:flex; align-items:center; gap:0.5rem; }
+  details.case summary { cursor:pointer; font-family:'Lora',serif; font-size:16px; font-weight:600; color:var(--brown-ink); list-style:none; display:flex; align-items:center; gap:0.5rem; }
   details.case summary .tri { font-size:10px; transition:transform 0.25s ease; display:inline-block; }
   details.case[open] summary .tri { transform:rotate(90deg); }
   details.case summary::-webkit-details-marker { display:none; }
@@ -107,7 +107,7 @@
   .step { display:flex; gap:0.8rem; margin-bottom:0.7rem; background:var(--gray); border-radius:9px; padding:1rem 1.2rem; align-items:flex-start; }
   .step .num { font-size:19px; flex-shrink:0; width:1.3em; padding-top:0.1rem; filter:grayscale(40%) opacity(0.85); }
   .step .body h4 { font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:700; margin:0 0 0.3rem; color:var(--wine); text-transform:uppercase; letter-spacing:0.02em; }
-  .step .body p { margin:0; font-size:15px; }
+  .step .body p { margin:0; font-size:17px; }
 
   .bio-photo-ph { width:100%; min-height:260px; border-radius:10px; background:linear-gradient(145deg,#d8c9ad,#9bb0bd 55%,#e7c9c2); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.85); font-family:'Lora',serif; font-size:12px; text-align:center; padding:1rem; overflow:hidden; }
   .bio-photo-ph img { width:100%; height:100%; object-fit:cover; display:block; }
@@ -124,17 +124,17 @@
   .price-card.ciclo { background:var(--ciclo); }
   .price-card .ptitle { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:21px; margin:0 0 0.2rem; color:var(--ink); }
   .price-card .pamt { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:27px; margin:0 0 0.9rem; color:var(--ink); }
-  .price-card p.pdesc { font-size:14.5px; flex:1; }
+  .price-card p.pdesc { font-size:17px; flex:1; }
 
-  .cta-btn { display:inline-block; text-align:center; font-family:'Lora',serif; font-size:13px; font-weight:600; text-decoration:none; padding:13px 22px; border-radius:6px; border:1.5px solid var(--wine); color:var(--wine); background:transparent; transition:background 0.18s ease, color 0.18s ease; }
-  .cta-btn:hover, .cta-btn:active, .cta-btn:focus-visible { background:var(--wine); color:#faf6ef; }
+  .cta-btn { display:inline-block; text-align:center; font-family:'Lora',serif; font-size:15px; font-weight:600; text-decoration:none; padding:13px 24px; border-radius:6px; border:1.5px solid var(--wine); color:var(--wine); background:transparent; transition:background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+  .cta-btn:hover, .cta-btn:active, .cta-btn:focus-visible { background:var(--wine); color:#faf6ef; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.22); }
   .cta-pair { display:flex; gap:0.8rem; flex-wrap:wrap; }
   .cta-pair.center { justify-content:center; }
 
-  .jump-link { font-family:'Lora',serif; font-size:13px; color:var(--wine); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; }
-  .back-link { font-family:'Lora',serif; font-size:16px; font-weight:700; color:var(--ink-soft); text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem; margin-top:1.4rem; cursor:pointer; }
+  .jump-link { font-family:'Lora',serif; font-size:15px; color:var(--wine); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; }
+  .back-link { font-family:'Lora',serif; font-size:17px; font-weight:700; color:var(--ink-soft); text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem; margin-top:1.4rem; cursor:pointer; }
 
-  footer { text-align:center; padding:3rem 1rem 3.5rem; font-family:'Lora',serif; color:var(--ink-soft); font-size:13.5px; }
+  footer { text-align:center; padding:3rem 1rem 3.5rem; font-family:'Lora',serif; color:var(--ink-soft); font-size:15px; }
   footer a { color:var(--ink-soft); text-decoration:underline; }
   footer .links { margin-top:0.4rem; }
   footer .links span { margin:0 0.4rem; opacity:0.5; }
@@ -144,11 +144,11 @@
   .wa-bubble svg { width:19px; height:19px; }
 
   .quiz-box { margin:1.4rem 0 1.8rem; }
-  .quiz-prompt { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:var(--wine); margin:0 0 0.9rem; }
+  .quiz-prompt { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:21px; color:var(--wine); margin:0 0 0.9rem; }
   .quiz-group { font-family:'Lora',serif; font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-deep); margin:1.1rem 0 0.55rem; }
   .quiz-group:first-child { margin-top:0; }
   .quiz-pills { display:flex; flex-wrap:wrap; gap:0.6rem; }
-  .quiz-pills button { font-family:'Lora',serif; font-size:13.5px; font-style:italic; text-align:left; background:var(--gray); border:1px solid var(--line); border-radius:30px; padding:0.6rem 1.1rem; cursor:pointer; color:var(--ink); transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
+  .quiz-pills button { font-family:'Lora',serif; font-size:15.5px; font-style:italic; text-align:left; background:var(--gray); border:1px solid var(--line); border-radius:30px; padding:0.6rem 1.1rem; cursor:pointer; color:var(--ink); transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
   .quiz-pills button:hover { border-color:var(--gold); transform:translateY(-1px); }
   .quiz-pills button.picked { border-color:var(--wine); background:var(--sessao); font-style:normal; font-weight:600; }
   .quiz-answer { display:none; margin-top:1rem; padding:1rem 1.2rem; border-radius:9px; background:var(--gray); }
@@ -157,13 +157,23 @@
   @keyframes pulseGlow { 0%,100% { box-shadow:0 0 0 0 rgba(201,168,108,0); } 35% { box-shadow:0 0 0 7px rgba(201,168,108,0.35); } }
   .pulse-highlight { animation:pulseGlow 1.1s ease; }
 
-  .popup { position:fixed; bottom:1.4rem; right:1.4rem; z-index:200; max-width:250px; background:#f7f3ee; border:0.5px solid #c9a86c; border-radius:10px; padding:0.85rem 1rem; box-shadow:0 4px 24px rgba(26,20,16,0.1); opacity:0; transform:translateY(16px); transition:opacity 0.5s ease, transform 0.5s ease; pointer-events:none; }
+  .popup { position:fixed; bottom:1.4rem; right:1.4rem; z-index:200; width:330px; max-width:calc(100vw - 1.6rem); background:#f7f3ee; border:0.5px solid #c9a86c; border-radius:12px; padding:1.4rem 1.5rem 1.3rem; box-shadow:0 4px 24px rgba(26,20,16,0.1); opacity:0; transform:translateY(16px); transition:opacity 0.5s ease, transform 0.5s ease; pointer-events:none; }
   .popup.visible { opacity:1; transform:translateY(0); pointer-events:all; }
-  .popup-close { position:absolute; top:0.5rem; right:0.6rem; background:none; border:none; font-size:14px; color:#9a7e52; cursor:pointer; }
-  .popup-eyebrow { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:300; letter-spacing:0.14em; text-transform:uppercase; color:#c9a86c; margin-bottom:0.6rem; }
-  .popup-btn { display:block; width:100%; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border:none; border-radius:30px; padding:8px; text-align:center; text-decoration:none; transition:background 0.2s; }
-  .popup-btn:hover { background:#5c1c28; }
-  @media (max-width:600px){ .popup{ right:0.8rem; left:auto; max-width:230px; } }
+  .popup-close { position:absolute; top:0.55rem; right:0.7rem; background:none; border:none; font-size:18px; color:#9a7e52; cursor:pointer; }
+  .popup-eyebrow { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; color:#c9a86c; margin-bottom:0.6rem; }
+  .popup-btn { display:block; width:100%; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border:none; border-radius:30px; padding:12px; text-align:center; text-decoration:none; transition:background 0.2s, transform 0.18s ease, box-shadow 0.18s ease; }
+  .popup-btn:hover { background:#5c1c28; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.25); }
+  @media (max-width:600px){ .popup{ right:0.8rem; left:0.8rem; width:auto; max-width:none; } }
+  @keyframes aurora { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  .js-reveal .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.9s ease, transform 0.9s ease; }
+  .js-reveal .reveal.in { opacity:1; transform:none; }
+  .ci.shine { position:relative; overflow:hidden; border-radius:6px; }
+  .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
+  .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
+  .pause { background:linear-gradient(120deg,#ecd9c6 0%,#ead9b8 100%); padding:96px 0; text-align:center; }
+  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(30px,5.2vw,48px); line-height:1.2; color:var(--wine); text-align:center; margin:0 auto 1.1rem; max-width:780px; }
+  .pause .pause-attrib { text-align:center; font-size:15px; color:var(--ink-soft); font-style:italic; margin:0; }
+  @media (prefers-reduced-motion: reduce){ .cover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
 </style>
 </head>
 <body>
@@ -210,7 +220,7 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
-    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:21px;">O negócio é o centro da CEEN, mas não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:16px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
+    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:21px;">O negócio é o centro da CEEN, mas não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:18px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
   </div>
 </section>
 
@@ -331,6 +341,13 @@
 
 <hr class="div">
 
+<section class="pause">
+  <div class="wrap-wide">
+    <p class="pause-quote">“Nunca ninguém tinha olhado para o meu negócio desta forma!”</p>
+    <p class="pause-attrib">— comentário de uma cliente durante a sessão</p>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <h2 class="section-title">Uma visão integrada do negócio</h2>
@@ -375,7 +392,7 @@
     <div class="callout grayD"><div class="ci">🪞</div><div class="ctext">
       <p><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong> Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, copywriting ou implementação feita por mim.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:16px;">O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</p></blockquote>
+    <blockquote class="quote-block" style="margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:18px;">O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</p></blockquote>
   </div>
 </section>
 
@@ -567,9 +584,9 @@
         <p class="ptitle">Ciclo CEEN</p>
         <p class="pamt">800 €</p>
         <div class="pdesc">
-          <p style="font-size:14.5px; text-align:left; margin-bottom:0.7rem;">Duas sessões individuais e um trabalho de análise personalizada entre os encontros, para relacionar as áreas do negócio mais relevantes para o teu momento.</p>
-          <p style="font-size:14.5px; text-align:left; margin-bottom:0.7rem;">A partir do que partilhas e dos materiais analisados, preparo uma leitura integrada, prioridades, recomendações concretas e uma proposta de reorganização no Notion. Na segunda sessão, apresento-te essa proposta, explico as ligações que reconheci e alinhamos a direção.</p>
-          <p style="font-size:14.5px; text-align:left; margin-bottom:1.1rem;">O investimento inclui este trabalho de análise, preparação e entrega.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">Duas sessões individuais e um trabalho de análise personalizada entre os encontros, para relacionar as áreas do negócio mais relevantes para o teu momento.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">A partir do que partilhas e dos materiais analisados, preparo uma leitura integrada, prioridades, recomendações concretas e uma proposta de reorganização no Notion. Na segunda sessão, apresento-te essa proposta, explico as ligações que reconheci e alinhamos a direção.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:1.1rem;">O investimento inclui este trabalho de análise, preparação e entrega.</p>
         </div>
         <p style="margin-top:1rem;"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar o meu Ciclo CEEN</a></p>
       </div>
@@ -690,7 +707,8 @@
 
 <div class="popup" id="popup">
   <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
-  <p class="popup-eyebrow" style="text-align:center; margin:0; padding-right:0.9rem;">Apenas 3 vagas em outubro</p>
+  <p class="popup-eyebrow" style="text-align:center; margin:0 0 1rem; padding:0 0.9rem;">Apenas 3 vagas em outubro</p>
+  <a class="popup-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha CEEN</a>
 </div>
 
 <script>
@@ -844,6 +862,18 @@
       }, 650);
     }, 50);
   };
+
+  // espelho nos icones e secoes que aparecem ao descer
+  (function(){
+    document.querySelectorAll('.ci').forEach(function(el){ if (el.textContent.trim() === '🪞') el.classList.add('shine'); });
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js-reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('section').forEach(function(sec){ sec.classList.add('reveal'); io.observe(sec); });
+  })();
 
   // popup de vagas, igual ao do site
   setTimeout(function(){
