@@ -173,6 +173,11 @@
   .pause { background:linear-gradient(120deg,#ecd9c6 0%,#ead9b8 100%); padding:96px 0; text-align:center; }
   .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(30px,5.2vw,48px); line-height:1.2; color:var(--wine); text-align:center; margin:0 auto 1.1rem; max-width:780px; }
   .pause .pause-attrib { text-align:center; font-size:15px; color:var(--ink-soft); font-style:italic; margin:0; }
+  .bio-photo-ph { position:relative; }
+  .js-reveal #quem-te-acompanha .bio-photo-ph img { transform:scale(1.14); filter:brightness(1.22) saturate(0.85); transition:transform 2s cubic-bezier(.22,.61,.36,1), filter 2s ease; }
+  .js-reveal #quem-te-acompanha.in .bio-photo-ph img { transform:scale(1); filter:none; }
+  .js-reveal #quem-te-acompanha .bio-photo-ph::after { content:''; position:absolute; top:-10%; left:-80%; width:50%; height:120%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.6), transparent); transform:skewX(-20deg); pointer-events:none; }
+  .js-reveal #quem-te-acompanha.in .bio-photo-ph::after { left:150%; transition:left 1.8s ease 0.5s; }
   @media (prefers-reduced-motion: reduce){ .cover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
 </style>
 </head>
