@@ -26,7 +26,9 @@
   body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
-  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(250,246,239,0.96); backdrop-filter:blur(8px); border-bottom:0.5px solid var(--line); padding:16px 28px calc(16px + env(safe-area-inset-top,0px)); display:flex; justify-content:space-between; align-items:center; }
+  .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:10px; letter-spacing:0.06em; line-height:1.5; padding:2px 10px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
+  .langbar a { color:#8a7e6d; text-decoration:underline; text-decoration-color:rgba(138,126,109,0.4); }
+  nav { position:fixed; top:22px; left:0; right:0; z-index:100; background:rgba(250,246,239,0.96); backdrop-filter:blur(8px); border-bottom:0.5px solid var(--line); padding:16px 28px calc(16px + env(safe-area-inset-top,0px)); display:flex; justify-content:space-between; align-items:center; }
   .nav-logo { font-family:'Lora',serif; font-weight:600; font-size:15px; color:var(--ink); text-decoration:none; }
   .nav-links { display:flex; gap:1.75rem; align-items:center; }
   .nav-links a { font-family:'Lora',serif; font-size:11px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:#6b5f4f; text-decoration:none; }
@@ -34,11 +36,11 @@
   .nav-links a.nav-cta { color:var(--wine); border:0.5px solid var(--gold); border-radius:6px; padding:7px 18px; }
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
   .hamburger span { width:20px; height:1.5px; background:var(--ink); display:block; }
-  .mobile-menu { display:none; position:fixed; top:56px; left:0; right:0; background:#faf6ef; z-index:101; padding:1rem 1.5rem; flex-direction:column; gap:1.1rem; border-bottom:0.5px solid var(--line); box-shadow:0 10px 20px rgba(26,20,16,0.08); }
+  .mobile-menu { display:none; position:fixed; top:78px; left:0; right:0; background:#faf6ef; z-index:101; padding:1rem 1.5rem; flex-direction:column; gap:1.1rem; border-bottom:0.5px solid var(--line); box-shadow:0 10px 20px rgba(26,20,16,0.08); }
   .mobile-menu a { font-family:'Lora',serif; font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:#1a1410; text-decoration:none; }
   @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } }
 
-  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:60px; display:flex; align-items:flex-end; }
+  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:82px; display:flex; align-items:flex-end; }
   .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; }
   .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); line-height:1.05; margin:0 0 0.1rem; color:var(--wine); }
   .cover-text-bg .eyebrow { color:var(--orange); margin:0; font-style:italic; font-weight:700; font-size:18px; white-space:nowrap; }
@@ -172,8 +174,8 @@
   .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
   .pause { padding:56px 0; text-align:center; }
-  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(23px,3.2vw,32px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
-  .pause .pause-quote:before { content:''; position:absolute; inset:-20px -48px; z-index:-1; border-radius:26px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; filter:blur(16px); opacity:0.85; }
+  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(18px,2.5vw,26px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
+  .pause .pause-quote:before { content:''; position:absolute; inset:-30px -76px; z-index:-1; border-radius:50%; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; filter:blur(22px); opacity:0.8; }
   .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink-soft); font-style:italic; margin:0; }
   @media (min-width:1000px){
     p, ul.plain li, p.lead { font-size:19px; }
@@ -253,13 +255,17 @@
   @media (max-width:680px){ .frow { grid-template-columns:1fr; } .frow:before { display:none; } .fstep.span2 { grid-column:auto; } }
   @media (prefers-reduced-motion: reduce){ .finner { transition:none; } }
   .callout .ctext p, .callout li { text-wrap:wrap; }
-  .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(20px,2.9vw,29px); }
+  .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(17px,2.2vw,24px); }
   @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
   @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
   @media (prefers-reduced-motion: reduce){ .cover, .pause .pause-quote:before, .cta-btn:hover, .popup-btn:hover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
 </style>
+<link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
+<link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
 </head>
 <body>
+
+<div class="langbar">Disponível também em inglês · <a href="ceen-en.html" hreflang="en" lang="en">English version</a></div>
 
 <nav>
   <a class="nav-logo" href="index.html">Filipa Osório</a>
@@ -560,13 +566,13 @@
     <div class="quiz-box">
       <p class="quiz-prompt">O que melhor descreve o teu momento?</p>
       <div id="quizChips">
-        <p class="quiz-group">Quero pensar e decidir contigo, no encontro · Sessão CEEN</p>
+        <p class="quiz-group">Quero pensar e decidir contigo · Sessão CEEN</p>
         <div class="quiz-pills">
           <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços e quero pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
           <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar, mas não sei por onde começar. Quero conversar e perceber o que faz sentido.”</button>
           <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou a forma como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
         </div>
-        <p class="quiz-group">Quero também que analises o que tenho e me entregues uma proposta · Ciclo CEEN</p>
+        <p class="quiz-group">Quero também que possas analisar o que tenho · Ciclo CEEN</p>
         <div class="quiz-pills">
           <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site e a comunicação continuam a mostrar o que fazia antes. Quero que olhes para o que tenho e me digas o que mudar e porquê.”</button>
           <button type="button" data-r="ciclo">“Preciso de tempo e de um olhar atento sobre os meus materiais, como a página de vendas, os preços ou as ofertas, e de uma proposta organizada a que possa voltar.”</button>
