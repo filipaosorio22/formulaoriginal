@@ -259,6 +259,34 @@
   @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
   @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
   @media (prefers-reduced-motion: reduce){ .cover, .pause .pause-quote:before, .cta-btn:hover, .popup-btn:hover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
+  /* modo noturno (inativo ate html[data-theme="dark"]) */
+  html[data-theme="dark"] { color-scheme:dark;
+    --cream:#1d1915; --ink:#efe6d8; --ink-soft:#c4b8a6; --wine:#e4a7b3; --orange:#e2a863; --gold:#c9a86c; --gold-deep:#d3b67f;
+    --line:rgba(240,230,215,0.16); --wineT:#4a3226; --wineT-ink:#efb890; --stoneT:#4a4128; --stoneT-ink:#e6cf8a;
+    --sessao:#4b3b25; --sessao-ink:#e8c48a; --ciclo:#4a3429; --ciclo-ink:#e3b894; --infoA:#363a29; --infoA-ink:#d6d9b0;
+    --infoB:#2a3e3b; --infoB-ink:#b4d4cc; --brown:#3a2d26; --brown-ink:#e0b98f; --gray:#2a2520; }
+  html[data-theme="dark"] a { text-decoration-color:rgba(240,230,215,0.35); }
+  html[data-theme="dark"] .langbar { background:rgba(29,25,21,0.98); color:#a89c8a; }
+  html[data-theme="dark"] .langbar a { color:#a89c8a; text-decoration-color:rgba(168,156,138,0.4); }
+  html[data-theme="dark"] nav { background:rgba(29,25,21,0.96); }
+  html[data-theme="dark"] .nav-links a { color:#bfb3a0; }
+  html[data-theme="dark"] .nav-links a:hover, html[data-theme="dark"] .nav-links a.active { color:var(--wine); }
+  html[data-theme="dark"] .mobile-menu { background:#241f1a; box-shadow:0 10px 20px rgba(0,0,0,0.35); }
+  html[data-theme="dark"] .mobile-menu a { color:#efe6d8; }
+  html[data-theme="dark"] .cover { background-image:linear-gradient(120deg,#39434f,#4a3a40,#4f4430,#4a3a40,#39434f); }
+  html[data-theme="dark"] .pause .pause-quote:before { background-image:linear-gradient(120deg,#46566a,#6a4a53,#6e5a34,#6a4a53,#46566a); opacity:0.55; }
+  html[data-theme="dark"] .cta-btn:hover, html[data-theme="dark"] .cta-btn:active, html[data-theme="dark"] .cta-btn:focus-visible { background-image:linear-gradient(120deg,#46566a,#6a4a53,#6e5a34,#6a4a53,#46566a); color:#f4e8d6; box-shadow:0 8px 18px rgba(0,0,0,0.35); }
+  html[data-theme="dark"] .popup { background:#26211c; }
+  html[data-theme="dark"] .popup-btn:hover { background-image:linear-gradient(120deg,#46566a,#6a4a53,#6e5a34,#6a4a53,#46566a); color:#f4e8d6; }
+  html[data-theme="dark"] .callout.lilac { background:#3a3040; }
+  html[data-theme="dark"] .callout.grayD { background:#332d25; }
+  html[data-theme="dark"] .callout.infoC { background:#2e3529; }
+  html[data-theme="dark"] details.fold.feature { background:#2c2620; }
+  html[data-theme="dark"] .fback { background:#272019; }
+  html[data-theme="dark"] .testimonial-photos-ph img { filter:brightness(0.88); }
+  html[data-theme="dark"] #ceenCalendlyModal > div { background:#26211c !important; }
+  html[data-theme="dark"] #ceenCalendlyModal p { color:#efe6d8 !important; }
+  html[data-theme="dark"] #ceenCalendlyModal button { color:#d3b67f !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
