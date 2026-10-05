@@ -177,8 +177,10 @@
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
   .pause { padding:56px 0; text-align:center; }
   .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(18px,2.5vw,26px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
-  .pause .pause-quote:before { content:''; position:absolute; inset:-30px -76px; z-index:-1; border-radius:50%; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; filter:blur(22px); opacity:0.8; }
-  .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink-soft); font-style:italic; margin:0; }
+  .pause .pause-quote:before { content:''; position:absolute; inset:-46px -130px; z-index:-1; background:radial-gradient(ellipse 52% 62% at 24% 52%, rgba(188,202,215,0.95), rgba(188,202,215,0) 72%), radial-gradient(ellipse 50% 66% at 52% 44%, rgba(234,205,199,0.95), rgba(234,205,199,0) 72%), radial-gradient(ellipse 52% 62% at 78% 54%, rgba(238,218,178,0.95), rgba(238,218,178,0) 72%); filter:blur(30px); opacity:0.75; animation:cloud 26s ease-in-out infinite alternate; }
+  @keyframes cloud { 0% { transform:translate(-14px,2px) scale(1); } 100% { transform:translate(14px,-3px) scale(1.06); } }
+  .pause { overflow-x:clip; }
+  .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink); font-weight:500; font-style:italic; margin:0; }
   @media (min-width:1000px){
     p, ul.plain li, p.lead { font-size:19px; }
     .callout-label { font-size:19px; }
@@ -218,7 +220,7 @@
     .two-col.widebox > .callout .ctext, .two-col.widebox > .callout ul.plain { display:contents; }
     .two-col.widebox .ci { grid-column:1; grid-row:1; }
     .two-col.widebox .callout-label { grid-column:2; grid-row:1; }
-    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:18px; }
+    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:18px; margin-bottom:0.2rem; }
     .two-col.widebox ul.plain li:last-child { margin-bottom:0; }
   }
   @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
@@ -260,6 +262,9 @@
   .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(17px,2.2vw,24px); }
   @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
   @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
+  .amostra-frame { display:block; width:100%; height:640px; border:0; border-radius:12px; background:#f9f8f7; margin:1.2rem 0 0.6rem; }
+  .amostra-legenda { font-size:15px; font-style:italic; color:var(--ink-soft); }
+  @media (max-width:650px){ .amostra-frame { height:600px; } }
   @media (prefers-reduced-motion: reduce){ .cover, .pause .pause-quote:before, .cta-btn:hover, .popup-btn:hover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
   /* modo noturno (inativo ate html[data-theme="dark"]) */
   html[data-theme="dark"] { color-scheme:dark;
@@ -276,7 +281,7 @@
   html[data-theme="dark"] .mobile-menu { background:#241f1a; box-shadow:0 10px 20px rgba(0,0,0,0.35); }
   html[data-theme="dark"] .mobile-menu a { color:#efe6d8; }
   html[data-theme="dark"] .cover { background-image:linear-gradient(120deg,#39434f,#4a3a40,#4f4430,#4a3a40,#39434f); }
-  html[data-theme="dark"] .pause .pause-quote:before { background-image:linear-gradient(120deg,#46566a,#6a4a53,#6e5a34,#6a4a53,#46566a); opacity:0.55; }
+  html[data-theme="dark"] .pause .pause-quote:before { background:radial-gradient(ellipse 52% 62% at 24% 52%, rgba(70,86,106,0.95), rgba(70,86,106,0) 72%), radial-gradient(ellipse 50% 66% at 52% 44%, rgba(106,74,83,0.95), rgba(106,74,83,0) 72%), radial-gradient(ellipse 52% 62% at 78% 54%, rgba(110,90,52,0.9), rgba(110,90,52,0) 72%); opacity:0.7; }
   html[data-theme="dark"] .cta-btn:hover, html[data-theme="dark"] .cta-btn:active, html[data-theme="dark"] .cta-btn:focus-visible { background-image:linear-gradient(120deg,#46566a,#6a4a53,#6e5a34,#6a4a53,#46566a); color:#f4e8d6; box-shadow:0 8px 18px rgba(0,0,0,0.35); }
   html[data-theme="dark"] .popup { background:#26211c; }
   html[data-theme="dark"] .popup-btn:hover { background-image:linear-gradient(120deg,#46566a,#6a4a53,#6e5a34,#6a4a53,#46566a); color:#f4e8d6; }
@@ -338,7 +343,7 @@
 
 <section class="pause pause-b">
   <div class="wrap-wide">
-    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio,<br>é mudar a forma como te vês e te posicionas nele...</p>
+    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio.<br>É mudar a forma como te vês e te posicionas nele.</p>
   </div>
 </section>
 
@@ -532,7 +537,7 @@
   <div class="wrap">
     <blockquote class="quote-block oneline">
       <p><strong>"Transformam dúvidas em direção, desalinhamento em alinhamento e confusão mental em clareza."</strong></p>
-      <p class="attrib">— mensagem transcrita de um áudio de uma cliente</p>
+      <p class="attrib">— mensagem transcrita de um áudio de uma cliente num acompanhamento</p>
     </blockquote>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente1_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente1_1.png'"></div>
@@ -598,15 +603,15 @@
       <div id="quizChips">
         <p class="quiz-group">Quero pensar e decidir contigo · Sessão CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços e quero pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
-          <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar, mas não sei por onde começar. Quero conversar e perceber o que faz sentido.”</button>
-          <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou a forma como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
+          <button type="button" data-r="sessao">“Tenho dois serviços e não sei se devo continuar<br>a promover ambos ou concentrar-me num deles.”</button>
+          <button type="button" data-r="sessao">“Quero aumentar o preço das minhas sessões,<br>mas receio perder clientes e acabo por adiar a decisão.”</button>
+          <button type="button" data-r="sessao">“Este serviço exige demasiadas horas e disponibilidade.<br>Quero rever o formato sem comprometer o valor que entrego.”</button>
         </div>
         <p class="quiz-group">Quero também que possas analisar o que tenho · Ciclo CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site e a comunicação continuam a mostrar o que fazia antes. Quero que olhes para o que tenho e me digas o que mudar e porquê.”</button>
-          <button type="button" data-r="ciclo">“Preciso de tempo e de um olhar atento sobre os meus materiais, como a página de vendas, os preços ou as ofertas, e de uma proposta organizada a que possa voltar.”</button>
-          <button type="button" data-r="ciclo">“Quero decidir com base numa análise, não só numa conversa: ver as ligações entre a oferta, a comunicação e a forma como trabalho.”</button>
+          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site<br>e a comunicação continuam a apresentar aquilo que fazia antes.”</button>
+          <button type="button" data-r="ciclo">“Já não tenho a mesma disponibilidade, mas mantenho os mesmos serviços,<br>horários e compromissos. Preciso de rever como o negócio funciona.”</button>
+          <button type="button" data-r="ciclo">“Quero juntar várias competências numa nova oferta, mas não sei<br>como organizar os serviços, explicar o que os une e decidir o que deixar de vender.”</button>
         </div>
       </div>
       <div class="quiz-answer" id="quizAnswerSessao">
@@ -696,12 +701,23 @@
 
 <hr class="div">
 
+<section id="amostra">
+  <div class="wrap-wide">
+    <h2 class="section-title">Da conversa a uma proposta que podes voltar a consultar</h2>
+    <p>Um exemplo visual de como a tua proposta personalizada pode ficar organizada no Notion. Abre os títulos e faz scroll dentro do quadro.</p>
+    <iframe class="amostra-frame" src="ciclo-ceen-amostra.html" title="Exemplo ilustrativo de uma entrega do Ciclo CEEN" loading="lazy"></iframe>
+    <p class="amostra-legenda">Exemplo fictício e ilustrativo, com o conteúdo desfocado. Cada entrega depende do contexto e dos temas trabalhados.</p>
+  </div>
+</section>
+
+<hr class="div">
+
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block mid">
       <p><strong>"Quase em cada frase havia uma chave a rodar"</strong></p>
     </blockquote>
-    <p style="font-size:16px;">Neste testemunho, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
+    <p style="font-size:16px;">Neste testemunho de um acompanhamento, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
       <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"></div>
@@ -742,7 +758,7 @@
     <blockquote class="quote-block">
       <p><strong>"Ter alguém ao meu lado que olha para mim e para o meu negócio como um todo."</strong></p>
     </blockquote>
-    <p style="font-size:16px;">É no contacto com a experiência real que novas decisões, dúvidas e possibilidades se tornam visíveis. Este é o testemunho de outra cliente sobre o que tem vivido no seu processo comigo:</p>
+    <p style="font-size:16px;">É no contacto com a experiência real que novas decisões, dúvidas e possibilidades se tornam visíveis. Este é o testemunho de outra cliente, num acompanhamento, sobre o que tem vivido no seu processo comigo:</p>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cristiana_1.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_1.png'"></div>
       <div class="ph"><img src="upsell_cristiana_2.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_2.png'"></div>
