@@ -128,7 +128,7 @@
   .price-card.sessao { background:var(--sessao); }
   .price-card.ciclo { background:var(--ciclo); }
   .price-card .ptitle { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:21px; margin:0 0 0.2rem; color:var(--ink); }
-  .price-card .pamt { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:27px; margin:0 0 0.9rem; color:var(--ink); }
+  .price-card .pamt { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:20px; margin:0 0 0.9rem; color:var(--ink-soft); }
   .price-card p.pdesc { font-size:17px; flex:1; }
 
   .cta-btn { display:inline-block; text-align:center; font-family:'Lora',serif; font-size:15px; font-weight:600; text-decoration:none; padding:13px 24px; border-radius:6px; border:1.5px solid var(--wine); color:var(--wine); background:transparent; transition:background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
@@ -198,7 +198,7 @@
     .jump-link, .back-link { font-size:16px; }
   }
   p, li { text-wrap:pretty; }
-  header.wrap h1.hero-title { padding-left:1.3rem; }
+  header.wrap h1.hero-title { padding-left:0; }
   details.fold.feature { background:#f7efe2; border:1px solid var(--gold); border-radius:12px; padding:1.1rem 1.4rem; margin:1.3rem 0; }
   details.fold.feature summary { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,2.8vw,31px); color:var(--wine); font-weight:600; }
   details.fold.feature summary .tri { color:var(--wine); }
@@ -215,12 +215,12 @@
   blockquote.quote-block.oneline p:not(.attrib) { font-size:clamp(15px,2.3vw,20.5px); white-space:nowrap; }
   @media (max-width:640px){ blockquote.quote-block.oneline p:not(.attrib) { white-space:normal; font-size:18px; } }
   @media (min-width:681px){
-    .two-col.widebox { grid-template-columns:1.1fr 1fr; grid-template-rows:auto repeat(4,auto); row-gap:0; }
+    .two-col.widebox { grid-template-columns:1.15fr 1fr; grid-template-rows:auto repeat(4,auto); row-gap:0; }
     .two-col.widebox > .callout { display:grid; grid-template-columns:auto 1fr; grid-template-rows:subgrid; grid-row:span 5; column-gap:0.7rem; align-items:start; }
     .two-col.widebox > .callout .ctext, .two-col.widebox > .callout ul.plain { display:contents; }
     .two-col.widebox .ci { grid-column:1; grid-row:1; }
     .two-col.widebox .callout-label { grid-column:2; grid-row:1; }
-    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:18px; margin-bottom:0.2rem; }
+    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:17px; margin-bottom:0.2rem; }
     .two-col.widebox ul.plain li:last-child { margin-bottom:0; }
   }
   @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
@@ -261,9 +261,11 @@
   .callout .ctext p, .callout li { text-wrap:wrap; }
   .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(17px,2.2vw,24px); }
   @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
+  .pause .pause-quote.two { white-space:nowrap; max-width:none; font-size:min(23px, calc((100vw - 56px) / 21.5)); padding:0.8rem 0.5rem; }
   @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
-  .amostra-frame { display:block; width:100%; height:640px; border:0; border-radius:12px; background:#f9f8f7; margin:1.2rem 0 0.6rem; }
+  .amostra-frame { display:block; width:100%; height:640px; border:0; border-radius:12px; background:var(--cream); margin:1.2rem 0 0.6rem; }
   .amostra-legenda { font-size:15px; font-style:italic; color:var(--ink-soft); }
+  .callout.infoC li { font-size:17px; }
   @media (max-width:650px){ .amostra-frame { height:600px; } }
   @media (prefers-reduced-motion: reduce){ .cover, .pause .pause-quote:before, .cta-btn:hover, .popup-btn:hover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
   /* modo noturno (inativo ate html[data-theme="dark"]) */
@@ -343,7 +345,7 @@
 
 <section class="pause pause-b">
   <div class="wrap-wide">
-    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio.<br>É mudar a forma como te vês e te posicionas nele.</p>
+    <p class="pause-quote two">Por vezes, o maior desafio não é construir o negócio.<br>É mudar a forma como te vês e te posicionas nele.</p>
   </div>
 </section>
 
@@ -595,7 +597,7 @@
 
 <section style="padding-top:0; margin-top:-2.6rem;">
   <div class="wrap-wide">
-    <h2 class="section-title">Como queres trabalhar comigo neste momento?</h2>
+    <h2 class="section-title">O que te pede o teu momento presente?</h2>
     <p>Na Sessão, trabalhamos em conjunto durante o encontro. No Ciclo, acrescento o meu tempo de análise entre os encontros e preparo uma proposta personalizada para ti.</p>
 
     <div class="quiz-box">
@@ -603,15 +605,15 @@
       <div id="quizChips">
         <p class="quiz-group">Quero pensar e decidir contigo · Sessão CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="sessao">“Tenho dois serviços e não sei se devo continuar<br>a promover ambos ou concentrar-me num deles.”</button>
-          <button type="button" data-r="sessao">“Quero aumentar o preço das minhas sessões,<br>mas receio perder clientes e acabo por adiar a decisão.”</button>
-          <button type="button" data-r="sessao">“Este serviço exige demasiadas horas e disponibilidade.<br>Quero rever o formato sem comprometer o valor que entrego.”</button>
+          <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços<br>e quero pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
+          <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar,<br>mas não sei por onde começar. Quero conversar e perceber o que faz sentido.”</button>
+          <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou<br>a forma como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
         </div>
         <p class="quiz-group">Quero também que possas analisar o que tenho · Ciclo CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site<br>e a comunicação continuam a apresentar aquilo que fazia antes.”</button>
-          <button type="button" data-r="ciclo">“Já não tenho a mesma disponibilidade, mas mantenho os mesmos serviços,<br>horários e compromissos. Preciso de rever como o negócio funciona.”</button>
-          <button type="button" data-r="ciclo">“Quero juntar várias competências numa nova oferta, mas não sei<br>como organizar os serviços, explicar o que os une e decidir o que deixar de vender.”</button>
+          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços,<br>o site e a comunicação continuam a mostrar o que fazia antes.”</button>
+          <button type="button" data-r="ciclo">“Preciso de tempo e de um olhar atento sobre os meus materiais, como a página de vendas,<br>os preços ou as ofertas, e de uma proposta organizada a que possa voltar.”</button>
+          <button type="button" data-r="ciclo">“Quero decidir com base numa análise, não só numa conversa:<br>ver as ligações entre a oferta, a comunicação e a forma como trabalho.”</button>
         </div>
       </div>
       <div class="quiz-answer" id="quizAnswerSessao">
@@ -704,9 +706,9 @@
 <section id="amostra">
   <div class="wrap-wide">
     <h2 class="section-title">Da conversa a uma proposta que podes voltar a consultar</h2>
-    <p>Um exemplo visual de como a tua proposta personalizada pode ficar organizada no Notion. Abre os títulos e faz scroll dentro do quadro.</p>
+    <p style="hyphens:manual;">Um exemplo visual de como a tua proposta personalizada pode ficar organizada no Notion. Abre os títulos e faz scroll dentro do quadro.</p>
     <iframe class="amostra-frame" src="ciclo-ceen-amostra.html" title="Exemplo ilustrativo de uma entrega do Ciclo CEEN" loading="lazy"></iframe>
-    <p class="amostra-legenda">Exemplo fictício e ilustrativo, com o conteúdo desfocado. Cada entrega depende do contexto e dos temas trabalhados.</p>
+    <p class="amostra-legenda">Exemplo ilustrativo. Cada entrega depende do contexto e dos temas trabalhados.</p>
   </div>
 </section>
 
@@ -1080,6 +1082,22 @@
       c.addEventListener('click', function(){ if (touch) c.classList.toggle('flipped'); });
       c.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.classList.toggle('flipped'); } });
     });
+  })();
+
+  // caixas "o que pode trazer-te": o espaco entre pontos fica igual dentro de cada caixa
+  (function(){
+    var g = document.querySelector('.two-col.widebox'); if (!g) return;
+    function fit(){
+      var cs = g.querySelectorAll(':scope > .callout'); if (cs.length < 2) return;
+      var lis = [].map.call(cs, function(c){ return c.querySelectorAll('li'); });
+      lis.forEach(function(l){ [].forEach.call(l, function(x){ x.style.transform = ''; }); });
+      if (window.innerWidth <= 680) return;
+      var n = Math.min(lis[0].length, lis[1].length), rows = [];
+      for (var i = 0; i < n; i++) rows.push(Math.max(lis[0][i].getBoundingClientRect().height, lis[1][i].getBoundingClientRect().height));
+      [0, 1].forEach(function(k){ var cum = 0; for (var i = 0; i < n; i++) { if (cum) lis[k][i].style.transform = 'translateY(' + (-cum) + 'px)'; cum += rows[i] - lis[k][i].getBoundingClientRect().height; } });
+    }
+    fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   })();
 
   // popup de vagas, igual ao do site
