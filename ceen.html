@@ -215,6 +215,35 @@
   blockquote.quote-block.mid p { font-size:clamp(25px,2.7vw,30px); line-height:1.3; }
   .two-col .callout-label { font-size:16px; letter-spacing:0; }
   section .wrap > p, section .wrap-wide > p, details .fold-body > p { text-align:justify; text-justify:inter-word; hyphens:auto; }
+  .frow { position:relative; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:0.4rem 0 1.2rem; }
+  .frow:before { content:''; position:absolute; top:22px; height:1px; background:var(--gold); left:calc(100%/6); right:calc(100%/6); }
+  .frow.two:before { left:calc(100%/3); right:calc(100%/6); }
+  .fstep { position:relative; display:flex; flex-direction:column; align-items:center; min-width:0; }
+  .fstep.span2 { grid-column:span 2; }
+  .fdot { position:relative; z-index:2; width:44px; height:44px; border-radius:50%; background:var(--cream); border:1.5px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--wine); }
+  .fcard { position:relative; width:100%; flex:1; margin-top:-16px; perspective:1200px; cursor:pointer; outline:none; }
+  .finner { display:grid; height:100%; min-height:230px; transition:transform 0.8s cubic-bezier(.22,.61,.36,1); transform-style:preserve-3d; }
+  .fcard:hover .finner, .fcard:focus-visible .finner, .fcard.flipped .finner { transform:rotateY(180deg); }
+  .fface { grid-area:1/1; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:10px; padding:32px 18px 22px; }
+  .ffront { text-align:center; display:flex; flex-direction:column; align-items:center; }
+  .fcard.ses .ffront { background:var(--sessao); }
+  .fcard.cic .ffront { background:var(--ciclo); }
+  .ffront b { display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; line-height:1.15; color:var(--wine); margin-bottom:0.5rem; }
+  .ffront span { display:block; font-size:15px; line-height:1.5; color:var(--ink-soft); }
+  .fhint { margin-top:auto; padding-top:1rem; font-style:normal; font-size:12px; letter-spacing:0.04em; color:var(--gold-deep); }
+  .fhint:before { content:'↻ '; }
+  @media (hover:hover){ .fhint:after { content:'passa o rato'; } }
+  @media (hover:none){ .fhint:after { content:'toca para ler'; } }
+  .fback { transform:rotateY(180deg); background:#faf4e8; border:1px solid var(--gold); text-align:left; }
+  .fback h5 { margin:0 0 0.6rem; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:18px; line-height:1.2; color:var(--wine); }
+  .fpar { font-size:14.5px; line-height:1.55; color:var(--ink); margin-bottom:0.6rem; hyphens:none; }
+  .fpar:last-child { margin-bottom:0; }
+  @media (max-width:680px){ .frow { grid-template-columns:1fr; } .frow:before { display:none; } .fstep.span2 { grid-column:auto; } }
+  @media (prefers-reduced-motion: reduce){ .finner { transition:none; } }
+  .callout .ctext p, .callout li { text-wrap:wrap; }
+  .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(20px,2.9vw,29px); }
+  @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
+  @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
   @media (prefers-reduced-motion: reduce){ .cover, .pause{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
 </style>
 </head>
@@ -261,7 +290,7 @@
 
 <section class="pause pause-b">
   <div class="wrap-wide">
-    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio.<br>É mudar a forma como te vês e te posicionas nele.</p>
+    <p class="pause-quote">Por vezes, o maior desafio não é construir o negócio,<br>é mudar a forma como te vês e te posicionas nele...</p>
   </div>
 </section>
 
@@ -269,7 +298,7 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
-    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:29px;">O negócio é o centro da CEEN, mas não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:18px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
+    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">O negócio é o centro da CEEN, mas não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:18px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
   </div>
 </section>
 
@@ -376,14 +405,14 @@
   <div class="wrap-wide">
     <h2 class="section-title">Rever o negócio sem o separar de quem o conduz</h2>
     <p>Na prática, a CEEN cruza duas dimensões: o que orienta as tuas escolhas e a forma como essas escolhas se traduzem no negócio.</p>
-    <div class="two-col">
+    <div class="two-col dimbox">
       <div class="callout infoA"><div class="ci">⚡</div><div class="ctext">
-        <p class="callout-label">DIMENSÃO ENERGÉTICA ·<br>A PESSOA QUE O CONDUZ</p>
+        <p class="callout-label"><span class="nw">DIMENSÃO ENERGÉTICA ·</span><br><span class="nw">A PESSOA QUE O CONDUZ</span></p>
         <p style="margin-top:1.4rem;">Reconhecer o que te mobiliza, retrai ou esgota e como isso influencia as tuas escolhas e o papel que desejas ocupar no negócio.</p>
         <p>Consoante o que for mais relevante no teu momento, podemos observar a tua energia natural, desejos, crenças e padrões: elementos que influenciam aquilo que escolhes, comunicas e consegues sustentar.</p>
       </div></div>
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
-        <p class="callout-label">DIMENSÃO ESTRATÉGICA ·<br>A TRADUÇÃO NO NEGÓCIO</p>
+        <p class="callout-label"><span class="nw">DIMENSÃO ESTRATÉGICA ·</span><br><span class="nw">A TRADUÇÃO NO NEGÓCIO</span></p>
         <p style="margin-top:1.4rem;">Traduzir essa leitura em critérios, prioridades e recomendações concretas para a próxima fase do negócio.</p>
         <p>Consoante a questão ou a profundidade do trabalho, podemos observar ofertas, serviços, preços, posicionamento, comunicação, conteúdos, páginas de vendas, website, formatos de entrega, responsabilidades e decisões do dia a dia.</p>
       </div></div>
@@ -396,7 +425,7 @@
 
 <section class="pause">
   <div class="wrap-wide">
-    <p class="pause-quote">“Nunca ninguém tinha olhado para o meu negócio desta forma!”</p>
+    <p class="pause-quote nobreak">“Nunca ninguém tinha olhado para o meu negócio desta forma!”</p>
     <p class="pause-attrib">— comentário de uma cliente durante uma sessão</p>
   </div>
 </section>
@@ -454,7 +483,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p><strong>"Transformam dúvidas em clareza, desalinhamento em alinhamento e confusão mental em clareza."</strong></p>
+      <p><strong>"Transformam dúvidas em clareza, desalinhamento<br>em alinhamento e confusão mental em clareza."</strong></p>
       <p class="attrib">— mensagem transcrita de um áudio de uma cliente</p>
     </blockquote>
     <div class="testimonial-photos-ph">
@@ -557,20 +586,26 @@
     <details class="fold slow feature" id="como-funciona-sessao">
       <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona a Sessão CEEN</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
-        <div class="step"><div class="num">1️⃣</div><div class="body"><h4>Contexto e material principal</h4><p>Antes da sessão, partilhas a questão que queres trabalhar e o contexto essencial. Quando for relevante, podes também enviar um material principal, por exemplo, uma página de vendas, uma tabela de preços ou a descrição de uma oferta. Faço uma leitura breve para chegar ao encontro com o enquadramento necessário.</p></div></div>
-        <div class="step"><div class="num">2️⃣</div><div class="body"><h4>Sessão individual · até duas horas</h4><p>Partimos da questão que trouxeste mais estratégica, prática ou relacionada com a forma como estás a viver o negócio. Escuto, questiono, devolvo-te o que reconheço, ligo os diferentes pontos e apresento-te novas perspetivas e recomendações concretas durante o encontro.</p></div></div>
-        <div class="step"><div class="num">3️⃣</div><div class="body"><h4>Decisões e próximos passos</h4><p>A leitura, a reflexão e as recomendações são trabalhadas durante a sessão. Depois, podes avançar autonomamente ou marcar uma nova Sessão CEEN quando outra questão concreta pedir atenção. Não estão incluídos relatório, análise posterior, implementação, revisão de novos materiais ou acompanhamento assíncrono.</p></div></div>
+        <div class="frow">
+          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Contexto e material principal"><div class="finner"><div class="fface ffront"><b>Contexto e material</b><span>Partilhas a questão e, se existir, o material principal.</span><i class="fhint"></i></div><div class="fface fback"><h5>Contexto e material principal</h5><div class="fpar">Antes da sessão, partilhas a questão que queres trabalhar e o contexto essencial. Quando for relevante, podes também enviar um material principal, por exemplo, uma página de vendas, uma tabela de preços ou a descrição de uma oferta. Faço uma leitura breve para chegar ao encontro com o enquadramento necessário.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Sessão individual · até duas horas"><div class="finner"><div class="fface ffront"><b>Sessão · até 2h</b><span>Escuto, questiono e devolvo-te o que reconheço.</span><i class="fhint"></i></div><div class="fface fback"><h5>Sessão individual · até duas horas</h5><div class="fpar">Partimos da questão que trouxeste mais estratégica, prática ou relacionada com a forma como estás a viver o negócio. Escuto, questiono, devolvo-te o que reconheço, ligo os diferentes pontos e apresento-te novas perspetivas e recomendações concretas durante o encontro.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Decisões e próximos passos"><div class="finner"><div class="fface ffront"><b>Decisões e próximos passos</b><span>Trabalhados durante o encontro.</span><i class="fhint"></i></div><div class="fface fback"><h5>Decisões e próximos passos</h5><div class="fpar">A leitura, a reflexão e as recomendações são trabalhadas durante a sessão. Depois, podes avançar autonomamente ou marcar uma nova Sessão CEEN quando outra questão concreta pedir atenção. Não estão incluídos relatório, análise posterior, implementação, revisão de novos materiais ou acompanhamento assíncrono.</div></div></div></div></div>
+        </div>
       </div></div>
     </details>
 
     <details class="fold slow feature" id="como-funciona-ciclo">
       <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona o Ciclo CEEN</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
-        <div class="step"><div class="num">1️⃣</div><div class="body"><h4>Primeira sessão · escutar e aprofundar</h4><p>Uma sessão individual online de até duas horas. Olhamos para a estrutura atual do negócio, para a forma como estás a vivê-lo, para as diferentes áreas que se influenciam e para aquilo que está a pedir uma revisão mais profunda.</p></div></div>
-        <div class="step"><div class="num">2️⃣</div><div class="body"><h4>Três dias de observação e partilha</h4><p>Podes acrescentar exemplos, materiais, acontecimentos ou informação que tenha surgido depois da conversa e seja relevante para completar a leitura.</p></div></div>
-        <div class="step"><div class="num">3️⃣</div><div class="body"><h4>Tempo de entrega da análise: até 21 dias úteis</h4><p>Revejo os materiais relevantes, relaciono as diferentes áreas do negócio, formulo hipóteses e preparo melhorias e recomendações. Durante este período, posso colocar-te perguntas dirigidas ou pedir esclarecimentos necessários à análise.</p></div></div>
-        <div class="step"><div class="num">4️⃣</div><div class="body"><h4>Leitura integrada e proposta de reorganização no Notion</h4><p>Organizo a leitura do momento, as relações entre as áreas analisadas, as decisões importantes, as prioridades e os movimentos que considero mais adequados à próxima fase do negócio.</p><p style="margin-top:0.8rem;">Recebes no Notion uma análise organizada do momento do negócio, com recomendações, prioridades e as razões que as sustentam.</p><p style="margin-top:0.8rem;">Consoante o que analisarmos, a proposta pode ajudar-te a definir que ofertas manter ou reformular, o que rever na comunicação, que formatos de entrega considerar e quais as decisões prioritárias. Não é apenas uma lista de tarefas: é uma base para compreenderes as opções e escolheres como avançar.</p></div></div>
-        <div class="step"><div class="num">5️⃣</div><div class="body"><h4>Segunda sessão · apresentar e alinhar</h4><p>Apresento-te a proposta, explico as ligações que estabeleci e discutimos a direção. Depois, integro no Notion os pequenos ajustes definidos durante o encontro.</p></div></div>
+        <div class="frow">
+          <div class="fstep"><div class="fdot">1</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Primeira sessão · escutar e aprofundar"><div class="finner"><div class="fface ffront"><b>Primeira sessão</b><span>Escutar e aprofundar.</span><i class="fhint"></i></div><div class="fface fback"><h5>Primeira sessão · escutar e aprofundar</h5><div class="fpar">Uma sessão individual online de até duas horas. Olhamos para a estrutura atual do negócio, para a forma como estás a vivê-lo, para as diferentes áreas que se influenciam e para aquilo que está a pedir uma revisão mais profunda.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Três dias de observação e partilha"><div class="finner"><div class="fface ffront"><b>Três dias</b><span>Observação e partilha.</span><i class="fhint"></i></div><div class="fface fback"><h5>Três dias de observação e partilha</h5><div class="fpar">Podes acrescentar exemplos, materiais, acontecimentos ou informação que tenha surgido depois da conversa e seja relevante para completar a leitura.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Tempo de entrega da análise: até 21 dias úteis"><div class="finner"><div class="fface ffront"><b>Análise</b><span>Até 21 dias úteis.</span><i class="fhint"></i></div><div class="fface fback"><h5>Tempo de entrega da análise: até 21 dias úteis</h5><div class="fpar">Revejo os materiais relevantes, relaciono as diferentes áreas do negócio, formulo hipóteses e preparo melhorias e recomendações. Durante este período, posso colocar-te perguntas dirigidas ou pedir esclarecimentos necessários à análise.</div></div></div></div></div>
+        </div>
+        <div class="frow two">
+          <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Leitura integrada e proposta de reorganização no Notion"><div class="finner"><div class="fface ffront"><b>Leitura no Notion</b><span>Leitura integrada e proposta de reorganização.</span><i class="fhint"></i></div><div class="fface fback"><h5>Leitura integrada e proposta de reorganização no Notion</h5><div class="fpar">Organizo a leitura do momento, as relações entre as áreas analisadas, as decisões importantes, as prioridades e os movimentos que considero mais adequados à próxima fase do negócio.</div><div class="fpar">Recebes no Notion uma análise organizada do momento do negócio, com recomendações, prioridades e as razões que as sustentam.</div><div class="fpar">Consoante o que analisarmos, a proposta pode ajudar-te a definir que ofertas manter ou reformular, o que rever na comunicação, que formatos de entrega considerar e quais as decisões prioritárias. Não é apenas uma lista de tarefas: é uma base para compreenderes as opções e escolheres como avançar.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Segunda sessão · apresentar e alinhar"><div class="finner"><div class="fface ffront"><b>Segunda sessão</b><span>Apresentar e alinhar.</span><i class="fhint"></i></div><div class="fface fback"><h5>Segunda sessão · apresentar e alinhar</h5><div class="fpar">Apresento-te a proposta, explico as ligações que estabeleci e discutimos a direção. Depois, integro no Notion os pequenos ajustes definidos durante o encontro.</div></div></div></div></div>
+        </div>
       </div></div>
     </details>
   </div>
@@ -968,6 +1003,15 @@
     window.addEventListener('resize', fit);
     window.addEventListener('load', fit);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  })();
+
+  // cartoes do como funciona: virar ao tocar (ecras sem rato) ou com Enter
+  (function(){
+    var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+    document.querySelectorAll('.fcard').forEach(function(c){
+      c.addEventListener('click', function(){ if (touch) c.classList.toggle('flipped'); });
+      c.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.classList.toggle('flipped'); } });
+    });
   })();
 
   // popup de vagas, igual ao do site
