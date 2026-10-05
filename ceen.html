@@ -128,7 +128,7 @@
   .price-card p.pdesc { font-size:17px; flex:1; }
 
   .cta-btn { display:inline-block; text-align:center; font-family:'Lora',serif; font-size:15px; font-weight:600; text-decoration:none; padding:13px 24px; border-radius:6px; border:1.5px solid var(--wine); color:var(--wine); background:transparent; transition:background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
-  .cta-btn:hover, .cta-btn:active, .cta-btn:focus-visible { background:var(--wine); color:#faf6ef; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.22); }
+  .cta-btn:hover, .cta-btn:active, .cta-btn:focus-visible { background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 5s ease-in-out infinite; color:var(--wine); transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.16); }
   .cta-pair { display:flex; gap:0.8rem; flex-wrap:wrap; }
   .cta-pair.center { justify-content:center; }
 
@@ -163,7 +163,7 @@
   .popup-close { position:absolute; top:0.55rem; right:0.7rem; background:none; border:none; font-size:16px; color:#9a7e52; cursor:pointer; }
   .popup-eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.12em; text-transform:uppercase; color:#c9a86c; margin-bottom:0.6rem; }
   .popup-btn { display:block; width:100%; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border:none; border-radius:30px; padding:9px; text-align:center; text-decoration:none; transition:background 0.2s, transform 0.18s ease, box-shadow 0.18s ease; }
-  .popup-btn:hover { background:#5c1c28; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.25); }
+  .popup-btn:hover { background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 5s ease-in-out infinite; color:#7a2535; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.16); }
   @media (max-width:600px){ .popup{ right:0.8rem; left:0.8rem; width:auto; max-width:none; } }
   @keyframes aurora { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
   .js-reveal .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.9s ease, transform 0.9s ease; }
@@ -171,8 +171,9 @@
   .ci.shine { position:relative; overflow:hidden; border-radius:6px; }
   .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
-  .pause { background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; padding:60px 0; text-align:center; }
-  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(23px,3.2vw,32px); line-height:1.25; color:var(--wine); text-align:center; margin:0 auto 1rem; max-width:720px; }
+  .pause { padding:56px 0; text-align:center; }
+  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(23px,3.2vw,32px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
+  .pause .pause-quote:before { content:''; position:absolute; inset:-4px -22px; z-index:-1; border-radius:50%; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; filter:blur(20px); opacity:0.8; }
   .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink-soft); font-style:italic; margin:0; }
   @media (min-width:1000px){
     p, ul.plain li, p.lead { font-size:19px; }
@@ -205,6 +206,15 @@
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
   .callout li, .callout p { hyphens:none; }
+  @media (min-width:681px){
+    .two-col.widebox { grid-template-rows:auto repeat(4,auto); row-gap:0; }
+    .two-col.widebox > .callout { display:grid; grid-template-columns:auto 1fr; grid-template-rows:subgrid; grid-row:span 5; column-gap:0.7rem; align-items:start; }
+    .two-col.widebox > .callout .ctext, .two-col.widebox > .callout ul.plain { display:contents; }
+    .two-col.widebox .ci { grid-column:1; grid-row:1; }
+    .two-col.widebox .callout-label { grid-column:2; grid-row:1; }
+    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; }
+    .two-col.widebox ul.plain li:last-child { margin-bottom:0; }
+  }
   @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
   .bio-photo-ph img { object-position:50% 18%; }
   .bio-photo-ph { padding:0; }
@@ -244,7 +254,7 @@
   .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(20px,2.9vw,29px); }
   @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
   @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
-  @media (prefers-reduced-motion: reduce){ .cover, .pause{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
+  @media (prefers-reduced-motion: reduce){ .cover, .pause .pause-quote:before, .cta-btn:hover, .popup-btn:hover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
 </style>
 </head>
 <body>
@@ -414,7 +424,7 @@
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
         <p class="callout-label"><span class="nw">DIMENSÃO ESTRATÉGICA ·</span><br><span class="nw">A TRADUÇÃO NO NEGÓCIO</span></p>
         <p style="margin-top:1.4rem;">Traduzir essa leitura em critérios, prioridades e recomendações concretas para a próxima fase do negócio.</p>
-        <p>Consoante a questão ou a profundidade do trabalho, podemos observar ofertas, serviços, preços, posicionamento, comunicação, conteúdos, páginas de vendas, website, formatos de entrega, responsabilidades e decisões do dia a dia.</p>
+        <p>Consoante a questão ou a profundidade do trabalho, podemos observar ofertas, serviços, preços, posicionamento, comunicação, conteúdos, páginas de vendas, website, formatos de entrega, responsabilidades e decisões.</p>
       </div></div>
     </div>
     <p class="lead" style="margin-top:2.6rem;">Observar sem estruturar pode trazer mais consciência, mas deixar-te sem saber o que fazer com ela. Estruturar sem observar pode levar-te a escolher uma estratégia que não consegues ou não desejas sustentar. É neste diálogo entre energia e estratégia que a CEEN acontece.</p>
@@ -650,12 +660,12 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block mid">
-      <p><strong>"Sinto que ganhei muito mais consciência e ferramentas…"</strong></p>
+      <p><strong>"Quase em cada frase havia uma chave a rodar"</strong></p>
     </blockquote>
     <p style="font-size:16px;">Neste testemunho, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
-      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png'"></div>
+      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"></div>
     </div>
   </div>
 </section>
@@ -725,7 +735,7 @@
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a>
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar o meu Ciclo CEEN</a>
     </div>
-    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Ainda tens dúvidas sobre qual é o formato mais adequado?</strong><br><a href="https://wa.me/message/SGB5SN5CXWY4F1" style="font-style:normal; font-size:14px; color:var(--orange); font-family:'Lora',serif;">Envia-me uma mensagem</a> e conta-me brevemente o que desejas observar.</p></blockquote>
+    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Ainda tens dúvidas sobre qual é o formato mais adequado?</strong><br><a href="https://wa.me/message/SGB5SN5CXWY4F1?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20p%C3%A1gina%20da%20CEEN%20e%20tenho%20interesse%20em%20trabalhar%20contigo.%20Gostava%20de%20esclarecer%20qual%20dos%20dois%20formatos%20%C3%A9%20mais%20adequado%20%C3%A0%20quest%C3%A3o%20que%20quero%20trabalhar%20neste%20momento." style="font-style:normal; font-size:14px; color:var(--orange); font-family:'Lora',serif;">Envia-me uma mensagem</a> e conta-me brevemente o que desejas observar.</p></blockquote>
   </div>
 </section>
 
@@ -793,7 +803,7 @@
   </div>
 </footer>
 
-<a class="wa-bubble" href="https://wa.me/message/SGB5SN5CXWY4F1?text=Ol%C3%A1%20Filipa%21%20Vi%20a%20p%C3%A1gina%20da%20CEEN%20e%20gostava%20de%20te%20contar%20brevemente%20sobre%20o%20meu%20neg%C3%B3cio%20para%20me%20aconselhares%20o%20melhor%20servi%C3%A7o%20para%20mim." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="wa-bubble" href="https://wa.me/message/SGB5SN5CXWY4F1?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20p%C3%A1gina%20da%20CEEN%20e%20tenho%20interesse%20em%20trabalhar%20contigo.%20Gostava%20de%20esclarecer%20qual%20dos%20dois%20formatos%20%C3%A9%20mais%20adequado%20%C3%A0%20quest%C3%A3o%20que%20quero%20trabalhar%20neste%20momento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg>
 </a>
 
