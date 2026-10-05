@@ -173,7 +173,7 @@
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
   .pause { padding:56px 0; text-align:center; }
   .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(23px,3.2vw,32px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
-  .pause .pause-quote:before { content:''; position:absolute; inset:-4px -22px; z-index:-1; border-radius:50%; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; filter:blur(20px); opacity:0.8; }
+  .pause .pause-quote:before { content:''; position:absolute; inset:-20px -48px; z-index:-1; border-radius:26px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; filter:blur(16px); opacity:0.85; }
   .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink-soft); font-style:italic; margin:0; }
   @media (min-width:1000px){
     p, ul.plain li, p.lead { font-size:19px; }
@@ -206,13 +206,15 @@
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
   .callout li, .callout p { hyphens:none; }
+  blockquote.quote-block.oneline p:not(.attrib) { font-size:clamp(15px,2.3vw,20.5px); white-space:nowrap; }
+  @media (max-width:640px){ blockquote.quote-block.oneline p:not(.attrib) { white-space:normal; font-size:18px; } }
   @media (min-width:681px){
-    .two-col.widebox { grid-template-rows:auto repeat(4,auto); row-gap:0; }
+    .two-col.widebox { grid-template-columns:1.1fr 1fr; grid-template-rows:auto repeat(4,auto); row-gap:0; }
     .two-col.widebox > .callout { display:grid; grid-template-columns:auto 1fr; grid-template-rows:subgrid; grid-row:span 5; column-gap:0.7rem; align-items:start; }
     .two-col.widebox > .callout .ctext, .two-col.widebox > .callout ul.plain { display:contents; }
     .two-col.widebox .ci { grid-column:1; grid-row:1; }
     .two-col.widebox .callout-label { grid-column:2; grid-row:1; }
-    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; }
+    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:18px; }
     .two-col.widebox ul.plain li:last-child { margin-bottom:0; }
   }
   @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
@@ -492,13 +494,13 @@
 
 <section class="tight">
   <div class="wrap">
-    <blockquote class="quote-block">
-      <p><strong>"Transformam dúvidas em clareza, desalinhamento<br>em alinhamento e confusão mental em clareza."</strong></p>
+    <blockquote class="quote-block oneline">
+      <p><strong>"Transformam dúvidas em direção, desalinhamento em alinhamento e confusão mental em clareza."</strong></p>
       <p class="attrib">— mensagem transcrita de um áudio de uma cliente</p>
     </blockquote>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente1_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente1_1.png'"></div>
-      <div class="ph"><img src="upsell_cliente1_2.png" alt="" onerror="this.parentElement.textContent='upsell_cliente1_2.png'"></div>
+      <div class="ph"><img src="upsell_cliente2_2.png.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png.png'"></div>
     </div>
   </div>
 </section>
@@ -552,35 +554,36 @@
 
 <section style="padding-top:0; margin-top:-2.6rem;">
   <div class="wrap-wide">
-    <h2 class="section-title">Uma questão ou várias áreas para reorganizar?</h2>
+    <h2 class="section-title">Como queres trabalhar comigo neste momento?</h2>
+    <p>Na Sessão, trabalhamos em conjunto durante o encontro. No Ciclo, acrescento o meu tempo de análise entre os encontros e preparo uma proposta personalizada para ti.</p>
 
     <div class="quiz-box">
       <p class="quiz-prompt">O que melhor descreve o teu momento?</p>
       <div id="quizChips">
-        <p class="quiz-group">Uma questão concreta · Sessão CEEN</p>
+        <p class="quiz-group">Quero pensar e decidir contigo, no encontro · Sessão CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="sessao">“Tenho dois serviços e não sei se devo continuar<br>a promover ambos ou concentrar-me num deles.”</button>
-          <button type="button" data-r="sessao">“Quero aumentar o preço das minhas sessões,<br>mas receio perder clientes e acabo por adiar a decisão.”</button>
-          <button type="button" data-r="sessao">“Este serviço exige demasiadas horas e disponibilidade.<br>Quero rever o formato sem comprometer o valor que entrego.”</button>
+          <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços e quero pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
+          <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar, mas não sei por onde começar. Quero conversar e perceber o que faz sentido.”</button>
+          <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou a forma como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
         </div>
-        <p class="quiz-group">Várias áreas interligadas · Ciclo CEEN</p>
+        <p class="quiz-group">Quero também que analises o que tenho e me entregues uma proposta · Ciclo CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site<br>e a comunicação continuam a apresentar aquilo que fazia antes.”</button>
-          <button type="button" data-r="ciclo">“Já não tenho a mesma disponibilidade, mas mantenho os mesmos serviços,<br>horários e compromissos. Preciso de rever como o negócio funciona.”</button>
-          <button type="button" data-r="ciclo">“Quero juntar várias competências numa nova oferta, mas não sei<br>como organizar os serviços, explicar o que os une e decidir o que deixar de vender.”</button>
+          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site e a comunicação continuam a mostrar o que fazia antes. Quero que olhes para o que tenho e me digas o que mudar e porquê.”</button>
+          <button type="button" data-r="ciclo">“Preciso de tempo e de um olhar atento sobre os meus materiais, como a página de vendas, os preços ou as ofertas, e de uma proposta organizada a que possa voltar.”</button>
+          <button type="button" data-r="ciclo">“Quero decidir com base numa análise, não só numa conversa: ver as ligações entre a oferta, a comunicação e a forma como trabalho.”</button>
         </div>
       </div>
       <div class="quiz-answer" id="quizAnswerSessao">
-        <p>O formato pensado para isto é a <strong>Sessão CEEN</strong>.</p>
+        <p>Este formato pode fazer sentido se procuras esta forma de trabalhar.</p>
         <a class="cta-btn" href="#como-funciona-sessao" onclick="pickDepth('como-funciona-sessao'); return false;">Ver como funciona a Sessão CEEN</a>
       </div>
       <div class="quiz-answer" id="quizAnswerCiclo">
-        <p>O formato pensado para isto é o <strong>Ciclo CEEN</strong>.</p>
+        <p>Este formato pode fazer sentido se procuras esta forma de trabalhar.</p>
         <a class="cta-btn" href="#como-funciona-ciclo" onclick="pickDepth('como-funciona-ciclo'); return false;">Ver como funciona o Ciclo CEEN</a>
       </div>
     </div>
 
-    <p class="lead" style="font-size:16.5px; margin-top:2.8rem;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN.<br>Se já reconheces que a questão atravessa várias áreas, podes marcar diretamente o ciclo.</p>
+    <p class="lead" style="font-size:16.5px; margin-top:2.8rem;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN.<br>Se procuras a análise entre encontros e a proposta personalizada, podes marcar diretamente o ciclo.</p>
 
     <div class="cta-pair">
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a>
@@ -597,9 +600,9 @@
       <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona a Sessão CEEN</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
-          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Contexto e material principal"><div class="finner"><div class="fface ffront"><b>Contexto e material</b><span>Partilhas a questão e, se existir, o material principal.</span><i class="fhint"></i></div><div class="fface fback"><h5>Contexto e material principal</h5><div class="fpar">Antes da sessão, partilhas a questão que queres trabalhar e o contexto essencial. Quando for relevante, podes também enviar um material principal, por exemplo, uma página de vendas, uma tabela de preços ou a descrição de uma oferta. Faço uma leitura breve para chegar ao encontro com o enquadramento necessário.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Sessão individual · até duas horas"><div class="finner"><div class="fface ffront"><b>Sessão · até 2h</b><span>Escuto, questiono e devolvo-te o que reconheço.</span><i class="fhint"></i></div><div class="fface fback"><h5>Sessão individual · até duas horas</h5><div class="fpar">Partimos da questão que trouxeste mais estratégica, prática ou relacionada com a forma como estás a viver o negócio. Escuto, questiono, devolvo-te o que reconheço, ligo os diferentes pontos e apresento-te novas perspetivas e recomendações concretas durante o encontro.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Decisões e próximos passos"><div class="finner"><div class="fface ffront"><b>Decisões e próximos passos</b><span>Trabalhados durante o encontro.</span><i class="fhint"></i></div><div class="fface fback"><h5>Decisões e próximos passos</h5><div class="fpar">A leitura, a reflexão e as recomendações são trabalhadas durante a sessão. Depois, podes avançar autonomamente ou marcar uma nova Sessão CEEN quando outra questão concreta pedir atenção. Não estão incluídos relatório, análise posterior, implementação, revisão de novos materiais ou acompanhamento assíncrono.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Contexto e material principal"><div class="finner"><div class="fface ffront"><b>Contexto e material</b><span>Partilhas a questão e, se existir, o material principal.</span><i class="fhint"></i></div><div class="fface fback"><h5>Contexto e material principal</h5><div class="fpar">Antes da sessão, partilhas o contexto e o que gostarias de trabalhar. Quando for relevante, podes enviar um material principal, como uma página de vendas, uma tabela de preços ou a descrição de uma oferta. Faço uma leitura breve para chegar ao encontro com o enquadramento necessário.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Sessão individual · até duas horas"><div class="finner"><div class="fface ffront"><b>Sessão · até 2h</b><span>Escuto, questiono e devolvo-te o que reconheço.</span><i class="fhint"></i></div><div class="fface fback"><h5>Sessão individual · até duas horas</h5><div class="fpar">Partimos do que trouxeste e aprofundamos o que se revelar mais relevante. Escuto, questiono, devolvo-te o que reconheço, ligo os pontos e apresento novas perspetivas e recomendações concretas durante o encontro.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Recomendações e próximos passos"><div class="finner"><div class="fface ffront"><b>Recomendações e próximos passos</b><span>Trabalhados durante o encontro.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recomendações e próximos passos</h5><div class="fpar">A reflexão, a análise e as recomendações são trabalhadas durante a sessão. Depois, podes avançar autonomamente ou marcar outro encontro quando sentires necessidade. A Sessão não inclui relatório, entrega no Notion, análise posterior, implementação ou acompanhamento assíncrono.</div></div></div></div></div>
         </div>
       </div></div>
     </details>
@@ -608,12 +611,12 @@
       <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona o Ciclo CEEN</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
-          <div class="fstep"><div class="fdot">1</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Primeira sessão · escutar e aprofundar"><div class="finner"><div class="fface ffront"><b>Primeira sessão</b><span>Escutar e aprofundar.</span><i class="fhint"></i></div><div class="fface fback"><h5>Primeira sessão · escutar e aprofundar</h5><div class="fpar">Uma sessão individual online de até duas horas. Olhamos para a estrutura atual do negócio, para a forma como estás a vivê-lo, para as diferentes áreas que se influenciam e para aquilo que está a pedir uma revisão mais profunda.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">1</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Primeira sessão · escutar e aprofundar"><div class="finner"><div class="fface ffront"><b>Primeira sessão</b><span>Escutar e aprofundar.</span><i class="fhint"></i></div><div class="fface fback"><h5>Primeira sessão · escutar e aprofundar</h5><div class="fpar">Uma sessão individual online de até duas horas. Olhamos para o que trazes e para o momento do negócio. Identificamos os temas e materiais mais relevantes para o trabalho de análise.</div></div></div></div></div>
           <div class="fstep"><div class="fdot">2</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Três dias de observação e partilha"><div class="finner"><div class="fface ffront"><b>Três dias</b><span>Observação e partilha.</span><i class="fhint"></i></div><div class="fface fback"><h5>Três dias de observação e partilha</h5><div class="fpar">Podes acrescentar exemplos, materiais, acontecimentos ou informação que tenha surgido depois da conversa e seja relevante para completar a leitura.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">3</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Tempo de entrega da análise: até 21 dias úteis"><div class="finner"><div class="fface ffront"><b>Análise</b><span>Até 21 dias úteis.</span><i class="fhint"></i></div><div class="fface fback"><h5>Tempo de entrega da análise: até 21 dias úteis</h5><div class="fpar">Revejo os materiais relevantes, relaciono as diferentes áreas do negócio, formulo hipóteses e preparo melhorias e recomendações. Durante este período, posso colocar-te perguntas dirigidas ou pedir esclarecimentos necessários à análise.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Análise e preparação · até 21 dias úteis"><div class="finner"><div class="fface ffront"><b>Análise</b><span>Até 21 dias úteis.</span><i class="fhint"></i></div><div class="fface fback"><h5>Análise e preparação · até 21 dias úteis</h5><div class="fpar">Revejo os materiais prioritários, relaciono o que observámos e preparo recomendações. Posso colocar perguntas dirigidas ou pedir esclarecimentos necessários à análise.</div></div></div></div></div>
         </div>
         <div class="frow two">
-          <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Leitura integrada e proposta de reorganização no Notion"><div class="finner"><div class="fface ffront"><b>Leitura no Notion</b><span>Leitura integrada e proposta de reorganização.</span><i class="fhint"></i></div><div class="fface fback"><h5>Leitura integrada e proposta de reorganização no Notion</h5><div class="fpar">Organizo a leitura do momento, as relações entre as áreas analisadas, as decisões importantes, as prioridades e os movimentos que considero mais adequados à próxima fase do negócio.</div><div class="fpar">Recebes no Notion uma análise organizada do momento do negócio, com recomendações, prioridades e as razões que as sustentam.</div><div class="fpar">Consoante o que analisarmos, a proposta pode ajudar-te a definir que ofertas manter ou reformular, o que rever na comunicação, que formatos de entrega considerar e quais as decisões prioritárias. Não é apenas uma lista de tarefas: é uma base para compreenderes as opções e escolheres como avançar.</div></div></div></div></div>
+          <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Proposta personalizada no Notion"><div class="finner"><div class="fface ffront"><b>Proposta no Notion</b><span>Análise, recomendações e prioridades.</span><i class="fhint"></i></div><div class="fface fback"><h5>Proposta personalizada no Notion</h5><div class="fpar">Organizo a análise, as ligações que reconheci, as recomendações e as prioridades. Consoante o que for trabalhado, a proposta pode ajudar-te a rever ofertas, comunicação ou formatos de entrega.</div><div class="fpar">Inclui as razões das recomendações, para compreenderes as opções em vez de receberes apenas uma lista de tarefas.</div></div></div></div></div>
           <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Segunda sessão · apresentar e alinhar"><div class="finner"><div class="fface ffront"><b>Segunda sessão</b><span>Apresentar e alinhar.</span><i class="fhint"></i></div><div class="fface fback"><h5>Segunda sessão · apresentar e alinhar</h5><div class="fpar">Apresento-te a proposta, explico as ligações que estabeleci e discutimos a direção e os próximos passos.</div></div></div></div></div>
         </div>
       </div></div>
@@ -631,24 +634,24 @@
         <p class="callout-label" style="margin-bottom:0.9rem;">NA SESSÃO CEEN</p>
         <ul class="plain">
           <li>leitura breve do contexto e, quando exista, do material principal;</li>
-          <li>até 2h de análise e diálogo;</li>
-          <li>novas perspetivas e recomendações para uma questão concreta do negócio ou da forma como o estás a viver;</li>
+          <li>até 2h de escuta, análise e diálogo;</li>
+          <li>perguntas, devoluções, novas perspetivas e recomendações durante o encontro;</li>
           <li>critérios, decisões e próximos passos trabalhados na sessão.</li>
         </ul>
       </div></div>
       <div class="callout ciclo"><div class="ci">🗺️</div><div class="ctext">
         <p class="callout-label" style="margin-bottom:0.9rem;">NO CICLO CEEN</p>
         <ul class="plain">
-          <li>duas sessões individuais;</li>
-          <li>três dias de partilha;</li>
-          <li>tempo de entrega da minha análise de até 21 dias úteis;</li>
-          <li>leitura integrada e proposta de reorganização personalizada no Notion;</li>
-          <li>melhorias, prioridades e recomendações para as áreas analisadas.</li>
+          <li>duas sessões individuais para aprofundar o contexto e discutir a proposta;</li>
+          <li>três dias de partilha complementar após a primeira sessão;</li>
+          <li>análise personalizada dos temas e materiais prioritários entre os encontros (até 21 dias úteis);</li>
+          <li>recomendações, prioridades e proposta organizada no Notion, com as razões que as sustentam.</li>
         </ul>
       </div></div>
     </div>
     <div class="callout grayD" style="margin-top:1.6rem;"><div class="ctext">
       <p><strong>O Ciclo CEEN é um processo de análise e direção,<br>não um acompanhamento contínuo.</strong></p>
+      <p>A análise centra-se nos temas e materiais prioritários que for possível aprofundar no tempo de trabalho incluído. O Ciclo não é uma revisão exaustiva de todo o negócio.</p>
       <p>Entre as duas sessões, os três dias de partilha e os esclarecimentos que eu possa pedir servem para completar a leitura do negócio e preparar a proposta. Não incluem apoio contínuo para implementar as recomendações ou trabalhar as novas questões que surjam no dia a dia.</p>
       <p>Depois da segunda sessão, a entrega do Ciclo fica concluída. A partir daí, podes avançar autonomamente ou marcar uma nova Sessão CEEN.</p>
     </div></div>
@@ -679,16 +682,16 @@
       <div class="price-card sessao">
         <p class="ptitle">Sessão CEEN</p>
         <p class="pamt">250 €</p>
-        <p class="pdesc">Uma sessão individual de até duas horas dedicada a uma questão concreta, no negócio ou em ti, enquanto pessoa que o conduz. Inclui uma leitura breve do contexto e, quando exista, do material principal, bem como o trabalho de análise, reflexão e direção durante a sessão.</p>
+        <p class="pdesc">Uma sessão individual de até duas horas para pensarmos em conjunto sobre o que estás a viver no negócio. Escuto, questiono e devolvo-te o que reconheço, para saíres com perspetivas, recomendações e próximos passos. Inclui uma leitura breve do contexto e, quando exista, do material principal. Trabalhamos o que for possível no tempo do encontro, sobre o que trouxeres.</p>
         <p style="margin-top:1rem;"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a></p>
       </div>
       <div class="price-card ciclo">
         <p class="ptitle">Ciclo CEEN</p>
         <p class="pamt">800 €</p>
         <div class="pdesc">
-          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">Duas sessões individuais e um trabalho de análise personalizada entre os encontros, para relacionar as áreas do negócio mais relevantes para o teu momento.</p>
-          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">A partir do que partilhas e dos materiais analisados, preparo uma leitura integrada, prioridades, recomendações concretas e uma proposta de reorganização no Notion. Na segunda sessão, apresento-te essa proposta, explico as ligações que reconheci e alinhamos a direção.</p>
-          <p style="font-size:17px; text-align:left; margin-bottom:1.1rem;">O investimento inclui este trabalho de análise, preparação e entrega.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">Duas sessões individuais e, entre elas, o meu tempo de análise: reviso os materiais relevantes, relaciono o que observámos e preparo uma proposta personalizada no Notion, com recomendações, prioridades e as razões que as sustentam.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">Na segunda sessão, apresento-te a proposta, explico as ligações que reconheci e discutimos as opções e a direção.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:1.1rem;">O investimento inclui este trabalho de análise, preparação e entrega, não apenas o tempo das sessões.</p>
         </div>
         <p style="margin-top:1rem;"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar o meu Ciclo CEEN</a></p>
       </div>
@@ -730,12 +733,12 @@
 <section>
   <div class="wrap">
     <h2 class="section-title">Qual é o próximo passo para o teu negócio?</h2>
-    <p><strong>Uma questão concreta? Escolhe a Sessão CEEN.<br>Várias áreas para rever em conjunto? Escolhe o Ciclo CEEN.</strong></p>
+    <p><strong>Para pensarmos juntos durante um encontro, escolhe a Sessão CEEN.<br>Para acrescentar o meu tempo de análise e receber uma proposta preparada para ti, escolhe o Ciclo CEEN.</strong></p>
     <div class="cta-pair">
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a>
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar o meu Ciclo CEEN</a>
     </div>
-    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Ainda tens dúvidas sobre qual é o formato mais adequado?</strong><br><a href="https://wa.me/message/SGB5SN5CXWY4F1?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20p%C3%A1gina%20da%20CEEN%20e%20tenho%20interesse%20em%20trabalhar%20contigo.%20Gostava%20de%20esclarecer%20qual%20dos%20dois%20formatos%20%C3%A9%20mais%20adequado%20%C3%A0%20quest%C3%A3o%20que%20quero%20trabalhar%20neste%20momento." style="font-style:normal; font-size:14px; color:var(--orange); font-family:'Lora',serif;">Envia-me uma mensagem</a> e conta-me brevemente o que desejas observar.</p></blockquote>
+    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Ainda tens dúvidas sobre qual é o formato mais adequado?</strong><br><a href="https://wa.me/message/SGB5SN5CXWY4F1" style="font-style:normal; font-size:14px; color:var(--orange); font-family:'Lora',serif;">Envia-me uma mensagem</a> e esclarecemos juntos qual é o formato mais adequado.</p></blockquote>
   </div>
 </section>
 
@@ -760,13 +763,16 @@
       <div class="fold-wrap"><div class="fold-body"><p>Vou ajudar-te a reconhecer aquilo que pode não estar claro, apresentar recomendações e sugerir possíveis direções. Não decido nem ajo por ti: as decisões finais e as ações concretas continuam a ser tuas.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri">▶</span>Como sei se preciso de uma Sessão CEEN ou do Ciclo CEEN?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Se consegues delimitar uma questão, no negócio ou na forma como o estás a viver, a Sessão CEEN pode ser suficiente. Se a questão atravessa várias áreas e precisas de compreender como se relacionam, o Ciclo CEEN será provavelmente mais adequado.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>A Sessão é trabalhar comigo durante o encontro: perguntas, análise e recomendações no momento. O Ciclo faz sentido se queres acrescentar o meu tempo de análise entre os encontros e receber uma proposta personalizada no Notion, com recomendações, prioridades e as razões que as sustentam. A escolha depende do tipo de trabalho que procuras, não do número de questões que trazes.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri">▶</span>Tenho de realizar uma Sessão CEEN antes do Ciclo CEEN?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Não. Podes marcar diretamente o Ciclo CEEN quando já reconheces que precisas de relacionar e reorganizar várias áreas do negócio.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>Não. Podes marcar diretamente o Ciclo CEEN se procuras a análise entre encontros e a proposta personalizada.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>E se a questão se revelar maior durante a Sessão CEEN?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Trabalhamos o que for possível dentro do âmbito da sessão. Se reconhecer que a questão está ligada a várias áreas, explico-te porquê e posso recomendar o Ciclo CEEN. A decisão de avançar continua a ser tua.</p></div></div>
+    <details class="fold"><summary><span class="tri">▶</span>E se o que trago for mais do que cabe na Sessão CEEN?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Trabalhamos o que for possível no tempo do encontro. Se fizer sentido continuar, podemos considerar outra Sessão ou o Ciclo, quando for útil acrescentar análise de materiais e uma proposta. A decisão é tua.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>O Ciclo CEEN analisa todo o negócio?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Não. A análise incide sobre os temas e materiais prioritários que for possível aprofundar dentro do trabalho incluído. Posso relacionar áreas do negócio, mas a entrega corresponde ao que for efetivamente analisado, não a uma revisão exaustiva de tudo.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri">▶</span>A Sessão CEEN inclui análise depois do encontro?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. A leitura do contexto é breve e acontece antes do encontro quando necessário. A análise, as recomendações e as decisões são trabalhadas durante a sessão. Não estão incluídos relatório, implementação nem acompanhamento posterior.</p></div></div>
@@ -803,7 +809,7 @@
   </div>
 </footer>
 
-<a class="wa-bubble" href="https://wa.me/message/SGB5SN5CXWY4F1?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20p%C3%A1gina%20da%20CEEN%20e%20tenho%20interesse%20em%20trabalhar%20contigo.%20Gostava%20de%20esclarecer%20qual%20dos%20dois%20formatos%20%C3%A9%20mais%20adequado%20%C3%A0%20quest%C3%A3o%20que%20quero%20trabalhar%20neste%20momento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="wa-bubble" href="https://wa.me/message/SGB5SN5CXWY4F1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg>
 </a>
 
