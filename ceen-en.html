@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CEEN · Clarity, Strategy and Energy in Business | Filipa Osório</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><text y=%22.9em%22 font-size=%2290%22>🪞</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f3ecdf; --ink: #27211b; --ink-soft: #55493c;
+    --wine: #7a2535; --orange: #c17f3a; --gold: #c9a86c; --gold-deep: #9a7e52;
+    --line: rgba(55,53,47,0.14);
+    --wineT: #f5dcc2; --wineT-ink: #8a3c12;
+    --stoneT: #f3e7bf; --stoneT-ink: #8a6a16;
+    --sessao: #f8e2bc; --sessao-ink: #8a5a12;
+    --ciclo: #efd3b8; --ciclo-ink: #7a4418;
+    --infoA: #e2e3d0; --infoA-ink: #5a5a2e;
+    --infoB: #c9d8d4; --infoB-ink: #3a5a52;
+    --brown: #f4e7db; --brown-ink: #8a5a2e;
+    --gray: #f1ece2;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+  a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
+
+  .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:10px; letter-spacing:0.06em; line-height:1.5; padding:2px 10px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
+  .langbar a { color:#8a7e6d; text-decoration:underline; text-decoration-color:rgba(138,126,109,0.4); }
+  nav { position:fixed; top:22px; left:0; right:0; z-index:100; background:rgba(250,246,239,0.96); backdrop-filter:blur(8px); border-bottom:0.5px solid var(--line); padding:16px 28px calc(16px + env(safe-area-inset-top,0px)); display:flex; justify-content:space-between; align-items:center; }
+  .nav-logo { font-family:'Lora',serif; font-weight:600; font-size:15px; color:var(--ink); text-decoration:none; }
+  .nav-links { display:flex; gap:1.75rem; align-items:center; }
+  .nav-links a { font-family:'Lora',serif; font-size:11px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:#6b5f4f; text-decoration:none; }
+  .nav-links a:hover, .nav-links a.active { color:var(--wine); }
+  .nav-links a.nav-cta { color:var(--wine); border:0.5px solid var(--gold); border-radius:6px; padding:7px 18px; }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+  .hamburger span { width:20px; height:1.5px; background:var(--ink); display:block; }
+  .mobile-menu { display:none; position:fixed; top:78px; left:0; right:0; background:#faf6ef; z-index:101; padding:1rem 1.5rem; flex-direction:column; gap:1.1rem; border-bottom:0.5px solid var(--line); box-shadow:0 10px 20px rgba(26,20,16,0.08); }
+  .mobile-menu a { font-family:'Lora',serif; font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:#1a1410; text-decoration:none; }
+  @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } }
+
+  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:82px; display:flex; align-items:flex-end; }
+  .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; }
+  .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); line-height:1.05; margin:0 0 0.1rem; color:var(--wine); }
+  .cover-text-bg .eyebrow { color:var(--orange); margin:0; font-style:italic; font-weight:700; font-size:18px; white-space:nowrap; }
+  @media (max-width:999px){ .cover-text-bg .eyebrow { white-space:normal; font-size:16px; } }
+
+  .wrap { max-width:800px; margin:0 auto; padding:0 24px; }
+  .wrap-wide { max-width:800px; margin:0 auto; padding:0 24px; }
+
+  section { padding: 76px 0; }
+  section.tight { padding: 42px 0; }
+  hr.div { border:none; border-top:1px solid var(--line); margin:0; }
+
+  .eyebrow { font-family:'Lora',serif; font-size:17px; font-weight:700; color:var(--orange); text-align:left; margin:0 0 1.3rem; }
+  h1.hero-title { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; font-size:clamp(26px,4.4vw,36px); line-height:1.08; text-align:left; margin:0; color:var(--wine); }
+  h2.section-title { font-family:'Cormorant Garamond',serif; font-weight:600; font-style:normal; font-size:clamp(23px,3.2vw,29px); line-height:1.3; margin:0 0 1rem; text-align:left; color:var(--wine); }
+  h3.sub-title { font-family:'Cormorant Garamond',serif; font-style:normal; font-weight:600; font-size:20px; margin:1.6rem 0 0.7rem; color:var(--wine); }
+  p { font-size:18px; color:var(--ink); margin:0 0 1.3rem; text-align:left; hyphens:none; }
+  p.lead { font-size:18px; color:var(--ink); }
+  ul.plain { padding-left:1.4rem; margin:0 0 1rem; }
+  ul.plain li { font-size:18px; color:var(--ink); margin-bottom:0.65rem; }
+
+  .callout { border-radius:9px; padding:1.3rem 0.9rem 1.3rem 1.5rem; margin:1.8rem 0; display:flex; gap:0.7rem; align-items:flex-start; }
+  .callout .ci { flex-shrink:0; font-size:17px; line-height:1.65; }
+  .callout .ctext { min-width:0; flex:1; }
+  .callout .ctext p { text-align:left; hyphens:none; }
+  .callout .ctext > p:last-child, .callout .ctext > ul:last-child { margin-bottom:0; }
+  .callout.gray { background:var(--gray); }
+  .callout.wineT { background:var(--wineT); }
+  .callout.stoneT { background:var(--stoneT); }
+  .callout.lilac { background:#ece3f3; }
+  .callout.sessao { background:var(--sessao); }
+  .callout.ciclo { background:var(--ciclo); }
+  .callout.infoA { background:var(--infoA); }
+  .callout.infoB { background:var(--infoB); }
+  .callout.grayD { background:#ebe4d6; }
+  .callout.infoC { background:#e4e9df; margin-top:2.8rem; }
+  .callout.brown { background:var(--brown); }
+  .callout-label { font-family:'Lora',serif; font-size:18px; font-weight:600; margin-bottom:0.3rem; color:var(--ink); }
+
+  blockquote.quote-block { margin:1.3rem 0; padding:0.1rem 0 0.1rem 1.1rem; border-left:3px solid var(--gold); }
+  blockquote.quote-block p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--orange); line-height:1.5; margin:0 0 0.3rem; text-align:left; }
+  blockquote.quote-block p strong { font-weight:700; }
+  blockquote.quote-block .attrib { font-family:'Lora',serif; font-size:18px; margin-top:0.4rem; color:var(--ink-soft); font-style:italic; }
+
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; }
+  @media (max-width:680px){ .two-col{ grid-template-columns:1fr; } }
+
+  details.fold { margin:0.9rem 0; border-bottom:1px solid var(--line); padding-bottom:0.9rem; }
+  details.fold summary { cursor:pointer; font-family:'Lora',serif; font-weight:600; font-size:18px; color:var(--ink); padding:0.2rem 0; list-style:none; display:flex; align-items:center; gap:0.55rem; }
+  details.fold summary::-webkit-details-marker { display:none; }
+  details.fold summary .tri { font-size:15px; color:var(--ink-soft); flex-shrink:0; display:inline-block; transition:transform 0.25s ease; }
+  details.fold[open] summary .tri { transform:rotate(90deg); }
+  details.fold .fold-wrap { overflow:hidden; max-height:0; transition:max-height 0.6s cubic-bezier(.22,.61,.36,1); }
+  details.fold.slow .fold-wrap { transition-duration:0.9s; }
+  details.fold.slower .fold-wrap { transition-duration:1.3s; }
+  details.fold .fold-body { padding:0.8rem 0 0.2rem 1.1rem; }
+
+  details.case { background:var(--brown); border-radius:9px; padding:1.1rem 1.3rem; margin:1.2rem 0; }
+  details.case summary { cursor:pointer; font-family:'Lora',serif; font-size:16px; font-weight:600; color:var(--brown-ink); list-style:none; display:flex; align-items:center; gap:0.5rem; }
+  details.case summary .tri { font-size:10px; transition:transform 0.25s ease; display:inline-block; }
+  details.case[open] summary .tri { transform:rotate(90deg); }
+  details.case summary::-webkit-details-marker { display:none; }
+  details.case .fold-wrap { overflow:hidden; max-height:0; transition:max-height 0.9s cubic-bezier(.22,.61,.36,1); }
+  details.case .fold-body h4 { font-family:'Lora',serif; font-size:16px; font-weight:700; letter-spacing:0.05em; color:var(--brown-ink); margin:1.8rem 0 0.5rem; }
+  details.case .fold-body h4:first-child { margin-top:2.2rem; }
+
+  .step { display:flex; gap:0.8rem; margin-bottom:0.7rem; background:var(--gray); border-radius:9px; padding:1rem 1.2rem; align-items:flex-start; }
+  .step .num { font-size:19px; flex-shrink:0; width:1.3em; padding-top:0.1rem; filter:grayscale(40%) opacity(0.85); }
+  .step .body h4 { font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:700; margin:0 0 0.3rem; color:var(--wine); text-transform:uppercase; letter-spacing:0.02em; }
+  .step .body p { margin:0; font-size:17px; }
+
+  .bio-photo-ph { width:100%; min-height:260px; border-radius:10px; background:linear-gradient(145deg,#d8c9ad,#9bb0bd 55%,#e7c9c2); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.85); font-family:'Lora',serif; font-size:12px; text-align:center; padding:1rem; overflow:hidden; }
+  .bio-photo-ph img { width:100%; height:100%; object-fit:cover; display:block; }
+
+  .testimonial-photos-ph { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.3rem 0; align-items:start; }
+  .testimonial-photos-ph .ph { border-radius:12px; overflow:hidden; background:transparent; border:none; padding:0; color:var(--gold-deep); font-family:'Lora',serif; font-size:11px; text-align:center; }
+  .testimonial-photos-ph .ph img { width:100%; height:auto; display:block; border-radius:12px; }
+  @media (max-width:560px){ .testimonial-photos-ph{ grid-template-columns:1fr; } }
+
+  .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.3rem; }
+  @media (max-width:680px){ .pricing-grid{ grid-template-columns:1fr; } }
+  .price-card { border-radius:9px; padding:1.5rem 1.5rem; display:flex; flex-direction:column; }
+  .price-card.sessao { background:var(--sessao); }
+  .price-card.ciclo { background:var(--ciclo); }
+  .price-card .ptitle { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:21px; margin:0 0 0.2rem; color:var(--ink); }
+  .price-card .pamt { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:27px; margin:0 0 0.9rem; color:var(--ink); }
+  .price-card p.pdesc { font-size:17px; flex:1; }
+
+  .cta-btn { display:inline-block; text-align:center; font-family:'Lora',serif; font-size:15px; font-weight:600; text-decoration:none; padding:13px 24px; border-radius:6px; border:1.5px solid var(--wine); color:var(--wine); background:transparent; transition:background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+  .cta-btn:hover, .cta-btn:active, .cta-btn:focus-visible { background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 5s ease-in-out infinite; color:var(--wine); transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.16); }
+  .cta-pair { display:flex; gap:0.8rem; flex-wrap:wrap; }
+  .cta-pair.center { justify-content:center; }
+
+  .jump-link { font-family:'Lora',serif; font-size:15px; color:var(--wine); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; }
+  .back-link { font-family:'Lora',serif; font-size:17px; font-weight:700; color:var(--wine); text-decoration:underline; text-underline-offset:4px; display:inline-flex; align-items:center; gap:0.3rem; margin-top:1.4rem; cursor:pointer; }
+
+  footer { text-align:center; padding:3rem 1rem 3.5rem; font-family:'Lora',serif; color:var(--ink-soft); font-size:15px; }
+  footer a { color:var(--ink-soft); text-decoration:underline; }
+  footer .links { margin-top:0.4rem; }
+  footer .links span { margin:0 0.4rem; opacity:0.5; }
+
+  .wa-bubble { position:fixed; left:18px; bottom:18px; width:40px; height:40px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,0.22); z-index:90; text-decoration:none; transition:transform 0.2s ease; }
+  .wa-bubble:hover { transform:scale(1.08); }
+  .wa-bubble svg { width:19px; height:19px; }
+
+  .quiz-box { margin:1.4rem 0 2rem; }
+  .quiz-prompt { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:27px; color:var(--wine); margin:0 0 0.9rem; }
+  .quiz-group { font-family:'Lora',serif; font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-deep); margin:2.2rem 0 0.9rem; }
+  .quiz-group:first-child { margin-top:0.6rem; }
+  .quiz-pills { display:flex; flex-direction:column; align-items:stretch; gap:0.7rem; }
+  .quiz-pills button { font-family:'Lora',serif; font-size:15.5px; font-style:italic; text-align:left; background:var(--gray); border:1px solid var(--line); border-radius:20px; padding:0.7rem 1.2rem; min-height:78px; display:flex; align-items:center; cursor:pointer; color:var(--ink); transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
+  .quiz-pills button:hover { border-color:var(--gold); transform:translateY(-1px); }
+  .quiz-pills button.picked { border-color:var(--wine); background:var(--sessao); font-style:normal; font-weight:600; }
+  .quiz-answer { display:none; margin-top:1rem; padding:1rem 1.2rem; border-radius:9px; background:var(--gray); }
+  .quiz-answer.show { display:block; }
+  .quiz-answer p { margin:0 0 0.7rem; }
+  @keyframes pulseGlow { 0%,100% { box-shadow:0 0 0 0 rgba(201,168,108,0); } 35% { box-shadow:0 0 0 7px rgba(201,168,108,0.35); } }
+  .pulse-highlight { animation:pulseGlow 1.1s ease; }
+
+  .popup { position:fixed; bottom:1.4rem; right:1.4rem; z-index:200; width:270px; max-width:calc(100vw - 1.6rem); background:#f7f3ee; border:0.5px solid #c9a86c; border-radius:10px; padding:1rem 1.1rem 1rem; box-shadow:0 4px 24px rgba(26,20,16,0.1); opacity:0; transform:translateY(16px); transition:opacity 0.5s ease, transform 0.5s ease; pointer-events:none; }
+  .popup.visible { opacity:1; transform:translateY(0); pointer-events:all; }
+  .popup-close { position:absolute; top:0.55rem; right:0.7rem; background:none; border:none; font-size:16px; color:#9a7e52; cursor:pointer; }
+  .popup-eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.12em; text-transform:uppercase; color:#c9a86c; margin-bottom:0.6rem; }
+  .popup-btn { display:block; width:100%; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border:none; border-radius:30px; padding:9px; text-align:center; text-decoration:none; transition:background 0.2s, transform 0.18s ease, box-shadow 0.18s ease; }
+  .popup-btn:hover { background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 5s ease-in-out infinite; color:#7a2535; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.16); }
+  @media (max-width:600px){ .popup{ right:0.8rem; left:0.8rem; width:auto; max-width:none; } }
+  @keyframes aurora { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  .js-reveal .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.9s ease, transform 0.9s ease; }
+  .js-reveal .reveal.in { opacity:1; transform:none; }
+  .ci.shine { position:relative; overflow:hidden; border-radius:6px; }
+  .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
+  .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
+  .pause { padding:56px 0; text-align:center; }
+  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(18px,2.5vw,26px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
+  .pause .pause-quote:before { content:''; position:absolute; inset:-30px -76px; z-index:-1; border-radius:50%; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; filter:blur(22px); opacity:0.8; }
+  .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink-soft); font-style:italic; margin:0; }
+  @media (min-width:1000px){
+    p, ul.plain li, p.lead { font-size:19px; }
+    .callout-label { font-size:19px; }
+    details.fold summary { font-size:19px; }
+    .step .body p, .price-card p.pdesc { font-size:17.5px; }
+    .step .body h4 { font-size:17px; }
+    blockquote.quote-block p { font-size:23px; }
+    .quiz-pills button { font-size:16px; }
+    .quiz-prompt { font-size:28px; }
+    .cta-btn { font-size:15px; padding:14px 26px; }
+    h2.section-title { font-size:31px; }
+    h1.hero-title { font-size:40px; }
+    .cover-text-bg h2 { font-size:clamp(30px,3.4vw,40px); white-space:nowrap; }
+    .eyebrow { font-size:18px; }
+    .jump-link, .back-link { font-size:16px; }
+  }
+  p, li { text-wrap:pretty; }
+  header.wrap h1.hero-title { padding-left:1.3rem; }
+  details.fold.feature { background:#f7efe2; border:1px solid var(--gold); border-radius:12px; padding:1.1rem 1.4rem; margin:1.3rem 0; }
+  details.fold.feature summary { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,2.8vw,31px); color:var(--wine); font-weight:600; }
+  details.fold.feature summary .tri { color:var(--wine); }
+  blockquote.quote-block.big p { font-size:clamp(26px,3.4vw,36px); line-height:1.3; }
+  .fold-close { display:block; margin:0.8rem auto 0; background:none; border:none; cursor:pointer; color:var(--ink-soft); font-size:15px; padding:6px 14px; line-height:1; transition:color 0.2s ease, transform 0.2s ease; }
+  .fold-close:hover { color:var(--wine); transform:translateY(-2px); }
+  details.case .fold-close { color:var(--brown-ink); }
+  .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
+  .callout.brown::after { content:''; display:block; clear:both; }
+  #quem-te-acompanha .two-col p { font-size:16px; }
+  #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
+  .nw { white-space:nowrap; }
+  .callout li, .callout p { hyphens:none; }
+  blockquote.quote-block.oneline p:not(.attrib) { font-size:clamp(15px,2.3vw,20.5px); white-space:nowrap; }
+  @media (max-width:640px){ blockquote.quote-block.oneline p:not(.attrib) { white-space:normal; font-size:18px; } }
+  @media (min-width:681px){
+    .two-col.widebox { grid-template-columns:1.1fr 1fr; grid-template-rows:auto repeat(4,auto); row-gap:0; }
+    .two-col.widebox > .callout { display:grid; grid-template-columns:auto 1fr; grid-template-rows:subgrid; grid-row:span 5; column-gap:0.7rem; align-items:start; }
+    .two-col.widebox > .callout .ctext, .two-col.widebox > .callout ul.plain { display:contents; }
+    .two-col.widebox .ci { grid-column:1; grid-row:1; }
+    .two-col.widebox .callout-label { grid-column:2; grid-row:1; }
+    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:18px; }
+    .two-col.widebox ul.plain li:last-child { margin-bottom:0; }
+  }
+  @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
+  .bio-photo-ph img { object-position:50% 18%; }
+  .bio-photo-ph { padding:0; }
+  .callout.intro-callout .ctext p { font-size:16.5px; }
+  .callout.case-callout .ctext p { font-size:17px; }
+  .callout.case-callout .callout-label { font-size:18px; }
+  .callout.intro-callout { margin-right:3.6rem; }
+  blockquote.quote-block.mid p { font-size:clamp(25px,2.7vw,30px); line-height:1.3; }
+  .two-col .callout-label { font-size:16px; letter-spacing:0; }
+  section .wrap > p, section .wrap-wide > p, details .fold-body > p { text-align:justify; text-justify:inter-word; hyphens:auto; }
+  .frow { position:relative; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:0.4rem 0 1.2rem; }
+  .frow:before { content:''; position:absolute; top:22px; height:1px; background:var(--gold); left:calc(100%/6); right:calc(100%/6); }
+  .frow.two:before { left:calc(100%/3); right:calc(100%/6); }
+  .fstep { position:relative; display:flex; flex-direction:column; align-items:center; min-width:0; }
+  .fstep.span2 { grid-column:span 2; }
+  .fdot { position:relative; z-index:2; width:44px; height:44px; border-radius:50%; background:var(--cream); border:1.5px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--wine); }
+  .fcard { position:relative; width:100%; flex:1; margin-top:-16px; perspective:1200px; cursor:pointer; outline:none; }
+  .finner { display:grid; height:100%; min-height:230px; transition:transform 0.8s cubic-bezier(.22,.61,.36,1); transform-style:preserve-3d; }
+  .fcard:hover .finner, .fcard:focus-visible .finner, .fcard.flipped .finner { transform:rotateY(180deg); }
+  .fface { grid-area:1/1; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:10px; padding:32px 18px 22px; }
+  .ffront { text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; }
+  .fcard.ses .ffront { background:var(--sessao); }
+  .fcard.cic .ffront { background:var(--ciclo); }
+  .ffront b { display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; line-height:1.15; color:var(--wine); margin-bottom:0.5rem; }
+  .ffront span { display:block; font-size:15px; line-height:1.5; color:var(--ink-soft); }
+  .fhint { position:absolute; left:0; right:0; bottom:16px; text-align:center; font-style:normal; font-size:12px; letter-spacing:0.04em; color:var(--gold-deep); }
+  .fhint:before { content:'↻ '; }
+  @media (hover:hover){ .fhint:after { content:'hover to read'; } }
+  @media (hover:none){ .fhint:after { content:'tap to read'; } }
+  .fback { transform:rotateY(180deg); background:#faf4e8; border:1px solid var(--gold); text-align:left; }
+  .fback h5 { margin:0 0 0.6rem; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:18px; line-height:1.2; color:var(--wine); }
+  .fpar { font-size:14.5px; line-height:1.55; color:var(--ink); margin-bottom:0.6rem; hyphens:none; }
+  .fpar:last-child { margin-bottom:0; }
+  @media (max-width:680px){ .frow { grid-template-columns:1fr; } .frow:before { display:none; } .fstep.span2 { grid-column:auto; } }
+  @media (prefers-reduced-motion: reduce){ .finner { transition:none; } }
+  .callout .ctext p, .callout li { text-wrap:wrap; }
+  .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(17px,2.2vw,24px); }
+  @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
+  @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
+  @media (prefers-reduced-motion: reduce){ .cover, .pause .pause-quote:before, .cta-btn:hover, .popup-btn:hover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
+</style>
+<link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
+<link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
+<meta name="robots" content="noindex">
+</head>
+<body>
+
+<div class="langbar">Also available in Portuguese · <a href="ceen.html" hreflang="pt" lang="pt">Versão em português</a></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Filipa Osório</a>
+  <div class="nav-links">
+    <a href="ceen-en.html" class="active">CEEN • Business</a>
+    <a href="leitura-intuitiva.html">Intuitive Reading</a>
+    <a href="index.html#contacto" class="nav-cta">Let's talk? 💌</a>
+  </div>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="ceen-en.html">CEEN • Business</a>
+  <a href="leitura-intuitiva.html">Intuitive Reading</a>
+  <a href="index.html#contacto">Let's talk? 💌</a>
+</div>
+
+<div class="cover">
+  <div class="cover-text">
+    <div class="cover-text-bg">
+      <h2>CEEN · Clarity, Strategy and Energy in Business</h2>
+      <p class="eyebrow">A new way of seeing yourself and your business, and of choosing how you want to be seen</p>
+    </div>
+  </div>
+</div>
+
+<header class="wrap" style="padding:4.6rem 24px 0;">
+  <h1 class="hero-title">Bring your business closer to who you are and to your<br>current stage of life, allowing it to evolve with you</h1>
+</header>
+
+<section class="tight" style="padding-top:12px;">
+  <div class="wrap">
+    <div class="callout grayD intro-callout"><div class="ctext">
+      <p><strong>CEEN is an individual strategic analysis and guidance process for you to review your offer, your communication or the way you work in your business, without separating those decisions from who you are and the life you want to build.</strong></p>
+      <p>You can arrive with a specific question or with several areas you would like to review together. As I listen, I pay attention to how you talk about the business, to what excites you or holds you back, to the weight you give certain decisions and to the contradictions that may surface.</p>
+      <p>This listening helps us recognise beliefs, fears and patterns that may be influencing your choices, even when you haven't yet identified them. We relate what we observe to the reality of the business and to what you want to change.</p>
+      <p>I help you recognise what makes sense to keep, reshape or let go of, and I offer concrete recommendations so you can decide your next steps.</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="pause pause-b">
+  <div class="wrap-wide">
+    <p class="pause-quote">Sometimes the biggest challenge is not building the business,<br>it is changing the way you see and position yourself in it...</p>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="tight" style="padding-top:62px; padding-bottom:62px;">
+  <div class="wrap">
+    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">The business is at the centre of CEEN, but it is never observed separately from you.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:18px;">Your identity, energy, capacity, desires and life stage help us recognise what still represents you and how you want to keep working and evolving.</span></p></blockquote>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">For those who shape their business through who they are</h2>
+    <p>CEEN is designed for independent professionals and entrepreneurs who sell services, consultations, sessions, programmes, courses or products and infoproducts created from their knowledge and experience.</p>
+    <p>People choose you for your perspective, your approach, your method or the way you deliver your work. Whether the business carries your name or its own brand, you are a central part of the value it offers.</p>
+    <p>You already have an activity up and running, with offers, communication, clients or attempts to sell. Now you want to understand what you want to keep developing, how to present it and how you want to deliver it, fully aligned with you.</p>
+    <p style="margin-top:1.4rem;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Who accompanies you in CEEN</a></p>
+  </div>
+</section>
+
+<section class="pause pause-b">
+  <div class="wrap-wide">
+    <p class="pause-quote">No borrowed formulas, no trying to fit into boxes!</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Your definition of professional success is yours alone</h2>
+    <p>Perhaps professional success means, for you, growing, increasing your income or reaching more people. Perhaps it means more free time, more autonomy, recognition, impact or fulfilment. Or perhaps it is making decisions with confidence, relating to your work with more lightness and no longer living certain professional questions with so much emotional strain.</p>
+    <p>You may already have achieved results that felt like success to you, and still feel that the way you work today no longer represents you. That does not take value away from what you have built. It may simply mean that the time has come to reshape it so it keeps pace with your evolution.</p>
+    <div class="callout grayD"><div class="ci">🫧</div><div class="ctext">
+      <p><strong>At CEEN, we do not assume that there is something wrong with you or your business</strong>, nor that there is an ideal version you should match or a formula for success you should follow. The best strategy is the one that fits you! And reviewing what you have built does not take value away from your journey; it lets you choose how you want to continue.</p>
+    </div></div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap-wide">
+    <h2 class="section-title">What may bring you to CEEN</h2>
+    <p>You may want to achieve new results and, at the same time, change how you are building them. These two needs can be part of the same moment in the business:</p>
+    <div class="two-col widebox">
+      <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
+        <p class="callout-label">RESULTS AND DIRECTION</p>
+        <ul class="plain">
+          <li>You have several services and skills, but you don't know which should take priority or how to present them together.</li>
+          <li>Your work has evolved, but the offer and the communication still show an earlier version of you.</li>
+          <li>You want more consistency in your income, without always depending on more sessions, launches or working hours.</li>
+          <li>Your life has changed and you need to review your delivery formats, your availability or the role you hold.</li>
+        </ul>
+      </div></div>
+      <div class="callout infoA"><div class="ci">🪞</div><div class="ctext">
+        <p class="callout-label">HOW YOU ARE IN THE BUSINESS</p>
+        <ul class="plain">
+          <li>You fear changing the offer or the prices and losing clients, income or recognition.</li>
+          <li>You no longer want to deliver a service, but it is hard to let go of it after everything you have invested.</li>
+          <li>You want to grow, but you fear the exposure, the expectations or the loss of freedom.</li>
+          <li>You feel pressure to follow strategies that seem to work for other people but don't make sense for you.</li>
+        </ul>
+      </div></div>
+    </div>
+    <div class="callout grayD"><div class="ci">🔍</div><div class="ctext">
+      <p><strong>Not every difficulty is solved by a new strategy.</strong></p>
+      <p>Sometimes the difficulty in charging, delegating or communicating is also linked to what that decision means to you, not only to the lack of a plan.</p>
+      <p>At CEEN, we connect business decisions to the person you are and to what you are living, because every choice is also shaped by what you want, what you fear and what you are able to sustain.</p>
+    </div></div>
+    <p class="lead" style="margin-top:3rem;">Clarity does not make the change for you, but it can shorten the time you spend insisting on a direction that drains you, postponing decisions, or trying to solve only in the business what also needs to be acknowledged in you.</p>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">An outside perspective that sees beyond</h2>
+    <p>When you are inside the business, it can be hard to tell what still makes sense from what you keep out of habit, fear or expectation. By reflecting back what I notice in the way you speak and asking questions about what seems contradictory, I help you see differences that can go unnoticed when you think alone. Not to choose for you, but so that you can recognise what you truly want to keep developing.</p>
+    <p><strong>This case shows how that work can change a decision about the offer:</strong></p>
+
+    <div class="callout brown case-callout"><div class="ci">🪞</div><div class="ctext">
+      <p class="callout-label">Reviewing the offer is also recognising what no longer represents you</p>
+      <p>This client came to the session convinced that she wanted to keep investing in certain services. Rationally, they seemed the safest options and the ones that made most sense to keep.</p>
+      <p>Through the questions I asked and the reflections on how she spoke about each service, it was the client herself who recognised that what she believed she "should" keep no longer matched what she really wanted to develop.</p>
+      <p><strong>She decided to focus the offer and the communication on the services that still sparked her enthusiasm and, after that change, she began to generate sales again.</strong></p>
+          </div></div>
+
+    <details class="case">
+      <summary><span class="tri">▶</span>Read the full case</summary>
+      <div class="fold-wrap"><div class="fold-body">
+        <h4>THE STARTING POINT</h4>
+        <p>The business was no longer generating sales as before and the client was spreading her attention across several services. Some seemed safe to her and, for that reason, she believed she wanted to keep investing in them.</p>
+        <h4>WHAT THE SESSION REFLECTED BACK</h4>
+        <p>As she talked about each service, I asked questions and reflected back the differences, tensions and contradictions that appeared in the way she described them.</p>
+        <p>These reflections were not meant to tell her which to keep or let go of. They worked as a mirror so she could recognise, for herself, that some services were sustained mostly by habit, by security and by the idea that they should continue because they were already part of the business.</p>
+        <p>That difference was not yet clear to her before the session.</p>
+        <h4>THE DECISION AND THE RESULT</h4>
+        <p>The client distinguished the services she believed she "should" keep from those she truly wanted to keep developing.</p>
+        <p>She decided to focus the offer and the communication on the latter and, after that change, she began receiving enquiries and generating sales again.</p>
+        <p style="font-style:italic; color:var(--orange);"><strong>CEEN did not choose for her. It helped her see clearly so she could choose.</strong></p>
+      </div></div>
+    </details>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap-wide">
+    <h2 class="section-title">Reviewing the business without separating it from the person who runs it</h2>
+    <p>In practice, CEEN crosses two dimensions: what guides your choices and how those choices translate into the business.</p>
+    <div class="two-col dimbox">
+      <div class="callout infoA"><div class="ci">⚡</div><div class="ctext">
+        <p class="callout-label"><span class="nw">ENERGETIC DIMENSION ·</span><br><span class="nw">THE PERSON WHO RUNS IT</span></p>
+        <p style="margin-top:1.4rem;">Recognising what mobilises, holds back or drains you, and how that influences your choices and the role you want to hold in the business.</p>
+        <p>Depending on what is most relevant at this moment, we can observe your natural energy, desires, beliefs and patterns: elements that influence what you choose, communicate and are able to sustain.</p>
+      </div></div>
+      <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
+        <p class="callout-label"><span class="nw">STRATEGIC DIMENSION ·</span><br><span class="nw">THE TRANSLATION INTO BUSINESS</span></p>
+        <p style="margin-top:1.4rem;">Translating that reading into criteria, priorities and concrete recommendations for the next phase of the business.</p>
+        <p>Depending on the question or the depth of the work, we can look at offers, services, prices, positioning, communication, content, sales pages, website, delivery formats, responsibilities and decisions.</p>
+      </div></div>
+    </div>
+    <p class="lead" style="margin-top:2.6rem;">Observing without structuring can bring more awareness, but leave you not knowing what to do with it. Structuring without observing can lead you to choose a strategy you can't, or don't want to, sustain. It is in this dialogue between energy and strategy that CEEN happens.</p>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="pause">
+  <div class="wrap-wide">
+    <p class="pause-quote nobreak">“Nobody had ever looked at my business this way!”</p>
+    <p class="pause-attrib">— comment from a client during a CEEN Session</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">An integrated view of the business</h2>
+    <p>If you want to go deeper into the approach, open the topics below: how the areas of the business influence each other and how your energy enters professional decisions.</p>
+
+    <details class="fold slower feature">
+      <summary><span class="tri">▶</span>🧩 The business as a system</summary>
+      <div class="fold-wrap"><div class="fold-body">
+        <p>Looking at the business as a system means observing, at the same time, the person who runs it, the identity that guides it, the structure that sustains it, the relationships it creates and the exchanges that make its continuity possible.</p>
+        <p>Depending on your moment, we can look at:</p>
+        <ul class="plain">
+          <li><strong>Person and role</strong>: identity, self-image, inner leadership, responsibility and the place you want to occupy;</li>
+          <li><strong>Identity and positioning</strong>: what you stand for, who you want to speak to and how you want to be recognised;</li>
+          <li><strong>Offer and communication</strong>: services, prices, sources of income, content, sales pages, website, channels and client experience;</li>
+          <li><strong>Order and structure</strong>: roles, responsibilities, decisions, processes, delivery formats and boundaries;</li>
+          <li><strong>Belonging and relationships</strong>: history, clients, partners, team, services and values;</li>
+          <li><strong>Balance in exchanges</strong>: delivery, price, money, time, energy and the capacity to receive;</li>
+          <li><strong>Sustainable growth</strong>: what the business can hold without losing identity, quality or becoming increasingly dependent on you.</li>
+        </ul>
+        <p>These dimensions influence one another: a change in positioning may call for a different offer; a change in the offer may transform the communication and the delivery; and a new phase of growth may require a different structure or different responsibilities.</p>
+        <div class="callout gray"><div class="ci">💰</div><div class="ctext">
+          <p><strong>Work and money are related, but they are not the same thing.</strong> More effort, more hours or greater availability do not automatically translate into more income. Growth is not truly sustainable if it increases results at the expense of your time, your will or your vitality.</p>
+        </div></div>
+        <p>This view is not meant to create closed explanations. It helps us form hypotheses, recognise relationships and understand what makes sense to create, keep, reorganise or transform.</p>
+      </div></div>
+    </details>
+
+    <details class="fold slower feature">
+      <summary><span class="tri">▶</span>⚡ Personal energy as strategic information</summary>
+      <div class="fold-wrap"><div class="fold-body">
+        <p>At CEEN, personal energy does not just mean drive or tiredness. It is the availability that results from the interaction between physical, mental, emotional, social and subtle dimensions, and it influences your capacity to create, decide, relate and take on responsibility.</p>
+        <p>A professional decision does not depend only on rational analysis. It is also influenced by what you feel you can gain, lose, prove or protect through it. For example:</p>
+        <ul class="plain">
+          <li><strong>💰 Money</strong>: security, freedom and choice, but also difficulty receiving, charging more or dealing with other people's gaze;</li>
+          <li><strong>👁️ Visibility</strong>: recognition and impact, but also exposure, criticism or judgement;</li>
+          <li><strong>🚀 Growth</strong>: new possibilities, but also greater responsibility or fear of losing freedom and quality.</li>
+        </ul>
+        <p>At CEEN, these elements are always related to the concrete reality of the business and to the choices ahead of you. In this way, we bring strategy, marketing, identity and intention closer together.</p>
+      </div></div>
+    </details>
+
+    <div class="callout grayD"><div class="ci">🪞</div><div class="ctext">
+      <p><strong>CEEN does not replace technical consulting or specialist execution.</strong> We can look at offers, prices, communication, sales pages or decisions and identify relationships and possible changes. In-depth technical audits, full planning, copywriting or implementation carried out by me are not included.</p>
+    </div></div>
+    <blockquote class="quote-block" style="margin-top:5.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:18px;"><strong>My role is to listen, question, form hypotheses, connect the dots and offer concrete recommendations. The final decisions are always yours.</strong></p></blockquote>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="tight">
+  <div class="wrap">
+    <blockquote class="quote-block oneline">
+      <p><strong>"They turn doubts into direction, misalignment into alignment and mental confusion into clarity."</strong></p>
+      <p class="attrib">— message transcribed from a client's voice note</p>
+    </blockquote>
+    <div class="testimonial-photos-ph">
+      <div class="ph"><img src="upsell_cliente1_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente1_1.png'"></div>
+      <div class="ph"><img src="upsell_cliente2_2.png.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png.png'"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="quem-te-acompanha">
+  <div class="wrap-wide">
+    <h2 class="section-title">Who accompanies you</h2>
+    <div class="callout brown" style="display:block;">
+      <h3 style="margin:0 0 0.9rem; font-weight:600; font-size:24px; font-family:'Cormorant Garamond',serif; color:var(--wine);">👩🏻‍💼 I'm Filipa Osório</h3>
+    <div class="two-col" style="align-items:stretch;">
+      <div class="bio-photo-ph"><img src="filipa-foto.jpg" alt="" onerror="this.parentElement.textContent='filipa-foto.jpg'"></div>
+      <div>
+        <p>I trained in Management, Management Control, International Business and Strategy at leading institutions, and I have experience in finance and management at large Portuguese companies.</p>
+        <p>In recent years, I have deepened my study of human behaviour, identity, childhood, beliefs and unconscious patterns, as well as the symbolic language through which the unconscious expresses itself. I have also deepened the systemic view applied to relationships, leadership and business.</p>
+        <p>This path was consolidated by accompanying clients in their self-knowledge processes, understanding beliefs and patterns that distance them from themselves and moving closer to their essence, in the way they see, choose and live.</p>
+      </div>
+    </div>
+    <p style="margin-top:2.6rem;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
+    <blockquote class="quote-block">
+      <p><strong>"You are so good at capturing, guiding, interpreting and turning into words,<br>into guidance, advice, suggestions and shared reflections."</strong></p>
+      <p class="attrib">— feedback from a client in a voice note during her work with me</p>
+    </blockquote>
+    <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Back to exploring CEEN from the start</a>
+    </div>
+
+    <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
+      <p class="callout-label">This way of working may make sense for you if…</p>
+      <ul class="plain">
+        <li>you want to understand not only what to do, but also what is influencing your choices;</li>
+        <li>you are open to questioning what you keep out of habit, security or expectation;</li>
+        <li>you are looking for personalised questions and recommendations and want to own the decisions and next steps;</li>
+        <li>you want to grow and evolve using your business as a base and lever for that.</li>
+      </ul>
+    </div></div>
+    <details class="fold">
+      <summary><span class="tri">▶</span>This may not be the right format if…</summary>
+      <div class="fold-wrap"><div class="fold-body">
+        <ul class="plain">
+          <li>you are still just exploring an idea or need to create the business from scratch;</li>
+          <li>there is not yet real business material we can observe;</li>
+          <li>you are looking for technical consulting in management, marketing, finance or operations;</li>
+          <li>you are looking for a universal formula or someone to decide for you;</li>
+          <li>you are looking for implementation or ongoing support included in the investment.</li>
+        </ul>
+      </div></div>
+    </details>
+  </div>
+</section>
+
+<section style="padding-top:0; margin-top:-2.6rem;">
+  <div class="wrap-wide">
+    <h2 class="section-title">How do you want to work with me right now?</h2>
+    <p>In the Session, we work together during the meeting. In the Cycle, I add my own analysis time between the meetings and prepare a personalised proposal for you.</p>
+
+    <div class="quiz-box">
+      <p class="quiz-prompt">What best describes your moment?</p>
+      <div id="quizChips">
+        <p class="quiz-group">I want to think and decide with you · CEEN Session</p>
+        <div class="quiz-pills">
+          <button type="button" data-r="sessao">“I have open decisions about my offer or prices and I want to think them through with you, with an outside perspective, to come away with clarity.”</button>
+          <button type="button" data-r="sessao">“I feel something in my business needs to change, but I don't know where to start. I want to talk and understand what makes sense.”</button>
+          <button type="button" data-r="sessao">“I already know what I want to review, the format of the service, the price or the way I present what I do, and I want to work on it with you now.”</button>
+        </div>
+        <p class="quiz-group">I also want you to be able to analyse what I have · CEEN Cycle</p>
+        <div class="quiz-pills">
+          <button type="button" data-r="ciclo">“My work has evolved, but my services, website and communication still show what I did before. I want you to look at what I have and tell me what to change and why.”</button>
+          <button type="button" data-r="ciclo">“I need time and an attentive look at my materials, such as the sales page, prices or offers, and an organised proposal I can come back to.”</button>
+          <button type="button" data-r="ciclo">“I want to decide based on an analysis, not only a conversation: to see the connections between the offer, the communication and the way I work.”</button>
+        </div>
+      </div>
+      <div class="quiz-answer" id="quizAnswerSessao">
+        <p>This format may make sense if you are looking for this way of working.</p>
+        <a class="cta-btn" href="#como-funciona-sessao" onclick="pickDepth('como-funciona-sessao'); return false;">See how the CEEN Session works</a>
+      </div>
+      <div class="quiz-answer" id="quizAnswerCiclo">
+        <p>This format may make sense if you are looking for this way of working.</p>
+        <a class="cta-btn" href="#como-funciona-ciclo" onclick="pickDepth('como-funciona-ciclo'); return false;">See how the CEEN Cycle works</a>
+      </div>
+    </div>
+
+    <p class="lead" style="font-size:16.5px; margin-top:2.8rem;">You don't need to start with a CEEN Session to reach the CEEN Cycle.<br>If you are looking for analysis between meetings and the personalised proposal, you can book the Cycle directly.</p>
+
+    <div class="cta-pair">
+      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a>
+      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="tight">
+  <div class="wrap">
+    <details class="fold slow feature" id="como-funciona-sessao">
+      <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">How the CEEN Session works</span></summary>
+      <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
+        <div class="frow">
+          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Context and material</b><span>You share the question and, if there is one, the main material.</span><i class="fhint"></i></div><div class="fface fback"><h5>Context and main material</h5><div class="fpar">Before the session, you share the context and what you would like to work on. When relevant, you can send a main material, such as a sales page, a price list or the description of an offer. I do a brief read-through so I arrive at the meeting with the necessary framework.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session · up to 2h</b><span>I listen, question and reflect back what I recognise.</span><i class="fhint"></i></div><div class="fface fback"><h5>Individual session · up to two hours</h5><div class="fpar">We start from what you brought and go deeper into what proves most relevant. I listen, question, reflect back what I recognise, connect the dots and offer new perspectives and concrete recommendations during the meeting.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Recommendations and next steps</b><span>Worked on during the meeting.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recommendations and next steps</h5><div class="fpar">The reflection, the analysis and the recommendations are worked on during the session. Afterwards, you can move forward on your own or book another meeting when you feel the need. The Session does not include a report, a Notion deliverable, post-session analysis, implementation or asynchronous support.</div></div></div></div></div>
+        </div>
+      </div></div>
+    </details>
+
+    <details class="fold slow feature" id="como-funciona-ciclo">
+      <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">How the CEEN Cycle works</span></summary>
+      <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
+        <div class="frow">
+          <div class="fstep"><div class="fdot">1</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>First session</b><span>Listen and go deeper.</span><i class="fhint"></i></div><div class="fface fback"><h5>First session · listen and go deeper</h5><div class="fpar">An individual online session of up to two hours. We look at what you bring and at the current moment of the business. We identify the most relevant themes and materials for the analysis work.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Three days</b><span>Observation and sharing.</span><i class="fhint"></i></div><div class="fface fback"><h5>Three days of observation and sharing</h5><div class="fpar">You can add examples, materials, events or information that came up after the conversation and are relevant to complete the reading.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Analysis</b><span>Up to 21 working days.</span><i class="fhint"></i></div><div class="fface fback"><h5>Analysis and preparation · up to 21 working days</h5><div class="fpar">I review the priority materials, relate what we observed and prepare recommendations. I may ask targeted questions or request clarifications needed for the analysis.</div></div></div></div></div>
+        </div>
+        <div class="frow two">
+          <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Proposal in Notion</b><span>Analysis, recommendations and priorities.</span><i class="fhint"></i></div><div class="fface fback"><h5>Personalised proposal in Notion</h5><div class="fpar">I organise the analysis, the connections I recognised, the recommendations and the priorities. Depending on what was worked on, the proposal can help you review offers, communication or delivery formats.</div><div class="fpar">It includes the reasons behind the recommendations, so you understand the options instead of receiving just a task list.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Second session</b><span>Present and align.</span><i class="fhint"></i></div><div class="fface fback"><h5>Second session · present and align</h5><div class="fpar">I present the proposal, explain the connections I established and we discuss the direction and the next steps.</div></div></div></div></div>
+        </div>
+      </div></div>
+    </details>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap-wide">
+    <h2 class="section-title">What you receive</h2>
+    <div class="two-col">
+      <div class="callout sessao"><div class="ci">📌</div><div class="ctext">
+        <p class="callout-label" style="margin-bottom:0.9rem;">IN THE CEEN SESSION</p>
+        <ul class="plain">
+          <li>a brief reading of the context and, when there is one, of the main material;</li>
+          <li>up to 2h of listening, analysis and dialogue;</li>
+          <li>questions, reflections, new perspectives and recommendations during the meeting;</li>
+          <li>criteria, decisions and next steps worked on in the session.</li>
+        </ul>
+      </div></div>
+      <div class="callout ciclo"><div class="ci">🗺️</div><div class="ctext">
+        <p class="callout-label" style="margin-bottom:0.9rem;">IN THE CEEN CYCLE</p>
+        <ul class="plain">
+          <li>two individual sessions to deepen the context and discuss the proposal;</li>
+          <li>three days of complementary sharing after the first session;</li>
+          <li>personalised analysis of the priority themes and materials between meetings (up to 21 working days);</li>
+          <li>recommendations, priorities and a proposal organised in Notion, with the reasons that support them.</li>
+        </ul>
+      </div></div>
+    </div>
+    <div class="callout grayD" style="margin-top:1.6rem;"><div class="ctext">
+      <p><strong>The CEEN Cycle is a process of analysis and direction,<br>not ongoing support.</strong></p>
+      <p>The analysis focuses on the priority themes and materials that can be explored within the work time included. The Cycle is not an exhaustive review of the whole business.</p>
+      <p>Between the two sessions, the three days of sharing and the clarifications I may ask for serve to complete the reading of the business and prepare the proposal. They do not include ongoing support to implement the recommendations or to work on new questions that arise day to day.</p>
+      <p>After the second session, the delivery of the Cycle is complete. From there, you can move forward on your own or book a new CEEN Session.</p>
+    </div></div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="tight">
+  <div class="wrap">
+    <blockquote class="quote-block mid">
+      <p><strong>"Almost every sentence had a key turning"</strong></p>
+    </blockquote>
+    <p style="font-size:16px;">In this testimonial, the client described what changed when she gained more awareness, tools and support to deal with what was coming up in her business process:</p>
+    <div class="testimonial-photos-ph">
+      <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
+      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="investimento">
+  <div class="wrap-wide">
+    <h2 class="section-title">Investment</h2>
+    <div class="pricing-grid">
+      <div class="price-card sessao">
+        <p class="ptitle">CEEN Session</p>
+        <p class="pamt">250 €</p>
+        <p class="pdesc">An individual session of up to two hours for us to think together about what you are living in your business. I listen, question and reflect back what I recognise, so you leave with perspectives, recommendations and next steps. It includes a brief reading of the context and, when there is one, of the main material. We work on what is possible within the meeting time, on whatever you bring.</p>
+        <p style="margin-top:1rem;"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a></p>
+      </div>
+      <div class="price-card ciclo">
+        <p class="ptitle">CEEN Cycle</p>
+        <p class="pamt">800 €</p>
+        <div class="pdesc">
+          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">Two individual sessions and, between them, my analysis time: I review the relevant materials, relate what we observed and prepare a personalised proposal in Notion, with recommendations, priorities and the reasons that support them.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:0.7rem;">In the second session, I present the proposal, explain the connections I recognised and we discuss the options and the direction.</p>
+          <p style="font-size:17px; text-align:left; margin-bottom:1.1rem;">The investment includes this analysis, preparation and delivery work, not just the time of the sessions.</p>
+        </div>
+        <p style="margin-top:1rem;"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="tight">
+  <div class="wrap">
+    <blockquote class="quote-block">
+      <p><strong>"Having someone beside me who looks at me and at my business as a whole."</strong></p>
+    </blockquote>
+    <p style="font-size:16px;">It is in contact with real experience that new decisions, doubts and possibilities become visible. This is another client's testimonial about what she has been living in her process with me:</p>
+    <div class="testimonial-photos-ph">
+      <div class="ph"><img src="upsell_cristiana_1.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_1.png'"></div>
+      <div class="ph"><img src="upsell_cristiana_2.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_2.png'"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="tight">
+  <div class="wrap">
+    <div class="callout grayD"><div class="ci">↻</div><div class="ctext">
+      <p class="callout-label">You can come back to CEEN whenever you need</p>
+      <p>After a Session or the Cycle, you can move forward on your own or book a new CEEN Session when decisions, doubts or changes arise that you want to work on with me. You don't need to define a path or a fixed number of sessions in advance.</p>
+      <hr class="div" style="margin:1.2rem 0;">
+      <p>If I recognise that the process would benefit from closer support between sessions, I may propose a CEEN Crossing: a defined period for you to share what comes up and receive my perspective throughout the experience.</p>
+      <p style="margin-bottom:0;"><strong>It is an exclusive format, proposed after getting to know the person, the business and the moment they are living. It is not available for direct booking 🔒</strong></p>
+    </div></div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">What is the next step for your business?</h2>
+    <p><strong>To think together during a meeting, choose the CEEN Session.<br>To add my analysis time and receive a proposal prepared for you, choose the CEEN Cycle.</strong></p>
+    <div class="cta-pair">
+      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a>
+      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a>
+    </div>
+    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Still unsure which format is the right one?</strong><br><a href="https://wa.me/message/SGB5SN5CXWY4F1" style="font-style:normal; font-size:14px; color:var(--orange); font-family:'Lora',serif;">Send me a message</a> and we will work out together which format is the most suitable.</p></blockquote>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">If you have these questions before moving forward</h2>
+    <details class="fold"><summary><span class="tri">▶</span>Do I need to have the business fully structured?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>No. The business can be at an early stage, growing or reorganising, but it needs to be already running and in contact with reality. It is important that there are offers, prices, communication, clients, sales or attempts to sell, and concrete decisions we can observe.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Is CEEN management consulting?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>No. CEEN does not replace technical support in management, marketing, finance, accounting or operations. It also does not include technical audits, copywriting or implementation carried out by me. I combine what I observe in you and in the business with my knowledge of strategy and marketing to present tailored possibilities, criteria and recommendations.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Can the CEEN Session focus on a more personal question?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Yes, as long as it is related to how you are living, deciding or occupying your place in the business. We can work on identity, beliefs, patterns, fears, visibility, money or responsibility when they are influencing your professional choices.</p><p><strong>The CEEN Session is not therapy:</strong> the person may be at the centre of the session, but the business and professional decisions continue to give us the context.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Do I need to identify with an energetic approach?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>No. The energetic dimension relates to what you are concretely living and what is not always immediately visible: attention, emotions, beliefs, habits, capacity and bodily responses. We only use what makes sense to you.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Are you going to tell me exactly what I have to do?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>I will help you recognise what may not be clear, offer recommendations and suggest possible directions. I do not decide or act for you: the final decisions and the concrete actions remain yours.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>How do I know whether I need a CEEN Session or the CEEN Cycle?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>The Session is working with me during the meeting: questions, analysis and recommendations in the moment. The Cycle makes sense if you want to add my analysis time between meetings and receive a personalised proposal in Notion, with recommendations, priorities and the reasons that support them. The choice depends on the kind of work you are looking for, not on the number of questions you bring.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Do I have to do a CEEN Session before the CEEN Cycle?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>No. You can book the CEEN Cycle directly if you are looking for the analysis between meetings and the personalised proposal.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>What if what I bring is more than fits in the CEEN Session?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>We work on what is possible within the meeting time. If it makes sense to continue, we can consider another Session or the Cycle, when it is useful to add analysis of materials and a proposal. The decision is yours.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Does the CEEN Cycle analyse the whole business?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>No. The analysis focuses on the priority themes and materials that can be explored within the work included. I can relate areas of the business, but the delivery corresponds to what is actually analysed, not an exhaustive review of everything.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Does the CEEN Session include analysis after the meeting?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>No. The reading of the context is brief and happens before the meeting when needed. The analysis, the recommendations and the decisions are worked on during the session. A report, implementation or later support are not included.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri">▶</span>Do I have support between sessions or after the Cycle?</summary>
+      <div class="fold-wrap"><div class="fold-body">
+        <p>The CEEN Cycle does not include ongoing support. Between sessions, you have three days to add relevant information. During the analysis, I may ask you targeted questions or request clarifications to prepare the proposal. These contacts serve to complete the reading, not to support implementation or to respond continuously to day-to-day questions.</p>
+        <p>After the second session, the delivery of the Cycle is complete. You can then move forward on your own or book a new CEEN Session to work on another specific question.</p>
+        <p>If I recognise that the process would benefit from closer support, I may propose a CEEN Crossing. It is a separate format, not included in the Cycle, and not available for direct booking.</p>
+      </div></div>
+    </details>
+  </div>
+</section>
+
+<div id="cookieVeilCeen" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.45); z-index:998;"></div>
+<div id="ceenCalendlyModal" style="display:none; position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem;">
+  <div style="background:#faf6ef; border-radius:16px; max-width:720px; width:100%; max-height:90vh; overflow-y:auto; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <button onclick="document.getElementById('ceenCalendlyModal').style.display='none'; document.getElementById('cookieVeilCeen').style.display='none';" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:22px; color:#9a7e52; cursor:pointer; z-index:2;">×</button>
+    <div style="padding:1.5rem 1rem 1rem;">
+      <p style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:19px; color:#1a1410; text-align:center; margin:0 0 1rem;">Book my CEEN</p>
+      <div id="calendlyConsentPrompt" style="display:none; text-align:center; padding:1.5rem 1rem;">
+        <p style="margin-bottom:1.2rem;">To book here, we need to load the Calendly calendar, which uses its own cookies.</p>
+        <a class="cta-btn" href="#" onclick="event.preventDefault(); aceitarEAbrirCalendly();">Accept and continue</a>
+      </div>
+      <div class="calendly-inline-widget" id="calendlyWidget" data-url="https://calendly.com/filipaosorio/ceen" style="min-width:280px; height:650px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Filipa Osório · 2026
+  <div class="links">
+    <a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a><span>·</span><a href="privacidade.html">Privacy policy (in Portuguese)</a>
+  </div>
+</footer>
+
+<a class="wa-bubble" href="https://wa.me/message/SGB5SN5CXWY4F1" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"></path></svg>
+</a>
+
+<div class="popup" id="popup">
+  <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
+  <p class="popup-eyebrow" style="text-align:center; margin:0 0 0.8rem; padding:0 0.9rem;">Only 3 spots in October</p>
+  <a class="popup-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN</a>
+</div>
+
+<script>
+(function(){
+  var KEY = 'fo_cookie_consent';
+  function getConsent(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj.ts || Date.now() - obj.ts > 1000*60*60*24*180) return null;
+      return obj;
+    } catch(e){ return null; }
+  }
+  window.__calLoaded = false;
+  function loadCalendly(){
+    if (window.__calLoaded) return;
+    var s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    s.onload = function(){ window.__calLoaded = true; };
+    document.body.appendChild(s);
+  }
+  function loadGA(){
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9';
+    s.async = true;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-5CX792T8H9');
+  }
+  var consent = getConsent();
+  if (consent) {
+    if (consent.analytics) loadGA();
+    if (consent.calendly) loadCalendly();
+  }
+  window.openCeenCalendly = function(){
+    if (typeof gtag === 'function') { gtag('event', 'marcar_ceen_click'); }
+    document.getElementById('ceenCalendlyModal').style.display = 'flex';
+    document.getElementById('cookieVeilCeen').style.display = 'block';
+    var prompt_ = document.getElementById('calendlyConsentPrompt');
+    var widget = document.getElementById('calendlyWidget');
+    if (window.__calLoaded) {
+      prompt_.style.display = 'none';
+      widget.style.display = 'block';
+    } else {
+      prompt_.style.display = 'block';
+      widget.style.display = 'none';
+    }
+  };
+  window.aceitarEAbrirCalendly = function(){
+    try {
+      localStorage.setItem(KEY, JSON.stringify({ ts: Date.now(), analytics:true, calendly:true }));
+    } catch(e){}
+    loadCalendly();
+    loadGA();
+    var tries = 0;
+    var waitLoad = setInterval(function(){
+      tries++;
+      if (window.__calLoaded || tries > 40) {
+        clearInterval(waitLoad);
+        document.getElementById('calendlyConsentPrompt').style.display = 'none';
+        document.getElementById('calendlyWidget').style.display = 'block';
+      }
+    }, 150);
+  };
+  document.getElementById('cookieVeilCeen').addEventListener('click', function(){
+    document.getElementById('ceenCalendlyModal').style.display='none';
+    this.style.display='none';
+  });
+
+  // scroll-to-bio e voltar
+  window.saveScroll = function(){ window.__savedScrollY = window.scrollY; };
+  function smoothScrollTo(target, duration){
+    var startY = window.scrollY, dist = target - startY, startTime = null;
+    function step(ts){
+      if (!startTime) startTime = ts;
+      var p = Math.min((ts - startTime) / duration, 1);
+      var ease = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p+2,3)/2;
+      window.scrollTo(0, startY + dist * ease);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  window.jumpToBio = function(){
+    window.__savedScrollY = window.scrollY;
+    var el = document.getElementById('quem-te-acompanha');
+    if (el) smoothScrollTo(el.getBoundingClientRect().top + window.scrollY - 70, 2400);
+  };
+  window.restoreScroll = function(){
+    smoothScrollTo(window.__savedScrollY || 0, 2400);
+  };
+
+  // toggles suaves — controlamos a abertura à mão, para animar sem saltos
+  function closeDetail(d, wrap){
+    wrap.style.maxHeight = wrap.scrollHeight + 'px';
+    requestAnimationFrame(function(){ wrap.style.maxHeight = '0px'; });
+    wrap.addEventListener('transitionend', function h(){
+      d.open = false; wrap.removeEventListener('transitionend', h);
+    }, { once:true });
+  }
+  function openDetail(d, wrap){
+    d.open = true;
+    var target = wrap.scrollHeight;
+    wrap.style.maxHeight = '0px';
+    requestAnimationFrame(function(){ wrap.style.maxHeight = target + 'px'; });
+  }
+  document.querySelectorAll('details.fold, details.case').forEach(function(d){
+    var summary = d.querySelector('summary');
+    var wrap = d.querySelector('.fold-wrap');
+    if (!wrap || !summary) return;
+    var body = wrap.querySelector('.fold-body');
+    if (body) {
+      var cb = document.createElement('button');
+      cb.type = 'button'; cb.className = 'fold-close'; cb.setAttribute('aria-label', 'Fechar'); cb.innerHTML = '&#9650;';
+      cb.addEventListener('click', function(){
+        if (!d.open) return;
+        var top = d.getBoundingClientRect().top;
+        closeDetail(d, wrap);
+        if (top < 60) smoothScrollTo(top + window.scrollY - 110, 800);
+      });
+      body.appendChild(cb);
+    }
+    summary.addEventListener('click', function(e){
+      e.preventDefault();
+      if (d.open) { closeDetail(d, wrap); } else { openDetail(d, wrap); }
+    });
+  });
+
+  // quiz das situacoes
+  var quizChips = document.getElementById('quizChips');
+  if (quizChips) {
+    quizChips.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        quizChips.querySelectorAll('button').forEach(function(b){ b.classList.remove('picked'); });
+        btn.classList.add('picked');
+        var r = btn.getAttribute('data-r');
+        var as_ = document.getElementById('quizAnswerSessao');
+        var ac = document.getElementById('quizAnswerCiclo');
+        if (as_) as_.classList.toggle('show', r === 'sessao');
+        if (ac) ac.classList.toggle('show', r === 'ciclo');
+      });
+    });
+  }
+
+  // mini-escolha: abre o toggle "como funciona" certo e salta ate la
+  window.pickDepth = function(id){
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (el.tagName === 'DETAILS' && !el.open) {
+      var wrap = el.querySelector('.fold-wrap');
+      if (wrap) openDetail(el, wrap);
+    }
+    setTimeout(function(){
+      smoothScrollTo(el.getBoundingClientRect().top + window.scrollY - 90, 700);
+      setTimeout(function(){
+        el.classList.add('pulse-highlight');
+        setTimeout(function(){ el.classList.remove('pulse-highlight'); }, 1200);
+      }, 650);
+    }, 50);
+  };
+
+  // espelho nos icones e secoes que aparecem ao descer
+  (function(){
+    document.querySelectorAll('.ci').forEach(function(el){ if (el.textContent.trim() === '🪞') el.classList.add('shine'); });
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js-reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('section').forEach(function(sec){ sec.classList.add('reveal'); io.observe(sec); });
+  })();
+
+  // foto da bio: largura calculada para nao cortar a imagem e acabar na ultima linha do texto
+  (function(){
+    var grid = document.querySelector('#quem-te-acompanha .two-col');
+    if (!grid || grid.children.length < 2) return;
+    var col = grid.children[1];
+    var RATIO = 2457 / 1780;
+    function fit(){
+      if (window.innerWidth <= 680) { grid.style.gridTemplateColumns = ''; return; }
+      var S = grid.getBoundingClientRect().width - 21;
+      var w = Math.min(300, S / 2);
+      for (var i = 0; i < 8; i++) {
+        grid.style.gridTemplateColumns = w + 'px 1fr';
+        var ps = col.querySelectorAll('p'), last = ps[ps.length - 1];
+        var H = last.getBoundingClientRect().bottom - col.getBoundingClientRect().top;
+        var nw = Math.max(200, Math.min(S / 2, H / RATIO));
+        if (Math.abs(nw - w) < 2) { w = nw; break; }
+        w = nw;
+      }
+      grid.style.gridTemplateColumns = w + 'px 1fr';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  })();
+
+  // cartoes do como funciona: virar ao tocar (ecras sem rato) ou com Enter
+  (function(){
+    var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+    document.querySelectorAll('.fcard').forEach(function(c){
+      c.addEventListener('click', function(){ if (touch) c.classList.toggle('flipped'); });
+      c.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.classList.toggle('flipped'); } });
+    });
+  })();
+
+  // popup de vagas, igual ao do site
+  setTimeout(function(){
+    var p = document.getElementById('popup');
+    if (p) p.classList.add('visible');
+  }, 6000);
+})();
+</script>
+
+</body>
+</html>
