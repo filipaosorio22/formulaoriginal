@@ -225,12 +225,12 @@
   .finner { display:grid; height:100%; min-height:230px; transition:transform 0.8s cubic-bezier(.22,.61,.36,1); transform-style:preserve-3d; }
   .fcard:hover .finner, .fcard:focus-visible .finner, .fcard.flipped .finner { transform:rotateY(180deg); }
   .fface { grid-area:1/1; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:10px; padding:32px 18px 22px; }
-  .ffront { text-align:center; display:flex; flex-direction:column; align-items:center; }
+  .ffront { text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; }
   .fcard.ses .ffront { background:var(--sessao); }
   .fcard.cic .ffront { background:var(--ciclo); }
   .ffront b { display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; line-height:1.15; color:var(--wine); margin-bottom:0.5rem; }
   .ffront span { display:block; font-size:15px; line-height:1.5; color:var(--ink-soft); }
-  .fhint { margin-top:auto; padding-top:1rem; font-style:normal; font-size:12px; letter-spacing:0.04em; color:var(--gold-deep); }
+  .fhint { position:absolute; left:0; right:0; bottom:16px; text-align:center; font-style:normal; font-size:12px; letter-spacing:0.04em; color:var(--gold-deep); }
   .fhint:before { content:'↻ '; }
   @media (hover:hover){ .fhint:after { content:'passa o rato'; } }
   @media (hover:none){ .fhint:after { content:'toca para ler'; } }
