@@ -95,25 +95,45 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
 @media (max-width: 600px) { .nav-links { display: none; } .hamburger { display: flex; } }
 .audio-player-home { max-width: 86%; margin-left: auto; margin-right: auto; }
+.summer-popup .autumn-text { font-family: 'Spectral', serif; font-size: 17px; font-style: italic; color: #7a2535; white-space: nowrap; }
+@media (max-width: 600px) { .summer-popup .autumn-text { font-size: 13px; white-space: normal; } }
+.sub-veil { display:none; position:fixed; inset:0; background:rgba(26,20,16,0.42); z-index:1100; }
+.sub-modal { display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:1101; width:min(440px, calc(100vw - 2rem)); background:#faf6ef; border-radius:16px; overflow:hidden; box-shadow:0 24px 70px rgba(26,20,16,0.3); text-align:center; }
+.sub-modal.open, .sub-veil.open { display:block; }
+.sub-top { height:92px; background:linear-gradient(120deg,#f1c9b3,#eacdc7,#eedab2,#f3d3ae,#eacdc7); }
+.sub-body { padding:1.4rem 1.6rem 1.5rem; }
+.sub-close { position:absolute; top:10px; right:14px; background:none; border:none; font-size:24px; color:#7a2535; cursor:pointer; z-index:2; }
+.sub-eyebrow { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:300; letter-spacing:0.14em; text-transform:uppercase; color:#9a7e52; margin-bottom:0.5rem; }
+.sub-title { font-family:'Spectral',serif; font-style:italic; font-size:24px; font-weight:300; color:#1a1410; line-height:1.3; margin-bottom:0.6rem; }
+.sub-text { font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:#6b5040; line-height:1.6; margin-bottom:1rem; }
+.sub-form input[type=email] { width:100%; font-family:'DM Sans',sans-serif; font-size:15px; padding:12px 14px; border:1px solid rgba(201,168,108,0.7); border-radius:10px; background:#fff; margin-bottom:0.7rem; }
+.sub-form button { width:100%; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.14em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border:none; border-radius:40px; padding:14px; cursor:pointer; }
+.sub-note { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:#9a7e52; margin-top:0.8rem; line-height:1.5; }
+.sub-note a { color:#7a2535; }
 </style>
 </head>
 <body>
+
+<div class="summer-popup" id="summerPopup">
+  <button class="summer-popup-close" onclick="document.getElementById('summerPopup').classList.remove('visible'); document.querySelector('nav').style.top='0';">×</button>
+  <span class="autumn-text">O outono pede reestruturação 🍂</span>
+</div>
 
 <nav>
   <div class="nav-links">
     <a href="ceen.html">CEEN • Negócio</a>
     <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-    <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A" target="_blank" class="nav-cta">Conversamos? 💌</a>
+    <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank" class="nav-cta">Conversamos? 💌</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen.html">CEEN • Negócio</a>
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-  <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A" target="_blank">Conversamos? 💌</a>
+  <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank">Conversamos? 💌</a>
 </div>
 
-<button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);"><span style="font-size:20px; line-height:1; vertical-align:-3px;">🔊</span> Explorar outro mood</button>
+<button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);">🔊 Entrar na frequência</button>
 <audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
 
 <main class="page">
@@ -217,6 +237,23 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 </main>
 
+<div class="sub-veil" id="subVeil" onclick="closeSub()"></div>
+<div class="sub-modal" id="subModal" role="dialog" aria-modal="true" aria-labelledby="subTitle">
+  <button class="sub-close" aria-label="Fechar" onclick="closeSub()">×</button>
+  <div class="sub-top"></div>
+  <div class="sub-body">
+    <p class="sub-eyebrow">Substack · Reflexões, insights e magia</p>
+    <p class="sub-title" id="subTitle">Recebe as minhas reflexões em primeira mão</p>
+    <p class="sub-text">Escrevo sobre negócio, energia e identidade. Deixa o teu email e subscreve de graça.</p>
+    <form class="sub-form" action="https://filipaosorio.substack.com/api/v1/free?nojs=true" method="post" target="_blank" onsubmit="subDone()">
+      <input type="hidden" name="source" value="subscribe-prompt">
+      <input type="email" name="email" required placeholder="O teu email" autocomplete="email">
+      <button type="submit">Subscrever</button>
+    </form>
+    <p class="sub-note">Ao subscrever, o teu email é tratado pelo Substack. <a href="privacidade.html">Política de privacidade</a></p>
+  </div>
+</div>
+
 <div class="popup" id="popup">
   <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
   <p class="popup-title">Se o teu negócio pede um novo olhar</p>
@@ -230,15 +267,38 @@ setTimeout(() => {
   document.getElementById('popup').classList.add('visible');
 }, 6000);
 
+setTimeout(() => {
+  const popup = document.getElementById('summerPopup');
+  const nav = document.querySelector('nav');
+  if (popup) {
+    popup.classList.add('visible');
+    const h = popup.offsetHeight;
+    if (nav) nav.style.top = h + 'px';
+  }
+}, 2000);
+
+var SUB_KEY = 'fo_sub_seen';
+function subSeen(){ try { return !!localStorage.getItem(SUB_KEY); } catch(e){ return false; } }
+function subMark(){ try { localStorage.setItem(SUB_KEY, String(Date.now())); } catch(e){} }
+function closeSub(){ document.getElementById('subModal').classList.remove('open'); document.getElementById('subVeil').classList.remove('open'); subMark(); }
+function subDone(){ setTimeout(closeSub, 400); }
+function trySub(){
+  if (subSeen()) return;
+  var cb = document.getElementById('cookieBanner'); var cm = document.getElementById('ceenCalendlyModal');
+  if ((cb && cb.style.display === 'block') || (cm && cm.style.display === 'flex')) { setTimeout(trySub, 15000); return; }
+  document.getElementById('subVeil').classList.add('open'); document.getElementById('subModal').classList.add('open');
+}
+setTimeout(trySub, 25000);
+
 function toggleFrequency() {
   const audio = document.getElementById('freqAudio');
   const btn = document.getElementById('freqToggle');
   if (audio.paused) {
     audio.play();
-    btn.innerHTML = '<span style="font-size:20px; line-height:1; vertical-align:-3px;">🔊</span> Sentir em silêncio';
+    btn.textContent = '🔊 Sentir em silêncio';
   } else {
     audio.pause();
-    btn.innerHTML = '<span style="font-size:20px; line-height:1; vertical-align:-3px;">🔊</span> Explorar outro mood';
+    btn.textContent = '🔊 Entrar na frequência';
   }
 }
 
