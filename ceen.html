@@ -48,7 +48,7 @@
   .mobile-menu a { font-family:'Lora',serif; font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:#1a1410; text-decoration:none; }
   @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } }
 
-  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#bccad7,#c3dccf,#eacdc7,#eedab2,#f2c4ab,#d8c8e5,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:88px; display:flex; align-items:flex-end; }
+  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#f1c9b3,#eacdc7,#eedab2,#f3d3ae,#eacdc7,#f1c9b3); background-size:100% 100%; animation:none; margin-top:88px; display:flex; align-items:flex-end; }
   .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; position:relative; z-index:1; }
   .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); line-height:1.05; margin:0 0 0.1rem; color:var(--wine); }
   .cover-text-bg .eyebrow { color:var(--orange); margin:0; font-style:italic; font-weight:700; font-size:18px; white-space:nowrap; }
@@ -166,7 +166,7 @@
   .quiz-group { font-family:'Lora',serif; font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-deep); margin:2.2rem 0 0.9rem; }
   .quiz-group:first-child { margin-top:4.4rem; }
   .quiz-note + .quiz-group { margin-top:1rem; }
-  .lead.hlbox { background:rgba(201,168,108,0.18); border-left:3px solid var(--gold); padding:0.9rem 1.1rem; border-radius:0 9px 9px 0; font-size:19px; text-align:left; font-weight:400; }
+  .lead.hlbox { background:none; border-left:3px solid var(--gold); padding:0.2rem 0 0.2rem 1.1rem; font-size:19px; text-align:left; font-weight:400; }
   .quiz-pills { display:flex; flex-direction:column; align-items:stretch; gap:0.7rem; }
   .quiz-pills button { font-family:'Lora',serif; font-size:15.5px; font-style:italic; text-align:left; background:var(--gray); border:1px solid var(--line); border-radius:20px; padding:0.7rem 1.2rem; min-height:78px; display:flex; align-items:center; cursor:pointer; color:var(--ink); transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
   .quiz-pills button:hover { border-color:var(--gold); transform:translateY(-1px); }
@@ -336,7 +336,7 @@
   html[data-theme="dark"] .nav-links a:hover, html[data-theme="dark"] .nav-links a.active { color:var(--wine); }
   html[data-theme="dark"] .mobile-menu { background:#241f1a; box-shadow:0 10px 20px rgba(0,0,0,0.35); }
   html[data-theme="dark"] .mobile-menu a { color:#efe6d8; }
-  html[data-theme="dark"] .cover { background-image:linear-gradient(120deg,#33434f,#35473f,#4a3a40,#4f4430,#523a36,#463a52,#33434f); }
+  html[data-theme="dark"] .cover { background-image:linear-gradient(120deg,#4a3430,#4a3a40,#4f4430,#523a36,#4a3a40,#4a3430); }
   html[data-theme="dark"] .pause .pause-quote:before { display:none; }
   html[data-theme="dark"] .cta-btn:hover, html[data-theme="dark"] .cta-btn:active, html[data-theme="dark"] .cta-btn:focus-visible { background-image:linear-gradient(120deg,#46566a,#6a4a53,#6e5a34,#6a4a53,#46566a); color:#f4e8d6; box-shadow:0 8px 18px rgba(0,0,0,0.35); }
   html[data-theme="dark"] .popup { background:#26211c; }
@@ -365,14 +365,14 @@
   <div class="nav-links">
     <a href="ceen.html" class="active">CEEN • Negócio</a>
     <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-    <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar." target="_blank" class="nav-cta">Conversamos? 💌</a>
+    <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank" class="nav-cta">Conversamos? 💌</a>
   </div>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen.html">CEEN • Negócio</a>
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-  <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar." target="_blank">Conversamos? 💌</a>
+  <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank">Conversamos? 💌</a>
 </div>
 
 <div class="cover">
@@ -454,7 +454,7 @@
         <ul class="plain">
           <li>Tens vários serviços e competências, mas não sabes quais devem ganhar espaço nem como os apresentar em conjunto.</li>
           <li>O teu trabalho evoluiu, mas a oferta e a comunicação continuam a mostrar uma versão anterior de ti.</li>
-          <li>Queres mais consistência no rendimento, sem depender de mais sessões, lançamentos ou horas de trabalho.</li>
+          <li>Queres mais consistência no rendimento, sem depender de mais horas de trabalho.</li>
           <li>A tua vida mudou e precisas de rever os formatos de entrega, a disponibilidade ou o teu papel.</li>
         </ul>
       </div></div>
