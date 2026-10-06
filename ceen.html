@@ -28,7 +28,7 @@
   body { zoom:0.9; margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
-  .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px 2px 10px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
+  .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
   .theme-btn { position:absolute; right:10px; top:2px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; background:none; border:1px solid var(--gold); border-radius:50%; color:var(--wine); cursor:pointer; padding:0; }
   .theme-btn svg { width:15px; height:15px; display:block; }
   .theme-btn:hover { background:rgba(201,168,108,0.18); }
@@ -46,7 +46,11 @@
   @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } }
 
   .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#bccad7,#eacdc7,#eedab2,#eacdc7,#bccad7); background-size:300% 300%; animation:aurora 22s ease-in-out infinite; margin-top:88px; display:flex; align-items:flex-end; }
-  .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; }
+  .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; position:relative; z-index:1; }
+  .cover { background:#efe3d3; animation:none; overflow:hidden; }
+  .cover::before { content:''; position:absolute; inset:-50px; background:url(filipa-foto.jpg) 50% 26%/cover no-repeat; filter:blur(34px) saturate(1.15); opacity:0.85; }
+  .cover::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(243,236,223,0.88) 0%,rgba(243,236,223,0.62) 55%,rgba(243,236,223,0.3) 100%); }
+  html[data-theme="dark"] .cover::after { background:linear-gradient(90deg,rgba(29,25,21,0.86) 0%,rgba(29,25,21,0.6) 60%,rgba(29,25,21,0.35) 100%); }
   .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); line-height:1.05; margin:0 0 0.1rem; color:var(--wine); }
   .cover-text-bg .eyebrow { color:var(--orange); margin:0; font-style:italic; font-weight:700; font-size:18px; white-space:nowrap; }
   @media (max-width:999px){ .cover-text-bg .eyebrow { white-space:normal; font-size:16px; } }
@@ -94,9 +98,9 @@
   @media (max-width:680px){ .two-col{ grid-template-columns:1fr; } }
 
   details.fold { margin:0.9rem 0; border-bottom:1px solid var(--line); padding-bottom:0.9rem; }
-  details.fold summary { cursor:pointer; font-family:'Lora',serif; font-weight:600; font-size:18px; color:var(--ink); padding:0.2rem 0; list-style:none; display:flex; align-items:center; gap:0.55rem; }
+  details.fold summary { cursor:pointer; font-family:'Lora',serif; font-weight:600; font-size:18px; line-height:1.35; color:var(--ink); padding:0.2rem 0; list-style:none; display:flex; align-items:center; gap:0.55rem; }
   details.fold summary::-webkit-details-marker { display:none; }
-  details.fold summary .tri { font-size:15px; color:var(--ink-soft); flex-shrink:0; display:inline-block; transition:transform 0.25s ease; }
+  details.fold summary .tri { width:0; height:0; font-size:0; border-top:5px solid transparent; border-bottom:5px solid transparent; border-left:8px solid var(--wine); opacity:0.72; flex-shrink:0; display:inline-block; margin-right:0.2rem; transition:transform 0.25s ease; }
   details.fold[open] summary .tri { transform:rotate(90deg); }
   details.fold .fold-wrap { overflow:hidden; max-height:0; transition:max-height 0.6s cubic-bezier(.22,.61,.36,1); }
   details.fold.slow .fold-wrap { transition-duration:0.9s; }
@@ -105,7 +109,7 @@
 
   details.case { background:var(--brown); border-radius:9px; padding:1.1rem 1.3rem; margin:1.2rem 0; }
   details.case summary { cursor:pointer; font-family:'Lora',serif; font-size:15px; font-weight:600; color:var(--brown-ink); list-style:none; display:flex; align-items:center; gap:0.5rem; }
-  details.case summary .tri { font-size:10px; transition:transform 0.25s ease; display:inline-block; }
+  details.case summary .tri { font-size:0; border-top-width:4px; border-bottom-width:4px; border-left-width:6px; transition:transform 0.25s ease; display:inline-block; }
   details.case[open] summary .tri { transform:rotate(90deg); }
   details.case summary::-webkit-details-marker { display:none; }
   details.case .fold-wrap { overflow:hidden; max-height:0; transition:max-height 0.9s cubic-bezier(.22,.61,.36,1); }
@@ -120,8 +124,10 @@
   .bio-photo-ph { width:100%; min-height:260px; border-radius:10px; background:linear-gradient(145deg,#d8c9ad,#9bb0bd 55%,#e7c9c2); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.85); font-family:'Lora',serif; font-size:12px; text-align:center; padding:1rem; overflow:hidden; }
   .bio-photo-ph img { width:100%; height:100%; object-fit:cover; display:block; }
 
-  .testimonial-photos-ph { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.3rem auto; align-items:start; width:58%; cursor:zoom-in; transition:width 0.45s ease; container-type:inline-size; }
+  .testimonial-photos-ph { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.3rem auto; align-items:start; width:76%; cursor:zoom-in; transition:width 0.45s ease; container-type:inline-size; }
   .testimonial-photos-ph:hover, .testimonial-photos-ph.open { width:100%; cursor:zoom-out; }
+  .testimonial-photos-ph .ph { position:relative; }
+  .testimonial-photos-ph .er { position:absolute; top:0; height:0; background:#fff; }
   .testimonial-photos-ph::after { content:'passa o rato para ampliar'; grid-column:1 / -1; text-align:center; font-size:12px; font-style:italic; color:var(--gold-deep); }
   @media (hover:none){ .testimonial-photos-ph::after { content:'toca para ampliar'; } }
   .testimonial-photos-ph:hover::after, .testimonial-photos-ph.open::after { display:none; }
@@ -191,7 +197,8 @@
   @media (min-width:1000px){
     p, ul.plain li, p.lead { font-size:19px; }
     .callout-label { font-size:19px; }
-    details.fold summary { font-size:19px; }
+    details.fold summary { font-size:16.5px; line-height:1.35; }
+    details.fold.feature summary { font-size:19px; }
     .step .body p, .price-card p.pdesc { font-size:17.5px; }
     .step .body h4 { font-size:17px; }
     blockquote.quote-block p { font-size:23px; }
@@ -207,7 +214,7 @@
   p, li { text-wrap:pretty; }
   header.wrap h1.hero-title { padding-left:0; }
   details.fold.feature { background:#f7efe2; border:1px solid var(--gold); border-radius:12px; padding:1.1rem 1.4rem; margin:1.3rem 0; }
-  details.fold.feature summary { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,2.8vw,31px); color:var(--wine); font-weight:600; }
+  details.fold.feature summary { font-family:'Cormorant Garamond',serif; font-size:clamp(20px,2.3vw,25px); color:var(--wine); font-weight:600; }
   details.fold.feature summary .tri { color:var(--wine); }
   blockquote.quote-block.big p { font-size:clamp(26px,3.4vw,36px); line-height:1.3; }
   .fold-close { display:block; margin:0.8rem auto 0; background:none; border:none; cursor:pointer; color:var(--ink-soft); font-size:15px; padding:6px 14px; line-height:1; transition:color 0.2s ease, transform 0.2s ease; }
@@ -235,10 +242,10 @@
   .bio-photo-ph { padding:0; }
   .callout.intro-callout .ctext p { font-size:16.5px; }
   .callout.case-callout .ctext p { font-size:18px; }
-  .callout.case-callout .ctext p.callout-label { font-size:21px; }
+  .callout.case-callout .ctext p.callout-label { font-size:19px; }
   .callout.intro-callout { margin-right:0; }
   .callout.intro-callout .ctext { padding-right:0; }
-  .callout.intro-callout { padding-right:1.5rem; }
+  .callout.intro-callout { padding-left:1.9rem; padding-right:1.9rem; }
   .callout.narrow .ctext { padding-right:2.4rem; }
   .callout.narrow .ctext p { font-size:17px; }
   section .wrap > blockquote.quote-block, section .wrap-wide > blockquote.quote-block { margin-left:-1.3rem; }
@@ -304,6 +311,7 @@
   .callout .ctext p.oneline-note { font-size:17.5px; }
   .callout.ciclo-note .ctext p:not(.oneline-note) { font-size:15px; }
   .callout.softer .ctext p:not(.callout-label) { font-size:16px; }
+  @media (max-width:640px){ h1.hero-title br, .quiz-pills button br, .softbr br { display:none; } }
   details.fold:not(.feature):not(.case) .fold-body p, details.fold:not(.feature):not(.case) .fold-body li { font-size:17px; }
   @media (min-width:700px){ .callout .ctext p.oneline-note { white-space:nowrap; } }
   @media (max-width:650px){ .amostra-frame { height:600px; } }
@@ -349,14 +357,14 @@
   <div class="nav-links">
     <a href="ceen.html" class="active">CEEN • Negócio</a>
     <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-    <a href="index.html#contacto" class="nav-cta">Conversamos? 💌</a>
+    <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A" target="_blank" class="nav-cta">Conversamos? 💌</a>
   </div>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen.html">CEEN • Negócio</a>
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-  <a href="index.html#contacto">Conversamos? 💌</a>
+  <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A" target="_blank">Conversamos? 💌</a>
 </div>
 
 <div class="cover">
@@ -369,7 +377,7 @@
 </div>
 
 <header class="wrap" style="padding:4.6rem 24px 0;">
-  <h1 class="hero-title">Aproxima o teu negócio de quem és e da tua fase<br>de vida atual, permitindo que ele evolua contigo</h1>
+  <h1 class="hero-title">Aproxima o teu negócio de quem és e da tua fase <br>de vida atual, permitindo que ele evolua contigo</h1>
 </header>
 
 <section class="tight" style="padding-top:12px;">
@@ -385,7 +393,7 @@
 
 <section class="pause pause-b">
   <div class="wrap-wide">
-    <p class="pause-quote two">Por vezes, o maior desafio não é construir o negócio.<br>É mudar a forma como te vês e te posicionas nele.</p>
+    <p class="pause-quote two">Por vezes, o maior desafio não é construir o negócio. <br>É mudar a forma como te vês e te posicionas nele.</p>
   </div>
 </section>
 
@@ -438,8 +446,8 @@
         <ul class="plain">
           <li>Tens vários serviços e competências, mas não sabes quais devem ganhar espaço nem como os apresentar em conjunto.</li>
           <li>O teu trabalho evoluiu, mas a oferta e a comunicação continuam a mostrar uma versão anterior de ti.</li>
-          <li>Queres mais consistência no rendimento, sem depender sempre de mais sessões, lançamentos ou horas de trabalho.</li>
-          <li>A tua vida mudou e precisas de rever os formatos de entrega, a disponibilidade ou o papel que ocupas.</li>
+          <li>Queres mais consistência no rendimento, sem depender de mais sessões, lançamentos ou horas de trabalho.</li>
+          <li>A tua vida mudou e precisas de rever os formatos de entrega, a disponibilidade ou o teu papel.</li>
         </ul>
       </div></div>
       <div class="callout infoA"><div class="ci">🪞</div><div class="ctext">
@@ -477,7 +485,7 @@
           </div></div>
 
     <details class="case">
-      <summary><span class="tri">▶</span>Ler o caso completo</summary>
+      <summary><span class="tri"></span>Ler o caso completo</summary>
       <div class="fold-wrap"><div class="fold-body">
         <h4>O PONTO DE PARTIDA</h4>
         <p>O negócio já não estava a gerar vendas como antes e a cliente distribuía a sua atenção por vários serviços. Alguns pareciam-lhe opções seguras e, por isso, acreditava que queria continuar a apostar neles.</p>
@@ -488,7 +496,7 @@
         <h4>A DECISÃO E O RESULTADO</h4>
         <p>A cliente distinguiu os serviços que acreditava que "deveria" manter daqueles que queria verdadeiramente continuar a desenvolver.</p>
         <p>Decidiu concentrar a oferta e a comunicação nestes últimos e, depois dessa mudança, voltou a receber pedidos e a gerar vendas.</p>
-        <p style="font-style:italic; color:var(--orange);"><strong>A CEEN não escolheu por ela. Ajudou-a a ver com clareza para poder escolher.</strong></p>
+        <p style="font-style:italic; color:var(--orange); margin-top:1.8rem;"><strong>A CEEN não escolheu por ela. Ajudou-a a ver com clareza para poder escolher.</strong></p>
       </div></div>
     </details>
   </div>
@@ -509,7 +517,7 @@
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
         <p class="callout-label"><span class="nw">DIMENSÃO ESTRATÉGICA ·</span><br><span class="nw">A TRADUÇÃO NO NEGÓCIO</span></p>
         <p style="margin-top:1.4rem;">Traduzir essa leitura em critérios, prioridades e recomendações concretas para a próxima fase do negócio.</p>
-        <p>Consoante a questão ou a profundidade do trabalho, podemos observar ofertas, serviços, preços, posicionamento, comunicação, conteúdos, páginas de vendas, website, formatos de entrega, responsabilidades e decisões do dia-a-dia.</p>
+        <p>Consoante a questão ou a profundidade do trabalho, podemos observar ofertas, serviços, preços, posicionamento, comunicação, conteúdos, páginas de vendas, website, formatos de entrega, responsabilidades e decisões.</p>
       </div></div>
     </div>
     <p class="lead" style="margin-top:2.6rem;">Observar sem estruturar pode trazer mais consciência, mas deixar-te sem saber o que fazer com ela. Estruturar sem observar pode levar-te a escolher uma estratégia que não consegues ou não desejas sustentar. É neste diálogo entre energia e estratégia que a CEEN acontece.</p>
@@ -531,7 +539,7 @@
     <p>Se quiseres aprofundar a abordagem, abre os temas abaixo: como as áreas do negócio se influenciam e como a tua energia entra nas decisões profissionais.</p>
 
     <details class="fold slower feature">
-      <summary><span class="tri">▶</span>🧩 O negócio como um sistema</summary>
+      <summary><span class="tri"></span>🧩 O negócio como um sistema</summary>
       <div class="fold-wrap"><div class="fold-body">
         <p>O teu negócio não é apenas aquilo que vendes. É também o lugar que ocupas nele, a identidade que comunica, a estrutura que o sustenta, as relações que cria e o equilíbrio entre o que entregas e o que recebes.</p>
         <p>Olhar para o negócio como um sistema é observar, em simultâneo, a pessoa que o conduz, a identidade que o orienta, a estrutura que o sustenta, as relações que cria e as trocas que tornam possível a sua continuidade.</p>
@@ -552,7 +560,7 @@
     </details>
 
     <details class="fold slower feature">
-      <summary><span class="tri">▶</span>⚡ A energia pessoal como informação estratégica</summary>
+      <summary><span class="tri"></span>⚡ A energia pessoal como informação estratégica</summary>
       <div class="fold-wrap"><div class="fold-body">
         <p>Na CEEN, energia pessoal não significa apenas disposição ou cansaço. É a disponibilidade que resulta da interação entre dimensões físicas, mentais, emocionais, sociais e subtis e que influencia a tua capacidade de criar, decidir, relacionar-te e assumir responsabilidades.</p>
         <p>Uma decisão profissional não depende apenas da análise racional. Também é influenciada pelo que sentes que podes ganhar, perder, provar ou proteger através dela. Por exemplo:</p>
@@ -568,7 +576,7 @@
     <div class="callout grayD"><div class="ci">🪞</div><div class="ctext">
       <p><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong> Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, <em>copywriting</em> ou implementação feita por mim.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:5.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:18px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
+    <blockquote class="quote-block" style="margin-top:5.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:19px; background:rgba(201,168,108,0.18); padding:0.9rem 1.1rem; border-radius:0 9px 9px 0;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
   </div>
 </section>
 
@@ -604,7 +612,7 @@
     </div>
     <p style="margin-top:2.6rem; font-size:15.5px; line-height:1.65;">Hoje, junto estas duas vertentes numa prática que combina capacidade de análise e escuta atenta, com clareza, sensibilidade e frontalidade, e um olhar que vai além.</p>
     <blockquote class="quote-block">
-      <p><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras,<br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
+      <p style="line-height:1.3;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras, <br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
       <p class="attrib">— feedback de uma cliente num áudio durante um acompanhamento comigo</p>
     </blockquote>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar a explorar a CEEN desde início</a>
@@ -613,14 +621,14 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Esta forma de trabalhar pode fazer sentido para ti se…</p>
       <ul class="plain">
-        <li>queres compreender o que fazer, mas também o que está a influenciar<br>as tuas escolhas;</li>
+        <li>queres compreender o que fazer, mas também o que está a influenciar <br>as tuas escolhas;</li>
         <li>estás disponível para questionar o que manténs por hábito, segurança ou expectativa;</li>
-        <li>procuras perguntas e recomendações personalizadas e queres assumir<br>as decisões e os próximos passos;</li>
+        <li>procuras perguntas e recomendações personalizadas e queres assumir <br>as decisões e os próximos passos;</li>
         <li>desejas crescer e evoluir usando o teu negócio como alavanca para isso.</li>
       </ul>
     </div></div>
     <details class="fold">
-      <summary><span class="tri">▶</span>Talvez este não seja o formato mais adequado se…</summary>
+      <summary><span class="tri"></span>Talvez este não seja o formato mais adequado se…</summary>
       <div class="fold-wrap"><div class="fold-body">
         <ul class="plain small">
           <li>ainda estás apenas a explorar uma ideia ou precisas de criar o negócio de raiz;</li>
@@ -670,15 +678,15 @@
       <div id="quizChips">
         <p class="quiz-group">Quero pensar e decidir contigo · Sessão CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços<br>e quero pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
-          <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar,<br>mas não sei por onde começar. Quero conversar e perceber o que faz sentido.”</button>
-          <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou<br>a forma como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
+          <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços e quero <br>pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
+          <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar, mas não sei <br>por onde começar. Quero conversar e perceber o que faz sentido.”</button>
+          <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou <br>a forma como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
         </div>
         <p class="quiz-group">Quero também que possas analisar o que tenho · Ciclo CEEN</p>
         <div class="quiz-pills">
-          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços,<br>o site e a comunicação continuam a mostrar o que fazia antes.”</button>
-          <button type="button" data-r="ciclo">“Preciso de tempo e de um olhar atento sobre os meus materiais, como a página<br>de vendas, os preços ou as ofertas, e de uma proposta organizada a que possa voltar.”</button>
-          <button type="button" data-r="ciclo">“Quero decidir com base numa análise, não só numa conversa:<br>ver as ligações entre a oferta, a comunicação e a forma como trabalho.”</button>
+          <button type="button" data-r="ciclo">“O meu trabalho evoluiu, mas os serviços, o site <br>e a comunicação continuam a mostrar o que fazia antes.”</button>
+          <button type="button" data-r="ciclo">“Preciso de tempo e de um olhar atento sobre os meus materiais, como a página <br>de vendas, os preços ou as ofertas, e de uma proposta organizada a que possa voltar.”</button>
+          <button type="button" data-r="ciclo">“Quero decidir com base numa análise, não só numa conversa: <br>ver as ligações entre a oferta, a comunicação e a forma como trabalho.”</button>
         </div>
       </div>
       <div class="quiz-answer" id="quizAnswerSessao">
@@ -691,7 +699,7 @@
       </div>
     </div>
 
-    <p class="lead" style="font-size:16.5px; margin-top:2.8rem;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN.<br>Podes marcar o Ciclo diretamente se procuras análise e uma proposta personalizada.</p>
+    <p class="lead softbr" style="font-size:16.5px; margin-top:2.8rem; text-align:left;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN. <br>Podes marcar o Ciclo diretamente se procuras análise e uma proposta personalizada.</p>
 
     <div class="cta-pair">
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a>
@@ -705,7 +713,7 @@
 <section class="tight">
   <div class="wrap">
     <details class="fold slow feature" id="como-funciona-sessao">
-      <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona a Sessão CEEN</span></summary>
+      <summary><span class="tri"></span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona a Sessão CEEN</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
           <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Contexto e material principal"><div class="finner"><div class="fface ffront"><b>Contexto e material</b><span>Partilhas a questão e, se existir, o material principal.</span><i class="fhint"></i></div><div class="fface fback"><h5>Contexto e material principal</h5><div class="fpar">Antes da sessão, partilhas o contexto e o que gostarias de trabalhar. Quando for relevante, podes enviar um material principal, como uma página de vendas, uma tabela de preços ou a descrição de uma oferta. Faço uma leitura breve para chegar ao encontro com o enquadramento necessário.</div></div></div></div></div>
@@ -716,7 +724,7 @@
     </details>
 
     <details class="fold slow feature" id="como-funciona-ciclo">
-      <summary><span class="tri">▶</span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona o Ciclo CEEN</span></summary>
+      <summary><span class="tri"></span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3.4vw,34px); color:var(--wine);">Como funciona o Ciclo CEEN</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
           <div class="fstep"><div class="fdot">1</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Primeira sessão · escutar e aprofundar"><div class="finner"><div class="fface ffront"><b>Primeira sessão</b><span>Escutar e aprofundar.</span><i class="fhint"></i></div><div class="fface fback"><h5>Primeira sessão · escutar e aprofundar</h5><div class="fpar">Uma sessão individual online de até duas horas. Olhamos para o que trazes e para o momento do negócio. Identificamos os temas e materiais mais relevantes para o trabalho de análise.</div></div></div></div></div>
@@ -812,7 +820,7 @@
     <p style="font-size:15px;">Neste testemunho de um acompanhamento, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
-      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"></div>
+      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"><span class="er" style="left:73.4%; margin-top:184%; width:9.7%; padding-top:4%;"></span></div>
     </div>
   </div>
 </section>
@@ -827,7 +835,7 @@
     <p style="font-size:16px;">É no contacto com a experiência real que novas decisões, dúvidas e possibilidades se tornam visíveis. Este é o testemunho de outra cliente sobre o que tem vivido no seu processo comigo:</p>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cristiana_1.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_1.png'"></div>
-      <div class="ph"><img src="upsell_cristiana_2.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_2.png'"></div>
+      <div class="ph"><img src="upsell_cristiana_2.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_2.png'"><span class="er" style="left:75%; margin-top:104.7%; width:10%; padding-top:3.9%;"></span></div>
     </div>
   </div>
 </section>
@@ -851,12 +859,12 @@
 <section>
   <div class="wrap">
     <h2 class="section-title">Qual é o próximo passo para o teu negócio?</h2>
-    <p><strong>Para pensarmos juntos durante um encontro, escolhe a Sessão CEEN.<br>Para acrescentar o meu tempo de análise e receber uma proposta preparada para ti, escolhe o Ciclo CEEN.</strong></p>
+    <p class="softbr" style="text-align:left;"><strong>Para pensarmos juntos durante um encontro, escolhe a Sessão CEEN. <br>Para acrescentar o meu tempo de análise e receber uma proposta preparada para ti, escolhe o Ciclo CEEN.</strong></p>
     <div class="cta-pair">
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a>
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar o meu Ciclo CEEN</a>
     </div>
-    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Ainda tens dúvidas sobre qual é o formato mais adequado?</strong><br><a href="https://wa.me/message/SGB5SN5CXWY4F1" style="font-style:normal; font-size:14px; color:var(--orange); font-family:'Lora',serif;">Envia-me uma mensagem</a> e esclarecemos juntos qual é o formato mais adequado.</p></blockquote>
+    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Ainda tens dúvidas sobre qual é o formato mais adequado?</strong><br><a href="https://wa.me/message/SGB5SN5CXWY4F1" style="font:inherit; color:var(--orange);">Envia-me uma mensagem</a> e esclarecemos juntos qual é o formato mais adequado.</p></blockquote>
   </div>
 </section>
 
@@ -865,37 +873,37 @@
 <section>
   <div class="wrap">
     <h2 class="section-title">Se tens estas perguntas antes de avançar</h2>
-    <details class="fold"><summary><span class="tri">▶</span>Preciso de ter o negócio totalmente estruturado?</summary>
+    <details class="fold"><summary><span class="tri"></span>Preciso de ter o negócio totalmente estruturado?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. O negócio pode estar numa fase inicial, em crescimento ou em reorganização, mas precisa de já estar em funcionamento e em contacto com a realidade. É importante que existam ofertas, preços, comunicação, clientes, vendas ou tentativas de venda e decisões concretas que possamos observar.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>A CEEN é consultoria de gestão?</summary>
+    <details class="fold"><summary><span class="tri"></span>A CEEN é consultoria de gestão?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. A CEEN não substitui apoio técnico de gestão, marketing, finanças, contabilidade ou operação. Também não inclui auditorias técnicas, <em>copywriting</em> ou implementação feita por mim. Cruzo o que observo em ti e no negócio com os meus conhecimentos de estratégia e marketing para apresentar possibilidades, critérios e recomendações ajustadas.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>A Sessão CEEN pode centrar-se numa questão mais pessoal?</summary>
+    <details class="fold"><summary><span class="tri"></span>A Sessão CEEN pode centrar-se numa questão mais pessoal?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Sim, desde que esteja relacionada com a forma como estás a viver, decidir ou ocupar o teu lugar no negócio. Podemos trabalhar identidade, crenças, padrões, receios, visibilidade, dinheiro ou responsabilidade quando estiverem a influenciar as tuas escolhas profissionais.</p><p><strong>A Sessão CEEN não é terapia:</strong> a pessoa pode ocupar o centro da sessão, mas o negócio e as decisões profissionais continuam a oferecer-nos o contexto.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>Preciso de me identificar com alguma abordagem energética?</summary>
+    <details class="fold"><summary><span class="tri"></span>Preciso de me identificar com alguma abordagem energética?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. A dimensão energética está relacionada com aquilo que estás concretamente a viver e que nem sempre é imediatamente visível: atenção, emoções, crenças, hábitos, capacidade e respostas do corpo. Usamos apenas aquilo que fizer sentido para ti.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>Vais dizer-me exatamente o que tenho de fazer?</summary>
+    <details class="fold"><summary><span class="tri"></span>Vais dizer-me exatamente o que tenho de fazer?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Vou ajudar-te a reconhecer aquilo que pode não estar claro, apresentar recomendações e sugerir possíveis direções. Não decido nem ajo por ti: as decisões finais e as ações concretas continuam a ser tuas.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>Como sei se preciso de uma Sessão CEEN ou do Ciclo CEEN?</summary>
+    <details class="fold"><summary><span class="tri"></span>Como sei se preciso de uma Sessão CEEN ou do Ciclo CEEN?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>A Sessão é trabalhar comigo durante o encontro: perguntas, análise e recomendações no momento. O Ciclo faz sentido se queres acrescentar o meu tempo de análise entre os encontros e receber uma proposta personalizada no Notion, com recomendações, prioridades e as razões que as sustentam. A escolha depende do tipo de trabalho que procuras, não do número de questões que trazes.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>Tenho de realizar uma Sessão CEEN antes do Ciclo CEEN?</summary>
+    <details class="fold"><summary><span class="tri"></span>Tenho de realizar uma Sessão CEEN antes do Ciclo CEEN?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. Podes marcar diretamente o Ciclo CEEN se procuras a análise entre encontros e a proposta personalizada.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>E se o que trago for mais do que cabe na Sessão CEEN?</summary>
+    <details class="fold"><summary><span class="tri"></span>E se o que trago for mais do que cabe na Sessão CEEN?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Trabalhamos o que for possível no tempo do encontro. Se fizer sentido continuar, podemos considerar outra Sessão ou o Ciclo, quando for útil acrescentar análise de materiais e uma proposta. A decisão é tua.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>O Ciclo CEEN analisa todo o negócio?</summary>
+    <details class="fold"><summary><span class="tri"></span>O Ciclo CEEN analisa todo o negócio?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. A análise incide sobre os temas e materiais prioritários que for possível aprofundar dentro do trabalho incluído. Posso relacionar áreas do negócio, mas a entrega corresponde ao que for efetivamente analisado, não a uma revisão exaustiva de tudo.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>A Sessão CEEN inclui análise depois do encontro?</summary>
+    <details class="fold"><summary><span class="tri"></span>A Sessão CEEN inclui análise depois do encontro?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. A leitura do contexto é breve e acontece antes do encontro quando necessário. A análise, as recomendações e as decisões são trabalhadas durante a sessão. Não estão incluídos relatório, implementação nem acompanhamento posterior.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri">▶</span>Tenho acompanhamento entre as sessões ou depois do Ciclo?</summary>
+    <details class="fold"><summary><span class="tri"></span>Tenho acompanhamento entre as sessões ou depois do Ciclo?</summary>
       <div class="fold-wrap"><div class="fold-body">
         <p>O Ciclo CEEN não inclui acompanhamento contínuo. Entre as sessões, tens três dias para acrescentar informação relevante. Durante a análise, posso colocar-te perguntas dirigidas ou pedir esclarecimentos para preparar a proposta. Estes contactos servem para completar a leitura, não para acompanhar a implementação ou responder continuamente às questões do dia a dia.</p>
         <p>Depois da segunda sessão, a entrega do Ciclo fica concluída. Podes então avançar autonomamente ou marcar uma nova Sessão CEEN para trabalhar outra questão concreta.</p>
