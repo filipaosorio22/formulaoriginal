@@ -76,8 +76,8 @@
   .callout.wineT { background:var(--wineT); }
   .callout.stoneT { background:var(--stoneT); }
   .callout.lilac { background:#ece3f3; }
-  .callout.sessao { background:var(--sessao); }
-  .callout.ciclo { background:var(--ciclo); }
+  .callout.sessao { background:var(--sessao); padding:1.5rem 1.6rem; }
+  .callout.ciclo { background:var(--ciclo); padding:1.5rem 1.6rem; }
   .callout.infoA { background:var(--infoA); }
   .callout.infoB { background:var(--infoB); }
   .callout.grayD { background:#ebe4d6; }
@@ -109,7 +109,7 @@
   details.case[open] summary .tri { transform:rotate(90deg); }
   details.case summary::-webkit-details-marker { display:none; }
   details.case .fold-wrap { overflow:hidden; max-height:0; transition:max-height 0.9s cubic-bezier(.22,.61,.36,1); }
-  details.case .fold-body h4 { font-family:'Lora',serif; font-size:16px; font-weight:700; letter-spacing:0.05em; color:var(--brown-ink); margin:1.8rem 0 0.5rem; }
+  details.case .fold-body h4 { font-family:'Lora',serif; font-size:15px; font-weight:700; letter-spacing:0.05em; color:var(--brown-ink); margin:1.8rem 0 0.5rem; }
   details.case .fold-body h4:first-child { margin-top:2.2rem; }
 
   .step { display:flex; gap:0.8rem; margin-bottom:0.7rem; background:var(--gray); border-radius:9px; padding:1rem 1.2rem; align-items:flex-start; }
@@ -140,7 +140,7 @@
   .cta-pair.center { justify-content:center; }
 
   .jump-link { font-family:'Lora',serif; font-size:15px; color:var(--wine); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; }
-  .back-link { font-family:'Lora',serif; font-size:17px; font-weight:700; color:var(--wine); text-decoration:underline; text-underline-offset:4px; display:inline-flex; align-items:center; gap:0.3rem; margin-top:1.4rem; cursor:pointer; }
+  .back-link { font-family:'Lora',serif; font-size:17.5px; font-weight:700; color:var(--wine); text-decoration:underline; text-underline-offset:4px; display:inline-flex; align-items:center; gap:0.3rem; margin-top:1.4rem; cursor:pointer; }
 
   footer { text-align:center; padding:3rem 1rem 3.5rem; font-family:'Lora',serif; color:var(--ink-soft); font-size:15px; }
   footer a { color:var(--ink-soft); text-decoration:underline; }
@@ -154,7 +154,7 @@
   .quiz-box { margin:1.4rem 0 2rem; }
   .quiz-prompt { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:27px; color:var(--wine); margin:0 0 0.9rem; }
   .quiz-group { font-family:'Lora',serif; font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-deep); margin:2.2rem 0 0.9rem; }
-  .quiz-group:first-child { margin-top:2.6rem; }
+  .quiz-group:first-child { margin-top:4.4rem; }
   .quiz-pills { display:flex; flex-direction:column; align-items:stretch; gap:0.7rem; }
   .quiz-pills button { font-family:'Lora',serif; font-size:15.5px; font-style:italic; text-align:left; background:var(--gray); border:1px solid var(--line); border-radius:20px; padding:0.7rem 1.2rem; min-height:78px; display:flex; align-items:center; cursor:pointer; color:var(--ink); transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
   .quiz-pills button:hover { border-color:var(--gold); transform:translateY(-1px); }
@@ -179,8 +179,8 @@
   .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
   .pause { padding:56px 0; text-align:center; }
-  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(18px,2.5vw,26px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
-  .pause .pause-quote:before { content:''; position:absolute; inset:-46px -130px; z-index:-1; background:radial-gradient(ellipse 52% 62% at 24% 52%, rgba(188,202,215,0.95), rgba(188,202,215,0) 72%), radial-gradient(ellipse 50% 66% at 52% 44%, rgba(234,205,199,0.95), rgba(234,205,199,0) 72%), radial-gradient(ellipse 52% 62% at 78% 54%, rgba(238,218,178,0.95), rgba(238,218,178,0) 72%); filter:blur(30px); opacity:0.75; animation:cloud 26s ease-in-out infinite alternate; }
+  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(20px,2.7vw,27px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
+  .pause .pause-quote:before { content:''; position:absolute; inset:-46px -130px; z-index:-1; background:radial-gradient(ellipse 52% 62% at 24% 52%, rgba(188,202,215,0.95), rgba(188,202,215,0) 72%), radial-gradient(ellipse 50% 66% at 52% 44%, rgba(234,205,199,0.95), rgba(234,205,199,0) 72%), radial-gradient(ellipse 52% 62% at 78% 54%, rgba(238,218,178,0.95), rgba(238,218,178,0) 72%); filter:blur(26px); opacity:0.95; animation:cloud 26s ease-in-out infinite alternate; }
   @keyframes cloud { 0% { transform:translate(-14px,2px) scale(1); } 100% { transform:translate(14px,-3px) scale(1.06); } }
   .pause { overflow-x:clip; }
   .pause .pause-attrib { text-align:center; font-size:17px; color:var(--ink); font-weight:500; font-style:italic; margin:0; }
@@ -198,7 +198,7 @@
     h1.hero-title { font-size:40px; }
     .cover-text-bg h2 { font-size:clamp(30px,3.4vw,40px); white-space:nowrap; }
     .eyebrow { font-size:18px; }
-    .jump-link, .back-link { font-size:16px; }
+    .jump-link, .back-link { font-size:17.5px; }
   }
   p, li { text-wrap:pretty; }
   header.wrap h1.hero-title { padding-left:0; }
@@ -211,7 +211,7 @@
   details.case .fold-close { color:var(--brown-ink); }
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
-  #quem-te-acompanha .two-col p { font-size:18px; line-height:1.5; }
+  #quem-te-acompanha .two-col p { font-size:18px; line-height:1.6; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
   .callout li, .callout p { hyphens:none; }
@@ -223,19 +223,24 @@
     .two-col.widebox > .callout .ctext, .two-col.widebox > .callout ul.plain { display:contents; }
     .two-col.widebox .ci { grid-column:1; grid-row:1; }
     .two-col.widebox .callout-label { grid-column:2; grid-row:1; }
-    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:17px; margin-bottom:0.2rem; }
+    .two-col.widebox ul.plain li { grid-column:2; margin-left:1.4rem; font-size:17px; margin-bottom:0.8rem; }
     .two-col.widebox ul.plain li:last-child { margin-bottom:0; }
   }
   @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:300px 1fr; } }
-  .bio-photo-ph img { object-position:50% 18%; }
+  .bio-photo-ph img { object-position:0% 18%; }
   .bio-photo-ph { padding:0; }
   .callout.intro-callout .ctext p { font-size:16.5px; }
-  .callout.case-callout .ctext p { font-size:17px; }
-  .callout.case-callout .callout-label { font-size:18px; }
+  .callout.case-callout .ctext p { font-size:18px; }
+  .callout.case-callout .callout-label { font-size:19px; }
   .callout.intro-callout { margin-right:3.6rem; }
-  .callout.intro-callout .ctext, .callout.narrow .ctext { padding-right:2.4rem; }
+  .callout.intro-callout .ctext { padding-right:0; }
+  .callout.intro-callout { padding-right:1.5rem; }
+  .callout.narrow .ctext { padding-right:2.4rem; }
+  .callout.narrow .ctext p { font-size:17px; }
+  section .wrap > blockquote.quote-block, section .wrap-wide > blockquote.quote-block { margin-left:-1.3rem; }
   .two-col.dimbox .callout { padding-right:1.8rem; }
-  details.case .fold-body > p { text-align:left; }
+  .two-col.dimbox .callout p:not(.callout-label), .two-col.dimbox .callout li { font-size:17px; }
+  details.case .fold-body > p { text-align:left; font-size:16px; }
   ul.plain.small li { font-size:17px; }
   blockquote.quote-block.mid p { font-size:clamp(25px,2.7vw,30px); line-height:1.3; }
   .two-col .callout-label { font-size:16px; letter-spacing:0; }
@@ -266,10 +271,10 @@
   @media (max-width:680px){ .frow { grid-template-columns:1fr; } .frow:before { display:none; } .fstep.span2 { grid-column:auto; } }
   @media (prefers-reduced-motion: reduce){ .finner { transition:none; } }
   .callout .ctext p, .callout li { text-wrap:wrap; }
-  .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(17px,2.2vw,24px); }
+  .pause .pause-quote.nobreak { white-space:nowrap; max-width:none; font-size:clamp(17px,2.6vw,27px); }
   @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
   .pause:has(.pause-quote.two) { padding-top:30px; padding-bottom:80px; }
-  .pause .pause-quote.two { white-space:nowrap; max-width:none; font-size:min(23px, calc((100vw - 56px) / 26)); padding:0.8rem 0.5rem; }
+  .pause .pause-quote.two { white-space:nowrap; max-width:none; font-size:min(27px, calc((100vw - 56px) / 23)); padding:0.8rem 0.5rem; }
   @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
   .fmt { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:1.6rem 0 2rem; }
   .fmt-card { border-radius:9px; padding:1.4rem 1.4rem 1.3rem; display:flex; flex-direction:column; }
@@ -286,7 +291,7 @@
   .amostra-legenda { font-size:15px; font-style:italic; color:var(--ink-soft); text-align:left; }
   .callout.infoC li { font-size:17px; }
   .callout.infoC .ctext { padding-right:2.4rem; }
-  details.fold.slower.feature .fold-body ul.plain li { font-size:17px; }
+  details.fold.slower.feature .fold-body ul.plain li, details.fold.slower.feature .fold-body p { font-size:17px; }
   details.fold.slower.feature .fold-body { padding-right:1.1rem; }
   #quem-te-acompanha .callout.brown { padding-right:0.4rem; }
   .callout .ctext p.oneline-note { font-size:15.5px; }
@@ -379,7 +384,7 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
-    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">The business is at the centre of CEEN, but it is never observed separately from you.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:18px;">Your identity, energy, capacity, desires and life stage help us recognise what still represents you and how you want to keep working and evolving.</span></p></blockquote>
+    <blockquote class="quote-block"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">The business is at the centre of CEEN, but it is never observed separately from you.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:19px;">Your identity, energy, capacity, desires and life stage help us recognise what still represents you and how you want to keep working and evolving.</span></p></blockquote>
   </div>
 </section>
 
@@ -387,9 +392,9 @@
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">For those who shape their business through who they are</h2>
+    <h2 class="section-title">For those who are an essential part of the value of their business</h2>
     <p>CEEN is designed for entrepreneurs or independent professionals who sell services, consultations, sessions, programmes, courses, infoproducts or products created from their knowledge and experience.</p>
-    <p>People choose you for your perspective, your approach, your method or the way you deliver your work. Whether the business carries your name or its own brand, you are a central part of the value it offers.</p>
+    <p>People choose you for your perspective, your approach, your method or the way you deliver your work. Whether your business carries your name or is its own brand, you are a central part of the value it offers.</p>
     <p>You already have an activity up and running, with offers, communication, clients or attempts to sell. Now you want to understand what you want to keep developing, how to present it and how you want to deliver it, fully aligned with you.</p>
     <p style="margin-top:1.4rem;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Who accompanies you in CEEN</a></p>
   </div>
@@ -406,7 +411,7 @@
     <h2 class="section-title">Your definition of professional success is yours alone</h2>
     <p>Perhaps professional success means, for you, growing, increasing your income or reaching more people. Perhaps it means more free time, more autonomy, recognition, impact or fulfilment. Or perhaps it is making decisions with confidence, relating to your work with more lightness and no longer living certain professional questions with so much emotional strain.</p>
     <p>You may already have achieved results that felt like success to you, and still feel that the way you work today no longer represents you. That does not take value away from what you have built. It may simply mean that the time has come to reshape it so it keeps pace with your evolution.</p>
-    <div class="callout grayD"><div class="ci">🫧</div><div class="ctext">
+    <div class="callout grayD" style="margin:3.4rem 0 0;"><div class="ci">🫧</div><div class="ctext">
       <p><strong>At CEEN, we do not assume that there is something wrong with you or your business</strong>, nor that there is an ideal version you should match or a formula for success you should follow. The best strategy is the one that fits you! And reviewing what you have built does not take value away from your journey; it lets you choose how you want to continue.</p>
     </div></div>
   </div>
@@ -524,10 +529,10 @@
         <p>Depending on your moment, we can look at:</p>
         <ul class="plain">
           <li><strong>You and your role</strong>: how you see yourself, decide and occupy your place in the business;</li>
-          <li><strong>Identity and positioning</strong>: what you represent and how you want to be recognised;</li>
+          <li><strong>Identity and positioning</strong>: how you want to be recognised;</li>
           <li><strong>Offer and communication</strong>: what you sell, to whom and how you present its value;</li>
           <li><strong>Structure and boundaries</strong>: how you organise the work, the delivery and the responsibilities;</li>
-          <li><strong>Belonging and relationships</strong>: the history, the people and the bonds that influence the business;</li>
+          <li><strong>Belonging and relationships</strong>: the history and the people who influence the business;</li>
           <li><strong>Balance in exchanges</strong>: what you give and receive in money, time and energy;</li>
           <li><strong>Sustainable growth</strong>: what can evolve without losing identity, quality or becoming increasingly dependent on you.</li>
         </ul>
@@ -588,7 +593,7 @@
         <p>This path was consolidated by accompanying clients in their self-knowledge processes, understanding beliefs and patterns that distance them from themselves and moving closer to their essence, in the way they see, choose and live.</p>
       </div>
     </div>
-    <p style="margin-top:2.6rem; font-size:18px; line-height:1.5;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
+    <p style="margin-top:2.6rem; font-size:18px; line-height:1.6;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
     <blockquote class="quote-block">
       <p><strong>"You are so good at capturing, guiding, interpreting and turning into words,<br>into guidance, advice, suggestions and shared reflections."</strong></p>
       <p class="attrib">— feedback from a client in a voice note during an accompaniment with me</p>
@@ -599,10 +604,10 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">This way of working may make sense for you if…</p>
       <ul class="plain">
-        <li>you want to understand not only what to do, but also what is influencing your choices;</li>
+        <li>you want to understand what to do, but also what is influencing your choices;</li>
         <li>you are open to questioning what you keep out of habit, security or expectation;</li>
         <li>you are looking for personalised questions and recommendations and want to own the decisions and next steps;</li>
-        <li>you want to grow and evolve using your business as a base and lever for that.</li>
+        <li>you want to grow and evolve using your business as leverage for that.</li>
       </ul>
     </div></div>
     <details class="fold">
@@ -663,7 +668,7 @@
         <p class="quiz-group">I also want you to be able to analyse what I have · CEEN Cycle</p>
         <div class="quiz-pills">
           <button type="button" data-r="ciclo">“My work has evolved, but my services,<br>website and communication still show what I did before.”</button>
-          <button type="button" data-r="ciclo">“I need time and an attentive look at my materials, such as the sales page,<br>prices or offers, and an organised proposal I can come back to.”</button>
+          <button type="button" data-r="ciclo">“I need time and an attentive look at my materials, such as the sales<br>page, prices or offers, and an organised proposal I can come back to.”</button>
           <button type="button" data-r="ciclo">“I want to decide based on an analysis, not only a conversation:<br>to see the connections between the offer, the communication and the way I work.”</button>
         </div>
       </div>
@@ -822,7 +827,7 @@
 
 <section class="tight">
   <div class="wrap">
-    <div class="callout grayD"><div class="ci">↻</div><div class="ctext">
+    <div class="callout grayD" style="padding-right:1.7rem;"><div class="ci">↻</div><div class="ctext">
       <p class="callout-label">You can come back to CEEN whenever you need</p>
       <p>After a Session or the Cycle, you can move forward on your own or book a new CEEN Session when decisions, doubts or changes arise that you want to work on with me. You don't need to define a path or a fixed number of sessions in advance.</p>
       <hr class="div" style="margin:1.2rem 0;">
