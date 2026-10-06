@@ -25,7 +25,7 @@
     --gray: #f1ece2;
   }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+  body { zoom:0.9; margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
   .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px 2px 10px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
@@ -120,14 +120,18 @@
   .bio-photo-ph { width:100%; min-height:260px; border-radius:10px; background:linear-gradient(145deg,#d8c9ad,#9bb0bd 55%,#e7c9c2); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.85); font-family:'Lora',serif; font-size:12px; text-align:center; padding:1rem; overflow:hidden; }
   .bio-photo-ph img { width:100%; height:100%; object-fit:cover; display:block; }
 
-  .testimonial-photos-ph { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.3rem 0; align-items:start; }
+  .testimonial-photos-ph { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.3rem auto; align-items:start; width:58%; cursor:zoom-in; transition:width 0.45s ease; container-type:inline-size; }
+  .testimonial-photos-ph:hover, .testimonial-photos-ph.open { width:100%; cursor:zoom-out; }
+  .testimonial-photos-ph::after { content:'hover to enlarge'; grid-column:1 / -1; text-align:center; font-size:12px; font-style:italic; color:var(--gold-deep); }
+  @media (hover:none){ .testimonial-photos-ph::after { content:'tap to enlarge'; } }
+  .testimonial-photos-ph:hover::after, .testimonial-photos-ph.open::after { display:none; }
   .testimonial-photos-ph .ph { border-radius:12px; overflow:hidden; background:transparent; border:none; padding:0; color:var(--gold-deep); font-family:'Lora',serif; font-size:11px; text-align:center; }
   .testimonial-photos-ph .ph img { width:100%; height:auto; display:block; border-radius:12px; }
-  @media (max-width:560px){ .testimonial-photos-ph{ grid-template-columns:1fr; } }
+  @media (max-width:560px){ .testimonial-photos-ph{ width:100%; } .testimonial-photos-ph.open{ grid-template-columns:1fr; } }
 
   .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.3rem; }
   @media (max-width:680px){ .pricing-grid{ grid-template-columns:1fr; } }
-  .price-card { border-radius:9px; padding:1.5rem 1.5rem; display:flex; flex-direction:column; }
+  .price-card { border-radius:9px; padding:1.5rem 1.9rem 1.5rem 1.5rem; display:flex; flex-direction:column; }
   .price-card.sessao { background:var(--sessao); }
   .price-card.ciclo { background:var(--ciclo); }
   .price-card .ptitle { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:21px; margin:0 0 0.2rem; color:var(--ink); }
@@ -211,7 +215,7 @@
   details.case .fold-close { color:var(--brown-ink); }
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
-  #quem-te-acompanha .two-col p { font-size:18px; line-height:1.6; }
+  #quem-te-acompanha .two-col p { font-size:15.5px; line-height:1.65; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
   .callout li, .callout p { hyphens:none; }
@@ -231,8 +235,8 @@
   .bio-photo-ph { padding:0; }
   .callout.intro-callout .ctext p { font-size:16.5px; }
   .callout.case-callout .ctext p { font-size:18px; }
-  .callout.case-callout .callout-label { font-size:19px; }
-  .callout.intro-callout { margin-right:3.6rem; }
+  .callout.case-callout .callout-label { font-size:21px; }
+  .callout.intro-callout { margin-right:0; }
   .callout.intro-callout .ctext { padding-right:0; }
   .callout.intro-callout { padding-right:1.5rem; }
   .callout.narrow .ctext { padding-right:2.4rem; }
@@ -241,10 +245,11 @@
   .two-col.dimbox .callout { padding-right:1.8rem; }
   .two-col.dimbox .callout p:not(.callout-label), .two-col.dimbox .callout li { font-size:17px; }
   details.case .fold-body > p { text-align:left; font-size:16px; }
+  details.case .fold-body { padding-right:1.8rem; }
   ul.plain.small li { font-size:17px; }
   blockquote.quote-block.mid p { font-size:clamp(25px,2.7vw,30px); line-height:1.3; }
   .two-col .callout-label { font-size:16px; letter-spacing:0; }
-  section .wrap > p, section .wrap-wide > p, details .fold-body > p { text-align:justify; text-justify:inter-word; hyphens:auto; }
+  section .wrap > p, section .wrap-wide > p, details .fold-body > p { text-align:justify; text-justify:inter-word; hyphens:none; }
   .frow { position:relative; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:0.4rem 0 1.2rem; }
   .frow:before { content:''; position:absolute; top:22px; height:1px; background:var(--gold); left:calc(100%/6); right:calc(100%/6); }
   .frow.two:before { left:calc(100%/3); right:calc(100%/6); }
@@ -258,14 +263,14 @@
   .ffront { text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; }
   .fcard.ses .ffront { background:var(--sessao); }
   .fcard.cic .ffront { background:var(--ciclo); }
-  .ffront b { display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; line-height:1.15; color:var(--wine); margin-bottom:0.5rem; }
+  .ffront b { display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:19px; line-height:1.15; color:var(--wine); margin-bottom:0.5rem; }
   .ffront span { display:block; font-size:15px; line-height:1.5; color:var(--ink-soft); }
   .fhint { position:absolute; left:0; right:0; bottom:16px; text-align:center; font-style:normal; font-size:12px; letter-spacing:0.04em; color:var(--gold-deep); }
   .fhint:before { content:'↻ '; }
   @media (hover:hover){ .fhint:after { content:'hover to read'; } }
   @media (hover:none){ .fhint:after { content:'tap to read'; } }
   .fback { transform:rotateY(180deg); background:#faf4e8; border:1px solid var(--gold); text-align:left; }
-  .fback h5 { margin:0 0 0.6rem; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:18px; line-height:1.2; color:var(--wine); }
+  .fback h5 { margin:0 0 0.6rem; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:16px; line-height:1.2; color:var(--wine); }
   .fpar { font-size:14.5px; line-height:1.55; color:var(--ink); margin-bottom:0.6rem; hyphens:none; }
   .fpar:last-child { margin-bottom:0; }
   @media (max-width:680px){ .frow { grid-template-columns:1fr; } .frow:before { display:none; } .fstep.span2 { grid-column:auto; } }
@@ -286,6 +291,8 @@
   .fmt-card li { font-size:15.5px; line-height:1.55; margin-bottom:0.35rem; color:var(--ink-soft); }
   .fmt-card p.fmt-n { font-size:14.5px; font-style:italic; color:var(--ink-soft); border-top:1px solid var(--gold); padding-top:0.7rem; margin:auto 0 1rem; text-align:left; min-height:4.6rem; box-sizing:border-box; }
   .fmt-card .cta-btn { align-self:stretch; }
+  .fmt-card { transition:box-shadow 0.3s ease, transform 0.3s ease; }
+  .fmt-card.on { box-shadow:0 0 0 2px var(--gold), 0 10px 26px rgba(201,168,108,0.3); transform:translateY(-3px); }
   @media (max-width:680px){ .fmt { grid-template-columns:1fr; } }
   .amostra-frame { display:block; width:100%; height:640px; border:0; border-radius:12px; background:var(--cream); margin:1.2rem 0 0.6rem; }
   .amostra-legenda { font-size:15px; font-style:italic; color:var(--ink-soft); text-align:left; }
@@ -294,7 +301,10 @@
   details.fold.slower.feature .fold-body ul.plain li, details.fold.slower.feature .fold-body p { font-size:17px; }
   details.fold.slower.feature .fold-body { padding-right:1.1rem; }
   #quem-te-acompanha .callout.brown { padding-right:0.4rem; }
-  .callout .ctext p.oneline-note { font-size:15.5px; }
+  .callout .ctext p.oneline-note { font-size:17.5px; }
+  .callout.ciclo-note .ctext p:not(.oneline-note) { font-size:15px; }
+  .callout.softer .ctext p:not(.callout-label) { font-size:16px; }
+  details.fold:not(.feature):not(.case) .fold-body p, details.fold:not(.feature):not(.case) .fold-body li { font-size:17px; }
   @media (min-width:700px){ .callout .ctext p.oneline-note { white-space:nowrap; } }
   @media (max-width:650px){ .amostra-frame { height:600px; } }
   @media (prefers-reduced-motion: reduce){ .cover, .pause .pause-quote:before, .cta-btn:hover, .popup-btn:hover{ animation:none; } .js-reveal .reveal{ opacity:1; transform:none; transition:none; } }
@@ -326,6 +336,14 @@
   html[data-theme="dark"] #ceenCalendlyModal > div { background:#26211c !important; }
   html[data-theme="dark"] #ceenCalendlyModal p { color:#efe6d8 !important; }
   html[data-theme="dark"] #ceenCalendlyModal button { color:#d3b67f !important; }
+  .wab-wrap { border-radius:12px; padding:9px; background:linear-gradient(135deg,#d3d0c1 0%,#7e8c69 52%,#a89073 100%); }
+  .wab { background:#fff; border-radius:16px; padding:1.05em 1.1em; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-size:1.85cqi; line-height:1.5; color:#171717; text-align:left; }
+  .wab p { margin:0 0 0.9em; font-size:inherit; line-height:inherit; text-align:left; hyphens:none; color:#171717; }
+  .wab p:last-of-type { margin-bottom:0; }
+  .wab .hl { background:#f5dfe3; color:#4b3a3d; }
+  .wab .ul { text-decoration:underline; text-decoration-color:#c98a99; text-decoration-thickness:0.12em; text-underline-offset:0.2em; }
+  .wab .tm { display:block; text-align:right; font-size:0.8em; color:#8a8a8a; margin-top:0.5em; }
+  html[data-theme="dark"] .wab { filter:brightness(0.9); }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -464,7 +482,7 @@
       <p class="callout-label">Reviewing the offer is also recognising what no longer represents you</p>
       <p>This client came to the session convinced that she wanted to keep investing in certain services. Rationally, they seemed the safest options and the ones that made most sense to keep.</p>
       <p>Through the questions I asked and the reflections on how she spoke about each service, it was the client herself who recognised that what she believed she "should" keep no longer matched what she really wanted to develop.</p>
-      <p><strong>She decided to focus the offer and the communication on the services that still sparked her enthusiasm and, after that change, she began to generate sales again.</strong></p>
+      <p>She decided to focus the offer and the communication on the services that still sparked her enthusiasm and, after that change, she began to generate sales again.</p>
           </div></div>
 
     <details class="case">
@@ -571,10 +589,7 @@
       <p><strong>"They turn doubts into direction, misalignment into alignment and mental confusion into clarity."</strong></p>
       <p class="attrib">— message transcribed from a client's voice note during an accompaniment</p>
     </blockquote>
-    <div class="testimonial-photos-ph">
-      <div class="ph"><img src="upsell_cliente1_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente1_1.png'"></div>
-      <div class="ph"><img src="upsell_cliente2_2.png.png.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png.png.png'"></div>
-    </div>
+    <div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>I truly feel there is <span class="hl">a Sara before</span> the work with you and <span class="hl">a Sara after.</span> This whole process of deconstruction and of understanding what I wanted and what I needed at each moment made all the difference to me.</p><p>One of the things I value most in you is <span class="ul">your sensitivity and your ability to read between the lines of what I say.</span> Many times you notice something I hadn’t noticed myself: what is holding me back, what I think I want but perhaps don’t want yet, or what is truly aligned and ready to get off the ground.</p><p>I came to the session lost on several points of my business, with blocks, doubts and dilemmas about what to do and how to do it. As a solo entrepreneur, I often have no one to discuss these ideas with. Having you in that role, helping me understand the dilemmas, <span class="ul">find solutions</span> and <span class="ul">refocus when clarity slips away,</span> is very, very valuable.</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p><span class="ul">The session was light and fluid.</span> The conclusions came naturally and <span class="hl">I left with the next steps aligned.</span> I also managed to free myself from the weight of things I felt I should already be doing, trusting that it wasn’t yet the time and that results come as a consequence of inner alignment, without being the focus.</p><p>If I had to sum up the sessions with you in one word, I’d say they are magical. They are transformative, yes, <span class="ul">they turn doubts into direction, misalignment into alignment and mental confusion into clarity,</span> but I feel they are more than that. There is a beautiful, light and sensitive way in which you capture what is happening and <span class="ul">turn it into words, guidance, suggestions and reflections.</span></p><p>I think you can only understand <span class="hl">the impact they have on a business and on our lives</span> by living it. And all the care that exists before and after the sessions… only by living it do you realise that Filipa has to be in our lives. It makes an enormous difference. Thank you for everything 💜</p><span class="tm">16:54</span></div></div></div></div>
   </div>
 </section>
 
@@ -593,7 +608,7 @@
         <p>This path was consolidated by accompanying clients in their self-knowledge processes, understanding beliefs and patterns that distance them from themselves and moving closer to their essence, in the way they see, choose and live.</p>
       </div>
     </div>
-    <p style="margin-top:2.6rem; font-size:18px; line-height:1.6;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
+    <p style="margin-top:2.6rem; font-size:15.5px; line-height:1.65;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
     <blockquote class="quote-block">
       <p><strong>"You are so good at capturing, guiding, interpreting and turning into words,<br>into guidance, advice, suggestions and shared reflections."</strong></p>
       <p class="attrib">— feedback from a client in a voice note during an accompaniment with me</p>
@@ -604,9 +619,9 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">This way of working may make sense for you if…</p>
       <ul class="plain">
-        <li>you want to understand what to do, but also what is influencing your choices;</li>
+        <li>you want to understand what to do, but also what is influencing<br>your choices;</li>
         <li>you are open to questioning what you keep out of habit, security or expectation;</li>
-        <li>you are looking for personalised questions and recommendations and want to own the decisions and next steps;</li>
+        <li>you are looking for personalised questions and recommendations and want to own<br>the decisions and next steps;</li>
         <li>you want to grow and evolve using your business as leverage for that.</li>
       </ul>
     </div></div>
@@ -774,7 +789,7 @@
         </ul>
       </div></div>
     </div>
-    <div class="callout grayD" style="margin-top:1.6rem;"><div class="ctext">
+    <div class="callout grayD ciclo-note" style="margin-top:1.6rem;"><div class="ctext">
       <p class="oneline-note"><strong>The CEEN Cycle is a process of analysis and direction, not ongoing support.</strong></p>
       <p>The analysis focuses on the priority themes and materials that can be explored within the work time included. The Cycle is not an exhaustive review of the whole business.</p>
       <p>Between the two sessions, the three days of sharing and the clarifications I may ask for serve to complete the reading of the business and prepare the proposal. They do not include ongoing support to implement the recommendations or to work on new questions that arise day to day.</p>
@@ -789,22 +804,19 @@
   <div class="wrap-wide">
     <h2 class="section-title">From a conversation to a proposal you can come back to</h2>
     <p class="amostra-legenda" style="margin-bottom:0;">Illustrative example. Each delivery depends on the context and the themes worked on.</p>
-    <iframe class="amostra-frame" src="ciclo-ceen-amostra.html" title="Illustrative example of a CEEN Cycle delivery" loading="lazy"></iframe>
+    <iframe class="amostra-frame" src="ciclo-ceen-sample.html" title="Illustrative example of a CEEN Cycle delivery" loading="lazy"></iframe>
   </div>
 </section>
 
 <hr class="div">
 
-<section class="tight">
+<section class="tight" style="padding-top:6px;">
   <div class="wrap">
     <blockquote class="quote-block">
       <p><strong>"Almost every sentence had a key turning"</strong></p>
     </blockquote>
     <p style="font-size:15px;">In this testimonial from an accompaniment, the client described what changed when she gained more awareness, tools and support to deal with what was coming up in her business process:</p>
-    <div class="testimonial-photos-ph">
-      <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
-      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"></div>
-    </div>
+    <div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>I think, in truth, it was everything. All of your accompaniment and the way you always read me so well, saying the exact words I need to hear, not in the sense of giving me pats on the back, but to make me aware of things I wasn’t seeing yet…</p><p>Your work has this power <span class="hl">to turn beliefs, ideas and half-abstract fogs</span> into things I can <span class="ul">understand, apply, integrate and transform!</span></p><p>If I had to choose the most meaningful thing about this Crossing, I’d say it was realising that what I needed in these months was <span class="hl">to find this new identity of mine.</span> When we started, I was looking to understand how to promote my services, and it was with you that I realised that what I needed was to embody this new identity and allow a much more authorial voice to emerge.</p><p><span class="ul">I feel I have gained much more awareness and tools</span> to deal with the issues</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>that keep coming up. There are moments when I still feel low, but I manage to <span class="hl">handle them and get back to buzzing with ideas.</span> Much thanks to the keys you kept leaving me, which stayed stored in the subconscious, which is an incredible feat.</p><p>I have so much gratitude for your work, for your accompaniment, dedication, care and for your sensitivity. This format was very good: being able to keep <em>unloading</em> what was happening and receive your feedback. <span class="hl">Whenever you replied it was spot on, almost every sentence had a key turning!</span></p><p><span class="ul">I feel I entered a different phase and that this transition was even more marked thanks to our accompaniment.</span></p><p>I also value very much your openness to listen to me and the time you invest in me. I can only be grateful for all the magic you do, in all kinds of accompaniment with you.</p><p>Thank you so much, Filipa, for everything 🥰</p><span class="tm">Edited 17:30</span></div></div></div></div>
   </div>
 </section>
 
@@ -816,10 +828,7 @@
       <p><strong>"Having someone beside me who looks at me and at my business as a whole."</strong></p>
     </blockquote>
     <p style="font-size:16px;">It is in contact with real experience that new decisions, doubts and possibilities become visible. This is another client's testimonial about what she has been living in her process with me:</p>
-    <div class="testimonial-photos-ph">
-      <div class="ph"><img src="upsell_cristiana_1.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_1.png'"></div>
-      <div class="ph"><img src="upsell_cristiana_2.png" alt="" onerror="this.parentElement.textContent='upsell_cristiana_2.png'"></div>
-    </div>
+    <div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>Working with you has been feeling that I have <span class="hl">someone by my side who looks at me and at my business as a whole.</span> With respect for me, for my essence and <span class="ul">without “pushing” catchphrases and marketing strategies,</span> the ones that confused me for years and years 🙌🏻</p><p>You have been asking me key questions and making key comments so I can go a little deeper 🗝️ always with respect for me, for my time and for my family reality 🥹</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>You helped me <span class="hl">review my communication</span> through the eyes of my clients, in a way that <span class="ul">I connected even more to myself, to my essence and to the mission of my company.</span></p><p>Thank you for your perspectives, your authenticity and your <em>straight to the point</em> welcome. And for our conversations that are always so <em>mind blowing</em> 💥</p><p>Working with you is <span class="hl">one of the greatest gifts</span> someone can bring to a business (and to their life too) 🤭❤️</p><span class="tm">Edited 16:45</span></div></div></div></div>
   </div>
 </section>
 
@@ -827,7 +836,7 @@
 
 <section class="tight">
   <div class="wrap">
-    <div class="callout grayD" style="padding-right:1.7rem;"><div class="ci">↻</div><div class="ctext">
+    <div class="callout grayD softer" style="padding-right:1.7rem;"><div class="ci">↻</div><div class="ctext">
       <p class="callout-label">You can come back to CEEN whenever you need</p>
       <p>After a Session or the Cycle, you can move forward on your own or book a new CEEN Session when decisions, doubts or changes arise that you want to work on with me. You don't need to define a path or a fixed number of sessions in advance.</p>
       <hr class="div" style="margin:1.2rem 0;">
@@ -1175,6 +1184,13 @@
     paint();
     b.addEventListener('click', function(){ var d = !cur(); document.documentElement.setAttribute('data-theme', d ? 'dark' : 'light'); try { localStorage.setItem('fo_theme', d ? 'dark' : 'light'); } catch (e) {} paint(); });
     new MutationObserver(paint).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  })();
+
+  // testemunhos: tocar para ampliar (ecras sem rato) e quiz a realcar o cartao do formato
+  (function(){
+    var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+    document.querySelectorAll('.testimonial-photos-ph').forEach(function(el){ el.addEventListener('click', function(){ if (touch) el.classList.toggle('open'); }); });
+    document.querySelectorAll('.quiz-pills button[data-r]').forEach(function(b){ b.addEventListener('click', function(){ var r = b.getAttribute('data-r'); document.querySelectorAll('.fmt-card').forEach(function(c){ c.classList.toggle('on', c.classList.contains(r)); }); }); });
   })();
 
   // popup de vagas, igual ao do site
