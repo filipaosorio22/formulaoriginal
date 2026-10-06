@@ -94,37 +94,33 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
 @media (max-width: 600px) { .nav-links { display: none; } .hamburger { display: flex; } }
+.audio-player-home { max-width: 86%; margin-left: auto; margin-right: auto; }
 </style>
 </head>
 <body>
-
-<div class="summer-popup" id="summerPopup">
-  <button class="summer-popup-close" onclick="document.getElementById('summerPopup').classList.remove('visible'); document.querySelector('nav').style.top='0';">×</button>
-  <a href="ceen/">O outono pede reestruturação 🍂 <span class="cta">Vem conhecer a CEEN</span></a>
-</div>
 
 <nav>
   <div class="nav-links">
     <a href="ceen.html">CEEN • Negócio</a>
     <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-    <a href="https://ig.me/m/filipaosorio" target="_blank" class="nav-cta">Conversamos? 💌</a>
+    <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A" target="_blank" class="nav-cta">Conversamos? 💌</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen.html">CEEN • Negócio</a>
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
-  <a href="https://ig.me/m/filipaosorio" target="_blank">Conversamos? 💌</a>
+  <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%20%E2%98%BA%EF%B8%8F%20Tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A" target="_blank">Conversamos? 💌</a>
 </div>
 
-<button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);">🔊 Entrar na frequência</button>
+<button id="freqToggle" onclick="toggleFrequency()" style="position:fixed; bottom:1.25rem; left:1.25rem; z-index:90; background:rgba(250,246,239,0.95); border:0.5px solid #c9a86c; border-radius:30px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.05em; color:#7a2535; cursor:pointer; box-shadow:0 2px 10px rgba(26,20,16,0.08); backdrop-filter:blur(6px);"><span style="font-size:20px; line-height:1; vertical-align:-3px;">🔊</span> Explorar outro mood</button>
 <audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
 
 <main class="page">
 
   <div class="hero">
     <h1 class="hero-title">Aproxima o teu negócio de quem és e permite que ele evolua contigo</h1>
-    <p class="hero-sub">Clareza, estratégia e energia para o teu negócio,<br>num espaço pensado para veres o que, de dentro, é difícil de reconhecer e mudar.</p>
+    <p class="hero-sub">Clareza, estratégia e energia para o teu negócio, num espaço<br>pensado para veres o que, de dentro, é difícil de reconhecer e mudar.</p>
   </div>
 
   <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
@@ -210,20 +206,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
   <div class="divider"><div class="divider-line-thin"></div><div class="divider-line-thin" style="width:60%;"></div></div>
 
-  <a class="notion-card fade-section" href="ceen/">
-    <div class="nc-cover"></div>
-    <div class="nc-body">
-      <svg class="nc-mirror" width="36" height="50" viewBox="0 0 36 50" aria-hidden="true"><ellipse cx="18" cy="25" rx="14" ry="22" fill="#e3efff" stroke="#c9a227" stroke-width="2.6"/><ellipse cx="18" cy="25" rx="10.5" ry="18.5" fill="none" stroke="#e8d28a" stroke-width="0.8" opacity="0.8"/><path d="M11 17 L23 34" stroke="#ffffff" stroke-width="2.2" opacity="0.8" stroke-linecap="round"/></svg>
-      <p class="nc-eyebrow">CEEN • Negócio</p>
-      <p class="nc-title">CEEN · Clareza, Estratégia e Energia no Negócio</p>
-      <p class="nc-sub">Uma nova forma de te veres a ti, ao teu negócio<br>e de escolheres como queres ser vista/o.</p>
-      <span class="nc-btn">Conhecer a CEEN</span>
-    </div>
-  </a>
-
-  <div class="fade-section cta-box">
+    <div class="fade-section cta-box">
     <p class="cta-title">Tu &amp; o teu negócio em evolução</p>
-    <a href="ceen/" class="cta-btn">Vem descobrir a CEEN</a>
+    <a href="ceen.html" class="cta-btn">Vem descobrir a CEEN</a>
   </div>
 
   <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" style="color:#9a7e52; text-decoration:none;">Livro de Reclamações</a> · <a href="#" onclick="event.preventDefault(); window.fowReopenCookiePrefs && window.fowReopenCookiePrefs();" style="color:#9a7e52; text-decoration:none;">Cookies</a></p>
@@ -237,7 +222,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
   <p class="popup-title">Se o teu negócio pede um novo olhar</p>
   <p class="popup-eyebrow" style="text-align:center;">Apenas 3 vagas para outubro</p>
   <a class="popup-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha CEEN</a>
-  <a class="popup-link" href="ceen/">Conhecer a CEEN</a>
+  <a class="popup-link" href="ceen.html">Conhecer a CEEN</a>
 </div>
 
 <script>
@@ -245,25 +230,15 @@ setTimeout(() => {
   document.getElementById('popup').classList.add('visible');
 }, 6000);
 
-setTimeout(() => {
-  const popup = document.getElementById('summerPopup');
-  const nav = document.querySelector('nav');
-  if (popup) {
-    popup.classList.add('visible');
-    const h = popup.offsetHeight;
-    if (nav) nav.style.top = h + 'px';
-  }
-}, 2000);
-
 function toggleFrequency() {
   const audio = document.getElementById('freqAudio');
   const btn = document.getElementById('freqToggle');
   if (audio.paused) {
     audio.play();
-    btn.textContent = '🔊 Sentir em silêncio';
+    btn.innerHTML = '<span style="font-size:20px; line-height:1; vertical-align:-3px;">🔊</span> Sentir em silêncio';
   } else {
     audio.pause();
-    btn.textContent = '🔊 Entrar na frequência';
+    btn.innerHTML = '<span style="font-size:20px; line-height:1; vertical-align:-3px;">🔊</span> Explorar outro mood';
   }
 }
 
