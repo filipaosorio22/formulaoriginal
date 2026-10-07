@@ -1194,18 +1194,20 @@
     var col = grid.children[1], rest = document.getElementById('bioRest');
     var last = col.querySelector('p:last-child');
     var RATIO = 2457 / 1780;
-    function settle(){
-      var S = grid.getBoundingClientRect().width - 21, cap = S * 0.58, w = Math.min(cap, 340), H = 0;
-      for (var i = 0; i < 10; i++) {
-        grid.style.gridTemplateColumns = w + 'px 1fr';
-        var ps = col.querySelectorAll('p'), l = ps[ps.length - 1];
-        H = l.getBoundingClientRect().bottom - col.getBoundingClientRect().top;
-        var nw = Math.max(200, Math.min(cap, H / RATIO));
-        if (Math.abs(nw - w) < 2) { w = nw; break; }
-        w = nw;
-      }
+    function measure(w){
       grid.style.gridTemplateColumns = w + 'px 1fr';
+      var ps = col.querySelectorAll('p'), l = ps[ps.length - 1];
+      var H = l.getBoundingClientRect().bottom - col.getBoundingClientRect().top;
       return { w: w, H: H, crop: Math.abs(1 - H / (w * RATIO)) };
+    }
+    function settle(){
+      var S = grid.getBoundingClientRect().width - 21, cap = S * 0.58, b = null;
+      for (var w = 220; w <= cap; w += 12) {
+        var m = measure(w);
+        if (!b || m.crop < b.crop - 0.004 || (Math.abs(m.crop - b.crop) <= 0.004 && m.w > b.w)) b = m;
+      }
+      if (b) measure(b.w);
+      return b || { w: 0, H: 0, crop: 1 };
     }
     function fit(){
       if (window.innerWidth <= 680) { if (rest && last && last.parentNode !== col) col.appendChild(last); grid.style.gridTemplateColumns = ''; return; }
