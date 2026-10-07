@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <meta name="color-scheme" content="light dark">
 <script>(function(){var m=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)");function a(){var t=null;try{t=localStorage.getItem("fo_theme");}catch(e){}var d=t?t==="dark":(m&&m.matches);document.documentElement.setAttribute("data-theme",d?"dark":"light");}a();if(m&&m.addEventListener){m.addEventListener("change",a);}})();</script>
+<script>try{if(localStorage.getItem('fo_size')==='large')document.documentElement.setAttribute('data-size','large');}catch(e){}</script>
 <style>
   :root {
     --cream: #f3ecdf; --ink: #27211b; --ink-soft: #55493c;
@@ -25,7 +26,7 @@
     --gray: #f1ece2;
   }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+  body { zoom:0.9; margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
   .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
@@ -36,7 +37,17 @@
   .theme-btn .ti { display:flex; padding:5px 6px; border-radius:14px; opacity:0.38; transition:opacity 0.2s, background 0.2s; }
   .theme-btn[data-mode="light"] .ti-sun, .theme-btn[data-mode="dark"] .ti-moon { opacity:1; background:rgba(201,168,108,0.28); }
   .theme-btn:hover { background:rgba(201,168,108,0.12); }
-  @media (max-width:760px){ .theme-btn { margin-left:auto; margin-right:0.8rem; } }
+  .size-btn { width:34px; height:34px; margin-left:0.7rem; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid var(--gold); border-radius:50%; color:var(--wine); cursor:pointer; padding:0; }
+  .size-btn svg { width:17px; height:17px; display:block; }
+  .size-btn .mi { display:none; }
+  html[data-size="large"] .size-btn .pl { display:none; }
+  html[data-size="large"] .size-btn .mi { display:inline; }
+  .size-btn:hover { background:rgba(201,168,108,0.18); }
+  html[data-size="large"] body { zoom:1; }
+  .nav-wa { display:none; width:30px; height:30px; border-radius:50%; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.5); align-items:center; justify-content:center; flex-shrink:0; }
+  .nav-wa svg { width:15px; height:15px; }
+  br.mb { display:none; }
+  @media (max-width:760px){ .theme-btn { margin-left:0.5rem; margin-right:0.8rem; } .size-btn { margin-left:0.5rem; } .nav-wa { display:flex; margin-left:auto; } }
   .langbar a { color:#8a7e6d; text-decoration:underline; text-decoration-color:rgba(138,126,109,0.4); }
   nav { position:fixed; top:28px; left:0; right:0; z-index:100; background:rgba(250,246,239,0.96); backdrop-filter:blur(8px); border-bottom:0.5px solid var(--line); padding:16px 28px calc(16px + env(safe-area-inset-top,0px)); display:flex; justify-content:space-between; align-items:center; }
   .nav-logo { font-family:'Lora',serif; font-weight:600; font-size:15px; color:var(--ink); text-decoration:none; }
@@ -226,9 +237,11 @@
   details.case .fold-close { color:var(--brown-ink); }
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
-  #quem-te-acompanha .two-col p { font-size:16.5px; line-height:1.65; }
+  #quem-te-acompanha .two-col p { font-size:16.5px; line-height:1.65; text-align:justify; text-justify:inter-word; hyphens:none; }
   #quem-te-acompanha .two-col { max-width:640px; margin-left:auto; margin-right:auto; }
-  #bioRest p { font-size:16.5px; line-height:1.65; margin-top:1.4rem; }
+  #bioRest, #bioRest + p { max-width:640px; margin-left:auto; margin-right:auto; }
+  #bioRest p, #bioRest + p { font-size:16.5px; line-height:1.65; text-align:left !important; padding-right:1.8rem; }
+  #bioRest p { margin-top:1.4rem; }
   #bioRest:not(:empty) + p { margin-top:1rem !important; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
@@ -261,6 +274,7 @@
   blockquote.quote-block.hang { margin-left:-1.3rem; }
   p.t-sm { font-size:17.5px !important; }
   p.t-xs { font-size:16.5px !important; }
+  details.padr .fold-body { padding-right:1.9rem; }
   .two-col.widebox > .callout { padding-left:2.2rem; padding-right:2rem; }
   .launch { font-family:'Lora',serif; font-size:13px; font-weight:400; font-style:italic; color:var(--ink-soft); margin-left:0.3rem; }
   .aud-lead { text-align:center; margin:0.4rem 0 1.8rem; line-height:1.5; }
@@ -358,7 +372,7 @@
   details.fold.slower.feature .fold-body li { margin-bottom:0.55rem; line-height:1.65; }
   details.fold.slower.feature .fold-body p { text-align:left; }
   .callout.case-callout .ctext { padding-right:2rem; }
-  @media (max-width:640px){ h1.hero-title br, .quiz-pills button br, .softbr br { display:none; } .attrib, .pause-attrib { font-size:13.5px; line-height:1.4; } .pause-quote, .pause-attrib, .attrib, blockquote.quote-block p, .section-title, h1.hero-title, .cover-text-bg h2 { text-wrap:balance; } .pause .pause-quote.nobreak { white-space:normal; } .cta-pair .cta-btn { flex:1 1 100%; text-align:center; min-height:46px; } }
+  @media (max-width:640px){ h1.hero-title br, .quiz-pills button br, .softbr br { display:none; } .attrib { font-size:12.5px; line-height:1.4; } .pause-attrib { font-size:12px; line-height:1.4; } br.mb { display:inline; } .wa-bubble { display:none; } .callout.intro-callout { padding-left:1.3rem; padding-right:1.3rem; } blockquote.quote-block.hang { margin-left:0; } blockquote.quote-block.hang p, blockquote.quote-block.hang p span { font-size:16.5px !important; line-height:1.55; } h2.vi { margin-top:-1.6rem; } .casep, .callout.case-callout .callout-label { line-height:1.4 !important; } blockquote.quote-block p.q1 { white-space:nowrap; font-size:calc((100vw - 56px)/21); } .pause-quote, .pause-attrib, .attrib, blockquote.quote-block p, .section-title, h1.hero-title, .cover-text-bg h2 { text-wrap:balance; } .pause .pause-quote.nobreak { white-space:normal; } .cta-pair .cta-btn { flex:1 1 100%; text-align:center; min-height:46px; } }
   details.fold:not(.feature):not(.case) .fold-body p, details.fold:not(.feature):not(.case) .fold-body li { font-size:17px; }
   @media (min-width:700px){ .callout .ctext p.oneline-note { white-space:nowrap; } }
   @media (max-width:650px){ .amostra-frame { height:600px; } }
@@ -392,7 +406,6 @@
   html[data-theme="dark"] #ceenCalendlyModal p { color:#efe6d8 !important; }
   html[data-theme="dark"] #ceenCalendlyModal button { color:#d3b67f !important; }
   @media (max-width:640px){
-    body { zoom:0.9; }
     section .wrap > p, section .wrap-wide > p, details .fold-body > p, .callout.intro-callout .ctext p, details.fold.slower.feature .fold-body p, p.t-sm, p.t-xs { text-align:left !important; }
     .lead.hlbox { font-size:16.5px; }
     .popup { width:calc(100vw - 2rem); }
@@ -424,6 +437,8 @@
     <a href="ceen-en.html" class="active">CEEN • Business</a>
     <a href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%20saw%20your%20website%20and%20would%20love%20to%20work%20with%20you%2C%20but%20I%20have%20a%20question%20before%20moving%20forward%3A%20%28your%20question%29" target="_blank" class="nav-cta">Let's talk? 💌</a>
   </div>
+  <a class="nav-wa" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"></path></svg></a>
+  <button type="button" class="size-btn" aria-label="View larger" title="View larger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5L21 21"></path><path class="pl" d="M10.5 7.5v6M7.5 10.5h6"></path><path class="mi" d="M7.5 10.5h6"></path></svg></button>
   <button type="button" class="theme-btn" aria-label="Switch between light and dark mode" title="Light / dark mode"><span class="ti ti-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></span><span class="ti ti-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span></button>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
 </nav>
@@ -436,7 +451,7 @@
   <div class="cover-text">
     <div class="cover-text-bg">
       <h2>CEEN · Clarity, Strategy and Energy in Business</h2>
-      <p class="eyebrow">A new way of seeing yourself and your business, and of choosing how you want to be seen</p>
+      <p class="eyebrow">A new way of seeing yourself and your business <br class="mb">and of choosing how you want to be seen</p>
     </div>
   </div>
 </div>
@@ -478,13 +493,13 @@
     <p class="t-sm">CEEN is designed for you who are an entrepreneur, an independent professional or a content creator. It is for you who have a business or a personal brand and create from your knowledge and experience, and want to communicate through what you believe in.</p>
     <p class="t-sm">People choose you for your perspective, your approach, your method, the way you deliver your work or your view of the world. You are the central part of the value your business or brand offers.</p>
     <p class="t-sm">You already have an activity up and running, with communication, offers, clients or sales attempts. Now, you want to understand what you want to keep developing, how to present it and how you want to deliver it, fully aligned with you.</p>
-    <p style="margin-top:1.4rem; font-size:17px;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Who accompanies you in CEEN</a> (come and get to know me first)</p>
+    <p style="margin-top:1.4rem; font-size:17px;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Who accompanies you in CEEN</a><br><span style="font-size:14px;">(come and get to know me first)</span></p>
   </div>
 </section>
 
 <section class="pause pause-b" style="padding:26px 0;">
   <div class="wrap-wide">
-    <p class="pause-quote">No borrowed formulas, no trying to fit into boxes!</p>
+    <p class="pause-quote">No borrowed formulas, <br class="mb">no trying to fit into boxes!</p>
   </div>
 </section>
 
@@ -540,7 +555,7 @@
   <div class="wrap">
     <h2 class="section-title">An outside perspective that sees beyond</h2>
     <p class="t-sm">When you are inside the business, it can be hard to tell what still makes sense from what you keep out of habit, fear or expectation. By reflecting back what I notice in the way you speak and asking questions about what seems contradictory, I help you see differences that can go unnoticed when you think alone. Not to choose for you, but so that you can recognise what you truly want to keep developing.</p>
-    <p style="margin-top:2.6rem;"><strong>This case shows how that work can change a decision about the offer:</strong></p>
+    <p class="casep" style="margin-top:2.6rem;"><strong>This case shows how that work can change a decision about the offer:</strong></p>
 
     <div class="callout brown case-callout"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Reviewing the offer is also recognising what no longer represents you</p>
@@ -585,7 +600,7 @@
         <p>Depending on the questions or the depth of the work, we can look at offers, services, prices, positioning, communication, content, sales pages, website, delivery formats, responsibilities or decisions.</p>
       </div></div>
     </div>
-    <p class="lead hlbox" style="margin-top:2.6rem;">Observing without structuring may bring more awareness, but leave you not knowing what to do with it. Structuring without observing may lead you to choose a strategy you cannot or do not wish to sustain. <strong>It is, then, in this dialogue between energy and strategy that CEEN happens.</strong></p>
+    <p class="lead hlbox" style="margin-top:2.6rem;">Observing without structuring may bring more awareness, but leave you not knowing what to do with it. Structuring without observing may lead you to choose a strategy you cannot or do not wish to sustain. <strong>It is, then, in this dialogue between energy and strategy that <br class="mb">CEEN happens.</strong></p>
   </div>
 </section>
 
@@ -593,14 +608,14 @@
 
 <section class="pause">
   <div class="wrap-wide">
-    <p class="pause-quote nobreak">“Nobody had ever looked at my business this way!”</p>
+    <p class="pause-quote nobreak">“Nobody had ever looked <br class="mb">at my business this way!”</p>
     <p class="pause-attrib">— comment from a client during a CEEN Session</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">An integrated view of the business</h2>
+    <h2 class="section-title vi">An integrated view of the business</h2>
     <p class="t-sm">If you want to go deeper into the approach, open the topics below: how the areas of the business influence each other and how your energy enters professional decisions.</p>
 
     <details class="fold slower feature">
@@ -674,7 +689,7 @@
     <div id="bioRest"><p>This path was consolidated by accompanying clients in their self-knowledge processes, understanding beliefs and patterns that distance them from themselves and moving closer to their essence, in the way they see, choose and live.</p></div>
     <p style="margin-top:2.6rem; font-size:16.5px; line-height:1.65;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
     <blockquote class="quote-block" style="margin-top:3.4rem;">
-      <p style="line-height:1.3; font-size:23px;"><strong>"You are so good at capturing, guiding, interpreting and turning into words, <br>into guidance, advice, suggestions and shared reflections."</strong></p>
+      <p style="line-height:1.3; font-size:21px;"><strong>"You are so good at capturing, guiding, interpreting and turning into words, <br>into guidance, advice, suggestions and shared reflections."</strong></p>
       <p class="attrib">— feedback from a client in a voice note during an accompaniment with me</p>
     </blockquote>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Back to exploring CEEN from the start</a>
@@ -683,13 +698,13 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">This way of working makes sense for you if…</p>
       <ul class="plain">
-        <li>you want to understand what you want to do, but also what influences <br>your choices and decisions so you are more aware in your business;</li>
+        <li>you want to understand what you want to do, but also what influences your choices and decisions so you are more aware in your business;</li>
         <li>you are open to questioning what you keep out of habit, security or expectation and to opening yourself to new possibilities and to experiences;</li>
         <li>you are looking for questions that open doors and personalised recommendations, and you want to own your decisions and next steps;</li>
         <li>you want to grow and evolve using your business as leverage for that.</li>
       </ul>
     </div></div>
-    <details class="fold">
+    <details class="fold padr">
       <summary><span class="tri"></span>This may not be the right format if…</summary>
       <div class="fold-wrap"><div class="fold-body">
         <ul class="plain small">
@@ -709,12 +724,12 @@
 <section id="ouvir">
   <div class="wrap-wide">
     <h2 class="section-title">Listen to those who work with me</h2>
-    <p class="aud-lead"><span class="aud-l1">In this space, your business aligns with your personal energy!</span><br><span class="aud-l2">My clients call it magic. I call it alignment 🪄</span></p><p class="aud-note">The audios are in Portuguese.</p>
+    <p class="aud-lead"><span class="aud-l1">In this space, your business <br class="mb">aligns with your personal energy!</span><br><span class="aud-l2">My clients call it magic. <br class="mb">I call it alignment 🪄</span></p><p class="aud-note">The audios are in Portuguese.</p>
     <div class="aud-grid">
       <div class="aud"><audio preload="metadata" src="feedback.mp3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“These tools of yours <br>together with your sensitivity...”</p><div class="aud-bar"><div class="aud-wave"><i style="height:28px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:14px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:12px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:14px"></i><i style="height:20px"></i><i style="height:24px"></i><i style="height:24px"></i><i style="height:20px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:24px"></i><i style="height:14px"></i><i style="height:26px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:18px"></i><i style="height:14px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:18px"></i><i style="height:22px"></i><i style="height:24px"></i><i style="height:18px"></i><i style="height:26px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div>
-      <div class="aud"><audio preload="metadata" src="energia da filipa.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Our moments are for everything that comes...”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div>
+      <div class="aud"><audio preload="metadata" src="energia da filipa.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Our moments <br>are for everything that comes...”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div>
+      <div class="aud"><audio preload="metadata" src="feedback cristiana.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Having someone by my side <br>who looks at me and at my business as a whole.”</p><div class="aud-bar"><div class="aud-wave"><i style="height:18px"></i><i style="height:10px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:9px"></i><i style="height:18px"></i><i style="height:16px"></i><i style="height:18px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:18px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:15px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:8px"></i><i style="height:18px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div>
       <div class="aud"><audio preload="metadata" src="magicas.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“I feel it is truly magical...”</p><div class="aud-bar"><div class="aud-wave"><i style="height:18px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:14px"></i><i style="height:20px"></i><i style="height:28px"></i><i style="height:28px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:9px"></i><i style="height:20px"></i><i style="height:20px"></i><i style="height:16px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:22px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:18px"></i><i style="height:12px"></i><i style="height:8px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:15px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:22px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div>
-      <div class="aud"><audio preload="metadata" src="feedback cristiana.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Having someone by my side who looks at me and at my business as a whole.”</p><div class="aud-bar"><div class="aud-wave"><i style="height:18px"></i><i style="height:10px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:9px"></i><i style="height:18px"></i><i style="height:16px"></i><i style="height:18px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:18px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:15px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:8px"></i><i style="height:18px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div>
       </div>
   </div>
 </section>
@@ -746,21 +761,16 @@
         </div>
       </div>
       <div class="quiz-answer" id="quizAnswerSessao">
-        <p style="font-size:15px;"><strong>This format may make sense if you are looking for this way of working.</strong></p>
+        <p style="font-size:15px;"><strong>This format may make sense <br class="mb">if you are looking for this way of working.</strong></p>
         <a class="cta-btn" href="#como-funciona-sessao" onclick="pickDepth('como-funciona-sessao'); return false;">See how the CEEN Session works</a>
       </div>
       <div class="quiz-answer" id="quizAnswerCiclo">
-        <p style="font-size:15px;"><strong>This format may make sense if you are looking for this way of working.</strong></p>
+        <p style="font-size:15px;"><strong>This format may make sense <br class="mb">if you are looking for this way of working.</strong></p>
         <a class="cta-btn" href="#como-funciona-ciclo" onclick="pickDepth('como-funciona-ciclo'); return false;">See how the CEEN Cycle works</a>
       </div>
     </div>
 
     <p class="lead softbr" style="font-size:16.5px; margin-top:2.8rem; text-align:left;">You don't need to start with a CEEN Session to reach the CEEN Cycle. <br>You can book the Cycle directly if you are looking for analysis and a personalised proposal.</p>
-
-    <div class="cta-pair">
-      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a>
-      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a>
-    </div>
   </div>
 </section>
 
@@ -801,7 +811,7 @@
 <section class="tight" style="padding-top:2.6rem;">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p><strong>"Almost every sentence had a key turning"</strong></p>
+      <p class="q1"><strong>"Almost every sentence had a key turning"</strong></p>
     </blockquote>
     <p style="font-size:15px;">In this testimonial from an accompaniment, the client described what changed when she gained more awareness, tools and support to deal with what was coming up in her business process:</p>
     <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>I think, in truth, it was everything. All of your accompaniment and the way you always read me so well, saying the exact words I need to hear, not in the sense of giving me pats on the back, but to make me aware of things I wasn’t seeing yet…</p><p>Your work has this power <span class="hl">to turn beliefs, ideas and half-abstract fogs</span> into things I can <span class="ul">understand, apply, integrate and transform!</span></p><p>If I had to choose the most meaningful thing about this Crossing, I’d say it was realising that what I needed in these months was <span class="hl">to find this new identity of mine.</span> When we started, I was looking to understand how to promote my services, and it was with you that I realised that what I needed was to embody this new identity and allow a much more authorial voice to emerge.</p><p><span class="ul">I feel I have gained much more awareness and tools</span> to deal with the issues</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>that keep coming up. There are moments when I still feel low, but I manage to <span class="hl">handle them and get back to buzzing with ideas.</span> Much thanks to the keys you kept leaving me, which stayed stored in the subconscious, which is an incredible feat.</p><p>I have so much gratitude for your work, for your accompaniment, dedication, care and for your sensitivity. This format was very good: being able to keep <em>unloading</em> what was happening and receive your feedback. <span class="hl">Whenever you replied it was spot on, almost every sentence had a key turning!</span></p><p><span class="ul">I feel I entered a different phase and that this transition was even more marked thanks to our accompaniment.</span></p><p>I also value very much your openness to listen to me and the time you invest in me. I can only be grateful for all the magic you do, in all kinds of accompaniment with you.</p><p>Thank you so much, Filipa, for everything 🥰</p><span class="tm">17:30</span></div></div></div></div>
@@ -829,7 +839,7 @@
       </div>
       <div class="fmt-card ciclo">
         <h3>CEEN Cycle</h3>
-        <p class="fmt-price">800 € <span class="launch">(launch price)</span></p>
+        <p class="fmt-price">800 € <span class="launch">(October launch price)</span></p>
         <p class="fmt-l">The Session, plus my own analysis time between meetings and a proposal prepared for you.</p>
         <ul>
           <li>Two individual sessions, online</li>
@@ -904,7 +914,7 @@
 <section class="tight">
   <div class="wrap">
     <div class="callout grayD softer" style="padding-right:1.7rem;"><div class="ci">↻</div><div class="ctext">
-      <p class="callout-label">You can come back to CEEN whenever you need</p>
+      <p class="callout-label">You can come back to CEEN <br class="mb">whenever you need</p>
       <p>After a Session or the Cycle, you can move forward on your own or book a new CEEN Session when decisions, doubts or changes arise that you want to work on with me. You don't need to define a path or a fixed number of sessions in advance.</p>
       <hr class="div" style="margin:1.2rem 0;">
       <p>If I recognise that the process would benefit from closer support between sessions, I may propose a CEEN Crossing: a defined period for you to share what comes up and receive my perspective throughout the experience.</p>
@@ -992,10 +1002,8 @@
 
 <footer>
   <div class="links">© 2026 Filipa Osório</div>
-  <div class="links" style="margin-top:0.35rem;"><a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a></div>
-  <div class="links" style="margin-top:1.1rem; font-size:11px;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK — REFLECTIONS, INSIGHTS AND MAGIC 🖋️</a></div>
-  <div class="links" style="margin-top:0.35rem; font-size:11px;"><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
-  <div class="links" style="margin-top:1.1rem;"><a href="privacidade.html">Privacy policy (in Portuguese)</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK</a><span>•</span><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a><span>·</span><a href="privacidade.html">Privacy policy (in Portuguese)</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
 </footer>
 
 <a class="wa-bubble" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -1162,7 +1170,7 @@
         if (as_) as_.classList.toggle('show', r === 'sessao');
         if (ac) ac.classList.toggle('show', r === 'ciclo');
         var tgt = (r === 'sessao') ? as_ : ac;
-        if (tgt) { setTimeout(function(){ var y = tgt.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.55; smoothScrollTo(Math.max(0, y), 650); }, 60); }
+        if (tgt) { setTimeout(function(){ try { tgt.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch(e){ tgt.scrollIntoView(); } }, 380); }
       });
     });
   }
@@ -1305,6 +1313,20 @@
     });
     bar.addEventListener('click', function(e){ if (a.duration) { var r = bar.getBoundingClientRect(); a.currentTime = (e.clientX - r.left) / r.width * a.duration; } });
   });
+})();
+</script>
+<script>
+(function(){
+  var b = document.querySelector('.size-btn'); if (!b) return; var h = document.documentElement;
+  var LT = ((h.lang || 'pt').indexOf('en') === 0) ? { more: 'View larger', less: 'View smaller' } : { more: 'Ver em maior', less: 'Ver mais pequeno' };
+  function paint(){ var l = h.getAttribute('data-size') === 'large'; b.title = l ? LT.less : LT.more; b.setAttribute('aria-label', b.title); b.setAttribute('aria-pressed', l ? 'true' : 'false'); }
+  b.addEventListener('click', function(){
+    var l = h.getAttribute('data-size') === 'large';
+    if (l) { h.removeAttribute('data-size'); try { localStorage.setItem('fo_size', 'compact'); } catch(e){} }
+    else { h.setAttribute('data-size', 'large'); try { localStorage.setItem('fo_size', 'large'); } catch(e){} }
+    paint(); setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 80);
+  });
+  paint();
 })();
 </script>
 <script>
