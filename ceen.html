@@ -1190,14 +1190,20 @@
     var col = grid.children[1], rest = document.getElementById('bioRest');
     var last = col.querySelector('p:last-child');
     var RATIO = 2457 / 1780;
+    function zf(){
+      var t = document.createElement('div'); t.style.cssText = 'position:absolute;visibility:hidden;width:100px;height:1px';
+      grid.appendChild(t); var z = t.getBoundingClientRect().width / 100; grid.removeChild(t); return z || 1;
+    }
+    var Z = 1;
     function measure(w){
       grid.style.gridTemplateColumns = w + 'px 1fr';
       var ps = col.querySelectorAll('p'), l = ps[ps.length - 1];
-      var H = l.getBoundingClientRect().bottom - col.getBoundingClientRect().top;
+      var H = (l.getBoundingClientRect().bottom - col.getBoundingClientRect().top) / Z;
       return { w: w, H: H, crop: Math.abs(1 - H / (w * RATIO)) };
     }
     function settle(){
-      var S = grid.getBoundingClientRect().width - 21, cap = S * 0.58, b = null;
+      Z = zf();
+      var S = grid.getBoundingClientRect().width / Z - 21, cap = S * 0.58, b = null;
       for (var w = 220; w <= cap; w += 12) {
         var m = measure(w);
         if (!b || m.crop < b.crop - 0.004 || (Math.abs(m.crop - b.crop) <= 0.004 && m.w > b.w)) b = m;
