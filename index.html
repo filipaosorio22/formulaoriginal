@@ -243,8 +243,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
   <div class="sub-top"></div>
   <div class="sub-body">
     <p class="sub-eyebrow">Substack · Reflexões, insights e magia</p>
-    <p class="sub-title" id="subTitle">Recebe as minhas reflexões em primeira mão</p>
-    <p class="sub-text">Escrevo sobre negócio, energia e identidade. Deixa o teu email e subscreve de graça.</p>
+    <p class="sub-title" id="subTitle">Convido-te a acompanhares a magia que está a ser criada</p>
     <form class="sub-form" action="https://filipaosorio.substack.com/api/v1/free?nojs=true" method="post" target="_blank" onsubmit="subDone()">
       <input type="hidden" name="source" value="subscribe-prompt">
       <input type="email" name="email" required placeholder="O teu email" autocomplete="email">
@@ -288,7 +287,7 @@ function trySub(){
   if ((cb && cb.style.display === 'block') || (cm && cm.style.display === 'flex')) { setTimeout(trySub, 15000); return; }
   document.getElementById('subVeil').classList.add('open'); document.getElementById('subModal').classList.add('open');
 }
-setTimeout(trySub, 25000);
+setTimeout(trySub, 5000);
 
 function toggleFrequency() {
   const audio = document.getElementById('freqAudio');
