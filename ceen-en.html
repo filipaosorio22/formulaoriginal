@@ -26,7 +26,7 @@
     --gray: #f1ece2;
   }
   * { box-sizing: border-box; }
-  body { zoom:0.9; margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
   .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
@@ -43,7 +43,7 @@
   html[data-size="large"] .size-btn .pl { display:none; }
   html[data-size="large"] .size-btn .mi { display:inline; }
   .size-btn:hover { background:rgba(201,168,108,0.18); }
-  html[data-size="large"] body { zoom:1; }
+  @media (min-width:641px){ html[data-size="large"] body { zoom:1.11; } }
   .nav-wa { display:none; width:30px; height:30px; border-radius:50%; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.5); align-items:center; justify-content:center; flex-shrink:0; }
   .nav-wa svg { width:15px; height:15px; }
   br.mb { display:none; }
@@ -121,7 +121,7 @@
 
   details.case { background:var(--brown); border-radius:9px; padding:1.1rem 1.3rem; margin:1.2rem 0; }
   details.case summary { cursor:pointer; font-family:'Lora',serif; font-size:15px; font-weight:600; color:var(--brown-ink); list-style:none; display:flex; align-items:center; gap:0.5rem; }
-  details.case summary .tri { font-size:0; border-top-width:4px; border-bottom-width:4px; border-left-width:6px; transition:transform 0.25s ease; display:inline-block; }
+  details.case summary .tri { font-size:0; display:inline-block; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--wine); border-width:5px 0 5px 8px; flex:none; transition:transform 0.25s ease; }
   details.case[open] summary .tri { transform:rotate(90deg); }
   details.case summary::-webkit-details-marker { display:none; }
   details.case .fold-wrap { overflow:hidden; max-height:0; transition:max-height 0.9s cubic-bezier(.22,.61,.36,1); }
@@ -227,7 +227,7 @@
     .jump-link, .back-link { font-size:17.5px; }
   }
   p, li { text-wrap:pretty; }
-  header.wrap h1.hero-title { padding-left:0; }
+  header.wrap h1.hero-title { padding-left:1.6rem; }
   details.fold.feature { background:#f7efe2; border:1px solid var(--gold); border-radius:12px; padding:1.1rem 1.4rem; margin:1.3rem 0; }
   details.fold.feature summary { font-family:'Cormorant Garamond',serif; font-size:clamp(20px,2.3vw,25px); color:var(--wine); font-weight:600; }
   details.fold.feature summary .tri { color:var(--wine); }
@@ -240,7 +240,7 @@
   #quem-te-acompanha .two-col p { font-size:16.5px; line-height:1.65; text-align:justify; text-justify:inter-word; hyphens:none; }
   #quem-te-acompanha .two-col { max-width:640px; margin-left:auto; margin-right:auto; }
   #bioRest, #bioRest + p { max-width:640px; margin-left:auto; margin-right:auto; }
-  #bioRest p, #bioRest + p { font-size:16.5px; line-height:1.65; text-align:left !important; padding-right:1.8rem; }
+  #bioRest p, #bioRest + p { font-size:16.5px; line-height:1.65; text-align:justify !important; text-justify:inter-word; hyphens:none; padding-right:0; }
   #bioRest p { margin-top:1.4rem; }
   #bioRest:not(:empty) + p { margin-top:1rem !important; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
@@ -275,6 +275,8 @@
   p.t-sm { font-size:17.5px !important; }
   p.t-xs { font-size:16.5px !important; }
   details.padr .fold-body { padding-right:1.9rem; }
+  details.fold.padr { border-bottom:0 !important; }
+  details.feature { scroll-margin-top:90px; }
   .two-col.widebox > .callout { padding-left:2.2rem; padding-right:2rem; }
   .launch { font-family:'Lora',serif; font-size:13px; font-weight:400; font-style:italic; color:var(--ink-soft); margin-left:0.3rem; }
   .aud-lead { text-align:center; margin:0.4rem 0 1.8rem; line-height:1.5; }
@@ -316,7 +318,10 @@
   .fdot { position:relative; z-index:2; width:44px; height:44px; border-radius:50%; background:var(--cream); border:1.5px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--wine); }
   .fcard { position:relative; width:100%; flex:1; margin-top:-16px; perspective:1200px; cursor:pointer; outline:none; }
   .finner { display:grid; height:100%; min-height:230px; transition:transform 0.8s cubic-bezier(.22,.61,.36,1); transform-style:preserve-3d; }
-  .fcard:hover .finner, .fcard:focus-visible .finner, .fcard.flipped .finner { transform:rotateY(180deg); }
+  .fcard.flipped .finner { transform:rotateY(180deg); }
+  @media (hover:hover){ .fcard:hover .finner, .fcard:focus-visible .finner { transform:rotateY(180deg); } }
+  .flipall { text-align:center; margin:1.2rem 0 0; }
+  .flipall a { font-size:12.5px; color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
   .fface { grid-area:1/1; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:10px; padding:32px 18px 22px; }
   .ffront { text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; }
   .fcard.ses .ffront { background:var(--sessao); }
@@ -351,7 +356,7 @@
   .fmt-card p.fmt-n { font-size:14.5px; font-style:italic; color:var(--ink-soft); border-top:1px solid var(--gold); padding-top:0.7rem; margin:auto 0 1rem; text-align:left; min-height:4.6rem; box-sizing:border-box; }
   .fmt-card .cta-btn { align-self:stretch; }
   .fmt-card { transition:box-shadow 0.3s ease, transform 0.3s ease; }
-  .fstep:has(.fcard.work) .fdot { background:var(--wine); color:var(--cream); border-color:var(--wine); }
+  .fstep:has(.fcard.work) .fdot { background:#f1d9cf; color:var(--wine); border-color:rgba(122,37,53,0.5); }
   .fcard.work .fface { border:1px dashed var(--wine); }
   .fcard.work .ffront::before { content:'my work between sessions'; position:absolute; top:22px; left:0; right:0; text-align:center; font-size:11.5px; font-style:italic; color:var(--wine); }
   .fcard.work .ffront { padding-top:58px; }
@@ -409,6 +414,30 @@
     section .wrap > p, section .wrap-wide > p, details .fold-body > p, .callout.intro-callout .ctext p, details.fold.slower.feature .fold-body p, p.t-sm, p.t-xs { text-align:left !important; }
     .lead.hlbox { font-size:16.5px; }
     .popup { width:calc(100vw - 2rem); }
+  }
+  @media (max-width:640px){
+    body { zoom:0.9; }
+    .size-btn { display:none; }
+    h1.hero-title { padding-left:1.1rem; }
+    .md { display:none; }
+    .callout.intro-callout { padding-left:1.1rem; padding-right:1.1rem; }
+    .callout.intro-callout .ctext p { text-wrap:pretty; }
+    blockquote.quote-block.hang p > span:first-child { font-size:19px !important; line-height:1.3; }
+    .pause .wrap-wide { text-align:center; }
+    .pause-quote { display:block; margin-left:auto; margin-right:auto; text-align:center; padding-left:1rem; padding-right:1rem; }
+    .callout.bolha { display:block; padding-left:1rem; padding-right:1.1rem !important; }
+    .callout.bolha .ci { margin-bottom:0.3rem; }
+    .callout.narrow { padding-left:1rem; padding-right:1rem; }
+    .callout.narrow .ctext { padding-right:0.4rem; }
+    .pause-quote.nobreak { font-size:25px; }
+    .pause-attrib { font-size:11.5px; }
+    .attrib { font-size:11.5px; }
+    #quem-te-acompanha .callout.brown { padding-left:1rem !important; padding-right:1.5rem !important; }
+    #quem-te-acompanha .two-col > :first-child { margin-left:auto; margin-right:auto; }
+    blockquote.quote-block p { line-height:1.3; }
+    blockquote.quote-block p.q1 { font-size:calc((100vw - 56px)/19.5); }
+    h2.faqh { margin-bottom:1.8rem; }
+    #bioRest p, #bioRest + p { text-align:left !important; }
   }
   .wab-wrap { border-radius:12px; padding:9px; background:linear-gradient(135deg,#d3d0c1 0%,#7e8c69 52%,#a89073 100%); display:flex; height:100%; box-sizing:border-box; }
   .testimonial-photos-ph { align-items:stretch; }
@@ -493,7 +522,7 @@
     <p class="t-sm">CEEN is designed for you who are an entrepreneur, an independent professional or a content creator. It is for you who have a business or a personal brand and create from your knowledge and experience, and want to communicate through what you believe in.</p>
     <p class="t-sm">People choose you for your perspective, your approach, your method, the way you deliver your work or your view of the world. You are the central part of the value your business or brand offers.</p>
     <p class="t-sm">You already have an activity up and running, with communication, offers, clients or sales attempts. Now, you want to understand what you want to keep developing, how to present it and how you want to deliver it, fully aligned with you.</p>
-    <p style="margin-top:1.4rem; font-size:17px;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Who accompanies you in CEEN</a><br><span style="font-size:14px;">(come and get to know me first)</span></p>
+    <p style="margin-top:1.4rem; font-size:17px;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Who accompanies you in CEEN</a> <br class="mb"><span style="font-size:14px;">(come and get to know me first)</span></p>
   </div>
 </section>
 
@@ -508,7 +537,7 @@
     <h2 class="section-title">Your definition of professional success is yours alone</h2>
     <p class="t-sm">Perhaps professional success means, for you, growing, increasing your income or reaching more people. Perhaps it means more free time, more autonomy, recognition, impact or fulfilment. Or perhaps it is making decisions with confidence and communicating with authenticity, relating to your work with more lightness and no longer living certain professional matters with so much emotional strain.</p>
     <p class="t-sm">You may already have achieved results that felt like success to you, and still feel that the way you work today no longer represents you. That does not take value away from what you have built. It may simply mean that the time has come to reshape it so it keeps pace with your evolution.</p>
-    <div class="callout grayD" style="margin:4.75rem 0 0;"><div class="ci">🫧</div><div class="ctext">
+    <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
       <p class="t-xs"><strong>At CEEN, we do not assume that something is wrong with you or with your business</strong>, nor that there is an ideal version you should match or a formula for success you should follow. The best strategy is the one that fits you! And reviewing what you have built does not take value away from your path; rather, it allows you to choose how you want to continue.</p>
     </div></div>
   </div>
@@ -571,7 +600,7 @@
         <p>The business was no longer generating sales as before and the client was spreading her attention across several services. Some seemed safe to her and, for that reason, she believed she wanted to keep investing in them.</p>
         <h4>WHAT THE SESSION REFLECTED BACK</h4>
         <p>As she talked about each service, I asked questions and reflected back the differences, tensions and contradictions that appeared in the way she described them.</p>
-        <p>These reflections were not meant to tell her which to keep or let go of. They worked as a mirror so she could recognise, for herself, that some services were sustained mostly by habit, by security and by the idea that they should continue because they were already part of the business.</p>
+        <p>These reflections were not meant to tell her which to keep or let go of. <br>They worked as a mirror so she could recognise, for herself, that some services were sustained mostly by habit, by security and by the idea that they should continue because they were already part of the business.</p>
         <p>That difference was not yet clear to her before the session.</p>
         <h4>THE DECISION AND THE RESULT</h4>
         <p>The client distinguished the services she believed she "should" keep from those she truly wanted to keep developing.</p>
@@ -682,8 +711,8 @@
     <div class="two-col" style="align-items:stretch;">
       <div class="bio-photo-ph"><img src="filipa-foto.jpg" alt="" onerror="this.parentElement.textContent='filipa-foto.jpg'"></div>
       <div>
-        <p>I trained in Management, Management Control, International Business and Strategy at leading institutions, and I have experience in finance and management at large Portuguese companies.</p>
-        <p>In recent years, I have deepened my study of human behaviour, identity, childhood, beliefs and unconscious patterns, as well as the symbolic language through which the unconscious expresses itself. I have also deepened the systemic view applied to relationships, leadership and business.</p>
+        <p>I trained (double master’s degree) in Management, Management Control, International Business and Strategy at leading institutions, and I have experience in finance and management at large Portuguese companies.</p>
+        <p>In recent years, I have deepened my study of and work with human behaviour, identity, childhood, beliefs and unconscious patterns, as well as the symbolic language through which the unconscious expresses itself. I have also deepened the systemic view applied to relationships, leadership and business.</p>
       </div>
     </div>
     <div id="bioRest"><p>This path was consolidated by accompanying clients in their self-knowledge processes, understanding beliefs and patterns that distance them from themselves and moving closer to their essence, in the way they see, choose and live.</p></div>
@@ -698,9 +727,9 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">This way of working makes sense for you if…</p>
       <ul class="plain">
-        <li>you want to understand what you want to do, but also what influences your choices and decisions so you are more aware in your business;</li>
+        <li>you want to understand what you want to do, but also what influences <br>your choices and decisions so you are more aware in your business;</li>
         <li>you are open to questioning what you keep out of habit, security or expectation and to opening yourself to new possibilities and to experiences;</li>
-        <li>you are looking for questions that open doors and personalised recommendations, and you want to own your decisions and next steps;</li>
+        <li>you are looking for questions that open doors and personalised recommendations <br>and you want to own your decisions and next steps;</li>
         <li>you want to grow and evolve using your business as leverage for that.</li>
       </ul>
     </div></div>
@@ -712,7 +741,7 @@
           <li>you are looking for technical consulting in management, marketing, finance or operations;</li>
           <li>there is not yet real substance in the business or brand for us to observe;</li>
           <li>you are still just exploring an idea or need to create the business from scratch;</li>
-          <li>you are looking for implementation or ongoing support included in this investment.</li>
+          <li>you are looking for implementation or support included in this investment.</li>
         </ul>
       </div></div>
     </details>
@@ -786,6 +815,7 @@
           <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session · up to 2h</b><span>I listen, question and reflect back what I recognise.</span><i class="fhint"></i></div><div class="fface fback"><h5>Individual session</h5><div class="fpar">We start from what you brought and go deeper into what proves most relevant. I listen, question, reflect back what I recognise, connect the dots and offer new perspectives and concrete recommendations during the meeting.</div></div></div></div></div>
           <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Recommendations and next steps</b><span>Worked on during <br>the session.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recommendations and next steps</h5><div class="fpar">The reflection, the analysis and the recommendations are worked on during the session. Afterwards, you can move forward on your own or book another meeting when you feel the need. The Session does not include a report, a Notion deliverable, post-session analysis, implementation or asynchronous support.</div></div></div></div></div>
         </div>
+        <p class="flipall"><a href="#" role="button">see all in detail</a></p>
       </div></div>
     </details>
 
@@ -801,6 +831,7 @@
           <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic work" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Proposal in Notion</b><span>Analysis, recommendations and priorities.</span><i class="fhint"></i></div><div class="fface fback"><h5>Proposal in Notion</h5><div class="fpar">I organise the analysis, the connections I recognised, the recommendations and the priorities. Depending on what was worked on, the proposal can help you review offers, communication or delivery formats.</div><div class="fpar">It includes the reasons behind the recommendations, so you understand the options instead of receiving just a task list.</div></div></div></div></div>
           <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Second session</b><span>Worked on during <br>the second session.</span><i class="fhint"></i></div><div class="fface fback"><h5>Second session</h5><div class="fpar">The reflection, the analysis and the recommendations are worked on during the second session, based on the analysis and preparation done between sessions. After that, you can move forward on your own or book another meeting when you feel the need. After the second session there is no further analysis, implementation or support.</div></div></div></div></div>
         </div>
+        <p class="flipall"><a href="#" role="button">see all in detail</a></p>
       </div></div>
     </details>
   </div>
@@ -893,7 +924,7 @@
   <div class="wrap-wide">
     <h2 class="section-title">From a conversation to a proposal you can come back to</h2>
     <p class="amostra-legenda" style="margin-bottom:0;">Illustrative example. Each delivery depends on the context and the themes worked on.</p>
-    <iframe class="amostra-frame" src="ciclo-ceen-sample.html" title="Illustrative example of a CEEN Cycle delivery" loading="lazy"></iframe>
+    <iframe class="amostra-frame" src="ciclo-ceen-sample.html" title="Illustrative example of a CEEN Cycle delivery"></iframe>
   </div>
 </section>
 
@@ -902,7 +933,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p><strong>"Having someone beside me who looks at me and at my business as a whole."</strong></p>
+      <p><strong>"Having someone beside me who looks at me <br class="mb">and at my business as a whole."</strong></p>
     </blockquote>
     <p style="font-size:16px;">It is in contact with real experience that new decisions, doubts and possibilities become visible. This is another client's testimonial about what she has been living in her process with me:</p>
     <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>Working with you has been feeling that I have <span class="hl">someone by my side who looks at me and at my business as a whole.</span> With respect for me, for my essence and <span class="ul">without “pushing” catchphrases and marketing strategies,</span> the ones that confused me for years and years 🙌🏻</p><p>You have been asking me key questions and making key comments so I can go a little deeper 🗝️ always with respect for me, for my time and for my family reality 🥹</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>You helped me <span class="hl">review my communication</span> through the eyes of my clients, in a way that <span class="ul">I connected even more to myself, to my essence and to the mission of my company.</span></p><p>Thank you for your perspectives, your authenticity and your <em>straight to the point</em> welcome. And for our conversations that are always so <em>mind blowing</em> 💥</p><p>Working with you is <span class="hl">one of the greatest gifts</span> someone can bring to a business (and to their life too) 🤭❤️</p><span class="tm">16:45</span></div></div></div></div>
@@ -941,7 +972,7 @@
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">If you have these questions before moving forward</h2>
+    <h2 class="section-title faqh">If you have these questions before moving forward</h2>
     <details class="fold"><summary><span class="tri"></span>Is CEEN management consulting?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>No. CEEN does not replace technical support in management, marketing, finance, accounting or operations. It also does not include technical audits, <em>copywriting</em> or implementation carried out by me. I combine what I observe in you and in the business with my knowledge of strategy and marketing to present tailored possibilities, criteria and recommendations.</p></div></div>
     </details>
@@ -1003,7 +1034,7 @@
 <footer>
   <div class="links">© 2026 Filipa Osório</div>
   <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK</a><span>•</span><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
-  <div class="links" style="margin-top:1.1rem;"><a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a><span>·</span><a href="privacidade.html">Privacy policy (in Portuguese)</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a><span class="md">·</span><br class="mb"><a href="privacidade.html">Privacy policy (in Portuguese)</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a></div>
 </footer>
 
 <a class="wa-bubble" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -1184,7 +1215,7 @@
       if (wrap) openDetail(el, wrap);
     }
     setTimeout(function(){
-      smoothScrollTo(el.getBoundingClientRect().top + window.scrollY - 90, 700);
+      try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(err) { smoothScrollTo(el.getBoundingClientRect().top + window.scrollY - 90, 700); }
       setTimeout(function(){
         el.classList.add('pulse-highlight');
         setTimeout(function(){ el.classList.remove('pulse-highlight'); }, 1200);
@@ -1254,6 +1285,24 @@
     document.querySelectorAll('.fcard').forEach(function(c){
       c.addEventListener('click', function(){ if (touch) c.classList.toggle('flipped'); });
       c.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.classList.toggle('flipped'); } });
+    });
+  })();
+
+  // ver todos os cartoes em detalhe / voltar ao resumo
+  (function(){
+    var EN = (document.documentElement.lang || 'pt').indexOf('en') === 0;
+    var T = EN ? { all: 'see all in detail', back: 'back to summary' } : { all: 'ver todos em detalhe', back: 'voltar ao resumo' };
+    document.querySelectorAll('.flipall a').forEach(function(a){
+      a.textContent = T.all;
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var body = a.closest('.fold-body'); if (!body) return;
+        var cards = body.querySelectorAll('.fcard'); var anyOff = false;
+        cards.forEach(function(c){ if (!c.classList.contains('flipped')) anyOff = true; });
+        cards.forEach(function(c){ c.classList.toggle('flipped', anyOff); });
+        a.textContent = anyOff ? T.back : T.all;
+        var w = a.closest('.fold-wrap'); if (w && w.style.maxHeight) { setTimeout(function(){ w.style.maxHeight = w.scrollHeight + 'px'; }, 30); }
+      });
     });
   })();
 
