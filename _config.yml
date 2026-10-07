@@ -11,5 +11,6 @@ exclude:
   - mapa_essencial.html
   - preview-inicio.html
   - sobre.html
+  - leitura-intuitiva.html
 # Mantidas no ar por precaucao (acesso e confirmacao para clientes ja existentes):
 # aula-acesso.html, confirmacao-mapa.html, obrigada-mapa.html
