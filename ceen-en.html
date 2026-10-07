@@ -30,6 +30,7 @@
 
   .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
   .nav-links { margin-left:auto; }
+  @media (min-width:1100px){ .langbar { height:67px; line-height:67px; padding:0; background:transparent !important; pointer-events:none; } .langbar a { pointer-events:auto; } nav { top:0; } .cover { margin-top:60px; } }
   .theme-btn { height:34px; margin-left:1rem; padding:0 5px; flex-shrink:0; display:flex; align-items:center; gap:2px; background:transparent; border:1px solid var(--gold); border-radius:20px; cursor:pointer; line-height:1; color:var(--wine); }
   .theme-btn .ti svg { width:16px; height:16px; display:block; }
   .theme-btn .ti { display:flex; padding:5px 6px; border-radius:14px; opacity:0.38; transition:opacity 0.2s, background 0.2s; }
@@ -165,7 +166,7 @@
   .quiz-box { margin:1.4rem 0 2rem; }
   .quiz-prompt { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:27px; color:var(--wine); margin:0 0 0.9rem; }
   .quiz-group { font-family:'Lora',serif; font-size:17px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-deep); margin:2.2rem 0 0.9rem; }
-  .quiz-group:first-child { margin-top:4.4rem; }
+  .quiz-group:first-child { margin-top:1.6rem; }
   .lead.hlbox { background:none; border-left:3px solid var(--gold); padding:0.2rem 0 0.2rem 1.1rem; font-size:17.5px; text-align:left; font-weight:400; }
   .quiz-pills { display:flex; flex-direction:column; align-items:stretch; gap:0.7rem; }
   .quiz-pills button { font-family:'Lora',serif; font-size:15.5px; font-style:italic; text-align:left; background:var(--gray); border:1px solid var(--line); border-radius:20px; padding:0.7rem 1.2rem; min-height:78px; display:flex; align-items:center; cursor:pointer; color:var(--ink); transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
@@ -225,9 +226,9 @@
   details.case .fold-close { color:var(--brown-ink); }
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
-  #quem-te-acompanha .two-col p { font-size:15.5px; line-height:1.65; }
-  #quem-te-acompanha .two-col { max-width:700px; margin-left:auto; margin-right:auto; }
-  #bioRest p { font-size:15.5px; line-height:1.65; margin-top:1.4rem; }
+  #quem-te-acompanha .two-col p { font-size:16.5px; line-height:1.65; }
+  #quem-te-acompanha .two-col { max-width:640px; margin-left:auto; margin-right:auto; }
+  #bioRest p { font-size:16.5px; line-height:1.65; margin-top:1.4rem; }
   #bioRest:not(:empty) + p { margin-top:1rem !important; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
@@ -259,6 +260,7 @@
   .callout.narrow .ctext p { font-size:17px; }
   blockquote.quote-block.hang { margin-left:-1.3rem; }
   p.t-sm { font-size:17.5px !important; }
+  p.t-xs { font-size:16.5px !important; }
   .two-col.widebox > .callout { padding-left:2.2rem; padding-right:2rem; }
   .launch { font-family:'Lora',serif; font-size:13px; font-weight:400; font-style:italic; color:var(--ink-soft); margin-left:0.3rem; }
   .aud-lead { text-align:center; margin:0.4rem 0 1.8rem; line-height:1.5; }
@@ -273,7 +275,6 @@
   .aud.playing .aud-play { display:none; } .aud.playing .aud-pause { display:flex; }
   .aud-main { flex:1; min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(120px,34%) auto; align-items:center; gap:1.1rem; text-align:left; }
   .aud-q { font-family:'Lora',serif; font-style:italic; font-size:15px; line-height:1.35; color:var(--ink); margin:0; text-align:left; }
-  .aud-q br { display:none; }
   .aud-bar { position:relative; height:26px; cursor:pointer; overflow:hidden; }
   .aud-wave { position:absolute; inset:0; display:flex; align-items:center; gap:3px; }
   .aud-wave i { flex:1; background:rgba(122,37,53,0.28); border-radius:2px; transition:height 0.3s; }
@@ -350,10 +351,12 @@
   details.fold.slower.feature .fold-body { padding-right:1.1rem; }
   #quem-te-acompanha .callout.brown { padding-right:0.4rem; }
   .callout .ctext p.oneline-note { font-size:17.5px; }
+  .callout.ciclo-note { padding-left:1.7rem; padding-right:1.7rem; }
   .callout.ciclo-note .ctext p:not(.oneline-note) { font-size:17px; }
   .callout.softer .ctext p:not(.callout-label) { font-size:17.5px; }
   details.fold.slower.feature .fold-body p { margin-bottom:1rem; line-height:1.7; }
   details.fold.slower.feature .fold-body li { margin-bottom:0.55rem; line-height:1.65; }
+  details.fold.slower.feature .fold-body p { text-align:left; }
   .callout.case-callout .ctext { padding-right:2rem; }
   @media (max-width:640px){ h1.hero-title br, .quiz-pills button br, .softbr br { display:none; } .attrib, .pause-attrib { font-size:13.5px; line-height:1.4; } .pause-quote, .pause-attrib, .attrib, blockquote.quote-block p, .section-title, h1.hero-title, .cover-text-bg h2 { text-wrap:balance; } .pause .pause-quote.nobreak { white-space:normal; } .cta-pair .cta-btn { flex:1 1 100%; text-align:center; min-height:46px; } }
   details.fold:not(.feature):not(.case) .fold-body p, details.fold:not(.feature):not(.case) .fold-body li { font-size:17px; }
@@ -388,6 +391,12 @@
   html[data-theme="dark"] #ceenCalendlyModal > div { background:#26211c !important; }
   html[data-theme="dark"] #ceenCalendlyModal p { color:#efe6d8 !important; }
   html[data-theme="dark"] #ceenCalendlyModal button { color:#d3b67f !important; }
+  @media (max-width:640px){
+    body { zoom:0.9; }
+    section .wrap > p, section .wrap-wide > p, details .fold-body > p, .callout.intro-callout .ctext p, details.fold.slower.feature .fold-body p, p.t-sm, p.t-xs { text-align:left !important; }
+    .lead.hlbox { font-size:16.5px; }
+    .popup { width:calc(100vw - 2rem); }
+  }
   .wab-wrap { border-radius:12px; padding:9px; background:linear-gradient(135deg,#d3d0c1 0%,#7e8c69 52%,#a89073 100%); display:flex; height:100%; box-sizing:border-box; }
   .testimonial-photos-ph { align-items:stretch; }
   .testimonial-photos-ph .ph { height:100%; }
@@ -439,7 +448,7 @@
 <section class="tight" style="padding-top:12px;">
   <div class="wrap">
     <div class="callout grayD intro-callout"><div class="ctext">
-      <p><strong>CEEN is an individual piece of analysis and guidance to help you review your offer, your communication or the way you work in your business, without separating those decisions from the life you want to build and from who you are, grounded in your own unique personal energy.</strong></p>
+      <p><strong>CEEN is an individual piece of analysis and guidance to help you review the way you work and show up in your business, without separating those decisions from the life you want to build and from who you are, grounded in your own unique personal energy.</strong></p>
       <p>You can arrive with a concrete question or several areas you would like to review together. As I listen, I pay attention to how you talk about the business, to what excites or holds you back, to the weight you may place on certain decisions and to the unconscious contradictions that may surface.</p>
       <p>This listening helps us recognise beliefs, fears and patterns that may be influencing your choices, even when you haven't yet identified them. We relate what we observe to the reality of the business and to what you want to change.</p>
       <p>I help you recognise what makes sense to keep, reshape or let go of, and I give you concrete recommendations so you can decide the next steps with greater confidence.</p>
@@ -485,7 +494,7 @@
     <p class="t-sm">Perhaps professional success means, for you, growing, increasing your income or reaching more people. Perhaps it means more free time, more autonomy, recognition, impact or fulfilment. Or perhaps it is making decisions with confidence and communicating with authenticity, relating to your work with more lightness and no longer living certain professional matters with so much emotional strain.</p>
     <p class="t-sm">You may already have achieved results that felt like success to you, and still feel that the way you work today no longer represents you. That does not take value away from what you have built. It may simply mean that the time has come to reshape it so it keeps pace with your evolution.</p>
     <div class="callout grayD" style="margin:4.75rem 0 0;"><div class="ci">🫧</div><div class="ctext">
-      <p class="t-sm"><strong>At CEEN, we do not assume that something is wrong with you or with your business</strong>, nor that there is an ideal version you should match or a formula for success you should follow. The best strategy is the one that fits you! And reviewing what you have built does not take value away from your path; rather, it allows you to choose how you want to continue.</p>
+      <p class="t-xs"><strong>At CEEN, we do not assume that something is wrong with you or with your business</strong>, nor that there is an ideal version you should match or a formula for success you should follow. The best strategy is the one that fits you! And reviewing what you have built does not take value away from your path; rather, it allows you to choose how you want to continue.</p>
     </div></div>
   </div>
 </section>
@@ -632,7 +641,7 @@
     <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
       <p style="font-size:17px;"><strong>CEEN does not replace technical consulting or specialist execution.</strong><br>We can look at offers, prices, communication, sales pages or decisions and identify relationships and possible changes. In-depth technical audits, full planning, <em>copywriting</em> or implementation carried out by me are not included.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:19px;"><strong>My role is to listen, question, formulate hypotheses, connect the dots and present concrete recommendations. The final decisions always remain yours.</strong></p></blockquote>
+    <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>My role is to listen, question, formulate hypotheses, connect the dots and present concrete recommendations. The final decisions always remain yours.</strong></p></blockquote>
   </div>
 </section>
 
@@ -660,11 +669,10 @@
       <div>
         <p>I trained in Management, Management Control, International Business and Strategy at leading institutions, and I have experience in finance and management at large Portuguese companies.</p>
         <p>In recent years, I have deepened my study of human behaviour, identity, childhood, beliefs and unconscious patterns, as well as the symbolic language through which the unconscious expresses itself. I have also deepened the systemic view applied to relationships, leadership and business.</p>
-        <p>This path was consolidated by accompanying clients in their self-knowledge processes, understanding beliefs and patterns that distance them from themselves and moving closer to their essence, in the way they see, choose and live.</p>
       </div>
     </div>
-    <div id="bioRest"></div>
-    <p style="margin-top:2.6rem; font-size:15.5px; line-height:1.65;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
+    <div id="bioRest"><p>This path was consolidated by accompanying clients in their self-knowledge processes, understanding beliefs and patterns that distance them from themselves and moving closer to their essence, in the way they see, choose and live.</p></div>
+    <p style="margin-top:2.6rem; font-size:16.5px; line-height:1.65;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
     <blockquote class="quote-block" style="margin-top:3.4rem;">
       <p style="line-height:1.3; font-size:23px;"><strong>"You are so good at capturing, guiding, interpreting and turning into words, <br>into guidance, advice, suggestions and shared reflections."</strong></p>
       <p class="attrib">— feedback from a client in a voice note during an accompaniment with me</p>
@@ -713,7 +721,7 @@
 
 <hr class="div">
 
-<section style="padding-top:2.2rem;">
+<section style="padding-top:3.8rem;">
   <div class="wrap-wide">
     <h2 class="section-title">What does your present moment ask of you?</h2>
     <p class="t-sm" style="text-align:left;">In the Session, we work together during the meeting. In the Cycle, I add my own analysis time between the meetings and prepare a personalised proposal for you and for the moment your business is in.</p>
@@ -765,8 +773,8 @@
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
           <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Context and material</b><span>You share the question and, if there is one, the main material.</span><i class="fhint"></i></div><div class="fface fback"><h5>Context and main material</h5><div class="fpar">Before the session, you share the context and what you would like to work on. When relevant, you can send a main material, such as a sales page, a price list or the description of an offer. I do a brief read-through so I arrive at the meeting with the necessary framework.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session · up to 2h</b><span>I listen, question and reflect back what I recognise.</span><i class="fhint"></i></div><div class="fface fback"><h5>Individual session · up to two hours</h5><div class="fpar">We start from what you brought and go deeper into what proves most relevant. I listen, question, reflect back what I recognise, connect the dots and offer new perspectives and concrete recommendations during the meeting.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Recommendations and next steps</b><span>Worked on during the meeting.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recommendations and next steps</h5><div class="fpar">The reflection, the analysis and the recommendations are worked on during the session. Afterwards, you can move forward on your own or book another meeting when you feel the need. The Session does not include a report, a Notion deliverable, post-session analysis, implementation or asynchronous support.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session · up to 2h</b><span>I listen, question and reflect back what I recognise.</span><i class="fhint"></i></div><div class="fface fback"><h5>Individual session</h5><div class="fpar">We start from what you brought and go deeper into what proves most relevant. I listen, question, reflect back what I recognise, connect the dots and offer new perspectives and concrete recommendations during the meeting.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Recommendations and next steps</b><span>Worked on during <br>the session.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recommendations and next steps</h5><div class="fpar">The reflection, the analysis and the recommendations are worked on during the session. Afterwards, you can move forward on your own or book another meeting when you feel the need. The Session does not include a report, a Notion deliverable, post-session analysis, implementation or asynchronous support.</div></div></div></div></div>
         </div>
       </div></div>
     </details>
@@ -781,7 +789,7 @@
         </div>
         <div class="frow two">
           <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic work" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Proposal in Notion</b><span>Analysis, recommendations and priorities.</span><i class="fhint"></i></div><div class="fface fback"><h5>Proposal in Notion</h5><div class="fpar">I organise the analysis, the connections I recognised, the recommendations and the priorities. Depending on what was worked on, the proposal can help you review offers, communication or delivery formats.</div><div class="fpar">It includes the reasons behind the recommendations, so you understand the options instead of receiving just a task list.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Second session</b><span>Worked on during the second session.</span><i class="fhint"></i></div><div class="fface fback"><h5>Second session</h5><div class="fpar">The reflection, the analysis and the recommendations are worked on during the second session, based on the analysis and preparation done between sessions. After that, you can move forward on your own or book another meeting when you feel the need. After the second session there is no further analysis, implementation or support.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Second session</b><span>Worked on during <br>the second session.</span><i class="fhint"></i></div><div class="fface fback"><h5>Second session</h5><div class="fpar">The reflection, the analysis and the recommendations are worked on during the second session, based on the analysis and preparation done between sessions. After that, you can move forward on your own or book another meeting when you feel the need. After the second session there is no further analysis, implementation or support.</div></div></div></div></div>
         </div>
       </div></div>
     </details>
@@ -790,7 +798,7 @@
 
 <hr class="div">
 
-<section class="tight" style="padding-top:6px;">
+<section class="tight" style="padding-top:2.6rem;">
   <div class="wrap">
     <blockquote class="quote-block">
       <p><strong>"Almost every sentence had a key turning"</strong></p>
@@ -853,9 +861,9 @@
       <div class="callout ciclo"><div class="ci">🗺️</div><div class="ctext">
         <p class="callout-label" style="margin-bottom:0.9rem;">IN THE CEEN CYCLE</p>
         <ul class="plain">
-          <li>two individual sessions to deepen the context and discuss the proposal;</li>
+          <li>two individual sessions to go deeper into the context and discuss <br>the proposal;</li>
           <li>three days of complementary sharing after the session;</li>
-          <li>personalised analysis of the priority themes and materials between sessions (up to 21 working days);</li>
+          <li>personalised analysis of the themes <br>and priority materials between the sessions (up to 21 working days);</li>
           <li>recommendations, priorities and a proposal organised in Notion, with the reasons that support them.</li>
         </ul>
       </div></div>
@@ -915,7 +923,7 @@
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a>
       <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a>
     </div>
-    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Still unsure which format is the right one?</strong><br><a href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" style="font-style:normal; font-size:14px; color:var(--orange); font-family:'Lora',serif;">Send me a message</a> and we will work out together which format is the most suitable.</p></blockquote>
+    <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Still unsure which format is the right one?</strong><br><a href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" style="font:inherit; color:var(--orange);">Send me a message</a> and we'll talk.</p></blockquote>
   </div>
 </section>
 
@@ -928,7 +936,7 @@
       <div class="fold-wrap"><div class="fold-body"><p>No. CEEN does not replace technical support in management, marketing, finance, accounting or operations. It also does not include technical audits, <em>copywriting</em> or implementation carried out by me. I combine what I observe in you and in the business with my knowledge of strategy and marketing to present tailored possibilities, criteria and recommendations.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Are the sessions online or in person?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>All CEEN sessions are individual and online: both the Session and the two sessions of the Cycle.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>All CEEN sessions are online, in both the Session and the Cycle.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Do I need to have the business fully structured?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>No. The business can be at an early stage, growing or reorganising, but it needs to be already running and in contact with reality. It is important that there are offers, prices, communication, clients, sales or attempts to sell, and concrete decisions we can observe.</p></div></div>
@@ -940,7 +948,7 @@
       <div class="fold-wrap"><div class="fold-body"><p>I will help you recognise what may not be clear, offer recommendations and suggest possible directions. I do not decide or act for you: the final decisions and the concrete actions remain yours.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Can the CEEN Session focus on a more personal question?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Yes, as long as it is related to how you are living, deciding or occupying your place in the business. We can work on identity, beliefs, patterns, fears, visibility, money or responsibility when they are influencing your professional choices.</p><p><strong>The CEEN Session is not therapy:</strong> the person may be at the centre of the session, but the business and professional decisions continue to give us the context.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>Yes, as long as it is related to how you are living, deciding or occupying your place in the business. We can work on identity, beliefs, patterns, fears, visibility, money or responsibility when they are influencing your professional choices.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>How do I know whether I need a CEEN Session or the CEEN Cycle?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>The Session is working with me during the meeting: questions, analysis and recommendations in the moment. The Cycle makes sense if you want to add my analysis time between meetings and receive a personalised proposal in Notion, with recommendations, priorities and the reasons that support them. The choice depends on the kind of work you are looking for, not on the number of questions you bring.</p></div></div>
@@ -985,8 +993,8 @@
 <footer>
   <div class="links">© 2026 Filipa Osório</div>
   <div class="links" style="margin-top:0.35rem;"><a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a></div>
-  <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK — REFLECTIONS, INSIGHTS AND MAGIC 🖋️</a></div>
-  <div class="links" style="margin-top:0.35rem;"><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
+  <div class="links" style="margin-top:1.1rem; font-size:11px;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK — REFLECTIONS, INSIGHTS AND MAGIC 🖋️</a></div>
+  <div class="links" style="margin-top:0.35rem; font-size:11px;"><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
   <div class="links" style="margin-top:1.1rem;"><a href="privacidade.html">Privacy policy (in Portuguese)</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
 </footer>
 
@@ -1193,7 +1201,7 @@
     var grid = document.querySelector('#quem-te-acompanha .two-col');
     if (!grid || grid.children.length < 2) return;
     var col = grid.children[1], rest = document.getElementById('bioRest');
-    var last = col.querySelector('p:last-child');
+    var last = null;
     var RATIO = 2457 / 1780;
     function zf(){
       var t = document.createElement('div'); t.style.cssText = 'position:absolute;visibility:hidden;width:100px;height:1px';
