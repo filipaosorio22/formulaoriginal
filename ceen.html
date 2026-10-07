@@ -25,7 +25,7 @@
     --gray: #f1ece2;
   }
   * { box-sizing: border-box; }
-  body { zoom:0.9; margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
   .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
@@ -259,29 +259,30 @@
   .callout.narrow .ctext p { font-size:17px; }
   blockquote.quote-block.hang { margin-left:-1.3rem; }
   p.t-sm { font-size:17.5px !important; }
-  .two-col.widebox > .callout { padding-left:1rem; padding-right:0.8rem; }
+  .two-col.widebox > .callout { padding-left:2.2rem; padding-right:2rem; }
   .launch { font-family:'Lora',serif; font-size:13px; font-weight:400; font-style:italic; color:var(--ink-soft); margin-left:0.3rem; }
   .aud-lead { text-align:center; margin:0.4rem 0 1.8rem; line-height:1.5; }
   .aud-l1 { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:23px; color:var(--wine); }
   .aud-l2 { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; font-size:21px; color:var(--gold-deep); }
-  .aud-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:620px; margin:0 auto; }
-  .aud { display:flex; gap:0.9rem; align-items:center; background:rgba(201,168,108,0.14); border-radius:12px; padding:1.25rem 1.1rem 1.15rem; }
-  .aud-btn { flex:0 0 46px; width:46px; height:46px; border-radius:50%; border:none; background:var(--wine); cursor:pointer; position:relative; padding:0; }
-  .aud-play { position:absolute; top:50%; left:52%; transform:translate(-50%,-50%); border-left:13px solid var(--cream); border-top:8px solid transparent; border-bottom:8px solid transparent; }
+  .aud-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+  .aud { display:flex; gap:1rem; align-items:center; background:rgba(201,168,108,0.14); border-radius:40px; padding:0.6rem 1.4rem 0.6rem 0.7rem; }
+  .aud-btn { flex:0 0 40px; width:40px; height:40px; border-radius:50%; border:none; background:var(--wine); cursor:pointer; position:relative; padding:0; }
+  .aud-play { position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-left:11px solid var(--cream); border-top:7px solid transparent; border-bottom:7px solid transparent; }
   .aud-pause { display:none; position:absolute; inset:0; align-items:center; justify-content:center; gap:4px; }
-  .aud-pause b { width:4px; height:16px; background:var(--cream); border-radius:2px; }
+  .aud-pause b { width:4px; height:14px; background:var(--cream); border-radius:2px; }
   .aud.playing .aud-play { display:none; } .aud.playing .aud-pause { display:flex; }
-  .aud-main { flex:1; min-width:0; text-align:left; }
-  .aud-q { font-family:'Lora',serif; font-style:italic; font-size:15px; line-height:1.4; color:var(--ink); margin:0 0 0.6rem; text-align:left; min-height:4.3em; }
-  .aud-bar { position:relative; height:30px; cursor:pointer; overflow:hidden; }
+  .aud-main { flex:1; min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(120px,34%) auto; align-items:center; gap:1.1rem; text-align:left; }
+  .aud-q { font-family:'Lora',serif; font-style:italic; font-size:15px; line-height:1.35; color:var(--ink); margin:0; text-align:left; }
+  .aud-q br { display:none; }
+  .aud-bar { position:relative; height:26px; cursor:pointer; overflow:hidden; }
   .aud-wave { position:absolute; inset:0; display:flex; align-items:center; gap:3px; }
   .aud-wave i { flex:1; background:rgba(122,37,53,0.28); border-radius:2px; transition:height 0.3s; }
   .aud.playing .aud-wave i { animation:audpulse 1s ease-in-out infinite alternate; }
   .aud.playing .aud-wave i:nth-child(odd) { animation-delay:0.25s; }
   .aud-fill { position:absolute; left:0; top:0; bottom:0; width:0; border-right:2px solid var(--wine); background:rgba(122,37,53,0.12); pointer-events:none; }
-  .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); }
+  .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); min-width:2.2rem; text-align:right; }
   @keyframes audpulse { from { transform:scaleY(0.6); } to { transform:scaleY(1.15); } }
-  @media (max-width:680px){ .aud-grid { grid-template-columns:1fr; } }
+  @media (max-width:680px){ .aud { border-radius:22px; padding:0.8rem 1rem 0.8rem 0.7rem; } .aud-main { grid-template-columns:1fr auto; gap:0.4rem 0.8rem; } .aud-q { grid-column:1 / -1; } }
   .callout.sessao ul.plain, .callout.ciclo ul.plain { margin-left:-1.1rem; }
   .callout.sessao .ctext li, .callout.ciclo .ctext li, .callout.sessao .ctext p:not(.callout-label), .callout.ciclo .ctext p:not(.callout-label) { font-size:17px; }
   .two-col.dimbox .callout { padding-right:1.8rem; }
@@ -337,8 +338,8 @@
   .fmt-card { transition:box-shadow 0.3s ease, transform 0.3s ease; }
   .fstep:has(.fcard.work) .fdot { background:var(--wine); color:var(--cream); border-color:var(--wine); }
   .fcard.work .fface { border:1px dashed var(--wine); }
-  .fcard.work .ffront::before { content:'o meu trabalho entre sessões'; position:absolute; top:12px; left:0; right:0; text-align:center; font-size:11.5px; font-style:italic; color:var(--wine); }
-  .fcard.work .ffront { padding-top:50px; }
+  .fcard.work .ffront::before { content:'o meu trabalho entre sessões'; position:absolute; top:22px; left:0; right:0; text-align:center; font-size:11.5px; font-style:italic; color:var(--wine); }
+  .fcard.work .ffront { padding-top:58px; }
   .fmt-card.on { box-shadow:0 0 0 1px var(--gold), 0 6px 16px rgba(201,168,108,0.16); transform:translateY(-2px); }
   @media (max-width:680px){ .fmt { grid-template-columns:1fr; } }
   .amostra-frame { display:block; width:100%; height:640px; border:0; border-radius:12px; background:var(--cream); margin:1.2rem 0 0.6rem; }
@@ -351,7 +352,8 @@
   .callout .ctext p.oneline-note { font-size:17.5px; }
   .callout.ciclo-note .ctext p:not(.oneline-note) { font-size:17px; }
   .callout.softer .ctext p:not(.callout-label) { font-size:17.5px; }
-  details.fold.slower.feature .fold-body p { margin-bottom:0.5rem; line-height:1.5; }
+  details.fold.slower.feature .fold-body p { margin-bottom:1rem; line-height:1.7; }
+  details.fold.slower.feature .fold-body li { margin-bottom:0.55rem; line-height:1.65; }
   .callout.case-callout .ctext { padding-right:2rem; }
   @media (max-width:640px){ h1.hero-title br, .quiz-pills button br, .softbr br { display:none; } .attrib, .pause-attrib { font-size:13.5px; line-height:1.4; } .pause-quote, .pause-attrib, .attrib, blockquote.quote-block p, .section-title, h1.hero-title, .cover-text-bg h2 { text-wrap:balance; } .pause .pause-quote.nobreak { white-space:normal; } .cta-pair .cta-btn { flex:1 1 100%; text-align:center; min-height:46px; } }
   details.fold:not(.feature):not(.case) .fold-body p, details.fold:not(.feature):not(.case) .fold-body li { font-size:17px; }
@@ -561,7 +563,7 @@
         <p>Consoante as questões ou a profundidade do trabalho, podemos observar ofertas, serviços, preços, posicionamento, comunicação, conteúdos, páginas de vendas, website, formatos de entrega, responsabilidades ou decisões.</p>
       </div></div>
     </div>
-    <p class="lead hlbox" style="margin-top:2.6rem;">Observar sem estruturar pode trazer mais consciência, mas deixar-te sem saber o que fazer com ela. Estruturar sem observar pode levar-te a escolher uma estratégia que não consegues ou não desejas sustentar. <strong>Então é neste diálogo entre energia e estratégia que a CEEN acontece.</strong></p>
+    <p class="lead hlbox" style="margin-top:2.6rem;">Observar sem estruturar pode trazer mais consciência, mas deixar-te sem saber o que fazer com ela. Estruturar sem observar pode levar-te a escolher uma estratégia que não consegues ou não desejas sustentar. <strong>É, então, neste diálogo entre energia e estratégia que a CEEN acontece.</strong></p>
   </div>
 </section>
 
@@ -615,7 +617,7 @@
     </details>
 
     <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
-      <p style="font-size:15.5px;"><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong><br>Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, <em>copywriting</em> ou implementação feita por mim.</p>
+      <p style="font-size:17px;"><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong><br>Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, <em>copywriting</em> ou implementação feita por mim.</p>
     </div></div>
     <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:19px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
   </div>
@@ -653,7 +655,7 @@
     </div>
     <div id="bioRest"></div>
     <p style="margin-top:2.6rem; font-size:15.5px; line-height:1.65;">Hoje, junto estas duas vertentes numa prática que combina capacidade de análise e escuta atenta, com clareza, sensibilidade e frontalidade, e um olhar que vai além.</p>
-    <blockquote class="quote-block">
+    <blockquote class="quote-block" style="margin-top:3.4rem;">
       <p style="line-height:1.3; font-size:23px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras, <br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
       <p class="attrib">— feedback de uma cliente num áudio durante um acompanhamento comigo</p>
     </blockquote>
@@ -663,9 +665,9 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Esta forma de trabalhar faz sentido para ti se…</p>
       <ul class="plain">
-        <li>queres compreender o que queres fazer, mas também o que influencia <br>as tuas escolhas e decisões para estares mais consciente no teu negócio ou marca;</li>
-        <li>estás disponível para questionar o que manténs por hábito, segurança ou expectativa e abrir-te a novas possibilidades e experiências dentro do teu negócio ou marca;</li>
-        <li>procuras perguntas e recomendações personalizadas e queres assumir <br>as decisões e os próximos passos;</li>
+        <li>queres compreender o que queres fazer, mas também o que influencia <br>as tuas escolhas e decisões para estares mais consciente no teu negócio;</li>
+        <li>estás disponível para questionar o que manténs por hábito, segurança ou expectativa e abrir-te a novas possibilidades e a experiências;</li>
+        <li>procuras perguntas que abram portas e recomendações personalizadas e queres assumir as tuas decisões e próximos passos;</li>
         <li>desejas crescer e evoluir usando o teu negócio como alavanca para isso.</li>
       </ul>
     </div></div>
@@ -701,10 +703,10 @@
 
 <hr class="div">
 
-<section style="padding-top:0;">
+<section style="padding-top:2.2rem;">
   <div class="wrap-wide">
     <h2 class="section-title">O que te pede o teu momento presente?</h2>
-    <p class="t-sm">Na Sessão, trabalhamos em conjunto durante o encontro. No Ciclo, acrescento o meu tempo de análise entre os encontros e preparo uma proposta personalizada para ti e para o momento do teu negócio.</p>
+    <p class="t-sm" style="text-align:left;">Na Sessão, trabalhamos em conjunto durante o encontro. No Ciclo, acrescento o meu tempo de análise entre os encontros e preparo uma proposta personalizada para ti e para o momento do teu negócio.</p>
 
     
 
@@ -778,6 +780,21 @@
 
 <hr class="div">
 
+<section class="tight" style="padding-top:6px;">
+  <div class="wrap">
+    <blockquote class="quote-block">
+      <p><strong>"Quase em cada frase havia uma chave a rodar"</strong></p>
+    </blockquote>
+    <p style="font-size:15px;">Neste testemunho de um acompanhamento, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
+    <div class="testimonial-photos-ph">
+      <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
+      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"><span class="er" style="left:73.4%; margin-top:184%; width:9.7%; padding-top:4%;"></span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
 <section id="investimento">
   <div class="wrap-wide">
     <h2 class="section-title">Investimento</h2>
@@ -842,21 +859,6 @@
       <p>Entre as duas sessões, os três dias de partilha e os esclarecimentos que eu possa pedir servem para completar a leitura do negócio e preparar a proposta. Não incluem apoio contínuo para implementar as recomendações ou trabalhar as novas questões que surjam no dia a dia.</p>
       <p>Depois da segunda sessão, a entrega do Ciclo fica concluída. A partir daí, podes avançar autonomamente ou marcar uma nova Sessão CEEN.</p>
     </div></div>
-  </div>
-</section>
-
-<hr class="div">
-
-<section class="tight" style="padding-top:6px;">
-  <div class="wrap">
-    <blockquote class="quote-block">
-      <p><strong>"Quase em cada frase havia uma chave a rodar"</strong></p>
-    </blockquote>
-    <p style="font-size:15px;">Neste testemunho de um acompanhamento, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo no seu processo de negócio:</p>
-    <div class="testimonial-photos-ph">
-      <div class="ph"><img src="upsell_cliente2_1.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
-      <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png" alt="" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"><span class="er" style="left:73.4%; margin-top:184%; width:9.7%; padding-top:4%;"></span></div>
-    </div>
   </div>
 </section>
 
@@ -977,12 +979,11 @@
 </div>
 
 <footer>
-  <div class="links">© 2026 Filipa Osório<span>·</span><a href="privacidade.html">Política de Privacidade</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
-  <div class="links" style="margin-top:0.5rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK — REFLEXÕES, INSIGHTS E MAGIA 🖋️</a></div>
-  <div class="links" style="margin-top:0.5rem;"><a href="mailto:mail@filipaosorio.com">💌 CONVITES E PARCERIAS</a></div>
-  <div class="links" style="margin-top:0.9rem;">
-    <a href="termos-ceen.html">Termos e condições CEEN</a><span>·</span><a href="privacidade.html">Política de Privacidade</a>
-  </div>
+  <div class="links">© 2026 Filipa Osório</div>
+  <div class="links" style="margin-top:0.35rem;"><a href="termos-ceen.html">Termos e condições CEEN</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK — REFLEXÕES, INSIGHTS E MAGIA 🖋️</a></div>
+  <div class="links" style="margin-top:0.35rem;"><a href="mailto:mail@filipaosorio.com">💌 CONVITES E PARCERIAS</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="privacidade.html">Política de Privacidade</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
 </footer>
 
 <a class="wa-bubble" href="https://wa.me/message/SGB5SN5CXWY4F1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
