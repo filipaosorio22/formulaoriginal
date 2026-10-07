@@ -25,7 +25,7 @@
     --gray: #f1ece2;
   }
   * { box-sizing: border-box; }
-  body { zoom:0.9; margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:'Lora',serif; font-weight:400; line-height:1.78; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
   a { color:var(--ink); text-decoration:underline; text-decoration-color:rgba(55,53,47,0.35); }
 
   .langbar { position:fixed; top:0; left:0; right:0; z-index:102; text-align:center; font-family:'Lora',serif; font-size:11px; letter-spacing:0.06em; line-height:24px; height:28px; padding:2px 52px; color:#8a7e6d; background:rgba(250,246,239,0.98); }
@@ -259,29 +259,30 @@
   .callout.narrow .ctext p { font-size:17px; }
   blockquote.quote-block.hang { margin-left:-1.3rem; }
   p.t-sm { font-size:17.5px !important; }
-  .two-col.widebox > .callout { padding-left:1rem; padding-right:0.8rem; }
+  .two-col.widebox > .callout { padding-left:2.2rem; padding-right:2rem; }
   .launch { font-family:'Lora',serif; font-size:13px; font-weight:400; font-style:italic; color:var(--ink-soft); margin-left:0.3rem; }
   .aud-lead { text-align:center; margin:0.4rem 0 1.8rem; line-height:1.5; }
   .aud-l1 { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:23px; color:var(--wine); }
   .aud-l2 { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; font-size:21px; color:var(--gold-deep); }
-  .aud-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:620px; margin:0 auto; }
-  .aud { display:flex; gap:0.9rem; align-items:center; background:rgba(201,168,108,0.14); border-radius:12px; padding:1.25rem 1.1rem 1.15rem; }
-  .aud-btn { flex:0 0 46px; width:46px; height:46px; border-radius:50%; border:none; background:var(--wine); cursor:pointer; position:relative; padding:0; }
-  .aud-play { position:absolute; top:50%; left:52%; transform:translate(-50%,-50%); border-left:13px solid var(--cream); border-top:8px solid transparent; border-bottom:8px solid transparent; }
+  .aud-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+  .aud { display:flex; gap:1rem; align-items:center; background:rgba(201,168,108,0.14); border-radius:40px; padding:0.6rem 1.4rem 0.6rem 0.7rem; }
+  .aud-btn { flex:0 0 40px; width:40px; height:40px; border-radius:50%; border:none; background:var(--wine); cursor:pointer; position:relative; padding:0; }
+  .aud-play { position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-left:11px solid var(--cream); border-top:7px solid transparent; border-bottom:7px solid transparent; }
   .aud-pause { display:none; position:absolute; inset:0; align-items:center; justify-content:center; gap:4px; }
-  .aud-pause b { width:4px; height:16px; background:var(--cream); border-radius:2px; }
+  .aud-pause b { width:4px; height:14px; background:var(--cream); border-radius:2px; }
   .aud.playing .aud-play { display:none; } .aud.playing .aud-pause { display:flex; }
-  .aud-main { flex:1; min-width:0; text-align:left; }
-  .aud-q { font-family:'Lora',serif; font-style:italic; font-size:15px; line-height:1.4; color:var(--ink); margin:0 0 0.6rem; text-align:left; min-height:4.3em; }
-  .aud-bar { position:relative; height:30px; cursor:pointer; overflow:hidden; }
+  .aud-main { flex:1; min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(120px,34%) auto; align-items:center; gap:1.1rem; text-align:left; }
+  .aud-q { font-family:'Lora',serif; font-style:italic; font-size:15px; line-height:1.35; color:var(--ink); margin:0; text-align:left; }
+  .aud-q br { display:none; }
+  .aud-bar { position:relative; height:26px; cursor:pointer; overflow:hidden; }
   .aud-wave { position:absolute; inset:0; display:flex; align-items:center; gap:3px; }
   .aud-wave i { flex:1; background:rgba(122,37,53,0.28); border-radius:2px; transition:height 0.3s; }
   .aud.playing .aud-wave i { animation:audpulse 1s ease-in-out infinite alternate; }
   .aud.playing .aud-wave i:nth-child(odd) { animation-delay:0.25s; }
   .aud-fill { position:absolute; left:0; top:0; bottom:0; width:0; border-right:2px solid var(--wine); background:rgba(122,37,53,0.12); pointer-events:none; }
-  .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); }
+  .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); min-width:2.2rem; text-align:right; }
   @keyframes audpulse { from { transform:scaleY(0.6); } to { transform:scaleY(1.15); } }
-  @media (max-width:680px){ .aud-grid { grid-template-columns:1fr; } }
+  @media (max-width:680px){ .aud { border-radius:22px; padding:0.8rem 1rem 0.8rem 0.7rem; } .aud-main { grid-template-columns:1fr auto; gap:0.4rem 0.8rem; } .aud-q { grid-column:1 / -1; } }
   .callout.sessao ul.plain, .callout.ciclo ul.plain { margin-left:-1.1rem; }
   .callout.sessao .ctext li, .callout.ciclo .ctext li, .callout.sessao .ctext p:not(.callout-label), .callout.ciclo .ctext p:not(.callout-label) { font-size:17px; }
   .two-col.dimbox .callout { padding-right:1.8rem; }
@@ -337,8 +338,8 @@
   .fmt-card { transition:box-shadow 0.3s ease, transform 0.3s ease; }
   .fstep:has(.fcard.work) .fdot { background:var(--wine); color:var(--cream); border-color:var(--wine); }
   .fcard.work .fface { border:1px dashed var(--wine); }
-  .fcard.work .ffront::before { content:'my work between sessions'; position:absolute; top:12px; left:0; right:0; text-align:center; font-size:11.5px; font-style:italic; color:var(--wine); }
-  .fcard.work .ffront { padding-top:50px; }
+  .fcard.work .ffront::before { content:'my work between sessions'; position:absolute; top:22px; left:0; right:0; text-align:center; font-size:11.5px; font-style:italic; color:var(--wine); }
+  .fcard.work .ffront { padding-top:58px; }
   .fmt-card.on { box-shadow:0 0 0 1px var(--gold), 0 6px 16px rgba(201,168,108,0.16); transform:translateY(-2px); }
   @media (max-width:680px){ .fmt { grid-template-columns:1fr; } }
   .amostra-frame { display:block; width:100%; height:640px; border:0; border-radius:12px; background:var(--cream); margin:1.2rem 0 0.6rem; }
@@ -351,7 +352,8 @@
   .callout .ctext p.oneline-note { font-size:17.5px; }
   .callout.ciclo-note .ctext p:not(.oneline-note) { font-size:17px; }
   .callout.softer .ctext p:not(.callout-label) { font-size:17.5px; }
-  details.fold.slower.feature .fold-body p { margin-bottom:0.5rem; line-height:1.5; }
+  details.fold.slower.feature .fold-body p { margin-bottom:1rem; line-height:1.7; }
+  details.fold.slower.feature .fold-body li { margin-bottom:0.55rem; line-height:1.65; }
   .callout.case-callout .ctext { padding-right:2rem; }
   @media (max-width:640px){ h1.hero-title br, .quiz-pills button br, .softbr br { display:none; } .attrib, .pause-attrib { font-size:13.5px; line-height:1.4; } .pause-quote, .pause-attrib, .attrib, blockquote.quote-block p, .section-title, h1.hero-title, .cover-text-bg h2 { text-wrap:balance; } .pause .pause-quote.nobreak { white-space:normal; } .cta-pair .cta-btn { flex:1 1 100%; text-align:center; min-height:46px; } }
   details.fold:not(.feature):not(.case) .fold-body p, details.fold:not(.feature):not(.case) .fold-body li { font-size:17px; }
@@ -574,7 +576,7 @@
         <p>Depending on the questions or the depth of the work, we can look at offers, services, prices, positioning, communication, content, sales pages, website, delivery formats, responsibilities or decisions.</p>
       </div></div>
     </div>
-    <p class="lead hlbox" style="margin-top:2.6rem;">Observing without structuring may bring more awareness, but leave you not knowing what to do with it. Structuring without observing may lead you to choose a strategy you cannot or do not wish to sustain. <strong>So it is in this dialogue between energy and strategy that CEEN happens.</strong></p>
+    <p class="lead hlbox" style="margin-top:2.6rem;">Observing without structuring may bring more awareness, but leave you not knowing what to do with it. Structuring without observing may lead you to choose a strategy you cannot or do not wish to sustain. <strong>It is, then, in this dialogue between energy and strategy that CEEN happens.</strong></p>
   </div>
 </section>
 
@@ -628,7 +630,7 @@
     </details>
 
     <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
-      <p style="font-size:15.5px;"><strong>CEEN does not replace technical consulting or specialist execution.</strong><br>We can look at offers, prices, communication, sales pages or decisions and identify relationships and possible changes. In-depth technical audits, full planning, <em>copywriting</em> or implementation carried out by me are not included.</p>
+      <p style="font-size:17px;"><strong>CEEN does not replace technical consulting or specialist execution.</strong><br>We can look at offers, prices, communication, sales pages or decisions and identify relationships and possible changes. In-depth technical audits, full planning, <em>copywriting</em> or implementation carried out by me are not included.</p>
     </div></div>
     <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:19px;"><strong>My role is to listen, question, formulate hypotheses, connect the dots and present concrete recommendations. The final decisions always remain yours.</strong></p></blockquote>
   </div>
@@ -663,7 +665,7 @@
     </div>
     <div id="bioRest"></div>
     <p style="margin-top:2.6rem; font-size:15.5px; line-height:1.65;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening, with clarity, sensitivity and frankness, and a gaze that goes beyond.</p>
-    <blockquote class="quote-block">
+    <blockquote class="quote-block" style="margin-top:3.4rem;">
       <p style="line-height:1.3; font-size:23px;"><strong>"You are so good at capturing, guiding, interpreting and turning into words, <br>into guidance, advice, suggestions and shared reflections."</strong></p>
       <p class="attrib">— feedback from a client in a voice note during an accompaniment with me</p>
     </blockquote>
@@ -673,9 +675,9 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">This way of working makes sense for you if…</p>
       <ul class="plain">
-        <li>you want to understand what you want to do, but also what influences <br>your choices and decisions so you are more aware in your business or brand;</li>
-        <li>you are open to questioning what you keep out of habit, security or expectation and to opening yourself to new possibilities and experiences within your business or brand;</li>
-        <li>you are looking for personalised questions and recommendations and want to own <br>the decisions and next steps;</li>
+        <li>you want to understand what you want to do, but also what influences <br>your choices and decisions so you are more aware in your business;</li>
+        <li>you are open to questioning what you keep out of habit, security or expectation and to opening yourself to new possibilities and to experiences;</li>
+        <li>you are looking for questions that open doors and personalised recommendations, and you want to own your decisions and next steps;</li>
         <li>you want to grow and evolve using your business as leverage for that.</li>
       </ul>
     </div></div>
@@ -711,10 +713,10 @@
 
 <hr class="div">
 
-<section style="padding-top:0;">
+<section style="padding-top:2.2rem;">
   <div class="wrap-wide">
     <h2 class="section-title">What does your present moment ask of you?</h2>
-    <p class="t-sm">In the Session, we work together during the meeting. In the Cycle, I add my own analysis time between the meetings and prepare a personalised proposal for you and for the moment your business is in.</p>
+    <p class="t-sm" style="text-align:left;">In the Session, we work together during the meeting. In the Cycle, I add my own analysis time between the meetings and prepare a personalised proposal for you and for the moment your business is in.</p>
 
     
 
@@ -788,6 +790,18 @@
 
 <hr class="div">
 
+<section class="tight" style="padding-top:6px;">
+  <div class="wrap">
+    <blockquote class="quote-block">
+      <p><strong>"Almost every sentence had a key turning"</strong></p>
+    </blockquote>
+    <p style="font-size:15px;">In this testimonial from an accompaniment, the client described what changed when she gained more awareness, tools and support to deal with what was coming up in her business process:</p>
+    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>I think, in truth, it was everything. All of your accompaniment and the way you always read me so well, saying the exact words I need to hear, not in the sense of giving me pats on the back, but to make me aware of things I wasn’t seeing yet…</p><p>Your work has this power <span class="hl">to turn beliefs, ideas and half-abstract fogs</span> into things I can <span class="ul">understand, apply, integrate and transform!</span></p><p>If I had to choose the most meaningful thing about this Crossing, I’d say it was realising that what I needed in these months was <span class="hl">to find this new identity of mine.</span> When we started, I was looking to understand how to promote my services, and it was with you that I realised that what I needed was to embody this new identity and allow a much more authorial voice to emerge.</p><p><span class="ul">I feel I have gained much more awareness and tools</span> to deal with the issues</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>that keep coming up. There are moments when I still feel low, but I manage to <span class="hl">handle them and get back to buzzing with ideas.</span> Much thanks to the keys you kept leaving me, which stayed stored in the subconscious, which is an incredible feat.</p><p>I have so much gratitude for your work, for your accompaniment, dedication, care and for your sensitivity. This format was very good: being able to keep <em>unloading</em> what was happening and receive your feedback. <span class="hl">Whenever you replied it was spot on, almost every sentence had a key turning!</span></p><p><span class="ul">I feel I entered a different phase and that this transition was even more marked thanks to our accompaniment.</span></p><p>I also value very much your openness to listen to me and the time you invest in me. I can only be grateful for all the magic you do, in all kinds of accompaniment with you.</p><p>Thank you so much, Filipa, for everything 🥰</p><span class="tm">17:30</span></div></div></div></div>
+  </div>
+</section>
+
+<hr class="div">
+
 <section id="investimento">
   <div class="wrap-wide">
     <h2 class="section-title">Investment</h2>
@@ -852,18 +866,6 @@
       <p>Between the two sessions, the three days of sharing and the clarifications I may ask for serve to complete the reading of the business and prepare the proposal. They do not include ongoing support to implement the recommendations or to work on new questions that arise day to day.</p>
       <p>After the second session, the delivery of the Cycle is complete. From there, you can move forward on your own or book a new CEEN Session.</p>
     </div></div>
-  </div>
-</section>
-
-<hr class="div">
-
-<section class="tight" style="padding-top:6px;">
-  <div class="wrap">
-    <blockquote class="quote-block">
-      <p><strong>"Almost every sentence had a key turning"</strong></p>
-    </blockquote>
-    <p style="font-size:15px;">In this testimonial from an accompaniment, the client described what changed when she gained more awareness, tools and support to deal with what was coming up in her business process:</p>
-    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>I think, in truth, it was everything. All of your accompaniment and the way you always read me so well, saying the exact words I need to hear, not in the sense of giving me pats on the back, but to make me aware of things I wasn’t seeing yet…</p><p>Your work has this power <span class="hl">to turn beliefs, ideas and half-abstract fogs</span> into things I can <span class="ul">understand, apply, integrate and transform!</span></p><p>If I had to choose the most meaningful thing about this Crossing, I’d say it was realising that what I needed in these months was <span class="hl">to find this new identity of mine.</span> When we started, I was looking to understand how to promote my services, and it was with you that I realised that what I needed was to embody this new identity and allow a much more authorial voice to emerge.</p><p><span class="ul">I feel I have gained much more awareness and tools</span> to deal with the issues</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>that keep coming up. There are moments when I still feel low, but I manage to <span class="hl">handle them and get back to buzzing with ideas.</span> Much thanks to the keys you kept leaving me, which stayed stored in the subconscious, which is an incredible feat.</p><p>I have so much gratitude for your work, for your accompaniment, dedication, care and for your sensitivity. This format was very good: being able to keep <em>unloading</em> what was happening and receive your feedback. <span class="hl">Whenever you replied it was spot on, almost every sentence had a key turning!</span></p><p><span class="ul">I feel I entered a different phase and that this transition was even more marked thanks to our accompaniment.</span></p><p>I also value very much your openness to listen to me and the time you invest in me. I can only be grateful for all the magic you do, in all kinds of accompaniment with you.</p><p>Thank you so much, Filipa, for everything 🥰</p><span class="tm">17:30</span></div></div></div></div>
   </div>
 </section>
 
@@ -981,12 +983,11 @@
 </div>
 
 <footer>
-  <div class="links">© 2026 Filipa Osório<span>·</span><a href="privacidade.html">Privacy policy (in Portuguese)</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
-  <div class="links" style="margin-top:0.5rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK — REFLECTIONS, INSIGHTS AND MAGIC 🖋️</a></div>
-  <div class="links" style="margin-top:0.5rem;"><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
-  <div class="links" style="margin-top:0.9rem;">
-    <a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a><span>·</span><a href="privacidade.html">Privacy policy (in Portuguese)</a>
-  </div>
+  <div class="links">© 2026 Filipa Osório</div>
+  <div class="links" style="margin-top:0.35rem;"><a href="termos-ceen.html">CEEN terms and conditions (in Portuguese)</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK — REFLECTIONS, INSIGHTS AND MAGIC 🖋️</a></div>
+  <div class="links" style="margin-top:0.35rem;"><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="privacidade.html">Privacy policy (in Portuguese)</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a><span>·</span><a href="#" onclick="fowReopenCookiePrefs(); return false;">Cookies</a></div>
 </footer>
 
 <a class="wa-bubble" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
