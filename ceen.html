@@ -451,6 +451,13 @@
     h2.faqh { margin-bottom:1.8rem; }
     #bioRest p, #bioRest + p { text-align:left !important; }
   }
+  details.faqmain > summary.section-title { font-size:clamp(28px,3.8vw,36px); }
+  @media (min-width:641px){ blockquote.quote-block p.q2 { white-space:nowrap !important; } }
+  @media (max-width:640px){
+    .pause-quote, .pause-attrib { text-align:center !important; margin-left:auto !important; margin-right:auto !important; padding-left:0.8rem; padding-right:0.8rem; }
+    .pause-quote.nobreak { font-size:26px; white-space:normal; }
+    .amostra-legenda { text-align:left; }
+  }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -714,10 +721,10 @@
       <div class="bio-photo-ph"><img src="filipa-foto.jpg" alt="" onerror="this.parentElement.textContent='filipa-foto.jpg'"></div>
       <div>
         <p>Tenho formação (duplo grau de mestrado) em Gestão, Controlo de Gestão, Negócios Internacionais e Estratégia, em instituições de ensino de referência, e experiência nas áreas financeira e de gestão em empresas portuguesas de grande dimensão.</p>
-        <p>Nos últimos anos, aprofundei o estudo e o trabalho no comportamento humano, na identidade, na infância, nas crenças e nos padrões inconscientes, bem como na linguagem simbólica através da qual o inconsciente se expressa. Aprofundei também a visão sistémica aplicada às relações, à liderança e aos negócios.</p>
+        <p>Nos últimos anos, aprofundei o estudo e direcionei o meu trabalho para o comportamento humano, a identidade, a infância, as crenças e os padrões inconscientes, bem como a linguagem simbólica através da qual o inconsciente se expressa. Aprofundei também a visão sistémica aplicada às relações, à liderança e aos negócios.</p>
       </div>
     </div>
-    <div id="bioRest"><p>Este percurso foi consolidado pelo meu próprio processo de desenvolvimento pessoal e profissional e, claro, através do acompanhamento de clientes nos seus processos de autoconhecimento, a compreender crenças e padrões que as afastam de si e a aproximarem-se da sua essência, na forma como se veem, escolhem e vivem.</p></div>
+    <div id="bioRest"><p>Este percurso foi consolidado pelo meu próprio processo de desenvolvimento e através do acompanhamento de clientes nos seus processos de autoconhecimento, a compreender crenças e padrões que as afastam de si e a aproximarem-se da sua essência, na forma como se veem, escolhem e vivem.</p></div>
     <p style="margin-top:2.6rem; font-size:16.5px; line-height:1.65;">Hoje, junto estas duas vertentes numa prática que combina capacidade de análise e escuta atenta, com clareza, sensibilidade e frontalidade, e um olhar que vai além.</p>
     <blockquote class="quote-block" style="margin-top:3.4rem;">
       <p style="line-height:1.3; font-size:21px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras, <br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
@@ -813,9 +820,9 @@
       <summary><span class="tri"></span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(21px,2.5vw,26px); color:var(--wine);">Como funciona a Sessão CEEN</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
-          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Contexto e material principal"><div class="finner"><div class="fface ffront"><b>Contexto e material</b><span>Partilhas a questão e, se existir, o material principal.</span><i class="fhint"></i></div><div class="fface fback"><h5>Contexto e material principal</h5><div class="fpar">Antes da sessão, partilhas o contexto e o que gostarias de trabalhar. Quando for relevante, podes enviar um material principal, como uma página de vendas, uma tabela de preços ou a descrição de uma oferta. Faço uma leitura breve para chegar ao encontro com o enquadramento necessário.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Sessão individual · até duas horas"><div class="finner"><div class="fface ffront"><b>Sessão · até 2h</b><span>Escuto, questiono e devolvo-te o que reconheço.</span><i class="fhint"></i></div><div class="fface fback"><h5>Sessão individual</h5><div class="fpar">Partimos do que trouxeste e aprofundamos o que se revelar mais relevante. Escuto, questiono, devolvo-te o que reconheço, ligo os pontos e apresento novas perspetivas e recomendações concretas durante o encontro.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Recomendações e próximos passos"><div class="finner"><div class="fface ffront"><b>Recomendações e próximos passos</b><span>Trabalhados durante<br>a sessão.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recomendações e próximos passos</h5><div class="fpar">A reflexão, a análise e as recomendações são trabalhadas durante a sessão. Depois, podes avançar autonomamente ou marcar outro encontro quando sentires necessidade. A Sessão não inclui relatório, entrega no Notion, análise posterior, implementação ou acompanhamento assíncrono.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Contexto e material principal"><div class="finner"><div class="fface ffront"><b>Contexto e material</b><span>Partilhas a questão e, <br class="mb">se existir, o material principal.</span><i class="fhint"></i></div><div class="fface fback"><h5>Contexto e material principal</h5><div class="fpar">Antes da sessão, partilhas o contexto e o que gostarias de trabalhar. Quando for relevante, podes enviar um material principal, como uma página de vendas, uma tabela de preços ou a descrição de uma oferta. Faço uma leitura breve para chegar ao encontro com o enquadramento necessário.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Sessão individual · até duas horas"><div class="finner"><div class="fface ffront"><b>Sessão · até 2h</b><span>Escuto, questiono e <br class="mb">devolvo-te o que reconheço.</span><i class="fhint"></i></div><div class="fface fback"><h5>Sessão individual</h5><div class="fpar">Partimos do que trouxeste e aprofundamos o que se revelar mais relevante. Escuto, questiono, devolvo-te o que reconheço, ligo os pontos e apresento novas perspetivas e recomendações concretas durante o encontro.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Recomendações e próximos passos"><div class="finner"><div class="fface ffront"><b>Recomendações e próximos passos</b><span>Trabalhados durante a sessão.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recomendações e próximos passos</h5><div class="fpar">A reflexão, a análise e as recomendações são trabalhadas durante a sessão. Depois, podes avançar autonomamente ou marcar outro encontro quando sentires necessidade. A Sessão não inclui relatório, entrega no Notion, análise posterior, implementação ou acompanhamento assíncrono.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">ver todos em detalhe</a></p>
       </div></div>
@@ -831,7 +838,7 @@
         </div>
         <div class="frow two">
           <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic work" tabindex="0" role="button" aria-label="Ver mais: Proposta personalizada no Notion"><div class="finner"><div class="fface ffront"><b>Proposta no Notion</b><span>Análise, recomendações e prioridades.</span><i class="fhint"></i></div><div class="fface fback"><h5>Proposta no Notion</h5><div class="fpar">Organizo a análise, as ligações que reconheci, as recomendações e as prioridades. Consoante o que for trabalhado, a proposta pode ajudar-te a rever ofertas, comunicação ou formatos de entrega.</div><div class="fpar">Inclui as razões das recomendações, para compreenderes as opções em vez de receberes apenas uma lista de tarefas.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Segunda sessão · apresentar e alinhar"><div class="finner"><div class="fface ffront"><b>Segunda sessão</b><span>Trabalhados durante<br>a segunda sessão.</span><i class="fhint"></i></div><div class="fface fback"><h5>Segunda sessão</h5><div class="fpar">A reflexão, a análise e as recomendações são trabalhadas durante a segunda sessão, com base na análise e preparação feita entre sessões. Depois, podes avançar autonomamente ou marcar outro encontro quando sentires necessidade. Após a segunda sessão não existe análise posterior, implementação ou acompanhamento.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Segunda sessão · apresentar e alinhar"><div class="finner"><div class="fface ffront"><b>Segunda sessão</b><span>Entrega e apresentação da proposta.</span><i class="fhint"></i></div><div class="fface fback"><h5>Segunda sessão</h5><div class="fpar">A reflexão, a análise e as recomendações são trabalhadas durante a segunda sessão, com base na análise e preparação feita entre sessões. Depois, podes avançar autonomamente ou marcar outro encontro quando sentires necessidade. Após a segunda sessão não existe análise posterior, implementação ou acompanhamento.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">ver todos em detalhe</a></p>
       </div></div>
@@ -928,7 +935,7 @@
 <section id="amostra">
   <div class="wrap-wide">
     <h2 class="section-title">Da conversa a uma proposta que podes voltar a consultar</h2>
-    <p class="amostra-legenda" style="margin-bottom:0;">Exemplo ilustrativo. Cada entrega depende do contexto e dos temas trabalhados.</p>
+    <p class="amostra-legenda" style="margin-bottom:0;">Exemplo ilustrativo. <br class="mb">Cada entrega depende do contexto e dos temas trabalhados.</p>
     <iframe class="amostra-frame" src="ciclo-ceen-amostra.html" title="Exemplo ilustrativo de uma entrega do Ciclo CEEN"></iframe>
   </div>
 </section>
