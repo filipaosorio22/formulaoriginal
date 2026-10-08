@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>CEEN · Clareza, Estratégia e Energia no Negócio | Filipa Osório</title>
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -238,11 +238,11 @@
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
   #quem-te-acompanha .two-col p { font-size:16.5px; line-height:1.65; text-align:justify; text-justify:inter-word; hyphens:none; }
-  #quem-te-acompanha .two-col { max-width:640px; margin-left:auto; margin-right:auto; }
-  #bioRest, #bioRest + p { max-width:640px; margin-left:auto; margin-right:auto; }
+  #quem-te-acompanha .two-col { max-width:640px; margin-left:0; margin-right:auto; }
+  #bioRest, #bioRest + p { max-width:640px; margin-left:0; margin-right:auto; }
   #bioRest p, #bioRest + p { font-size:16.5px; line-height:1.65; text-align:justify !important; text-justify:inter-word; hyphens:none; padding-right:0; }
-  #bioRest p { margin-top:1.4rem; }
-  #quem-te-acompanha blockquote.quote-block { max-width:640px; margin-left:auto; margin-right:auto; }
+  #bioRest p { margin-top:2.6rem; }
+  #quem-te-acompanha blockquote.quote-block { max-width:640px; margin-left:0; margin-right:auto; }
   #bioRest:not(:empty) + p { margin-top:1rem !important; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
@@ -276,6 +276,17 @@
   p.t-sm { font-size:17.5px !important; }
   p.t-xs { font-size:16.5px !important; }
   details.padr .fold-body { padding-right:1.9rem; }
+  @media (max-width:1320px){ .popup { width:auto; max-width:260px; padding:0.55rem 0.8rem; } .popup-eyebrow { display:none; } .popup-btn { padding:9px 16px; font-size:10.5px; } }
+  html[data-theme="dark"] .fstep:has(.fcard.work) .fdot { background:#3a2c2f; color:#e7c7bb; border-color:rgba(231,199,187,0.35); }
+  .section-title, .quiz-group { text-wrap:balance; }
+  p.t-sm, p.t-xs, .fold-body p, .callout .ctext p { text-wrap:pretty; }
+  p.trad-note { display:block; width:100%; text-align:center !important; margin-left:auto; margin-right:auto; }
+  details.faqmain > summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:0.8rem; margin:0; }
+  details.faqmain > summary::-webkit-details-marker { display:none; }
+  details.faqmain > summary::before { content:''; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--wine); border-width:7px 0 7px 11px; flex:none; transition:transform 0.25s ease; }
+  details.faqmain[open] > summary::before { transform:rotate(90deg); }
+  .faqbody { padding-top:1.8rem; }
+  @media (min-width:641px){ blockquote.quote-block p.q2 { white-space:nowrap; font-size:min(22px, calc((100vw - 90px)/34)); } }
   details.fold.padr { border-bottom:0 !important; }
   details.feature { scroll-margin-top:90px; }
   .two-col.widebox > .callout { padding-left:2.2rem; padding-right:2rem; }
@@ -706,7 +717,7 @@
         <p>Nos últimos anos, aprofundei o estudo e o trabalho no comportamento humano, na identidade, na infância, nas crenças e nos padrões inconscientes, bem como na linguagem simbólica através da qual o inconsciente se expressa. Aprofundei também a visão sistémica aplicada às relações, à liderança e aos negócios.</p>
       </div>
     </div>
-    <div id="bioRest"><p>Este percurso foi consolidado através do acompanhamento de clientes nos seus processos de autoconhecimento, a compreender crenças e padrões que as afastam de si e a aproximarem-se da sua essência, na forma como se veem, escolhem e vivem.</p></div>
+    <div id="bioRest"><p>Este percurso foi consolidado pelo meu próprio processo de desenvolvimento pessoal e profissional e, claro, através do acompanhamento de clientes nos seus processos de autoconhecimento, a compreender crenças e padrões que as afastam de si e a aproximarem-se da sua essência, na forma como se veem, escolhem e vivem.</p></div>
     <p style="margin-top:2.6rem; font-size:16.5px; line-height:1.65;">Hoje, junto estas duas vertentes numa prática que combina capacidade de análise e escuta atenta, com clareza, sensibilidade e frontalidade, e um olhar que vai além.</p>
     <blockquote class="quote-block" style="margin-top:3.4rem;">
       <p style="line-height:1.3; font-size:21px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras, <br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
@@ -907,7 +918,7 @@
       <p class="oneline-note"><strong>O Ciclo CEEN é um processo de análise e direção, não um acompanhamento.</strong></p>
       <p>A análise centra-se nos temas e materiais prioritários que for possível aprofundar no tempo de trabalho incluído. O Ciclo não é uma revisão exaustiva de todo o negócio.</p>
       <p>Entre as duas sessões, os três dias de partilha e os esclarecimentos que eu possa pedir servem para completar a leitura do negócio e preparar a proposta. Não incluem apoio contínuo para implementar as recomendações ou trabalhar as novas questões que surjam no dia a dia.</p>
-      <p>Depois da segunda sessão, a entrega do Ciclo fica concluída. A partir daí, podes avançar autonomamente ou marcar uma nova Sessão CEEN.</p>
+      <p>Depois da segunda sessão, a entrega do Ciclo fica concluída. <br>A partir daí, podes avançar autonomamente ou marcar uma nova Sessão CEEN.</p>
     </div></div>
   </div>
 </section>
@@ -927,7 +938,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p><strong>"Ter alguém ao meu lado que olha para <br>mim e para o meu negócio como um todo."</strong></p>
+      <p class="q2"><strong>"Ter alguém ao meu lado que olha para <br class="mb">mim e para o meu negócio como um todo."</strong></p>
     </blockquote>
     <p style="font-size:16px;">É no contacto com a experiência real que novas decisões, dúvidas e possibilidades se tornam visíveis. Este é o testemunho de outra cliente sobre o que tem vivido no seu processo comigo:</p>
     <div class="testimonial-photos-ph">
@@ -969,7 +980,8 @@
 
 <section>
   <div class="wrap">
-    <h2 class="section-title faqh">Se tens estas perguntas antes de avançar</h2>
+    <details class="faqmain"><summary class="section-title faqh">Se tens estas perguntas antes de avançar</summary>
+    <div class="faqbody">
     <details class="fold"><summary><span class="tri"></span>A CEEN é consultoria de gestão?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>Não. A CEEN não substitui apoio técnico de gestão, marketing, finanças, contabilidade ou operação. Também não inclui auditorias técnicas, <em>copywriting</em> ou implementação feita por mim. Cruzo o que observo em ti e no negócio com os meus conhecimentos de estratégia e marketing para apresentar possibilidades, critérios e recomendações ajustadas.</p></div></div>
     </details>
@@ -1010,6 +1022,7 @@
         <p>Se reconhecer que o processo beneficiaria de acompanhamento mais próximo, poderei propor-te uma Travessia CEEN. É um formato distinto, não incluído no Ciclo, e não está disponível para marcação direta.</p>
       </div></div>
     </details>
+    </div></details>
   </div>
 </section>
 
