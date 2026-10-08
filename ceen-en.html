@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>CEEN · Clarity, Strategy and Energy in Business | Filipa Osório</title>
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -238,11 +238,11 @@
   .testimonial-photos-ph .ph img.cropt { margin-top:-3.3%; }
   .callout.brown::after { content:''; display:block; clear:both; }
   #quem-te-acompanha .two-col p { font-size:16.5px; line-height:1.65; text-align:justify; text-justify:inter-word; hyphens:none; }
-  #quem-te-acompanha .two-col { max-width:640px; margin-left:auto; margin-right:auto; }
-  #bioRest, #bioRest + p { max-width:640px; margin-left:auto; margin-right:auto; }
+  #quem-te-acompanha .two-col { max-width:640px; margin-left:0; margin-right:auto; }
+  #bioRest, #bioRest + p { max-width:640px; margin-left:0; margin-right:auto; }
   #bioRest p, #bioRest + p { font-size:16.5px; line-height:1.65; text-align:justify !important; text-justify:inter-word; hyphens:none; padding-right:0; }
-  #bioRest p { margin-top:1.4rem; }
-  #quem-te-acompanha blockquote.quote-block { max-width:640px; margin-left:auto; margin-right:auto; }
+  #bioRest p { margin-top:2.6rem; }
+  #quem-te-acompanha blockquote.quote-block { max-width:640px; margin-left:0; margin-right:auto; }
   #bioRest:not(:empty) + p { margin-top:1rem !important; }
   #quem-te-acompanha .two-col p:last-child { margin-bottom:0; }
   .nw { white-space:nowrap; }
@@ -276,6 +276,17 @@
   p.t-sm { font-size:17.5px !important; }
   p.t-xs { font-size:16.5px !important; }
   details.padr .fold-body { padding-right:1.9rem; }
+  @media (max-width:1320px){ .popup { width:auto; max-width:260px; padding:0.55rem 0.8rem; } .popup-eyebrow { display:none; } .popup-btn { padding:9px 16px; font-size:10.5px; } }
+  html[data-theme="dark"] .fstep:has(.fcard.work) .fdot { background:#3a2c2f; color:#e7c7bb; border-color:rgba(231,199,187,0.35); }
+  .section-title, .quiz-group { text-wrap:balance; }
+  p.t-sm, p.t-xs, .fold-body p, .callout .ctext p { text-wrap:pretty; }
+  p.trad-note { display:block; width:100%; text-align:center !important; margin-left:auto; margin-right:auto; }
+  details.faqmain > summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:0.8rem; margin:0; }
+  details.faqmain > summary::-webkit-details-marker { display:none; }
+  details.faqmain > summary::before { content:''; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--wine); border-width:7px 0 7px 11px; flex:none; transition:transform 0.25s ease; }
+  details.faqmain[open] > summary::before { transform:rotate(90deg); }
+  .faqbody { padding-top:1.8rem; }
+  @media (min-width:641px){ blockquote.quote-block p.q2 { white-space:nowrap; font-size:min(22px, calc((100vw - 90px)/34)); } }
   details.fold.padr { border-bottom:0 !important; }
   details.feature { scroll-margin-top:90px; }
   .two-col.widebox > .callout { padding-left:2.2rem; padding-right:2rem; }
@@ -489,7 +500,7 @@
 </div>
 
 <header class="wrap" style="padding:4.6rem 24px 0;">
-  <h1 class="hero-title">Bring your business closer to who you are and to your moment, allowing it to evolve with you</h1>
+  <h1 class="hero-title">Bring your business closer to who you are and <br>to your moment, allowing it to evolve with you</h1>
 </header>
 
 <section class="tight" style="padding-top:12px;">
@@ -521,7 +532,7 @@
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">For people who are an essential part of the value their business offers</h2>
+    <h2 class="section-title">For people who are an essential part <br>of the value their business offers</h2>
     <p class="t-sm">CEEN is designed for you who are an entrepreneur, an independent professional or a content creator. It is for you who have a business or a personal brand and create from your knowledge and experience, and want to communicate through what you believe in.</p>
     <p class="t-sm">People choose you for your perspective, your approach, your method, the way you deliver your work or your view of the world. You are the central part of the value your business or brand offers.</p>
     <p class="t-sm">You already have an activity up and running, with communication, offers, clients or sales attempts. Now, you want to understand what you want to keep developing, how to present it and how you want to deliver it, fully aligned with you.</p>
@@ -541,7 +552,7 @@
     <p class="t-sm">For you, professional success may mean growing, increasing your income or reaching more people. It may mean having more free time, more autonomy, recognition, impact or fulfilment. Or it may mean making decisions with confidence and communicating authentically, feeling more at ease with your work, and no longer experiencing certain professional challenges as such an emotional drain.</p>
     <p class="t-sm">You may already have achieved results that represented success for you, yet still feel that the way you work today no longer reflects who you are. That does not diminish the value of what you have built. It may simply mean that it is time to reshape it so it can evolve with you.</p>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
-      <p class="t-xs"><strong>In CEEN, we do not assume that there is something wrong with you or your business</strong>, that there is an ideal version you should live up to, or a formula for success you should follow. The best strategy is the one that fits you! Reviewing what you have built does not diminish your journey, it allows you to choose how you want to continue.</p>
+      <p class="t-xs"><strong>In CEEN, we do not assume that there is something wrong with you or your business</strong>, that there is an ideal version to live up to, or a formula for success to follow. The best strategy is the one that fits you! Reviewing what you have built does not diminish your journey; it lets you choose how to continue.</p>
     </div></div>
   </div>
 </section>
@@ -593,7 +604,7 @@
       <p class="callout-label">Reviewing the offerings also means recognising what no longer reflects who you are</p>
       <p style="margin-top:1.3rem;">A client came to a session convinced that she wanted to keep investing in certain services. Rationally, they seemed like the safest options and the ones that made the most sense to keep.</p>
       <p>Through the questions I asked and the observations I shared about how she spoke about each service, she came to realize that what she believed she “should” keep no longer matched what she truly wanted to develop.</p>
-      <p>She decided to focus her offerings and communication on the services that genuinely brought her joy, and, after that change, she began making sales again.</p>
+      <p>She decided to focus her offerings and communication on the services that genuinely brought her joy and, after that change, began making sales again.</p>
           </div></div>
 
     <details class="case">
@@ -607,7 +618,7 @@
         <p>That distinction had not been clear to her before the session.</p>
         <h4>THE DECISION AND THE RESULT</h4>
         <p>The client distinguished between the services she believed she “should” keep and those she genuinely wanted to continue developing.</p>
-        <p>She decided to focus her offerings and communication on the latter. After that change, enquiries and sales began coming in again.</p>
+        <p>She decided to focus her offerings and communication on the latter. <br>After that change, enquiries and sales began coming in again.</p>
         <p style="font-style:italic; color:var(--orange); margin-top:2.8rem; font-size:17px;"><strong>CEEN did not choose for her. It helped her see clearly so she could choose.</strong></p>
       </div></div>
     </details>
@@ -624,7 +635,7 @@
       <div class="callout infoA"><div class="ci">⚡</div><div class="ctext">
         <p class="callout-label"><span class="nw">THE ENERGY DIMENSION ·</span><br><span class="nw">THE PERSON BEHIND THE BUSINESS</span></p>
         <p style="margin-top:1.4rem;">Recognising what motivates you, holds you back or drains you, and how this influences your choices and the role you want to play in your business.</p>
-        <p>Depending on what is most relevant to your current situation, we may explore your natural energy, desires, beliefs and patterns—the elements that influence what you choose, communicate and can sustain.</p>
+        <p>Depending on what is most relevant to your current situation, we may explore your natural energy, desires, beliefs and patterns, the elements that influence what you choose, communicate and can sustain.</p>
       </div></div>
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
         <p class="callout-label"><span class="nw">THE STRATEGIC DIMENSION ·</span><br><span class="nw">HOW IT TAKES SHAPE IN THE BUSINESS</span></p>
@@ -632,7 +643,7 @@
         <p>Depending on the questions you bring and the depth of the work, we may look at offerings, services, pricing, positioning, communication, content, sales pages, your website, delivery formats, responsibilities or decisions.</p>
       </div></div>
     </div>
-    <p class="lead hlbox" style="margin-top:2.6rem;">Exploring without creating structure can bring greater awareness but leave you unsure what to do with it. Creating structure without exploring can lead you to choose a strategy you cannot—or do not want to—sustain. <strong>CEEN takes place in this dialogue <br class="mb">between energy and strategy.</strong></p>
+    <p class="lead hlbox" style="margin-top:2.6rem;">Exploring without creating structure can bring greater awareness but leave you unsure what to do with it. Creating structure without exploring can lead you to choose a strategy you cannot, or do not want to, sustain. <strong>CEEN takes place in this dialogue <br class="mb">between energy and strategy.</strong></p>
   </div>
 </section>
 
@@ -667,7 +678,7 @@
         </ul>
         <p style="margin-top:1.5rem;">These dimensions influence one another: changing your offerings may call for different communication; growth may require a different structure; and a change within you may transform the place you want to occupy in your business.</p>
         <p>More effort does not necessarily mean more income. Increasing your results at the expense of your time, willingness or vitality does not make growth sustainable.</p>
-        <p>This perspective helps us recognise the connections that matter when deciding what to keep, reshape or transform—without analysing everything or looking for a single explanation.</p>
+        <p>This perspective helps us recognise the connections that matter when deciding what to keep, reshape or transform, without analysing everything or looking for a single explanation.</p>
       </div></div>
     </details>
 
@@ -714,14 +725,14 @@
     <div class="two-col" style="align-items:stretch;">
       <div class="bio-photo-ph"><img src="filipa-foto.jpg" alt="" onerror="this.parentElement.textContent='filipa-foto.jpg'"></div>
       <div>
-        <p>I have studied Management, Management Control, International Business and Strategy at leading educational institutions, and have experience in finance and management roles in major Portuguese companies.</p>
+        <p>I have a double master’s degree in Management, Management Control, International Business and Strategy from leading educational institutions, and I have experience in finance and management roles in major Portuguese companies.</p>
         <p>Over recent years, I have deepened my study of human behaviour, identity, childhood, beliefs and unconscious patterns, as well as the symbolic language through which the unconscious expresses itself. I have also developed my understanding of the systemic perspective as applied to relationships, leadership and business.</p>
       </div>
     </div>
-    <div id="bioRest"><p>This path has been strengthened through supporting clients in their processes of self-discovery: helping them understand the beliefs and patterns that disconnect them from themselves, and move closer to their essence in how they see themselves, make choices and live.</p></div>
+    <div id="bioRest"><p>This path has been shaped by my own process of personal and professional development and, of course, by supporting clients in their processes of self-discovery: helping them understand the beliefs and patterns that disconnect them from themselves, and move closer to their essence in how they see themselves, make choices and live.</p></div>
     <p style="margin-top:2.6rem; font-size:16.5px; line-height:1.65;">Today, I bring these two strands together in a practice that combines analytical ability and attentive listening with clarity, sensitivity, directness, and a perspective that sees beyond the obvious.</p>
     <blockquote class="quote-block" style="margin-top:3.4rem;">
-      <p style="line-height:1.3; font-size:21px;"><strong>“You’re so good at picking things up, guiding, interpreting, and putting them into words— <br>into guidance, advice, suggestions and reflections we explore together.”</strong></p>
+      <p style="line-height:1.3; font-size:21px;"><strong>“You’re so good at picking things up, guiding, interpreting, and putting them into words, into guidance, advice, suggestions and reflections we explore together.”</strong></p>
       <p class="attrib">— feedback from a client’s voice note during our work together</p>
     </blockquote>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Back to exploring CEEN from the start</a>
@@ -777,18 +788,18 @@
 
     <div class="quiz-box">
       <div id="quizChips">
-        <p class="quiz-group">I want to think things through and make decisions with you · CEEN Session</p>
+        <p class="quiz-group">I want to think things through and decide with you · CEEN Session</p>
         <p class="quiz-note">These are just a few possible examples.</p>
         <div class="quiz-pills">
           <button type="button" data-r="sessao">“I have some decisions to make about my offerings or prices, and <br>I want to think them through with you, with an outside perspective, so I can leave with clarity.”</button>
           <button type="button" data-r="sessao">“I feel that something in my business needs to change, but I don’t know where <br>to start. I want to talk it through and understand what makes sense.”</button>
-          <button type="button" data-r="sessao">“I already know what I want to review—the service format, the price or <br>how I present what I do—and I want to work on it with you now.”</button>
+          <button type="button" data-r="sessao">“I already know what I want to review, the service format, the price or <br>how I present what I do, and I want to work on it with you now.”</button>
         </div>
         <p class="quiz-group">I also want you to analyse what I already have · CEEN Cycle</p>
         <p class="quiz-note">These phrases are just possible examples.</p>
         <div class="quiz-pills">
           <button type="button" data-r="ciclo">“My work has evolved, but my services, website <br>and communication still reflect what I used to do.”</button>
-          <button type="button" data-r="ciclo">“I need time and a thoughtful review of my materials—such as my sales <br>page, prices or offerings—and a structured proposal I can return to.”</button>
+          <button type="button" data-r="ciclo">“I need time and a thoughtful review of my materials, such as my sales <br>page, prices or offerings, and a structured proposal I can return to.”</button>
           <button type="button" data-r="ciclo">“I want to make decisions based on analysis, not just a conversation: <br>to see the connections between my offerings, communication and the way I work.”</button>
         </div>
       </div>
@@ -815,7 +826,7 @@
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
           <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Context and materials</b><span>You share your question and, if you have one, the main piece of material.</span><i class="fhint"></i></div><div class="fface fback"><h5>Context and main material</h5><div class="fpar">Before the session, you share some context and what you would like to work on. Where relevant, you can send one main piece of material, such as a sales page, a pricing table or the description of an offering. I briefly review it so I can come to our meeting with the necessary context.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session · up to 2 hours</b><span>I listen, ask questions and reflect back what I notice.</span><i class="fhint"></i></div><div class="fface fback"><h5>Individual session</h5><div class="fpar">We start with what you bring and explore whatever proves most relevant. I listen, ask questions, reflect back what I notice, connect the dots, and offer new perspectives and concrete recommendations during our meeting.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session<br>up to 2 hours</b><span>I listen, ask questions and reflect back what I notice.</span><i class="fhint"></i></div><div class="fface fback"><h5>Individual session</h5><div class="fpar">We start with what you bring and explore whatever proves most relevant. I listen, ask questions, reflect back what I notice, connect the dots, and offer new perspectives and concrete recommendations during our meeting.</div></div></div></div></div>
           <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Recommendations and next steps</b><span>Developed during our meeting.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recommendations and next steps</h5><div class="fpar">Reflection, analysis and recommendations are developed during the session. Afterwards, you can move forward independently or book another meeting when you feel the need. The Session does not include a report, a Notion deliverable, further analysis, implementation or asynchronous support.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">see all in detail</a></p>
@@ -906,7 +917,7 @@
       <div class="callout ciclo"><div class="ci">🗺️</div><div class="ctext">
         <p class="callout-label" style="margin-bottom:0.9rem;">IN THE CEEN CYCLE</p>
         <ul class="plain">
-          <li>two one-to-one sessions to explore your context in depth and discuss <br>the proposal;</li>
+          <li>two one-to-one sessions to explore your context in depth and discuss the proposal;</li>
           <li>three days to share additional information after the first session;</li>
           <li>personalised analysis of priority <br>topics and materials between sessions, taking up to 21 working days;</li>
           <li>recommendations, priorities and a structured proposal in Notion, with the reasoning behind them.</li>
@@ -915,9 +926,9 @@
     </div>
     <div class="callout grayD ciclo-note" style="margin-top:1.6rem;"><div class="ctext">
       <p class="oneline-note"><strong>The CEEN Cycle is a process of analysis and direction, not ongoing support.</strong></p>
-      <p>The analysis focuses on the priority topics and materials that can be explored in depth within the work time included. The Cycle is not an exhaustive review of your entire business.</p>
+      <p>The analysis focuses on the priority topics and materials that can be explored in depth within the time included. The Cycle is not an exhaustive review of your whole business.</p>
       <p>Between the two sessions, the three-day sharing period and any clarification I may request are intended to complete my understanding of your business and prepare the proposal. They do not include ongoing support to implement recommendations or work through new questions that arise day to day.</p>
-      <p>The Cycle is complete after the second session. From that point, you can move forward independently or book a new CEEN Session.</p>
+      <p>The Cycle is complete after the second session. <br>From that point, you can move forward independently or book a new CEEN Session.</p>
     </div></div>
   </div>
 </section>
@@ -937,7 +948,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p><strong>“Having someone beside me who sees me <br>and my business as a whole.”</strong></p>
+      <p class="q2"><strong>“Having someone beside me who sees me <br class="mb">and my business as a whole.”</strong></p>
     </blockquote>
     <p style="font-size:16px;">It is through real-life experience that new decisions, questions and possibilities become visible. This is another client’s account of what she has been experiencing in her work with me:</p>
     <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>Working with you has been feeling that I have <span class="hl">someone by my side who looks at me and at my business as a whole.</span> With respect for me, for my essence and <span class="ul">without “pushing” catchphrases and marketing strategies,</span> the ones that confused me for years and years 🙌🏻</p><p>You have been asking me key questions and making key comments so I can go a little deeper 🗝️ always with respect for me, for my time and for my family reality 🥹</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>You helped me <span class="hl">review my communication</span> through the eyes of my clients, in a way that <span class="ul">I connected even more to myself, to my essence and to the mission of my company.</span></p><p>Thank you for your perspectives, your authenticity and your <em>straight to the point</em> welcome. And for our conversations that are always so <em>mind blowing</em> 💥</p><p>Working with you is <span class="hl">one of the greatest gifts</span> someone can bring to a business (and to their life too) 🤭❤️</p><span class="tm">16:45</span></div></div></div></div>
@@ -976,7 +987,8 @@
 
 <section>
   <div class="wrap">
-    <h2 class="section-title faqh">Questions you may have before taking the next step</h2>
+    <details class="faqmain"><summary class="section-title faqh">Questions you may have before taking the next step</summary>
+    <div class="faqbody">
     <details class="fold"><summary><span class="tri"></span>Is CEEN management consultancy?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>No. CEEN does not replace technical support in management, marketing, finance, accounting or operations. It also does not include technical audits, copywriting or implementation by me. I bring together what I observe in you and your business with my knowledge of strategy and marketing to offer tailored possibilities, criteria and recommendations.</p></div></div>
     </details>
@@ -1005,7 +1017,7 @@
       <div class="fold-wrap"><div class="fold-body"><p>No. The context review is brief and takes place before the meeting when needed. Analysis, recommendations and decisions are worked through during the session. A report, implementation and follow-up support are not included.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Does the CEEN Cycle analyse the whole business?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No. The analysis focuses on the priority topics and materials that can be explored in depth within the work included. I may connect different areas of your business, but the deliverable reflects what has actually been analysed—not an exhaustive review of everything.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>No. The analysis focuses on the priority topics and materials that can be explored in depth within the work included. I may connect different areas of your business, but the deliverable reflects what has actually been analysed, not an exhaustive review of everything.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>What if I bring more than we can cover in a CEEN Session?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>We work through what we can within the time available. If it makes sense to continue, we can consider another Session or the Cycle, where additional analysis of materials and a proposal would be useful. The decision is yours.</p></div></div>
@@ -1017,6 +1029,7 @@
         <p>If I recognise that the process would benefit from closer support, I may suggest a CEEN Journey. This is a separate format, is not included in the Cycle, and is not available to book directly.</p>
       </div></div>
     </details>
+    </div></details>
   </div>
 </section>
 
@@ -1156,7 +1169,7 @@
     smoothScrollTo(window.__savedScrollY || 0, 2400);
   };
 
-  // toggles suaves — controlamos a abertura à mão, para animar sem saltos
+  // toggles suaves, controlamos a abertura à mão, para animar sem saltos
   function closeDetail(d, wrap){
     wrap.style.maxHeight = wrap.scrollHeight + 'px';
     requestAnimationFrame(function(){ wrap.style.maxHeight = '0px'; });
@@ -1386,8 +1399,8 @@
 (function(){
   var KEY = 'fo_cookie_consent', MAX = 1000*60*60*24*180;
   var T = {
-    pt: { txt: 'Uso cookies para estatísticas (Google Analytics) e para o calendário de marcações (Calendly) funcionar aqui na página e melhorar a tua experiência no site.', more: 'Saber mais', no: 'Recusar', man: 'Gerir preferências', yes: 'Aceitar', title: 'As tuas preferências de cookies', nec: 'Necessários', necd: 'O site em si — sempre ativos, não guardam identificadores.', st: 'Estatísticas', std: 'Ajuda-me a perceber quantas pessoas visitam o site.', cal: 'Calendário de marcações', cald: 'Permite marcares sessões diretamente aqui na página.', back: 'Voltar', save: 'Guardar preferências', priv: 'privacidade.html' },
-    en: { txt: 'I use cookies for statistics (Google Analytics) and so the booking calendar (Calendly) works on this page and improves your experience on the site.', more: 'Learn more', no: 'Decline', man: 'Manage preferences', yes: 'Accept', title: 'Your cookie preferences', nec: 'Necessary', necd: 'The site itself — always on, they do not store identifiers.', st: 'Statistics', std: 'Helps me understand how many people visit the site.', cal: 'Booking calendar', cald: 'Lets you book sessions directly on this page.', back: 'Back', save: 'Save preferences', priv: 'privacidade.html' }
+    pt: { txt: 'Uso cookies para estatísticas (Google Analytics) e para o calendário de marcações (Calendly) funcionar aqui na página e melhorar a tua experiência no site.', more: 'Saber mais', no: 'Recusar', man: 'Gerir preferências', yes: 'Aceitar', title: 'As tuas preferências de cookies', nec: 'Necessários', necd: 'O site em si, sempre ativos, não guardam identificadores.', st: 'Estatísticas', std: 'Ajuda-me a perceber quantas pessoas visitam o site.', cal: 'Calendário de marcações', cald: 'Permite marcares sessões diretamente aqui na página.', back: 'Voltar', save: 'Guardar preferências', priv: 'privacidade.html' },
+    en: { txt: 'I use cookies for statistics (Google Analytics) and so the booking calendar (Calendly) works on this page and improves your experience on the site.', more: 'Learn more', no: 'Decline', man: 'Manage preferences', yes: 'Accept', title: 'Your cookie preferences', nec: 'Necessary', necd: 'The site itself, always on, they do not store identifiers.', st: 'Statistics', std: 'Helps me understand how many people visit the site.', cal: 'Booking calendar', cald: 'Lets you book sessions directly on this page.', back: 'Back', save: 'Save preferences', priv: 'privacidade.html' }
   };
   var t = T[(document.documentElement.lang || 'pt').indexOf('en') === 0 ? 'en' : 'pt'];
   function get(){ try { var raw = localStorage.getItem(KEY); if (!raw) return null; var o = JSON.parse(raw); if (!o.ts || Date.now() - o.ts > MAX) return null; return o; } catch(e){ return null; } }
