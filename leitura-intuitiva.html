@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <meta name="color-scheme" content="light dark">
 <script>(function(){var m=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)");function a(){var t=null;try{t=localStorage.getItem("fo_theme");}catch(e){}var d=t?t==="dark":(m&&m.matches);document.documentElement.setAttribute("data-theme",d?"dark":"light");}a();if(m&&m.addEventListener){m.addEventListener("change",a);}})();</script>
 <script>try{if(localStorage.getItem('fo_size')==='large')document.documentElement.setAttribute('data-size','large');}catch(e){}</script>
@@ -384,6 +384,49 @@
   .popup { width:auto; max-width:280px; padding:0.8rem 0.95rem 0.9rem; }
   .popup-title { font-size:15.5px; white-space:nowrap; margin:0.1rem 1rem 0.6rem 0; }
   .popup .btn { padding:9px; font-size:11px; }
+
+  /* ronda 5: capa no estilo da CEEN, em dourado suave */
+  .hero { padding-top:0 !important; text-align:left; }
+  .cover-li { margin-top:88px; height:34vh; min-height:230px; max-height:310px; padding:0; display:flex; flex-direction:row; align-items:flex-end; justify-content:flex-start;
+    background:radial-gradient(ellipse at 22% 30%, rgba(255,250,238,0.75), transparent 55%), radial-gradient(ellipse at 80% 70%, rgba(214,186,140,0.35), transparent 60%), linear-gradient(120deg,#eadcc4,#e3d0ad,#efe4cf,#dcc49b,#e9dbc2,#e6d4b4);
+    background-size:100% 100%; animation:none; }
+  .cover-li::after { display:none; }
+  .cover-li .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; position:relative; z-index:1; }
+  .cover-li h1 { font-family:'Cormorant Garamond',serif; font-style:normal; font-weight:700; font-size:clamp(34px,5vw,44px); line-height:1.05; letter-spacing:0; margin:0 0 0.25rem; color:var(--wine); }
+  .cover-li .h1-sub { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:clamp(17px,2.2vw,19.5px); line-height:1.3; color:#9a7440; margin:0; }
+  .cover-li .spk { color:#fffaf0; text-shadow:0 0 5px rgba(255,244,214,0.9); }
+  .cover-li .spk.g { color:#b8955a; text-shadow:none; }
+  html[data-theme="dark"] .cover-li { background:radial-gradient(ellipse at 22% 30%, rgba(120,95,60,0.35), transparent 55%), linear-gradient(120deg,#3b3125,#463a2a,#3a3024,#4a3d2b,#3d3226,#433729); }
+  html[data-theme="dark"] .cover-li .h1-sub { color:#d3b67f; }
+  @media (min-width:1100px){ .cover-li { margin-top:60px; } }
+  @media (max-width:640px){ .cover-li { min-height:220px; height:auto; padding:0; } .cover-li .cover-text { padding:3.2rem 24px 1.3rem; } }
+  .tagline { text-align:center; }
+  /* ronda 5: mais espaço para o texto */
+  .closing p.body-text, .legal, .faixa p, .statement, .extra-offer-text { max-width:none; }
+  .closing p.body-text { text-align:left; }
+  .legal { text-align:left; }
+  .closing .t { line-height:1.3; }
+  @media (max-width:640px){ .closing { padding:1.8rem 1.1rem; } }
+  /* ronda 5: cartões mais pequenos e discretos */
+  .flip-grid { gap:0.8rem; }
+  .fcard { min-height:0; }
+  .fface { border-radius:8px; padding:1.1rem 1.15rem; }
+  .ffront { padding-bottom:2.2rem; background:transparent; border:0.5px solid var(--gold); }
+  .ffront .sym { font-size:22px; margin-bottom:0.55rem; }
+  .ffront .sym svg { width:22px; height:22px; }
+  .ffront b { font-size:18.5px; }
+  .fhint { bottom:10px; font-size:10.5px; letter-spacing:0.04em; }
+  .fback { border:0.5px solid var(--gold); }
+  .fback h3 { font-size:16.5px; margin-bottom:0.35rem; }
+  .fback p { font-size:13.5px; line-height:1.55; }
+  /* ronda 5: foto da bio alinhada com o texto */
+  @media (min-width:681px){
+    #quem-te-guia .bio-box .bio { grid-template-columns:320px 1fr; }
+    #quem-te-guia .bio-box .bio-photo { position:relative; min-height:0; }
+    #quem-te-guia .bio-box .bio-photo img { position:absolute; inset:0; width:100%; height:100%; object-position:50% 100%; }
+  }
+  .bio-box .statement.sm { white-space:nowrap; text-wrap:nowrap; }
+  @media (max-width:760px){ .bio-box .statement.sm { white-space:normal; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -415,8 +458,10 @@
   <!-- ABERTURA -->
   <header class="hero">
     <div class="cover-li">
+      <div class="cover-text">
     <h1>Leitura Intuitiva</h1>
     <p class="h1-sub">Uma Leitura feita com intuição e método,<br class="dk"> sobre o momento que estás a viver e o tema que trouxeres.</p>
+      </div>
     </div>
     <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
   </header>
@@ -454,7 +499,7 @@
   <!-- TESTEMUNHOS -->
   <section class="reveal" id="testemunhos">
     <blockquote class="voice-quote">
-      <p>«Jamais duvides das informações que recebes. Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz…<br>É uma coisa muito bonita! 🤍»</p>
+      <p>«Jamais duvides das informações que recebes. Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz…<br>É uma coisa muito bonita!»</p>
       <cite>Uma colega de formação, logo depois de receber uma Leitura</cite>
     </blockquote>
     <h2>O que dizem as pessoas que já receberam uma Leitura</h2>
@@ -479,7 +524,7 @@
       <p class="swipe-hint">Desliza para o lado →</p>
     </div>
     <div class="aside">
-      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, pela lente da Astrologia, da Alquimia e dos Arquétipos, o que acrescenta novas camadas de compreensão e abre a porta a reflexões e desenvolvimento pessoal que podes fazer a partir dela.</p>
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, pela lente da Astrologia, da Alquimia e dos Arquétipos, o que acrescenta novas camadas de compreensão e abre a porta a reflexões e aprofundamento que podes fazer a partir dela.</p>
     </div>
   </section>
 
@@ -561,16 +606,16 @@
   <section class="reveal" id="quem-te-guia">
     <h2>Conhece quem te guia</h2>
     <div class="bio-box">
-      <h3 class="bio-title">👩🏻‍💼 Sou a Filipa Osório</h3>
+      <h3 class="bio-title">Sou a Filipa Osório</h3>
     <div class="bio">
       <div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div>
       <div>
         <p class="body-text">Tenho formação e experiência profissional em gestão e estratégia e, há vários anos, dedico-me também a estudar o comportamento humano, as crenças e os padrões que nos movem sem darmos conta.</p>
-        <p class="body-text">Estudei educação e desenvolvimento infantil e especializei-me em terapias como Constelações Familiares, Leitura de Aura, ThetaHealing<sup style="font-size:0.6em;">®</sup>, Innerdance, análise dos sonhos, astrologia, alquimia, Human Design e muito mais. Com tudo isto criei a minha própria metodologia.</p>
+        <p class="body-text">Estudei educação e desenvolvimento infantil e especializei-me em terapias como Constelações Familiares, Leitura de Aura, ThetaHealing<sup style="font-size:0.6em;">®</sup>, innerdance, análise dos sonhos, astrologia, alquimia, Human Design e muito mais. Com tudo isto criei a minha própria metodologia.</p>
       </div>
     </div>
     <p class="body-text" style="margin-top:0.6rem;">Uso a intuição, a linguagem simbólica e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em reflexões que possas usar no teu dia a dia. O meu estudo do inconsciente, dos arquétipos e da alquimia faz parte desse percurso.</p>
-    <p class="statement sm">Não separo a parte analítica da intuitiva, a Leitura é feita pelas duas.</p>
+    <p class="statement sm">Não separo a parte analítica da intuitiva. A Leitura é feita pelas duas.</p>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a>
     </div>
   </section>
@@ -764,14 +809,14 @@
   (function(){
     var c = document.querySelector('.cover-li'); if (!c) return;
     var G = ['✦','✧','✦','·','✦','✶'];
-    for (var i = 0; i < 34; i++) {
+    for (var i = 0; i < 16; i++) {
       var s = document.createElement('span'); s.className = 'spk' + (i % 3 === 0 ? ' g' : ''); s.setAttribute('aria-hidden','true');
       s.textContent = G[i % G.length];
       s.style.left = (Math.random() * 100) + '%'; s.style.top = (Math.random() * 100) + '%';
-      s.style.fontSize = (8 + Math.random() * 16) + 'px';
+      s.style.fontSize = (7 + Math.random() * 9) + 'px';
       s.style.setProperty('--d', (3 + Math.random() * 4).toFixed(2) + 's');
       s.style.setProperty('--dl', (Math.random() * 5).toFixed(2) + 's');
-      s.style.setProperty('--o', (0.55 + Math.random() * 0.45).toFixed(2));
+      s.style.setProperty('--o', (0.45 + Math.random() * 0.4).toFixed(2));
       c.appendChild(s);
     }
   })();
