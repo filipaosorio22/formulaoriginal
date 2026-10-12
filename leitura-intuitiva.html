@@ -477,6 +477,23 @@
   .feat .feat-full { margin-top:1rem; padding-top:0.9rem; border-top:0.5px solid var(--gline); }
   .feat .feat-full p { font-family:'Spectral',serif; font-style:italic; font-size:17px; line-height:1.65; color:var(--ink); margin:0 0 0.85rem; }
   .feat .secret { filter:blur(5px); user-select:none; -webkit-user-select:none; background:rgba(201,168,108,0.25); border-radius:4px; padding:0 3px; }
+
+  /* ronda 7 */
+  @media (min-width:681px){
+    #quem-te-guia .bio-box .bio { align-items:start; }
+    #quem-te-guia .bio-box .bio-photo { height:480px; }
+  }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 28% !important; }
+  @media (max-width:680px){ #quem-te-guia .bio-box .bio-photo { aspect-ratio:3/4.4 !important; } }
+  details.extra-rs { margin-top:1.2rem; text-align:center; }
+  details.extra-rs > summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:0.45rem; font-family:'DM Sans',sans-serif; font-size:13px; color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px; }
+  details.extra-rs > summary::-webkit-details-marker { display:none; }
+  details.extra-rs > summary::before { content:''; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--gold-deep); border-width:5px 0 5px 8px; transition:transform 0.25s ease; }
+  details.extra-rs[open] > summary::before { transform:rotate(90deg); }
+  details.extra-rs .extra-offer { margin-top:0.9rem; }
+  .mapa-cta { margin:1.8rem 0 0.4rem; padding:1.3rem 1.4rem; border:0.5px solid var(--gold); border-radius:14px; text-align:center; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); }
+  html[data-theme="dark"] .mapa-cta { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
+  .mapa-cta p { text-wrap:balance; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); margin:0 0 0.9rem; line-height:1.45; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -620,6 +637,7 @@
     </div>
     <div class="flipall"><button type="button" id="flipAll">ver todos</button></div>
     <p class="statement">Não para te dizer quem és. Para te oferecer uma perspetiva com a qual possas reconhecer-te, questionar e escolher.</p>
+    <div class="mapa-cta"><p>Tens curiosidade de ver o teu mapa natal? Escreve os teus dados e vê-o desenhado a dourado.</p><a class="btn outline" href="mapa-astral.html">✦ Ver o meu mapa</a></div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -779,12 +797,15 @@
         <a class="btn" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20sess%C3%A3o%20de%20aprofundamento." target="_blank" rel="noopener">Quero a Leitura e a sessão</a>
       </div>
     </div>
-    <div class="extra-offer">
-      <p class="eyebrow">Para quando fazes anos</p>
-      <p class="extra-offer-name">Leitura Intuitiva + Revolução Solar · 247€</p>
-      <p class="extra-offer-text">Ideal para quando fizeste aniversário há pouco ou vais fazer em breve: o início de uma nova volta ao Sol, ou seja, de um novo ciclo anual da tua vida. Na astrologia, este momento é chamado de Revolução Solar e permite explorar os temas que podem ganhar destaque entre este aniversário e o próximo.</p>
-      <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Quero a Leitura com Revolução Solar</a>
-    </div>
+    <details class="extra-rs">
+      <summary>Fazes anos em breve? Há uma opção com Revolução Solar</summary>
+      <div class="extra-offer">
+        <p class="eyebrow">Para quando fazes anos</p>
+        <p class="extra-offer-name">Leitura Intuitiva + Revolução Solar · 247€</p>
+        <p class="extra-offer-text">Ideal para quando fizeste aniversário há pouco ou vais fazer em breve: o início de uma nova volta ao Sol, ou seja, de um novo ciclo anual da tua vida. Na astrologia, este momento é chamado de Revolução Solar e permite explorar os temas que podem ganhar destaque entre este aniversário e o próximo.</p>
+        <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Quero a Leitura com Revolução Solar</a>
+      </div>
+    </details>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20tua%20p%C3%A1gina%20sobre%20a%20Leitura%20Intuitiva%20e%20gostava%20de%20marcar%20a%20minha.%20Tenho%20s%C3%B3%20uma%20quest%C3%A3o%3A%20%28a%20tua%20quest%C3%A3o%29." target="_blank" rel="noopener">Tens uma questão antes de escolher? Fala comigo 💌</a></p>
   </section>
 

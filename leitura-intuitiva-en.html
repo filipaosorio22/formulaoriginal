@@ -477,6 +477,23 @@
   .feat .feat-full { margin-top:1rem; padding-top:0.9rem; border-top:0.5px solid var(--gline); }
   .feat .feat-full p { font-family:'Spectral',serif; font-style:italic; font-size:17px; line-height:1.65; color:var(--ink); margin:0 0 0.85rem; }
   .feat .secret { filter:blur(5px); user-select:none; -webkit-user-select:none; background:rgba(201,168,108,0.25); border-radius:4px; padding:0 3px; }
+
+  /* ronda 7 */
+  @media (min-width:681px){
+    #quem-te-guia .bio-box .bio { align-items:start; }
+    #quem-te-guia .bio-box .bio-photo { height:480px; }
+  }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 28% !important; }
+  @media (max-width:680px){ #quem-te-guia .bio-box .bio-photo { aspect-ratio:3/4.4 !important; } }
+  details.extra-rs { margin-top:1.2rem; text-align:center; }
+  details.extra-rs > summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:0.45rem; font-family:'DM Sans',sans-serif; font-size:13px; color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px; }
+  details.extra-rs > summary::-webkit-details-marker { display:none; }
+  details.extra-rs > summary::before { content:''; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--gold-deep); border-width:5px 0 5px 8px; transition:transform 0.25s ease; }
+  details.extra-rs[open] > summary::before { transform:rotate(90deg); }
+  details.extra-rs .extra-offer { margin-top:0.9rem; }
+  .mapa-cta { margin:1.8rem 0 0.4rem; padding:1.3rem 1.4rem; border:0.5px solid var(--gold); border-radius:14px; text-align:center; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); }
+  html[data-theme="dark"] .mapa-cta { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
+  .mapa-cta p { text-wrap:balance; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); margin:0 0 0.9rem; line-height:1.45; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -621,6 +638,7 @@
     </div>
     <div class="flipall"><button type="button" id="flipAll">see all</button></div>
     <p class="statement">Not to tell you who you are. To offer you a perspective in which you can recognize yourself, ask questions and choose.</p>
+    <div class="mapa-cta"><p>Curious to see your own birth chart? Enter your details and see it drawn in gold.</p><a class="btn outline" href="mapa-astral.html">✦ See my birth chart</a></div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -780,12 +798,15 @@
         <a class="btn" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20in-depth%20session." target="_blank" rel="noopener">I want the Reading and the session</a>
       </div>
     </div>
-    <div class="extra-offer">
-      <p class="eyebrow">For your birthday</p>
-      <p class="extra-offer-name">Intuitive Reading + Solar Return · 247€</p>
-      <p class="extra-offer-text">Ideal if your birthday was recently or is coming up soon: the start of a new trip around the Sun, a new yearly cycle in your life. In astrology, this moment is called the Solar Return, and it lets us explore the themes that may come to the fore between this birthday and the next.</p>
-      <a class="link-soft" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20Solar%20Return." target="_blank" rel="noopener">I want the Reading with the Solar Return</a>
-    </div>
+    <details class="extra-rs">
+      <summary>Do you have a birthday coming up? There is an option with the Solar Return</summary>
+      <div class="extra-offer">
+        <p class="eyebrow">For your birthday</p>
+        <p class="extra-offer-name">Intuitive Reading + Solar Return · 247€</p>
+        <p class="extra-offer-text">Ideal if your birthday was recently or is coming up soon: the start of a new trip around the Sun, a new yearly cycle in your life. In astrology, this moment is called the Solar Return, and it lets us explore the themes that may come to the fore between this birthday and the next.</p>
+        <a class="link-soft" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20Solar%20Return." target="_blank" rel="noopener">I want the Reading with the Solar Return</a>
+      </div>
+    </details>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%20saw%20your%20Intuitive%20Reading%20page%20and%20would%20like%20to%20book%20mine.%20I%20just%20have%20one%20question%3A%20%28your%20question%29." target="_blank" rel="noopener">Have a question before choosing? Talk to me 💌</a></p>
   </section>
 
