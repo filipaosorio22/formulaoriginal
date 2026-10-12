@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+<meta name="robots" content="noindex">
+<title>Quizzes da Leitura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
+<style>
+/* Protótipo de 3 quizzes no estilo da página da Leitura: creme, dourado, bordô. Cada quizz acaba num resultado e num convite para a compra. */
+:root {
+  --bg:#faf6ef; --card:#fdfaf5; --ink:#1a1410; --soft:#5f4a3c; --muted:#9a8a7a;
+  --wine:#7a2535; --gold:#c9a86c; --gold-deep:#9a7e52; --line:rgba(201,168,108,0.35); --tint:rgba(201,168,108,0.1);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#1d1915; --card:#25201b; --ink:#efe6d8; --soft:#c9bcaa; --muted:#a59886; --wine:#e4a7b3; --gold-deep:#d3b67f; --tint:rgba(201,168,108,0.08); } }
+:root[data-theme="dark"] { --bg:#1d1915; --card:#25201b; --ink:#efe6d8; --soft:#c9bcaa; --muted:#a59886; --wine:#e4a7b3; --gold-deep:#d3b67f; --tint:rgba(201,168,108,0.08); }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--ink); font-family:'Lora',Georgia,serif; line-height:1.65; padding:0 16px 4rem; }
+.wrap { max-width:720px; margin:0 auto; }
+header { padding:2.4rem 0 1rem; }
+.eyebrow { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-deep); }
+h1 { font-family:'Spectral',serif; font-weight:300; font-style:italic; font-size:clamp(30px,6vw,42px); color:var(--wine); line-height:1.15; margin:0.3rem 0 0.7rem; }
+.intro { color:var(--soft); max-width:62ch; }
+.tabs { display:flex; flex-wrap:wrap; gap:0.5rem; margin:1.6rem 0 1.2rem; }
+.tabs button { font-family:'DM Sans',sans-serif; font-size:13.5px; padding:8px 16px; border-radius:30px; border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer; }
+.tabs button[aria-selected="true"] { background:linear-gradient(120deg,#ecd6a4,#d6b26f,#efdcae); color:#3d2814; border-color:#c9a86c; }
+.quiz { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1.6rem 1.4rem 1.5rem; position:relative; overflow:hidden; }
+.quiz[hidden] { display:none; }
+.quiz::before { content:'✦'; position:absolute; right:1.1rem; top:0.8rem; color:var(--gold); opacity:0.6; }
+.qtitle { font-family:'Spectral',serif; font-style:italic; font-size:24px; color:var(--wine); line-height:1.25; }
+.qsub { font-size:14.5px; color:var(--soft); margin:0.3rem 0 1.1rem; }
+.bar { height:3px; background:var(--tint); border-radius:3px; overflow:hidden; margin-bottom:1.2rem; }
+.bar i { display:block; height:100%; width:0; background:var(--gold); transition:width 0.4s ease; }
+.step { animation:in 0.45s ease; }
+@keyframes in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.q { font-family:'Spectral',serif; font-size:20px; margin-bottom:0.9rem; }
+.opts { display:grid; gap:0.55rem; }
+.opts button { text-align:left; font-family:'Lora',serif; font-size:15.5px; line-height:1.5; color:var(--ink); background:var(--tint); border:1px solid transparent; border-radius:12px; padding:0.75rem 1rem; cursor:pointer; transition:border-color 0.2s, transform 0.2s; }
+.opts button:hover, .opts button:focus-visible { border-color:var(--gold); transform:translateX(3px); outline:none; }
+.res-kicker { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-deep); }
+.res-title { font-family:'Spectral',serif; font-style:italic; font-size:28px; color:var(--wine); margin:0.2rem 0 0.6rem; }
+.res p { margin-bottom:0.8rem; color:var(--soft); }
+.res .q2 { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--ink); border-left:2px solid var(--gold); padding-left:0.9rem; margin:1rem 0; }
+.cta { display:flex; flex-wrap:wrap; gap:0.7rem 1rem; align-items:center; margin-top:1.2rem; }
+.btn { display:inline-block; font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; color:#3d2814; background:linear-gradient(120deg,#ecd6a4,#d6b26f,#efdcae); border:1px solid #c9a86c; border-radius:30px; padding:12px 22px; }
+.soft { font-family:'DM Sans',sans-serif; font-size:13.5px; color:var(--wine); background:none; border:0; border-bottom:0.5px solid var(--gold); cursor:pointer; padding:0 0 1px; }
+.note { font-size:14px; color:var(--muted); margin-top:1.4rem; }
+.where { font-family:'DM Sans',sans-serif; font-size:12.5px; color:var(--muted); margin-top:0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">Protótipo · Leitura Intuitiva</p>
+  <h1>Três quizzes para experimentares</h1>
+  <p class="intro">Responde como se fosses uma cliente. Cada quizz acaba num resultado curto e num convite para a Leitura. Depois diz-me qual queres na página (ou se queres mais do que um) e o que mudarias nas perguntas.</p>
+</header>
+<div class="tabs" role="tablist">
+  <button type="button" role="tab" aria-selected="true" data-q="padrao">1 · Que padrão se repete?</button>
+  <button type="button" role="tab" aria-selected="false" data-q="fase">2 · Em que fase estás?</button>
+  <button type="button" role="tab" aria-selected="false" data-q="opcao">3 · Que Leitura é para ti?</button>
+</div>
+<section class="quiz" id="padrao"></section>
+<section class="quiz" id="fase" hidden></section>
+<section class="quiz" id="opcao" hidden></section>
+<p class="note">Sugestão de lugar na página: o quizz 1 a seguir a «Se sentes que…», o 3 logo antes dos preços. O 2 pode substituir o 1, se preferires falar de momentos e ciclos em vez de padrões.</p>
+</div>
+<script>
+(function(){
+  var STRIPE = 'https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401';
+  var OPCOES = 'leitura-intuitiva.html#opcoes';
+  try { var t = localStorage.getItem('fo_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch(e){}
+
+  var QUIZ = {
+    padrao: {
+      title: 'Que padrão se repete na tua vida?',
+      sub: 'Cinco perguntas rápidas. Escolhe o que te soa mais verdadeiro agora, não o que gostavas que fosse.',
+      qs: [
+        { q:'Quando algo corre mal, o teu primeiro impulso é…', o:[['Resolver tudo sozinha/o, antes que piore','G'],['Pensar em mudar tudo e recomeçar','E'],['Ver como estão os outros antes de mim','C'],['Afastar-me e imaginar como podia ser diferente','V']] },
+        { q:'O que te cansa mais?', o:[['Ter de carregar responsabilidades que ninguém vê','G'],['Sentir-me presa/o à rotina','E'],['Dar mais do que recebo','C'],['Ter ideias que nunca chegam a ganhar forma','V']] },
+        { q:'Num dia livre, sem obrigações, tu…', o:[['Acabas por adiantar trabalho','G'],['Sais, mudas de ares, procuras algo novo','E'],['Ligas a quem precisa de ti','C'],['Perdes-te em livros, música ou sonhos','V']] },
+        { q:'Que frase já disseste mais vezes a ti mesma/o?', o:[['«Se eu não fizer, ninguém faz.»','G'],['«Isto não é para mim, falta-me alguma coisa.»','E'],['«Não quero incomodar.»','C'],['«Um dia vou fazer isto.»','V']] },
+        { q:'O que gostavas de sentir mais?', o:[['Leveza','G'],['Raízes e sentido','E'],['Espaço para mim','C'],['Chão e concretização','V']] }
+      ],
+      res: {
+        G:{ t:'A Guardiã', p:['Sustentas muito: pessoas, projetos, expectativas. A tua força é real, mas às vezes confundes valor com esforço.','No mapa, este padrão pode falar de Saturno, da casa 10 ou de um Sol que aprendeu cedo a ser responsável. Em ti, a origem é única.'], q:'O que aconteceria se descansasses antes de mereceres?' },
+        E:{ t:'A Exploradora', p:['Há em ti uma fome de liberdade e de sentido. Quando algo aperta, o teu impulso é partir, e nem sempre sabes se estás a fugir ou a seguir.','No mapa, este padrão pode passar por Júpiter, Urano ou por uma Lua que precisa de horizonte. A Leitura mostra como se desenha em ti.'], q:'O que procuras lá fora que talvez já esteja a pedir espaço cá dentro?' },
+        C:{ t:'A Cuidadora', p:['Sentes os outros antes de te sentires a ti. É um dom, e também pode ser uma forma antiga de garantires o teu lugar.','No mapa, este padrão pode falar da Lua, de Vénus ou da casa 4. Na tua Leitura, vemos de onde vem e o que pede agora.'], q:'Quem cuida de ti quando cuidas de todos?' },
+        V:{ t:'A Visionária', p:['Vês possibilidades onde outros não veem. O desafio é trazer o que imaginas para o chão, ao teu ritmo.','No mapa, este padrão pode falar de Neptuno, de Peixes ou de muito elemento água ou ar. A Leitura liga-o ao momento que estás a viver.'], q:'Que sonho teu está à espera de um primeiro passo pequeno?' }
+      },
+      kicker:'O teu padrão agora',
+      close:'Este é só um retrato rápido. Na Leitura Intuitiva, olho para o teu mapa e para o que estás a viver para perceber de onde vem este padrão e o que podes experimentar a partir dele.'
+    },
+    fase: {
+      title: 'Em que fase do teu ciclo estás?',
+      sub: 'Quatro perguntas sobre o teu momento. Não há fases melhores do que outras.',
+      qs: [
+        { q:'Como descreves os últimos meses?', o:[['Algo novo está a querer nascer','S'],['Muito movimento, muito a acontecer','C'],['Estou a ver resultados do que plantei','H'],['Preciso de parar e de me recolher','R']] },
+        { q:'A tua energia neste momento é…', o:[['Curiosa, mas ainda tímida','S'],['Intensa, às vezes demais','C'],['Estável e mais confiante','H'],['Baixa, a pedir silêncio','R']] },
+        { q:'O que te pede mais atenção?', o:[['Uma decisão por tomar','S'],['Um projeto ou relação a crescer','C'],['Reconhecer o que já conquistei','H'],['Largar o que já não faz sentido','R']] },
+        { q:'Quando fazes anos?', o:[['Fiz há pouco ou faço nos próximos 2 meses','B'],['Daqui a mais de 2 meses','N']] }
+      ],
+      res: {
+        S:{ t:'Semente', p:['Estás no início de algo, mesmo que ainda não tenha nome. É uma fase de escuta: o que escolheres agora vai ganhar raízes.'], q:'O que queres deixar crescer em ti este ano?' },
+        C:{ t:'Crescimento', p:['Há muito em movimento. É uma fase fértil, e também uma em que é fácil perderes o centro no meio de tanta coisa.'], q:'Que direção queres dar a toda esta energia?' },
+        H:{ t:'Colheita', p:['Estás a colher o que plantaste. É uma boa altura para reconhecer o caminho e perceber o que queres levar contigo.'], q:'O que já não precisas de provar?' },
+        R:{ t:'Recolhimento', p:['É tempo de pausa e de largar. Pode parecer vazio, mas é aqui que se prepara o próximo ciclo.'], q:'O que estás pronta/o para deixar ir?' }
+      },
+      kicker:'A tua fase agora',
+      close:'Na Leitura Intuitiva, olho para o teu mapa e para o momento que estás a viver para te ajudar a atravessar esta fase com mais consciência.',
+      birthday:'Como fazes anos em breve, a Leitura + Revolução Solar é especialmente indicada: explora os temas do teu novo ciclo anual, entre este aniversário e o próximo.'
+    },
+    opcao: {
+      title: 'Que Leitura é para ti?',
+      sub: 'Três perguntas para escolheres a opção certa.',
+      qs: [
+        { q:'Como gostas de receber algo assim?', o:[['A ouvir no meu tempo, com calma','A'],['A ouvir e depois conversar sobre isso','S']] },
+        { q:'Depois de ouvires, imaginas-te a querer…', o:[['Refletir sozinha/o e experimentar','A'],['Aprofundar crenças e padrões com acompanhamento','S']] },
+        { q:'Fazes anos nos próximos 2 meses (ou fizeste há pouco)?', o:[['Sim','B'],['Não','N']] }
+      ],
+      kicker:'A tua opção',
+      close:''
+    }
+  };
+
+  function el(tag, cls, html){ var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+
+  function run(id){
+    var Q = QUIZ[id], box = document.getElementById(id), ans = [];
+    function head(){ box.innerHTML = ''; box.appendChild(el('p','qtitle',Q.title)); box.appendChild(el('p','qsub',Q.sub)); }
+    function ask(i){
+      head();
+      var bar = el('div','bar'), fill = el('i'); bar.appendChild(fill); box.appendChild(bar);
+      setTimeout(function(){ fill.style.width = (i / Q.qs.length * 100) + '%'; }, 20);
+      var st = el('div','step'); st.appendChild(el('p','q',Q.qs[i].q));
+      var opts = el('div','opts');
+      Q.qs[i].o.forEach(function(o){ var b = el('button',null,o[0]); b.type = 'button'; b.addEventListener('click', function(){ ans.push(o[1]); if (i + 1 < Q.qs.length) ask(i + 1); else done(); }); opts.appendChild(b); });
+      st.appendChild(opts); box.appendChild(st);
+    }
+    function top(list){ var c = {}; list.forEach(function(k){ c[k] = (c[k] || 0) + 1; }); var best = null; Object.keys(c).forEach(function(k){ if (!best || c[k] > c[best]) best = k; }); return best; }
+    function result(title, paras, quote, extra, cta){
+      head();
+      var r = el('div','res step');
+      r.appendChild(el('p','res-kicker',Q.kicker));
+      r.appendChild(el('p','res-title',title));
+      paras.forEach(function(p){ r.appendChild(el('p',null,p)); });
+      if (quote) r.appendChild(el('p','q2',quote));
+      if (extra) r.appendChild(el('p',null,extra));
+      var c = el('div','cta');
+      c.appendChild(el('a','btn',cta.label)); c.lastChild.href = cta.href; c.lastChild.target = '_blank'; c.lastChild.rel = 'noopener';
+      var again = el('button','soft','Fazer outra vez'); again.type = 'button'; again.addEventListener('click', function(){ ans = []; ask(0); }); c.appendChild(again);
+      r.appendChild(c);
+      r.appendChild(el('p','where','Na página real, este botão leva ao pagamento ou às opções.'));
+      box.appendChild(r);
+    }
+    function done(){
+      if (id === 'padrao') {
+        var k = top(ans), R = Q.res[k];
+        result(R.t, R.p.concat([Q.close]), R.q, '', { label:'Quero a minha Leitura', href:STRIPE });
+      } else if (id === 'fase') {
+        var bday = ans[3] === 'B', k2 = top(ans.slice(0,3)), F = Q.res[k2];
+        result(F.t, F.p.concat([Q.close]), F.q, bday ? Q.birthday : '', bday ? { label:'Ver a Leitura + Revolução Solar', href:OPCOES } : { label:'Quero a minha Leitura', href:STRIPE });
+      } else {
+        var s = ans.slice(0,2).filter(function(a){ return a === 'S'; }).length, b = ans[2] === 'B';
+        if (b) result('Leitura + Revolução Solar · 247 €', ['Estás a começar (ou prestes a começar) uma nova volta ao Sol. Além da tua Leitura, exploramos os temas que podem ganhar destaque neste novo ciclo anual.'], '', s ? 'Se depois quiseres conversar sobre o que ouviste, podemos marcar uma sessão de integração.' : '', { label:'Ver esta opção', href:OPCOES });
+        else if (s >= 1) result('Leitura + sessão de integração · 247 €', ['Gostas de ouvir e depois conversar. Na sessão, partimos do que reconheceste na Leitura e trabalhamos as crenças e os padrões que quiseres aprofundar.'], '', '', { label:'Ver esta opção', href:OPCOES });
+        else result('Leitura Intuitiva · 147 €', ['Gostas de receber e de refletir no teu tempo. A Leitura em áudio dá-te espaço para ouvir, pausar e voltar às partes que te tocam.'], '', '', { label:'Quero a minha Leitura', href:STRIPE });
+      }
+    }
+    ask(0);
+  }
+
+  ['padrao','fase','opcao'].forEach(run);
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){ x.setAttribute('aria-selected', String(x === b)); });
+      document.querySelectorAll('.quiz').forEach(function(q){ q.hidden = q.id !== b.dataset.q; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
