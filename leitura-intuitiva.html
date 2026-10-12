@@ -331,6 +331,12 @@
   @media (max-width:680px){ .themes.ex { grid-template-columns:repeat(2,1fr); } .themes.ex span { border-radius:18px; } }
   /* ronda 2b: sem cores atrás do título no modo noturno */
   html[data-theme="dark"] .hero-glow, html[data-theme="dark"] .faixa::before { display:none; }
+  /* ronda 3 */
+  @media (min-width:681px){ #quem-te-guia .bio-box .bio { grid-template-columns:290px 1fr; } #quem-te-guia .bio-box .bio-photo { min-height:400px; } }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 85%; }
+  .aside p + p { margin-top:0; }
+  .qa-a { padding-left:0 !important; }
+  .bio-box .bio p.body-text { text-align:left; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -371,13 +377,12 @@
   <!-- TEXTO SOBRE A FOTO DE FUNDO -->
   <div class="texto-fundo reveal" id="comeco">
     <p class="body-text">Existe em ti uma forma única de te moveres pela vida.</p>
-    <p class="body-text">E essa forma não se revela apenas no teu ritmo ou na tua energia. Revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
-    <p class="body-text">Talvez também a reconheças de uma forma menos fácil de explicar: num sonho que fica contigo, numa imagem que te toca ou numa sensação que ainda não consegues pôr em palavras.</p>
+    <p class="body-text">Essa forma não se revela apenas no teu ritmo ou na tua energia. Revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
+    <p class="body-text">Talvez também a reconheças de uma forma menos fácil de explicar: num sonho que fica contigo, numa imagem que te toca ou numa sensação que ainda não consegues colocar em palavras.</p>
     <p class="body-text">Há histórias que se repetem ao longo da tua vida. Na forma como te relacionas. Nas decisões que tomas. Nos desafios que encontras e na forma como respondes a eles.</p>
-    <p class="body-text">Ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de umas determinadas lentes. Sobre amor. Sobre valor, segurança, sucesso, liberdade, expressão…</p>
-    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti.</p>
-    <p class="body-text"><strong>És mais do que essas histórias e do que as formas que encontraste para te adaptares.</strong></p>
-    <p class="body-text">A Leitura Intuitiva é um convite para te recentrares: para veres os padrões, as crenças e as dinâmicas do teu momento e a forma como influenciam as diferentes áreas da tua vida. E quando vês o que está a operar por trás das tuas escolhas, ganhas mais espaço para escolher de forma diferente.</p>
+    <p class="body-text">Ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de umas determinadas lentes.<br>Sobre amor. Sobre valor, segurança, sucesso, liberdade, expressão…</p>
+    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti, e <strong>tu és mais do que essas histórias e do que as formas que encontraste para te adaptares.</strong></p>
+    <p class="body-text">A Leitura Intuitiva é um convite para te recentrares: para veres os padrões, as crenças e as dinâmicas do teu momento e a forma como te influenciam. Quando vês o que está a operar por trás das tuas escolhas, ganhas mais espaço para escolher de forma diferente, com mais consciência.</p>
   </div>
 
   <div class="faixa reveal"><p>O que acreditas sobre ti molda mais as tuas escolhas do que imaginas.</p></div>
@@ -388,7 +393,7 @@
     <p class="recognize-hint">Toca nas frases em que te reconheces.</p>
     <ul class="recognize stagger">
       <li><button type="button" aria-pressed="false"><span class="mk">✓</span><span>Desejas conhecer mais de ti, na tua essência mais livre</span></button></li>
-      <li><button type="button" aria-pressed="false"><span class="mk">✓</span><span>Reconheces nos sonhos, nas imagens e nos símbolos uma forma de te aproximares do teu mundo interior</span></button></li>
+      <li><button type="button" aria-pressed="false"><span class="mk">✓</span><span>Reconheces algo nos sonhos, símbolos e sinais na vida</span></button></li>
       <li><button type="button" aria-pressed="false"><span class="mk">✓</span><span>Existem desafios que se repetem e queres perceber o padrão por trás</span></button></li>
       <li><button type="button" aria-pressed="false"><span class="mk">✓</span><span>Queres construir a tua vida com mais consciência, confiança e leveza</span></button></li>
       <li><button type="button" aria-pressed="false"><span class="mk">✓</span><span>Estás a viver uma transição e procuras clareza sobre o teu processo</span></button></li>
@@ -403,7 +408,7 @@
   <!-- TESTEMUNHOS -->
   <section class="reveal" id="testemunhos">
     <blockquote class="voice-quote">
-      <p>«Jamais duvides das informações que recebes. Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz… é uma coisa muito bonita.»</p>
+      <p>«Jamais duvides das informações que recebes. Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz…<br>É uma coisa muito bonita! 🤍»</p>
       <cite>Uma colega de formação, logo depois de receber uma leitura</cite>
     </blockquote>
     <h2>O que dizem as pessoas que já receberam uma leitura</h2>
@@ -427,8 +432,7 @@
       <div class="car-dots" id="carDots"></div>
     </div>
     <div class="aside">
-      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa.</p>
-      <p>A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, pela lente da Astrologia, da Alquimia e dos Arquétipos.</p>
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, pela lente da Astrologia, da Alquimia e dos Arquétipos.</p>
     </div>
   </section>
 
@@ -440,7 +444,7 @@
     <p class="body-text">É um olhar intuitivo e profundo sobre o teu mapa astral, orientado pelo tema que trazes. Não te entrego uma lista de signos e planetas: exploro as relações entre os símbolos do mapa para abrir perguntas sobre os teus padrões, as tuas crenças e as possibilidades a que desejas dar mais espaço.</p>
     <div class="flip-grid">
       <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym">☉</span><b>O mapa como ponto de partida</b><span class="fhint"></span></div>
+        <div class="fface ffront"><span class="sym">☉</span><b>O mapa como<br>ponto de partida</b><span class="fhint"></span></div>
         <div class="fface fback"><h3>O mapa como ponto de partida</h3><p>O mapa não é uma sentença. Interessa-me a conversa entre os seus elementos: os desejos, as tensões e as possibilidades que podem ganhar expressão na tua vida.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
@@ -465,7 +469,8 @@
   <!-- E DEPOIS -->
   <section class="reveal" id="pratica">
     <h2>E depois, o que faço com isto?</h2>
-    <p class="body-text">Saber que tens o Sol em Capricórnio pode despertar curiosidade. Mas o que quer isso dizer na tua vida? A leitura passa da linguagem simbólica para perguntas e experiências que podes levar para o dia a dia. Escolhe um exemplo:</p>
+    <p class="body-text">Saber que tens o Sol em Capricórnio pode despertar curiosidade. Mas como pode essa informação ajudar-te a compreender a tua relação com o trabalho, a responsabilidade e o sucesso? Por exemplo: o que te faz sentir realizada, como lidas com a exigência e o que precisas para reconhecer o valor do que fazes? A leitura passa da linguagem simbólica dos arquétipos dos signos e dos planetas para perguntas e experiências que podes levar para o teu dia-a-dia.</p>
+    <p class="recognize-hint">Escolhe um exemplo:</p>
     <div class="tabs" role="tablist">
       <button type="button" role="tab" aria-selected="true" aria-controls="tp1" id="tb1">Comunicação</button>
       <button type="button" role="tab" aria-selected="false" aria-controls="tp2" id="tb2">Relações</button>
@@ -473,15 +478,15 @@
     </div>
     <div class="tabpanel" role="tabpanel" id="tp1" aria-labelledby="tb1">
       <p class="qa-q">Como se manifesta isto na minha comunicação?</p>
-      <p class="qa-a"><span>↳</span>Se o tema for a dificuldade em expressar necessidades, podemos explorar em que conversas isso acontece. Uma experiência possível: preparar um pedido concreto, em vez de esperar que a outra pessoa adivinhe o que precisas.</p>
+      <p class="qa-a">Se o tema for a dificuldade em expressar necessidades, podemos explorar em que conversas isso acontece. Uma experiência possível: preparar um pedido concreto, em vez de esperar que a outra pessoa adivinhe o que precisas.</p>
     </div>
     <div class="tabpanel" role="tabpanel" id="tp2" aria-labelledby="tb2" hidden>
       <p class="qa-q">O que posso experimentar nos meus relacionamentos?</p>
-      <p class="qa-a"><span>↳</span>Se reconheceres uma tendência para assumir tudo, podes observar quando te antecipas ao outro. Uma experiência possível: combinar uma responsabilidade de forma explícita e distinguir o que te cabe do que cabe à outra pessoa.</p>
+      <p class="qa-a">Se reconheceres uma tendência para assumir tudo, podes observar quando te antecipas ao outro. Uma experiência possível: combinar uma responsabilidade de forma explícita e distinguir o que te cabe do que cabe à outra pessoa.</p>
     </div>
     <div class="tabpanel" role="tabpanel" id="tp3" aria-labelledby="tb3" hidden>
       <p class="qa-q">Como levo isto para o trabalho e para o meu tempo?</p>
-      <p class="qa-a"><span>↳</span>Se surgir uma relação entre valor pessoal e produtividade, podes observar o que pensas quando descansas. Uma experiência possível: definir um limite concreto de disponibilidade e reparar na reação que isso desperta em ti.</p>
+      <p class="qa-a">Se surgir uma relação entre valor pessoal e produtividade, podes observar o que pensas quando descansas. Uma experiência possível: definir um limite concreto de disponibilidade e reparar na reação que isso desperta em ti.</p>
     </div>
     <div class="flow stagger"><span>Reconhecer</span><i>→</i><span>relacionar com uma situação</span><i>→</i><span>escolher uma experiência</span><i>→</i><span>observar o que acontece</span></div>
     <p class="soft-note" style="text-align:center;">São exemplos. A tua leitura é orientada pelo teu tema e pelo contexto que partilhares.</p>
@@ -493,11 +498,11 @@
   <section class="reveal" id="o-que-recebes">
     <h2>O que recebes</h2>
     <ul class="clean stagger">
-      <li>Uma leitura personalizada do teu mapa astral, orientada pelo tema que trazes</li>
+      <li>Uma leitura personalizada do teu mapa astral, orientada pelo que estás a viver</li>
       <li>Uma história simbólica ligada ao teu momento</li>
       <li>Relações entre os temas do mapa e o que partilhas como ponto de partida</li>
       <li>Perguntas para reconheceres como um padrão aparece em situações concretas</li>
-      <li>Orientações e experiências práticas para o teu dia a dia</li>
+      <li>Orientações e experiências práticas para o teu dia-a-dia</li>
       <li>Tudo em áudio, gravado por mim, para ouvires quantas vezes quiseres</li>
     </ul>
   </section>
@@ -513,11 +518,11 @@
       <div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div>
       <div>
         <p class="body-text">Tenho formação e experiência profissional em gestão e estratégia e, há vários anos, dedico-me também a estudar o comportamento humano, as crenças e os padrões que nos movem sem darmos conta.</p>
-        <p class="body-text">Estudei educação e desenvolvimento infantil e especializei-me em terapias como Constelações Familiares, Leitura de Aura, ThetaHealing<sup style="font-size:0.6em;">®</sup>, InnerDance, análise dos sonhos, astrologia, alquimia, Human Design e muito mais. Com tudo isto criei a minha própria metodologia.</p>
+        <p class="body-text">Estudei educação e desenvolvimento infantil e especializei-me em terapias como Constelações Familiares, Leitura de Aura, ThetaHealing<sup style="font-size:0.6em;">®</sup>, Innerdance, análise dos sonhos, astrologia, alquimia, Human Design e muito mais. Com tudo isto criei a minha própria metodologia.</p>
       </div>
     </div>
     <p class="body-text" style="margin-top:1.4rem;">Uso a intuição, a linguagem simbólica e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em reflexões que possas usar no teu dia a dia. O meu estudo do inconsciente, dos arquétipos e da alquimia faz parte desse percurso.</p>
-    <p class="statement">Não separo a parte analítica da intuitiva. A tua leitura é feita pelas duas.</p>
+    <p class="statement">Não separo a parte analítica da intuitiva.<br>A tua leitura é feita pelas duas.</p>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a>
     </div>
   </section>
@@ -539,7 +544,7 @@
       <span>Criatividade e prazer</span>
       <span>Tempo e ritmo da vida</span>
     </div>
-    <p class="soft-note">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade. Não precisas de separar aquilo que, na tua experiência, está ligado.</p>
+    <p class="soft-note">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade.<br>Não precisas de separar aquilo que, na tua experiência, está ligado.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -552,7 +557,7 @@
       <div class="tl-step"><span class="tl-dot">2</span><h3>Partilhas os teus dados e o teu tema</h3><p>Data, hora e local de nascimento, o que estás a viver e o contexto que achas importante.</p></div>
       <div class="tl-step"><span class="tl-dot">3</span><h3>Preparo e gravo a tua leitura</h3><p>Com intuição e um olhar arquetípico sobre o teu mapa, ligando a leitura a perguntas e orientações práticas.</p></div>
       <div class="tl-step"><span class="tl-dot">4</span><h3>Recebes a tua leitura</h3><p>Em áudio, até 14 dias úteis após a confirmação do pagamento, com um espaço pessoal no Notion com os pontos principais e perguntas para continuares a explorar.</p></div>
-      <div class="tl-step"><span class="tl-dot">5</span><h3>Escutas e integras</h3><p>No teu tempo, quantas vezes quiseres. Podes preparar reflexões no Notion e trazer exemplos concretos.</p></div>
+      <div class="tl-step"><span class="tl-dot">5</span><h3>Escutas e integras</h3><p>No teu tempo, quantas vezes quiseres.<br>Podes preparar reflexões no Notion e trazer exemplos concretos.</p></div>
       <div class="tl-step opt"><span class="tl-dot">6</span><h3>Sessão de integração</h3><p>Aprofundamos os temas, trabalhamos as crenças relevantes e exploramos formas de responder às situações reais.</p></div>
     </div>
   </section>
@@ -567,7 +572,7 @@
     <p class="body-text">Nesta sessão individual, trazes o que surgiu: perguntas, reflexões ou exemplos concretos da tua vida. Não precisas de preparar tudo no Notion nem de chegar com uma explicação organizada.</p>
     <p class="body-text">A partir do que partilhas, ajudo-te a explorar as relações entre aquilo que sentes, as crenças que podem estar presentes e a forma como respondes às situações. Quando fizer sentido, trabalhamos essas crenças através das práticas que integro no meu acompanhamento. Se quiseres, podemos também aprofundar o teu mapa de Human Design.</p>
     <p class="body-text">Não ficamos apenas em compreender o padrão. Exploramos também o que desejas viver de outra forma e que passos podes experimentar na tua comunicação, nas tuas relações ou nas escolhas que tens pela frente.</p>
-    <p class="statement">A leitura abre perspetivas. A sessão permite aprofundá-las contigo, em relação com a tua experiência.</p>
+    <p class="statement">A leitura abre perspetivas e reflexões. A sessão permite-te aprofundar e trabalhar as questões que surgirem, com o trabalho de crenças na minha metodologia única.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -604,7 +609,7 @@
     <div class="extra-offer">
       <p class="eyebrow">Para quando fazes anos</p>
       <p class="extra-offer-name">Leitura Intuitiva + Revolução Solar · 247 €</p>
-      <p class="extra-offer-text">Uma leitura adicional do teu ciclo anual, relacionada com o mapa natal e com o momento que estás a viver. Ideal para a tua volta ao Sol.</p>
+      <p class="extra-offer-text">Ideal para quando fizeste aniversário há pouco ou vais fazer em breve: o início de uma nova volta ao Sol, ou seja, de um novo ciclo anual da tua vida. Na astrologia, este momento é chamado de Revolução Solar e permite explorar os temas que podem ganhar destaque entre este aniversário e o próximo.</p>
       <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Quero a leitura com Revolução Solar</a>
     </div>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20tenho%20uma%20quest%C3%A3o%20sobre%20a%20Leitura%20Intuitiva%3A%20" target="_blank" rel="noopener">Tens uma dúvida antes de escolher? Fala comigo 💌</a></p>
@@ -645,7 +650,7 @@
       <p class="body-text">A forma como te vês influencia a vida que constróis, e nenhuma dessas histórias é definitiva. Vamos olhar para o teu mapa e para o teu momento juntas/os, com profundidade e leveza.</p>
       <a class="btn" href="#opcoes" data-scroll="opcoes">Escolher a minha leitura</a>
     </div>
-    <p class="legal">Esta é uma leitura simbólica de autoconhecimento. Não é um diagnóstico nem uma previsão de acontecimentos e não substitui acompanhamento médico, psicológico ou outro aconselhamento profissional.</p>
+    <p class="legal">A leitura pode abrir perguntas e trazer à consciência temas que, se fizer sentido para ti, podemos aprofundar juntas/os num trabalho individual de autoconhecimento e desenvolvimento pessoal (e profissional), contratado separadamente. O mapa é usado como linguagem simbólica de reflexão, não como diagnóstico nem como uma definição fechada de quem és, mas abre portas para trabalharmos juntas/os em sessões. Esta leitura não é uma previsão de acontecimentos e não substitui acompanhamento médico, psicológico ou outro aconselhamento profissional.</p>
   </section>
 
 </main>
@@ -653,7 +658,7 @@
 <footer>
   <div class="links">© 2026 Filipa Osório</div>
   <div class="links"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK</a><span>•</span><a href="mailto:mail@filipaosorio.com">💌 CONVITES E PARCERIAS</a></div>
-  <div class="links"><a href="termos-leitura-intuitiva.html">Termos e condições da Leitura Intuitiva</a><span>·</span><br class="mb"><a href="privacidade.html">Política de Privacidade</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a></div>
+  <div class="links"><a href="termos-leitura-intuitiva.html">Termos e condições</a><span>·</span><br class="mb"><a href="privacidade.html">Política de Privacidade</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a></div>
 </footer>
 
 <button class="freq" id="freqToggle" type="button">🔊 Entrar na frequência</button>
