@@ -485,6 +485,47 @@
     .pause .pause-quote.nobreak { font-size:27px; line-height:1.25; white-space:normal; }
     .pause .pause-attrib { font-size:11.5px; line-height:1.4; }
   }
+  /* n55 */
+  details.faqmain .faq-close { display:block; margin:1.8rem auto 0; background:none; border:0; font-family:'Lora',serif; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--wine); cursor:pointer; padding:0.6rem 1rem; }
+  details.faqmain .faq-close:hover { text-decoration:underline; text-underline-offset:4px; }
+  section#convites-parcerias { scroll-margin-top:90px; }
+  .conv-card { position:relative; border-radius:18px; padding:2.2rem 2rem 2.4rem; background:linear-gradient(135deg,#f7e4e2 0%,#f8e2bc 55%,#efd3b8 100%); border:0.5px solid var(--gold); overflow:hidden; }
+  .conv-card::before { content:'💌'; position:absolute; right:1.2rem; top:0.8rem; font-size:46px; opacity:0.18; transform:rotate(12deg); }
+  .conv-eyebrow { font-family:'Lora',serif; font-size:12.5px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 0.8rem; }
+  .conv-card h2.section-title { margin-bottom:1.2rem; }
+  .conv-card p.t-sm { text-align:left; }
+  .conv-aud { background:rgba(255,255,255,0.62); border-radius:14px; padding:1.1rem 1.1rem 0.7rem; margin:1.6rem 0 1.8rem; }
+  .conv-aud .conv-cap { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 0.6rem 1.1rem; }
+  .conv-card .cta-btn { background:var(--wine); color:#faf6ef; }
+  .conv-card .cta-btn:hover { background:transparent; color:var(--wine); }
+  html[data-theme="dark"] .conv-card { background:linear-gradient(135deg,#3b2b2e 0%,#3a3223 60%,#3a2e25 100%); }
+  html[data-theme="dark"] .conv-aud { background:rgba(0,0,0,0.25); }
+  html[data-theme="dark"] .conv-card .cta-btn { color:#f4e8d6; }
+  @media (max-width:640px){
+    .cover-text-bg .eyebrow { margin-top:1rem; }
+    .popup { left:0; right:0; margin-left:auto; margin-right:auto; width:max-content; max-width:min(270px, calc(100vw - 2rem)); }
+    .pause .pause-quote:not(.nobreak):not(.two) { font-size:23px; display:block; margin-left:auto; margin-right:auto; text-align:center !important; }
+    .pause .pause-attrib { display:block; text-align:center !important; margin-left:auto !important; margin-right:auto !important; }
+    blockquote.quote-block.hang p > span:first-child { font-size:21px !important; line-height:1.25; }
+    blockquote.quote-block.hang p > span:last-child { font-size:16px !important; line-height:1.5; }
+    blockquote.quote-block p.q1, blockquote.quote-block p.q2 { font-size:calc((100vw - 56px)/18); line-height:1.3; }
+    blockquote.quote-block .attrib { font-size:12.5px; line-height:1.4; }
+    blockquote.quote-block.oneline .attrib { font-size:10.5px; }
+    .two-col.widebox ul.plain { padding-left:0; margin-left:0; }
+    .two-col.widebox ul.plain li { margin-left:0; }
+    .two-col.dimbox { margin-left:0; margin-right:0; }
+    .two-col.dimbox .callout { padding-right:1.1rem; max-width:100%; box-sizing:border-box; }
+    .two-col.dimbox .callout-label { font-size:14px; line-height:1.35; }
+    .two-col.dimbox .callout-label .nw { white-space:normal; }
+    section .trad-note.trad-note { text-align:center !important; width:100%; margin-left:auto; margin-right:auto; }
+    .quiz-group { font-size:14px; letter-spacing:0.06em; line-height:1.45; }
+    .conv-card { padding:1.7rem 1.3rem 1.9rem; }
+  }
+  @media (max-width:640px){
+    blockquote.quote-block p.q1 { white-space:normal; text-wrap:balance; }
+    .aud-l1 { white-space:nowrap; font-size:calc((100vw - 40px)/19); }
+    .aud-l2 { white-space:nowrap; font-size:calc((100vw - 40px)/20.5); }
+  }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -498,6 +539,7 @@
   <a class="nav-logo" href="index.html">Filipa Osório</a>
   <div class="nav-links">
     <a href="ceen-en.html" class="active">CEEN • Business</a>
+    <a href="#convites-parcerias">💌 Invitations and partnerships</a>
     <a href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%20saw%20your%20website%20and%20would%20love%20to%20work%20with%20you%2C%20but%20I%20have%20a%20question%20before%20moving%20forward%3A%20%28your%20question%29" target="_blank" class="nav-cta">Let's talk? 💌</a>
   </div>
   <a class="nav-wa" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"></path></svg></a>
@@ -507,6 +549,7 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen-en.html">CEEN • Business</a>
+  <a href="#convites-parcerias" onclick="document.getElementById('mobileMenu').style.display='none';">💌 Invitations and partnerships</a>
   <a href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%20saw%20your%20website%20and%20would%20love%20to%20work%20with%20you%2C%20but%20I%20have%20a%20question%20before%20moving%20forward%3A%20%28your%20question%29" target="_blank">Let's talk? 💌</a>
 </div>
 
@@ -663,7 +706,7 @@
         <p>Depending on the questions you bring and the depth of the work, we may look at offerings, services, pricing, positioning, communication, content, sales pages, your website, delivery formats, responsibilities or decisions.</p>
       </div></div>
     </div>
-    <p class="lead hlbox" style="margin-top:2.6rem;">Exploring without creating structure can bring greater awareness but leave you unsure what to do with it. Creating structure without exploring can lead you to choose a strategy you cannot, or do not want to, sustain. <strong>CEEN takes place in this dialogue <br class="mb">between energy and strategy.</strong></p>
+    <p class="lead hlbox" style="margin-top:2.6rem;">Exploring without creating structure can bring greater awareness but leave you unsure what to do with it. Creating structure without exploring can lead you to choose a strategy you cannot, or do not want to, sustain. <strong>CEEN takes place in this dialogue between energy and strategy.</strong></p>
   </div>
 </section>
 
@@ -745,7 +788,7 @@
     <div class="two-col" style="align-items:stretch;">
       <div class="bio-photo-ph"><img src="filipa-foto.jpg" alt="" onerror="this.parentElement.textContent='filipa-foto.jpg'"></div>
       <div>
-        <p>I hold a double master’s degree, with an academic background in Management, Management Control, International Business and Strategy from leading institutions in Portugal and England. I also have experience in finance and management roles in major Portuguese companies.</p>
+        <p>I hold a double master’s degree, with an academic background in Management, Management Control, International Business and Strategy from leading institutions in Portugal and the UK. I also have experience in finance and management roles in major Portuguese companies.</p>
         <p>In recent years, I have deepened my studies through various training programs and directed my work toward human behavior from childhood onward, our beliefs and unconscious patterns, as well as the symbolic language through which the unconscious expresses itself. I have also developed my understanding of the systemic perspective as applied to relationships, leadership and business.</p>
       </div>
     </div>
@@ -788,7 +831,7 @@
 <section id="ouvir">
   <div class="wrap-wide">
     <h2 class="section-title">Hear from the people I work with</h2>
-    <p class="aud-lead"><span class="aud-l1">Here, your business <br class="mb">aligns with your personal energy!</span><br><span class="aud-l2">My clients call it magic. <br class="mb">I call it alignment 🪄</span></p><p class="aud-note">The audio recordings are in Portuguese.</p>
+    <p class="aud-lead"><span class="aud-l1">Here, your business aligns with your personal energy!</span><br><span class="aud-l2">My clients call it magic. I call it alignment 🪄</span></p><p class="aud-note">The audio recordings are in Portuguese.</p>
     <div class="aud-grid">
       <div class="aud-wrap"><div class="aud"><audio preload="metadata" src="feedback.mp3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Those tools of yours, <br>together with your sensitivity…”</p><div class="aud-bar"><div class="aud-wave"><i style="height:28px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:14px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:12px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:14px"></i><i style="height:20px"></i><i style="height:24px"></i><i style="height:24px"></i><i style="height:20px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:24px"></i><i style="height:14px"></i><i style="height:26px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:18px"></i><i style="height:14px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:18px"></i><i style="height:22px"></i><i style="height:24px"></i><i style="height:18px"></i><i style="height:26px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Read the English transcript</summary><div class="tr-body"><div lang="en"><p>It’s only when you experience it for yourself that you realize you need Filipa in your life. She makes an enormous, enormous difference. Your tools, together with your innate sensitivity, which is truly part of who you are, make your work so distinctive.</p><p>I also feel that you understand me better and better, and I wouldn’t want anyone else to guide me, both in my business and in my personal life. Ultimately, they’re connected in so many ways, and I can’t think of anyone better to support and guide me and, to use a word I often come back to, help me recenter. Thank you for everything, Filipa.</p></div></div></details></div>
       <div class="aud-wrap"><div class="aud"><audio preload="metadata" src="energia da filipa.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Our time together makes room <br>for whatever comes up…”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Read the English transcript</summary><div class="tr-body"><div lang="en"><p>Our time together is really for that, for whatever comes up. And I clearly need <br>Filipa in my life. Yes, I think we all need a little of Filipa’s energy in our lives.</p></div></div></details></div>
@@ -971,7 +1014,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p class="q2"><strong>“Having someone beside me who sees me <br class="mb">and my business as a whole.”</strong></p>
+      <p class="q2"><strong>“Having someone beside me who <br class="mb">sees me and my business as a whole.”</strong></p>
     </blockquote>
     <p style="font-size:16px;">It is through real-life experience that new decisions, questions and possibilities become visible. This is another client’s account of what she has been experiencing in her work with me:</p>
     <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>Working with you has been feeling that I have <span class="hl">someone by my side who looks at me and at my business as a whole.</span> With respect for me, for my essence and <span class="ul">without “pushing” catchphrases and marketing strategies,</span> the ones that confused me for years and years 🙌🏻</p><p>You have been asking me key questions and making key comments so I can go a little deeper 🗝️ always with respect for me, for my time and for my family reality 🥹</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>You helped me <span class="hl">review my communication</span> through the eyes of my clients, in a way that <span class="ul">I connected even more to myself, to my essence and to the mission of my company.</span></p><p>Thank you for your perspectives, your authenticity and the way you combine warmth with directness. And for our conversations that are always so <em>mind blowing</em> 💥</p><p>Working with you is <span class="hl">one of the greatest gifts</span> someone can bring to a business (and to their life too) 🤭❤️</p><span class="tm">16:45</span></div></div></div></div>
@@ -1052,7 +1095,25 @@
         <p>If I recognize that the process would benefit from closer support, I may suggest a CEEN Journey. This is a separate format, is not included in the Cycle, and is not available to book directly.</p>
       </div></div>
     </details>
+    <button type="button" class="faq-close" onclick="var d=this.closest('details.faqmain'); d.open=false; d.scrollIntoView({behavior:'smooth',block:'center'});">↑ Close questions</button>
     </div></details>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="convites-parcerias">
+  <div class="wrap">
+    <div class="conv-card">
+      <p class="conv-eyebrow">💌 Invitations and partnerships</p>
+      <h2 class="section-title">What if we brought this conversation to your community?</h2>
+      <p class="t-sm">Some questions take on a new dimension when we explore them together: how we want to work and live, what we want to create, and the mark we want to leave on the world.</p>
+      <p class="t-sm">If you’ve created, lead or belong to a community, whether it’s a community of entrepreneurs or not, and would like to explore these themes together, I’d love to hear from you.</p>
+      <p class="t-sm">We can explore the relationship between life and work, what thriving means to each person, and how to express who we are, what we know and what we believe in, in ways that feel authentic and aligned with who we are.</p>
+      <div class="conv-aud"><p class="conv-cap">After a session with a community</p><div class="aud-wrap"><div class="aud"><audio preload="metadata" src="feedback comunidade.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“It really was… <br>beyond anything I expected!”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Read the English transcript</summary><div class="tr-body"><div lang="en"><p>Hello, my dear! I’ve finally found a quiet moment to give this little thank-you ‘podcast’ the time and attention I wanted to give it, because it really was… beyond anything I expected! It was so, so good!</p><p>I believe they all got a lot out of the experience, and I’m sure many of them will get in touch with you to explore things further, get to know themselves even better and apply that understanding to their businesses too. I could see so much enthusiasm, and that makes me really happy, because I genuinely love introducing new tools and sharing things that can help them thrive in every area of their lives.</p><p>I’m so, so happy they enjoyed it. Everything you brought to it, and the incredible experience you created for us, it was absolutely wonderful. I can’t quite put it into words, because it really was so, so good. I got so much out of it personally too!</p><p>I knew I would enjoy it myself, but I was still wondering how they would react and what it would be like for them. It was fascinating to see how much we have in common, even though we’re all so different from one another. We really are different people, with different ways of thinking and acting, yet there’s so much that brings us together and draws us to one another.</p><p>And it’s lovely to see that. I know it, I believe in it, but moments and experiences like these confirm what we somehow already knew, except now we understand it a little better, you know?</p></div></div></details></div></div>
+      <p class="t-sm">You don’t need to have a format in mind. We can start with your idea, get to know your community and shape a session that feels right for the people in it.</p>
+      <p style="margin:1.6rem 0 0;"><a class="cta-btn" href="https://wa.me/351939479755?text=Hi%20Filipa%21%20I%20saw%20on%20your%20website%20that%20you%20also%20bring%20these%20conversations%20to%20communities%20and%20groups.%20I%E2%80%99d%20love%20to%20talk%20to%20you%20about%20a%20possible%20session%20for%20my%20community." target="_blank" rel="noopener">Let’s talk and cocreate</a></p>
+    </div>
   </div>
 </section>
 
