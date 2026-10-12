@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>CEEN · Clareza, Estratégia e Energia no Negócio | Filipa Osório</title>
-<link rel="icon" type="image/png" href="favicon.png?v=20261012">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -618,7 +618,7 @@
           <li>A tua vida mudou e precisas de <br>rever os formatos de entrega, a disponibilidade ou o teu papel.</li>
         </ul>
       </div></div>
-      <div class="callout infoA"><div class="ctext">
+      <div class="callout infoA"><div class="ci">🪞</div><div class="ctext">
         <p class="callout-label">COMO ESTÁS NO NEGÓCIO</p>
         <ul class="plain">
           <li>Receias mudar a oferta ou os preços e perder clientes, rendimento ou reconhecimento.</li>
@@ -651,7 +651,7 @@
     <p class="t-sm">Quando estás dentro do negócio, pode ser difícil distinguir o que continua a fazer sentido daquilo que manténs por hábito, receio ou expectativa. Ao devolver-te o que reconheço na forma como falas e colocar perguntas sobre o que parece contraditório, ajudo-te a ver diferenças que podem passar despercebidas quando pensas sozinha/o. Não para escolher por ti, mas para que possas reconhecer o que realmente queres continuar a desenvolver.</p>
     <p class="casep" style="margin-top:2.6rem;"><strong>Este caso mostra como esse trabalho pode mudar uma decisão sobre a oferta:</strong></p>
 
-    <div class="callout brown case-callout"><div class="ctext">
+    <div class="callout brown case-callout"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Rever a oferta é também reconhecer o que já não te representa</p>
       <p style="margin-top:1.3rem;">Uma cliente chegou à sessão convencida de que queria continuar a apostar em determinados serviços. Racionalmente, pareciam-lhe as opções mais seguras e aquelas que faziam mais sentido manter.</p>
       <p>Através das perguntas que lhe coloquei e das devoluções sobre a forma como falava de cada um dos serviços, foi a própria cliente que reconheceu que aquilo que acreditava que "deveria" manter já não correspondia ao que realmente queria desenvolver.</p>
@@ -747,7 +747,7 @@
       </div></div>
     </details>
 
-    <div class="callout grayD" style="margin-top:1.4rem;"><div class="ctext">
+    <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
       <p style="font-size:17px;"><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong><br>Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, <em>copywriting</em> ou implementação feita por mim.</p>
     </div></div>
     <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
@@ -792,7 +792,7 @@
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar a explorar a CEEN desde início</a>
     </div>
 
-    <div class="callout infoC"><div class="ctext">
+    <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Esta forma de trabalhar faz sentido para ti se…</p>
       <ul class="plain">
         <li>queres compreender o que queres fazer, mas também o que influencia as <br>tuas escolhas e decisões para estares mais consciente no teu negócio;</li>
@@ -1328,6 +1328,7 @@
 
   // espelho nos icones e secoes que aparecem ao descer
   (function(){
+    document.querySelectorAll('.ci').forEach(function(el){ if (el.textContent.trim() === '🪞') el.classList.add('shine'); });
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduce || !('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('js-reveal');

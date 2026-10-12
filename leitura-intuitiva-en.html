@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Leitura Intuitiva | Filipa Osório</title>
-<meta name="description" content="Leitura Intuitiva: an audio reading of your birth chart, with an intuitive, archetypal look at the moment you are living and the theme you bring.">
-<link rel="icon" type="image/png" href="favicon.png?v=20261012">
+<title>Intuitive Reading | Filipa Osório</title>
+<meta name="description" content="Intuitive Reading: an audio reading of your birth chart, with an intuitive, archetypal look at the moment you are living and the theme you bring.">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -311,6 +311,26 @@
   /* aviso de cookies no modo noturno */
   html[data-theme="dark"] #cookieBanner { background:#26211c !important; }
   html[data-theme="dark"] #cookieBanner p, html[data-theme="dark"] #cookieBanner label { color:#efe6d8 !important; }
+
+  /* ronda 2b: apresentação como na CEEN */
+  .bio-box { background:#f4e7db; border-radius:9px; padding:1.6rem 2.1rem 1.8rem; margin-top:0.4rem; }
+  html[data-theme="dark"] .bio-box { background:#3a2d26; }
+  .bio-box h3.bio-title { font-family:'Spectral',serif; font-style:normal; font-weight:500; font-size:24px; color:var(--wine); margin:0 0 1rem; }
+  .bio-box .bio { grid-template-columns:230px 1fr; gap:1.3rem; align-items:stretch; margin-top:0; }
+  .bio-box .bio-photo { width:auto; height:auto; min-height:320px; border-radius:10px; border:none; box-shadow:none; }
+  .bio-box .bio-photo img { object-position:50% 30%; }
+  .bio-box .bio-photo:hover img { transform:none; }
+  .bio-box p.body-text { text-align:justify; hyphens:none; }
+  .bio-box .statement { margin-left:0; margin-right:0; }
+  .bio-box .back-link { font-size:17.5px; font-weight:700; margin-top:1.6rem; }
+  @media (max-width:680px){ .bio-box { padding:1.3rem 1.1rem 1.5rem; } .bio-box .bio { grid-template-columns:1fr; justify-items:stretch; } .bio-box .bio-photo { width:100%; max-width:320px; aspect-ratio:4/5; min-height:0; margin:0 auto; } .bio-box p.body-text { text-align:left; } }
+  /* ronda 2b: temas só como exemplos, todos do mesmo tamanho */
+  .themes.ex { display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:1fr; gap:0.6rem; }
+  .themes.ex span { display:flex; align-items:center; justify-content:center; text-align:center; font-family:'DM Sans',sans-serif; font-size:13.5px; line-height:1.35; padding:9px 12px; border-radius:30px; border:1px solid rgba(122,37,53,0.25); background:rgba(122,37,53,0.05); color:var(--wine); }
+  html[data-theme="dark"] .themes.ex span { border-color:rgba(228,167,179,0.3); background:rgba(228,167,179,0.06); }
+  @media (max-width:680px){ .themes.ex { grid-template-columns:repeat(2,1fr); } .themes.ex span { border-radius:18px; } }
+  /* ronda 2b: sem cores atrás do título no modo noturno */
+  html[data-theme="dark"] .hero-glow, html[data-theme="dark"] .faixa::before { display:none; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -324,17 +344,17 @@
   <a class="nav-logo" href="index.html">Filipa Osório</a>
   <div class="nav-links">
     <a href="ceen-en.html">CEEN • Business</a>
-    <a href="leitura-intuitiva-en.html" class="active">Leitura Intuitiva</a>
+    <a href="leitura-intuitiva-en.html" class="active">Intuitive Reading</a>
     <a href="ceen.html#convites-parcerias">💌 Invitations and partnerships</a>
   </div>
-  <a class="nav-wa" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%20saw%20the%20Leitura%20Intuitiva%20page%20and%20I%20have%20a%20question%3A%20" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
+  <a class="nav-wa" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%20saw%20your%20website%20and%20would%20love%20to%20work%20with%20you%2C%20but%20I%20have%20a%20question%20before%20moving%20forward%3A%20%28your%20question%29" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
   <button type="button" class="size-btn" aria-label="View larger" title="View larger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/><path class="pl" d="M10.5 7.5v6M7.5 10.5h6"/><path class="mi" d="M7.5 10.5h6"/></svg></button>
   <button type="button" class="theme-btn" aria-label="Switch between light and dark mode" title="Light / dark mode"><span class="ti ti-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><span class="ti ti-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span></button>
   <button class="hamburger" aria-label="Menu" onclick="var m=document.getElementById('mobileMenu'); m.style.display = m.style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen-en.html">CEEN • Business</a>
-  <a href="leitura-intuitiva-en.html">Leitura Intuitiva</a>
+  <a href="leitura-intuitiva-en.html">Intuitive Reading</a>
   <a href="ceen.html#convites-parcerias">💌 Invitations and partnerships</a>
 </div>
 
@@ -343,8 +363,8 @@
   <!-- ABERTURA -->
   <header class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
-    <h1>Leitura Intuitiva</h1>
-    <p class="h1-sub">An intuitive reading, guided by intuition and method, of the moment<br class="dk"> you are living and the theme you bring.</p>
+    <h1>Intuitive Reading</h1>
+    <p class="h1-sub">A reading made with intuition and method,<br class="dk"> about the moment you are living and the theme you bring.</p>
     <div class="tagline"><p>Who are you when you stop being what the world expects of you?</p></div>
     <a class="scroll-cue" href="#comeco" aria-label="Scroll down">↓</a>
   </header>
@@ -358,7 +378,7 @@
     <p class="body-text">Over time, you absorbed beliefs, references and ways of functioning that made you see life through a particular set of lenses. About love. About worth, security, success, freedom, expression…</p>
     <p class="body-text">And without realizing it, you began to move between your truth and what you believe the world expects of you.</p>
     <p class="body-text"><strong>You are more than those stories and the ways you found to adapt.</strong></p>
-    <p class="body-text">The Leitura Intuitiva is an invitation to come back to your center: to see the patterns, beliefs and dynamics of this moment in your life and how they influence its different areas. And when you see what is at work behind your choices, you gain more room to choose differently.</p>
+    <p class="body-text">The Intuitive Reading is an invitation to come back to your center: to see the patterns, beliefs and dynamics of this moment in your life and how they influence its different areas. And when you see what is at work behind your choices, you gain more room to choose differently.</p>
   </div>
 
   <div class="faixa reveal"><p>What you believe about yourself shapes your choices more than you imagine.</p></div>
@@ -409,7 +429,7 @@
     </div>
     <div class="aside">
       <p>These testimonials come from my Aura Readings, which came before this format and in which I intuitively read the person’s moment.</p>
-      <p>The Leitura Intuitiva grows out of that same sensitivity and is now grounded in your birth chart, through the lens of Astrology, Alchemy and the Archetypes.</p>
+      <p>The Intuitive Reading grows out of that same sensitivity and is now grounded in your birth chart, through the lens of Astrology, Alchemy and the Archetypes.</p>
     </div>
   </section>
 
@@ -417,7 +437,7 @@
 
   <!-- O QUE É -->
   <section class="reveal" id="o-que-e">
-    <h2>What the Leitura Intuitiva is</h2>
+    <h2>What the Intuitive Reading is</h2>
     <p class="body-text">It is an intuitive, in-depth look at your birth chart, guided by the theme you bring. I don’t hand you a list of signs and planets: I explore the relationships between the symbols in your chart to open up questions about your patterns, your beliefs and the possibilities you want to give more room to.</p>
     <div class="flip-grid">
       <div class="fcard" tabindex="0"><div class="finner">
@@ -425,7 +445,7 @@
         <div class="fface fback"><h3>The chart as a starting point</h3><p>The chart is not a verdict. What interests me is the conversation between its elements: the desires, the tensions and the possibilities that can find expression in your life.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym">☾</span><b>A story that is yours alone</b><span class="fhint"></span></div>
+        <div class="fface ffront"><span class="sym book"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></span><b>A story that is yours alone</b><span class="fhint"></span></div>
         <div class="fface fback"><h3>A story that is yours alone</h3><p>As a complement to the reading, the themes we explore take shape in a personalized symbolic story. A story connects what a list keeps apart. Its images and characters give form to desires, conflicts and possibilities, offering you a visualization you can return to whenever you want to explore what you recognize in yourself.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
@@ -488,17 +508,19 @@
   <!-- CONHECE QUEM TE GUIA -->
   <section class="reveal" id="quem-te-guia">
     <h2>Meet your guide</h2>
+    <div class="bio-box">
+      <h3 class="bio-title">👩🏻‍💼 I’m Filipa Osório</h3>
     <div class="bio">
       <div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div>
       <div>
-        <h3>I’m Filipa Osório</h3>
         <p class="body-text">I have an academic background and professional experience in management and strategy, and for several years I have also devoted myself to studying human behavior, beliefs and the patterns that drive us without our noticing.</p>
         <p class="body-text">I studied education and child development and specialized in therapies such as Family Constellations, Aura Reading, ThetaHealing<sup style="font-size:0.6em;">®</sup>, InnerDance, dream analysis, astrology, alchemy, Human Design and much more. From all of this, I created my own methodology.</p>
       </div>
     </div>
     <p class="body-text" style="margin-top:1.4rem;">I use intuition, symbolic language and analysis as parts of the same way of seeing: sensitivity to what has not yet been said, and clarity to turn it into reflections you can use in your everyday life. My study of the unconscious, the archetypes and alchemy is part of that path.</p>
     <p class="statement">I don’t separate the analytical side from the intuitive one. Your reading is shaped by both.</p>
-    <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Back to where you were</a>
+    <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Back to Intuitive Reading</a>
+    </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -506,19 +528,18 @@
   <!-- TEMAS -->
   <section class="reveal" id="temas">
     <h2>What theme would you like to bring?</h2>
-    <p class="recognize-hint">Tap the themes that resonate with you right now.</p>
-    <div class="themes" id="themes">
-      <button type="button" aria-pressed="false">Identity and self-image</button>
-      <button type="button" aria-pressed="false">Spirituality and inner world</button>
-      <button type="button" aria-pressed="false">Money and abundance</button>
-      <button type="button" aria-pressed="false">Romantic relationships</button>
-      <button type="button" aria-pressed="false">Family relationships</button>
-      <button type="button" aria-pressed="false">Work and career</button>
-      <button type="button" aria-pressed="false">Communication and expression</button>
-      <button type="button" aria-pressed="false">Creativity and pleasure</button>
-      <button type="button" aria-pressed="false">Time and the rhythm of life</button>
+    <p class="recognize-hint">A few examples of themes you can write about in the form after your purchase.</p>
+    <div class="themes ex" id="themes">
+      <span>Identity and self-image</span>
+      <span>Spirituality and inner world</span>
+      <span>Money and abundance</span>
+      <span>Romantic relationships</span>
+      <span>Family relationships</span>
+      <span>Work and career</span>
+      <span>Communication and expression</span>
+      <span>Creativity and pleasure</span>
+      <span>Time and the rhythm of life</span>
     </div>
-    <div class="theme-cta" id="themeCta"><a href="#" target="_blank" rel="noopener">Talk to me about these themes 💌</a></div>
     <p class="soft-note">If more than one resonated with you, feel free to share your moment with me as it is. You don’t need to separate what, in your experience, is connected.</p>
   </section>
 
@@ -528,7 +549,7 @@
   <section class="reveal" id="como-funciona">
     <h2>How it works</h2>
     <div class="timeline" id="timeline"><span class="tl-fill" id="tlFill"></span>
-      <div class="tl-step"><span class="tl-dot">1</span><h3>You choose your option</h3><p>The Leitura Intuitiva on its own, or the reading plus an integration session with me after you’ve listened to it.</p></div>
+      <div class="tl-step"><span class="tl-dot">1</span><h3>You choose your option</h3><p>The Intuitive Reading on its own, or the reading plus an integration session with me after you’ve listened to it.</p></div>
       <div class="tl-step"><span class="tl-dot">2</span><h3>You share your details and your theme</h3><p>Date, time and place of birth, what you are going through and any context you feel is important.</p></div>
       <div class="tl-step"><span class="tl-dot">3</span><h3>I prepare and record your reading</h3><p>With intuition and an archetypal look at your chart, connecting the reading to questions and practical guidance.</p></div>
       <div class="tl-step"><span class="tl-dot">4</span><h3>You receive your reading</h3><p>In audio, within 14 business days of payment confirmation, along with a personal Notion space with the main points and questions to keep exploring.</p></div>
@@ -557,7 +578,7 @@
     <h2>Choose your reading</h2>
     <div class="offers">
       <div class="offer">
-        <p class="offer-name">Leitura Intuitiva</p>
+        <p class="offer-name">Intuitive Reading</p>
         <p class="offer-price">147 €</p>
         <ul>
           <li>A reading of your birth chart, guided by your theme</li>
@@ -572,7 +593,7 @@
         <p class="offer-name">Reading + integration session</p>
         <p class="offer-price">247 €</p>
         <ul>
-          <li>Everything included in the Leitura Intuitiva</li>
+          <li>Everything included in the Intuitive Reading</li>
           <li>A one-to-one session with me, after you’ve listened to the reading</li>
           <li>You bring your reflections and real-life examples</li>
           <li>We go deeper into the themes and work on the relevant beliefs</li>
@@ -583,11 +604,10 @@
     </div>
     <div class="extra-offer">
       <p class="eyebrow">For your birthday</p>
-      <p class="extra-offer-name">Leitura Intuitiva + Solar Return · 247 €</p>
+      <p class="extra-offer-name">Intuitive Reading + Solar Return · 247 €</p>
       <p class="extra-offer-text">An additional reading of your yearly cycle, connected to your birth chart and the moment you are living. Ideal for your trip around the Sun.</p>
       <a class="link-soft" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20Solar%20Return." target="_blank" rel="noopener">I want the reading with the Solar Return</a>
     </div>
-    <p class="terms-note">By purchasing, you accept the <a href="termos-leitura-intuitiva-en.html">Leitura Intuitiva terms and conditions</a> and the <a href="privacidade-en.html">Privacy policy</a>.</p>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%20have%20a%20question%20about%20the%20Leitura%20Intuitiva%3A%20" target="_blank" rel="noopener">Have a question before choosing? Talk to me 💌</a></p>
   </section>
 
@@ -602,7 +622,7 @@
       <details><summary>Do I have to choose a specific theme?</summary><div class="ans"><p>You don’t have to choose a category or arrive with a perfect question. You can tell me what you are going through, what is unsettling you and what you feel you need to understand. If several themes are connected, you can share them together. From there, we agree on the focus of the reading.</p></div></details>
       <details><summary>What if I don’t know my birth time?</summary><div class="ans"><p>Talk to me before you buy. The time affects important elements of the chart, so we need to see what can be explored with the details you have and what the limitations will be.</p></div></details>
       <details><summary>How do I receive the reading?</summary><div class="ans"><p>You receive your personalized reading in audio, so you can listen in your own time, pause and return to the passages that move you. You also get a personal Notion space with the main points and questions to keep exploring.</p></div></details>
-      <details><summary>Is there a live session?</summary><div class="ans"><p>The base reading is recorded and does not include a live meeting. If you choose Leitura Intuitiva + integration session, you also get a one-to-one session with me after listening to the reading, so we can go deeper into the themes based on your reflections and real-life examples.</p></div></details>
+      <details><summary>Is there a live session?</summary><div class="ans"><p>The base reading is recorded and does not include a live meeting. If you choose Intuitive Reading + integration session, you also get a one-to-one session with me after listening to the reading, so we can go deeper into the themes based on your reflections and real-life examples.</p></div></details>
       <details><summary>What happens in the integration session?</summary><div class="ans"><p>We start from what you recognized in the reading and what you want to bring from your life. We explore patterns, possible beliefs and ways of responding to situations. When it makes sense, I bring in belief-work practices, and together we shape next steps you can try.</p></div></details>
       <details><summary>Do I need to prepare anything for the session?</summary><div class="ans"><p>You can take notes in Notion and bring questions or examples, but you don’t have to fill everything in. Just share what stayed with you or what you would like to explore further.</p></div></details>
       <details><summary>How long does it take to arrive?</summary><div class="ans"><p>Up to 14 business days after payment confirmation.</p></div></details>
@@ -634,7 +654,7 @@
 <footer>
   <div class="links">© 2026 Filipa Osório</div>
   <div class="links"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK</a><span>•</span><a href="mailto:mail@filipaosorio.com">💌 INVITATIONS AND PARTNERSHIPS</a></div>
-  <div class="links"><a href="termos-leitura-intuitiva-en.html">Leitura Intuitiva terms and conditions</a><span>·</span><br class="mb"><a href="privacidade-en.html">Privacy policy</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a></div>
+  <div class="links"><a href="termos-leitura-intuitiva-en.html">Intuitive Reading terms and conditions</a><span>·</span><br class="mb"><a href="privacidade-en.html">Privacy policy</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a></div>
 </footer>
 
 <button class="freq" id="freqToggle" type="button">🔊 Tune into the frequency</button>
@@ -647,7 +667,7 @@
 </div>
 
 <div class="sticky-buy" id="stickyBuy">
-  <span>Leitura Intuitiva · <strong>from 147 €</strong></span>
+  <span>Intuitive Reading · <strong>from 147 €</strong></span>
   <a href="#opcoes" data-scroll="opcoes">Choose</a>
 </div>
 
@@ -727,15 +747,6 @@
   var tabs = document.querySelectorAll('[role="tab"]');
   tabs.forEach(function(t){ t.addEventListener('click', function(){ tabs.forEach(function(o){ var on = o === t; o.setAttribute('aria-selected', on ? 'true' : 'false'); document.getElementById(o.getAttribute('aria-controls')).hidden = !on; }); }); });
 
-  // temas
-  var themeBtns = document.querySelectorAll('#themes button'), cta = document.getElementById('themeCta');
-  themeBtns.forEach(function(b){ b.addEventListener('click', function(){
-    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    var picked = [].filter.call(themeBtns, function(x){ return x.getAttribute('aria-pressed') === 'true'; }).map(function(x){ return x.textContent; });
-    cta.classList.toggle('show', picked.length > 0);
-    var msg = (EN ? 'Hi Filipa, I would like a Leitura Intuitiva about: ' : 'Olá Filipa, gostava de uma Leitura Intuitiva sobre: ') + picked.join(', ') + '.';
-    cta.querySelector('a').href = 'https://wa.me/351939479755?text=' + encodeURIComponent(msg);
-  }); });
 
   // linha do tempo
   var tl = document.getElementById('timeline'), fill = document.getElementById('tlFill');

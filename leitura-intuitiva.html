@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Leitura Intuitiva | Filipa Osório</title>
 <meta name="description" content="Leitura Intuitiva: uma leitura em áudio do teu mapa astral, com um olhar intuitivo e arquetípico sobre o momento que estás a viver e o tema que trazes.">
-<link rel="icon" type="image/png" href="favicon.png?v=20261012">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -311,6 +311,26 @@
   /* aviso de cookies no modo noturno */
   html[data-theme="dark"] #cookieBanner { background:#26211c !important; }
   html[data-theme="dark"] #cookieBanner p, html[data-theme="dark"] #cookieBanner label { color:#efe6d8 !important; }
+
+  /* ronda 2b: apresentação como na CEEN */
+  .bio-box { background:#f4e7db; border-radius:9px; padding:1.6rem 2.1rem 1.8rem; margin-top:0.4rem; }
+  html[data-theme="dark"] .bio-box { background:#3a2d26; }
+  .bio-box h3.bio-title { font-family:'Spectral',serif; font-style:normal; font-weight:500; font-size:24px; color:var(--wine); margin:0 0 1rem; }
+  .bio-box .bio { grid-template-columns:230px 1fr; gap:1.3rem; align-items:stretch; margin-top:0; }
+  .bio-box .bio-photo { width:auto; height:auto; min-height:320px; border-radius:10px; border:none; box-shadow:none; }
+  .bio-box .bio-photo img { object-position:50% 30%; }
+  .bio-box .bio-photo:hover img { transform:none; }
+  .bio-box p.body-text { text-align:justify; hyphens:none; }
+  .bio-box .statement { margin-left:0; margin-right:0; }
+  .bio-box .back-link { font-size:17.5px; font-weight:700; margin-top:1.6rem; }
+  @media (max-width:680px){ .bio-box { padding:1.3rem 1.1rem 1.5rem; } .bio-box .bio { grid-template-columns:1fr; justify-items:stretch; } .bio-box .bio-photo { width:100%; max-width:320px; aspect-ratio:4/5; min-height:0; margin:0 auto; } .bio-box p.body-text { text-align:left; } }
+  /* ronda 2b: temas só como exemplos, todos do mesmo tamanho */
+  .themes.ex { display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:1fr; gap:0.6rem; }
+  .themes.ex span { display:flex; align-items:center; justify-content:center; text-align:center; font-family:'DM Sans',sans-serif; font-size:13.5px; line-height:1.35; padding:9px 12px; border-radius:30px; border:1px solid rgba(122,37,53,0.25); background:rgba(122,37,53,0.05); color:var(--wine); }
+  html[data-theme="dark"] .themes.ex span { border-color:rgba(228,167,179,0.3); background:rgba(228,167,179,0.06); }
+  @media (max-width:680px){ .themes.ex { grid-template-columns:repeat(2,1fr); } .themes.ex span { border-radius:18px; } }
+  /* ronda 2b: sem cores atrás do título no modo noturno */
+  html[data-theme="dark"] .hero-glow, html[data-theme="dark"] .faixa::before { display:none; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -326,7 +346,7 @@
     <a href="leitura-intuitiva.html" class="active">Leitura Intuitiva</a>
     <a href="ceen.html#convites-parcerias">💌 Convites e parcerias</a>
   </div>
-  <a class="nav-wa" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20p%C3%A1gina%20da%20Leitura%20Intuitiva%20e%20tenho%20uma%20quest%C3%A3o%3A%20" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
+  <a class="nav-wa" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
   <button type="button" class="size-btn" aria-label="Ver em maior" title="Ver em maior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/><path class="pl" d="M10.5 7.5v6M7.5 10.5h6"/><path class="mi" d="M7.5 10.5h6"/></svg></button>
   <button type="button" class="theme-btn" aria-label="Mudar entre modo claro e modo noturno" title="Modo claro / modo noturno"><span class="ti ti-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><span class="ti ti-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span></button>
   <button class="hamburger" aria-label="Menu" onclick="var m=document.getElementById('mobileMenu'); m.style.display = m.style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
@@ -343,7 +363,7 @@
   <header class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <h1>Leitura Intuitiva</h1>
-    <p class="h1-sub">Uma leitura feita com intuição e método, sobre o momento<br class="dk"> que estás a viver e o tema que trouxeres.</p>
+    <p class="h1-sub">Uma leitura feita com intuição e método,<br class="dk"> sobre o momento que estás a viver e o tema que trouxeres.</p>
     <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
     <a class="scroll-cue" href="#comeco" aria-label="Descer">↓</a>
   </header>
@@ -424,7 +444,7 @@
         <div class="fface fback"><h3>O mapa como ponto de partida</h3><p>O mapa não é uma sentença. Interessa-me a conversa entre os seus elementos: os desejos, as tensões e as possibilidades que podem ganhar expressão na tua vida.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym">☾</span><b>Uma história só tua</b><span class="fhint"></span></div>
+        <div class="fface ffront"><span class="sym book"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></span><b>Uma história só tua</b><span class="fhint"></span></div>
         <div class="fface fback"><h3>Uma história só tua</h3><p>Como complemento à leitura, os temas explorados ganham forma numa história simbólica personalizada. Uma história liga o que uma lista separa. As imagens e personagens dão forma a desejos, conflitos e possibilidades, oferecendo-te uma visualização à qual podes regressar para explorar o que reconheces em ti.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
@@ -487,17 +507,19 @@
   <!-- CONHECE QUEM TE GUIA -->
   <section class="reveal" id="quem-te-guia">
     <h2>Conhece quem te guia</h2>
+    <div class="bio-box">
+      <h3 class="bio-title">👩🏻‍💼 Sou a Filipa Osório</h3>
     <div class="bio">
       <div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div>
       <div>
-        <h3>Sou a Filipa Osório</h3>
         <p class="body-text">Tenho formação e experiência profissional em gestão e estratégia e, há vários anos, dedico-me também a estudar o comportamento humano, as crenças e os padrões que nos movem sem darmos conta.</p>
         <p class="body-text">Estudei educação e desenvolvimento infantil e especializei-me em terapias como Constelações Familiares, Leitura de Aura, ThetaHealing<sup style="font-size:0.6em;">®</sup>, InnerDance, análise dos sonhos, astrologia, alquimia, Human Design e muito mais. Com tudo isto criei a minha própria metodologia.</p>
       </div>
     </div>
     <p class="body-text" style="margin-top:1.4rem;">Uso a intuição, a linguagem simbólica e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em reflexões que possas usar no teu dia a dia. O meu estudo do inconsciente, dos arquétipos e da alquimia faz parte desse percurso.</p>
     <p class="statement">Não separo a parte analítica da intuitiva. A tua leitura é feita pelas duas.</p>
-    <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar onde estavas</a>
+    <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a>
+    </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -505,19 +527,18 @@
   <!-- TEMAS -->
   <section class="reveal" id="temas">
     <h2>Que tema queres trazer?</h2>
-    <p class="recognize-hint">Toca nos temas que ressoam contigo agora.</p>
-    <div class="themes" id="themes">
-      <button type="button" aria-pressed="false">Identidade e autoimagem</button>
-      <button type="button" aria-pressed="false">Espiritualidade e mundo interior</button>
-      <button type="button" aria-pressed="false">Dinheiro e abundância</button>
-      <button type="button" aria-pressed="false">Relações amorosas</button>
-      <button type="button" aria-pressed="false">Relações familiares</button>
-      <button type="button" aria-pressed="false">Trabalho e carreira</button>
-      <button type="button" aria-pressed="false">Comunicação e expressão</button>
-      <button type="button" aria-pressed="false">Criatividade e prazer</button>
-      <button type="button" aria-pressed="false">Tempo e ritmo da vida</button>
+    <p class="recognize-hint">Alguns exemplos de temas sobre os quais podes escrever no formulário, depois da compra.</p>
+    <div class="themes ex" id="themes">
+      <span>Identidade e autoimagem</span>
+      <span>Espiritualidade e mundo interior</span>
+      <span>Dinheiro e abundância</span>
+      <span>Relações amorosas</span>
+      <span>Relações familiares</span>
+      <span>Trabalho e carreira</span>
+      <span>Comunicação e expressão</span>
+      <span>Criatividade e prazer</span>
+      <span>Tempo e ritmo da vida</span>
     </div>
-    <div class="theme-cta" id="themeCta"><a href="#" target="_blank" rel="noopener">Falar comigo sobre estes temas 💌</a></div>
     <p class="soft-note">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade. Não precisas de separar aquilo que, na tua experiência, está ligado.</p>
   </section>
 
@@ -586,7 +607,6 @@
       <p class="extra-offer-text">Uma leitura adicional do teu ciclo anual, relacionada com o mapa natal e com o momento que estás a viver. Ideal para a tua volta ao Sol.</p>
       <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Quero a leitura com Revolução Solar</a>
     </div>
-    <p class="terms-note">Ao comprar, aceitas os <a href="termos-leitura-intuitiva.html">Termos e condições da Leitura Intuitiva</a> e a <a href="privacidade.html">Política de Privacidade</a>.</p>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20tenho%20uma%20quest%C3%A3o%20sobre%20a%20Leitura%20Intuitiva%3A%20" target="_blank" rel="noopener">Tens uma dúvida antes de escolher? Fala comigo 💌</a></p>
   </section>
 
@@ -726,15 +746,6 @@
   var tabs = document.querySelectorAll('[role="tab"]');
   tabs.forEach(function(t){ t.addEventListener('click', function(){ tabs.forEach(function(o){ var on = o === t; o.setAttribute('aria-selected', on ? 'true' : 'false'); document.getElementById(o.getAttribute('aria-controls')).hidden = !on; }); }); });
 
-  // temas
-  var themeBtns = document.querySelectorAll('#themes button'), cta = document.getElementById('themeCta');
-  themeBtns.forEach(function(b){ b.addEventListener('click', function(){
-    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    var picked = [].filter.call(themeBtns, function(x){ return x.getAttribute('aria-pressed') === 'true'; }).map(function(x){ return x.textContent; });
-    cta.classList.toggle('show', picked.length > 0);
-    var msg = (EN ? 'Hi Filipa, I would like a Leitura Intuitiva about: ' : 'Olá Filipa, gostava de uma Leitura Intuitiva sobre: ') + picked.join(', ') + '.';
-    cta.querySelector('a').href = 'https://wa.me/351939479755?text=' + encodeURIComponent(msg);
-  }); });
 
   // linha do tempo
   var tl = document.getElementById('timeline'), fill = document.getElementById('tlFill');
