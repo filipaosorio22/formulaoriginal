@@ -471,6 +471,42 @@
     .pause .pause-quote.nobreak { font-size:27px; line-height:1.25; white-space:normal; }
     .pause .pause-attrib { font-size:11.5px; line-height:1.4; }
   }
+  /* n55 */
+  details.faqmain .faq-close { display:block; margin:1.8rem auto 0; background:none; border:0; font-family:'Lora',serif; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--wine); cursor:pointer; padding:0.6rem 1rem; }
+  details.faqmain .faq-close:hover { text-decoration:underline; text-underline-offset:4px; }
+  section#convites-parcerias { scroll-margin-top:90px; }
+  .conv-card { position:relative; border-radius:18px; padding:2.2rem 2rem 2.4rem; background:linear-gradient(135deg,#f7e4e2 0%,#f8e2bc 55%,#efd3b8 100%); border:0.5px solid var(--gold); overflow:hidden; }
+  .conv-card::before { content:'💌'; position:absolute; right:1.2rem; top:0.8rem; font-size:46px; opacity:0.18; transform:rotate(12deg); }
+  .conv-eyebrow { font-family:'Lora',serif; font-size:12.5px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 0.8rem; }
+  .conv-card h2.section-title { margin-bottom:1.2rem; }
+  .conv-card p.t-sm { text-align:left; }
+  .conv-aud { background:rgba(255,255,255,0.62); border-radius:14px; padding:1.1rem 1.1rem 0.7rem; margin:1.6rem 0 1.8rem; }
+  .conv-aud .conv-cap { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 0.6rem 1.1rem; }
+  .conv-card .cta-btn { background:var(--wine); color:#faf6ef; }
+  .conv-card .cta-btn:hover { background:transparent; color:var(--wine); }
+  html[data-theme="dark"] .conv-card { background:linear-gradient(135deg,#3b2b2e 0%,#3a3223 60%,#3a2e25 100%); }
+  html[data-theme="dark"] .conv-aud { background:rgba(0,0,0,0.25); }
+  html[data-theme="dark"] .conv-card .cta-btn { color:#f4e8d6; }
+  @media (max-width:640px){
+    .cover-text-bg .eyebrow { margin-top:1rem; }
+    .popup { left:0; right:0; margin-left:auto; margin-right:auto; width:max-content; max-width:min(270px, calc(100vw - 2rem)); }
+    .pause .pause-quote:not(.nobreak):not(.two) { font-size:23px; display:block; margin-left:auto; margin-right:auto; text-align:center !important; }
+    .pause .pause-attrib { display:block; text-align:center !important; margin-left:auto !important; margin-right:auto !important; }
+    blockquote.quote-block.hang p > span:first-child { font-size:21px !important; line-height:1.25; }
+    blockquote.quote-block.hang p > span:last-child { font-size:16px !important; line-height:1.5; }
+    blockquote.quote-block p.q1, blockquote.quote-block p.q2 { font-size:calc((100vw - 56px)/18); line-height:1.3; }
+    blockquote.quote-block .attrib { font-size:12.5px; line-height:1.4; }
+    blockquote.quote-block.oneline .attrib { font-size:10.5px; }
+    .two-col.widebox ul.plain { padding-left:0; margin-left:0; }
+    .two-col.widebox ul.plain li { margin-left:0; }
+    .two-col.dimbox { margin-left:0; margin-right:0; }
+    .two-col.dimbox .callout { padding-right:1.1rem; max-width:100%; box-sizing:border-box; }
+    .two-col.dimbox .callout-label { font-size:14px; line-height:1.35; }
+    .two-col.dimbox .callout-label .nw { white-space:normal; }
+    section .trad-note.trad-note { text-align:center !important; width:100%; margin-left:auto; margin-right:auto; }
+    .quiz-group { font-size:14px; letter-spacing:0.06em; line-height:1.45; }
+    .conv-card { padding:1.7rem 1.3rem 1.9rem; }
+  }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -483,6 +519,7 @@
   <a class="nav-logo" href="index.html">Filipa Osório</a>
   <div class="nav-links">
     <a href="ceen.html" class="active">CEEN • Negócio</a>
+    <a href="#convites-parcerias">💌 Convites e parcerias</a>
     <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank" class="nav-cta">Conversamos? 💌</a>
   </div>
   <a class="nav-wa" href="https://wa.me/message/SGB5SN5CXWY4F1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
@@ -492,6 +529,7 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen.html">CEEN • Negócio</a>
+  <a href="#convites-parcerias" onclick="document.getElementById('mobileMenu').style.display='none';">💌 Convites e parcerias</a>
   <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank">Conversamos? 💌</a>
 </div>
 
@@ -529,7 +567,7 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
-    <blockquote class="quote-block hang"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">O negócio é o centro da CEEN, mas não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:19px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
+    <blockquote class="quote-block hang"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">O negócio é o centro da CEEN, mas <br class="mb">não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:19px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
   </div>
 </section>
 
@@ -1045,7 +1083,25 @@
         <p>Se reconhecer que o processo beneficiaria de acompanhamento mais próximo, poderei propor-te uma Travessia CEEN. É um formato distinto, não incluído no Ciclo, e não está disponível para marcação direta.</p>
       </div></div>
     </details>
+    <button type="button" class="faq-close" onclick="var d=this.closest('details.faqmain'); d.open=false; d.scrollIntoView({behavior:'smooth',block:'center'});">↑ Fechar perguntas</button>
     </div></details>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="convites-parcerias">
+  <div class="wrap">
+    <div class="conv-card">
+      <p class="conv-eyebrow">💌 Convites e parcerias</p>
+      <h2 class="section-title">E se levássemos esta conversa à tua comunidade?</h2>
+      <p class="t-sm">Há perguntas que ganham outra dimensão quando as exploramos em conjunto: como queremos trabalhar e viver, o que desejamos criar e que marca queremos deixar no mundo.</p>
+      <p class="t-sm">Se criaste, dinamizas ou fazes parte de uma comunidade, de empreendedores ou não, e gostavas de trazer estes temas para um encontro, terei todo o prazer em conversar contigo.</p>
+      <p class="t-sm">Podemos explorar a relação entre vida pessoal e trabalho, o que significa prosperar para cada pessoa e como dar expressão ao que somos, ao que sabemos e àquilo em que acreditamos, de forma autêntica e alinhada.</p>
+      <div class="conv-aud"><p class="conv-cap">Depois de um encontro com uma comunidade</p><div class="aud-wrap"><div class="aud"><audio preload="metadata" src="feedback comunidade.MP3"></audio><button type="button" class="aud-btn" aria-label="Ouvir"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Foi… além da expectativa! <br>Foi mesmo muito, muito bom!”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Ler a transcrição</summary><div class="tr-body"><div lang="pt"><p>Alô, minha querida, agora sim consegui um tempinho aqui com calma e com a atenção devida que queria para enviar-te este “podcast” de agradecimento, porque efetivamente foi... além da expectativa! Foi mesmo muito, muito bom!</p><p>Acredito que todas elas tiraram muito proveito do momento e certamente muitas delas irão contactar-te para aprofundar mais e conhecerem-se ainda mais e adaptarem isso também aos seus negócios portanto vi ali muito entusiasmo da parte delas e fico muito feliz por isso, porque efetivamente adoro trazer ferramentas novas e realmente trazer aqui algumas coisas que possam ajudá-las a prosperar cada vez mais, seja em que área for.</p><p>É muito, muito bom e fico muito feliz por elas terem gostado e toda a entrega e todo o momento incrível que nos proporcionaste, porque foi absolutamente fabuloso e sem conseguir colocar em palavras porque efetivamente foi mesmo muito, muito bom e gostei muito até mesmo para mim mesma!</p><p>Eu sabia que ia gostar para mim mesma, mas estava aqui ainda naquela coisa de como é que elas iriam reagir, como é que seria, e foi absolutamente interessante de ver como temos tanto em comum, apesar de sermos todos muito diferentes umas das outras, porque somos efetivamente pessoas diferentes, que têm formas de pensar e de agir diferentes, mas que há muita coisa que nos junta e que nos atrai umas às outras.</p><p>E é super engraçado ver, eu sei, eu acredito nisso, mas ao mesmo tempo estes momentos e estas situações acabam por nos confirmar aquilo que nós de certa forma já sabíamos de alguma maneira, mas agora sabemos melhor, sabes?</p></div></div></details></div></div>
+      <p class="t-sm">Não precisas de chegar com um formato definido. Podemos partir da tua ideia, conhecer o contexto da comunidade e pensar num encontro que faça sentido para as pessoas que a compõem.</p>
+      <p style="margin:1.6rem 0 0;"><a class="cta-btn" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20no%20teu%20site%20a%20possibilidade%20de%20levares%20estes%20temas%20a%20comunidades%20e%20grupos.%20Gostava%20de%20conversar%20contigo%20sobre%20um%20poss%C3%ADvel%20encontro%20para%20a%20minha%20comunidade." target="_blank" rel="noopener">Vamos conversar e cocriar</a></p>
+    </div>
   </div>
 </section>
 
