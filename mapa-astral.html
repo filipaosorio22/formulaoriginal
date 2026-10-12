@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <title>O teu mapa natal · Leitura Intuitiva</title>
 <meta name="description" content="Desenha o teu mapa natal: Sol, Lua, Ascendente e planetas, calculados no teu browser.">
@@ -64,8 +63,6 @@ input[type=text],input[type=date],input[type=time],input[type=number],select{
 input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,108,.18)}
 input:disabled{opacity:.45}
 select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),linear-gradient(135deg,var(--deep) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
-.check{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:8px;cursor:pointer;user-select:none}
-.check input{accent-color:var(--deep);width:16px;height:16px;margin:0}
 .combo{position:relative}
 .combo ul{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 4px);margin:0;padding:6px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:300px;overflow:auto}
 .combo li{padding:9px 10px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:15px;display:flex;justify-content:space-between;gap:10px}
@@ -73,6 +70,9 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .combo li.active,.combo li:hover{background:rgba(201,168,108,.16)}
 .combo li.other{color:var(--deep);border-top:1px solid var(--line-soft);margin-top:4px;border-radius:0 0 8px 8px}
 .hint{font-family:var(--sans);font-size:13px;color:var(--soft);margin:7px 0 0}
+.hint a,.bday a{color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.bday{font-family:var(--body);font-style:italic;font-size:15px;line-height:1.6;color:var(--muted);text-align:center;max-width:32em;margin:20px auto 0}
+.bday[hidden]{display:none}
 .linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);cursor:pointer}
 .manual{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
 .manual[hidden]{display:none}
@@ -158,7 +158,14 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .pillar h4{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 6px;line-height:1.25}
 .pillar h4 .zs{font-family:var(--sym);color:var(--gold);font-size:18px;margin-left:6px}
 .pillar p{margin:0;color:var(--muted);font-style:italic;font-size:16px;line-height:1.55}
-.pillar.unknown h4{color:var(--soft)}
+
+.layers{margin-top:34px;text-align:center}
+.layers h3{font-family:var(--serif);font-weight:300;font-size:clamp(23px,5.2vw,28px);margin:0 0 4px}
+.layers .sub{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.04em;margin:0 0 18px}
+.layers .ask{font-family:var(--serif);font-size:clamp(17px,4.4vw,19px);font-weight:300;line-height:1.55;color:var(--ink);margin:0 auto 20px;max-width:30em}
+.layers .ask em{color:var(--deep)}
+.layers .pillar h4 small{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.02em;margin-left:6px;white-space:nowrap}
+.layers .close{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;line-height:1.6;margin:14px auto 0;max-width:32em}
 
 .cta{margin-top:40px;text-align:center;padding:34px 22px 30px;border-radius:20px;border:1px solid var(--line);
   background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.16),transparent 70%),var(--card);position:relative;overflow:hidden}
@@ -204,8 +211,8 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
       </div>
       <div>
         <label class="lbl" for="hora">Hora de nascimento</label>
-        <input type="time" id="hora" value="12:00">
-        <label class="check"><input type="checkbox" id="semHora"> Não sei a hora</label>
+        <input type="time" id="hora" required aria-describedby="horaHint">
+        <p class="hint" id="horaHint">Não sabes a hora? Pergunta a quem possa saber ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada.</p>
       </div>
       <div class="full">
         <label class="lbl" for="local">Local de nascimento</label>
@@ -232,7 +239,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
     </div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
-    <p class="privacy"><b>✦</b> Os teus dados ficam só no teu browser: o mapa é calculado aqui e não é enviado para lado nenhum.</p>
+    <p class="privacy"><b>✦</b> Os teus dados ficam só no teu browser:<br>o mapa é calculado aqui e não é enviado para lado nenhum.</p>
   </form>
 
   <section id="result" hidden aria-live="polite">
@@ -250,12 +257,15 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
       <div id="pillars"></div>
     </div>
 
+    <div class="layers" id="layers" hidden></div>
+
     <div class="cta">
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
       <p class="big">O mapa é só o desenho. <em>A Leitura Intuitiva</em> é o que ele te diz sobre o momento que estás a viver.</p>
       <a class="btn" href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401">Quero a minha Leitura</a><br>
       <a class="soft" href="leitura-intuitiva.html#opcoes">Ver como funciona</a>
     </div>
+    <p class="bday" id="bday" hidden>O teu aniversário está perto: é o momento da tua Revolução Solar, o início de um novo ciclo anual. <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20meu%20mapa%20e%20gostava%20de%20saber%20mais%20sobre%20a%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Fala comigo</a> se quiseres juntá-la à tua Leitura.</p>
     <p class="again"><button type="button" class="linkbtn" id="editBtn">Alterar os dados</button></p>
   </section>
   <footer>✦ ✦ ✦</footer>
@@ -319,22 +329,51 @@ function angles(A, t, lat, lon){
   var ramc = norm(A.SiderealTime(t)*15 + lon) * D2R;
   var mc = norm(Math.atan2(Math.sin(ramc), Math.cos(ramc)*Math.cos(eps)) / D2R);
   var asc = norm(Math.atan2(Math.cos(ramc), -(Math.sin(ramc)*Math.cos(eps) + Math.tan(lat*D2R)*Math.sin(eps))) / D2R);
-  return { asc: asc, mc: mc };
+  return { asc: asc, mc: mc, ramc: ramc, eps: eps };
 }
-function computeChart(A, utcMs, lat, lon, knowTime){
+// House cusps: Placidus (semi-arc iteration); Porphyry above ~66° latitude, where Placidus breaks down
+function houseCusps(a, lat){
+  var c = new Array(12), sys = 'Placidus';
+  c[0] = a.asc; c[9] = a.mc;
+  var phi = lat * D2R, eps = a.eps, ramc = a.ramc;
+  function lonFromRA(ra){ return norm(Math.atan2(Math.sin(ra), Math.cos(ra) * Math.cos(eps)) / D2R); }
+  // f: fraction of the semi-arc; above: diurnal (cusps 11, 12) or nocturnal (cusps 2, 3)
+  function plac(f, above){
+    var ra = above ? ramc + f * Math.PI / 2 : ramc + Math.PI - f * Math.PI / 2, lam = 0;
+    for (var i = 0; i < 30; i++){
+      lam = lonFromRA(ra);
+      var dec = Math.asin(Math.sin(eps) * Math.sin(lam * D2R)), x = -Math.tan(phi) * Math.tan(dec);
+      if (x < -1 || x > 1) return NaN;
+      var dsa = Math.acos(x), nra = above ? ramc + f * dsa : ramc + Math.PI - f * (Math.PI - dsa);
+      if (Math.abs(nra - ra) < 1e-9){ ra = nra; break; }
+      ra = nra;
+    }
+    return lonFromRA(ra);
+  }
+  if (Math.abs(lat) < 66){
+    c[10] = plac(1/3, true); c[11] = plac(2/3, true); c[1] = plac(2/3, false); c[2] = plac(1/3, false);
+  }
+  if (!(Math.abs(lat) < 66) || [c[10], c[11], c[1], c[2]].some(isNaN)){
+    sys = 'Porphyry';
+    var q1 = norm(a.asc - a.mc), q2 = norm(a.mc + 180 - a.asc);
+    c[10] = norm(a.mc + q1 / 3); c[11] = norm(a.mc + 2 * q1 / 3);
+    c[1] = norm(a.asc + q2 / 3); c[2] = norm(a.asc + 2 * q2 / 3);
+  }
+  // opposite cusps (+180°): 7 = DSC, 4 = IC, 5 ↔ 11, 6 ↔ 12, 8 ↔ 2, 9 ↔ 3
+  c[6] = norm(c[0] + 180); c[3] = norm(c[9] + 180);
+  c[4] = norm(c[10] + 180); c[5] = norm(c[11] + 180); c[7] = norm(c[1] + 180); c[8] = norm(c[2] + 180);
+  return { cusps: c, sys: sys };
+}
+function computeChart(A, utcMs, lat, lon){
   var t = A.MakeTime(new Date(utcMs)), t1 = t.AddDays(1);
   var planets = BODIES.map(function(b){
     var l0 = norm(bodyLon(A, b.k, t)), l1 = norm(bodyLon(A, b.k, t1));
     var dl = ((l1 - l0 + 540) % 360) - 180;
     return { key: b.k, name: b.n, glyph: b.g, lon: l0, retro: dl < 0 };
   });
-  var out = { planets: planets };
-  if (knowTime){
-    var a = angles(A, t, lat, lon);
-    out.asc = a.asc; out.mc = a.mc;
-    out.cusps = []; for (var i = 0; i < 12; i++) out.cusps.push(norm(a.asc + 30*i));
-  }
-  return out;
+  var a = angles(A, t, lat, lon);
+  var h = houseCusps(a, lat);
+  return { planets: planets, asc: a.asc, mc: a.mc, cusps: h.cusps, houseSys: h.sys };
 }
 function signOf(l){ return Math.floor(norm(l)/30); }
 function fmtDeg(l){
@@ -441,49 +480,68 @@ CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
 
 // ---------- texts ----------
 var TXT = {
+  // Textos baseados nas notas de estudo da Filipa (Astrologia Alquímica da Alma)
   sol: [
-    'A tua essência acende-se no primeiro passo: há em ti uma coragem que não pede licença para começar.',
-    'Brilhas quando tens raízes: o teu centro é feito de calma, de sentidos despertos e de coisas que duram.',
-    'A tua luz é curiosa e anda em movimento: encontras-te nas perguntas, nas palavras e nas ligações.',
-    'O teu sol é um abrigo: a tua força nasce daquilo de que cuidas e do que sentes lá no fundo.',
-    'Há em ti um coração que pede para brilhar, e que aquece tudo à volta quando se permite.',
-    'A tua essência mora no detalhe e no cuidado: és quem transforma o caos num gesto que serve.',
-    'Procuras a beleza do equilíbrio: és ponte, harmonia e um olhar que sabe pesar os dois lados.',
-    'A tua luz vem das profundezas: não te chega a superfície, e é lá em baixo que te renovas.',
-    'O teu sol aponta para o horizonte: vives de sentido, de caminho e de uma fé que se expande.',
-    'Brilhas devagar e com firmeza: és montanha, construção e uma ambição com raízes.',
-    'A tua essência é livre e diferente: vês o que ainda não existe e não tens medo disso.',
-    'A tua luz é maré: sensível, intuitiva, capaz de sentir o que ninguém chegou a dizer.'
+    'O Sol está exaltado em Carneiro: a tua essência é a da guerreira que veio aprender a coragem de começar e de abrir caminho.',
+    'A tua essência é a da construtora: brilhas quando constróis na matéria com beleza e constância, e te permites o prazer e o teu valor.',
+    'A tua luz é mensageira: a tua essência pede-te que comuniques, ligues pessoas e ideias e espalhes o que sabes.',
+    'A tua essência é a do cuidado: vieste nutrir, proteger e gerar vida, e há nisso algo de profundamente alquímico.',
+    'O Sol está em casa em Leão: a tua essência veio aprender a deixar-se ver, e o teu brilho existe para inspirar os outros.',
+    'A tua essência é a da alquimista paciente: discernes o que tem valor, purificas e realizas, e brilhas quando sabes que és útil.',
+    'A tua essência procura paz, beleza e equilíbrio, mas o caminho do teu Sol começa por encontrar essa paz dentro de ti.',
+    'A tua essência vive na profundidade: vieste morrer e renascer muitas vezes, e trazer do lodo aquilo que tem valor.',
+    'A tua essência é uma flecha apontada ao novo: vieste descobrir terras que ninguém pisou e viver segundo as tuas convicções.',
+    'A tua essência é a da cabra que sobe a montanha: sabes onde queres chegar e fazes o caminho com método, paciência e resiliência.',
+    'A tua essência pede-te que sejas diferente: o teu brilho não é só teu, existe para renovar o coletivo e ver o futuro antes dos outros.',
+    'A tua essência vive entre mundos: inspiração, entrega e fé, e uma ligação ao divino que não cabe em palavras.'
   ],
   lua: [
-    'As tuas emoções são fogo rápido: sentes tudo de imediato e precisas de espaço para agir.',
-    'Sentes-te em casa no que é estável e sensorial: um abraço, uma mesa posta, um ritmo sem pressa.',
-    'O teu mundo emocional precisa de conversa: pôr em palavras é a tua maneira de serenar.',
-    'A Lua está em casa em ti: sentes em marés, com memória funda e um instinto de proteger.',
-    'O teu coração precisa de calor e de ser visto, e devolve tudo em dobro, com generosidade.',
-    'Encontras paz na ordem e no cuidado: arrumar por fora ajuda-te a sossegar por dentro.',
-    'Precisas de harmonia para estares bem: a beleza e as relações são o teu porto de abrigo.',
-    'Sentes com intensidade e em silêncio: confias devagar, mas quando te entregas é por inteiro.',
-    'A tua alma pede horizonte: liberdade, riso e uma razão maior para todas as coisas.',
-    'Guardas as emoções com seriedade: a tua segurança nasce do que constróis com as tuas mãos.',
-    'Sentes com alguma distância e muita lucidez: precisas de ar e liberdade, mesmo na intimidade.',
-    'Absorves o invisível à tua volta e precisas de silêncio para voltares a ti.'
+    'Sentes com intensidade e de imediato, e é essa chama emocional que te dá um enorme poder de realização.',
+    'A Lua está exaltada em Touro: a tua alma encontra alimento na calma, na natureza e no prazer dos sentidos.',
+    'As tuas emoções precisam de passar por palavras: falar, escrever e trocar ideias é a forma de a tua alma se mover.',
+    'A Lua está em casa em Caranguejo: sentes em marés, com uma memória funda e uma intuição que cuida e protege.',
+    'O teu coração precisa de ser visto e reconhecido, e responde com generosidade, criatividade e entusiasmo.',
+    'Sossegas por dentro quando pões ordem por fora: a tua alma quer ser útil, e aprende que já és suficiente.',
+    'A tua alma procura harmonia e beleza nas relações, e aprende a receber amor sem deixar o teu valor nas mãos do outro.',
+    'Sentes fundo e confias devagar: não te entregas facilmente, mas quando te entregas é por inteiro.',
+    'A tua alma precisa de horizonte: liberdade, movimento e otimismo são o que mantém o teu rio interior a correr.',
+    'Guardas as emoções com seriedade: precisas de estrutura para te sentires em segurança, e o teu caminho é abrir o coração.',
+    'Sentes através do coletivo: a tua alma precisa de liberdade, de ser diferente e de se ligar a algo maior.',
+    'A tua alma sente como o mar: absorve o invisível, sonha, intui e precisa de silêncio para voltar a ti.'
   ],
   asc: [
-    'Chegas ao mundo de frente: a primeira impressão que deixas é de energia e de iniciativa.',
-    'Entras nos lugares com uma presença serena: transmites confiança, calma e gosto pelo belo.',
-    'O mundo conhece-te pela leveza e pela curiosidade: olhos vivos e conversa fácil.',
-    'A tua porta de entrada é suave e protetora: quem chega perto sente que pode confiar em ti.',
-    'Há um brilho natural na forma como apareces: calor, presença e uma certa luz de palco.',
-    'Mostras-te com discrição e atenção fina: reparas em tudo, até no que fica por dizer.',
-    'Abres caminho com graça e diplomacia: a tua primeira linguagem é a gentileza.',
-    'Tens uma presença magnética e reservada: os outros sentem a tua profundidade antes de a conhecerem.',
-    'Chegas com entusiasmo e horizonte no olhar: a vida, para ti, é uma viagem por descobrir.',
-    'Apresentas-te com firmeza e serenidade: inspiras confiança mesmo quando ainda estás a aprender.',
-    'O mundo vê-te como alguém original e livre: um sopro de ar diferente em qualquer sala.',
-    'Apareces com suavidade e mistério: há algo de sonhador e compassivo na tua maneira de olhar.'
+    'A roupa com que chegas ao mundo é a da coragem: iniciativa, frontalidade e vontade de abrir caminho.',
+    'Chegas ao mundo com uma presença serena e os pés na terra: transmites constância, beleza e gosto pelo que tem valor.',
+    'O mundo conhece-te pela curiosidade e pela palavra: a tua roupa é feita de perguntas, ideias e ligações.',
+    'A tua porta de entrada é cuidadora e intuitiva: quem chega perto sente-se acolhido, e tu sentes tudo antes de falar.',
+    'Chegas como quem entra em palco: há em ti uma presença nobre, que pede para ser vista e inspira quem está à volta.',
+    'Apresentas-te com discrição e um olhar fino: reparas no detalhe, pões ordem e tornas tudo mais claro à tua volta.',
+    'Abres caminho com diplomacia e sentido estético: a tua primeira linguagem é a harmonia, e vês com clareza o que o outro precisa.',
+    'Tens uma presença magnética e profunda: os outros sentem a tua intensidade antes de te conhecerem.',
+    'Chegas com entusiasmo e otimismo no olhar: a vida, para ti, é território novo por descobrir.',
+    'Apresentas-te com firmeza e método: inspiras confiança e transmites que sabes para onde vais.',
+    'O mundo vê-te como alguém original: chegas para fazer diferente e trazes um sopro de futuro a qualquer sala.',
+    'Apareces com suavidade e um toque de mistério: há algo de sonhador e inspirado na forma como olhas o mundo.'
+  ],
+  // casas: [nome curto, uma linha]
+  casa: [
+    ['O ponto de partida', 'Como inicias, como te apresentas e como habitas o teu corpo.'],
+    ['Os valores', 'Como constróis na matéria, a tua relação com o dinheiro e com o merecimento.'],
+    ['O canal', 'Como pensas, aprendes e comunicas aquilo que recebes.'],
+    ['As raízes', 'O teu lar interno, a família de origem e a base que te deixa crescer.'],
+    ['O palco', 'O prazer, a criatividade e o brilho que nasce de seres quem és.'],
+    ['O ritmo', 'O quotidiano, a saúde e o trabalho de todos os dias.'],
+    ['O outro', 'As parcerias duradouras e o equilíbrio entre quem és e quem está ao teu lado.'],
+    ['A transformação', 'O mistério, o poder e a arte de morrer e renascer.'],
+    ['O ir além', 'A liberdade, a sabedoria e as convicções que te abrem caminho.'],
+    ['A montanha', 'A missão, o reconhecimento e o legado que vieste deixar.'],
+    ['A tribo', 'O coletivo, os grupos e o que vens oferecer ao mundo, com visão de futuro.'],
+    ['O grande mar', 'O inconsciente, as memórias, a intuição e a forma como vives a espiritualidade.']
   ]
 };
+// regente de cada signo, segundo a lista de regências das aulas (Carneiro → Peixes)
+var RULER = ['Mars','Venus','Mercury','Moon','Sun','Mercury','Venus','Pluto','Jupiter','Saturn','Saturn','Jupiter'];
+var RULER_ART = { Sun:'o Sol', Moon:'a Lua' };
 
 // ---------- DOM ----------
 var $ = function(id){ return document.getElementById(id); };
@@ -505,7 +563,6 @@ $('themeBtn').addEventListener('click', function(){
 var TZS = CITIES.map(function(c){ return c.tz; }).filter(function(v, i, a){ return a.indexOf(v) === i; }).sort();
 $('tz').innerHTML = TZS.map(function(z){ return '<option value="' + z + '"' + (z === 'Europe/Lisbon' ? ' selected' : '') + '>' + z.replace(/_/g, ' ') + '</option>'; }).join('');
 
-$('semHora').addEventListener('change', function(){ $('hora').disabled = this.checked; });
 
 // combobox
 function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -583,12 +640,9 @@ form.addEventListener('submit', function(e){
   if (!m){ err.textContent = 'Indica a tua data de nascimento.'; $('data').focus(); return; }
   var y = +m[1], mo = +m[2], d = +m[3];
   if (y < 1900 || y > 2100){ err.textContent = 'Escolhe uma data entre 1900 e 2100.'; return; }
-  var know = !$('semHora').checked, hh = 12, mi = 0;
-  if (know){
-    var tm = /^(\d{1,2}):(\d{2})/.exec($('hora').value);
-    if (!tm){ err.textContent = 'Indica a hora, ou marca “Não sei a hora”.'; $('hora').focus(); return; }
-    hh = +tm[1]; mi = +tm[2];
-  }
+  var tm = /^(\d{1,2}):(\d{2})/.exec($('hora').value);
+  if (!tm){ err.textContent = 'Indica a hora de nascimento.'; $('hora').focus(); return; }
+  var hh = +tm[1], mi = +tm[2];
   var place = resolvePlace();
   if (!place){
     err.textContent = manual.hidden ? 'Escolhe a cidade na lista, ou usa “Outra cidade” para indicar as coordenadas.' : 'Indica a latitude e a longitude (em graus decimais).';
@@ -596,14 +650,8 @@ form.addEventListener('submit', function(e){
   }
   if (!A){ err.textContent = 'Não foi possível carregar o motor de cálculo. Recarrega a página.'; return; }
   var conv = localToUTC(y, mo, d, hh, mi, place.tz);
-  var chart = computeChart(A, conv.utc, place.lat, place.lon, know);
-  // Moon range if the time is unknown
-  if (!know){
-    var a0 = localToUTC(y, mo, d, 0, 0, place.tz).utc, a1 = localToUTC(y, mo, d, 23, 59, place.tz).utc;
-    var t0 = A.MakeTime(new Date(a0)), t1 = A.MakeTime(new Date(a1));
-    chart.moonSigns = [signOf(A.EclipticGeoMoon(t0).lon), signOf(A.EclipticGeoMoon(t1).lon)];
-  }
-  render(chart, { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, know: know, place: place, utc: conv.utc, off: conv.offsetMin });
+  var chart = computeChart(A, conv.utc, place.lat, place.lon);
+  render(chart, { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, place: place, utc: conv.utc, off: conv.offsetMin });
 });
 $('editBtn').addEventListener('click', function(){ form.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('data').focus({ preventScroll: true }); });
 
@@ -613,7 +661,7 @@ function rng(seed){ return function(){ seed = (seed * 1664525 + 1013904223) >>> 
 function f1(n){ return Math.round(n * 10) / 10; }
 
 function render(ch, info){
-  var ref = info.know ? ch.asc : 0; // longitude placed at the left
+  var ref = ch.asc; // Ascendant placed at the left
   function ang(l){ return (180 + (l - ref)) * D2R; }
   function P(l, r){ var a = ang(l); return [f1(C + r * Math.cos(a)), f1(C - r * Math.sin(a))]; }
   function line(l, r1, r2, cls, extra){ var p = P(l, r1), q = P(l, r2); return '<line class="' + cls + '" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '"' + (extra || '') + '/>'; }
@@ -659,11 +707,11 @@ function render(ch, info){
   s.push('</g>');
 
   // houses
-  if (info.know){
+  {
     s.push('<g class="fade" style="animation-delay:.8s">');
     ch.cusps.forEach(function(c, k){
       if (k % 3 !== 0){ s.push(line(c, RA, RH, 'cusp')); s.push(line(c, RH, R1, 'cusp', ' stroke-opacity=".2"')); }
-      var hp = P(c + 15, (RA + RH) / 2);
+      var hp = P(c + norm(ch.cusps[(k + 1) % 12] - c) / 2, (RA + RH) / 2); // number in the middle of the (unequal) house
       s.push('<text class="hn" x="' + hp[0] + '" y="' + hp[1] + '" text-anchor="middle" dominant-baseline="central">' + (k + 1) + '</text>');
     });
     // axes ASC–DSC, MC–IC
@@ -733,25 +781,20 @@ function render(ch, info){
   // header
   var who = info.name ? 'O céu de ' + esc(info.name) : 'O teu céu';
   $('resTitle').innerHTML = who;
-  var date = new Date(Date.UTC(2000, info.mo - 1, info.d)); date.setUTCFullYear(info.y);
-  var ds = date.toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-  var hs = info.know ? ' · ' + pad(info.hh) + ':' + pad(info.mi) : '';
-  $('resMeta').textContent = ds + hs + ' · ' + info.place.name;
-  var note = $('resNote');
-  if (!info.know){
-    note.hidden = false;
-    note.textContent = 'Sem a hora de nascimento, o mapa foi calculado para o meio-dia e não mostra o Ascendente nem as casas. A Lua pode variar alguns graus.';
-  } else {
-    var o = info.off, sg = o >= 0 ? '+' : '−', ao = Math.abs(Math.round(o));
-    note.hidden = false;
-    note.textContent = 'Hora local UTC' + sg + Math.floor(ao / 60) + (ao % 60 ? ':' + pad(ao % 60) : '') + ' (fuso e horário de verão da época).';
-  }
+  var ds = pad(info.d) + '/' + pad(info.mo) + '/' + info.y, ts = pad(info.hh) + ':' + pad(info.mi);
+  $('resMeta').textContent = 'Nascida/o a ' + ds + ', às ' + ts + ' (hora legal: ' + fmtOff(info.off) + ') · ' + info.place.name;
+  var note = $('resNote'), tzNote = offNote(info);
+  if (ch.houseSys === 'Porphyry') tzNote += (tzNote ? ' ' : '') + '(a esta latitude, as casas foram calculadas pelo sistema Porfírio)';
+  note.hidden = !tzNote; note.textContent = tzNote;
+
+  // birthday within 45 days: Revolução Solar hint
+  $('bday').hidden = !nearBirthday(info.mo, info.d, 45);
 
   // planet list
   var rows = ch.planets.map(function(p){
     return '<li><span class="g" aria-hidden="true">' + p.glyph + VS + '</span><span class="n">' + p.name + ' <small>em ' + SIGNS[signOf(p.lon)] + '</small></span><span class="v">' + fmtDeg(p.lon) + (p.retro ? '<span class="r" title="retrógrado">℞</span>' : '') + '</span></li>';
   });
-  if (info.know){
+  {
     rows.push('<li><span class="g" aria-hidden="true" style="font-family:var(--sans);font-size:11px;letter-spacing:.05em">ASC</span><span class="n">Ascendente <small>em ' + SIGNS[signOf(ch.asc)] + '</small></span><span class="v">' + fmtDeg(ch.asc) + '</span></li>');
     rows.push('<li><span class="g" aria-hidden="true" style="font-family:var(--sans);font-size:11px;letter-spacing:.05em">MC</span><span class="n">Meio do Céu <small>em ' + SIGNS[signOf(ch.mc)] + '</small></span><span class="v">' + fmtDeg(ch.mc) + '</span></li>');
   }
@@ -760,19 +803,26 @@ function render(ch, info){
   // pillars
   var sun = signOf(ch.planets[0].lon), moon = signOf(ch.planets[1].lon);
   var html = pillar('Sol', '☉', 'Sol em ' + SIGNS[sun], SIGN_GLYPHS[sun], TXT.sol[sun], 0);
-  if (!info.know && ch.moonSigns && ch.moonSigns[0] !== ch.moonSigns[1]){
-    var m0 = ch.moonSigns[0], m1 = ch.moonSigns[1];
-    html += pillar('Lua', '☽', 'Lua em ' + SIGNS[m0] + ' ou ' + SIGNS[m1], '', 'Nesse dia a Lua mudou de signo. Com a hora certa, saberás qual delas é a tua: ' + TXT.lua[moon].charAt(0).toLowerCase() + TXT.lua[moon].slice(1), 1);
-  } else {
-    html += pillar('Lua', '☽', 'Lua em ' + SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1);
-  }
-  if (info.know){
-    var as = signOf(ch.asc);
-    html += pillar('Ascendente', 'AC', 'Ascendente em ' + SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
-  } else {
-    html += '<div class="pillar unknown reveal" style="animation-delay:.36s"><div class="ic" style="font-family:var(--sans);font-size:13px;letter-spacing:.06em">AC</div><div><p class="k">Ascendente</p><h4>Por descobrir</h4><p>O Ascendente muda a cada duas horas, mais ou menos. Com a hora de nascimento, é o pilar que mostra como chegas ao mundo.</p></div></div>';
-  }
+  html += pillar('Lua', '☽', 'Lua em ' + SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1);
+  var as = signOf(ch.asc);
+  html += pillar('Ascendente', 'AC', 'Ascendente em ' + SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
   $('pillars').innerHTML = html;
+
+  // layers: house of the Sun + ruler of the Sun's sign
+  var lay = $('layers');
+  {
+    var sunP = ch.planets[0], hS = houseOf(ch, sunP.lon);
+    var rk = RULER[sun], rP = ch.planets.filter(function(p){ return p.key === rk; })[0], hR = houseOf(ch, rP.lon);
+    var rName = RULER_ART[rk] || rP.name;
+    var lh = '<h3>Camadas do teu Sol</h3><p class="sub">Casa · Regente</p>';
+    lh += '<p class="ask">Tens Sol em ' + SIGNS[sun] + ', mas sabias que a casa do mapa astral onde ele se encontra fala da área da tua vida em que essas características se expressam? E sabes que tem relação com a casa onde está o regente do signo, neste caso <em>' + (rk === 'Sun' ? 'o próprio Sol' : rName) + '</em>?</p>';
+    lh += layer('☉', 'O teu Sol', 'Sol na Casa ' + hS, TXT.casa[hS - 1][1], 0, TXT.casa[hS - 1][0]);
+    var rText = rk === 'Sun' ? 'Em Leão, o Sol é o regente do próprio signo: tudo converge para esta casa.'
+      : (hR === hS ? 'O regente está na mesma casa que o teu Sol: este tema pede a tua atenção a dobrar.' : TXT.casa[hR - 1][1]);
+    lh += layer(rP.glyph, 'Regente de ' + SIGNS[sun], (rk === 'Sun' ? 'O Sol rege o próprio signo' : rP.name + ' na Casa ' + hR), rText, 1, rk === 'Sun' ? '' : TXT.casa[hR - 1][0]);
+    lh += '<p class="close">Na Leitura Intuitiva, junto estes pontos numa história sobre onde colocar o teu foco agora. E nas sessões de aprofundamento vamos mais longe, com as outras ferramentas da minha metodologia.</p>';
+    lay.innerHTML = lh; lay.hidden = false;
+  }
 
   var res = $('result'); res.hidden = false;
   requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
@@ -804,14 +854,48 @@ function spread(items, MIN){
   blocks.forEach(function(bl){ bl.m.forEach(function(it, k){ it.pos = norm(bl.c + (k - (bl.m.length - 1) / 2) * MIN); }); });
   return lin;
 }
+function houseOf(ch, lon){
+  for (var i = 0; i < 12; i++){
+    var a = ch.cusps[i], b = ch.cusps[(i + 1) % 12];
+    if (norm(lon - a) < norm(b - a)) return i + 1;
+  }
+  return 1;
+}
+function layer(icon, kind, title, text, n, tag){
+  return '<div class="pillar reveal" style="animation-delay:' + (0.4 + n * 0.12) + 's"><div class="ic" aria-hidden="true">' + icon + VS + '</div><div><p class="k">' + kind + '</p><h4>' + title + (tag ? '<small>' + tag + '</small>' : '') + '</h4><p>' + text + '</p></div></div>';
+}
 function pillar(kind, icon, title, zg, text, n){
   var icStyle = icon === 'AC' ? ' style="font-family:var(--sans);font-size:13px;letter-spacing:.06em"' : '';
   return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true"' + icStyle + '>' + icon + (icon === 'AC' ? '' : VS) + '</div><div><p class="k">' + kind + '</p><h4>' + title + (zg ? '<span class="zs" aria-hidden="true">' + zg + VS + '</span>' : '') + '</h4><p>' + text + '</p></div></div>';
 }
 function pad(n){ return (n < 10 ? '0' : '') + n; }
+function fmtOff(o){
+  var sg = o >= 0 ? '+' : '−', ao = Math.abs(Math.round(o));
+  return 'UTC' + sg + Math.floor(ao / 60) + (ao % 60 ? ':' + pad(ao % 60) : '');
+}
+// short note when the legal time on that date differs from what the same zone uses today
+function offNote(info){
+  var tz = info.place.tz;
+  // mainland Portugal on Central European Time: 27 Sep 1992 01:00 UTC to 31 Mar 1996 01:00 UTC
+  if (tz === 'Europe/Lisbon' && info.utc >= Date.UTC(1992, 8, 27, 1) && info.utc < Date.UTC(1996, 2, 31, 1))
+    return '(entre 1992 e 1996 Portugal esteve no fuso da Europa Central)';
+  var ref = localToUTC(2015, info.mo, info.d, info.hh, info.mi, tz).offsetMin;
+  if (Math.round(ref) !== Math.round(info.off)) return '(nessa data, a hora legal deste lugar era diferente da de hoje)';
+  return '';
+}
+function nearBirthday(mo, d, days){
+  var now = new Date(), t = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()), best = Infinity;
+  for (var k = -1; k <= 1; k++){
+    var y = now.getFullYear() + k;
+    var leap = y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0);
+    var dd = (mo === 2 && d === 29 && !leap) ? 28 : d;
+    best = Math.min(best, Math.abs(Date.UTC(y, mo - 1, dd) - t) / 864e5);
+  }
+  return best <= days;
+}
 function describe(ch, info){
   var t = 'Mapa natal. ' + ch.planets.map(function(p){ return p.name + ' em ' + SIGNS[signOf(p.lon)] + ' ' + fmtDeg(p.lon) + (p.retro ? ' retrógrado' : ''); }).join('; ');
-  if (info.know) t += '; Ascendente em ' + SIGNS[signOf(ch.asc)] + ' ' + fmtDeg(ch.asc) + '; Meio do Céu em ' + SIGNS[signOf(ch.mc)] + ' ' + fmtDeg(ch.mc);
+  t += '; Ascendente em ' + SIGNS[signOf(ch.asc)] + ' ' + fmtDeg(ch.asc) + '; Meio do Céu em ' + SIGNS[signOf(ch.mc)] + ' ' + fmtDeg(ch.mc);
   return t + '.';
 }
 })();
