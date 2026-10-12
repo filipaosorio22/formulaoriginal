@@ -429,6 +429,40 @@
   }
   .bio-box .statement.sm { white-space:nowrap; text-wrap:nowrap; }
   @media (max-width:760px){ .bio-box .statement.sm { white-space:normal; } }
+
+  /* ronda 6 */
+  .cover-li h1 { font-size:clamp(28px,4.6vw,36px); }
+  .cover-li .h1-sub { font-size:16px; }
+  @media (min-width:1000px){ .cover-li h1 { font-size:clamp(30px,3.4vw,40px); white-space:nowrap; } .cover-li .h1-sub { font-size:18px; white-space:nowrap; } }
+  .cover-li .spk { display:none; }
+  .cover-li::after { display:block; content:''; position:absolute; inset:0; left:0; width:auto; transform:none; z-index:0; pointer-events:none;
+    background:linear-gradient(105deg, transparent 35%, rgba(255,251,240,0.42) 50%, transparent 65%); background-size:250% 100%; animation:sheen 11s ease-in-out infinite; }
+  @keyframes sheen { 0% { background-position:120% 0; } 60%, 100% { background-position:-20% 0; } }
+  html[data-theme="dark"] .cover-li::after { background:linear-gradient(105deg, transparent 35%, rgba(255,226,160,0.07) 50%, transparent 65%); background-size:250% 100%; }
+  @media (prefers-reduced-motion: reduce){ .cover-li::after { animation:none; opacity:0; } }
+  .tagline { margin-top:3.4rem; }
+  .faixa { padding:3.2rem 1rem; margin:1.6rem 0; }
+  .faixa::before { inset:-30px -40px; opacity:1; filter:blur(38px);
+    background:radial-gradient(ellipse 30% 46% at 22% 55%, rgba(226,196,138,0.75), transparent 72%), radial-gradient(ellipse 34% 52% at 50% 42%, rgba(240,218,170,0.85), transparent 72%), radial-gradient(ellipse 30% 44% at 78% 58%, rgba(214,180,118,0.7), transparent 72%), radial-gradient(ellipse 22% 34% at 36% 30%, rgba(250,236,204,0.8), transparent 72%), radial-gradient(ellipse 22% 34% at 66% 72%, rgba(232,204,150,0.7), transparent 72%); }
+  html[data-theme="dark"] .faixa::before { display:block; background:radial-gradient(ellipse 30% 46% at 22% 55%, rgba(120,92,48,0.55), transparent 72%), radial-gradient(ellipse 34% 52% at 50% 42%, rgba(140,110,60,0.5), transparent 72%), radial-gradient(ellipse 30% 44% at 78% 58%, rgba(110,84,44,0.5), transparent 72%); }
+  @media (max-width:640px){ .faixa::before { inset:-20px -10px; } }
+  .voice-quote p { font-size:clamp(16px,2.1vw,17.5px); line-height:1.6; }
+  .tabs button { border-color:var(--gold); color:var(--gold-deep); }
+  .tabs button:hover { background:rgba(214,178,111,0.15); }
+  .tabs button[aria-selected="true"] { background:linear-gradient(120deg,#ecd6a4,#d6b26f,#efdcae); border-color:#c9a86c; color:#3d2814; }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 38% !important; }
+  .bio-box p.body-text.uso { margin-top:1.5rem !important; line-height:1.65; }
+  details.astro { margin-top:1.4rem; border-top:0.5px solid var(--gline); border-bottom:0.5px solid var(--gline); padding:0.9rem 0; }
+  details.astro > summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:0.7rem; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); }
+  details.astro > summary::-webkit-details-marker { display:none; }
+  details.astro > summary::before { content:''; flex:none; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--gold-deep); border-width:6px 0 6px 9px; transition:transform 0.25s ease; }
+  details.astro[open] > summary::before { transform:rotate(90deg); }
+  details.astro .astro-body { padding-top:1rem; }
+  details.astro .astro-body p { font-family:'Lora',serif; font-size:16px; line-height:1.7; color:var(--ink); margin-bottom:0.9rem; text-align:left; }
+  details.astro .astro-body p:first-child { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--wine); }
+  .car-slide img, .car-video iframe { height:auto !important; aspect-ratio:900/1100; }
+  .car-video img { object-fit:cover; }
+  @media (min-width:1100px){ .voice-quote { margin:0 -110px; } .voice-quote p { font-size:17px; white-space:nowrap; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -463,7 +497,7 @@
     <div class="cover-li">
       <div class="cover-text">
     <h1>Intuitive Reading</h1>
-    <p class="h1-sub">A Reading made with intuition and method,<br class="dk"> about the moment you are living and the theme you bring.</p>
+    <p class="h1-sub">A Reading made with intuition and method, about the moment you are living and the theme you bring.</p>
       </div>
     </div>
     <div class="tagline"><p>Who are you when you stop being what the world expects of you?</p></div>
@@ -480,11 +514,11 @@
     <p class="body-text">The Intuitive Reading is an invitation to come back to your center: to see the patterns, beliefs and dynamics of this moment in your life and how they influence you. When you see what is at work behind your choices, you gain more room to choose differently, with more awareness.</p>
   </div>
 
-  <div class="faixa reveal"><p>What you believe about yourself shapes your choices more than you imagine.</p></div>
+  <div class="faixa reveal"><p>What you believe about yourself shapes your choices more than you imagine!</p></div>
 
   <!-- SE SENTES QUE -->
   <section class="reveal" id="se-sentes">
-    <h2>If you feel that…</h2>
+    <h2>Come discover new layers of yourself, if you feel that…</h2>
     <ul class="recognize stagger">
       <li><span class="mk">✦</span><span>You want to know more of yourself, in your freest essence</span></li>
       <li><span class="mk">✦</span><span>You recognize something in dreams, symbols and signs in your life</span></li>
@@ -505,7 +539,7 @@
       <p>“Never doubt the information you receive. Besides being so accurate, your voice brings a calm, a tranquility, a peace…<br>It’s something truly beautiful!”</p>
       <cite>A fellow student from my training, right after receiving a Reading</cite>
     </blockquote>
-    <h2>What people who have received a Reading say</h2>
+    <h2>What people who have received a Reading from me say</h2>
     <div class="carousel">
       <button class="car-arrow car-prev" type="button" aria-label="Previous">←</button>
       <button class="car-arrow car-next" type="button" aria-label="Next">→</button>
@@ -594,11 +628,11 @@
   <section class="reveal" id="o-que-recebes">
     <h2>What you receive</h2>
     <ul class="clean stagger">
-      <li>A personalized Reading of your birth chart, guided by what you are living</li>
+      <li>A personalized Reading of your birth chart, guided by what you are living right now</li>
       <li>A symbolic story connected to your moment, created from your chart and your theme</li>
       <li>Connections between the themes in your chart and what you share as a starting point</li>
       <li>Questions to help you recognize how a pattern shows up in specific situations</li>
-      <li>Guidance and practical experiments for your everyday life</li>
+      <li>Guidance and practical experiments for your everyday life, based on the beliefs that come up in the Reading</li>
       <li>The Reading in audio, recorded by me, for you to listen to as many times as you like</li>
     </ul>
   </section>
@@ -617,8 +651,22 @@
         <p class="body-text">I studied education and child development and specialized in therapies such as Family Constellations, Aura Reading, ThetaHealing<sup style="font-size:0.6em;">®</sup>, innerdance, dream analysis, astrology, alchemy, Human Design and much more. From all of this, I created my own methodology.</p>
       </div>
     </div>
-    <p class="body-text" style="margin-top:0.6rem;">I use intuition, symbolic language and analysis as parts of the same way of seeing: sensitivity to what has not yet been said, and clarity to turn it into reflections you can use in your everyday life. My study of the unconscious, the archetypes and alchemy is part of that path.</p>
+    <p class="body-text uso">I use intuition, symbolic language and analysis as parts of the same way of seeing: sensitivity to what has not yet been said, and clarity to turn it into reflections you can use in your everyday life. My study of the unconscious, the archetypes and alchemy is part of that path.</p>
     <p class="statement sm">I don’t separate the analytical side from the intuitive one. The Reading is shaped by both.</p>
+        <details class="astro">
+      <summary>A little of me through the eyes of astrology</summary>
+      <div class="astro-body">
+        <p>I like to imagine my chart as an alchemical workshop: a place where fire meets matter, questions meet images, and what doesn’t yet have a name slowly begins to take shape.</p>
+        <p>My Moon in Aries holds the flame of someone who wants to discover things for herself, feel life up close and open new paths. Mercury and Venus in Sagittarius carry that flame further: they are the traveler and the storyteller, looking for meaning, beauty and connections between worlds that seemed apart.</p>
+        <p>My Sun in Capricorn, next to Mars, gives hands to that imagination. It is the builder in the workshop: it chooses the materials, listens to time and looks for a form that can hold what was born as a possibility. Not to erase the mystery, but to give it a place in life.</p>
+        <p>With my Ascendant in Aquarius, I like to open windows where there seemed to be only walls. To look from another angle, question a familiar explanation, bring together ideas that hadn’t yet talked to each other. And the cluster of planets in the 11th House reminds me that this discovery doesn’t need to stay with me alone: it can meet other people and become exchange, belonging and shared creation.</p>
+        <p>Maybe that is why the language of symbols fascinates me so much. An image can hold a question; a character can give a face to a conflict; two points, when they come close, can reveal a story we hadn’t been able to see.</p>
+        <p>It is from this meeting between imagination and discernment that I try to do my Readings: give language to what you recognize, shed light on connections and find a passage into concrete life.</p>
+        <p>In my chart, I find the storyteller, the explorer and the builder working in the same workshop. Mercury and Venus in Sagittarius look for meaning and words; Neptune offers me an image for my relationship with mystery; Capricorn and Saturn remind me to take care of form, of limits and of what I can sustain.</p>
+        <p>In Human Design, I am a Manifesting Generator, with emotional authority and a 3/5 profile. My energy comes alive when something truly excites me, my decisions ask for time so the emotional wave can settle, and I learn by experimenting, so I can then share what I’ve discovered.</p>
+        <p>My chart doesn’t contain all of me. But it offers me images to keep discovering who I am, and it is with that same curiosity that I approach yours.</p>
+      </div>
+    </details>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Back to Intuitive Reading</a>
     </div>
   </section>
@@ -640,7 +688,7 @@
       <span>Creativity and pleasure</span>
       <span>Time and the rhythm of life</span>
     </div>
-    <p class="soft-note">If more than one resonated with you, feel free to share your moment with me as it is.<br>You don’t need to separate what, in your experience, is connected.<br>When you book, you’ll have the chance to tell me more.</p>
+    <p class="soft-note">If more than one resonated with you, feel free to share your moment with me as it is.<br>You don’t need to separate what, in your experience, is connected. When you book, you’ll have the chance to tell me more.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -649,12 +697,12 @@
   <section class="reveal" id="como-funciona">
     <h2>How it works</h2>
     <div class="timeline" id="timeline"><span class="tl-fill" id="tlFill"></span>
-      <div class="tl-step"><span class="tl-dot">1</span><h3>You choose your option</h3><p>The Intuitive Reading on its own, or the Reading plus an integration session with me after you’ve listened to it.</p></div>
+      <div class="tl-step"><span class="tl-dot">1</span><h3>You choose your option</h3><p>The Intuitive Reading on its own, or the Reading plus an in-depth session with me after you’ve listened to it.</p></div>
       <div class="tl-step"><span class="tl-dot">2</span><h3>You share your details and your theme</h3><p>Date, time and place of birth, what you are going through and any context you feel is important.</p></div>
       <div class="tl-step"><span class="tl-dot">3</span><h3>I prepare and record your Reading</h3><p>With intuition and an archetypal look at your chart, connecting the Reading to questions and practical guidance.</p></div>
       <div class="tl-step"><span class="tl-dot">4</span><h3>You receive your Reading</h3><p>In audio, within 14 business days of payment confirmation.</p></div>
       <div class="tl-step"><span class="tl-dot">5</span><h3>You listen and integrate</h3><p>In your own time, as many times as you like.<br>You can take notes on your reflections and bring specific examples.</p></div>
-      <div class="tl-step opt"><span class="tl-dot">6</span><h3>Integration session</h3><p>We go deeper into the themes, work on the relevant beliefs and explore ways of responding to real situations.</p></div>
+      <div class="tl-step opt"><span class="tl-dot">6</span><h3>In-depth session</h3><p>We go deeper into the themes, work on the relevant beliefs and explore ways of responding to real situations.</p></div>
     </div>
   </section>
 
@@ -663,7 +711,7 @@
   <!-- SESSÃO DE INTEGRAÇÃO -->
   <section class="reveal" id="sessao">
     <p class="eyebrow">To go deeper</p>
-    <h2>Integration session and belief work</h2>
+    <h2>In-depth session and belief work</h2>
     <p class="body-text">After listening to your Reading, you may feel like going deeper into some of the themes you recognized.</p>
     <p class="body-text">In this one-to-one session, you bring whatever came up: questions, reflections or specific examples from your life. You don’t need to prepare anything or arrive with a neatly organized explanation.</p>
     <p class="body-text">Starting from what you share, I help you explore the connections between what you feel, the beliefs that may be present and the way you respond to situations. When it makes sense, we work on those beliefs through the practices I bring into my work with clients. If you like, we can also go deeper into your Human Design chart.</p>
@@ -679,7 +727,7 @@
     <div class="offers">
       <div class="offer">
         <p class="offer-name">Intuitive Reading</p>
-        <p class="offer-price">147 €</p>
+        <p class="offer-price">147€</p>
         <ul>
           <li>A Reading of your birth chart, guided by your theme</li>
           <li>A personalized symbolic story</li>
@@ -690,8 +738,8 @@
       </div>
       <div class="offer offer-featured">
         <span class="offer-badge">The most complete</span>
-        <p class="offer-name">Reading + integration session</p>
-        <p class="offer-price">247 €</p>
+        <p class="offer-name">Reading + in-depth session</p>
+        <p class="offer-price">247€</p>
         <ul>
           <li>Everything included in the Intuitive Reading</li>
           <li>A one-to-one session with me, after you’ve listened to the Reading</li>
@@ -699,12 +747,12 @@
           <li>We go deeper into the themes and work on the relevant beliefs</li>
           <li>If you like, we also go deeper into your Human Design</li>
         </ul>
-        <a class="btn" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20integration%20session." target="_blank" rel="noopener">I want the Reading and the session</a>
+        <a class="btn" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20in-depth%20session." target="_blank" rel="noopener">I want the Reading and the session</a>
       </div>
     </div>
     <div class="extra-offer">
       <p class="eyebrow">For your birthday</p>
-      <p class="extra-offer-name">Intuitive Reading + Solar Return · 247 €</p>
+      <p class="extra-offer-name">Intuitive Reading + Solar Return · 247€</p>
       <p class="extra-offer-text">Ideal if your birthday was recently or is coming up soon: the start of a new trip around the Sun, a new yearly cycle in your life. In astrology, this moment is called the Solar Return, and it lets us explore the themes that may come to the fore between this birthday and the next.</p>
       <a class="link-soft" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20Solar%20Return." target="_blank" rel="noopener">I want the Reading with the Solar Return</a>
     </div>
@@ -722,15 +770,15 @@
       <details><summary>Do I have to choose a specific theme?</summary><div class="ans"><p>You don’t have to choose a category or arrive with a perfect question. You can tell me what you are going through, what is unsettling you and what you feel you need to understand. If several themes are connected, you can share them together. From there, we agree on the focus of the Reading.</p></div></details>
       <details><summary>What if I don’t know my birth time?</summary><div class="ans"><p>Talk to me before you buy. The time affects important elements of the chart, so we need to see what can be explored with the details you have and what the limitations will be.</p></div></details>
       <details><summary>How do I receive the Reading?</summary><div class="ans"><p>You receive your personalized Reading in audio, so you can listen in your own time, pause and return to the passages that move you.</p></div></details>
-      <details><summary>Is there a live session?</summary><div class="ans"><p>The base Reading is recorded and does not include a live meeting. If you choose Intuitive Reading + integration session, you also get a one-to-one session with me after listening to the Reading, so we can go deeper into the themes based on your reflections and real-life examples.</p></div></details>
-      <details><summary>What happens in the integration session?</summary><div class="ans"><p>We start from what you recognized in the Reading and what you want to bring from your life. We explore patterns, possible beliefs and ways of responding to situations. When it makes sense, I bring in belief-work practices, and together we shape next steps you can try.</p></div></details>
+      <details><summary>Is there a live session?</summary><div class="ans"><p>The base Reading is recorded and does not include a live meeting. If you choose Intuitive Reading + in-depth session, you also get a one-to-one session with me after listening to the Reading, so we can go deeper into the themes based on your reflections and real-life examples.</p></div></details>
+      <details><summary>What happens in the in-depth session?</summary><div class="ans"><p>We start from what you recognized in the Reading and what you want to bring from your life. We explore patterns, possible beliefs and ways of responding to situations. When it makes sense, I bring in belief-work practices, and together we shape next steps you can try.</p></div></details>
       <details><summary>Do I need to prepare anything for the session?</summary><div class="ans"><p>You can take notes and bring questions or examples, but you don’t have to. Just share what stayed with you or what you would like to explore further.</p></div></details>
       <details><summary>How long does it take to arrive?</summary><div class="ans"><p>Up to 14 business days after payment confirmation.</p></div></details>
       <details><summary>Is the story the Reading?</summary><div class="ans"><p>No. The Reading of your chart, guided by what you share, is the main deliverable. The symbolic story is a complement that gathers some of the dynamics explored into images and characters you can return to. It is neither a biography nor a prediction.</p></div></details>
       <details><summary>Do I have to agree with everything I hear?</summary><div class="ans"><p>No. You may recognize yourself, disagree or give an image a different meaning. Your experience is essential to understanding what makes sense. You don’t need to fit yourself to the interpretation.</p></div></details>
       <details><summary>Will the Reading tell me what to do?</summary><div class="ans"><p>It offers perspectives, questions and practical suggestions, not decisions made for you. You can explore what you hear and choose what you would like to try.</p></div></details>
       <details><summary>Is it a prediction of the future?</summary><div class="ans"><p>That is not the purpose of this Reading. The chart is used as a symbolic language to explore the questions you bring, not to determine events or guarantee outcomes.</p></div></details>
-      <details><summary>Does this experience replace psychological support?</summary><div class="ans"><p>No. The Reading is a spiritual and interpretive practice of self-knowledge. The integration session goes deeper into the themes and into belief work, but it is not presented here as psychotherapy and does not replace medical or psychological care.</p></div></details>
+      <details><summary>Does this experience replace psychological support?</summary><div class="ans"><p>No. The Reading is a spiritual and interpretive practice of self-knowledge. The in-depth session goes deeper into the themes and into belief work, but it is not presented here as psychotherapy and does not replace medical or psychological care.</p></div></details>
       <details><summary>Can I get a Solar Return Reading afterward?</summary><div class="ans"><p>You can work with me again through a Solar Return Reading, dedicated to the symbolic exploration of your yearly cycle in relation to your birth chart and the moment you are living. It’s ideal for your birthday (your trip around the Sun).</p></div></details>
         <button type="button" class="faq-close" id="faqClose">↑ Close questions</button>
       </div>
@@ -768,7 +816,7 @@
 </div>
 
 <div class="sticky-buy" id="stickyBuy">
-  <span>Intuitive Reading · <strong>from 147 €</strong></span>
+  <span>Intuitive Reading · <strong>from 147€</strong></span>
   <a href="#opcoes" data-scroll="opcoes">Choose</a>
 </div>
 
@@ -812,7 +860,7 @@
   (function(){
     var c = document.querySelector('.cover-li'); if (!c) return;
     var G = ['✦','✧','✦','·','✦','✶'];
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < 0; i++) {
       var s = document.createElement('span'); s.className = 'spk' + (i % 3 === 0 ? ' g' : ''); s.setAttribute('aria-hidden','true');
       s.textContent = G[i % G.length];
       s.style.left = (Math.random() * 100) + '%'; s.style.top = (Math.random() * 100) + '%';
@@ -830,7 +878,9 @@
     var slides = track.children;
     for (var i = 0; i < slides.length; i++) { (function(i){ var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', (EN ? 'Testimonial ' : 'Testemunho ') + (i + 1)); d.addEventListener('click', function(){ track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior:'smooth' }); }); dots.appendChild(d); })(i); }
     function cur(){ var x = track.scrollLeft, best = 0, bd = 1e9; for (var i = 0; i < slides.length; i++) { var d = Math.abs(slides[i].offsetLeft - track.offsetLeft - x); if (d < bd) { bd = d; best = i; } } return best; }
-    function paintDots(){ var c = cur(); [].forEach.call(dots.children, function(d, i){ d.classList.toggle('on', i === c); }); }
+    function lastStart(){ var max = track.scrollWidth - track.clientWidth, n = slides.length - 1; for (var i = 0; i < slides.length; i++) { if (slides[i].offsetLeft - track.offsetLeft >= max - 4) { n = i; break; } } return n; }
+    function paintDots(){ var L = lastStart(), c = cur(); if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 4) c = L; [].forEach.call(dots.children, function(d, i){ d.style.display = i > L ? 'none' : ''; d.classList.toggle('on', i === Math.min(c, L)); }); }
+    window.addEventListener('resize', paintDots);
     track.addEventListener('scroll', function(){ requestAnimationFrame(paintDots); }, { passive:true });
     paintDots();
     function go(dir){ var i = Math.max(0, Math.min(slides.length - 1, cur() + dir)); track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior:'smooth' }); }

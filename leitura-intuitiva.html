@@ -429,6 +429,40 @@
   }
   .bio-box .statement.sm { white-space:nowrap; text-wrap:nowrap; }
   @media (max-width:760px){ .bio-box .statement.sm { white-space:normal; } }
+
+  /* ronda 6 */
+  .cover-li h1 { font-size:clamp(28px,4.6vw,36px); }
+  .cover-li .h1-sub { font-size:16px; }
+  @media (min-width:1000px){ .cover-li h1 { font-size:clamp(30px,3.4vw,40px); white-space:nowrap; } .cover-li .h1-sub { font-size:18px; white-space:nowrap; } }
+  .cover-li .spk { display:none; }
+  .cover-li::after { display:block; content:''; position:absolute; inset:0; left:0; width:auto; transform:none; z-index:0; pointer-events:none;
+    background:linear-gradient(105deg, transparent 35%, rgba(255,251,240,0.42) 50%, transparent 65%); background-size:250% 100%; animation:sheen 11s ease-in-out infinite; }
+  @keyframes sheen { 0% { background-position:120% 0; } 60%, 100% { background-position:-20% 0; } }
+  html[data-theme="dark"] .cover-li::after { background:linear-gradient(105deg, transparent 35%, rgba(255,226,160,0.07) 50%, transparent 65%); background-size:250% 100%; }
+  @media (prefers-reduced-motion: reduce){ .cover-li::after { animation:none; opacity:0; } }
+  .tagline { margin-top:3.4rem; }
+  .faixa { padding:3.2rem 1rem; margin:1.6rem 0; }
+  .faixa::before { inset:-30px -40px; opacity:1; filter:blur(38px);
+    background:radial-gradient(ellipse 30% 46% at 22% 55%, rgba(226,196,138,0.75), transparent 72%), radial-gradient(ellipse 34% 52% at 50% 42%, rgba(240,218,170,0.85), transparent 72%), radial-gradient(ellipse 30% 44% at 78% 58%, rgba(214,180,118,0.7), transparent 72%), radial-gradient(ellipse 22% 34% at 36% 30%, rgba(250,236,204,0.8), transparent 72%), radial-gradient(ellipse 22% 34% at 66% 72%, rgba(232,204,150,0.7), transparent 72%); }
+  html[data-theme="dark"] .faixa::before { display:block; background:radial-gradient(ellipse 30% 46% at 22% 55%, rgba(120,92,48,0.55), transparent 72%), radial-gradient(ellipse 34% 52% at 50% 42%, rgba(140,110,60,0.5), transparent 72%), radial-gradient(ellipse 30% 44% at 78% 58%, rgba(110,84,44,0.5), transparent 72%); }
+  @media (max-width:640px){ .faixa::before { inset:-20px -10px; } }
+  .voice-quote p { font-size:clamp(16px,2.1vw,17.5px); line-height:1.6; }
+  .tabs button { border-color:var(--gold); color:var(--gold-deep); }
+  .tabs button:hover { background:rgba(214,178,111,0.15); }
+  .tabs button[aria-selected="true"] { background:linear-gradient(120deg,#ecd6a4,#d6b26f,#efdcae); border-color:#c9a86c; color:#3d2814; }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 38% !important; }
+  .bio-box p.body-text.uso { margin-top:1.5rem !important; line-height:1.65; }
+  details.astro { margin-top:1.4rem; border-top:0.5px solid var(--gline); border-bottom:0.5px solid var(--gline); padding:0.9rem 0; }
+  details.astro > summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:0.7rem; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); }
+  details.astro > summary::-webkit-details-marker { display:none; }
+  details.astro > summary::before { content:''; flex:none; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--gold-deep); border-width:6px 0 6px 9px; transition:transform 0.25s ease; }
+  details.astro[open] > summary::before { transform:rotate(90deg); }
+  details.astro .astro-body { padding-top:1rem; }
+  details.astro .astro-body p { font-family:'Lora',serif; font-size:16px; line-height:1.7; color:var(--ink); margin-bottom:0.9rem; text-align:left; }
+  details.astro .astro-body p:first-child { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--wine); }
+  .car-slide img, .car-video iframe { height:auto !important; aspect-ratio:900/1100; }
+  .car-video img { object-fit:cover; }
+  @media (min-width:1100px){ .voice-quote { margin:0 -110px; } .voice-quote p { font-size:17px; white-space:nowrap; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -462,7 +496,7 @@
     <div class="cover-li">
       <div class="cover-text">
     <h1>Leitura Intuitiva</h1>
-    <p class="h1-sub">Uma Leitura feita com intuição e método,<br class="dk"> sobre o momento que estás a viver e o tema que trouxeres.</p>
+    <p class="h1-sub">Uma Leitura feita com intuição e método, sobre o momento que estás a viver e o tema que trouxeres.</p>
       </div>
     </div>
     <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
@@ -479,11 +513,11 @@
     <p class="body-text">A Leitura Intuitiva é um convite para te recentrares: para veres os padrões, as crenças e as dinâmicas do teu momento e a forma como te influenciam. Quando vês o que está a operar por trás das tuas escolhas, ganhas mais espaço para escolher de forma diferente, com mais consciência.</p>
   </div>
 
-  <div class="faixa reveal"><p>O que acreditas sobre ti molda mais as tuas escolhas do que imaginas.</p></div>
+  <div class="faixa reveal"><p>O que acreditas sobre ti molda mais as tuas escolhas do que imaginas!</p></div>
 
   <!-- SE SENTES QUE -->
   <section class="reveal" id="se-sentes">
-    <h2>Se sentes que…</h2>
+    <h2>Vem conhecer novas camadas de ti, se sentes que…</h2>
     <ul class="recognize stagger">
       <li><span class="mk">✦</span><span>Desejas conhecer mais de ti, na tua essência mais livre</span></li>
       <li><span class="mk">✦</span><span>Reconheces algo nos sonhos, símbolos e sinais na vida</span></li>
@@ -504,7 +538,7 @@
       <p>«Jamais duvides das informações que recebes. Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz…<br>É uma coisa muito bonita!»</p>
       <cite>Uma colega de formação, logo depois de receber uma Leitura</cite>
     </blockquote>
-    <h2>O que dizem as pessoas que já receberam uma Leitura</h2>
+    <h2>O que dizem as pessoas que já receberam uma Leitura minha</h2>
     <div class="carousel">
       <button class="car-arrow car-prev" type="button" aria-label="Anterior">←</button>
       <button class="car-arrow car-next" type="button" aria-label="Seguinte">→</button>
@@ -584,7 +618,7 @@
       <p class="qa-q">Como levo isto para o trabalho e para o meu tempo?</p>
       <p class="qa-a">Se surgir uma relação entre valor pessoal e produtividade, podes observar o que pensas quando descansas. Uma experiência possível: definir um limite concreto de disponibilidade e reparar na reação que isso desperta em ti.</p>
     </div>
-    <p class="soft-note" style="text-align:center;">São exemplos. A tua Leitura é orientada pelo teu tema e pelo contexto que partilhares.</p>
+    <p class="soft-note" style="text-align:center;">Estes são exemplos. A tua Leitura é orientada pelo teu tema e pelo contexto que partilhares.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -593,11 +627,11 @@
   <section class="reveal" id="o-que-recebes">
     <h2>O que recebes</h2>
     <ul class="clean stagger">
-      <li>Uma Leitura personalizada do teu mapa astral, orientada pelo que estás a viver</li>
+      <li>Uma Leitura personalizada do teu mapa astral, orientada pelo que estás a viver agora</li>
       <li>Uma história simbólica ligada ao teu momento, criada a partir do teu mapa e do teu tema</li>
       <li>Relações entre os temas do mapa e o que partilhas como ponto de partida</li>
       <li>Perguntas para reconheceres como um padrão aparece em situações concretas</li>
-      <li>Orientações e experiências práticas para o teu dia-a-dia</li>
+      <li>Orientações e experiências práticas para o teu dia-a-dia com base nas crenças que surgirem na Leitura</li>
       <li>A Leitura em áudio, gravada por mim, para ouvires quantas vezes quiseres</li>
     </ul>
   </section>
@@ -616,8 +650,22 @@
         <p class="body-text">Estudei educação e desenvolvimento infantil e especializei-me em terapias como Constelações Familiares, Leitura de Aura, ThetaHealing<sup style="font-size:0.6em;">®</sup>, innerdance, análise dos sonhos, astrologia, alquimia, Human Design e muito mais. Com tudo isto criei a minha própria metodologia.</p>
       </div>
     </div>
-    <p class="body-text" style="margin-top:0.6rem;">Uso a intuição, a linguagem simbólica e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em reflexões que possas usar no teu dia a dia. O meu estudo do inconsciente, dos arquétipos e da alquimia faz parte desse percurso.</p>
+    <p class="body-text uso">Uso a intuição, a linguagem simbólica e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em reflexões que possas usar no teu dia a dia. O meu estudo do inconsciente, dos arquétipos e da alquimia faz parte desse percurso.</p>
     <p class="statement sm">Não separo a parte analítica da intuitiva. A Leitura é feita pelas duas.</p>
+        <details class="astro">
+      <summary>Um bocadinho de mim pelos olhos da astrologia</summary>
+      <div class="astro-body">
+        <p>Gosto de imaginar o meu mapa como uma oficina alquímica: um lugar onde o fogo encontra matéria, as perguntas encontram imagens e aquilo que ainda não tem nome começa, pouco a pouco, a ganhar forma.</p>
+        <p>A minha Lua em Carneiro guarda a chama de quem quer descobrir por si, sentir a vida de perto e abrir caminhos. Mercúrio e Vénus em Sagitário levam essa chama mais longe: são a viajante e a contadora de histórias, à procura de sentido, de beleza e de relações entre mundos que pareciam separados.</p>
+        <p>O meu Sol em Capricórnio, junto a Marte, dá mãos a essa imaginação. É a construtora na oficina: escolhe os materiais, escuta o tempo e procura uma forma que consiga sustentar aquilo que nasceu como possibilidade. Não para apagar o mistério, mas para lhe dar um lugar na vida.</p>
+        <p>Com o Ascendente em Aquário, gosto de abrir janelas onde parecia haver apenas paredes. Olhar de outro ângulo, questionar uma explicação conhecida, aproximar ideias que ainda não tinham conversado. E a concentração de planetas na Casa 11 lembra-me que essa descoberta não precisa de ficar só comigo: pode encontrar outras pessoas, tornar-se troca, pertença e criação partilhada.</p>
+        <p>Talvez seja por isso que me fascina tanto a linguagem dos símbolos. Uma imagem pode guardar uma pergunta; uma personagem pode dar rosto a um conflito; dois pontos, quando se aproximam, podem revelar uma história que ainda não tínhamos conseguido ver.</p>
+        <p>É desse encontro entre imaginação e discernimento que procuro fazer as minhas Leituras: dar linguagem ao que reconheces, iluminar relações e encontrar uma passagem para a vida concreta.</p>
+        <p>No meu mapa, encontro a contadora de histórias, a exploradora e a construtora a trabalhar na mesma oficina. Mercúrio e Vénus em Sagitário procuram sentido e palavras; Neptuno oferece-me uma imagem para a relação com o mistério; Capricórnio e Saturno lembram-me de cuidar da forma, dos limites e daquilo que consigo sustentar.</p>
+        <p>No Human Design, sou Geradora Manifestante, com autoridade emocional e perfil 3/5. A minha energia ganha vida quando algo me entusiasma de verdade, as decisões pedem-me tempo para que a onda emocional assente, e aprendo experimentando, para depois partilhar o que descobri.</p>
+        <p>O meu mapa não me contém por inteiro. Mas oferece-me imagens para continuar a descobrir quem sou, e é com essa mesma curiosidade que me aproximo do teu.</p>
+      </div>
+    </details>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a>
     </div>
   </section>
@@ -639,7 +687,7 @@
       <span>Criatividade e prazer</span>
       <span>Tempo e ritmo da vida</span>
     </div>
-    <p class="soft-note">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade.<br>Não precisas de separar aquilo que, na tua experiência, está ligado.<br>No momento da marcação terás oportunidade de me contar mais.</p>
+    <p class="soft-note">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade.<br>Não precisas de separar aquilo que, na tua experiência, está ligado. No momento da marcação terás oportunidade de me contar mais.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -648,21 +696,21 @@
   <section class="reveal" id="como-funciona">
     <h2>Como funciona</h2>
     <div class="timeline" id="timeline"><span class="tl-fill" id="tlFill"></span>
-      <div class="tl-step"><span class="tl-dot">1</span><h3>Escolhes a tua opção</h3><p>A Leitura Intuitiva, ou a Leitura com uma sessão de integração comigo depois da escuta.</p></div>
+      <div class="tl-step"><span class="tl-dot">1</span><h3>Escolhes a tua opção</h3><p>A Leitura Intuitiva, ou a Leitura com uma sessão de aprofundamento comigo depois da escuta.</p></div>
       <div class="tl-step"><span class="tl-dot">2</span><h3>Partilhas os teus dados e o teu tema</h3><p>Data, hora e local de nascimento, o que estás a viver e o contexto que achas importante.</p></div>
       <div class="tl-step"><span class="tl-dot">3</span><h3>Preparo e gravo a tua Leitura</h3><p>Com intuição e um olhar arquetípico sobre o teu mapa, ligando a Leitura a perguntas e orientações práticas.</p></div>
       <div class="tl-step"><span class="tl-dot">4</span><h3>Recebes a tua Leitura</h3><p>Em áudio, até 14 dias úteis após a confirmação do pagamento.</p></div>
       <div class="tl-step"><span class="tl-dot">5</span><h3>Escutas e integras</h3><p>No teu tempo, quantas vezes quiseres.<br>Podes tomar notas das tuas reflexões e trazer exemplos concretos.</p></div>
-      <div class="tl-step opt"><span class="tl-dot">6</span><h3>Sessão de integração</h3><p>Aprofundamos os temas, trabalhamos as crenças relevantes e exploramos formas de responder às situações reais.</p></div>
+      <div class="tl-step opt"><span class="tl-dot">6</span><h3>Sessão de aprofundamento</h3><p>Aprofundamos os temas, trabalhamos as crenças relevantes e exploramos formas de responder às situações reais.</p></div>
     </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
-  <!-- SESSÃO DE INTEGRAÇÃO -->
+  <!-- SESSÃO DE APROFUNDAMENTO -->
   <section class="reveal" id="sessao">
     <p class="eyebrow">Para ires mais fundo</p>
-    <h2>Sessão de integração e trabalho de crenças</h2>
+    <h2>Sessão de aprofundamento e trabalho de crenças</h2>
     <p class="body-text">Depois de ouvires a tua Leitura, podes sentir vontade de aprofundar algum dos temas que reconheceste.</p>
     <p class="body-text">Nesta sessão individual, trazes o que surgiu: perguntas, reflexões ou exemplos concretos da tua vida. Não precisas de preparar nada nem de chegar com uma explicação organizada.</p>
     <p class="body-text">A partir do que partilhas, ajudo-te a explorar as relações entre aquilo que sentes, as crenças que podem estar presentes e a forma como respondes às situações. Quando fizer sentido, trabalhamos essas crenças através das práticas que integro no meu acompanhamento. Se quiseres, podemos também aprofundar o teu mapa de Human Design.</p>
@@ -678,7 +726,7 @@
     <div class="offers">
       <div class="offer">
         <p class="offer-name">Leitura Intuitiva</p>
-        <p class="offer-price">147 €</p>
+        <p class="offer-price">147€</p>
         <ul>
           <li>Leitura do teu mapa astral, orientada pelo teu tema</li>
           <li>História simbólica personalizada</li>
@@ -689,8 +737,8 @@
       </div>
       <div class="offer offer-featured">
         <span class="offer-badge">A mais completa</span>
-        <p class="offer-name">Leitura + sessão de integração</p>
-        <p class="offer-price">247 €</p>
+        <p class="offer-name">Leitura + sessão de aprofundamento</p>
+        <p class="offer-price">247€</p>
         <ul>
           <li>Tudo o que está na Leitura Intuitiva</li>
           <li>Uma sessão individual comigo, depois de ouvires a Leitura</li>
@@ -698,12 +746,12 @@
           <li>Aprofundamos os temas e trabalhamos as crenças relevantes</li>
           <li>Se quiseres, aprofundamos também o teu Human Design</li>
         </ul>
-        <a class="btn" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20sess%C3%A3o%20de%20integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero a Leitura e a sessão</a>
+        <a class="btn" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20sess%C3%A3o%20de%20aprofundamento." target="_blank" rel="noopener">Quero a Leitura e a sessão</a>
       </div>
     </div>
     <div class="extra-offer">
       <p class="eyebrow">Para quando fazes anos</p>
-      <p class="extra-offer-name">Leitura Intuitiva + Revolução Solar · 247 €</p>
+      <p class="extra-offer-name">Leitura Intuitiva + Revolução Solar · 247€</p>
       <p class="extra-offer-text">Ideal para quando fizeste aniversário há pouco ou vais fazer em breve: o início de uma nova volta ao Sol, ou seja, de um novo ciclo anual da tua vida. Na astrologia, este momento é chamado de Revolução Solar e permite explorar os temas que podem ganhar destaque entre este aniversário e o próximo.</p>
       <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Quero a Leitura com Revolução Solar</a>
     </div>
@@ -721,15 +769,15 @@
       <details><summary>Tenho de escolher um tema específico?</summary><div class="ans"><p>Não tens de escolher uma categoria nem chegar com uma pergunta perfeita. Podes contar-me o que estás a viver, o que te inquieta e o que sentes que precisas de compreender. Se vários temas estiverem ligados, podes partilhá-los juntos. A partir daí, combinamos o foco da Leitura.</p></div></details>
       <details><summary>E se não souber a hora de nascimento?</summary><div class="ans"><p>Fala comigo antes de comprar. A hora influencia elementos importantes do mapa, por isso precisamos de perceber o que é possível explorar com os dados que tens e quais serão as limitações.</p></div></details>
       <details><summary>Como recebo a Leitura?</summary><div class="ans"><p>Recebes a tua Leitura personalizada em áudio, para escutares no teu tempo, fazeres pausas e regressares às passagens que te tocam.</p></div></details>
-      <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura base é gravada e não inclui um encontro ao vivo. Se escolheres Leitura Intuitiva + sessão de integração, tens também uma sessão individual comigo depois de ouvires a Leitura, para aprofundarmos os temas a partir das tuas reflexões e de exemplos reais.</p></div></details>
-      <details><summary>O que acontece na sessão de integração?</summary><div class="ans"><p>Partimos daquilo que reconheceste na Leitura e do que queres trazer da tua vida. Exploramos padrões, possíveis crenças e formas de responder às situações. Quando fizer sentido, integro práticas de trabalho de crenças e ajudamos a dar forma a próximos passos que possas experimentar.</p></div></details>
+      <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura base é gravada e não inclui um encontro ao vivo. Se escolheres Leitura Intuitiva + sessão de aprofundamento, tens também uma sessão individual comigo depois de ouvires a Leitura, para aprofundarmos os temas a partir das tuas reflexões e de exemplos reais.</p></div></details>
+      <details><summary>O que acontece na sessão de aprofundamento?</summary><div class="ans"><p>Partimos daquilo que reconheceste na Leitura e do que queres trazer da tua vida. Exploramos padrões, possíveis crenças e formas de responder às situações. Quando fizer sentido, integro práticas de trabalho de crenças e ajudamos a dar forma a próximos passos que possas experimentar.</p></div></details>
       <details><summary>Tenho de preparar alguma coisa para a sessão?</summary><div class="ans"><p>Podes tomar notas e trazer perguntas ou exemplos, mas não é obrigatório. Basta partilhares aquilo que ficou contigo ou que desejas aprofundar.</p></div></details>
       <details><summary>Quanto tempo demora a chegar?</summary><div class="ans"><p>Até 14 dias úteis após a confirmação do pagamento.</p></div></details>
       <details><summary>A história é a Leitura?</summary><div class="ans"><p>Não. A Leitura do teu mapa, orientada pelo que partilhas, é a entrega principal. A história simbólica é um complemento que reúne algumas das dinâmicas exploradas em imagens e personagens às quais podes regressar. Não é uma biografia nem uma previsão.</p></div></details>
       <details><summary>Tenho de concordar com tudo o que ouço?</summary><div class="ans"><p>Não. Podes reconhecer-te, discordar ou dar outro sentido a uma imagem. A tua experiência é essencial para perceber o que faz sentido. Não precisas de te adaptar à interpretação.</p></div></details>
       <details><summary>A Leitura vai dizer-me o que fazer?</summary><div class="ans"><p>Oferece perspetivas, perguntas e propostas práticas, não decisões tomadas por ti. Podes explorar o que ouves e escolher o que desejas experimentar.</p></div></details>
       <details><summary>É uma previsão do futuro?</summary><div class="ans"><p>Não é esse o objetivo desta Leitura. O mapa é usado como linguagem simbólica para explorar as questões que trazes, não para determinar acontecimentos ou garantir resultados.</p></div></details>
-      <details><summary>Esta experiência substitui acompanhamento psicológico?</summary><div class="ans"><p>Não. A Leitura é uma prática espiritual e interpretativa de autoconhecimento. A sessão de integração aprofunda os temas e o trabalho de crenças, mas não é aqui apresentada como psicoterapia nem substitui acompanhamento médico ou psicológico.</p></div></details>
+      <details><summary>Esta experiência substitui acompanhamento psicológico?</summary><div class="ans"><p>Não. A Leitura é uma prática espiritual e interpretativa de autoconhecimento. A sessão de aprofundamento aprofunda os temas e o trabalho de crenças, mas não é aqui apresentada como psicoterapia nem substitui acompanhamento médico ou psicológico.</p></div></details>
       <details><summary>Posso fazer uma Revolução Solar depois?</summary><div class="ans"><p>Podes voltar a trabalhar comigo através de uma Leitura de Revolução Solar, dedicada à exploração simbólica do teu ciclo anual em relação com o mapa natal e com o momento que estás a viver, ideal para quando fazes anos (a tua volta ao Sol).</p></div></details>
         <button type="button" class="faq-close" id="faqClose">↑ Fechar perguntas</button>
       </div>
@@ -767,7 +815,7 @@
 </div>
 
 <div class="sticky-buy" id="stickyBuy">
-  <span>Leitura Intuitiva · <strong>desde 147 €</strong></span>
+  <span>Leitura Intuitiva · <strong>desde 147€</strong></span>
   <a href="#opcoes" data-scroll="opcoes">Escolher</a>
 </div>
 
@@ -811,7 +859,7 @@
   (function(){
     var c = document.querySelector('.cover-li'); if (!c) return;
     var G = ['✦','✧','✦','·','✦','✶'];
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < 0; i++) {
       var s = document.createElement('span'); s.className = 'spk' + (i % 3 === 0 ? ' g' : ''); s.setAttribute('aria-hidden','true');
       s.textContent = G[i % G.length];
       s.style.left = (Math.random() * 100) + '%'; s.style.top = (Math.random() * 100) + '%';
@@ -829,7 +877,9 @@
     var slides = track.children;
     for (var i = 0; i < slides.length; i++) { (function(i){ var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', (EN ? 'Testimonial ' : 'Testemunho ') + (i + 1)); d.addEventListener('click', function(){ track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior:'smooth' }); }); dots.appendChild(d); })(i); }
     function cur(){ var x = track.scrollLeft, best = 0, bd = 1e9; for (var i = 0; i < slides.length; i++) { var d = Math.abs(slides[i].offsetLeft - track.offsetLeft - x); if (d < bd) { bd = d; best = i; } } return best; }
-    function paintDots(){ var c = cur(); [].forEach.call(dots.children, function(d, i){ d.classList.toggle('on', i === c); }); }
+    function lastStart(){ var max = track.scrollWidth - track.clientWidth, n = slides.length - 1; for (var i = 0; i < slides.length; i++) { if (slides[i].offsetLeft - track.offsetLeft >= max - 4) { n = i; break; } } return n; }
+    function paintDots(){ var L = lastStart(), c = cur(); if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 4) c = L; [].forEach.call(dots.children, function(d, i){ d.style.display = i > L ? 'none' : ''; d.classList.toggle('on', i === Math.min(c, L)); }); }
+    window.addEventListener('resize', paintDots);
     track.addEventListener('scroll', function(){ requestAnimationFrame(paintDots); }, { passive:true });
     paintDots();
     function go(dir){ var i = Math.max(0, Math.min(slides.length - 1, cur() + dir)); track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior:'smooth' }); }

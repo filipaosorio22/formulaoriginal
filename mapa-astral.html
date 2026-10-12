@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+<title>O teu mapa natal · Leitura Intuitiva</title>
+<meta name="description" content="Desenha o teu mapa natal: Sol, Lua, Ascendente e planetas, calculados no teu browser.">
+<script>
+  try { var t = localStorage.getItem('fo_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef; --ink:#2b241c; --muted:#6f6355; --soft:#8c7f6e;
+  --gold:#c9a86c; --deep:#9a7e52; --wine:#7a2535;
+  --card:#fffdf9; --field:#fffefb; --line:rgba(154,126,82,.30); --line-soft:rgba(154,126,82,.16);
+  --disc1:#fffbf4; --disc2:#f3e9d8; --star:#b8955a;
+  --glyph:#7d6440; --shadow:0 1px 2px rgba(80,60,30,.05),0 12px 40px -18px rgba(120,90,40,.28);
+  --serif:'Spectral','Lora',Georgia,'Times New Roman',serif;
+  --body:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --sym:'DejaVu Sans','Segoe UI Symbol','Apple Symbols','Noto Sans Symbols 2','Noto Sans Symbols',sans-serif;
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --bg:#1d1915; --ink:#efe6d8; --muted:#bfb19c; --soft:#a39581;
+  --gold:#c9a86c; --deep:#d6b984; --wine:#d48a96;
+  --card:#25201a; --field:#211c17; --line:rgba(201,168,108,.30); --line-soft:rgba(201,168,108,.15);
+  --disc1:#2a231b; --disc2:#1c1814; --star:#e2c891;
+  --glyph:#e0c48f; --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;transition:background .4s,color .4s}
+.wrap{max-width:660px;margin:0 auto;padding:40px 16px 64px}
+a{color:var(--deep)}
+.top{display:flex;justify-content:flex-end;margin-bottom:-8px}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--deep);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:16px;line-height:1;display:grid;place-items:center}
+.theme-btn:hover{border-color:var(--gold)}
+header{text-align:center;margin-bottom:30px}
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--deep);margin:0 0 14px}
+.kicker span{color:var(--gold);letter-spacing:0;margin:0 .6em}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,8vw,48px);line-height:1.1;margin:0 0 14px;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--deep)}
+.lead{color:var(--muted);margin:0 auto;max-width:30em;font-size:16.5px}
+.rule{display:flex;align-items:center;gap:12px;color:var(--gold);margin:22px auto 0;max-width:200px;font-size:12px}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* form */
+.card{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;box-shadow:var(--shadow);padding:26px 22px}
+form .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+.full{grid-column:1/-1}
+label.lbl{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.opt{text-transform:none;letter-spacing:0;font-weight:400;color:var(--soft)}
+input[type=text],input[type=date],input[type=time],input[type=number],select{
+  width:100%;font:inherit;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--field);
+  border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px;outline:none;appearance:none;-webkit-appearance:none;
+  transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,108,.18)}
+input:disabled{opacity:.45}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),linear-gradient(135deg,var(--deep) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+.check{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:8px;cursor:pointer;user-select:none}
+.check input{accent-color:var(--deep);width:16px;height:16px;margin:0}
+.combo{position:relative}
+.combo ul{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 4px);margin:0;padding:6px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:300px;overflow:auto}
+.combo li{padding:9px 10px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.combo li small{color:var(--soft);font-size:13px;white-space:nowrap}
+.combo li.active,.combo li:hover{background:rgba(201,168,108,.16)}
+.combo li.other{color:var(--deep);border-top:1px solid var(--line-soft);margin-top:4px;border-radius:0 0 8px 8px}
+.hint{font-family:var(--sans);font-size:13px;color:var(--soft);margin:7px 0 0}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);cursor:pointer}
+.manual{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.manual[hidden]{display:none}
+.err{color:var(--wine);font-family:var(--sans);font-size:14px;margin:14px 0 0;min-height:0}
+.err:empty{display:none}
+.actions{margin-top:22px;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:.04em;
+  color:#2b1f10;background:linear-gradient(135deg,#e2c891 0%,#c9a86c 45%,#a8854f 100%);border:0;border-radius:999px;padding:14px 30px;min-height:50px;cursor:pointer;text-decoration:none;
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 10px 24px -12px rgba(154,126,82,.75);transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.04);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 14px 28px -12px rgba(154,126,82,.85)}
+.btn:focus-visible,.theme-btn:focus-visible,.linkbtn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.privacy{font-family:var(--sans);font-size:13px;color:var(--soft);text-align:center;margin:16px auto 0;max-width:34em;line-height:1.5}
+.privacy b{color:var(--gold);font-weight:400}
+
+/* result */
+#result{margin-top:44px}
+#result[hidden]{display:none}
+.res-head{text-align:center;margin-bottom:10px}
+.res-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,6vw,34px);margin:0 0 4px}
+.res-head p{margin:0;font-family:var(--sans);font-size:14px;color:var(--muted)}
+.res-head .note{color:var(--soft);font-size:13px;margin-top:6px}
+.wheel{width:100%;max-width:600px;margin:6px auto 0;display:block;aspect-ratio:1/1;overflow:visible}
+.wheel text{font-family:var(--sans)}
+.wheel .zg{font-family:var(--sym);font-size:23px;fill:var(--glyph)}
+.wheel .pg{font-family:var(--sym);font-size:24px;fill:var(--ink)}
+.wheel .pg.lum{fill:var(--deep)}
+.wheel .pd{font-size:12px;fill:var(--muted);letter-spacing:.02em}
+.wheel .rx{fill:var(--wine)}
+.wheel .hn{font-size:11px;fill:var(--soft);letter-spacing:.04em}
+.wheel .ax{font-size:12.5px;font-weight:600;letter-spacing:.12em;fill:var(--wine)}
+.wheel .ring{fill:none;stroke:var(--gold)}
+.wheel .tick{stroke:var(--gold)}
+.wheel .cusp{stroke:var(--gold);stroke-opacity:.38;stroke-width:.8}
+.wheel .axis{stroke:var(--deep);stroke-width:1.3}
+.wheel .ptr{stroke:var(--deep);stroke-opacity:.55;stroke-width:.7}
+.wheel .dot{fill:var(--deep)}
+.wheel .asp{stroke:var(--gold);fill:none}
+.wheel .asp.hard{stroke:var(--deep)}
+.wheel .star{fill:var(--star)}
+.wheel .spark{font-family:var(--sym);fill:var(--gold)}
+@media (max-width:480px){
+  .wheel .pd{display:none}
+  .wheel .pg{font-size:27px}
+  .wheel .zg{font-size:26px}
+  .wheel .hn{font-size:13px}
+  .wheel .ax{font-size:15px}
+}
+
+/* animation */
+.anim .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s cubic-bezier(.5,0,.2,1) forwards}
+.anim .fade{opacity:0;animation:fade 1s ease forwards}
+.anim .rise{opacity:0;transform-box:fill-box;transform-origin:center;animation:rise .9s cubic-bezier(.3,.7,.3,1) forwards}
+.anim .disc{opacity:0;transform-origin:320px 320px;animation:disc 1.2s cubic-bezier(.3,.7,.3,1) forwards}
+.twinkle{animation:twinkle var(--d,4s) ease-in-out var(--dl,0s) infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes disc{from{opacity:0;transform:scale(.94) rotate(-8deg)}to{opacity:1;transform:none}}
+@keyframes twinkle{0%,100%{opacity:var(--o1,.15)}50%{opacity:var(--o2,.8)}}
+.reveal{opacity:0;transform:translateY(10px);animation:reveal .8s ease forwards}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .anim .draw{animation:none;stroke-dashoffset:0}
+  .anim .fade,.anim .rise,.anim .disc,.reveal{animation:none;opacity:1;transform:none}
+  .twinkle{animation:none}
+  .btn,.btn:hover{transition:none;transform:none}
+}
+
+.planets{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 26px;font-family:var(--sans);font-size:14.5px}
+.planets li{display:grid;grid-template-columns:26px 1fr auto;align-items:baseline;gap:6px;padding:8px 2px;border-bottom:1px solid var(--line-soft)}
+.planets .g{font-family:var(--sym);color:var(--deep);font-size:17px;text-align:center}
+.planets .n{color:var(--ink)}
+.planets .n small{color:var(--soft);font-size:13px}
+.planets .v{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.planets .v .r{color:var(--wine);margin-left:3px}
+
+.pillars{margin-top:46px;text-align:center}
+.pillars h3,.cta h3{font-family:var(--serif);font-weight:300;font-size:clamp(25px,5.6vw,31px);margin:0 0 4px}
+.pillars .sub{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.04em;margin:0 0 22px}
+.pillar{position:relative;text-align:left;display:grid;grid-template-columns:50px 1fr;gap:16px;align-items:start;padding:20px 20px 20px 18px;margin-bottom:12px;background:var(--card);border:1px solid var(--line-soft);border-radius:16px}
+.pillar .ic{width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--sym);font-size:22px;color:var(--deep)}
+.pillar .k{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin:2px 0 2px}
+.pillar h4{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 6px;line-height:1.25}
+.pillar h4 .zs{font-family:var(--sym);color:var(--gold);font-size:18px;margin-left:6px}
+.pillar p{margin:0;color:var(--muted);font-style:italic;font-size:16px;line-height:1.55}
+.pillar.unknown h4{color:var(--soft)}
+
+.cta{margin-top:40px;text-align:center;padding:34px 22px 30px;border-radius:20px;border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.16),transparent 70%),var(--card);position:relative;overflow:hidden}
+.cta .spk{position:absolute;color:var(--gold);font-family:var(--sym);opacity:.55;font-size:13px}
+.cta p.big{font-family:var(--serif);font-size:clamp(19px,4.6vw,22px);font-weight:300;line-height:1.45;margin:0 auto 24px;max-width:24em}
+.cta p.big em{color:var(--deep)}
+.soft{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:14.5px;color:var(--deep);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line)}
+.again{text-align:center;margin-top:22px;font-family:var(--sans);font-size:14px}
+footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;font-size:12px}
+
+@media (max-width:480px){
+  .wrap{padding-top:22px}
+  .card{padding:22px 16px;border-radius:16px}
+  form .grid{grid-template-columns:1fr}
+  .manual{grid-template-columns:1fr}
+  .planets{grid-template-columns:1fr}
+  .pillar{grid-template-columns:42px 1fr;gap:13px;padding:18px 16px}
+  .pillar .ic{width:42px;height:42px;font-size:19px}
+  .btn{width:100%;padding:14px 18px}
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar modo claro/escuro">☾</button></div>
+  <header>
+    <p class="kicker"><span>✦</span>Leitura Intuitiva<span>✦</span></p>
+    <h1>O teu <em>mapa natal</em></h1>
+    <p class="lead">O céu no instante em que chegaste. Indica a data, a hora e o lugar e o desenho aparece aqui, traçado a ouro.</p>
+    <div class="rule">✦</div>
+  </header>
+
+  <form class="card" id="form" novalidate autocomplete="off">
+    <div class="grid">
+      <div class="full">
+        <label class="lbl" for="nome">Nome <span class="opt">(opcional)</span></label>
+        <input type="text" id="nome" maxlength="60" placeholder="Como te chamas?">
+      </div>
+      <div>
+        <label class="lbl" for="data">Data de nascimento</label>
+        <input type="date" id="data" min="1900-01-01" max="2100-12-31" required>
+      </div>
+      <div>
+        <label class="lbl" for="hora">Hora de nascimento</label>
+        <input type="time" id="hora" value="12:00">
+        <label class="check"><input type="checkbox" id="semHora"> Não sei a hora</label>
+      </div>
+      <div class="full">
+        <label class="lbl" for="local">Local de nascimento</label>
+        <div class="combo">
+          <input type="text" id="local" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="localList" placeholder="Escreve a cidade, ex.: Coimbra">
+          <ul id="localList" role="listbox" hidden></ul>
+        </div>
+        <p class="hint" id="localHint">Não encontras a tua cidade? <button type="button" class="linkbtn" id="outraBtn">Outra cidade</button></p>
+        <div class="manual" id="manual" hidden>
+          <div>
+            <label class="lbl" for="lat">Latitude <span class="opt">(Norte +, Sul −)</span></label>
+            <input type="number" id="lat" step="0.0001" min="-90" max="90" placeholder="38.7223" inputmode="decimal">
+          </div>
+          <div>
+            <label class="lbl" for="lon">Longitude <span class="opt">(Este +, Oeste −)</span></label>
+            <input type="number" id="lon" step="0.0001" min="-180" max="180" placeholder="-9.1393" inputmode="decimal">
+          </div>
+          <div style="grid-column:1/-1">
+            <label class="lbl" for="tz">Fuso horário</label>
+            <select id="tz"></select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="err" id="err" role="alert"></p>
+    <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
+    <p class="privacy"><b>✦</b> Os teus dados ficam só no teu browser: o mapa é calculado aqui e não é enviado para lado nenhum.</p>
+  </form>
+
+  <section id="result" hidden aria-live="polite">
+    <div class="res-head">
+      <h2 id="resTitle">O teu céu</h2>
+      <p id="resMeta"></p>
+      <p class="note" id="resNote" hidden></p>
+    </div>
+    <svg class="wheel" id="wheel" viewBox="0 0 640 640" role="img" aria-labelledby="wheelDesc"><desc id="wheelDesc">Mapa natal</desc></svg>
+    <ul class="planets" id="planets"></ul>
+
+    <div class="pillars">
+      <h3>Os teus três pilares</h3>
+      <p class="sub">Sol · Lua · Ascendente</p>
+      <div id="pillars"></div>
+    </div>
+
+    <div class="cta">
+      <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
+      <p class="big">O mapa é só o desenho. <em>A Leitura Intuitiva</em> é o que ele te diz sobre o momento que estás a viver.</p>
+      <a class="btn" href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401">Quero a minha Leitura</a><br>
+      <a class="soft" href="leitura-intuitiva.html#opcoes">Ver como funciona</a>
+    </div>
+    <p class="again"><button type="button" class="linkbtn" id="editBtn">Alterar os dados</button></p>
+  </section>
+  <footer>✦ ✦ ✦</footer>
+</div>
+
+<script src="astronomy.browser.min.js"></script>
+<script>
+(function(){
+'use strict';
+
+// CORE-BEGIN
+var BODIES = [
+  {k:'Sun',     n:'Sol',      g:'☉'},
+  {k:'Moon',    n:'Lua',      g:'☽'},
+  {k:'Mercury', n:'Mercúrio', g:'☿'},
+  {k:'Venus',   n:'Vénus',    g:'♀'},
+  {k:'Mars',    n:'Marte',    g:'♂'},
+  {k:'Jupiter', n:'Júpiter',  g:'♃'},
+  {k:'Saturn',  n:'Saturno',  g:'♄'},
+  {k:'Uranus',  n:'Úrano',    g:'♅'},
+  {k:'Neptune', n:'Neptuno',  g:'♆'},
+  {k:'Pluto',   n:'Plutão',   g:'♇'}
+];
+var SIGNS = ['Carneiro','Touro','Gémeos','Caranguejo','Leão','Virgem','Balança','Escorpião','Sagitário','Capricórnio','Aquário','Peixes'];
+var SIGN_GLYPHS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+var D2R = Math.PI/180;
+function norm(a){ a %= 360; return a < 0 ? a + 360 : a; }
+
+var fmtCache = {};
+function tzOffsetMin(ms, tz){
+  var f = fmtCache[tz] || (fmtCache[tz] = new Intl.DateTimeFormat('en-US', {
+    timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', era: 'short'
+  }));
+  var p = {}; f.formatToParts(new Date(ms)).forEach(function(x){ p[x.type] = x.value; });
+  var y = +p.year; if (p.era && /^B/.test(p.era)) y = 1 - y;
+  var h = +p.hour; if (h === 24) h = 0;
+  var d = new Date(0); d.setUTCFullYear(y, +p.month - 1, +p.day); d.setUTCHours(h, +p.minute, +p.second, 0);
+  return (d.getTime() - Math.floor(ms/1000)*1000) / 60000;
+}
+// Local wall-clock time in an IANA zone -> UTC ms (iterative, DST/historical aware)
+function localToUTC(y, mo, d, h, mi, tz){
+  var base = new Date(0); base.setUTCFullYear(y, mo - 1, d); base.setUTCHours(h, mi, 0, 0);
+  var local = base.getTime(), utc = local, off = 0;
+  for (var i = 0; i < 5; i++){
+    off = tzOffsetMin(utc, tz);
+    var next = local - off*60000;
+    if (next === utc) break;
+    utc = next;
+  }
+  return { utc: utc, offsetMin: off };
+}
+function bodyLon(A, key, t){
+  if (key === 'Sun') return A.SunPosition(t).elon;
+  if (key === 'Moon') return A.EclipticGeoMoon(t).lon;
+  return A.Ecliptic(A.GeoVector(A.Body[key], t, true)).elon;
+}
+function angles(A, t, lat, lon){
+  var T = t.tt / 36525;
+  var eps = (23.4392911 - 0.0130042*T) * D2R;
+  var ramc = norm(A.SiderealTime(t)*15 + lon) * D2R;
+  var mc = norm(Math.atan2(Math.sin(ramc), Math.cos(ramc)*Math.cos(eps)) / D2R);
+  var asc = norm(Math.atan2(Math.cos(ramc), -(Math.sin(ramc)*Math.cos(eps) + Math.tan(lat*D2R)*Math.sin(eps))) / D2R);
+  return { asc: asc, mc: mc };
+}
+function computeChart(A, utcMs, lat, lon, knowTime){
+  var t = A.MakeTime(new Date(utcMs)), t1 = t.AddDays(1);
+  var planets = BODIES.map(function(b){
+    var l0 = norm(bodyLon(A, b.k, t)), l1 = norm(bodyLon(A, b.k, t1));
+    var dl = ((l1 - l0 + 540) % 360) - 180;
+    return { key: b.k, name: b.n, glyph: b.g, lon: l0, retro: dl < 0 };
+  });
+  var out = { planets: planets };
+  if (knowTime){
+    var a = angles(A, t, lat, lon);
+    out.asc = a.asc; out.mc = a.mc;
+    out.cusps = []; for (var i = 0; i < 12; i++) out.cusps.push(norm(a.asc + 30*i));
+  }
+  return out;
+}
+function signOf(l){ return Math.floor(norm(l)/30); }
+function fmtDeg(l){
+  var x = norm(l) % 30, d = Math.floor(x), m = Math.round((x - d)*60);
+  if (m === 60){ d += 1; m = 0; }
+  return d + '°' + (m < 10 ? '0' : '') + m + '′';
+}
+// CORE-END
+
+if (typeof document === 'undefined') return;
+var A = window.Astronomy;
+var VS = '︎';
+
+// ---------- cities: name|country|lat|lon|tz ----------
+var RAW = [
+// Portugal — capitais de distrito
+'Aveiro|Portugal|40.6405|-8.6538|Europe/Lisbon','Beja|Portugal|38.0151|-7.8632|Europe/Lisbon','Braga|Portugal|41.5454|-8.4265|Europe/Lisbon',
+'Bragança|Portugal|41.8061|-6.7567|Europe/Lisbon','Castelo Branco|Portugal|39.8222|-7.4909|Europe/Lisbon','Coimbra|Portugal|40.2033|-8.4103|Europe/Lisbon',
+'Évora|Portugal|38.5714|-7.9135|Europe/Lisbon','Faro|Portugal|37.0194|-7.9304|Europe/Lisbon','Guarda|Portugal|40.5373|-7.2658|Europe/Lisbon',
+'Leiria|Portugal|39.7436|-8.8071|Europe/Lisbon','Lisboa|Portugal|38.7223|-9.1393|Europe/Lisbon','Portalegre|Portugal|39.2967|-7.4285|Europe/Lisbon',
+'Porto|Portugal|41.1579|-8.6291|Europe/Lisbon','Santarém|Portugal|39.2362|-8.6859|Europe/Lisbon','Setúbal|Portugal|38.5244|-8.8882|Europe/Lisbon',
+'Viana do Castelo|Portugal|41.6932|-8.8329|Europe/Lisbon','Vila Real|Portugal|41.3006|-7.7441|Europe/Lisbon','Viseu|Portugal|40.6566|-7.9125|Europe/Lisbon',
+// Portugal — outras
+'Almada|Portugal|38.6790|-9.1569|Europe/Lisbon','Amadora|Portugal|38.7538|-9.2308|Europe/Lisbon','Sintra|Portugal|38.8029|-9.3817|Europe/Lisbon',
+'Cascais|Portugal|38.6979|-9.4215|Europe/Lisbon','Oeiras|Portugal|38.6969|-9.3146|Europe/Lisbon','Loures|Portugal|38.8309|-9.1685|Europe/Lisbon',
+'Odivelas|Portugal|38.7930|-9.1830|Europe/Lisbon','Seixal|Portugal|38.6401|-9.1015|Europe/Lisbon','Barreiro|Portugal|38.6631|-9.0724|Europe/Lisbon',
+'Vila Franca de Xira|Portugal|38.9553|-8.9897|Europe/Lisbon','Vila Nova de Gaia|Portugal|41.1239|-8.6118|Europe/Lisbon','Matosinhos|Portugal|41.1821|-8.6891|Europe/Lisbon',
+'Maia|Portugal|41.2357|-8.6199|Europe/Lisbon','Gondomar|Portugal|41.1444|-8.5322|Europe/Lisbon','Guimarães|Portugal|41.4425|-8.2918|Europe/Lisbon',
+'Barcelos|Portugal|41.5388|-8.6151|Europe/Lisbon','Vila Nova de Famalicão|Portugal|41.4076|-8.5198|Europe/Lisbon','Póvoa de Varzim|Portugal|41.3804|-8.7609|Europe/Lisbon',
+'Figueira da Foz|Portugal|40.1508|-8.8618|Europe/Lisbon','Covilhã|Portugal|40.2806|-7.5045|Europe/Lisbon','Chaves|Portugal|41.7400|-7.4707|Europe/Lisbon',
+'Torres Vedras|Portugal|39.0911|-9.2586|Europe/Lisbon','Caldas da Rainha|Portugal|39.4036|-9.1386|Europe/Lisbon','Tomar|Portugal|39.6019|-8.4092|Europe/Lisbon',
+'Elvas|Portugal|38.8810|-7.1630|Europe/Lisbon','Sines|Portugal|37.9560|-8.8698|Europe/Lisbon','Portimão|Portugal|37.1386|-8.5376|Europe/Lisbon',
+'Lagos|Portugal|37.1028|-8.6731|Europe/Lisbon','Albufeira|Portugal|37.0891|-8.2479|Europe/Lisbon','Loulé|Portugal|37.1381|-8.0197|Europe/Lisbon',
+'Olhão|Portugal|37.0260|-7.8411|Europe/Lisbon','Tavira|Portugal|37.1275|-7.6506|Europe/Lisbon','Lamego|Portugal|41.0970|-7.8098|Europe/Lisbon',
+// Madeira
+'Funchal|Madeira, Portugal|32.6669|-16.9241|Atlantic/Madeira','Câmara de Lobos|Madeira, Portugal|32.6500|-16.9770|Atlantic/Madeira',
+'Santa Cruz|Madeira, Portugal|32.6881|-16.7937|Atlantic/Madeira','Machico|Madeira, Portugal|32.7190|-16.7663|Atlantic/Madeira',
+'Ribeira Brava|Madeira, Portugal|32.6726|-17.0634|Atlantic/Madeira','Porto Santo|Madeira, Portugal|33.0617|-16.3420|Atlantic/Madeira',
+// Açores
+'Ponta Delgada|Açores, Portugal|37.7412|-25.6756|Atlantic/Azores','Ribeira Grande|Açores, Portugal|37.8211|-25.5194|Atlantic/Azores',
+'Angra do Heroísmo|Açores, Portugal|38.6551|-27.2156|Atlantic/Azores','Praia da Vitória|Açores, Portugal|38.7333|-27.0667|Atlantic/Azores',
+'Horta|Açores, Portugal|38.5363|-28.6269|Atlantic/Azores','Madalena do Pico|Açores, Portugal|38.5361|-28.5283|Atlantic/Azores',
+'Velas|Açores, Portugal|38.6806|-28.2083|Atlantic/Azores','Vila do Porto|Açores, Portugal|36.9447|-25.1450|Atlantic/Azores',
+'Santa Cruz das Flores|Açores, Portugal|39.4533|-31.1275|Atlantic/Azores',
+// Brasil
+'São Paulo|Brasil|-23.5505|-46.6333|America/Sao_Paulo','Rio de Janeiro|Brasil|-22.9068|-43.1729|America/Sao_Paulo','Brasília|Brasil|-15.7939|-47.8828|America/Sao_Paulo',
+'Belo Horizonte|Brasil|-19.9167|-43.9345|America/Sao_Paulo','Salvador|Brasil|-12.9777|-38.5016|America/Bahia','Fortaleza|Brasil|-3.7319|-38.5267|America/Fortaleza',
+'Recife|Brasil|-8.0476|-34.8770|America/Recife','Manaus|Brasil|-3.1190|-60.0217|America/Manaus','Curitiba|Brasil|-25.4284|-49.2733|America/Sao_Paulo',
+'Porto Alegre|Brasil|-30.0346|-51.2177|America/Sao_Paulo','Belém|Brasil|-1.4558|-48.4902|America/Belem','Goiânia|Brasil|-16.6869|-49.2648|America/Sao_Paulo',
+'São Luís|Brasil|-2.5307|-44.3068|America/Fortaleza','Maceió|Brasil|-9.6658|-35.7353|America/Maceio','Natal|Brasil|-5.7945|-35.2110|America/Fortaleza',
+'Teresina|Brasil|-5.0919|-42.8034|America/Fortaleza','João Pessoa|Brasil|-7.1195|-34.8450|America/Fortaleza','Aracaju|Brasil|-10.9472|-37.0731|America/Maceio',
+'Cuiabá|Brasil|-15.6014|-56.0979|America/Cuiaba','Campo Grande|Brasil|-20.4697|-54.6201|America/Campo_Grande','Florianópolis|Brasil|-27.5954|-48.5480|America/Sao_Paulo',
+'Vitória|Brasil|-20.3155|-40.3128|America/Sao_Paulo','Palmas|Brasil|-10.2491|-48.3243|America/Araguaina','Porto Velho|Brasil|-8.7612|-63.9004|America/Porto_Velho',
+'Rio Branco|Brasil|-9.9754|-67.8249|America/Rio_Branco','Macapá|Brasil|0.0349|-51.0694|America/Belem','Boa Vista|Brasil|2.8235|-60.6758|America/Boa_Vista',
+'Campinas|Brasil|-22.9099|-47.0626|America/Sao_Paulo','Guarulhos|Brasil|-23.4543|-46.5337|America/Sao_Paulo','Santos|Brasil|-23.9608|-46.3336|America/Sao_Paulo',
+'Niterói|Brasil|-22.8832|-43.1034|America/Sao_Paulo','Juiz de Fora|Brasil|-21.7642|-43.3496|America/Sao_Paulo','Uberlândia|Brasil|-18.9186|-48.2772|America/Sao_Paulo',
+'Ribeirão Preto|Brasil|-21.1775|-47.8103|America/Sao_Paulo','Sorocaba|Brasil|-23.5015|-47.4526|America/Sao_Paulo','Londrina|Brasil|-23.3045|-51.1696|America/Sao_Paulo',
+'Joinville|Brasil|-26.3045|-48.8487|America/Sao_Paulo','Caxias do Sul|Brasil|-29.1678|-51.1794|America/Sao_Paulo','Feira de Santana|Brasil|-12.2664|-38.9663|America/Bahia',
+// África lusófona
+'Luanda|Angola|-8.8390|13.2894|Africa/Luanda','Huambo|Angola|-12.7761|15.7392|Africa/Luanda','Benguela|Angola|-12.5763|13.4055|Africa/Luanda',
+'Lobito|Angola|-12.3644|13.5366|Africa/Luanda','Lubango|Angola|-14.9177|13.4925|Africa/Luanda','Cabinda|Angola|-5.5500|12.2000|Africa/Luanda',
+'Maputo|Moçambique|-25.9692|32.5732|Africa/Maputo','Beira|Moçambique|-19.8436|34.8389|Africa/Maputo','Nampula|Moçambique|-15.1165|39.2666|Africa/Maputo',
+'Quelimane|Moçambique|-17.8786|36.8883|Africa/Maputo','Tete|Moçambique|-16.1564|33.5867|Africa/Maputo',
+'Praia|Cabo Verde|14.9330|-23.5133|Atlantic/Cape_Verde','Mindelo|Cabo Verde|16.8901|-24.9804|Atlantic/Cape_Verde','Espargos|Cabo Verde|16.7550|-22.9450|Atlantic/Cape_Verde',
+'Bissau|Guiné-Bissau|11.8636|-15.5977|Africa/Bissau','São Tomé|São Tomé e Príncipe|0.3365|6.7273|Africa/Sao_Tome',
+'Joanesburgo|África do Sul|-26.2041|28.0473|Africa/Johannesburg',
+// Espanha
+'Madrid|Espanha|40.4168|-3.7038|Europe/Madrid','Barcelona|Espanha|41.3874|2.1686|Europe/Madrid','Valência|Espanha|39.4699|-0.3763|Europe/Madrid',
+'Sevilha|Espanha|37.3891|-5.9845|Europe/Madrid','Málaga|Espanha|36.7213|-4.4214|Europe/Madrid','Bilbau|Espanha|43.2630|-2.9350|Europe/Madrid',
+'Vigo|Espanha|42.2406|-8.7207|Europe/Madrid','Santiago de Compostela|Espanha|42.8782|-8.5448|Europe/Madrid','Salamanca|Espanha|40.9701|-5.6635|Europe/Madrid',
+'Badajoz|Espanha|38.8794|-6.9707|Europe/Madrid','Las Palmas de Gran Canaria|Espanha|28.1235|-15.4363|Atlantic/Canary',
+// França
+'Paris|França|48.8566|2.3522|Europe/Paris','Lyon|França|45.7640|4.8357|Europe/Paris','Marselha|França|43.2965|5.3698|Europe/Paris',
+'Toulouse|França|43.6047|1.4442|Europe/Paris','Bordéus|França|44.8378|-0.5792|Europe/Paris','Nice|França|43.7102|7.2620|Europe/Paris',
+'Lille|França|50.6292|3.0573|Europe/Paris','Nantes|França|47.2184|-1.5536|Europe/Paris','Estrasburgo|França|48.5734|7.7521|Europe/Paris',
+// Reino Unido e Irlanda
+'Londres|Reino Unido|51.5074|-0.1278|Europe/London','Manchester|Reino Unido|53.4808|-2.2426|Europe/London','Birmingham|Reino Unido|52.4862|-1.8904|Europe/London',
+'Liverpool|Reino Unido|53.4084|-2.9916|Europe/London','Bristol|Reino Unido|51.4545|-2.5879|Europe/London','Edimburgo|Reino Unido|55.9533|-3.1883|Europe/London',
+'Jersey (St Helier)|Reino Unido|49.1868|-2.1100|Europe/Jersey','Dublin|Irlanda|53.3498|-6.2603|Europe/Dublin',
+// Suíça, Luxemburgo, Benelux, Alemanha, Itália
+'Genebra|Suíça|46.2044|6.1432|Europe/Zurich','Lausana|Suíça|46.5197|6.6323|Europe/Zurich','Zurique|Suíça|47.3769|8.5417|Europe/Zurich',
+'Berna|Suíça|46.9480|7.4474|Europe/Zurich','Basileia|Suíça|47.5596|7.5886|Europe/Zurich','Sion|Suíça|46.2331|7.3606|Europe/Zurich',
+'Luxemburgo|Luxemburgo|49.6116|6.1319|Europe/Luxembourg','Esch-sur-Alzette|Luxemburgo|49.4958|5.9806|Europe/Luxembourg',
+'Bruxelas|Bélgica|50.8503|4.3517|Europe/Brussels','Amesterdão|Países Baixos|52.3676|4.9041|Europe/Amsterdam','Roterdão|Países Baixos|51.9244|4.4777|Europe/Amsterdam',
+'Berlim|Alemanha|52.5200|13.4050|Europe/Berlin','Hamburgo|Alemanha|53.5511|9.9937|Europe/Berlin','Munique|Alemanha|48.1351|11.5820|Europe/Berlin',
+'Frankfurt|Alemanha|50.1109|8.6821|Europe/Berlin','Colónia|Alemanha|50.9375|6.9603|Europe/Berlin','Estugarda|Alemanha|48.7758|9.1829|Europe/Berlin',
+'Düsseldorf|Alemanha|51.2277|6.7735|Europe/Berlin','Roma|Itália|41.9028|12.4964|Europe/Rome','Milão|Itália|45.4642|9.1900|Europe/Rome',
+// EUA
+'Nova Iorque|EUA|40.7128|-74.0060|America/New_York','Newark|EUA|40.7357|-74.1724|America/New_York','Boston|EUA|42.3601|-71.0589|America/New_York',
+'Fall River|EUA|41.7015|-71.1550|America/New_York','New Bedford|EUA|41.6362|-70.9342|America/New_York','Providence|EUA|41.8240|-71.4128|America/New_York',
+'Washington, D.C.|EUA|38.9072|-77.0369|America/New_York','Miami|EUA|25.7617|-80.1918|America/New_York','Orlando|EUA|28.5383|-81.3792|America/New_York',
+'Chicago|EUA|41.8781|-87.6298|America/Chicago','Houston|EUA|29.7604|-95.3698|America/Chicago','Denver|EUA|39.7392|-104.9903|America/Denver',
+'Phoenix|EUA|33.4484|-112.0740|America/Phoenix','Los Angeles|EUA|34.0522|-118.2437|America/Los_Angeles','São Francisco|EUA|37.7749|-122.4194|America/Los_Angeles',
+'San José (Califórnia)|EUA|37.3382|-121.8863|America/Los_Angeles','Honolulu|EUA|21.3069|-157.8583|Pacific/Honolulu',
+// Canadá
+'Toronto|Canadá|43.6532|-79.3832|America/Toronto','Montreal|Canadá|45.5019|-73.5674|America/Toronto','Otava|Canadá|45.4215|-75.6972|America/Toronto',
+'Vancouver|Canadá|49.2827|-123.1207|America/Vancouver','Calgary|Canadá|51.0447|-114.0719|America/Edmonton','Winnipeg|Canadá|49.8954|-97.1385|America/Winnipeg',
+// Outros com comunidades lusófonas
+'Caracas|Venezuela|10.4806|-66.9036|America/Caracas','Macau|China|22.1987|113.5439|Asia/Macau','Díli|Timor-Leste|-8.5569|125.5603|Asia/Dili'
+];
+var CITIES = RAW.map(function(s){ var p = s.split('|'); return { name: p[0], country: p[1], lat: +p[2], lon: +p[3], tz: p[4], label: p[0] + ', ' + p[1] }; });
+function fold(s){ return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
+CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
+
+// ---------- texts ----------
+var TXT = {
+  sol: [
+    'A tua essência acende-se no primeiro passo: há em ti uma coragem que não pede licença para começar.',
+    'Brilhas quando tens raízes: o teu centro é feito de calma, de sentidos despertos e de coisas que duram.',
+    'A tua luz é curiosa e anda em movimento: encontras-te nas perguntas, nas palavras e nas ligações.',
+    'O teu sol é um abrigo: a tua força nasce daquilo de que cuidas e do que sentes lá no fundo.',
+    'Há em ti um coração que pede para brilhar, e que aquece tudo à volta quando se permite.',
+    'A tua essência mora no detalhe e no cuidado: és quem transforma o caos num gesto que serve.',
+    'Procuras a beleza do equilíbrio: és ponte, harmonia e um olhar que sabe pesar os dois lados.',
+    'A tua luz vem das profundezas: não te chega a superfície, e é lá em baixo que te renovas.',
+    'O teu sol aponta para o horizonte: vives de sentido, de caminho e de uma fé que se expande.',
+    'Brilhas devagar e com firmeza: és montanha, construção e uma ambição com raízes.',
+    'A tua essência é livre e diferente: vês o que ainda não existe e não tens medo disso.',
+    'A tua luz é maré: sensível, intuitiva, capaz de sentir o que ninguém chegou a dizer.'
+  ],
+  lua: [
+    'As tuas emoções são fogo rápido: sentes tudo de imediato e precisas de espaço para agir.',
+    'Sentes-te em casa no que é estável e sensorial: um abraço, uma mesa posta, um ritmo sem pressa.',
+    'O teu mundo emocional precisa de conversa: pôr em palavras é a tua maneira de serenar.',
+    'A Lua está em casa em ti: sentes em marés, com memória funda e um instinto de proteger.',
+    'O teu coração precisa de calor e de ser visto, e devolve tudo em dobro, com generosidade.',
+    'Encontras paz na ordem e no cuidado: arrumar por fora ajuda-te a sossegar por dentro.',
+    'Precisas de harmonia para estares bem: a beleza e as relações são o teu porto de abrigo.',
+    'Sentes com intensidade e em silêncio: confias devagar, mas quando te entregas é por inteiro.',
+    'A tua alma pede horizonte: liberdade, riso e uma razão maior para todas as coisas.',
+    'Guardas as emoções com seriedade: a tua segurança nasce do que constróis com as tuas mãos.',
+    'Sentes com alguma distância e muita lucidez: precisas de ar e liberdade, mesmo na intimidade.',
+    'Absorves o invisível à tua volta e precisas de silêncio para voltares a ti.'
+  ],
+  asc: [
+    'Chegas ao mundo de frente: a primeira impressão que deixas é de energia e de iniciativa.',
+    'Entras nos lugares com uma presença serena: transmites confiança, calma e gosto pelo belo.',
+    'O mundo conhece-te pela leveza e pela curiosidade: olhos vivos e conversa fácil.',
+    'A tua porta de entrada é suave e protetora: quem chega perto sente que pode confiar em ti.',
+    'Há um brilho natural na forma como apareces: calor, presença e uma certa luz de palco.',
+    'Mostras-te com discrição e atenção fina: reparas em tudo, até no que fica por dizer.',
+    'Abres caminho com graça e diplomacia: a tua primeira linguagem é a gentileza.',
+    'Tens uma presença magnética e reservada: os outros sentem a tua profundidade antes de a conhecerem.',
+    'Chegas com entusiasmo e horizonte no olhar: a vida, para ti, é uma viagem por descobrir.',
+    'Apresentas-te com firmeza e serenidade: inspiras confiança mesmo quando ainda estás a aprender.',
+    'O mundo vê-te como alguém original e livre: um sopro de ar diferente em qualquer sala.',
+    'Apareces com suavidade e mistério: há algo de sonhador e compassivo na tua maneira de olhar.'
+  ]
+};
+
+// ---------- DOM ----------
+var $ = function(id){ return document.getElementById(id); };
+var form = $('form'), inLocal = $('local'), list = $('localList'), manual = $('manual');
+var chosen = null, activeIdx = -1, shown = [];
+
+// theme toggle
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  $('themeBtn').textContent = t === 'dark' ? '☀' + VS : '☾';
+  try { localStorage.setItem('fo_theme', t); } catch (e) {}
+}
+$('themeBtn').textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' + VS : '☾';
+$('themeBtn').addEventListener('click', function(){
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+// tz select
+var TZS = CITIES.map(function(c){ return c.tz; }).filter(function(v, i, a){ return a.indexOf(v) === i; }).sort();
+$('tz').innerHTML = TZS.map(function(z){ return '<option value="' + z + '"' + (z === 'Europe/Lisbon' ? ' selected' : '') + '>' + z.replace(/_/g, ' ') + '</option>'; }).join('');
+
+$('semHora').addEventListener('change', function(){ $('hora').disabled = this.checked; });
+
+// combobox
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function renderList(){
+  var q = fold(inLocal.value);
+  if (!q){ closeList(); return; }
+  var starts = [], contains = [];
+  CITIES.forEach(function(c){
+    if (c.f.indexOf(q) === 0 || c.fl.indexOf(q) === 0) starts.push(c);
+    else if (c.fl.indexOf(q) > -1) contains.push(c);
+  });
+  shown = starts.concat(contains).slice(0, 7);
+  activeIdx = shown.length ? 0 : -1;
+  var html = shown.map(function(c, i){
+    return '<li role="option" id="opt' + i + '" data-i="' + i + '"' + (i === activeIdx ? ' class="active" aria-selected="true"' : '') + '>' + esc(c.name) + ' <small>' + esc(c.country) + '</small></li>';
+  }).join('');
+  html += '<li role="option" class="other" data-i="other" id="optOther">Outra cidade (coordenadas manuais)</li>';
+  list.innerHTML = html; list.hidden = false; inLocal.setAttribute('aria-expanded', 'true');
+}
+function closeList(){ list.hidden = true; inLocal.setAttribute('aria-expanded', 'false'); }
+function pick(i){
+  if (i === 'other'){ openManual(); closeList(); return; }
+  var c = shown[i]; if (!c) return;
+  chosen = c; inLocal.value = c.label; closeList(); manual.hidden = true; $('err').textContent = '';
+}
+function openManual(){
+  chosen = null; manual.hidden = false; $('lat').focus();
+}
+inLocal.addEventListener('input', function(){ chosen = null; renderList(); });
+inLocal.addEventListener('focus', function(){ if (inLocal.value && !chosen) renderList(); });
+inLocal.addEventListener('keydown', function(e){
+  if (list.hidden) return;
+  var n = list.children.length;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+    e.preventDefault();
+    activeIdx = (activeIdx + (e.key === 'ArrowDown' ? 1 : -1) + n) % n;
+    Array.prototype.forEach.call(list.children, function(li, i){ li.classList.toggle('active', i === activeIdx); });
+    list.children[activeIdx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter'){
+    e.preventDefault();
+    var li = list.children[activeIdx]; if (li) pick(li.getAttribute('data-i') === 'other' ? 'other' : +li.getAttribute('data-i'));
+  } else if (e.key === 'Escape'){ closeList(); }
+});
+list.addEventListener('mousedown', function(e){
+  var li = e.target.closest('li'); if (!li) return; e.preventDefault();
+  pick(li.getAttribute('data-i') === 'other' ? 'other' : +li.getAttribute('data-i'));
+});
+inLocal.addEventListener('blur', function(){ setTimeout(closeList, 120); });
+$('outraBtn').addEventListener('click', function(){ manual.hidden = !manual.hidden; if (!manual.hidden){ chosen = null; $('lat').focus(); } });
+
+function resolvePlace(){
+  if (chosen) return chosen;
+  var q = fold(inLocal.value);
+  if (q && manual.hidden){
+    var exact = CITIES.filter(function(c){ return c.f === q || c.fl === q; });
+    if (exact.length) return exact[0];
+    var pre = CITIES.filter(function(c){ return c.fl.indexOf(q) === 0; });
+    if (pre.length === 1) return pre[0];
+  }
+  if (!manual.hidden){
+    var lat = parseFloat($('lat').value), lon = parseFloat($('lon').value);
+    if (isFinite(lat) && isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180){
+      var nm = inLocal.value.trim() || (lat.toFixed(2) + '°, ' + lon.toFixed(2) + '°');
+      return { name: nm, label: nm, lat: lat, lon: lon, tz: $('tz').value };
+    }
+  }
+  return null;
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var err = $('err'); err.textContent = '';
+  var dv = $('data').value;
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dv);
+  if (!m){ err.textContent = 'Indica a tua data de nascimento.'; $('data').focus(); return; }
+  var y = +m[1], mo = +m[2], d = +m[3];
+  if (y < 1900 || y > 2100){ err.textContent = 'Escolhe uma data entre 1900 e 2100.'; return; }
+  var know = !$('semHora').checked, hh = 12, mi = 0;
+  if (know){
+    var tm = /^(\d{1,2}):(\d{2})/.exec($('hora').value);
+    if (!tm){ err.textContent = 'Indica a hora, ou marca “Não sei a hora”.'; $('hora').focus(); return; }
+    hh = +tm[1]; mi = +tm[2];
+  }
+  var place = resolvePlace();
+  if (!place){
+    err.textContent = manual.hidden ? 'Escolhe a cidade na lista, ou usa “Outra cidade” para indicar as coordenadas.' : 'Indica a latitude e a longitude (em graus decimais).';
+    (manual.hidden ? inLocal : $('lat')).focus(); return;
+  }
+  if (!A){ err.textContent = 'Não foi possível carregar o motor de cálculo. Recarrega a página.'; return; }
+  var conv = localToUTC(y, mo, d, hh, mi, place.tz);
+  var chart = computeChart(A, conv.utc, place.lat, place.lon, know);
+  // Moon range if the time is unknown
+  if (!know){
+    var a0 = localToUTC(y, mo, d, 0, 0, place.tz).utc, a1 = localToUTC(y, mo, d, 23, 59, place.tz).utc;
+    var t0 = A.MakeTime(new Date(a0)), t1 = A.MakeTime(new Date(a1));
+    chart.moonSigns = [signOf(A.EclipticGeoMoon(t0).lon), signOf(A.EclipticGeoMoon(t1).lon)];
+  }
+  render(chart, { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, know: know, place: place, utc: conv.utc, off: conv.offsetMin });
+});
+$('editBtn').addEventListener('click', function(){ form.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('data').focus({ preventScroll: true }); });
+
+// ---------- wheel ----------
+var C = 320, R0 = 284, R1 = 244, RP = 207, RH = 160, RA = 130;
+function rng(seed){ return function(){ seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }; }
+function f1(n){ return Math.round(n * 10) / 10; }
+
+function render(ch, info){
+  var ref = info.know ? ch.asc : 0; // longitude placed at the left
+  function ang(l){ return (180 + (l - ref)) * D2R; }
+  function P(l, r){ var a = ang(l); return [f1(C + r * Math.cos(a)), f1(C - r * Math.sin(a))]; }
+  function line(l, r1, r2, cls, extra){ var p = P(l, r1), q = P(l, r2); return '<line class="' + cls + '" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '"' + (extra || '') + '/>'; }
+  var s = [];
+  s.push('<defs><radialGradient id="discG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--disc1)"/><stop offset="1" stop-color="var(--disc2)"/></radialGradient>' +
+    '<clipPath id="discClip"><circle cx="' + C + '" cy="' + C + '" r="' + R1 + '"/></clipPath></defs>');
+  // disc + stars
+  s.push('<g class="disc"><circle cx="' + C + '" cy="' + C + '" r="' + R0 + '" fill="url(#discG)"/>');
+  var rand = rng((info.y * 372 + info.mo * 31 + info.d) * 97 + info.hh * 60 + info.mi);
+  s.push('<g clip-path="url(#discClip)">');
+  for (var i = 0; i < 70; i++){
+    var rr = Math.sqrt(rand()) * (R1 - 4), aa = rand() * 2 * Math.PI;
+    if (rr > RA - 5 && rr < RH + 5) rr = rr < (RA + RH) / 2 ? RA - 8 - rand() * 20 : RH + 8 + rand() * 20;
+    var x = f1(C + rr * Math.cos(aa)), y = f1(C + rr * Math.sin(aa));
+    var big = rand() < 0.18, rad = big ? 1.4 : (0.5 + rand() * 0.6);
+    s.push('<circle class="star twinkle" cx="' + x + '" cy="' + y + '" r="' + f1(rad) + '" style="--d:' + (3 + rand() * 4).toFixed(1) + 's;--dl:-' + (rand() * 6).toFixed(1) + 's;--o1:' + (0.08 + rand() * 0.12).toFixed(2) + ';--o2:' + (big ? 0.75 : 0.45).toFixed(2) + '"/>');
+  }
+  for (i = 0; i < 6; i++){
+    var r2 = RA * 0.25 + rand() * (R1 - 30 - RA * 0.25), a2 = rand() * 2 * Math.PI;
+    s.push('<text class="spark twinkle" x="' + f1(C + r2 * Math.cos(a2)) + '" y="' + f1(C + r2 * Math.sin(a2)) + '" font-size="' + (7 + Math.round(rand() * 6)) + '" text-anchor="middle" dominant-baseline="central" style="--d:' + (4 + rand() * 3).toFixed(1) + 's;--dl:-' + (rand() * 5).toFixed(1) + 's;--o1:.1;--o2:.6">✦</text>');
+  }
+  s.push('</g></g>');
+
+  // rings
+  s.push('<g>');
+  [[R0, 1.1, .9], [R1, 1, .9], [RH, .7, .55], [RA, .8, .7]].forEach(function(r, k){
+    s.push('<circle class="ring draw" pathLength="1" cx="' + C + '" cy="' + C + '" r="' + r[0] + '" stroke-width="' + r[1] + '" stroke-opacity="' + r[2] + '" transform="rotate(180 ' + C + ' ' + C + ')" style="animation-delay:' + (k * 0.12) + 's"/>');
+  });
+  s.push('<circle class="ring draw" pathLength="1" cx="' + C + '" cy="' + C + '" r="' + (R0 - 5) + '" stroke-width=".5" stroke-opacity=".45" style="animation-delay:.1s"/>');
+  s.push('</g>');
+
+  // ticks + sign divisions + glyphs
+  s.push('<g class="fade" style="animation-delay:.5s">');
+  for (var dg = 0; dg < 360; dg++){
+    var len = dg % 30 === 0 ? 0 : (dg % 10 === 0 ? 9 : (dg % 5 === 0 ? 6 : 3.5));
+    if (len) s.push(line(dg, R1, R1 - len, 'tick', ' stroke-width="' + (dg % 5 === 0 ? .8 : .5) + '" stroke-opacity="' + (dg % 5 === 0 ? .8 : .55) + '"'));
+  }
+  for (var z = 0; z < 12; z++){
+    s.push(line(z * 30, R0 - 5, R1, 'tick', ' stroke-width=".9" stroke-opacity=".85"'));
+    var gp = P(z * 30 + 15, (R0 - 5 + R1) / 2);
+    s.push('<text class="zg" x="' + gp[0] + '" y="' + gp[1] + '" text-anchor="middle" dominant-baseline="central">' + SIGN_GLYPHS[z] + VS + '</text>');
+  }
+  s.push('</g>');
+
+  // houses
+  if (info.know){
+    s.push('<g class="fade" style="animation-delay:.8s">');
+    ch.cusps.forEach(function(c, k){
+      if (k % 3 !== 0){ s.push(line(c, RA, RH, 'cusp')); s.push(line(c, RH, R1, 'cusp', ' stroke-opacity=".2"')); }
+      var hp = P(c + 15, (RA + RH) / 2);
+      s.push('<text class="hn" x="' + hp[0] + '" y="' + hp[1] + '" text-anchor="middle" dominant-baseline="central">' + (k + 1) + '</text>');
+    });
+    // axes ASC–DSC, MC–IC
+    s.push(line(ch.asc, RA, R0 + 10, 'axis'));
+    s.push(line(ch.asc + 180, RA, R0 + 4, 'axis', ' stroke-opacity=".6"'));
+    s.push(line(ch.mc, RA, R0 + 10, 'axis'));
+    s.push(line(ch.mc + 180, RA, R0 + 4, 'axis', ' stroke-opacity=".6"'));
+    s.push('<circle class="dot" cx="' + P(ch.asc, R0 + 10)[0] + '" cy="' + P(ch.asc, R0 + 10)[1] + '" r="2.4"/>');
+    s.push('<circle class="dot" cx="' + P(ch.mc, R0 + 10)[0] + '" cy="' + P(ch.mc, R0 + 10)[1] + '" r="2.4"/>');
+    s.push(axisLabel('ASC', ch.asc));
+    s.push(axisLabel('MC', ch.mc));
+    s.push('</g>');
+  }
+  function axisLabel(t, l){
+    // label just outside the outer ring, offset sideways along the ring so it never sits on the line
+    var p = P(l + (t === 'ASC' ? -4.5 : 4.5), R0 + 15);
+    var a = ang(l), cx = Math.cos(a), cy = -Math.sin(a);
+    var anchor = Math.abs(cx) < .35 ? 'middle' : (cx < 0 ? 'end' : 'start');
+    if (t === 'ASC') anchor = 'middle';
+    var px = p[0], py = p[1];
+    if (t === 'ASC'){ var q = P(l - 6, R0 + 4); px = q[0] - 1; py = q[1] + 14; anchor = 'start'; }
+    return '<text class="ax" x="' + px + '" y="' + py + '" text-anchor="' + anchor + '" dominant-baseline="central">' + t + '</text>';
+  }
+
+  // aspects
+  var ASP = [{a:180, hard:1}, {a:90, hard:1}, {a:120}, {a:60}];
+  var asp = [];
+  for (i = 0; i < ch.planets.length; i++) for (var j = i + 1; j < ch.planets.length; j++){
+    var dd = Math.abs(norm(ch.planets[i].lon - ch.planets[j].lon)); if (dd > 180) dd = 360 - dd;
+    ASP.forEach(function(A2){
+      var orb = Math.abs(dd - A2.a);
+      if (orb <= 6) asp.push({ i: i, j: j, hard: A2.hard, orb: orb });
+    });
+  }
+  s.push('<g>');
+  asp.sort(function(a, b){ return b.orb - a.orb; }).forEach(function(x, k){
+    var p = P(ch.planets[x.i].lon, RA), q = P(ch.planets[x.j].lon, RA);
+    var op = (0.85 - x.orb / 6 * 0.5).toFixed(2);
+    s.push('<line class="asp draw' + (x.hard ? ' hard' : '') + '" pathLength="1" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '" stroke-width="' + (x.hard ? .8 : .7) + '" stroke-opacity="' + op + '"' + (x.hard ? '' : '') + ' style="animation-delay:' + (1.4 + k * 0.06).toFixed(2) + 's;animation-duration:1.2s"/>');
+  });
+  // small marks on the aspect ring at exact degrees
+  ch.planets.forEach(function(p){ var q = P(p.lon, RA); s.push('<circle class="dot fade" cx="' + q[0] + '" cy="' + q[1] + '" r="1.6" style="animation-delay:1.3s"/>'); });
+  s.push('</g>');
+
+  // planets with collision spreading
+  var MIN = 10;
+  var items = spread(ch.planets.map(function(p, k){ return { k: k, lon: p.lon }; }), MIN);
+  s.push('<g>');
+  items.forEach(function(itm, n){
+    var p = ch.planets[itm.k];
+    var e = P(p.lon, R1), g0 = P(itm.pos, R1 - 14), gp = P(itm.pos, RP), dp = P(itm.pos, RP - 24), rp = P(itm.pos, RP - 38);
+    var delay = (1 + n * 0.09).toFixed(2);
+    s.push('<g class="rise" style="animation-delay:' + delay + 's">' +
+      '<polyline class="ptr" fill="none" points="' + e.join(',') + ' ' + g0.join(',') + ' ' + P(itm.pos, RP + 15).join(',') + '"/>' +
+      '<text class="pg' + (p.key === 'Sun' || p.key === 'Moon' ? ' lum' : '') + '" x="' + gp[0] + '" y="' + gp[1] + '" text-anchor="middle" dominant-baseline="central"><title>' + p.name + ' em ' + SIGNS[signOf(p.lon)] + ' ' + fmtDeg(p.lon) + (p.retro ? ' (retrógrado)' : '') + '</title>' + p.glyph + VS + '</text>' +
+      '<text class="pd" x="' + dp[0] + '" y="' + dp[1] + '" text-anchor="middle" dominant-baseline="central">' + Math.floor(norm(p.lon) % 30) + '°</text>' +
+      (p.retro ? '<text class="pd rx" x="' + rp[0] + '" y="' + rp[1] + '" text-anchor="middle" dominant-baseline="central">℞</text>' : '') +
+      '</g>');
+  });
+  s.push('</g>');
+
+  var svg = $('wheel');
+  svg.classList.remove('anim'); void svg.getBoundingClientRect();
+  svg.innerHTML = '<desc id="wheelDesc">' + esc(describe(ch, info)) + '</desc>' + s.join('');
+  svg.classList.add('anim');
+
+  // header
+  var who = info.name ? 'O céu de ' + esc(info.name) : 'O teu céu';
+  $('resTitle').innerHTML = who;
+  var date = new Date(Date.UTC(2000, info.mo - 1, info.d)); date.setUTCFullYear(info.y);
+  var ds = date.toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  var hs = info.know ? ' · ' + pad(info.hh) + ':' + pad(info.mi) : '';
+  $('resMeta').textContent = ds + hs + ' · ' + info.place.name;
+  var note = $('resNote');
+  if (!info.know){
+    note.hidden = false;
+    note.textContent = 'Sem a hora de nascimento, o mapa foi calculado para o meio-dia e não mostra o Ascendente nem as casas. A Lua pode variar alguns graus.';
+  } else {
+    var o = info.off, sg = o >= 0 ? '+' : '−', ao = Math.abs(Math.round(o));
+    note.hidden = false;
+    note.textContent = 'Hora local UTC' + sg + Math.floor(ao / 60) + (ao % 60 ? ':' + pad(ao % 60) : '') + ' (fuso e horário de verão da época).';
+  }
+
+  // planet list
+  var rows = ch.planets.map(function(p){
+    return '<li><span class="g" aria-hidden="true">' + p.glyph + VS + '</span><span class="n">' + p.name + ' <small>em ' + SIGNS[signOf(p.lon)] + '</small></span><span class="v">' + fmtDeg(p.lon) + (p.retro ? '<span class="r" title="retrógrado">℞</span>' : '') + '</span></li>';
+  });
+  if (info.know){
+    rows.push('<li><span class="g" aria-hidden="true" style="font-family:var(--sans);font-size:11px;letter-spacing:.05em">ASC</span><span class="n">Ascendente <small>em ' + SIGNS[signOf(ch.asc)] + '</small></span><span class="v">' + fmtDeg(ch.asc) + '</span></li>');
+    rows.push('<li><span class="g" aria-hidden="true" style="font-family:var(--sans);font-size:11px;letter-spacing:.05em">MC</span><span class="n">Meio do Céu <small>em ' + SIGNS[signOf(ch.mc)] + '</small></span><span class="v">' + fmtDeg(ch.mc) + '</span></li>');
+  }
+  $('planets').innerHTML = rows.join('');
+
+  // pillars
+  var sun = signOf(ch.planets[0].lon), moon = signOf(ch.planets[1].lon);
+  var html = pillar('Sol', '☉', 'Sol em ' + SIGNS[sun], SIGN_GLYPHS[sun], TXT.sol[sun], 0);
+  if (!info.know && ch.moonSigns && ch.moonSigns[0] !== ch.moonSigns[1]){
+    var m0 = ch.moonSigns[0], m1 = ch.moonSigns[1];
+    html += pillar('Lua', '☽', 'Lua em ' + SIGNS[m0] + ' ou ' + SIGNS[m1], '', 'Nesse dia a Lua mudou de signo. Com a hora certa, saberás qual delas é a tua: ' + TXT.lua[moon].charAt(0).toLowerCase() + TXT.lua[moon].slice(1), 1);
+  } else {
+    html += pillar('Lua', '☽', 'Lua em ' + SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1);
+  }
+  if (info.know){
+    var as = signOf(ch.asc);
+    html += pillar('Ascendente', 'AC', 'Ascendente em ' + SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
+  } else {
+    html += '<div class="pillar unknown reveal" style="animation-delay:.36s"><div class="ic" style="font-family:var(--sans);font-size:13px;letter-spacing:.06em">AC</div><div><p class="k">Ascendente</p><h4>Por descobrir</h4><p>O Ascendente muda a cada duas horas, mais ou menos. Com a hora de nascimento, é o pilar que mostra como chegas ao mundo.</p></div></div>';
+  }
+  $('pillars').innerHTML = html;
+
+  var res = $('result'); res.hidden = false;
+  requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
+}
+function spread(items, MIN){
+  // cluster-based spreading: overlapping glyphs are fanned out evenly around their mean longitude
+  items.sort(function(a, b){ return a.lon - b.lon; });
+  var n = items.length, bestGap = -1, start = 0;
+  for (var i = 0; i < n; i++){
+    var g = norm(items[(i + 1) % n].lon - items[i].lon); if (n === 1) g = 360;
+    if (g > bestGap){ bestGap = g; start = (i + 1) % n; }
+  }
+  var lin = [];
+  for (i = 0; i < n; i++){ var it = items[(start + i) % n]; it.x = i === 0 ? it.lon : lin[i - 1].x + norm(it.lon - lin[i - 1].lon); lin.push(it); }
+  var blocks = lin.map(function(it){ return { m: [it], c: it.x }; });
+  var changed = true;
+  while (changed){
+    changed = false;
+    for (i = 0; i < blocks.length - 1; i++){
+      var L = blocks[i], R = blocks[i + 1];
+      var lEnd = L.c + (L.m.length - 1) / 2 * MIN, rStart = R.c - (R.m.length - 1) / 2 * MIN;
+      if (rStart - lEnd < MIN){
+        var m = L.m.concat(R.m);
+        blocks.splice(i, 2, { m: m, c: m.reduce(function(s, it){ return s + it.x; }, 0) / m.length });
+        changed = true; break;
+      }
+    }
+  }
+  blocks.forEach(function(bl){ bl.m.forEach(function(it, k){ it.pos = norm(bl.c + (k - (bl.m.length - 1) / 2) * MIN); }); });
+  return lin;
+}
+function pillar(kind, icon, title, zg, text, n){
+  var icStyle = icon === 'AC' ? ' style="font-family:var(--sans);font-size:13px;letter-spacing:.06em"' : '';
+  return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true"' + icStyle + '>' + icon + (icon === 'AC' ? '' : VS) + '</div><div><p class="k">' + kind + '</p><h4>' + title + (zg ? '<span class="zs" aria-hidden="true">' + zg + VS + '</span>' : '') + '</h4><p>' + text + '</p></div></div>';
+}
+function pad(n){ return (n < 10 ? '0' : '') + n; }
+function describe(ch, info){
+  var t = 'Mapa natal. ' + ch.planets.map(function(p){ return p.name + ' em ' + SIGNS[signOf(p.lon)] + ' ' + fmtDeg(p.lon) + (p.retro ? ' retrógrado' : ''); }).join('; ');
+  if (info.know) t += '; Ascendente em ' + SIGNS[signOf(ch.asc)] + ' ' + fmtDeg(ch.asc) + '; Meio do Céu em ' + SIGNS[signOf(ch.mc)] + ' ' + fmtDeg(ch.mc);
+  return t + '.';
+}
+})();
+</script>
+</body>
+</html>
