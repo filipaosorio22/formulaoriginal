@@ -463,6 +463,20 @@
   .car-slide img, .car-video iframe { height:auto !important; aspect-ratio:900/1100; }
   .car-video img { object-fit:cover; }
   @media (min-width:1100px){ .voice-quote { margin:0 -110px; } .voice-quote p { font-size:17px; white-space:nowrap; } }
+
+  /* testemunho em destaque (áudio) */
+  .feat { position:relative; margin:1.4rem 0 1.8rem; padding:1.6rem 1.6rem 1.3rem; border:0.5px solid var(--gold); border-radius:14px; background:linear-gradient(135deg, rgba(240,222,182,0.38), rgba(250,243,230,0.2)); }
+  html[data-theme="dark"] .feat { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.15)); }
+  .feat .feat-eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 0.8rem; }
+  .feat .feat-quote { font-family:'Spectral',serif; font-style:italic; font-size:clamp(20px,2.6vw,24px); line-height:1.45; color:var(--wine); margin:0 0 0.8rem; }
+  .feat .feat-ctx { font-family:'Lora',serif; font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 0.9rem; }
+  .feat details summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem; font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.04em; color:var(--gold-deep); text-decoration:underline; text-underline-offset:3px; }
+  .feat details summary::-webkit-details-marker { display:none; }
+  .feat details summary::before { content:''; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--gold-deep); border-width:5px 0 5px 8px; transition:transform 0.25s ease; }
+  .feat details[open] summary::before { transform:rotate(90deg); }
+  .feat .feat-full { margin-top:1rem; padding-top:0.9rem; border-top:0.5px solid var(--gline); }
+  .feat .feat-full p { font-family:'Spectral',serif; font-style:italic; font-size:17px; line-height:1.65; color:var(--ink); margin:0 0 0.85rem; }
+  .feat .secret { filter:blur(5px); user-select:none; -webkit-user-select:none; background:rgba(201,168,108,0.25); border-radius:4px; padding:0 3px; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -540,6 +554,22 @@
       <cite>A fellow student from my training, right after receiving a Reading</cite>
     </blockquote>
     <h2>What people who have received a Reading from me say</h2>
+    <div class="feat">
+      <p class="feat-eyebrow">✦ The most recent Reading · audio testimonial</p>
+      <p class="feat-quote">“It clicked exactly where it needed to click. It brought different perspectives to my reality.”</p>
+      <p class="feat-ctx">A friend and client of many years, whose story I know well. That is exactly why I was curious to see what the Reading would bring her.</p>
+      <details>
+        <summary>Read the full testimonial</summary>
+        <div class="feat-full">
+          <p>“So, my dear, look, I really liked it, I’d already told you, I really liked the Reading! Even though you said you weren’t so comfortable, that at some point you thought I might feel you were repeating what you already knew about my story. I think that also has a lot to do with the fact that you know so much of my story and we talk so much about what’s going on, which isn’t really the situation you have with all your clients.</p>
+          <p>Going back to the Reading and what I felt from it, I liked it very, very much. In fact, the conversation we had after the Reading showed exactly that: it clicked exactly where it needed to click.</p>
+          <p>It brought different perspectives to my reality. There were also things you brought, I’m thinking of the <span class="secret" aria-label="part left out for privacy">story that stayed between us</span>, which you brought but didn’t quite understand the meaning of, and for me the meaning was very clear, just like <span class="secret" aria-label="part left out for privacy">that other image</span>. So you brought those things and I was able to give them meaning within my own reality.</p>
+          <p>Of course I couldn’t listen to the Reading the way it “should” be done, because I listened in little bits, and the advice you give your clients is really to take a moment for themselves and truly connect with the Reading.</p>
+          <p>Whether because I’m somewhat used to it, or because I can really connect with a different kind of ease, I listened to the Reading while making dinner, then, when I put the kids to bed, I put my headphones on and listened to the rest, and throughout I kept messaging you, going deeper into what I was hearing. I paused many times and we had these exchanges, which really isn’t how the Reading is meant to be listened to.</p>
+          <p>Anyway, I managed, so much so that insights are still coming, even though I haven’t yet listened to the Reading a second time, alone and calm, because I haven’t been able to yet. But the messages stayed and kept reverberating, and I know that when I go back a second time I’ll get more, I’ll take other things from it.”</p>
+        </div>
+      </details>
+    </div>
     <div class="carousel">
       <button class="car-arrow car-prev" type="button" aria-label="Previous">←</button>
       <button class="car-arrow car-next" type="button" aria-label="Next">→</button>
