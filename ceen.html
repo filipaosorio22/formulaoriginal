@@ -196,7 +196,7 @@
   .popup-eyebrow { font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:400; letter-spacing:0.12em; text-transform:uppercase; color:#c9a86c; margin-bottom:0.7rem; }
   .popup-btn { display:block; width:100%; font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border:none; border-radius:30px; padding:11px; text-align:center; text-decoration:none; transition:background 0.2s, transform 0.18s ease, box-shadow 0.18s ease; }
   .popup-btn:hover { background:linear-gradient(120deg,#f1c9b3,#eacdc7,#eedab2,#f3d3ae,#eacdc7); background-size:300% 300%; animation:none; background-position:0% 50%; color:#7a2535; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.16); }
-  @media (max-width:600px){ .popup{ right:0.8rem; left:0.8rem; width:auto; max-width:none; } }
+  @media (max-width:600px){ .popup{ right:0.8rem; left:0.8rem; width:auto; max-width:none; } .popup-eyebrow{ display:none; } }
   @keyframes aurora { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
   .js-reveal .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.9s ease, transform 0.9s ease; }
   .js-reveal .reveal.in { opacity:1; transform:none; }
@@ -510,6 +510,8 @@
   @media (max-width:640px){ .pause .pause-quote.big1:not(.nobreak):not(.two) { font-size:25px; } }
   .pause .pause-quote.duo { white-space:nowrap; max-width:none; font-size:min(20.5px, calc((100vw - 60px) / 48)); line-height:1.45; padding:0.8rem 0.5rem; }
   @media (max-width:640px){ .pause .pause-quote.duo:not(.nobreak):not(.two) { white-space:normal; font-size:18px; } .pause .pause-quote.duo br { display:none; } }
+  /* n57: citação em 2 linhas no telemóvel */
+  @media (max-width:640px){ .pause .pause-quote.nobreak.fit2 { white-space:nowrap; font-size:min(26px, calc((100vw - 90px) / 11.6)); } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -700,7 +702,7 @@
 
 <section class="pause">
   <div class="wrap-wide">
-    <p class="pause-quote nobreak">“Nunca ninguém tinha olhado <br class="mb">para o meu negócio desta forma!”</p>
+    <p class="pause-quote nobreak fit2">“Nunca ninguém tinha olhado <br class="mb">para o meu negócio desta forma!”</p>
     <p class="pause-attrib">— comentário de uma cliente durante uma Sessão CEEN</p>
   </div>
 </section>
@@ -1010,7 +1012,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p class="q2"><strong>"Ter alguém ao meu lado que olha para mim <br class="mb">e para o meu negócio como um todo."</strong></p>
+      <p class="q2"><strong>"Ter alguém ao meu lado que olha para <br class="mb">mim e para o meu negócio como um todo."</strong></p>
     </blockquote>
     <p style="font-size:16px;">É no contacto com a experiência real que novas decisões, dúvidas e possibilidades se tornam visíveis. Este é o testemunho de outra cliente sobre o que tem vivido no seu processo comigo:</p>
     <div class="testimonial-photos-ph">
@@ -1231,20 +1233,24 @@
   // scroll-to-bio e voltar
   window.saveScroll = function(){ window.__savedScrollY = window.scrollY; };
   function smoothScrollTo(target, duration){
-    var startY = window.scrollY, dist = target - startY, startTime = null;
+    // target pode ser uma função: recalcula o destino em cada frame, para não falhar se a página mudar de altura durante o scroll
+    var get = typeof target === 'function' ? target : function(){ return target; };
+    var startY = window.scrollY, startTime = null;
     function step(ts){
       if (!startTime) startTime = ts;
       var p = Math.min((ts - startTime) / duration, 1);
       var ease = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p+2,3)/2;
-      window.scrollTo(0, startY + dist * ease);
+      window.scrollTo(0, startY + (get() - startY) * ease);
       if (p < 1) requestAnimationFrame(step);
+      else setTimeout(function(){ window.scrollTo(0, get()); }, 400);
     }
     requestAnimationFrame(step);
   }
   window.jumpToBio = function(){
     window.__savedScrollY = window.scrollY;
     var el = document.getElementById('quem-te-acompanha');
-    if (el) smoothScrollTo(el.getBoundingClientRect().top + window.scrollY - 70, 2400);
+    var h2 = el && (el.querySelector('h2') || el);
+    if (h2) smoothScrollTo(function(){ return h2.getBoundingClientRect().top + window.scrollY - 90; }, 2400);
   };
   window.restoreScroll = function(){
     smoothScrollTo(window.__savedScrollY || 0, 2400);
