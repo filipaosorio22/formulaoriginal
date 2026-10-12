@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Leitura Intuitiva · Filipa Osório</title>
-  <meta name="description" content="Leitura Intuitiva: uma leitura feita com intuição e método sobre o momento que estás a viver e o tema que trouxeres.">
+  <meta name="description" content="Leitura Intuitiva: uma leitura em áudio do teu mapa astral, com um olhar intuitivo e arquetípico sobre o momento que estás a viver e o tema que trazes.">
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -720,6 +720,57 @@
     .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #faf6ef; border-bottom: 0.5px solid rgba(201,168,108,0.3); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1.25rem; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: #6b5040; text-decoration: none; }
+    /* ---- Leitura Intuitiva 2026-10 ---- */
+    .li-title { font-family:'Spectral',serif; font-size:44px; font-weight:300; font-style:italic; color:#7a2535; line-height:1.2; margin-bottom:0.75rem; text-align:center; }
+    .hero-cta { text-align:center; margin-top:1.5rem; }
+    .hero-note { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.04em; color:#9a7e52; margin-top:0.8rem; }
+    .btn-buy { display:inline-block; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border:1px solid #7a2535; border-radius:30px; padding:14px 30px; text-decoration:none; transition:opacity .2s; }
+    .btn-buy:hover { opacity:0.88; }
+    .btn-outline { background:transparent; color:#7a2535; }
+    .link-soft { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px; }
+    .soft-note { font-family:'Spectral',serif; font-size:17px; font-weight:300; font-style:italic; color:#9a7e52; line-height:1.6; margin-top:1.25rem; }
+    .statement { font-family:'Spectral',serif; font-size:21px; font-style:italic; color:#7a2535; line-height:1.5; margin:1.75rem 0 0.5rem; text-align:center; }
+    .voice-quote { margin:0 0 2.5rem; padding:0.5rem 1.5rem 1.75rem; text-align:center; border-bottom:0.5px solid #c9a86c; }
+    .voice-quote p { font-family:'Spectral',serif; font-size:21px; font-style:italic; color:#1a1410; line-height:1.55; }
+    .voice-quote cite { display:block; margin-top:0.9rem; font-family:'DM Sans',sans-serif; font-size:11px; font-style:normal; letter-spacing:0.14em; text-transform:uppercase; color:#9a7e52; }
+    .pillars { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem; }
+    .pillar { background:rgba(201,168,108,0.07); border:0.5px solid rgba(201,168,108,0.35); border-radius:12px; padding:1.25rem 1.25rem 1.1rem; }
+    .pillar-title { font-family:'Spectral',serif; font-size:19px; font-style:italic; color:#7a2535; margin-bottom:0.5rem; }
+    .pillar p:not(.pillar-title) { font-size:15px; line-height:1.7; color:#3a2e26; }
+    .qa { margin:1.25rem 0; padding:1.1rem 1.25rem; border-left:1.5px solid #c9a86c; background:rgba(201,168,108,0.05); border-radius:0 10px 10px 0; }
+    .qa-q { font-family:'Spectral',serif; font-size:19px; font-style:italic; color:#1a1410; margin-bottom:0.5rem; }
+    .qa-a { font-size:15.5px; line-height:1.75; color:#3a2e26; display:flex; gap:0.6rem; }
+    .qa-arrow { color:#c9a86c; font-size:20px; line-height:1.3; flex-shrink:0; }
+    .flow { font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.04em; color:#7a2535; text-align:center; margin-top:1.75rem; }
+    .offers { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem; align-items:stretch; }
+    .offer { position:relative; display:flex; flex-direction:column; border:0.5px solid rgba(201,168,108,0.5); border-radius:14px; padding:1.75rem 1.4rem 1.5rem; background:#fdfaf5; }
+    .offer-featured { border:1.5px solid #7a2535; }
+    .offer-badge { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#7a2535; color:#f7f3ee; font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; padding:4px 12px; border-radius:20px; white-space:nowrap; }
+    .offer-name { font-family:'Spectral',serif; font-size:20px; font-style:italic; color:#1a1410; text-align:center; }
+    .offer-price { font-family:'Spectral',serif; font-size:34px; font-weight:300; color:#7a2535; text-align:center; margin:0.25rem 0 1rem; }
+    .offer ul { list-style:none; flex:1; margin-bottom:1.25rem; }
+    .offer li { font-size:14.5px; line-height:1.6; color:#3a2e26; padding:0.45rem 0 0.45rem 1.2rem; position:relative; border-bottom:0.5px solid rgba(201,168,108,0.2); }
+    .offer li::before { content:'✦'; position:absolute; left:0; color:#c9a86c; font-size:11px; top:0.6rem; }
+    .offer .btn-buy { text-align:center; padding:13px 16px; }
+    .faq details { border-bottom:0.5px solid rgba(201,168,108,0.4); padding:0.9rem 0; }
+    .faq summary { font-family:'Spectral',serif; font-size:19px; font-style:italic; color:#1a1410; cursor:pointer; list-style:none; position:relative; padding-right:1.5rem; }
+    .faq summary::-webkit-details-marker { display:none; }
+    .faq summary::after { content:'+'; position:absolute; right:0; color:#c9a86c; font-style:normal; }
+    .faq details[open] summary::after { content:'–'; }
+    .faq details p { font-size:15.5px; line-height:1.75; color:#3a2e26; margin-top:0.6rem; }
+    .legal { font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; line-height:1.7; color:#9a8a7a; text-align:center; margin:2rem auto 1.5rem; max-width:560px; }
+    .pendente { background:#fff1b8; color:#6b5040; padding:0 4px; border-radius:3px; font-style:italic; }
+    .sticky-buy { display:none; }
+    @media (max-width: 600px) {
+      .li-title { font-size:36px; }
+      .pillars, .offers { grid-template-columns:1fr; }
+      .offers { gap:1.5rem; }
+      .sticky-buy { display:flex; position:fixed; left:0; right:0; bottom:0; z-index:900; align-items:center; justify-content:space-between; gap:1rem; padding:0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom,0px)); background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.6); box-shadow:0 -4px 18px rgba(26,20,16,0.08); font-family:'DM Sans',sans-serif; font-size:13px; color:#1a1410; transform:translateY(110%); transition:transform .3s; }
+      .sticky-buy.show { transform:translateY(0); }
+      .sticky-buy a { background:#7a2535; color:#f7f3ee; text-decoration:none; border-radius:30px; padding:9px 18px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; }
+      .popup { display:none !important; }
+    }
+    @media (max-width: 480px) { .texto-fundo { margin: 0 -1.25rem; padding: 0 1.25rem; } }
   </style>
 </head>
 <body>
@@ -738,42 +789,61 @@
   </div>
   <main class="page" lang="pt">
 
-    <div class="hero">
+    <!-- 1 · ABERTURA -->
+    <div class="hero" id="topo">
       <div style="text-align:center;"><div style="width:220px; height:272px; overflow:hidden; border-radius:110px 110px 0 0; border:1.5px solid rgba(201,168,108,0.4); display:inline-block; margin-bottom:1.25rem;"><img src="novahero.png" alt="Filipa Osório" style="width:100%; height:100%; object-fit:cover; object-position:50% 46%; display:block;"></div></div>
-      <h1 style="font-family:'Spectral',serif; font-size:32px; font-weight:300; font-style:italic; color:#1a1410; line-height:1.3; margin-bottom:0.5rem; text-align:center;">Leitura Intuitiva</h1>
-      <p class="h1-sub" style="text-align:center;">Uma leitura feita com intuição e método, sobre o momento que estás a viver e o tema que trouxeres.</p>
-      <div class="tagline-wrap" style="padding: 1.5rem 0; border-top: 0.5px solid #c9a86c; border-bottom: 0.5px solid #c9a86c; margin-top: 1.5rem; margin-bottom: 2.5rem;">
+      <p class="eyebrow" style="text-align:center; margin-bottom:0.9rem;">Leitura em áudio · mapa astral · olhar intuitivo</p>
+      <h1 class="li-title">Leitura Intuitiva</h1>
+      <p class="h1-sub" style="text-align:center;">Uma leitura feita com intuição e método sobre o momento que estás a viver e o tema que trazes. Parto do teu mapa astral, junto-lhe um olhar intuitivo e arquetípico e gravo-a para ti em áudio, para escutares no teu tempo.</p>
+      <div class="hero-cta">
+        <a class="btn-buy" href="#opcoes" data-scroll="opcoes">Quero receber a minha leitura</a>
+        <p class="hero-note">Desde 147 € · recebes tudo em áudio · não precisas de saber astrologia</p>
+      </div>
+      <div class="tagline-wrap" style="padding: 1.5rem 0; border-top: 0.5px solid #c9a86c; border-bottom: 0.5px solid #c9a86c; margin-top: 2rem; margin-bottom: 2.5rem;">
         <p style="font-family:'Spectral',serif; font-size:22px; font-weight:400; font-style:italic; color:#7a2535; line-height:1.6;">Quem és quando deixas de ser o que o mundo espera de ti?</p>
       </div>
     </div>
 
+    <!-- 2 · TEXTO SOBRE A FOTO DE FUNDO -->
     <div class="texto-fundo">
     <p class="body-text">Existe em ti uma forma única de te moveres pela vida.</p>
-    <p class="body-text">E essa forma não se revela apenas no teu ritmo ou na tua energia, revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
-    <p class="body-text">Há padrões que se repetem ao longo da tua vida.</p>
-    <p class="body-text">Na forma como te relacionas. Nas oportunidades que atrais. Nas decisões que tomas. Nos desafios que encontras e na forma como respondes a eles. Mesmo quando os temas parecem diferentes, existe uma mesma dinâmica que se manifesta nas diferentes áreas da tua vida.</p>
-    <p class="body-text">Mas ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de outras lentes. Sobre amor. Sobre valor. Sobre segurança. Sobre sucesso, liberdade e expressão.</p>
-    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti. Foste aprendendo novas formas de te adaptares. De te ajustares. De responderes ao que era esperado.</p>
-    <p class="body-text">A Leitura Intuitiva é um convite para te recentrares. É uma leitura que te mostra essa estrutura interna: os padrões, as crenças e as dinâmicas que estão ativas neste momento e a forma como influenciam as diferentes áreas da tua vida.</p>
-    <p class="body-text">E quando vês o que está a operar por trás das tuas escolhas… tornas-te mais livre e consciente para escolher de forma diferente. E é aí que a tua vida começa a reorganizar-se porque ganhas mais espaço para seres tu.</p>
-
+    <p class="body-text">E essa forma não se revela apenas no teu ritmo ou na tua energia. Revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
+    <p class="body-text">Talvez também a reconheças de uma forma menos fácil de explicar: num sonho que fica contigo, numa imagem que te toca ou numa sensação que ainda não consegues pôr em palavras.</p>
+    <p class="body-text">Há histórias que se repetem ao longo da tua vida. Na forma como te relacionas. Nas decisões que tomas. Nos desafios que encontras e na forma como respondes a eles.</p>
+    <p class="body-text">Ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de umas determinadas lentes. Sobre amor. Sobre valor, segurança, sucesso, liberdade, expressão…</p>
+    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti.</p>
+    <p class="body-text"><strong style="font-weight:600;">És mais do que essas histórias e do que as formas que encontraste para te adaptares.</strong></p>
+    <p class="body-text">A Leitura Intuitiva é um convite para te recentrares: para veres os padrões, as crenças e as dinâmicas do teu momento e a forma como influenciam as diferentes áreas da tua vida. E quando vês o que está a operar por trás das tuas escolhas, ganhas mais espaço para escolher de forma diferente.</p>
     </div>
 
     <div style="text-align:center; padding:1.5rem 1rem; margin: 2rem 0; border-top: 2px solid #c9a86c; border-bottom: 2px solid #c9a86c;">
-      <p style="font-family:'Spectral',serif; font-size:24px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">O que acreditas sobre ti molda mais escolhas do que imaginas.</p>
+      <p style="font-family:'Spectral',serif; font-size:24px; font-weight:500; font-style:italic; color:#7a2535; line-height:1.5; margin:0;">O que acreditas sobre ti molda muito mais as tuas escolhas do que imaginas.</p>
     </div>
 
+    <!-- 3 · SE SENTES QUE -->
     <div class="fade-section">
-    <h2>Se sentes que...</h2>
+    <h2>Se sentes que…</h2>
     <ul class="icon-list">
-      <li><span class="icon-marker">✦</span><span>Há uma versão tua que está a emergir e desejas conhecê-la melhor</span></li>
+      <li><span class="icon-marker">✦</span><span>Desejas conhecer mais de ti, na tua essência mais livre</span></li>
+      <li><span class="icon-marker">✦</span><span>Reconheces nos sonhos, nas imagens e nos símbolos uma forma de te aproximares do teu mundo interior</span></li>
       <li><span class="icon-marker">✦</span><span>Existem desafios que se repetem e queres perceber o padrão por trás</span></li>
       <li><span class="icon-marker">✦</span><span>Queres construir a tua vida com mais consciência, confiança e leveza</span></li>
       <li><span class="icon-marker">✦</span><span>Estás a viver uma transição e procuras clareza sobre o teu processo</span></li>
-      <li><span class="icon-marker">✦</span><span>Queres tomar decisões alinhadas, sem te perderes no ruído da mente</span></li>
+      <li><span class="icon-marker">✦</span><span>Queres tomar decisões mais alinhadas contigo, sem te perderes no ruído da mente</span></li>
     </ul>
+    <p class="soft-note">Não precisas de saber astrologia. Vem com curiosidade e abertura para te conheceres melhor.</p>
+    <p style="text-align:center; margin-top:1.25rem;"><a class="link-soft" href="#opcoes" data-scroll="opcoes">Ver as opções e preços ↓</a></p>
+    </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <!-- 4 · TESTEMUNHOS (subiram) -->
+    <div class="fade-section">
+    <blockquote class="voice-quote">
+      <p>«Jamais duvides das informações que recebes. Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz… é uma coisa muito bonita.»</p>
+      <cite>Uma colega de formação, logo depois de receber uma leitura</cite>
+    </blockquote>
+    </div>
 
     <div class="fade-section testimonials-section">
       <h2 id="feedbacks">O que dizem as pessoas que já receberam uma leitura</h2>
@@ -841,49 +911,96 @@
       </div>
     </div>
 
+
+
     <div class="aside" style="margin-top:1.5rem;">
-      <p>Os testemunhos acima são de leituras anteriores, as minhas Leituras de Aura, em que leio de forma intuitiva o momento da pessoa: os padrões, os bloqueios e as potencialidades que estão presentes.</p>
-      <p style="margin-top:0.9rem;">A Leitura Intuitiva nasce dessa mesma sensibilidade e junta-lhe os teus mapas energéticos, que podem incluir ferramentas como a Leitura de Aura, a Astrologia Alquímica e o Human Design, para uma compreensão mais profunda do teu caminho.</p>
-      <p style="margin-top:0.9rem;">Imagina o que pode acontecer quando essa leitura tem também um mapa onde se apoiar.</p>
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa.</p>
+      <p style="margin-top:0.9rem;">A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa astral como base, pela lente da Astrologia Alquímica da Alma.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
+    <!-- 5 · O QUE É -->
     <div class="fade-section">
     <h2>O que é a Leitura Intuitiva</h2>
-    <p class="body-text">É uma leitura do teu momento presente, a partir de um tema que escolhas. Junto a intuição com os teus mapas energéticos, que podem incluir ferramentas como a Leitura de Aura, a Astrologia Alquímica e o Human Design, para identificar os padrões, as crenças, o potencial e os convites que estão ativos na tua vida agora. É uma leitura sobre o momento exato em que estás.</p>
-    <p class="body-text">Sobre aquilo que está a pedir atenção. Sobre aquilo que ainda não viste com clareza. Sobre aquilo que já está pronto para mudar, para viveres a fase seguinte de forma mais alinhada contigo.</p>
-    <p class="body-text">Só precisas de trazer um tema que seja importante para ti neste momento. O resto descobrimo-lo em conjunto. Muitas vezes, aquilo que procuras compreender lá fora já está dentro de ti, à espera de ser reconhecido.</p>
-
-    <div class="aside">
-      <p>Vem com abertura para te conheceres melhor. A mudança começa quando te permites ver aquilo que antes não estavas a ver.</p>
+    <p class="body-text">É um olhar intuitivo e profundo sobre o teu mapa astral, pela lente da Astrologia Alquímica da Alma, orientado pelo tema que trazes. Não te entrego uma lista de signos e planetas: exploro as relações entre os símbolos do mapa e aquilo que estás a viver.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <p class="pillar-title">O mapa como ponto de partida</p>
+        <p>O mapa não é uma sentença. Interessa-me a conversa entre os seus elementos: os desejos, as tensões e as possibilidades que podem ganhar expressão na tua vida.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Uma história só tua</p>
+        <p>Os temas da leitura ganham forma numa história simbólica personalizada. Uma história liga o que uma lista separa e ajuda-te a reconhecer o que nem sempre consegues nomear.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Na minha voz</p>
+        <p>Gravo a leitura para ti. O tom, o ritmo e as pausas fazem parte do que te quero dizer. Podes parar, repetir e voltar às passagens que te tocam.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Da imagem à prática</p>
+        <p>Depois da história, passamos ao concreto: onde podes reconhecer estas dinâmicas, que perguntas vale a pena fazer e o que podes experimentar de diferente.</p>
+      </div>
+    </div>
+    <p class="statement">Não para te dizer quem és. Para te oferecer uma perspetiva com a qual possas reconhecer-te, questionar e escolher.</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
+    <!-- 6 · DA LEITURA À VIDA -->
+    <div class="fade-section">
+    <h2>E depois, o que faço com isto?</h2>
+    <p class="body-text">Saber que tens o Sol em Capricórnio pode despertar curiosidade. Mas o que quer isso dizer na tua vida? A leitura passa da linguagem simbólica para perguntas e experiências que podes levar para o dia a dia. Alguns exemplos:</p>
+    <div class="qa">
+      <p class="qa-q">Como se manifesta isto na minha comunicação?</p>
+      <p class="qa-a"><span class="qa-arrow">↳</span>Se o tema for a dificuldade em expressar necessidades, podemos explorar em que conversas isso acontece. Uma experiência possível: preparar um pedido concreto, em vez de esperar que a outra pessoa adivinhe o que precisas.</p>
+    </div>
+    <div class="qa">
+      <p class="qa-q">O que posso experimentar nos meus relacionamentos?</p>
+      <p class="qa-a"><span class="qa-arrow">↳</span>Se reconheceres uma tendência para assumir tudo, podes observar quando te antecipas ao outro. Uma experiência possível: combinar uma responsabilidade de forma explícita e distinguir o que te cabe do que cabe à outra pessoa.</p>
+    </div>
+    <div class="qa">
+      <p class="qa-q">Como levo isto para o trabalho e para o meu tempo?</p>
+      <p class="qa-a"><span class="qa-arrow">↳</span>Se surgir uma relação entre valor pessoal e produtividade, podes observar o que pensas quando descansas. Uma experiência possível: definir um limite concreto de disponibilidade e reparar na reação que isso desperta em ti.</p>
+    </div>
+    <p class="flow">Reconhecer → relacionar com uma situação → escolher uma experiência → observar o que acontece</p>
+    <p class="soft-note">São exemplos. A tua leitura é orientada pelo teu tema e pelo contexto que partilhares.</p>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <!-- 7 · O QUE RECEBES -->
+    <div class="fade-section">
+    <h2>O que recebes</h2>
+    <ul class="clean">
+      <li><span class="marker">✦</span><span>Uma leitura personalizada do teu mapa astral, orientada pelo tema que trazes</span></li>
+      <li><span class="marker">✦</span><span>Uma história simbólica ligada ao teu momento</span></li>
+      <li><span class="marker">✦</span><span>Relações entre os temas do mapa, o que partilhas e as diferentes áreas da tua vida</span></li>
+      <li><span class="marker">✦</span><span>Perguntas para reconheceres como um padrão aparece em situações concretas</span></li>
+      <li><span class="marker">✦</span><span>Orientações e experiências práticas para o teu dia a dia</span></li>
+      <li><span class="marker">✦</span><span>Tudo em áudio, gravado por mim, para ouvires quantas vezes quiseres</span></li>
+    </ul>
+    <p class="soft-note">Cada leitura é diferente. São possibilidades de exploração, não resultados garantidos.</p>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
+
+    <!-- 8 · QUEM FAZ -->
     <div class="fade-section">
     <h2>Quem faz a tua leitura</h2>
     <p class="body-text">Sou a Filipa. Tenho formação e experiência profissional em gestão e estratégia e, há vários anos, dedico-me também a estudar o comportamento humano, as crenças e os padrões que nos movem sem darmos conta.</p>
-    <p class="body-text">Uso a intuição, os mapas energéticos e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em algo que possas usar no teu dia a dia. Não separo a parte analítica da intuitiva. A tua leitura é feita pelas duas.</p>
-    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
-    <h2>O que podes levar desta experiência</h2>
-    <ul class="clean">
-      <li><span class="marker">✦</span><span>Autoconhecimento, de forma leve e cuidada</span></li>
-      <li><span class="marker">✦</span><span>Confiança para tomares decisões alinhadas contigo</span></li>
-      <li><span class="marker">✦</span><span>Reconhecimento das crenças que te estão a limitar</span></li>
-      <li><span class="marker">✦</span><span>Clareza sobre o teu momento atual sobre o tema que escolheres</span></li>
-      <li><span class="marker">✦</span><span>Orientações práticas para integrares o que aprenderes no teu dia a dia</span></li>
-
-      <li><span class="marker">✦</span><span>Mais permissão para seres quem és e para o mostrares</span></li>
-    </ul>
+    <p class="body-text">Uso a intuição, a linguagem simbólica e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em reflexões que possas usar no teu dia a dia. O meu estudo do inconsciente, dos arquétipos e da alquimia faz parte desse percurso.</p>
+    <p class="statement">Não separo a parte analítica da intuitiva. A tua leitura é feita pelas duas.</p>
+    </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
+    <!-- 9 · TEMAS -->
     <div class="fade-section">
-    <h2>Sugestões de temas</h2>
+    <h2>Que tema queres trazer?</h2>
     <div class="themes">
       <span class="theme-pill">Identidade e autoimagem</span>
-      <span class="theme-pill">Espiritualidade</span>
+      <span class="theme-pill">Espiritualidade e mundo interior</span>
       <span class="theme-pill">Dinheiro e abundância</span>
       <span class="theme-pill">Relações amorosas</span>
       <span class="theme-pill">Relações familiares</span>
@@ -893,118 +1010,90 @@
       <span class="theme-pill">Parentalidade</span>
       <span class="theme-pill">Tempo e ritmo da vida</span>
     </div>
-      <p style="font-family:'Spectral',serif; font-size:17px; font-weight:300; font-style:italic; color:#c9a86c; margin-top:1rem;">Qual dos temas ressoa mais contigo agora?</p>
-      <p style="font-family:'Spectral',serif; font-size:17px; font-weight:300; font-style:italic; color:#c9a86c; margin-top:0.75rem;">Se ressoaste com mais do que um tema, na tua marcação vais poder partilhar comigo o teu momento atual com total liberdade, e a leitura irá naturalmente encaminhar-se para aquilo que estiver mais vivo em ti.</p>
-
+    <p class="soft-note" style="margin-top:1rem;">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade. Não precisas de separar aquilo que, na tua experiência, está ligado.</p>
+    </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
+    <!-- 10 · COMO FUNCIONA -->
     <div class="fade-section">
     <h2>Como funciona</h2>
     <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <div>
-          <p class="step-title">Sentes se é para ti</p>
-          <p class="step-text">Podes enviar mensagem se tiveres alguma questão.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <div>
-          <p class="step-title">Escolhes o teu tema</p>
-          <p class="step-text">Sobre o qual desejas receber clareza e orientações.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <div>
-          <p class="step-title">Escolhes como receber</p>
-          <p class="step-text">Decides o formato que ressoa mais neste momento.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div>
-          <p class="step-title">Marcas a tua sessão</p>
-          <p class="step-text">Através deste <a href="https://calendly.com/filipaosorio/alinhamento" target="_blank" style="color:#7a2535; text-decoration:underline;">link</a> preenchendo os teus dados.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">05</span>
-        <div>
-          <p class="step-title">Faço a tua leitura</p>
-          <p class="step-text">Preparo a tua leitura à luz do tema, com intuição e com os teus mapas energéticos.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">06</span>
-        <div>
-          <p class="step-title">Recebes a tua leitura</p>
-          <p class="step-text">E a tua sessão do meu trabalho de crenças, com base no ThetaHealing<sup style="font-size:0.6em;">®</sup>, se escolheres essa opção.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">07</span>
-        <div>
-          <p class="step-title">A mudança começa</p>
-          <p class="step-text">Começas a viver com mais consciência, ação e confiança.</p>
-        </div>
-      </div>
+      <div class="step"><span class="step-num">01</span><div><p class="step-title">Escolhes a tua opção</p><p class="step-text">A leitura em áudio, ou a leitura com um segundo áudio de trabalho de crenças.</p></div></div>
+      <div class="step"><span class="step-num">02</span><div><p class="step-title">Partilhas os teus dados e o teu tema</p><p class="step-text">Data, hora e local de nascimento, o tema que queres explorar e o contexto que achas importante. <span class="pendente">[como: formulário depois da compra?]</span></p></div></div>
+      <div class="step"><span class="step-num">03</span><div><p class="step-title">Preparo e gravo a tua leitura</p><p class="step-text">Com intuição e um olhar arquetípico sobre o teu mapa, ligando a história a perguntas e orientações práticas.</p></div></div>
+      <div class="step"><span class="step-num">04</span><div><p class="step-title">Recebes os teus áudios</p><p class="step-text"><span class="pendente">[prazo e canal: por exemplo, até X dias úteis, por email]</span></p></div></div>
+      <div class="step"><span class="step-num">05</span><div><p class="step-title">Escutas e integras</p><p class="step-text">No teu tempo, quantas vezes quiseres. Não há encontro ao vivo.</p></div></div>
+    </div>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
+    <!-- 11 · OPÇÕES -->
     <div class="fade-section">
-    <h2 id="formatos">Formatos disponíveis</h2>
-
-    <div style="border: 0.5px solid rgba(201,168,108,0.4); border-radius: 12px; padding: 1.25rem 1.5rem;">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <div>
-          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio</p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Faço a tua leitura e envio-a em áudio. Ouves no teu tempo, quantas vezes quiseres.</p>
-        </div>
-        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€147</p>
+    <h2 id="opcoes">Escolhe a tua leitura</h2>
+    <div class="offers">
+      <div class="offer">
+        <p class="offer-name">Leitura em áudio</p>
+        <p class="offer-price">147 €</p>
+        <ul>
+          <li>Leitura do teu mapa astral, orientada pelo teu tema</li>
+          <li>História simbólica personalizada</li>
+          <li>Perguntas e orientações práticas</li>
+          <li>Áudio gravado por mim, para ouvires no teu tempo</li>
+        </ul>
+        <a class="btn-buy btn-outline" href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401" target="_blank">Quero a minha leitura</a>
       </div>
-      <div style="text-align:right; margin-top:0.75rem;">
-        <a href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401" target="_blank" style="display:inline-block; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border-radius:30px; padding:9px 22px; text-decoration:none;">Comprar</a>
-      </div>
-      <div style="display:flex; align-items:center; gap:0.75rem; margin:0.75rem 0;">
-        <div style="flex:1; height:0.5px; background:rgba(201,168,108,0.4);"></div>
-        <span style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#c9a86c;">ou</span>
-        <div style="flex:1; height:0.5px; background:rgba(201,168,108,0.4);"></div>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <div>
-          <p style="font-family:'Spectral',serif; font-size:18px; font-weight:300; font-style:italic; color:#1a1410; margin-bottom:0.25rem;">Leitura em Áudio <strong style="font-weight:400; color:#7a2535;">+ ThetaHealing<sup style="font-size:0.6em;">®</sup></strong></p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#9a7e52; font-style:italic;">Leitura em áudio enviada antes do nosso encontro + 30 minutos do meu trabalho de crenças, com base no ThetaHealing<sup style="font-size:0.6em;">®</sup>,<br>ao vivo sobre as crenças principais que emergiram na leitura.</p>
-        </div>
-        <p style="font-family:'Spectral',serif; font-size:20px; font-weight:300; color:#7a2535; flex-shrink:0; margin-left:1rem;">€197</p>
-      </div>
-      <div style="text-align:right; margin-top:0.75rem;">
-        <a href="https://buy.stripe.com/28EcN53B33cv6upazAfw402" target="_blank" style="display:inline-block; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#f7f3ee; background:#7a2535; border-radius:30px; padding:9px 22px; text-decoration:none;">Comprar</a>
+      <div class="offer offer-featured">
+        <span class="offer-badge">A mais completa</span>
+        <p class="offer-name">Leitura + áudio de crenças</p>
+        <p class="offer-price">197 €</p>
+        <ul>
+          <li>Tudo o que está na leitura em áudio</li>
+          <li>Um segundo áudio personalizado de trabalho de crenças, com base no meu trabalho com ThetaHealing<sup style="font-size:0.6em;">®</sup>, sobre os temas que emergem na leitura</li>
+          <li>Ambos em áudio, ao teu ritmo</li>
+        </ul>
+        <a class="btn-buy" href="https://buy.stripe.com/28EcN53B33cv6upazAfw402" target="_blank">Quero a leitura e o áudio de crenças</a>
       </div>
     </div>
-    <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; color:#b0a090; font-style:italic; margin-top:0.75rem; text-align:center;">Poderás adicionar a tua sessão complementar posteriormente pelo valor de €65.</p>
+    <p class="soft-note" style="text-align:center; margin-top:1rem;">Pagamento seguro com Stripe. <span class="pendente">[Depois da compra recebes por email as indicações para me enviares os teus dados.]</span></p>
+    <p style="text-align:center; margin-top:0.5rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20tenho%20uma%20quest%C3%A3o%20sobre%20a%20Leitura%20Intuitiva%3A%20" target="_blank">Tens uma dúvida antes de escolher? Fala comigo 💌</a></p>
+    </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
-    <div style="text-align:center; margin-bottom:2rem;">
+    <!-- 12 · PERGUNTAS -->
+    <div class="fade-section">
+    <h2>Perguntas antes de escolheres</h2>
+    <div class="faq">
+      <details><summary>Tenho de saber astrologia?</summary><p>Não. Não precisas de conhecer linguagem técnica nem de acompanhar o desenho do mapa. Vem com curiosidade e com um tema que queiras explorar.</p></details>
+      <details><summary>E se não souber a hora de nascimento?</summary><p>Fala comigo antes de comprar para vermos o que é possível preparar com os dados que tens. <span class="pendente">[confirmar]</span></p></details>
+      <details><summary>Há uma sessão ao vivo?</summary><p>Não. A leitura e o áudio de crenças são gravados por mim e enviados para escutares ao teu ritmo.</p></details>
+      <details><summary>Quanto tempo demora a chegar?</summary><p><span class="pendente">[prazo a definir]</span></p></details>
+      <details><summary>Tenho de concordar com tudo o que ouço?</summary><p>Não. Podes reconhecer-te, discordar ou dar outro sentido a uma imagem. As interpretações são convites à reflexão; as tuas escolhas continuam a ser tuas.</p></details>
+      <details><summary>A leitura vai dizer-me o que fazer?</summary><p>Oferece perspetivas, perguntas e experiências possíveis, não decisões tomadas por ti.</p></details>
+    </div>
+    </div>
 
+    <div class="divider"><div class="divider-line"></div><div class="divider-line-thin"></div></div>
 
+    <!-- 13 · FECHO -->
     <div class="aside centered">
-      <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.4rem;">Se esta é a leitura que procuravas</p>
-      <a id="cta-final" class="cta-link" href="#formatos" onclick="event.preventDefault(); document.getElementById('formatos').scrollIntoView({behavior:'smooth', block:'start'});" style="background:#7a2535; font-size:13px; letter-spacing:0.08em; color:#f7f3ee;">Escolher o meu formato</a>
+      <p style="font-family:'Spectral',serif; font-style:italic; font-size:20px; color:#1a1410; margin-bottom:0.6rem;">Se esta é a leitura que procuravas</p>
+      <p style="margin-bottom:1rem;">A forma como te vês influencia a vida que constróis, e nenhuma dessas histórias é definitiva. Vamos olhar para o teu mapa e para o teu momento juntas, com profundidade e leveza.</p>
+      <a class="btn-buy" href="#opcoes" data-scroll="opcoes">Escolher a minha leitura</a>
     </div>
 
-    <div class="aside centered" style="margin-top: 1rem;">
-      <p>A forma como te vês influencia a vida que constróis, e nenhuma dessas histórias é definitiva. Vamos olhá-las juntas, com leveza.</p>
-    </div>
+    <p class="legal">Esta é uma prática espiritual e interpretativa de autoconhecimento e exploração simbólica. Não é um diagnóstico nem uma previsão de acontecimentos e não substitui acompanhamento médico, psicológico ou outro aconselhamento profissional. O áudio de trabalho de crenças é uma prática guiada, não uma garantia de mudança.</p>
 
     <p class="footer">© 2026 Filipa Osório · <a href="privacidade.html" style="color:#9a7e52; text-decoration:none;">Política de Privacidade</a> · <a href="https://www.instagram.com/filipaosorio" target="_blank" style="color:#9a7e52; text-decoration:none;">Instagram</a></p>
       <p class="footer" style="margin-top:0.5rem;"><a href="https://substack.com/@filipaosorio?r=3udm6f&utm_campaign=profile&utm_medium=profile-page" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:#7a2535; text-decoration:none; border-bottom:0.5px solid #c9a86c; padding-bottom:1px;">✦ Substack — Reflexões, insights e magia 🖋️</a></p>
 
   </main>
+  <div class="sticky-buy" id="stickyBuy">
+    <span>Leitura Intuitiva · <strong>desde 147 €</strong></span>
+    <a href="#opcoes" data-scroll="opcoes">Escolher</a>
+  </div>
   <div class="popup" id="popup">
     <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
     <p class="popup-eyebrow">Leitura Intuitiva</p>
@@ -1269,6 +1358,20 @@ function toggleFrequency() {
     btn.textContent = '🔊 Entrar na frequência';
   }
 }
+</script>
+<script>
+  // Leitura Intuitiva 2026-10: scroll suave para as opções e barra fixa no telemóvel
+  document.querySelectorAll('[data-scroll]').forEach(function(a){
+    a.addEventListener('click', function(e){ var t=document.getElementById(a.getAttribute('data-scroll')); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); } });
+  });
+  (function(){
+    var bar=document.getElementById('stickyBuy'), hero=document.querySelector('.hero-cta'), offers=document.querySelector('.offers');
+    if(!bar||!hero||!offers||!('IntersectionObserver' in window)) return;
+    var pastHero=false, atOffers=false;
+    function upd(){ bar.classList.toggle('show', pastHero && !atOffers); }
+    new IntersectionObserver(function(es){ es.forEach(function(e){ pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; }); upd(); }).observe(hero);
+    new IntersectionObserver(function(es){ es.forEach(function(e){ atOffers = e.isIntersecting; }); upd(); }).observe(offers);
+  })();
 </script>
 </body>
 </html>
