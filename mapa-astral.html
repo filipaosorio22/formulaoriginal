@@ -150,6 +150,7 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 }
 
 .planets{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 26px;font-family:var(--sans);font-size:14.5px}
+.planets[hidden]{display:none}
 .planets li{display:grid;grid-template-columns:26px 1fr auto;align-items:baseline;gap:6px;padding:8px 2px;border-bottom:1px solid var(--line-soft)}
 .planets .g{font-family:var(--sym);color:var(--deep);font-size:17px;text-align:center}
 .planets .n{color:var(--ink)}
@@ -286,7 +287,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
       </div>
       <form class="gate" id="gate" novalidate>
         <h3>Descobre a tua Lua e o teu Ascendente</h3>
-        <p class="sub">Deixa o teu nome e email para veres o resto do teu mapa.</p>
+        <p class="sub">Deixa o teu nome e email para veres o resto do teu mapa, com as posições de todos os planetas.</p>
         <div class="grid">
           <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" name="fields[name]" maxlength="60" autocomplete="given-name" required></div>
           <div><label class="lbl" for="gEmail">Email</label><input type="email" id="gEmail" name="fields[email]" maxlength="120" autocomplete="email" inputmode="email" required></div>
@@ -836,7 +837,7 @@ function render(ch, info){
   svg.classList.add('anim');
 
   // header
-  var who = info.name ? 'O céu de ' + esc(info.name) : 'O teu céu';
+  var who = info.name ? 'O teu céu • ' + esc(info.name) : 'O teu céu';
   $('resTitle').innerHTML = who;
   var ds = pad(info.d) + '/' + pad(info.mo) + '/' + info.y, ts = pad(info.hh) + ':' + pad(info.mi);
   $('resMeta').textContent = 'Nascida/o a ' + ds + ', às ' + ts + ' (hora legal: ' + fmtOff(info.off) + ') · ' + info.place.name;
@@ -877,7 +878,7 @@ function render(ch, info){
     var rName = RULER_ART[rk] || rP.name;
     var lh = '<h3>O que a Leitura revela</h3><p class="sub">Para lá do signo</p>';
     lh += '<p class="ask">Tens Sol em ' + SIGNS[sun] + ', mas sabias que a casa do mapa astral onde ele se encontra fala da área da tua vida em que essas características se expressam? E sabes que tem relação com a casa onde está o regente do signo, neste caso <em>' + (rk === 'Sun' ? 'o próprio Sol' : rName) + '</em>?</p>';
-    lh += '<p class="close">Na Leitura, descubro estas casas e ligações no teu mapa e junto estes pontos numa história sobre onde colocar o teu foco agora. Recebes também perguntas e práticas para o teu dia-a-dia, para começares a trabalhar as crenças que reconheces em ti. E nas sessões de aprofundamento vamos mais longe, com as outras ferramentas da minha metodologia.</p>';
+    lh += '<p class="close">Na Leitura, descubro estas casas e ligações no teu mapa e junto estes pontos numa história sobre onde colocar o teu foco agora. Recebes também perguntas e práticas para o teu dia-a-dia, para começares a trabalhar as crenças que reconheces em ti. E nas sessões de aprofundamento vamos mais longe, com outras ferramentas e o meu método único.</p>';
     lay.innerHTML = lh; lay.hidden = false;
   }
 
@@ -931,6 +932,7 @@ var lastInfo = null, lastSum = null;
 function unlocked(){ try { return localStorage.getItem('mapaDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
   $('locked').classList.toggle('on', on);
+  $('planets').hidden = on; // a tabela de planetas e graus só aparece depois do email
   $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
   if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
 }
