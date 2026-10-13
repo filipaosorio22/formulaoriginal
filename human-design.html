@@ -12,7 +12,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#faf6ef; --ink:#2b241c; --muted:#6f6355; --soft:#8c7f6e;
@@ -211,6 +211,11 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
 .gate .chk input{width:18px;height:18px;min-height:0;margin:2px 0 0;flex:none;accent-color:#9a7e52}
 @media (max-width:480px){.gate .grid{grid-template-columns:1fr}.gate{margin-top:-120px}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* tipos de letra como no resto do site: títulos em Cormorant Garamond, subtítulos em Spectral itálico bordô */
+h1{font-family:'Cormorant Garamond',var(--serif);font-weight:700;color:var(--wine);letter-spacing:0}
+h1 em{font-style:normal;color:var(--wine)}
+.res-head h2,.pillars h3,.cta h3,.layers h3,.gate h3{font-style:italic;color:var(--wine)}
 </style>
 </head>
 <body>
@@ -285,12 +290,12 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
         <div class="lk" id="lk"><ul class="facts" id="facts"></ul><div id="pillars2"></div></div>
         <form class="gate" id="gate" novalidate>
           <h3>Descobre o teu desenho completo</h3>
-          <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, o teu ambiente, a tua digestão e o teu sentido mais forte. Deixa o teu nome e email para os veres.</p>
+          <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, o teu ambiente, a tua digestão e o teu sentido mais forte. Partilha o teu nome e e-mail para os veres.</p>
           <div class="grid">
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
-            <div><label class="lbl" for="gEmail">Email</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
+            <div><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
           </div>
-          <label class="chk"><input type="checkbox" id="gOk" required><span>Quero receber os emails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
+          <label class="chk"><input type="checkbox" id="gOk" required><span>Quero receber os e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
           <p class="err" id="gErr" role="alert"></p>
           <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver o meu desenho completo</button></div>
         </form>
@@ -884,8 +889,8 @@ $('gate').addEventListener('submit', function(e){
   e.preventDefault();
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
   if (!nome){ err.textContent = 'Escreve o teu nome.'; $('gNome').focus(); return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu email.'; $('gEmail').focus(); return; }
-  if (!$('gOk').checked){ err.textContent = 'Para continuares, aceita receber os emails.'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('gEmail').focus(); return; }
+  if (!$('gOk').checked){ err.textContent = 'Para continuares, aceita receber os e-mails.'; return; }
   err.textContent = '';
   var b = new URLSearchParams();
   b.append('fields[name]', nome);

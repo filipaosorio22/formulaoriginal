@@ -23,10 +23,10 @@
   box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-labelledby', 'nlTitle');
   box.innerHTML = '<div class="nl-box"><button class="nl-x" type="button" aria-label="Fechar" data-nl-close>×</button>' +
     '<form id="nlForm" novalidate><h3 id="nlTitle">Recebe a minha newsletter</h3>' +
-    '<p class="nl-sub">Reflexões, novidades e convites sobre desenvolvimento pessoal, diretamente no teu email.</p>' +
+    '<p class="nl-sub">Reflexões, novidades e convites sobre desenvolvimento pessoal, diretamente no teu e-mail.</p>' +
     '<label class="nl-l" for="nlNome">Nome</label><input type="text" id="nlNome" maxlength="60" autocomplete="given-name">' +
-    '<label class="nl-l" for="nlEmail">Email</label><input type="email" id="nlEmail" maxlength="120" autocomplete="email" inputmode="email">' +
-    '<label class="nl-chk"><input type="checkbox" id="nlOk"><span>Quero receber os emails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>' +
+    '<label class="nl-l" for="nlEmail">E-mail</label><input type="email" id="nlEmail" maxlength="120" autocomplete="email" inputmode="email">' +
+    '<label class="nl-chk"><input type="checkbox" id="nlOk"><span>Quero receber os e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>' +
     '<p class="nl-err" id="nlErr" role="alert"></p><button class="nl-btn" type="submit" id="nlBtn">✦ Subscrever</button></form></div>';
   document.body.appendChild(box);
   function $(id){ return document.getElementById(id); }
@@ -48,15 +48,15 @@
     e.preventDefault();
     var nome = $('nlNome').value.trim(), email = $('nlEmail').value.trim(), err = $('nlErr');
     if (!nome){ err.textContent = 'Escreve o teu nome.'; $('nlNome').focus(); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu email.'; $('nlEmail').focus(); return; }
-    if (!$('nlOk').checked){ err.textContent = 'Para continuares, aceita receber os emails.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('nlEmail').focus(); return; }
+    if (!$('nlOk').checked){ err.textContent = 'Para continuares, aceita receber os e-mails.'; return; }
     if (!ML_URL){ err.textContent = 'A subscrição ainda não está disponível. Tenta mais tarde.'; return; }
     err.textContent = '';
     var b = new URLSearchParams();
     b.append('fields[name]', nome); b.append('fields[email]', email); b.append('ml-submit', '1'); b.append('anticsrf', 'true');
     var btn = $('nlBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
     fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(function(){
-      $('nlForm').innerHTML = '<p class="nl-ok">Obrigada, ' + nome.split(' ')[0].replace(/[<>&"]/g, '') + '! Vais receber um email para confirmares a subscrição.</p>';
+      $('nlForm').innerHTML = '<p class="nl-ok">Obrigada, ' + nome.split(' ')[0].replace(/[<>&"]/g, '') + '! Vais receber um e-mail para confirmares a subscrição.</p>';
     }, function(){
       btn.disabled = false; btn.textContent = '✦ Subscrever';
       err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
