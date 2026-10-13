@@ -522,7 +522,7 @@
 
   /* pop-up de dados: mapa astral (MailerLite, grupo Mapa Astral) */
   /* oferta: aviso no topo + bloco nas opções */
-  .gift-top { position:fixed; top:96px; left:50%; z-index:160; width:min(440px, calc(100% - 32px)); display:flex; align-items:center; gap:12px; padding:12px 14px 12px 16px; background:var(--card); border:0.5px solid var(--gold); border-radius:14px; box-shadow:0 8px 28px rgba(26,20,16,0.14); font-family:'DM Sans',sans-serif; font-size:14px; line-height:1.45; color:var(--ink); opacity:0; transform:translate(-50%,-14px); transition:opacity 0.45s, transform 0.45s; pointer-events:none; }
+  .gift-top { position:fixed; top:96px; left:50%; z-index:160; width:min(580px, calc(100% - 32px)); display:flex; align-items:center; gap:12px; padding:12px 14px 12px 16px; background:var(--card); border:0.5px solid var(--gold); border-radius:14px; box-shadow:0 8px 28px rgba(26,20,16,0.14); font-family:'DM Sans',sans-serif; font-size:14px; line-height:1.45; color:var(--ink); opacity:0; transform:translate(-50%,-14px); transition:opacity 0.45s, transform 0.45s; pointer-events:none; }
   .gift-top.open { opacity:1; transform:translate(-50%,0); pointer-events:auto; }
   .gift-top .gt-ic { font-size:22px; line-height:1; }
   .gift-top p { margin:0; flex:1; }
@@ -585,7 +585,7 @@
 
 <div class="gift-top" id="giftTop" role="dialog" aria-label="Oferecer uma Leitura" hidden>
   <span class="gt-ic" aria-hidden="true">🎁</span>
-  <p>Queres oferecer uma Leitura Intuitiva a alguém especial? Que presente maravilhoso! <a href="#oferecer" id="giftTopLink">Ver como</a></p>
+  <p>Queres oferecer uma Leitura Intuitiva a alguém especial?<br>Que presente maravilhoso! <a href="#oferecer" id="giftTopLink">Ver como</a></p>
   <button type="button" id="giftTopX" aria-label="Fechar">×</button>
 </div>
 
@@ -596,7 +596,7 @@
     <div class="cover-li">
       <div class="cover-text">
     <h1>Leitura Intuitiva</h1>
-    <p class="h1-sub">Uma Leitura feita com intuição e método, sobre o momento que estás a viver e o tema que trouxeres.</p>
+    <p class="h1-sub">Uma Leitura feita com intuição e método, sobre o que estás a viver e desejas.</p>
       </div>
     </div>
     <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
@@ -880,9 +880,10 @@
       <summary>🎁 Queres oferecer uma Leitura a alguém?</summary>
       <div class="extra-offer">
         <p class="eyebrow">Para oferecer</p>
-        <p class="extra-offer-name">Uma Leitura Intuitiva de presente · 147€</p>
-        <p class="extra-offer-text">Só precisas de saber a data, a hora e o local de nascimento de quem recebe. Se souberes e quiseres, podes contar-me um pouco do momento que essa pessoa está a viver e do que acreditas que ela deseja. Podes juntar o Human Design por mais 50€.</p>
-        <p class="extra-offer-text">Escolhes como entregar: um <strong>cartão de oferta</strong>, para a pessoa falar comigo quando quiser começar, ou a <strong>Leitura já pronta</strong>, em áudio, para lhe ofereceres.</p>
+        <p class="extra-offer-name">Uma Leitura Intuitiva de presente</p>
+        <p class="extra-offer-text">Só precisas de saber a data, a hora e o local de nascimento de quem recebe. Se souberes e quiseres, podes contar-me um pouco do momento que essa pessoa está a viver e do que acreditas que ela deseja. </p>
+        <p class="extra-offer-text">Podes oferecer a Leitura Intuitiva (147€) ou a Leitura com Revolução Solar (247€), ideal para um aniversário. A qualquer uma podes juntar o Human Design por mais 50€.</p>
+        <p class="extra-offer-text">Escolhes como entregar: um <strong>cartão de oferta</strong>, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a <strong>Leitura já pronta</strong>, em áudio, para lhe ofereceres.</p>
         <a class="btn" href="marcar-leitura.html?oferta=1">Oferecer uma Leitura</a><br>
         <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Quero%20oferecer%20uma%20Leitura%20Intuitiva%20a%20algu%C3%A9m.%20Quais%20s%C3%A3o%20as%20op%C3%A7%C3%B5es%20de%20entrega%3F" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.8rem">Tens dúvidas? Fala comigo 💌</a>
       </div>
@@ -913,7 +914,7 @@
       <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura base é gravada e não inclui um encontro ao vivo. Se escolheres Leitura Intuitiva + sessão de aprofundamento, tens também uma sessão individual comigo depois de ouvires a Leitura, para aprofundarmos os temas a partir das tuas reflexões e de exemplos reais.</p></div></details>
       <details><summary>O que acontece na sessão de aprofundamento?</summary><div class="ans"><p>Partimos daquilo que reconheceste na Leitura e do que queres trazer da tua vida. Exploramos padrões, possíveis crenças e formas de responder às situações. Quando fizer sentido, integro práticas de trabalho de crenças e ajudamos a dar forma a próximos passos que possas experimentar.</p></div></details>
       <details><summary>Tenho de preparar alguma coisa para a sessão?</summary><div class="ans"><p>Podes tomar notas e trazer perguntas ou exemplos, mas não é obrigatório. Basta partilhares aquilo que ficou contigo ou que desejas aprofundar.</p></div></details>
-      <details><summary>Posso oferecer uma Leitura a alguém?</summary><div class="ans"><p>Sim. Só precisas dos dados de nascimento de quem recebe. Podes oferecer um cartão, para a pessoa falar comigo quando quiser, ou a Leitura já pronta em áudio. <a href="#oferecer">Ver como oferecer</a>.</p></div></details>
+      <details><summary>Posso oferecer uma Leitura a alguém?</summary><div class="ans"><p>Sim. Só precisas dos dados de nascimento de quem recebe. Podes oferecer um cartão, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a Leitura já pronta em áudio. Também podes oferecer a Leitura com Revolução Solar, ideal para um aniversário. <a href="#oferecer">Ver como oferecer</a>.</p></div></details>
       <details><summary>Quanto tempo demora a chegar?</summary><div class="ans"><p>Até 14 dias úteis após a confirmação do pagamento.</p></div></details>
       <details><summary>A história é a Leitura?</summary><div class="ans"><p>Não. A Leitura do teu mapa, orientada pelo que partilhas, é a entrega principal. A história simbólica é um complemento que reúne algumas das dinâmicas exploradas em imagens e personagens às quais podes regressar. Não é uma biografia nem uma previsão.</p></div></details>
       <details><summary>Tenho de concordar com tudo o que ouço?</summary><div class="ans"><p>Não. Podes reconhecer-te, discordar ou dar outro sentido a uma imagem. A tua experiência é essencial para perceber o que faz sentido. Não precisas de te adaptar à interpretação.</p></div></details>

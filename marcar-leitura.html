@@ -80,7 +80,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   <div class="top"><a href="leitura-intuitiva.html">← Leitura Intuitiva</a><button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar modo claro/escuro">☾</button></div>
   <header>
     <h1 id="t1">Marcar a minha Leitura</h1>
-    <p class="lead" id="lead">Conta-me um pouco sobre ti e sobre o que estás a viver. As tuas respostas ajudam-me a afinar a Leitura ao que procuras, e a minha intuição faz o resto.</p>
+    <p class="lead" id="lead">Conta-me um pouco sobre o que estás a viver na tua vida e o que desejas, se quiseres. As tuas respostas ajudam-me a afinar a Leitura ao que procuras, e a minha intuição faz o resto.</p>
   </header>
 
   <form id="f" novalidate>
@@ -98,7 +98,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <div class="card" id="giftCard" hidden>
       <h2>Como queres entregar?</h2>
       <p class="sub">Em qualquer dos casos, só preciso dos dados de nascimento de quem recebe.</p>
-      <label class="choice"><input type="radio" name="entrega" value="cartao" checked><span><b>Cartão de oferta</b><br>Recebes um cartão digital para entregares. A pessoa fala comigo quando quiser começar.</span></label>
+      <label class="choice"><input type="radio" name="entrega" value="cartao" checked><span><b>Cartão de oferta</b><br>Recebes um cartão digital para entregares. A pessoa tem 1 mês, a contar da compra, para marcar a Leitura comigo.</span></label>
       <label class="choice"><input type="radio" name="entrega" value="ja"><span><b>Leitura pronta para oferecer</b><br>Dás-me já os dados de nascimento da pessoa e recebes a Leitura em áudio para lhe ofereceres.</span></label>
     </div>
 
@@ -126,8 +126,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2 id="lifeT">O teu momento</h2>
       <p class="note" id="lifeNote">Não precisas de escrever tudo perfeito. Escreve como te sair.</p>
       <div class="grid">
-        <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento?</label><textarea id="q1" maxlength="1200"></textarea></div>
-        <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora?</label><textarea id="q2" maxlength="1200"></textarea></div>
+        <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento? <span class="opt">(opcional)</span></label><textarea id="q1" maxlength="1200"></textarea></div>
+        <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora? <span class="opt">(opcional)</span></label><textarea id="q2" maxlength="1200"></textarea></div>
         <div class="full"><label class="lbl" for="q3" id="q3l">Há algum tema ou pergunta que queiras trazer? <span class="opt">(opcional)</span></label><textarea id="q3" maxlength="800"></textarea></div>
       </div>
     </div>
@@ -164,18 +164,17 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   if (gift) {
     document.title = 'Oferecer uma Leitura Intuitiva | Filipa Osório';
     $('t1').textContent = 'Oferecer uma Leitura';
-    $('lead').textContent = 'Que presente maravilhoso! Só preciso dos dados de nascimento de quem recebe. Se souberes um pouco do momento que essa pessoa está a viver, conta-me: ajuda-me a afinar a Leitura.';
-    $('opSub').textContent = 'A oferta é a Leitura Intuitiva, com ou sem Human Design.';
+    $('lead').textContent = 'Que presente maravilhoso! Só preciso dos dados de nascimento de quem recebe. Se souberes um pouco do momento dessa pessoa e do que ela deseja aprofundar, podes partilhar comigo para a Leitura ser mais direcionada.';
+    $('opSub').textContent = 'Podes oferecer a Leitura Intuitiva ou a Leitura com Revolução Solar, com ou sem Human Design.';
     document.querySelector('[data-op="sessao"]').hidden = true;
-    document.querySelector('[data-op="rs"]').hidden = true;
-    document.querySelector('input[value="leitura"]').checked = true;
+    if (op !== 'rs') document.querySelector('input[value="leitura"]').checked = true;
     $('giftCard').hidden = false;
     $('recWrap').hidden = false;
     $('birthT').textContent = 'Dados de nascimento de quem recebe';
     $('lifeT').textContent = 'O momento de quem recebe';
     $('lifeNote').textContent = 'Opcional. Escreve só o que souberes e quiseres partilhar.';
     $('q1l').innerHTML = 'O que sabes do momento que essa pessoa está a viver? <span class="opt">(opcional)</span>';
-    $('q2l').innerHTML = 'O que acreditas que ela deseja? <span class="opt">(opcional)</span>';
+    $('q2l').innerHTML = 'O que acreditas que ela deseja aprofundar? <span class="opt">(opcional)</span>';
     $('q3l').innerHTML = 'Há alguma mensagem tua que queiras que eu saiba? <span class="opt">(opcional)</span>';
     $('hdLink').textContent = 'Ver o mapa de Human Design';
   }
@@ -210,7 +209,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     var data = $('data').value, hora = $('hora').value, local = $('local').value.trim();
     if (birthNeeded() && (!data || !hora || !local)){ err.textContent = 'Preciso da data, da hora e do local de nascimento.'; $('data').focus(); return; }
     if (gift && entrega() === 'ja' && !$('rnome').value.trim()){ err.textContent = 'Escreve o nome de quem recebe.'; $('rnome').focus(); return; }
-    if (!gift && !$('q1').value.trim()){ err.textContent = 'Conta-me um pouco do que estás a viver.'; $('q1').focus(); return; }
     if (!$('ok').checked){ err.textContent = 'Para continuares, aceita os termos.'; return; }
 
     var L = [];

@@ -108,6 +108,7 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .wheel .zg{font-family:var(--sym);font-size:23px;fill:var(--glyph)}
 .wheel .pg{font-family:var(--sym);font-size:24px;fill:var(--ink)}
 .wheel .pg.lum{fill:var(--deep)}
+.wheel .pg.pt{font-size:19px;fill:var(--deep)}
 .wheel .pd{font-size:12px;fill:var(--muted);letter-spacing:.02em}
 .wheel .rx{fill:var(--wine)}
 .wheel .hn{font-size:11px;fill:var(--soft);letter-spacing:.04em}
@@ -174,6 +175,8 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .layers .sub{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.04em;margin:0 0 18px}
 .layers .ask{font-family:var(--serif);font-size:clamp(17px,4.4vw,19px);font-weight:300;line-height:1.55;color:var(--ink);margin:0 auto 20px;max-width:30em}
 .layers .ask em{color:var(--deep)}
+.layers .ask.mc{border:1px solid var(--line-soft);border-radius:14px;padding:16px 18px;background:var(--card);text-align:left}
+.layers .ask.mc strong{font-style:italic;font-weight:400;color:var(--wine)}
 .layers .pillar h4 small{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.02em;margin-left:6px;white-space:nowrap}
 .layers .close{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;line-height:1.6;margin:14px auto 0;max-width:32em}
 
@@ -220,6 +223,13 @@ h1 em{font-style:normal;color:var(--wine)}
 .seo h2{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--wine);font-size:clamp(23px,5vw,28px);text-align:center;margin:0 0 18px}
 .seo h3{font-family:var(--serif);font-weight:400;font-size:19px;margin:22px 0 6px}
 .seo p{margin:0;color:var(--muted);font-size:16px}
+.pos{margin:22px 0 0;border:1px solid var(--line-soft);border-radius:14px;background:var(--card);padding:4px 16px}
+.pos[hidden]{display:none}
+.pos summary{cursor:pointer;list-style:none;font-family:var(--serif);font-style:italic;color:var(--wine);font-size:19px;padding:12px 0;display:flex;justify-content:space-between;align-items:center}
+.pos summary::-webkit-details-marker{display:none}
+.pos summary::after{content:"+";font-family:var(--sans);font-style:normal;color:var(--deep);font-size:20px}
+.pos[open] summary::after{content:"−"}
+.pos .planets{margin:0 0 12px}
 </style>
 </head>
 <body>
@@ -272,7 +282,7 @@ h1 em{font-style:normal;color:var(--wine)}
     </div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
-    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Só guardo os teus dados se mos deixares mais abaixo.</p>
+    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Só guardo os dados se me deres autorização abaixo para tos poder enviar.</p>
   </form>
 
   <section id="result" hidden aria-live="polite">
@@ -282,7 +292,10 @@ h1 em{font-style:normal;color:var(--wine)}
       <p class="note" id="resNote" hidden></p>
     </div>
     <svg class="wheel" id="wheel" viewBox="0 0 640 640" role="img" aria-labelledby="wheelDesc"><desc id="wheelDesc">Mapa natal</desc></svg>
-    <ul class="planets" id="planets"></ul>
+    <details class="pos" id="posBox">
+      <summary>Posições dos planetas e pontos principais</summary>
+      <ul class="planets" id="planets"></ul>
+    </details>
 
     <div class="pillars">
       <h3>Os 3 pilares do mapa astral</h3>
@@ -296,8 +309,8 @@ h1 em{font-style:normal;color:var(--wine)}
         <div class="layers" id="layers" hidden></div>
       </div>
       <form class="gate" id="gate" novalidate>
-        <h3>Descobre mais sobre a tua Lua e o teu Ascendente</h3>
-        <p class="sub">Partilha o teu nome e e-mail para veres mais um bocadinho do teu mapa, antes da tua Leitura.</p>
+        <h3>Descobre mais sobre<br>a tua Lua e Ascendente</h3>
+        <p class="sub">Partilha o teu nome e e-mail para conheceres um bocadinho mais do teu mapa, antes da Leitura.</p>
         <div class="grid">
           <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" name="fields[name]" maxlength="60" autocomplete="given-name" required></div>
           <div><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" name="fields[email]" maxlength="120" autocomplete="email" inputmode="email" required></div>
@@ -310,7 +323,7 @@ h1 em{font-style:normal;color:var(--wine)}
 
     <div class="cta">
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
-      <p class="big">O mapa é só o desenho. <em>A Leitura Intuitiva</em> é a forma de o transformares em ação no teu momento presente.</p>
+      <p class="big">O mapa é só o desenho. <em>A Leitura Intuitiva</em> é a forma de o transformares<br>em ação no teu momento presente.</p>
       <a class="btn" href="marcar-leitura.html">Quero a minha Leitura</a><br>
       <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a>
     </div>
@@ -333,6 +346,7 @@ h1 em{font-style:normal;color:var(--wine)}
 </div>
 
 <script src="astronomy.browser.min.js"></script>
+<script src="quiron.js"></script>
 <script>
 (function(){
 'use strict';
@@ -434,9 +448,27 @@ function computeChart(A, utcMs, lat, lon){
   });
   var a = angles(A, t, lat, lon);
   var h = houseCusps(a, lat);
-  return { planets: planets, asc: a.asc, mc: a.mc, cusps: h.cusps, houseSys: h.sys };
+  var points = [];
+  var ch0 = chironLon(utcMs);
+  if (ch0 !== null){ var ch1 = chironLon(utcMs + 864e5); points.push({ key: 'Chiron', name: 'Quíron', glyph: '⚷', lon: ch0, retro: (((ch1 - ch0 + 540) % 360) - 180) < 0, point: true }); }
+  points.push({ key: 'Lilith', name: 'Lilith', glyph: '⚸', lon: lilithLon(t.tt), retro: false, point: true });
+  return { planets: planets, points: points, asc: a.asc, mc: a.mc, cusps: h.cusps, houseSys: h.sys };
+}
+// Quíron: tabela de 10 em 10 dias (quiron.js), 1900-2060
+function chironLon(ms){
+  var C = window.FO_CHIRON; if (!C) return null;
+  var x = (ms - C.t0) / C.step, i = Math.floor(x);
+  if (i < 0 || i >= C.v.length - 1) return null;
+  var a = C.v[i] / 100, b = C.v[i + 1] / 100, d = ((b - a + 540) % 360) - 180;
+  return norm(a + d * (x - i));
+}
+// Lilith (Lua Negra média): apogeu médio da órbita da Lua (Meeus), d = dias desde J2000 TT
+function lilithLon(d){
+  var T = d / 36525;
+  return norm(83.3532465 + 4069.0137287*T - 0.0103200*T*T - T*T*T/80053 + T*T*T*T/18999000 + 180);
 }
 function signOf(l){ return Math.floor(norm(l)/30); }
+function angDist(a, b){ var d = Math.abs(norm(a - b)); return d > 180 ? 360 - d : d; }
 function fmtDeg(l){
   var x = norm(l) % 30, d = Math.floor(x), m = Math.round((x - d)*60);
   if (m === 60){ d += 1; m = 0; }
@@ -833,20 +865,21 @@ function render(ch, info){
     s.push('<line class="asp draw' + (x.hard ? ' hard' : '') + '" pathLength="1" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '" stroke-width="' + (x.hard ? .8 : .7) + '" stroke-opacity="' + op + '"' + (x.hard ? '' : '') + ' style="animation-delay:' + (1.4 + k * 0.06).toFixed(2) + 's;animation-duration:1.2s"/>');
   });
   // small marks on the aspect ring at exact degrees
-  ch.planets.forEach(function(p){ var q = P(p.lon, RA); s.push('<circle class="dot fade" cx="' + q[0] + '" cy="' + q[1] + '" r="1.6" style="animation-delay:1.3s"/>'); });
+  ch.planets.concat(ch.points || []).forEach(function(p){ var q = P(p.lon, RA); s.push('<circle class="dot fade" cx="' + q[0] + '" cy="' + q[1] + '" r="1.6" style="animation-delay:1.3s"/>'); });
   s.push('</g>');
 
   // planets with collision spreading
   var MIN = 10;
-  var items = spread(ch.planets.map(function(p, k){ return { k: k, lon: p.lon }; }), MIN);
+  var all = ch.planets.concat(ch.points || []);
+  var items = spread(all.map(function(p, k){ return { k: k, lon: p.lon }; }), MIN);
   s.push('<g>');
   items.forEach(function(itm, n){
-    var p = ch.planets[itm.k];
+    var p = all[itm.k];
     var e = P(p.lon, R1), g0 = P(itm.pos, R1 - 14), gp = P(itm.pos, RP), dp = P(itm.pos, RP - 24), rp = P(itm.pos, RP - 38);
     var delay = (1 + n * 0.09).toFixed(2);
     s.push('<g class="rise" style="animation-delay:' + delay + 's">' +
       '<polyline class="ptr" fill="none" points="' + e.join(',') + ' ' + g0.join(',') + ' ' + P(itm.pos, RP + 15).join(',') + '"/>' +
-      '<text class="pg' + (p.key === 'Sun' || p.key === 'Moon' ? ' lum' : '') + '" x="' + gp[0] + '" y="' + gp[1] + '" text-anchor="middle" dominant-baseline="central"><title>' + p.name + ' em ' + SIGNS[signOf(p.lon)] + ' ' + fmtDeg(p.lon) + (p.retro ? ' (retrógrado)' : '') + '</title>' + p.glyph + VS + '</text>' +
+      '<text class="pg' + (p.key === 'Sun' || p.key === 'Moon' ? ' lum' : '') + (p.point ? ' pt' : '') + '" x="' + gp[0] + '" y="' + gp[1] + '" text-anchor="middle" dominant-baseline="central"><title>' + p.name + ' em ' + SIGNS[signOf(p.lon)] + ' ' + fmtDeg(p.lon) + (p.retro ? ' (retrógrado)' : '') + '</title>' + p.glyph + VS + '</text>' +
       '<text class="pd" x="' + dp[0] + '" y="' + dp[1] + '" text-anchor="middle" dominant-baseline="central">' + Math.floor(norm(p.lon) % 30) + '°</text>' +
       (p.retro ? '<text class="pd rx" x="' + rp[0] + '" y="' + rp[1] + '" text-anchor="middle" dominant-baseline="central">℞</text>' : '') +
       '</g>');
@@ -871,7 +904,7 @@ function render(ch, info){
   $('bday').hidden = !nearBirthday(info.mo, info.d, 45);
 
   // planet list
-  var rows = ch.planets.map(function(p){
+  var rows = ch.planets.concat(ch.points || []).map(function(p){
     return '<li><span class="g" aria-hidden="true">' + p.glyph + VS + '</span><span class="n">' + p.name + ' <small>em ' + SIGNS[signOf(p.lon)] + '</small></span><span class="v">' + fmtDeg(p.lon) + (p.retro ? '<span class="r" title="retrógrado">℞</span>' : '') + '</span></li>';
   });
   {
@@ -900,7 +933,13 @@ function render(ch, info){
     var rName = RULER_ART[rk] || rP.name;
     var lh = '<h3>O que a Leitura revela</h3><p class="sub">Para lá do signo</p>';
     lh += '<p class="ask">Tens Sol em ' + SIGNS[sun] + ', mas sabias que a casa do mapa astral onde ele se encontra fala da área da tua vida em que essas características se expressam? E sabes que tem relação com a casa onde está o regente do signo, neste caso <em>' + (rk === 'Sun' ? 'o próprio Sol' : rName) + '</em>?</p>';
-    lh += '<p class="close">Na Leitura, descubro estas casas e ligações no teu mapa e junto estes pontos numa história sobre onde colocar o teu foco agora. Recebes também perguntas e práticas para o teu dia-a-dia, para começares a trabalhar as crenças que reconheces em ti. E nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, transformamos as crenças que te prendem na liberdade de viveres o teu mapa por inteiro.</p>';
+    // Meio do Céu: signo, regente do Ascendente e planeta mais perto do MC
+    var mcS = signOf(ch.mc), ark = RULER[as], aName = RULER_ART[ark] || ch.planets.filter(function(p){ return p.key === ark; })[0].name;
+    var near = ch.planets.slice().sort(function(x, y){ return angDist(x.lon, ch.mc) - angDist(y.lon, ch.mc); })[0];
+    var mcTxt = 'O teu Meio do Céu está em ' + SIGNS[mcS] + '. É o ponto mais alto do céu no instante em que nasceste: a montanha que a tua alma veio subir. Não é só a tua profissão, é a presença que vieste acender no mundo, e chega com maturidade. Na Leitura vemos como o teu Ascendente em ' + SIGNS[as] + ', regido ' + (ark === 'Sun' ? 'pelo Sol' : ark === 'Moon' ? 'pela Lua' : 'por ' + aName) + ', te ajuda a chegar lá, o que ' + (RULER_ART[near.key] || near.name) + ', o planeta mais perto deste ponto, traz a todo o teu mapa, e o que te faz forçar o caminho antes do tempo.';
+    lh += '<p class="ask mc"><strong>O teu Meio do Céu</strong><br>' + mcTxt + '</p>';
+    lastSum.mc = mcTxt;
+    lh += '<p class="close">Na Leitura, olho para estas casas e ligações no teu mapa e mostro-te onde colocar o teu foco no momento que estás a viver. Recebes perguntas e práticas para o teu dia-a-dia, para começares a trabalhar as crenças que reconheces em ti. E nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, transformamos as crenças que te prendem, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
     lay.innerHTML = lh; lay.hidden = false;
   }
 
@@ -954,7 +993,7 @@ var lastInfo = null, lastSum = null;
 function unlocked(){ try { return localStorage.getItem('mapaDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
   $('locked').classList.toggle('on', on);
-  $('planets').hidden = on; // a tabela de planetas e graus só aparece depois do email
+  $('posBox').hidden = on; // as posições dos planetas e graus só aparecem depois do e-mail
   $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
   if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
 }
@@ -972,7 +1011,7 @@ $('gate').addEventListener('submit', function(e){
     b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
     b.append('fields[local_nascimento]', lastInfo.place.name);
-    if (lastSum){ b.append('fields[mapa_sol]', lastSum.sol); b.append('fields[mapa_lua]', lastSum.lua); b.append('fields[mapa_ascendente]', lastSum.asc); }
+    if (lastSum){ b.append('fields[mapa_sol]', lastSum.sol); b.append('fields[mapa_lua]', lastSum.lua); b.append('fields[mapa_ascendente]', lastSum.asc); if (lastSum.mc) b.append('fields[mapa_mc]', lastSum.mc); }
   }
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
