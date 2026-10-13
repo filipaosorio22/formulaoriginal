@@ -865,6 +865,7 @@ function render(ch, info){
   $('pillars2').innerHTML = pillar('Lua', '☽', 'Lua em ' + SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1) +
     pillar('Ascendente', 'AC', 'Ascendente em ' + SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
   lastInfo = info;
+  lastSum = { sol: 'Sol em ' + SIGNS[sun] + '. ' + TXT.sol[sun], lua: 'Lua em ' + SIGNS[moon] + '. ' + TXT.lua[moon], asc: 'Ascendente em ' + SIGNS[as] + '. ' + TXT.asc[as] };
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
   setLocked(!unlocked());
 
@@ -926,7 +927,7 @@ function pillar(kind, icon, title, zg, text, n){
 }
 // gate: MailerLite (grupo do mapa astral)
 var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201213025790723620/subscribe';
-var lastInfo = null;
+var lastInfo = null, lastSum = null;
 function unlocked(){ try { return localStorage.getItem('mapaDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
   $('locked').classList.toggle('on', on);
@@ -947,6 +948,7 @@ $('gate').addEventListener('submit', function(e){
     b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
     b.append('fields[local_nascimento]', lastInfo.place.name);
+    if (lastSum){ b.append('fields[mapa_sol]', lastSum.sol); b.append('fields[mapa_lua]', lastSum.lua); b.append('fields[mapa_ascendente]', lastSum.asc); }
   }
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
