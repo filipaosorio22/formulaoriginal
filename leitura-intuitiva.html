@@ -521,6 +521,14 @@
   .mapa-cta p { text-wrap:balance; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); margin:0 0 0.9rem; line-height:1.45; }
 
   /* pop-up de dados: mapa astral (MailerLite, grupo Mapa Astral) */
+  /* oferta: aviso no topo + bloco nas opções */
+  .gift-top { position:fixed; top:96px; left:50%; z-index:160; width:min(440px, calc(100% - 32px)); display:flex; align-items:center; gap:12px; padding:12px 14px 12px 16px; background:var(--card); border:0.5px solid var(--gold); border-radius:14px; box-shadow:0 8px 28px rgba(26,20,16,0.14); font-family:'DM Sans',sans-serif; font-size:14px; line-height:1.45; color:var(--ink); opacity:0; transform:translate(-50%,-14px); transition:opacity 0.45s, transform 0.45s; pointer-events:none; }
+  .gift-top.open { opacity:1; transform:translate(-50%,0); pointer-events:auto; }
+  .gift-top .gt-ic { font-size:22px; line-height:1; }
+  .gift-top p { margin:0; flex:1; }
+  .gift-top a { color:var(--wine); font-weight:500; white-space:nowrap; }
+  .gift-top button { background:none; border:0; color:var(--ink-soft); font-size:20px; line-height:1; cursor:pointer; padding:2px 4px; }
+  @media (min-width:1100px){ .gift-top { top:84px; } }
   .mpop { position:fixed; inset:0; z-index:300; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(26,20,16,0.45); backdrop-filter:blur(3px); }
   .mpop.open { display:flex; }
   .mpop-box { position:relative; width:100%; max-width:440px; max-height:calc(100vh - 32px); overflow:auto; background:var(--card); border:0.5px solid var(--gold); border-radius:18px; padding:1.8rem 1.5rem 1.4rem; box-shadow:0 18px 50px rgba(26,20,16,0.25); text-align:center; }
@@ -573,6 +581,12 @@
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
   <a href="ceen.html#convites-parcerias">💌 Convites e parcerias</a>
   <a href="#novidades">✉ Newsletter</a>
+</div>
+
+<div class="gift-top" id="giftTop" role="dialog" aria-label="Oferecer uma Leitura" hidden>
+  <span class="gt-ic" aria-hidden="true">🎁</span>
+  <p>Queres oferecer uma Leitura Intuitiva a alguém especial? <a href="#oferecer" id="giftTopLink">Ver como</a></p>
+  <button type="button" id="giftTopX" aria-label="Fechar">×</button>
 </div>
 
 <main class="page" lang="pt">
@@ -814,6 +828,7 @@
       <div class="tl-step"><span class="tl-dot">5</span><h3>Escutas e integras</h3><p>No teu tempo, quantas vezes quiseres.<br>Podes tomar notas das tuas reflexões e trazer exemplos concretos.</p></div>
       <div class="tl-step opt"><span class="tl-dot">6</span><h3>Sessão de aprofundamento</h3><p>Aprofundamos os temas, trabalhamos as crenças relevantes e exploramos formas de responder às situações reais.</p></div>
     </div>
+    <p style="text-align:center; margin-top:1.6rem; font-size:15px; color:var(--ink-soft);">🎁 Também podes oferecer a Leitura a alguém. <a class="link-soft" href="#oferecer">Vê como</a></p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -861,6 +876,15 @@
         <a class="btn" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20sess%C3%A3o%20de%20aprofundamento." target="_blank" rel="noopener" data-hd-href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20com%20Human%20Design%20%2B%20sess%C3%A3o%20de%20aprofundamento%20(297%E2%82%AC).">Quero a Leitura e a sessão</a>
       </div>
     </div>
+    <details class="extra-rs" id="oferecer">
+      <summary>🎁 Queres oferecer uma Leitura a alguém?</summary>
+      <div class="extra-offer">
+        <p class="eyebrow">Para oferecer</p>
+        <p class="extra-offer-name">Uma Leitura Intuitiva de presente</p>
+        <p class="extra-offer-text">Escolhes a Leitura Intuitiva (147€) ou a Leitura com sessão de aprofundamento (247€) e eu envio-te um cartão de oferta digital, para entregares a quem quiseres. Quando essa pessoa quiser começar, fala comigo, partilha os seus dados de nascimento e o tema que traz, e recebe a sua Leitura em áudio.</p>
+        <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20oferecer%20uma%20Leitura%20Intuitiva%20a%20algu%C3%A9m.%20Como%20fazemos%3F" target="_blank" rel="noopener">Quero oferecer uma Leitura</a>
+      </div>
+    </details>
     <details class="extra-rs">
       <summary>Fazes anos em breve? Há uma opção com Revolução Solar</summary>
       <div class="extra-offer">
@@ -887,6 +911,7 @@
       <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura base é gravada e não inclui um encontro ao vivo. Se escolheres Leitura Intuitiva + sessão de aprofundamento, tens também uma sessão individual comigo depois de ouvires a Leitura, para aprofundarmos os temas a partir das tuas reflexões e de exemplos reais.</p></div></details>
       <details><summary>O que acontece na sessão de aprofundamento?</summary><div class="ans"><p>Partimos daquilo que reconheceste na Leitura e do que queres trazer da tua vida. Exploramos padrões, possíveis crenças e formas de responder às situações. Quando fizer sentido, integro práticas de trabalho de crenças e ajudamos a dar forma a próximos passos que possas experimentar.</p></div></details>
       <details><summary>Tenho de preparar alguma coisa para a sessão?</summary><div class="ans"><p>Podes tomar notas e trazer perguntas ou exemplos, mas não é obrigatório. Basta partilhares aquilo que ficou contigo ou que desejas aprofundar.</p></div></details>
+      <details><summary>Posso oferecer uma Leitura a alguém?</summary><div class="ans"><p>Sim. Envio-te um cartão de oferta digital para entregares, e a pessoa fala comigo quando quiser começar. <a href="#oferecer">Ver como oferecer</a>.</p></div></details>
       <details><summary>Quanto tempo demora a chegar?</summary><div class="ans"><p>Até 14 dias úteis após a confirmação do pagamento.</p></div></details>
       <details><summary>A história é a Leitura?</summary><div class="ans"><p>Não. A Leitura do teu mapa, orientada pelo que partilhas, é a entrega principal. A história simbólica é um complemento que reúne algumas das dinâmicas exploradas em imagens e personagens às quais podes regressar. Não é uma biografia nem uma previsão.</p></div></details>
       <details><summary>Tenho de concordar com tudo o que ouço?</summary><div class="ans"><p>Não. Podes reconhecer-te, discordar ou dar outro sentido a uma imagem. A tua experiência é essencial para perceber o que faz sentido. Não precisas de te adaptar à interpretação.</p></div></details>
@@ -1293,6 +1318,27 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
     chk.closest('.hd-add').classList.toggle('on', chk.checked);
   });
 });
+</script>
+<script>
+(function(){
+  function get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  var box = document.getElementById('giftTop'); if (!box) return;
+  function openGift(){ var d = document.getElementById('oferecer'); if (d) d.open = true; }
+  function close(){ box.classList.remove('open'); set('giftTopFechado', String(Date.now())); setTimeout(function(){ box.hidden = true; }, 500); }
+  document.getElementById('giftTopX').addEventListener('click', close);
+  document.getElementById('giftTopLink').addEventListener('click', function(){ openGift(); close(); });
+  document.querySelectorAll('a[href="#oferecer"]').forEach(function(a){ a.addEventListener('click', openGift); });
+  if (location.hash === '#oferecer') openGift();
+  var closedAt = +get('giftTopFechado') || 0;
+  if (Date.now() - closedAt < 14 * 864e5) return;
+  setTimeout(function tryShow(){
+    var cb = document.getElementById('cookieBanner'), mp = document.getElementById('mpop');
+    if ((cb && cb.style.display !== 'none') || (mp && !mp.hidden)) { setTimeout(tryShow, 3000); return; }
+    box.hidden = false; requestAnimationFrame(function(){ box.classList.add('open'); });
+    setTimeout(function(){ if (box.classList.contains('open')) { box.classList.remove('open'); setTimeout(function(){ box.hidden = true; }, 500); } }, 15000);
+  }, 6000);
+})();
 </script>
 </body>
 </html>
