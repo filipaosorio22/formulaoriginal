@@ -525,7 +525,7 @@
   /* popup convites: em baixo à esquerda no computador; no telemóvel ocupa o lugar do popup principal */
   .popup.popup-conv { right:auto; left:1.4rem; bottom:4.6rem; width:300px; padding:1.9rem 1rem 1rem; }
   .popup-conv-img { display:block; width:100%; height:auto; border-radius:14px; box-shadow:0 1px 6px rgba(26,20,16,0.12); margin:0 0 0.9rem; }
-  @media (max-width:600px){ .popup.popup-conv { left:0.8rem; right:0.8rem; bottom:1.4rem; width:auto; max-width:none; margin:0; } }
+  @media (max-width:600px){ .popup.popup-conv .popup-eyebrow { display:block; } .popup.popup-conv { left:0.8rem; right:0.8rem; bottom:1.4rem; width:auto; max-width:none; margin:0; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1156,9 +1156,9 @@
 
 <div class="popup popup-conv" id="popupConv" aria-label="Convite para comunidades">
   <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Fechar">×</button>
-  <p class="popup-eyebrow" style="text-align:center; margin:0 0 0.7rem; padding:0 1rem; text-transform:none; letter-spacing:0.03em; font-size:13px; line-height:1.5;">Depois de um encontro com uma comunidade</p>
+  <p class="popup-eyebrow" style="text-align:center; margin:0 0 0.7rem; padding:0 1rem; text-transform:none; letter-spacing:0.03em; font-size:13px; line-height:1.5;">Depois da minha apresentação numa comunidade maravilhosa</p>
   <img class="popup-conv-img" src="feedback-comunidade-msg.jpg" alt="Mensagem: «Minha querida, daqui a pouco, com tempo, envio um podcast de agradecimento profundo. Obrigada mesmo mesmo! Foi fenomenal. Obrigada pela tua partilha e entrega incrível.»" width="620" height="289" loading="lazy">
-  <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">Convida-me para a tua comunidade</a>
+  <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">Vamos cocriar na tua comunidade ou empresa?</a>
 </div>
 <div class="popup" id="popup">
   <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
