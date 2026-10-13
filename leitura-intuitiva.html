@@ -522,6 +522,14 @@
   .mpop .mp-err:empty { display:none; }
   .mpop .btn { display:block; width:100%; margin-top:1rem; }
   .mpop .mp-no { background:none; border:0; font:inherit; font-size:13px; color:var(--muted); text-decoration:underline; text-underline-offset:3px; cursor:pointer; margin-top:0.7rem; }
+  .mpop .mp-opt { text-transform:none; letter-spacing:0; }
+  .mpop .mp-combo { position:relative; }
+  .mpop .mp-combo ul { position:absolute; z-index:5; left:0; right:0; top:calc(100% + 4px); margin:0; padding:6px; list-style:none; background:var(--card); border:1px solid var(--gline); border-radius:12px; box-shadow:0 12px 30px rgba(26,20,16,0.18); max-height:240px; overflow:auto; }
+  .mpop .mp-combo ul[hidden] { display:none; }
+  .mpop .mp-combo li { padding:9px 10px; border-radius:8px; cursor:pointer; font-size:15px; color:var(--ink); }
+  .mpop .mp-combo li small { color:var(--muted); font-size:12.5px; margin-left:4px; }
+  .mpop .mp-combo li.active { background:var(--tint2); }
+  .mpop .mp-combo li.none { cursor:default; color:var(--muted); font-size:13.5px; }
   @media (max-width:480px){ .mpop .mp-grid { grid-template-columns:1fr; } .mpop-box { padding:1.5rem 1.1rem 1.1rem; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
@@ -537,6 +545,7 @@
     <a href="ceen.html">CEEN • Negócio</a>
     <a href="leitura-intuitiva.html" class="active">Leitura Intuitiva</a>
     <a href="ceen.html#convites-parcerias">💌 Convites e parcerias</a>
+    <a href="#novidades">✉ Novidades</a>
   </div>
   <a class="nav-wa" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
   <button type="button" class="size-btn" aria-label="Ver em maior" title="Ver em maior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/><path class="pl" d="M10.5 7.5v6M7.5 10.5h6"/><path class="mi" d="M7.5 10.5h6"/></svg></button>
@@ -547,6 +556,7 @@
   <a href="ceen.html">CEEN • Negócio</a>
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
   <a href="ceen.html#convites-parcerias">💌 Convites e parcerias</a>
+  <a href="#novidades">✉ Novidades</a>
 </div>
 
 <main class="page" lang="pt">
@@ -892,17 +902,18 @@
 <div class="mpop" id="mpop" role="dialog" aria-modal="true" aria-labelledby="mpTitle" hidden>
   <div class="mpop-box">
     <button class="mpop-x" type="button" aria-label="Fechar" data-mp-close>×</button>
-    <form id="mpForm" novalidate>
+    <form id="mpForm" novalidate autocomplete="off">
       <h3 id="mpTitle">Queres ver o teu mapa astral?</h3>
-      <p class="mp-sub">Deixa os teus dados de nascimento e desenho-te o mapa com o teu Sol, a tua Lua e o teu Ascendente.</p>
+      <p class="mp-sub">Diz-me quando e onde nasceste e desenho-te o mapa, com o teu Sol, a tua Lua e o teu Ascendente.</p>
       <div class="mp-grid">
-        <div><label class="mp-l" for="mpNome">Nome</label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name"></div>
-        <div><label class="mp-l" for="mpEmail">Email</label><input type="email" id="mpEmail" maxlength="120" autocomplete="email" inputmode="email"></div>
+        <div class="mp-full"><label class="mp-l" for="mpNome">Nome <span class="mp-opt">(opcional)</span></label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name"></div>
         <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="date" id="mpData" min="1900-01-01" max="2100-12-31"></div>
         <div><label class="mp-l" for="mpHora">Hora de nascimento</label><input type="time" id="mpHora"></div>
-        <div class="mp-full"><label class="mp-l" for="mpLocal">Local de nascimento</label><input type="text" id="mpLocal" maxlength="80" placeholder="Cidade, ex.: Coimbra"></div>
+        <div class="mp-full mp-combo"><label class="mp-l" for="mpLocal">Local de nascimento</label>
+          <input type="text" id="mpLocal" maxlength="80" placeholder="Escreve a cidade, ex.: Coimbra" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="mpList">
+          <ul id="mpList" role="listbox" hidden></ul>
+        </div>
       </div>
-      <label class="mp-chk"><input type="checkbox" id="mpOk"><span>Aceito receber emails da Filipa Osório e que guarde o meu nome, email e dados de nascimento para isso. Posso sair quando quiser.</span></label>
       <p class="mp-err" id="mpErr" role="alert"></p>
       <button class="btn" type="submit" id="mpBtn">✦ Ver o meu mapa</button>
       <button class="mp-no" type="button" data-mp-close>Agora não</button>
@@ -1168,15 +1179,16 @@
   attachCookieHandlers();
 })();
 </script>
+<script src="cidades.js" defer></script>
 <script>
 (function(){
-  var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201213025790723620/subscribe';
   var pop = document.getElementById('mpop'), shown = false;
+  function $(id){ return document.getElementById(id); }
   function get(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v){ try { localStorage.setItem(k, v); } catch (e) {} }
-  // não mostrar a quem já deixou os dados ou fechou há menos de 14 dias
+  // não mostrar a quem fechou há menos de 14 dias
   var closedAt = +get('mpopFechado') || 0;
-  if (get('mapaDesbloqueado') === '1' || Date.now() - closedAt < 14 * 864e5) return;
+  if (Date.now() - closedAt < 14 * 864e5) return;
   function open(){
     if (shown) return;
     var cb = document.getElementById('cookieBanner');
@@ -1184,13 +1196,10 @@
     shown = true;
     var buy = document.getElementById('popup'); if (buy) buy.classList.remove('visible');
     pop.hidden = false; pop.classList.add('open');
-    setTimeout(function(){ document.getElementById('mpNome').focus({ preventScroll: true }); }, 50);
+    setTimeout(function(){ $('mpData').focus({ preventScroll: true }); }, 50);
     window.removeEventListener('scroll', onScroll);
   }
-  function close(){
-    pop.classList.remove('open'); pop.hidden = true;
-    set('mpopFechado', String(Date.now()));
-  }
+  function close(){ pop.classList.remove('open'); pop.hidden = true; set('mpopFechado', String(Date.now())); }
   function onScroll(){
     var h = document.documentElement;
     if ((h.scrollTop + innerHeight) / h.scrollHeight > 0.5) open();
@@ -1200,32 +1209,54 @@
   Array.prototype.forEach.call(pop.querySelectorAll('[data-mp-close]'), function(b){ b.addEventListener('click', close); });
   pop.addEventListener('click', function(e){ if (e.target === pop) close(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && pop.classList.contains('open')) close(); });
-  document.getElementById('mpForm').addEventListener('submit', function(e){
+
+  // cidade: lista que aparece enquanto se escreve
+  var inp = $('mpLocal'), list = $('mpList'), cities = null, shownC = [], act = -1, chosen = null;
+  function fold(t){ return t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
+  function esc(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function load(){
+    if (cities || !window.FO_CITIES) return cities;
+    cities = window.FO_CITIES.map(function(r){ var p = r.split('|'); var c = { name: p[0], country: p[1], lat: p[2], lon: p[3], tz: p[4] }; c.f = fold(c.name); c.fl = fold(c.name + ', ' + c.country); return c; });
+    return cities;
+  }
+  function closeL(){ list.hidden = true; inp.setAttribute('aria-expanded', 'false'); }
+  function paint(){ Array.prototype.forEach.call(list.children, function(li, k){ li.classList.toggle('active', k === act); }); }
+  function render(){
+    var q = fold(inp.value), all = load();
+    if (!q || !all){ closeL(); return; }
+    var a = [], b = [];
+    all.forEach(function(c){ if (c.f.indexOf(q) === 0 || c.fl.indexOf(q) === 0) a.push(c); else if (c.fl.indexOf(q) > -1) b.push(c); });
+    shownC = a.concat(b).slice(0, 7); act = shownC.length ? 0 : -1;
+    list.innerHTML = shownC.length ? shownC.map(function(c, k){ return '<li role="option" data-i="' + k + '"' + (k === act ? ' class="active"' : '') + '>' + esc(c.name) + '<small>' + esc(c.country) + '</small></li>'; }).join('')
+      : '<li class="none">Não encontro esta cidade aqui. Escreve uma cidade próxima, ou indica as coordenadas na página do mapa.</li>';
+    list.hidden = false; inp.setAttribute('aria-expanded', 'true');
+  }
+  function pick(k){ var c = shownC[k]; if (!c) return; chosen = c; inp.value = c.name + ', ' + c.country; closeL(); $('mpErr').textContent = ''; }
+  inp.addEventListener('input', function(){ chosen = null; render(); });
+  inp.addEventListener('focus', function(){ if (inp.value && !chosen) render(); });
+  inp.addEventListener('blur', function(){ setTimeout(closeL, 120); });
+  inp.addEventListener('keydown', function(e){
+    if (list.hidden || !shownC.length) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp'){ e.preventDefault(); act = (act + (e.key === 'ArrowDown' ? 1 : -1) + shownC.length) % shownC.length; paint(); }
+    else if (e.key === 'Enter'){ e.preventDefault(); pick(act); }
+    else if (e.key === 'Escape'){ closeL(); }
+  });
+  list.addEventListener('mousedown', function(e){ var li = e.target.closest('li[data-i]'); if (!li) return; e.preventDefault(); pick(+li.getAttribute('data-i')); });
+
+  $('mpForm').addEventListener('submit', function(e){
     e.preventDefault();
-    var $ = function(id){ return document.getElementById(id); }, err = $('mpErr');
-    var nome = $('mpNome').value.trim(), email = $('mpEmail').value.trim(), data = $('mpData').value, hora = $('mpHora').value, local = $('mpLocal').value.trim();
-    if (!nome){ err.textContent = 'Escreve o teu nome.'; $('mpNome').focus(); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu email.'; $('mpEmail').focus(); return; }
+    var err = $('mpErr'), data = $('mpData').value, hora = $('mpHora').value;
     if (!data){ err.textContent = 'Falta a data de nascimento.'; $('mpData').focus(); return; }
     if (!hora){ err.textContent = 'Falta a hora de nascimento (está na tua certidão de nascimento).'; $('mpHora').focus(); return; }
-    if (!local){ err.textContent = 'Falta o local de nascimento.'; $('mpLocal').focus(); return; }
-    if (!$('mpOk').checked){ err.textContent = 'Para continuares, aceita receber os emails.'; return; }
-    err.textContent = '';
-    var b = new URLSearchParams();
-    b.append('fields[name]', nome); b.append('fields[email]', email);
-    b.append('fields[data_nascimento]', data); b.append('fields[hora_nascimento]', hora); b.append('fields[local_nascimento]', local);
-    b.append('ml-submit', '1'); b.append('anticsrf', 'true');
-    var btn = $('mpBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
-    fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(function(){
-      set('mapaDesbloqueado', '1');
-      var q = new URLSearchParams({ nome: nome, data: data, hora: hora, local: local });
-      location.href = 'mapa-astral.html?' + q.toString();
-    }, function(){
-      btn.disabled = false; btn.textContent = '✦ Ver o meu mapa';
-      err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
-    });
+    if (!chosen && inp.value.trim()){ render(); if (shownC.length === 1) pick(0); }
+    if (!chosen){ err.textContent = 'Escolhe a tua cidade na lista.'; inp.focus(); render(); return; }
+    var q = new URLSearchParams({ nome: $('mpNome').value.trim(), data: data, hora: hora, local: chosen.name, pais: chosen.country, lat: chosen.lat, lon: chosen.lon, tz: chosen.tz });
+    set('mpopFechado', String(Date.now()));
+    location.href = 'mapa-astral.html?' + q.toString() + '#mapa';
   });
 })();
 </script>
+<script>window.FO_NL_URL = '';</script>
+<script src="newsletter.js" defer></script>
 </body>
 </html>

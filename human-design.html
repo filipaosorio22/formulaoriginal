@@ -207,6 +207,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
 .gate .sub{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 18px}
 .gate .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;text-align:left}
 .gate .chk{display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5;margin:14px 0 0}
+.gate .chk a{color:var(--deep)}
 .gate .chk input{width:18px;height:18px;min-height:0;margin:2px 0 0;flex:none;accent-color:#9a7e52}
 @media (max-width:480px){.gate .grid{grid-template-columns:1fr}.gate{margin-top:-120px}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -289,7 +290,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
             <div><label class="lbl" for="gEmail">Email</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
           </div>
-          <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber emails da Filipa Osório e que guarde o meu nome, email e dados de nascimento para isso. Posso sair quando quiser.</span></label>
+          <label class="chk"><input type="checkbox" id="gOk" required><span>Quero receber os emails da Filipa Osório sobre astrologia, Human Design e autoconhecimento, e aceito que guarde o meu nome, email e dados de nascimento para isso. <em>Posso cancelar a subscrição quando quiser.</em> <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
           <p class="err" id="gErr" role="alert"></p>
           <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver o meu desenho completo</button></div>
         </form>

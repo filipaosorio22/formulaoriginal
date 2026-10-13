@@ -204,6 +204,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
 .gate .sub{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 18px}
 .gate .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;text-align:left}
 .gate .chk{display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5;margin:14px 0 0}
+.gate .chk a{color:var(--deep)}
 .gate .chk input{width:18px;height:18px;min-height:0;margin:2px 0 0;flex:none;accent-color:#9a7e52}
 .gate .ok{font-family:var(--serif);font-size:19px;color:var(--deep);margin:6px 0 0}
 @media (max-width:480px){.gate .grid{grid-template-columns:1fr}.gate{margin-top:-120px}}
@@ -290,7 +291,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
           <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" name="fields[name]" maxlength="60" autocomplete="given-name" required></div>
           <div><label class="lbl" for="gEmail">Email</label><input type="email" id="gEmail" name="fields[email]" maxlength="120" autocomplete="email" inputmode="email" required></div>
         </div>
-        <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber emails da Filipa Osório e que guarde o meu nome, email e dados de nascimento para isso. Posso sair quando quiser.</span></label>
+        <label class="chk"><input type="checkbox" id="gOk" required><span>Quero receber os emails da Filipa Osório sobre astrologia, Human Design e autoconhecimento, e aceito que guarde o meu nome, email e dados de nascimento para isso. <em>Posso cancelar a subscrição quando quiser.</em> <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
         <p class="err" id="gErr" role="alert"></p>
         <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver o meu mapa completo</button></div>
       </form>
@@ -690,17 +691,22 @@ form.addEventListener('submit', function(e){
   var chart = computeChart(A, conv.utc, place.lat, place.lon);
   render(chart, { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, place: place, utc: conv.utc, off: conv.offsetMin });
 });
-// dados vindos do pop-up da página da Leitura
+// dados vindos do pop-up da página da Leitura: desenha logo o mapa
 (function(){
   try {
     var q = new URLSearchParams(location.search);
     if (q.get('nome')) $('nome').value = q.get('nome').slice(0, 60);
     if (/^\d{4}-\d{2}-\d{2}$/.test(q.get('data') || '')) $('data').value = q.get('data');
     if (/^\d{2}:\d{2}$/.test(q.get('hora') || '')) $('hora').value = q.get('hora');
-    if (q.get('local')){
-      inLocal.value = q.get('local').slice(0, 80);
+    var nm = (q.get('local') || '').slice(0, 80), lat = parseFloat(q.get('lat')), lon = parseFloat(q.get('lon')), tz = q.get('tz') || '';
+    if (nm && isFinite(lat) && isFinite(lon) && TZS.indexOf(tz) > -1){
+      var pais = (q.get('pais') || '').slice(0, 60);
+      chosen = { name: nm, country: pais, lat: lat, lon: lon, tz: tz, label: nm + (pais ? ', ' + pais : '') };
+      inLocal.value = chosen.label;
+      if ($('data').value && $('hora').value) setTimeout(function(){ form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true })); }, 60);
+    } else if (nm){
+      inLocal.value = nm;
       inLocal.dispatchEvent(new Event('input', { bubbles: true }));
-      setTimeout(function(){ inLocal.focus(); }, 300);
     }
   } catch (e) {}
 })();
