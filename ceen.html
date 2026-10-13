@@ -1471,19 +1471,20 @@
   };
   (function(){
     var pc = document.getElementById('popupConv'), sec = document.getElementById('convites-parcerias'); if (!pc || !sec) return;
-    var shown = false; try { shown = sessionStorage.getItem('fo_conv_popup') === '1'; } catch(e){}
-    if (shown) return;
+    var done = false;
+    function show(){
+      if (done) return;
+      var r = sec.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) return; // já está na secção
+      done = true; window.removeEventListener('scroll', check);
+      if (window.innerWidth <= 600) { var p = document.getElementById('popup'); if (p) p.classList.remove('visible'); }
+      pc.classList.add('visible');
+    }
     function check(){
-      var doc = document.documentElement, past = (window.scrollY + window.innerHeight) / doc.scrollHeight;
-      var r = sec.getBoundingClientRect(), inSec = r.top < window.innerHeight && r.bottom > 0;
-      if (past > 0.45 && !inSec) {
-        window.removeEventListener('scroll', check);
-        if (window.innerWidth <= 600) { var p = document.getElementById('popup'); if (p) p.classList.remove('visible'); }
-        pc.classList.add('visible');
-        try { sessionStorage.setItem('fo_conv_popup', '1'); } catch(e){}
-      }
+      var doc = document.documentElement;
+      if ((window.scrollY + window.innerHeight) / doc.scrollHeight > 0.3) show();
     }
     window.addEventListener('scroll', check, { passive:true });
+    setTimeout(show, 25000); // aparece também ao fim de 25 s, mesmo sem descer
   })();
   // popup de vagas, igual ao do site
   setTimeout(function(){
