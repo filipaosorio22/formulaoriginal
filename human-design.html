@@ -198,6 +198,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
 }
 /* gate: Autoridade, Perfil e Centros depois de nome + email */
 .locked{position:relative}
+.lk .facts{margin:0 0 22px;text-align:left}
 .locked.on .lk{filter:blur(7px);opacity:.55;pointer-events:none;user-select:none;max-height:260px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
 .locked:not(.on) .gate{display:none}
 .gate{position:relative;margin:-150px auto 0;max-width:30em;text-align:center;padding:28px 22px 22px;border-radius:20px;border:1px solid var(--line);
@@ -270,8 +271,6 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
     </div>
     <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro aberto</span><span><i style="background:var(--deep)"></i>consciente</span><span><i style="background:var(--gold)"></i>inconsciente</span></p>
 
-    <ul class="facts" id="facts"></ul>
-
     <details class="more">
       <summary>Ver as ativações planetárias</summary>
       <div class="acts" id="acts"></div>
@@ -282,10 +281,10 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
       <p class="sub">Tipo · Autoridade · Perfil · Centros</p>
       <div id="pillars"></div>
       <div class="locked" id="locked">
-        <div class="lk" id="lk"><div id="pillars2"></div></div>
+        <div class="lk" id="lk"><ul class="facts" id="facts"></ul><div id="pillars2"></div></div>
         <form class="gate" id="gate" novalidate>
-          <h3>Descobre a tua Autoridade, o teu Perfil e os teus Centros</h3>
-          <p class="sub">Deixa o teu nome e email para veres o resto do teu desenho.</p>
+          <h3>Descobre o teu desenho completo</h3>
+          <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, o teu ambiente, a tua digestão e o teu sentido mais forte. Deixa o teu nome e email para os veres.</p>
           <div class="grid">
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
             <div><label class="lbl" for="gEmail">Email</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
@@ -820,9 +819,11 @@ function render(hd, info){
   }
   // facts
   var nDef = CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).length;
+  var V = variables(hd);
   var facts = [
-    ['Tipo', T.name], ['Estratégia', T.strategy], ['Assinatura', T.signature], ['Autoridade', Au.name],
-    ['Perfil', hd.profile], ['Definição', DEF_NAMES[Math.min(hd.definition, 4)]]
+    ['Tipo', T.name], ['Estratégia', T.strategy], ['Autoridade', Au.name], ['Perfil', hd.profile],
+    ['Assinatura', T.signature], ['Tema do não-ser', NOTSELF[hd.type]], ['Definição', DEF_NAMES[Math.min(hd.definition, 4)]],
+    ['Ambiente', V.ambiente], ['Digestão', V.digestao], ['Sentido mais forte', V.sentido]
   ];
   $('facts').innerHTML = facts.map(function(f){ return '<li><span class="k">' + f[0] + '</span><span class="v">' + esc(f[1]) + '</span></li>'; }).join('');
   // activations
@@ -889,20 +890,9 @@ $('gate').addEventListener('submit', function(e){
   b.append('fields[name]', nome);
   b.append('fields[email]', email);
   if (lastInfo && lastHD){
-    var hd = lastHD, T = TXT.types[hd.type], v = variables(hd);
     b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
     b.append('fields[local_nascimento]', lastInfo.place.name);
-    b.append('fields[hd_tipo]', T.name);
-    b.append('fields[hd_estrategia]', T.strategy);
-    b.append('fields[hd_autoridade]', TXT.auth[hd.authority].name);
-    b.append('fields[hd_perfil]', hd.profile);
-    b.append('fields[hd_assinatura]', T.signature);
-    b.append('fields[hd_tema_nao_ser]', NOTSELF[hd.type]);
-    b.append('fields[hd_definicao]', DEF_NAMES[Math.min(hd.definition, 4)]);
-    b.append('fields[hd_ambiente]', v.ambiente);
-    b.append('fields[hd_digestao]', v.digestao);
-    b.append('fields[hd_sentido]', v.sentido);
   }
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
