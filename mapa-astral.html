@@ -4,8 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
-<title>O teu mapa natal · Leitura Intuitiva</title>
-<meta name="description" content="Desenha o teu mapa natal: Sol, Lua, Ascendente e planetas, calculados no teu browser.">
+<title>Mapa Astral Grátis Online · Calcula o teu Mapa Natal | Filipa Osório</title>
+<meta name="description" content="Calcula o teu mapa astral grátis: Sol, Lua, Ascendente, planetas e casas do teu mapa natal, com textos de astrologia em português de Portugal.">
+<link rel="canonical" href="https://filipaosorio.com/mapa-astral.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Mapa Astral Grátis Online · Calcula o teu Mapa Natal | Filipa Osório">
+<meta property="og:description" content="Calcula o teu mapa astral grátis: Sol, Lua, Ascendente, planetas e casas do teu mapa natal, com textos de astrologia em português de Portugal.">
+<meta property="og:url" content="https://filipaosorio.com/mapa-astral.html">
+<meta property="og:image" content="https://filipaosorio.com/novahero.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Mapa Astral Grátis", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any", "inLanguage": "pt-PT", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Filipa Osório", "url": "https://filipaosorio.com/"}}</script>
 <script>
   try { var t = localStorage.getItem('fo_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
@@ -56,7 +64,7 @@ form .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
 .full{grid-column:1/-1}
 label.lbl{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .opt{text-transform:none;letter-spacing:0;font-weight:400;color:var(--soft)}
-input[type=text],input[type=date],input[type=time],input[type=number],select{
+input[type=text],input[type=email],input[type=date],input[type=time],input[type=number],select{
   width:100%;font:inherit;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--field);
   border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px;outline:none;appearance:none;-webkit-appearance:none;
   transition:border-color .2s,box-shadow .2s}
@@ -186,6 +194,19 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
   .pillar .ic{width:42px;height:42px;font-size:19px}
   .btn{width:100%;padding:14px 18px}
 }
+/* gate: Lua, Ascendente e camadas depois de nome + email */
+.locked{position:relative}
+.locked.on .lk{filter:blur(7px);opacity:.55;pointer-events:none;user-select:none;max-height:260px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.locked:not(.on) .gate{display:none}
+.gate{position:relative;margin:-150px auto 0;max-width:30em;text-align:center;padding:28px 22px 22px;border-radius:20px;border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.18),transparent 70%),var(--card);box-shadow:var(--shadow)}
+.gate h3{font-family:var(--serif);font-weight:300;font-size:clamp(22px,5vw,27px);margin:0 0 6px;line-height:1.25}
+.gate .sub{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 18px}
+.gate .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;text-align:left}
+.gate .chk{display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5;margin:14px 0 0}
+.gate .chk input{width:18px;height:18px;min-height:0;margin:2px 0 0;flex:none;accent-color:#9a7e52}
+.gate .ok{font-family:var(--serif);font-size:19px;color:var(--deep);margin:6px 0 0}
+@media (max-width:480px){.gate .grid{grid-template-columns:1fr}.gate{margin-top:-120px}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
@@ -239,7 +260,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
     </div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
-    <p class="privacy"><b>✦</b> Os teus dados ficam só no teu browser:<br>o mapa é calculado aqui e não é enviado para lado nenhum.</p>
+    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Só guardo os teus dados se mos deixares mais abaixo.</p>
   </form>
 
   <section id="result" hidden aria-live="polite">
@@ -257,7 +278,23 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
       <div id="pillars"></div>
     </div>
 
-    <div class="layers" id="layers" hidden></div>
+    <div class="locked" id="locked">
+      <div class="lk" id="lk">
+        <div id="pillars2"></div>
+        <div class="layers" id="layers" hidden></div>
+      </div>
+      <form class="gate" id="gate" novalidate>
+        <h3>Descobre a tua Lua e o teu Ascendente</h3>
+        <p class="sub">Deixa o teu nome e email para veres o resto do teu mapa.</p>
+        <div class="grid">
+          <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" name="fields[name]" maxlength="60" autocomplete="given-name" required></div>
+          <div><label class="lbl" for="gEmail">Email</label><input type="email" id="gEmail" name="fields[email]" maxlength="120" autocomplete="email" inputmode="email" required></div>
+        </div>
+        <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber emails da Filipa Osório e que guarde o meu nome, email e dados de nascimento para isso. Posso sair quando quiser.</span></label>
+        <p class="err" id="gErr" role="alert"></p>
+        <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver o meu mapa completo</button></div>
+      </form>
+    </div>
 
     <div class="cta">
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
@@ -653,6 +690,20 @@ form.addEventListener('submit', function(e){
   var chart = computeChart(A, conv.utc, place.lat, place.lon);
   render(chart, { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, place: place, utc: conv.utc, off: conv.offsetMin });
 });
+// dados vindos do pop-up da página da Leitura
+(function(){
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.get('nome')) $('nome').value = q.get('nome').slice(0, 60);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(q.get('data') || '')) $('data').value = q.get('data');
+    if (/^\d{2}:\d{2}$/.test(q.get('hora') || '')) $('hora').value = q.get('hora');
+    if (q.get('local')){
+      inLocal.value = q.get('local').slice(0, 80);
+      inLocal.dispatchEvent(new Event('input', { bubbles: true }));
+      setTimeout(function(){ inLocal.focus(); }, 300);
+    }
+  } catch (e) {}
+})();
 $('editBtn').addEventListener('click', function(){ form.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('data').focus({ preventScroll: true }); });
 
 // ---------- wheel ----------
@@ -803,10 +854,13 @@ function render(ch, info){
   // pillars
   var sun = signOf(ch.planets[0].lon), moon = signOf(ch.planets[1].lon);
   var html = pillar('Sol', '☉', 'Sol em ' + SIGNS[sun], SIGN_GLYPHS[sun], TXT.sol[sun], 0);
-  html += pillar('Lua', '☽', 'Lua em ' + SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1);
-  var as = signOf(ch.asc);
-  html += pillar('Ascendente', 'AC', 'Ascendente em ' + SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
   $('pillars').innerHTML = html;
+  var as = signOf(ch.asc);
+  $('pillars2').innerHTML = pillar('Lua', '☽', 'Lua em ' + SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1) +
+    pillar('Ascendente', 'AC', 'Ascendente em ' + SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
+  lastInfo = info;
+  if (info.name && !$('gNome').value) $('gNome').value = info.name;
+  setLocked(!unlocked());
 
   // layers: house of the Sun + ruler of the Sun's sign
   var lay = $('layers');
@@ -864,6 +918,48 @@ function pillar(kind, icon, title, zg, text, n){
   var icStyle = icon === 'AC' ? ' style="font-family:var(--sans);font-size:13px;letter-spacing:.06em"' : '';
   return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true"' + icStyle + '>' + icon + (icon === 'AC' ? '' : VS) + '</div><div><p class="k">' + kind + '</p><h4>' + title + (zg ? '<span class="zs" aria-hidden="true">' + zg + VS + '</span>' : '') + '</h4><p>' + text + '</p></div></div>';
 }
+// gate: MailerLite (grupo do mapa astral)
+var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201213025790723620/subscribe';
+var lastInfo = null;
+function unlocked(){ try { return localStorage.getItem('mapaDesbloqueado') === '1'; } catch (e) { return false; } }
+function setLocked(on){
+  $('locked').classList.toggle('on', on);
+  $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
+  if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
+}
+$('gate').addEventListener('submit', function(e){
+  e.preventDefault();
+  var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
+  if (!nome){ err.textContent = 'Escreve o teu nome.'; $('gNome').focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu email.'; $('gEmail').focus(); return; }
+  if (!$('gOk').checked){ err.textContent = 'Para continuares, aceita receber os emails.'; return; }
+  err.textContent = '';
+  var b = new URLSearchParams();
+  b.append('fields[name]', nome);
+  b.append('fields[email]', email);
+  if (lastInfo){
+    b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
+    b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
+    b.append('fields[local_nascimento]', lastInfo.place.name);
+  }
+  b.append('ml-submit', '1'); b.append('anticsrf', 'true');
+  var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
+  function done(){
+    try { localStorage.setItem('mapaDesbloqueado', '1'); } catch (x) {}
+    setLocked(false);
+    var g = $('gate');
+    g.style.display = 'none';
+    var ok = document.createElement('p'); ok.className = 'gate-ok'; ok.setAttribute('role', 'status');
+    ok.style.cssText = 'text-align:center;font-family:var(--sans);font-size:14px;color:var(--soft);margin:18px auto 0;max-width:30em';
+    ok.textContent = 'Obrigada, ' + nome.split(' ')[0] + '! Espreita o teu email para confirmares a subscrição.';
+    $('locked').appendChild(ok);
+    $('pillars2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(done, function(){
+    btn.disabled = false; btn.textContent = '✦ Ver o meu mapa completo';
+    err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
+  });
+});
 function pad(n){ return (n < 10 ? '0' : '') + n; }
 function fmtOff(o){
   var sg = o >= 0 ? '+' : '−', ao = Math.abs(Math.round(o));

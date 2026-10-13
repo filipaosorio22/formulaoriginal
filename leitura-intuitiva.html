@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+<script>/* visitas da Filipa: ?eu=filipa desliga o Analytics neste browser, ?eu=visita volta a ligar */try{var q=location.search;if(/[?&]eu=filipa\b/.test(q))localStorage.setItem("fo_owner","1");if(/[?&]eu=visita\b/.test(q))localStorage.removeItem("fo_owner");if(localStorage.getItem("fo_owner")==="1")window["ga-disable-G-5CX792T8H9"]=true;}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Leitura Intuitiva | Filipa Osório</title>
-<meta name="description" content="Leitura Intuitiva: uma leitura em áudio do teu mapa astral, com um olhar intuitivo e arquetípico sobre o momento que estás a viver e o tema que trazes.">
+<title>Leitura de Mapa Astral Online em Áudio · Leitura Intuitiva | Filipa Osório</title>
+<meta name="description" content="Leitura do teu mapa astral em áudio, com astrologia, Human Design e intuição: um olhar sobre o momento que estás a viver, com sugestões práticas para o dia-a-dia. Consulta de astrologia online em português.">
+<link rel="canonical" href="https://filipaosorio.com/leitura-intuitiva.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Leitura de Mapa Astral Online em Áudio · Leitura Intuitiva | Filipa Osório">
+<meta property="og:description" content="Leitura do teu mapa astral em áudio, com astrologia, Human Design e intuição: um olhar sobre o momento que estás a viver, com sugestões práticas para o dia-a-dia. Consulta de astrologia online em português.">
+<meta property="og:url" content="https://filipaosorio.com/leitura-intuitiva.html">
+<meta property="og:image" content="https://filipaosorio.com/novahero.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Leitura Intuitiva", "serviceType": "Leitura de mapa astral", "provider": {"@type": "Person", "name": "Filipa Osório", "url": "https://filipaosorio.com/"}, "areaServed": "PT", "availableLanguage": ["pt-PT", "en"], "description": "Leitura do mapa astral em áudio, com astrologia, Human Design e intuição.", "offers": [{"@type": "Offer", "name": "Leitura Intuitiva", "price": "147", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Leitura + sessão de aprofundamento", "price": "247", "priceCurrency": "EUR"}]}</script>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -494,6 +503,26 @@
   .mapa-cta { margin:1.8rem 0 0.4rem; padding:1.3rem 1.4rem; border:0.5px solid var(--gold); border-radius:14px; text-align:center; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); }
   html[data-theme="dark"] .mapa-cta { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
   .mapa-cta p { text-wrap:balance; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); margin:0 0 0.9rem; line-height:1.45; }
+
+  /* pop-up de dados: mapa astral (MailerLite, grupo Mapa Astral) */
+  .mpop { position:fixed; inset:0; z-index:300; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(26,20,16,0.45); backdrop-filter:blur(3px); }
+  .mpop.open { display:flex; }
+  .mpop-box { position:relative; width:100%; max-width:440px; max-height:calc(100vh - 32px); overflow:auto; background:var(--card); border:0.5px solid var(--gold); border-radius:18px; padding:1.8rem 1.5rem 1.4rem; box-shadow:0 18px 50px rgba(26,20,16,0.25); text-align:center; }
+  .mpop-x { position:absolute; top:0.5rem; right:0.8rem; background:none; border:0; font-size:22px; line-height:1; color:var(--gold-deep); cursor:pointer; padding:6px; }
+  .mpop h3 { font-family:'Cormorant Garamond','Spectral',serif; font-weight:400; font-size:clamp(23px,5.5vw,28px); line-height:1.2; color:var(--ink); margin:0 0 0.4rem; }
+  .mpop .mp-sub { font-style:italic; color:var(--ink-soft); font-size:14.5px; line-height:1.6; margin:0 0 1rem; }
+  .mpop .mp-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px 12px; text-align:left; }
+  .mpop .mp-full { grid-column:1 / -1; }
+  .mpop label.mp-l { display:block; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .mpop input[type=text], .mpop input[type=email], .mpop input[type=date], .mpop input[type=time] { width:100%; box-sizing:border-box; font:inherit; font-size:16px; line-height:1.3; color:var(--ink); background:var(--bg); border:1px solid var(--gline); border-radius:10px; padding:10px 11px; min-height:44px; }
+  .mpop input:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,108,0.18); }
+  .mpop .mp-chk { display:flex; gap:9px; align-items:flex-start; text-align:left; font-size:12.5px; line-height:1.5; color:var(--ink-soft); margin:0.9rem 0 0; }
+  .mpop .mp-chk input { width:17px; height:17px; margin:2px 0 0; flex:none; accent-color:#9a7e52; }
+  .mpop .mp-err { color:var(--wine); font-size:13.5px; margin:0.6rem 0 0; }
+  .mpop .mp-err:empty { display:none; }
+  .mpop .btn { display:block; width:100%; margin-top:1rem; }
+  .mpop .mp-no { background:none; border:0; font:inherit; font-size:13px; color:var(--muted); text-decoration:underline; text-underline-offset:3px; cursor:pointer; margin-top:0.7rem; }
+  @media (max-width:480px){ .mpop .mp-grid { grid-template-columns:1fr; } .mpop-box { padding:1.5rem 1.1rem 1.1rem; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -860,6 +889,27 @@
 <button class="freq" id="freqToggle" type="button">🔊 Entrar na frequência</button>
 <audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
 
+<div class="mpop" id="mpop" role="dialog" aria-modal="true" aria-labelledby="mpTitle" hidden>
+  <div class="mpop-box">
+    <button class="mpop-x" type="button" aria-label="Fechar" data-mp-close>×</button>
+    <form id="mpForm" novalidate>
+      <h3 id="mpTitle">Queres ver o teu mapa astral?</h3>
+      <p class="mp-sub">Deixa os teus dados de nascimento e desenho-te o mapa com o teu Sol, a tua Lua e o teu Ascendente.</p>
+      <div class="mp-grid">
+        <div><label class="mp-l" for="mpNome">Nome</label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name"></div>
+        <div><label class="mp-l" for="mpEmail">Email</label><input type="email" id="mpEmail" maxlength="120" autocomplete="email" inputmode="email"></div>
+        <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="date" id="mpData" min="1900-01-01" max="2100-12-31"></div>
+        <div><label class="mp-l" for="mpHora">Hora de nascimento</label><input type="time" id="mpHora"></div>
+        <div class="mp-full"><label class="mp-l" for="mpLocal">Local de nascimento</label><input type="text" id="mpLocal" maxlength="80" placeholder="Cidade, ex.: Coimbra"></div>
+      </div>
+      <label class="mp-chk"><input type="checkbox" id="mpOk"><span>Aceito receber emails da Filipa Osório e que guarde o meu nome, email e dados de nascimento para isso. Posso sair quando quiser.</span></label>
+      <p class="mp-err" id="mpErr" role="alert"></p>
+      <button class="btn" type="submit" id="mpBtn">✦ Ver o meu mapa</button>
+      <button class="mp-no" type="button" data-mp-close>Agora não</button>
+    </form>
+  </div>
+</div>
+
 <div class="popup" id="popup">
   <button class="popup-close" type="button" aria-label="Fechar" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
   <p class="popup-title">Será esta a Leitura que procuravas?</p>
@@ -1116,6 +1166,65 @@
     });
   }
   attachCookieHandlers();
+})();
+</script>
+<script>
+(function(){
+  var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201213025790723620/subscribe';
+  var pop = document.getElementById('mpop'), shown = false;
+  function get(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v){ try { localStorage.setItem(k, v); } catch (e) {} }
+  // não mostrar a quem já deixou os dados ou fechou há menos de 14 dias
+  var closedAt = +get('mpopFechado') || 0;
+  if (get('mapaDesbloqueado') === '1' || Date.now() - closedAt < 14 * 864e5) return;
+  function open(){
+    if (shown) return;
+    var cb = document.getElementById('cookieBanner');
+    if (cb && cb.style.display === 'block'){ setTimeout(open, 4000); return; }
+    shown = true;
+    var buy = document.getElementById('popup'); if (buy) buy.classList.remove('visible');
+    pop.hidden = false; pop.classList.add('open');
+    setTimeout(function(){ document.getElementById('mpNome').focus({ preventScroll: true }); }, 50);
+    window.removeEventListener('scroll', onScroll);
+  }
+  function close(){
+    pop.classList.remove('open'); pop.hidden = true;
+    set('mpopFechado', String(Date.now()));
+  }
+  function onScroll(){
+    var h = document.documentElement;
+    if ((h.scrollTop + innerHeight) / h.scrollHeight > 0.5) open();
+  }
+  setTimeout(open, 30000);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  Array.prototype.forEach.call(pop.querySelectorAll('[data-mp-close]'), function(b){ b.addEventListener('click', close); });
+  pop.addEventListener('click', function(e){ if (e.target === pop) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && pop.classList.contains('open')) close(); });
+  document.getElementById('mpForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var $ = function(id){ return document.getElementById(id); }, err = $('mpErr');
+    var nome = $('mpNome').value.trim(), email = $('mpEmail').value.trim(), data = $('mpData').value, hora = $('mpHora').value, local = $('mpLocal').value.trim();
+    if (!nome){ err.textContent = 'Escreve o teu nome.'; $('mpNome').focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu email.'; $('mpEmail').focus(); return; }
+    if (!data){ err.textContent = 'Falta a data de nascimento.'; $('mpData').focus(); return; }
+    if (!hora){ err.textContent = 'Falta a hora de nascimento (está na tua certidão de nascimento).'; $('mpHora').focus(); return; }
+    if (!local){ err.textContent = 'Falta o local de nascimento.'; $('mpLocal').focus(); return; }
+    if (!$('mpOk').checked){ err.textContent = 'Para continuares, aceita receber os emails.'; return; }
+    err.textContent = '';
+    var b = new URLSearchParams();
+    b.append('fields[name]', nome); b.append('fields[email]', email);
+    b.append('fields[data_nascimento]', data); b.append('fields[hora_nascimento]', hora); b.append('fields[local_nascimento]', local);
+    b.append('ml-submit', '1'); b.append('anticsrf', 'true');
+    var btn = $('mpBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
+    fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(function(){
+      set('mapaDesbloqueado', '1');
+      var q = new URLSearchParams({ nome: nome, data: data, hora: hora, local: local });
+      location.href = 'mapa-astral.html?' + q.toString();
+    }, function(){
+      btn.disabled = false; btn.textContent = '✦ Ver o meu mapa';
+      err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
+    });
+  });
 })();
 </script>
 </body>

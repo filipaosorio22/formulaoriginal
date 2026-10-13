@@ -70,7 +70,7 @@ form .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
 .full{grid-column:1/-1}
 label.lbl{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .opt{text-transform:none;letter-spacing:0;font-weight:400;color:var(--soft)}
-input[type=text],input[type=date],input[type=time],select{
+input[type=text],input[type=email],input[type=date],input[type=time],select{
   width:100%;font:inherit;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--field);
   border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px;outline:none;appearance:none;-webkit-appearance:none;
   transition:border-color .2s,box-shadow .2s}
@@ -196,6 +196,18 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
   .btn{width:100%;padding:14px 18px}
   .body .gn{font-size:10px}
 }
+/* gate: Autoridade, Perfil e Centros depois de nome + email */
+.locked{position:relative}
+.locked.on .lk{filter:blur(7px);opacity:.55;pointer-events:none;user-select:none;max-height:260px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.locked:not(.on) .gate{display:none}
+.gate{position:relative;margin:-150px auto 0;max-width:30em;text-align:center;padding:28px 22px 22px;border-radius:20px;border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.18),transparent 70%),var(--card);box-shadow:var(--shadow)}
+.gate h3{font-family:var(--serif);font-weight:300;font-size:clamp(22px,5vw,27px);margin:0 0 6px;line-height:1.25}
+.gate .sub{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 18px}
+.gate .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;text-align:left}
+.gate .chk{display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5;margin:14px 0 0}
+.gate .chk input{width:18px;height:18px;min-height:0;margin:2px 0 0;flex:none;accent-color:#9a7e52}
+@media (max-width:480px){.gate .grid{grid-template-columns:1fr}.gate{margin-top:-120px}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
@@ -239,7 +251,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
     </div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu Human Design</button></div>
-    <p class="privacy"><b>✦</b> Os teus dados ficam só no teu browser:<br>o desenho é calculado aqui e não é enviado para lado nenhum.</p>
+    <p class="privacy"><b>✦</b> O desenho é calculado aqui, no teu browser.<br>Só guardo os teus dados se mos deixares mais abaixo.</p>
   </form>
 
   <section class="intro" id="intro">
@@ -269,6 +281,20 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
       <h3>O teu desenho em quatro chaves</h3>
       <p class="sub">Tipo · Autoridade · Perfil · Centros</p>
       <div id="pillars"></div>
+      <div class="locked" id="locked">
+        <div class="lk" id="lk"><div id="pillars2"></div></div>
+        <form class="gate" id="gate" novalidate>
+          <h3>Descobre a tua Autoridade, o teu Perfil e os teus Centros</h3>
+          <p class="sub">Deixa o teu nome e email para veres o resto do teu desenho.</p>
+          <div class="grid">
+            <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
+            <div><label class="lbl" for="gEmail">Email</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
+          </div>
+          <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber emails da Filipa Osório e que guarde o meu nome, email e dados de nascimento para isso. Posso sair quando quiser.</span></label>
+          <p class="err" id="gErr" role="alert"></p>
+          <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver o meu desenho completo</button></div>
+        </form>
+      </div>
     </div>
 
     <div class="cta">
@@ -812,14 +838,89 @@ function render(hd, info){
   var html = '';
   html += pillar('Tipo', ICONS.type, T.name, T.nick, T.text, 0,
     '<dl><dt>Estratégia</dt><dd>' + T.strategy + '</dd><dt>Assinatura</dt><dd>' + T.signature + '</dd></dl>');
+  $('pillars').innerHTML = html; html = '';
   html += pillar('Autoridade', ICONS.auth, 'Autoridade ' + Au.name, '', [Au.line], 1);
   html += pillar('Perfil', '<span>' + hd.profile + '</span>', 'Perfil ' + hd.profile, P[0], [P[1]], 2);
   html += pillar('Centros', ICONS.centres, nDef + ' de 9 centros definidos', '',
     [defNames.length ? 'Definidos em ti: ' + joinPt(defNames) + '. ' + TXT.centres.defined : 'Nenhum centro definido: tudo em ti é abertura. ' + TXT.centres.defined, TXT.centres.open], 3);
-  $('pillars').innerHTML = html;
+  $('pillars2').innerHTML = html;
+  lastHD = hd; lastInfo = info;
+  if (info.name && !$('gNome').value) $('gNome').value = info.name;
+  setLocked(!unlocked());
   var res = $('result'); res.hidden = false;
   requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
 }
+// ---------- variáveis (cor e tom das ativações de Design) ----------
+var NOTSELF = { mg: 'Frustração e raiva', generator: 'Frustração', manifestor: 'Raiva', projector: 'Amargura', reflector: 'Desilusão' };
+var DIGEST = [['Apetite','consecutivo','alternado'],['Gosto','aberto','fechado'],['Sede','quente','fria'],['Toque','calmo','nervoso'],['Som','alto','baixo'],['Luz','direta','indireta']];
+var ENVIRON = [['Cavernas','seletivas','misturadas'],['Mercados','internos','externos'],['Cozinhas','húmidas','secas'],['Montanhas','ativas','passivas'],['Vales','estreitos','largos'],['Margens','naturais','artificiais']];
+var SENSES = ['Olfato','Paladar','Visão exterior','Visão interior','Sentir','Tato'];
+function colorTone(lon){
+  var x = hdNorm(lon - 302) % 0.9375, c = Math.min(5, Math.floor(x / 0.15625));
+  var t = Math.min(5, Math.floor((x - c * 0.15625) / (0.15625 / 6)));
+  return { color: c, tone: t };
+}
+function variables(hd){
+  var sun = colorTone(hd.des[0].lon), node = colorTone(hd.des[2].lon);
+  var dg = DIGEST[sun.color], en = ENVIRON[node.color];
+  return {
+    digestao: dg[0] + ' (' + dg[sun.tone < 3 ? 1 : 2] + ')',
+    ambiente: en[0] + ' (' + en[node.tone < 3 ? 1 : 2] + ')',
+    sentido: SENSES[sun.tone]
+  };
+}
+// ---------- gate: MailerLite (grupo Human Design) ----------
+var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201214057192096946/subscribe';
+var lastHD = null, lastInfo = null;
+function unlocked(){ try { return localStorage.getItem('hdDesbloqueado') === '1'; } catch (e) { return false; } }
+function setLocked(on){
+  $('locked').classList.toggle('on', on);
+  $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
+  if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
+}
+$('gate').addEventListener('submit', function(e){
+  e.preventDefault();
+  var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
+  if (!nome){ err.textContent = 'Escreve o teu nome.'; $('gNome').focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu email.'; $('gEmail').focus(); return; }
+  if (!$('gOk').checked){ err.textContent = 'Para continuares, aceita receber os emails.'; return; }
+  err.textContent = '';
+  var b = new URLSearchParams();
+  b.append('fields[name]', nome);
+  b.append('fields[email]', email);
+  if (lastInfo && lastHD){
+    var hd = lastHD, T = TXT.types[hd.type], v = variables(hd);
+    b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
+    b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
+    b.append('fields[local_nascimento]', lastInfo.place.name);
+    b.append('fields[hd_tipo]', T.name);
+    b.append('fields[hd_estrategia]', T.strategy);
+    b.append('fields[hd_autoridade]', TXT.auth[hd.authority].name);
+    b.append('fields[hd_perfil]', hd.profile);
+    b.append('fields[hd_assinatura]', T.signature);
+    b.append('fields[hd_tema_nao_ser]', NOTSELF[hd.type]);
+    b.append('fields[hd_definicao]', DEF_NAMES[Math.min(hd.definition, 4)]);
+    b.append('fields[hd_ambiente]', v.ambiente);
+    b.append('fields[hd_digestao]', v.digestao);
+    b.append('fields[hd_sentido]', v.sentido);
+  }
+  b.append('ml-submit', '1'); b.append('anticsrf', 'true');
+  var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
+  function done(){
+    try { localStorage.setItem('hdDesbloqueado', '1'); } catch (x) {}
+    setLocked(false);
+    $('gate').style.display = 'none';
+    var ok = document.createElement('p'); ok.setAttribute('role', 'status');
+    ok.style.cssText = 'text-align:center;font-family:var(--sans);font-size:14px;color:var(--soft);margin:18px auto 0;max-width:30em';
+    ok.textContent = 'Obrigada, ' + nome.split(' ')[0] + '! O teu desenho completo já está aqui em cima.';
+    $('locked').appendChild(ok);
+    $('pillars2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(done, function(){
+    btn.disabled = false; btn.textContent = '✦ Ver o meu desenho completo';
+    err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
+  });
+});
 function joinPt(a){ return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' e ' + a[a.length - 1]; }
 function pad(n){ return (n < 10 ? '0' : '') + n; }
 function describe(hd){
