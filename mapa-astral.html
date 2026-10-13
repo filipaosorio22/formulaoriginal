@@ -712,7 +712,7 @@ function render(ch, info){
     ch.cusps.forEach(function(c, k){
       if (k % 3 !== 0){ s.push(line(c, RA, RH, 'cusp')); s.push(line(c, RH, R1, 'cusp', ' stroke-opacity=".2"')); }
       var hp = P(c + norm(ch.cusps[(k + 1) % 12] - c) / 2, (RA + RH) / 2); // number in the middle of the (unequal) house
-      s.push('<text class="hn" x="' + hp[0] + '" y="' + hp[1] + '" text-anchor="middle" dominant-baseline="central">' + (k + 1) + '</text>');
+      // números das casas não aparecem: a leitura das casas fica para a Leitura
     });
     // axes ASC–DSC, MC–IC
     s.push(line(ch.asc, RA, R0 + 10, 'axis'));
@@ -814,13 +814,9 @@ function render(ch, info){
     var sunP = ch.planets[0], hS = houseOf(ch, sunP.lon);
     var rk = RULER[sun], rP = ch.planets.filter(function(p){ return p.key === rk; })[0], hR = houseOf(ch, rP.lon);
     var rName = RULER_ART[rk] || rP.name;
-    var lh = '<h3>Camadas do teu Sol</h3><p class="sub">Casa · Regente</p>';
+    var lh = '<h3>O que a Leitura revela</h3><p class="sub">Para lá do signo</p>';
     lh += '<p class="ask">Tens Sol em ' + SIGNS[sun] + ', mas sabias que a casa do mapa astral onde ele se encontra fala da área da tua vida em que essas características se expressam? E sabes que tem relação com a casa onde está o regente do signo, neste caso <em>' + (rk === 'Sun' ? 'o próprio Sol' : rName) + '</em>?</p>';
-    lh += layer('☉', 'O teu Sol', 'Sol na Casa ' + hS, TXT.casa[hS - 1][1], 0, TXT.casa[hS - 1][0]);
-    var rText = rk === 'Sun' ? 'Em Leão, o Sol é o regente do próprio signo: tudo converge para esta casa.'
-      : (hR === hS ? 'O regente está na mesma casa que o teu Sol: este tema pede a tua atenção a dobrar.' : TXT.casa[hR - 1][1]);
-    lh += layer(rP.glyph, 'Regente de ' + SIGNS[sun], (rk === 'Sun' ? 'O Sol rege o próprio signo' : rP.name + ' na Casa ' + hR), rText, 1, rk === 'Sun' ? '' : TXT.casa[hR - 1][0]);
-    lh += '<p class="close">Na Leitura Intuitiva, junto estes pontos numa história sobre onde colocar o teu foco agora. E nas sessões de aprofundamento vamos mais longe, com as outras ferramentas da minha metodologia.</p>';
+    lh += '<p class="close">Na Leitura, descubro estas casas e ligações no teu mapa e junto estes pontos numa história sobre onde colocar o teu foco agora. E nas sessões de aprofundamento vamos mais longe, com as outras ferramentas da minha metodologia.</p>';
     lay.innerHTML = lh; lay.hidden = false;
   }
 
