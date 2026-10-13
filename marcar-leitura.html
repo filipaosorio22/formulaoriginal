@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcar a Leitura Intuitiva | Filipa Osório</title>
+<meta name="description" content="Formulário para marcares ou ofereceres a tua Leitura Intuitiva com a Filipa Osório.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+<script>
+  try { var t = localStorage.getItem('fo_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef; --ink:#2b241c; --muted:#6f6355; --soft:#8c7f6e;
+  --gold:#c9a86c; --deep:#9a7e52; --wine:#7a2535;
+  --card:#fffdf9; --field:#fffefb; --line:rgba(154,126,82,.30); --line-soft:rgba(154,126,82,.16);
+  --shadow:0 1px 2px rgba(80,60,30,.05),0 12px 40px -18px rgba(120,90,40,.28);
+  --serif:'Spectral','Lora',Georgia,serif; --body:'Lora',Georgia,serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --bg:#1d1915; --ink:#efe6d8; --muted:#bfb19c; --soft:#a39581;
+  --gold:#c9a86c; --deep:#d6b984; --wine:#d48a96;
+  --card:#25201a; --field:#211c17; --line:rgba(201,168,108,.30); --line-soft:rgba(201,168,108,.15);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:660px;margin:0 auto;padding:28px 16px 64px}
+a{color:var(--deep)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:var(--sans);font-size:14px}
+.top a{text-decoration:none}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--deep);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:16px;display:grid;place-items:center}
+header{text-align:center;margin:18px 0 28px}
+h1{font-family:'Cormorant Garamond',var(--serif);font-weight:700;color:var(--wine);font-size:clamp(34px,8vw,46px);line-height:1.1;margin:0 0 12px}
+.lead{color:var(--muted);margin:0 auto;max-width:31em;font-size:16.5px}
+.card{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;box-shadow:var(--shadow);padding:24px 20px;margin-bottom:18px}
+.card h2{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--wine);font-size:24px;margin:0 0 4px}
+.card .sub{font-size:15px;color:var(--muted);margin:0 0 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+.full{grid-column:1/-1}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+label.lbl{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.opt{text-transform:none;letter-spacing:0;font-weight:400;color:var(--soft)}
+input[type=text],input[type=email],input[type=date],input[type=time],textarea{
+  width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--field);
+  border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px;outline:none;appearance:none;-webkit-appearance:none}
+textarea{min-height:110px;resize:vertical;line-height:1.5}
+input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,108,.18)}
+.choice{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-family:var(--sans);font-size:15px;line-height:1.45}
+.choice:has(input:checked){border-color:var(--gold);background:rgba(201,168,108,.10)}
+.choice input{margin-top:3px;accent-color:#a8854f}
+.choice b{font-weight:600}
+.choice .pr{margin-left:auto;font-weight:600;white-space:nowrap}
+.hint{font-family:var(--sans);font-size:13.5px;color:var(--soft);margin:6px 0 0}
+.note{font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 16px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:4px}
+.chk input{margin-top:3px;accent-color:#a8854f}
+.err{color:var(--wine);font-family:var(--sans);font-size:14px;margin:12px 0 0;text-align:center}
+.err:empty{display:none}
+.actions{text-align:center;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:.04em;
+  color:#2b1f10;background:linear-gradient(135deg,#e2c891 0%,#c9a86c 45%,#a8854f 100%);border:0;border-radius:999px;padding:14px 30px;min-height:50px;cursor:pointer;text-decoration:none;
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 10px 24px -12px rgba(154,126,82,.75)}
+.total{font-family:var(--sans);font-size:15px;color:var(--muted);text-align:center;margin:0 0 12px}
+.total b{color:var(--ink);font-size:18px}
+[hidden]{display:none !important}
+.done{text-align:center}
+.done p{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="leitura-intuitiva.html">← Leitura Intuitiva</a><button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar modo claro/escuro">☾</button></div>
+  <header>
+    <h1 id="t1">Marcar a minha Leitura</h1>
+    <p class="lead" id="lead">Conta-me um pouco sobre ti e sobre o que estás a viver. As tuas respostas ajudam-me a afinar a Leitura ao que procuras, e a minha intuição faz o resto.</p>
+  </header>
+
+  <form id="f" novalidate>
+    <div class="card">
+      <h2>A tua escolha</h2>
+      <p class="sub" id="opSub">Escolhe a Leitura que queres.</p>
+      <div id="ops">
+        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa em áudio, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
+        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="247"><span><b>Leitura + sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">247€</span></label>
+        <label class="choice" data-op="rs"><input type="radio" name="op" value="rs" data-p="247"><span><b>Leitura + Revolução Solar</b><br>Para quando fazes anos: os temas do teu novo ciclo anual.</span><span class="pr">247€</span></label>
+      </div>
+      <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +50€</b><br>Junto à Leitura o tipo, a estratégia, a autoridade e o perfil. <a href="human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
+    </div>
+
+    <div class="card" id="giftCard" hidden>
+      <h2>Como queres entregar?</h2>
+      <p class="sub">Em qualquer dos casos, só preciso dos dados de nascimento de quem recebe.</p>
+      <label class="choice"><input type="radio" name="entrega" value="cartao" checked><span><b>Cartão de oferta</b><br>Recebes um cartão digital para entregares. A pessoa fala comigo quando quiser começar.</span></label>
+      <label class="choice"><input type="radio" name="entrega" value="ja"><span><b>Leitura pronta para oferecer</b><br>Dás-me já os dados de nascimento da pessoa e recebes a Leitura em áudio para lhe ofereceres.</span></label>
+    </div>
+
+    <div class="card">
+      <h2 id="whoT">Os teus dados</h2>
+      <div class="grid">
+        <div><label class="lbl" for="nome">Nome</label><input type="text" id="nome" maxlength="60" autocomplete="name"></div>
+        <div><label class="lbl" for="email">E-mail</label><input type="email" id="email" maxlength="120" autocomplete="email" inputmode="email"></div>
+      </div>
+    </div>
+
+    <div class="card" id="birthCard">
+      <h2 id="birthT">Os teus dados de nascimento</h2>
+      <p class="sub" id="birthSub">A hora é importante para o Ascendente e para as casas do mapa.</p>
+      <div class="grid">
+        <div class="full" id="recWrap" hidden><label class="lbl" for="rnome">Nome de quem recebe</label><input type="text" id="rnome" maxlength="60"></div>
+        <div><label class="lbl" for="data">Data</label><input type="date" id="data"></div>
+        <div><label class="lbl" for="hora">Hora</label><input type="time" id="hora"></div>
+        <div class="full"><label class="lbl" for="local">Local <span class="opt">(cidade e país)</span></label><input type="text" id="local" maxlength="80" placeholder="ex.: Lisboa, Portugal"></div>
+      </div>
+      <p class="hint">Não sabes a hora? Podes pedi-la na tua certidão de nascimento, ou fala comigo antes de avançar.</p>
+    </div>
+
+    <div class="card">
+      <h2 id="lifeT">O teu momento</h2>
+      <p class="note" id="lifeNote">Não precisas de escrever tudo perfeito. Escreve como te sair.</p>
+      <div class="grid">
+        <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento?</label><textarea id="q1" maxlength="1200"></textarea></div>
+        <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora?</label><textarea id="q2" maxlength="1200"></textarea></div>
+        <div class="full"><label class="lbl" for="q3" id="q3l">Há algum tema ou pergunta que queiras trazer? <span class="opt">(opcional)</span></label><textarea id="q3" maxlength="800"></textarea></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="total">Total: <b id="tot">147€</b></p>
+      <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura Intuitiva</a>.</span></label>
+      <p class="err" id="err" role="alert"></p>
+      <div class="actions"><button class="btn" type="submit" id="go">Enviar pelo WhatsApp</button></div>
+      <p class="hint" style="text-align:center">As tuas respostas abrem numa mensagem de WhatsApp para mim. Depois envio-te os dados de pagamento.</p>
+    </div>
+  </form>
+
+  <div class="card done" id="done" hidden>
+    <h2>Obrigada!</h2>
+    <p>Se o WhatsApp não abriu, <a id="waAgain" href="#" target="_blank" rel="noopener">carrega aqui</a>. Respondo-te com os dados de pagamento e, depois de confirmado, recebes a Leitura em até 14 dias úteis.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var VS = '︎';
+  function setTheme(t){ document.documentElement.setAttribute('data-theme', t); try { localStorage.setItem('fo_theme', t); } catch(e){} $('themeBtn').textContent = t === 'dark' ? '☀' + VS : '☾'; }
+  $('themeBtn').addEventListener('click', function(){ setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); });
+  $('themeBtn').textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' + VS : '☾';
+
+  var q = new URLSearchParams(location.search);
+  var gift = q.get('oferta') === '1';
+  var op = q.get('op');
+  if (op) { var r = document.querySelector('input[name=op][value="' + op + '"]'); if (r) r.checked = true; }
+  if (q.get('hd') === '1') $('hd').checked = true;
+
+  if (gift) {
+    document.title = 'Oferecer uma Leitura Intuitiva | Filipa Osório';
+    $('t1').textContent = 'Oferecer uma Leitura';
+    $('lead').textContent = 'Que presente maravilhoso! Só preciso dos dados de nascimento de quem recebe. Se souberes um pouco do momento que essa pessoa está a viver, conta-me: ajuda-me a afinar a Leitura.';
+    $('opSub').textContent = 'A oferta é a Leitura Intuitiva, com ou sem Human Design.';
+    document.querySelector('[data-op="sessao"]').hidden = true;
+    document.querySelector('[data-op="rs"]').hidden = true;
+    document.querySelector('input[value="leitura"]').checked = true;
+    $('giftCard').hidden = false;
+    $('recWrap').hidden = false;
+    $('birthT').textContent = 'Dados de nascimento de quem recebe';
+    $('lifeT').textContent = 'O momento de quem recebe';
+    $('lifeNote').textContent = 'Opcional. Escreve só o que souberes e quiseres partilhar.';
+    $('q1l').innerHTML = 'O que sabes do momento que essa pessoa está a viver? <span class="opt">(opcional)</span>';
+    $('q2l').innerHTML = 'O que acreditas que ela deseja? <span class="opt">(opcional)</span>';
+    $('q3l').innerHTML = 'Há alguma mensagem tua que queiras que eu saiba? <span class="opt">(opcional)</span>';
+    $('hdLink').textContent = 'Ver o mapa de Human Design';
+  }
+
+  function entrega(){ var e = document.querySelector('input[name=entrega]:checked'); return e ? e.value : ''; }
+  function birthNeeded(){ return !gift || entrega() === 'ja'; }
+  function syncGift(){
+    if (!gift) return;
+    $('birthSub').textContent = birthNeeded()
+      ? 'Para preparar a Leitura já, preciso da data, da hora e do local de nascimento de quem recebe.'
+      : 'Opcional: se já os souberes, deixa aqui. Se não, a pessoa partilha-os comigo quando quiser começar.';
+  }
+  document.querySelectorAll('input[name=entrega]').forEach(function(x){ x.addEventListener('change', syncGift); });
+  syncGift();
+
+  function sel(){ return document.querySelector('input[name=op]:checked'); }
+  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked ? 50 : 0); }
+  function updTotal(){ $('tot').textContent = total() + '€'; }
+  document.querySelectorAll('input[name=op]').forEach(function(x){ x.addEventListener('change', updTotal); });
+  $('hd').addEventListener('change', updTotal);
+  updTotal();
+
+  var NAMES = { leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
+  function fmtDate(d){ var p = d.split('-'); return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : d; }
+
+  $('f').addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = $('err'); err.textContent = '';
+    var nome = $('nome').value.trim(), email = $('email').value.trim();
+    if (!nome){ err.textContent = 'Escreve o teu nome.'; $('nome').focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('email').focus(); return; }
+    var data = $('data').value, hora = $('hora').value, local = $('local').value.trim();
+    if (birthNeeded() && (!data || !hora || !local)){ err.textContent = 'Preciso da data, da hora e do local de nascimento.'; $('data').focus(); return; }
+    if (gift && entrega() === 'ja' && !$('rnome').value.trim()){ err.textContent = 'Escreve o nome de quem recebe.'; $('rnome').focus(); return; }
+    if (!gift && !$('q1').value.trim()){ err.textContent = 'Conta-me um pouco do que estás a viver.'; $('q1').focus(); return; }
+    if (!$('ok').checked){ err.textContent = 'Para continuares, aceita os termos.'; return; }
+
+    var L = [];
+    L.push(gift ? 'Olá, Filipa! Quero oferecer uma Leitura Intuitiva.' : 'Olá, Filipa! Quero marcar a minha Leitura.');
+    L.push('');
+    L.push('Escolha: ' + NAMES[sel().value] + ($('hd').checked ? ' + Human Design' : '') + ' (' + total() + '€)');
+    if (gift) L.push('Entrega: ' + (entrega() === 'ja' ? 'Leitura pronta para oferecer' : 'cartão de oferta'));
+    L.push('Nome: ' + nome);
+    L.push('E-mail: ' + email);
+    if (gift && $('rnome').value.trim()) L.push('Para: ' + $('rnome').value.trim());
+    if (data || hora || local) L.push('Nascimento: ' + [data ? fmtDate(data) : '', hora, local].filter(Boolean).join(', '));
+    var qs = [['q1', $('q1l').textContent], ['q2', $('q2l').textContent], ['q3', $('q3l').textContent]];
+    qs.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1].replace(/\s*\(opcional\)\s*$/, '')); L.push(v); } });
+    var url = 'https://wa.me/351939479755?text=' + encodeURIComponent(L.join('\n'));
+    $('waAgain').href = url;
+    window.open(url, '_blank', 'noopener');
+    $('f').hidden = true; $('done').hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
