@@ -500,6 +500,12 @@
   details.extra-rs > summary::before { content:''; width:0; height:0; border-style:solid; border-color:transparent transparent transparent var(--gold-deep); border-width:5px 0 5px 8px; transition:transform 0.25s ease; }
   details.extra-rs[open] > summary::before { transform:rotate(90deg); }
   details.extra-rs .extra-offer { margin-top:0.9rem; }
+  .hd-add { display:flex; gap:10px; align-items:flex-start; margin:-0.3rem 0 1.1rem; padding:0.75rem 0.85rem; border:0.5px dashed var(--gold); border-radius:12px; background:var(--tint); cursor:pointer; font-size:14px; line-height:1.5; color:var(--ink-soft); text-align:left; }
+  .hd-add input { width:18px; height:18px; margin:2px 0 0; flex:none; accent-color:#9a7e52; cursor:pointer; }
+  .hd-add strong { color:var(--ink); font-weight:500; }
+  .hd-add.on { border-style:solid; background:var(--tint2); }
+  .mapa-cta .btn + .btn { margin-left:0.6rem; }
+  @media (max-width:520px){ .mapa-cta .btn + .btn { margin:0.6rem 0 0; } }
   .mapa-cta { margin:1.8rem 0 0.4rem; padding:1.3rem 1.4rem; border:0.5px solid var(--gold); border-radius:14px; text-align:center; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); }
   html[data-theme="dark"] .mapa-cta { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
   .mapa-cta p { text-wrap:balance; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); margin:0 0 0.9rem; line-height:1.45; }
@@ -545,7 +551,7 @@
     <a href="ceen.html">CEEN • Negócio</a>
     <a href="leitura-intuitiva.html" class="active">Leitura Intuitiva</a>
     <a href="ceen.html#convites-parcerias">💌 Convites e parcerias</a>
-    <a href="#novidades">✉ Novidades</a>
+    <a href="#novidades">✉ Newsletter</a>
   </div>
   <a class="nav-wa" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20o%20teu%20site%20e%20gostava%20de%20trabalhar%20contigo%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
   <button type="button" class="size-btn" aria-label="Ver em maior" title="Ver em maior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/><path class="pl" d="M10.5 7.5v6M7.5 10.5h6"/><path class="mi" d="M7.5 10.5h6"/></svg></button>
@@ -556,7 +562,7 @@
   <a href="ceen.html">CEEN • Negócio</a>
   <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
   <a href="ceen.html#convites-parcerias">💌 Convites e parcerias</a>
-  <a href="#novidades">✉ Novidades</a>
+  <a href="#novidades">✉ Newsletter</a>
 </div>
 
 <main class="page" lang="pt">
@@ -676,7 +682,7 @@
     </div>
     <div class="flipall"><button type="button" id="flipAll">ver todos</button></div>
     <p class="statement">Não para te dizer quem és. Para te oferecer uma perspetiva com a qual possas reconhecer-te, questionar e escolher.</p>
-    <div class="mapa-cta"><p>Tens curiosidade de ver o teu mapa natal? Escreve os teus dados e vê-o desenhado a dourado.</p><a class="btn outline" href="mapa-astral.html">✦ Ver o meu mapa</a></div>
+    <div class="mapa-cta"><p>Tens curiosidade de ver o teu mapa natal e o teu Human Design? Escreve os teus dados e vê-os desenhados a dourado.</p><a class="btn outline" href="mapa-astral.html">✦ Ver o meu mapa</a><a class="btn outline" href="human-design.html">✦ Ver o meu Human Design</a></div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -821,7 +827,8 @@
           <li>Perguntas e orientações práticas</li>
           <li>Áudio gravado por mim, para ouvires no teu tempo</li>
         </ul>
-        <a class="btn outline" href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401" target="_blank" rel="noopener">Quero a minha Leitura</a>
+        <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura o teu tipo, estratégia, autoridade e perfil, ligados ao tema que trazes.</span></label>
+        <a class="btn outline" href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401" target="_blank" rel="noopener" data-hd-href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20com%20Human%20Design%20(197%E2%82%AC).">Quero a minha Leitura</a>
       </div>
       <div class="offer offer-featured">
         <span class="offer-badge">A mais completa</span>
@@ -832,9 +839,9 @@
           <li>Uma sessão individual comigo, depois de ouvires a Leitura</li>
           <li>Trazes as tuas reflexões e exemplos reais</li>
           <li>Aprofundamos os temas e trabalhamos as crenças relevantes</li>
-          <li>Se quiseres, aprofundamos também o teu Human Design</li>
         </ul>
-        <a class="btn" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20sess%C3%A3o%20de%20aprofundamento." target="_blank" rel="noopener">Quero a Leitura e a sessão</a>
+        <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura o teu tipo, estratégia, autoridade e perfil, ligados ao tema que trazes.</span></label>
+        <a class="btn" href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20%2B%20sess%C3%A3o%20de%20aprofundamento." target="_blank" rel="noopener" data-hd-href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20quero%20a%20Leitura%20Intuitiva%20com%20Human%20Design%20%2B%20sess%C3%A3o%20de%20aprofundamento%20(297%E2%82%AC).">Quero a Leitura e a sessão</a>
       </div>
     </div>
     <details class="extra-rs">
@@ -1258,5 +1265,17 @@
 </script>
 <script>window.FO_NL_URL = '';</script>
 <script src="newsletter.js" defer></script>
+<script>
+// Human Design como acrescento (+50€): atualiza o preço e a ligação de cada opção
+Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card){
+  var chk = card.querySelector('.hd-chk'); if (!chk) return;
+  var price = card.querySelector('.offer-price'), btn = card.querySelector('a.btn'), base = parseInt(price.textContent, 10), href = btn.getAttribute('href');
+  chk.addEventListener('change', function(){
+    price.textContent = (base + (chk.checked ? 50 : 0)) + '€';
+    btn.setAttribute('href', chk.checked ? btn.getAttribute('data-hd-href') : href);
+    chk.closest('.hd-add').classList.toggle('on', chk.checked);
+  });
+});
+</script>
 </body>
 </html>

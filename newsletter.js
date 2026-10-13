@@ -22,11 +22,11 @@
   box.className = 'nl-pop'; box.id = 'nlPop'; box.hidden = true;
   box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-labelledby', 'nlTitle');
   box.innerHTML = '<div class="nl-box"><button class="nl-x" type="button" aria-label="Fechar" data-nl-close>×</button>' +
-    '<form id="nlForm" novalidate><h3 id="nlTitle">Recebe as minhas novidades</h3>' +
-    '<p class="nl-sub">Reflexões, novidades e convites sobre negócio, astrologia e autoconhecimento, diretamente no teu email.</p>' +
+    '<form id="nlForm" novalidate><h3 id="nlTitle">Recebe a minha newsletter</h3>' +
+    '<p class="nl-sub">Reflexões, novidades e convites sobre desenvolvimento pessoal, diretamente no teu email.</p>' +
     '<label class="nl-l" for="nlNome">Nome</label><input type="text" id="nlNome" maxlength="60" autocomplete="given-name">' +
     '<label class="nl-l" for="nlEmail">Email</label><input type="email" id="nlEmail" maxlength="120" autocomplete="email" inputmode="email">' +
-    '<label class="nl-chk"><input type="checkbox" id="nlOk"><span>Quero receber os emails da Filipa Osório sobre negócio, astrologia, Human Design e autoconhecimento, e as novidades do seu trabalho. <em>Posso cancelar a subscrição quando quiser.</em> <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>' +
+    '<label class="nl-chk"><input type="checkbox" id="nlOk"><span>Quero receber os emails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>' +
     '<p class="nl-err" id="nlErr" role="alert"></p><button class="nl-btn" type="submit" id="nlBtn">✦ Subscrever</button></form></div>';
   document.body.appendChild(box);
   function $(id){ return document.getElementById(id); }
