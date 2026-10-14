@@ -579,6 +579,32 @@
   .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); min-width:2.2rem; text-align:right; }
   @media (max-width:680px){ .feat .aud { border-radius:22px; padding:0.6rem 0.9rem 0.6rem 0.6rem; } .aud-main { grid-template-columns:minmax(0,1fr) auto; gap:0.3rem 0.7rem; } .aud-q { grid-column:1 / -1; } .feat .feat-full p { font-size:17px; } }
   #quem-te-guia .bio-box .bio-photo img { object-position:50% 95% !important; }
+
+  /* ronda 5 (14 out) */
+  .feat .feat-full strong { background:rgba(201,168,108,0.42); border-radius:3px; padding:1px 3px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  html[data-theme="dark"] .feat .feat-full strong { background:rgba(201,168,108,0.32); }
+  .feat .aud-q { font-family:'Spectral',serif; font-style:italic; font-size:16px; letter-spacing:0; }
+  @media (min-width:681px){ #quem-te-guia .bio-box .bio-photo { height:400px; } }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 48% !important; }
+  .cover-li .h1-sub { font-family:'Lora',serif; font-style:italic; font-weight:700; }
+  .voice-quote p { font-size:clamp(23px,3vw,28px); line-height:1.5; }
+  .ffront b { font-size:21px; }
+  .fback h3 { font-size:19px; }
+  .fback p { font-size:15.5px; line-height:1.6; }
+  .fcard.flipped .fback, .fcard:focus-visible .fback { background:linear-gradient(135deg, rgba(240,222,182,0.95), rgba(250,240,220,0.9)); border-color:var(--gold-deep); }
+  @media (hover:hover){ .fcard:hover .fback { background:linear-gradient(135deg, rgba(240,222,182,0.95), rgba(250,240,220,0.9)); border-color:var(--gold-deep); } }
+  html[data-theme="dark"] .fcard.flipped .fback { background:linear-gradient(135deg, rgba(120,92,48,0.55), rgba(70,56,38,0.5)); }
+  @media (hover:hover){ html[data-theme="dark"] .fcard:hover .fback { background:linear-gradient(135deg, rgba(120,92,48,0.55), rgba(70,56,38,0.5)); } }
+  .mp-choice { display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; }
+  .mp-choice { margin-top:0.5rem; }
+  .mp-choice .btn { margin:0; }
+  .car-slide:not(.car-video) { cursor:zoom-in; }
+  .car-slide:not(.car-video) img { transition:transform 0.5s ease; }
+  @media (hover:hover){ .car-slide:not(.car-video):hover img { transform:scale(1.06); } }
+  .zoom { position:fixed; inset:0; z-index:400; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(26,20,16,0.82); cursor:zoom-out; }
+  .zoom.open { display:flex; }
+  .zoom img { max-width:min(100%,900px); max-height:calc(100vh - 32px); width:auto; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.4); }
+  .zoom-x { position:absolute; top:10px; right:14px; background:none; border:0; color:#fff; font-size:30px; line-height:1; cursor:pointer; padding:6px; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -667,14 +693,14 @@
       <p class="feat-eyebrow">✦ A Leitura mais recente · testemunho em áudio</p>
       <p class="feat-quote">«Fez clique nos pontos onde tinha que fazer o clique.<br>Trouxe visões diferentes à minha realidade.»</p>
       <p class="feat-ctx">Uma cliente de há anos, que virou amiga também, de quem conheço muito bem a história e a ela, claro. Um caso bem especial, até com trocas de mensagens sobre a Leitura, por isso mesmo estava um bocadinho expectante e curiosa para ver o que a Leitura lhe traria.</p>
-      <div class="aud"><audio preload="metadata" src="feedback-leitura.mp3"></audio><button type="button" class="aud-btn" aria-label="Ouvir o testemunho"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">Ouvir o testemunho</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
+      <div class="aud"><audio preload="metadata" src="feedback-leitura.mp3"></audio><button type="button" class="aud-btn" aria-label="Ouvir o testemunho"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">«Trouxe visões diferentes»</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
       <details>
         <summary>Ler o testemunho completo</summary>
         <div class="feat-full">
           <p>«Então, minha querida, olha, eu gostei muito, já te tinha dito, <strong>gostei muito da Leitura!</strong> Apesar de tu teres dito que não estavas tão à vontade, que a certa altura achaste que eu podia ficar a achar que estavas a repetir aquilo que tu já sabias da minha história. Eu acho que isso também tem muito a ver com o facto de tu saberes tanto da minha história e de nós conversarmos tanto sobre o que se passa, que na realidade também não é a realidade que tu tens com todas as clientes (…)</p>
           <p>Voltando à Leitura e àquilo que eu senti da Leitura, <strong>eu gostei muito, muito mesmo</strong>. Achei que, aliás, a conversa que nós tivemos depois da Leitura mostrou isso mesmo, que <strong>fez clique nos pontos onde tinha que fazer o clique</strong>.</p>
           <p><strong>Trouxe visões diferentes à minha realidade</strong> daqui. Houve coisas também que tu trouxeste, estou-me a lembrar aqui da <span class="secret" aria-label="parte omitida por privacidade">história que ficou entre nós</span> e que tu trouxeste, mas não percebeste bem o significado, e <strong>para mim foi muito claro o significado</strong>, tal e qual como <span class="secret" aria-label="parte omitida por privacidade">aquela outra imagem</span>. Portanto, essas coisas tu trouxeste-as e <strong>eu consegui dar-lhes o significado dentro da minha realidade</strong>, no fundo (…)</p>
-          <p>E, mais uma vez, é óbvio que eu não consegui ouvir a Leitura como “deveria ser”, porque fui ouvindo aos bocadinhos, e no fundo o conselho que tu dás às tuas clientes é para <strong>tirarem um momento para elas e realmente se conectarem com a Leitura</strong>.</p>
+          <p>E, mais uma vez, é óbvio que eu não consegui ouvir a Leitura como “deveria ser”, porque fui ouvindo aos bocadinhos, e no fundo o conselho que tu dás às (tuas) clientes é para <strong>tirarem um momento para elas e realmente se conectarem com a Leitura</strong>.</p>
           <p>Seja por já estar meio habituada, seja porque realmente me consigo conectar com uma facilidade diferente, eu fui ouvindo a Leitura enquanto estava a fazer o jantar, depois, quando fui deitar os meninos à cama, coloquei os phones e fiquei a ouvir o resto da Leitura, e ao longo dessa escuta fui trocando mensagens contigo, <strong>fui aprofundando aquilo que estava a ouvir</strong>. Várias vezes fui metendo pausa e fomos tendo estas trocas, que na realidade não é a forma como a escuta da Leitura deveria ser feita.</p>
           <p>Eu consegui, tanto consegui que <strong>ainda há insights que estão a vir</strong>, apesar de eu ainda não ter ouvido a Leitura pela segunda vez, sozinha, tranquilinha, porque ainda não me foi possível. Mas <strong>as mensagens ficaram e foram reverberando</strong>, e eu sei que <strong>quando lá voltar uma segunda vez vou ter mais</strong>, vou tirar outras coisas.»</p>
         </div>
@@ -710,7 +736,7 @@
   <!-- O QUE É -->
   <section class="reveal" id="o-que-e">
     <h2>O que é a Leitura Intuitiva</h2>
-    <p class="body-text">É um olhar intuitivo e profundo sobre o teu mapa astral, orientado pelo tema que trazes. Não te entrego uma lista de signos e planetas: exploro as relações entre os símbolos do mapa para abrir perguntas sobre os teus padrões, as tuas crenças e as possibilidades a que desejas dar mais espaço.</p>
+    <p class="body-text">É um olhar intuitivo e profundo com base no teu mapa natal, orientado pelo tema que trazes e o que desejas para ti. Não te entrego uma lista de signos, planetas e informação solta: exploro as relações entre os símbolos do teu mapa e faço uma leitura intuitiva do teu campo de energia para abrir perguntas sobre os teus padrões, as tuas crenças e as possibilidades a que desejas dar mais espaço.</p>
     <div class="flip-grid">
       <div class="fcard" tabindex="0"><div class="finner">
         <div class="fface ffront"><span class="sym">☉</span><b>O mapa como<br>ponto de partida</b><span class="fhint"></span></div>
@@ -731,7 +757,7 @@
     </div>
     <div class="flipall"><button type="button" id="flipAll">ver todos</button></div>
     <p class="statement">Não para te dizer quem és. Para te oferecer uma perspetiva com a qual possas reconhecer-te, questionar e escolher.</p>
-    <div class="mapa-cta"><p>Tens curiosidade de ver o teu mapa natal? Escreve os teus dados e vê-o desenhado a dourado.</p><a class="btn outline" href="mapa-astral.html">✦ Ver o meu mapa</a></div>
+    <div class="mapa-cta"><p>Tens curiosidade de ver o teu mapa natal?<br>Escreve os teus dados e vê-o desenhado a dourado.</p><a class="btn outline" href="mapa-astral.html" data-mp-open>✦ Ver o meu mapa</a></div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -741,7 +767,7 @@
     <h2>E o Human Design?</h2>
     <p class="body-text">O Human Design junta a astrologia, o I Ching, a Cabala e o sistema dos chakras num mapa do teu corpo energético. Mostra como a tua energia funciona, como tomas as melhores decisões e onde te deixas condicionar pelos outros.</p>
     <p class="body-text">Podes juntá-lo à tua Leitura por mais 50€. Recebes o teu tipo, a tua estratégia, a tua autoridade e o teu perfil, ligados ao tema que trazes, com formas práticas de os viveres no teu dia-a-dia.</p>
-    <div class="mapa-cta"><p>Tens curiosidade de ver o teu desenho?</p><a class="btn outline" href="human-design.html">✦ Ver o meu Human Design</a><a class="btn outline" href="#opcoes" data-scroll="opcoes">Juntar à minha Leitura</a></div>
+    <div class="mapa-cta"><p>Tens curiosidade de ver o teu desenho?</p><a class="btn outline" href="human-design.html" data-mp-open>✦ Ver o meu Human Design</a><a class="btn outline" href="#opcoes" data-scroll="opcoes">Juntar à minha Leitura</a></div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -912,8 +938,7 @@
         <p class="extra-offer-text">Só precisas de saber a data, a hora e o local de nascimento de quem recebe. Se souberes e quiseres, podes contar-me um pouco do momento que essa pessoa está a viver e do que acreditas que ela deseja. </p>
         <p class="extra-offer-text">Podes oferecer a Leitura Intuitiva (147€) ou a Leitura com Revolução Solar (247€), ideal para um aniversário. A qualquer uma podes juntar o Human Design por mais 50€.</p>
         <p class="extra-offer-text">Escolhes como entregar: um <strong>cartão de oferta</strong>, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a <strong>Leitura já pronta</strong>, em áudio, para lhe ofereceres.</p>
-        <a class="btn" href="marcar-leitura.html?oferta=1">Oferecer uma Leitura</a><br>
-        <a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Quero%20oferecer%20uma%20Leitura%20Intuitiva%20a%20algu%C3%A9m.%20Quais%20s%C3%A3o%20as%20op%C3%A7%C3%B5es%20de%20entrega%3F" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.8rem">Tens dúvidas? Fala comigo 💌</a>
+        <a class="btn" href="marcar-leitura.html?oferta=1">Oferecer uma Leitura</a>
       </div>
     </details>
     <details class="extra-rs">
@@ -983,8 +1008,8 @@
   <div class="mpop-box">
     <button class="mpop-x" type="button" aria-label="Fechar" data-mp-close>×</button>
     <form id="mpForm" novalidate autocomplete="off">
-      <h3 id="mpTitle">Queres ver o teu mapa astral?</h3>
-      <p class="mp-sub">Diz-me quando e onde nasceste e desenho-te o mapa, com o teu Sol, a tua Lua e o teu Ascendente.</p>
+      <h3 id="mpTitle">Queres ver o teu mapa?</h3>
+      <p class="mp-sub">Diz-me quando e onde nasceste e escolhe o que queres ver: o teu mapa astral, com o Sol, a Lua e o Ascendente, ou o teu Human Design.</p>
       <div class="mp-grid">
         <div class="mp-full"><label class="mp-l" for="mpNome">Nome <span class="mp-opt">(opcional)</span></label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name"></div>
         <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="date" id="mpData" min="1900-01-01" max="2100-12-31"></div>
@@ -995,7 +1020,7 @@
         </div>
       </div>
       <p class="mp-err" id="mpErr" role="alert"></p>
-      <button class="btn" type="submit" id="mpBtn">✦ Ver o meu mapa</button>
+      <div class="mp-choice"><button class="btn" type="submit" id="mpBtn" value="mapa">✦ Ver o mapa astral</button><button class="btn outline" type="submit" id="mpBtnHd" value="hd">✦ Ver o Human Design</button></div>
       <button class="mp-no" type="button" data-mp-close>Agora não</button>
     </form>
   </div>
@@ -1267,12 +1292,11 @@
   function get(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v){ try { localStorage.setItem(k, v); } catch (e) {} }
   // não mostrar a quem fechou há menos de 14 dias
-  var closedAt = +get('mpopFechado') || 0;
-  if (Date.now() - closedAt < 14 * 864e5) return;
-  function open(){
-    if (shown) return;
+  var closedAt = +get('mpopFechado') || 0, auto = Date.now() - closedAt >= 14 * 864e5;
+  function open(manual){
+    if (shown && manual !== true) return;
     var cb = document.getElementById('cookieBanner');
-    if (cb && cb.style.display === 'block'){ setTimeout(open, 4000); return; }
+    if (manual !== true && cb && cb.style.display === 'block'){ setTimeout(open, 4000); return; }
     shown = true;
     var buy = document.getElementById('popup'); if (buy) buy.classList.remove('visible');
     pop.hidden = false; pop.classList.add('open');
@@ -1284,8 +1308,9 @@
     var h = document.documentElement;
     if ((h.scrollTop + innerHeight) / h.scrollHeight > 0.5) open();
   }
-  setTimeout(open, 30000);
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if (auto){ setTimeout(open, 30000); window.addEventListener('scroll', onScroll, { passive: true }); }
+  // os botões «Ver o meu mapa» e «Ver o meu Human Design» abrem este formulário
+  Array.prototype.forEach.call(document.querySelectorAll('[data-mp-open]'), function(a){ a.addEventListener('click', function(e){ e.preventDefault(); open(true); }); });
   Array.prototype.forEach.call(pop.querySelectorAll('[data-mp-close]'), function(b){ b.addEventListener('click', close); });
   pop.addEventListener('click', function(e){ if (e.target === pop) close(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && pop.classList.contains('open')) close(); });
@@ -1332,7 +1357,8 @@
     if (!chosen){ err.textContent = 'Escolhe a tua cidade na lista.'; inp.focus(); render(); return; }
     var q = new URLSearchParams({ nome: $('mpNome').value.trim(), data: data, hora: hora, local: chosen.name, pais: chosen.country, lat: chosen.lat, lon: chosen.lon, tz: chosen.tz });
     set('mpopFechado', String(Date.now()));
-    location.href = 'mapa-astral.html?' + q.toString() + '#mapa';
+    var hd = e.submitter && e.submitter.value === 'hd';
+    location.href = (hd ? 'human-design.html?' : 'mapa-astral.html?') + q.toString() + (hd ? '' : '#mapa');
   });
 })();
 </script>
@@ -1383,6 +1409,18 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
     });
     bar.addEventListener('click', function(e){ if (a.duration) { var r = bar.getBoundingClientRect(); a.currentTime = (e.clientX - r.left) / r.width * a.duration; } });
   });
+})();
+</script>
+<div class="zoom" id="zoomBox" role="dialog" aria-modal="true" aria-label="Testemunho em grande" hidden><button class="zoom-x" type="button" aria-label="Fechar">×</button><img alt=""></div>
+<script>
+(function(){
+  var box = document.getElementById('zoomBox'), im = box.querySelector('img');
+  function close(){ box.classList.remove('open'); box.hidden = true; }
+  Array.prototype.forEach.call(document.querySelectorAll('.car-slide:not(.car-video) img'), function(t){
+    t.addEventListener('click', function(){ im.src = t.src; im.alt = t.alt; box.hidden = false; box.classList.add('open'); });
+  });
+  box.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.classList.contains('open')) close(); });
 })();
 </script>
 </body>
