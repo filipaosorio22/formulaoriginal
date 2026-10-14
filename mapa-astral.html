@@ -945,7 +945,7 @@ function render(ch, info){
     var rk = RULER[sun], rP = ch.planets.filter(function(p){ return p.key === rk; })[0], hR = houseOf(ch, rP.lon);
     var rName = RULER_ART[rk] || rP.name;
     var lh = '<h3>O que a Leitura revela</h3><p class="sub">Para lá do signo</p>';
-    lh += '<p class="ask">Tens Sol em ' + SIGNS[sun] + ', mas sabias que a casa do mapa astral onde ele se encontra fala da área da tua vida em que essas características se expressam? E sabes que tem relação com a casa onde está o regente do signo, neste caso <em>' + (rk === 'Sun' ? 'o próprio Sol' : rName) + '</em>?</p>';
+    lh += '<p class="ask">Tens Sol em ' + SIGNS[sun] + ', mas sabias que a casa do mapa astral onde ele se encontra fala da área da tua vida em que essas características se expressam? E sabes que tem relação com a casa onde está o regente do signo, neste caso <em>' + (rk === 'Sun' ? 'o próprio Sol' : rName) + '</em>? Na Leitura Intuitiva recebes toda essa história.</p>';
     // Meio do Céu: signo, regente do Ascendente e planeta mais perto do MC
     var mcS = signOf(ch.mc), ark = RULER[as], aName = RULER_ART[ark] || ch.planets.filter(function(p){ return p.key === ark; })[0].name;
     var near = ch.planets.slice().sort(function(x, y){ return angDist(x.lon, ch.mc) - angDist(y.lon, ch.mc); })[0];
@@ -1035,7 +1035,7 @@ $('gate').addEventListener('submit', function(e){
     g.style.display = 'none';
     var ok = document.createElement('p'); ok.className = 'gate-ok'; ok.setAttribute('role', 'status');
     ok.style.cssText = 'text-align:center;font-family:var(--sans);font-size:14px;color:var(--soft);margin:18px auto 0;max-width:30em';
-    ok.textContent = 'Obrigada, ' + nome.split(' ')[0] + '! Espreita o teu e-mail para confirmares a subscrição.';
+    ok.innerHTML = 'Obrigada, ' + nome.split(' ')[0].replace(/[<>&]/g, '') + '! Enviei-te um e-mail para confirmares a subscrição.<br>Se não o vires, espreita a pasta de spam ou lixo e marca-o como «não é spam». Guarda também mail@filipaosorio.com nos teus contactos para receberes tudo na caixa principal.';
     $('locked').appendChild(ok);
     $('pillars2').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
