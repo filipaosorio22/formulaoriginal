@@ -531,6 +531,39 @@
   @media (max-width:640px){ .pause .pause-quote.big1:not(.nobreak):not(.two) { font-size:25px; } }
   .pause .pause-quote.duo { white-space:nowrap; max-width:none; font-size:min(20.5px, calc((100vw - 60px) / 48)); line-height:1.45; padding:0.8rem 0.5rem; }
   @media (max-width:640px){ .pause .pause-quote.duo:not(.nobreak):not(.two) { white-space:normal; font-size:18px; } .pause .pause-quote.duo br { display:none; } }
+  .bk-box { background:#faf6ef; border-radius:16px; max-width:640px; width:100%; max-height:90vh; overflow-y:auto; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); padding:1.8rem 1.6rem 1.6rem; }
+  .bk-x { position:absolute; top:10px; right:14px; background:none; border:none; font-size:24px; color:#9a7e52; cursor:pointer; z-index:2; }
+  .bk-eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 0.3rem; }
+  .bk-title { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:24px; color:var(--wine); text-align:center; margin:0 0 0.6rem; }
+  .bk-intro { font-size:14.5px; text-align:center; margin:0 0 1.2rem; }
+  .bk-fmt { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1rem; }
+  .bk-fmt label { cursor:pointer; }
+  .bk-fmt input { position:absolute; opacity:0; }
+  .bk-fmt span { display:block; text-align:center; border:1px solid #c9a86c; border-radius:10px; padding:0.7rem 0.4rem; font-size:14px; color:var(--ink-soft); }
+  .bk-fmt span b { display:block; font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--wine); }
+  .bk-fmt input:checked + span { background:#f8ecdf; border-color:#7a2535; box-shadow:0 0 0 1px #7a2535 inset; }
+  .bk-f { display:block; font-size:14px; font-weight:600; color:var(--ink); margin:0 0 0.85rem; }
+  .bk-f i { font-weight:400; color:var(--ink-soft); }
+  .bk-f input, .bk-f textarea, .bk-f select { display:block; width:100%; box-sizing:border-box; margin-top:0.3rem; font:15px 'Lora',serif; color:var(--ink); background:#fff; border:1px solid #d9c9ad; border-radius:8px; padding:0.6rem 0.7rem; }
+  .bk-f input:focus, .bk-f textarea:focus, .bk-f select:focus { outline:none; border-color:#7a2535; }
+  .bk-row { display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; }
+  .bk-check { display:flex; gap:0.5rem; align-items:flex-start; font-size:13.5px; margin:0.4rem 0 0; }
+  .bk-check input { margin-top:0.25rem; }
+  .bk-bad { border-color:#a3263a !important; outline:1px solid #a3263a; }
+  .bk-err { color:#a3263a; font-size:13.5px; text-align:center; margin:0.6rem 0 0; min-height:1em; }
+  .bk-pay { background:#f8ecdf; border-radius:12px; padding:1rem 1.2rem; font-size:14.5px; margin:0 0 1.2rem; }
+  .bk-pay p { margin:0; } .bk-pay ul { margin:0 0 0.6rem; padding-left:1.1rem; } .bk-pay li { margin:0.25rem 0; } .bk-pay i { color:var(--ink-soft); font-size:12.5px; }
+  .bk-modal-unused { position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem; background:rgba(26,20,16,0.45); }
+  .bk-ta { position:relative; display:block; }
+  .bk-ta textarea { padding-right:2.6rem !important; }
+  .bk-mic { position:absolute; right:0.4rem; bottom:0.4rem; width:2rem; height:2rem; border-radius:50%; border:1px solid #d9c9ad; background:#faf6ef; cursor:pointer; font-size:15px; line-height:1; }
+  .bk-mic.on { background:#f3d3ae; border-color:#7a2535; animation:pulse 1.2s infinite; }
+  @keyframes pulse { 50% { box-shadow:0 0 0 6px rgba(122,37,53,0.12); } }
+  .bk-micnote { font-size:12.5px; color:var(--ink-soft); margin:-0.4rem 0 0.8rem; }
+  @media (max-width:600px){ .bk-box { padding:1.6rem 1rem 1.2rem; } .bk-row { grid-template-columns:1fr; gap:0; } }
+  html[data-theme="dark"] .bk-box { background:#26211c; }
+  html[data-theme="dark"] .bk-f input, html[data-theme="dark"] .bk-f textarea, html[data-theme="dark"] .bk-f select { background:#1d1915; border-color:#4a4034; }
+  html[data-theme="dark"] .bk-pay, html[data-theme="dark"] .bk-fmt input:checked + span { background:#382c22; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -900,7 +933,7 @@
           <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Recommendations and next steps</b><span>Developed in the session<br>and recorded in Notion.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recommendations and next steps</h5><div class="fpar">Reflection, analysis and recommendations are developed during the session. Within 5 working days, you receive a short summary in Notion of what we covered, along with your next steps. Afterwards, you can move forward independently or book another meeting when you feel the need. The Session does not include further analysis, implementation or ongoing support.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">View all steps in detail</a></p>
-        <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a></p>
+        <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('sessao');">Book my CEEN Session</a></p>
       </div></div>
     </details>
 
@@ -919,7 +952,7 @@
           <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Second session</b><span>Presenting and discussing your proposal.</span><i class="fhint"></i></div><div class="fface fback"><h5>Second session</h5><div class="fpar">In the second meeting, we explore the recommendations, the choices they open up and the possible next steps, drawing on the analysis completed between sessions. Afterwards, you can move forward independently or book another meeting when you feel the need. There is no further analysis, implementation or support after the second session.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">View all steps in detail</a></p>
-        <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a></p>
+        <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('ciclo');">Book my CEEN Cycle</a></p>
       </div></div>
     </details>
   </div>
@@ -955,7 +988,7 @@
           <li>Short summary and action points in Notion, within 5 working days</li>
         </ul>
         <p class="fmt-n">Does not include further analysis or ongoing support.</p>
-        <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a>
+        <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('sessao');">Book my CEEN Session</a>
       </div>
       <div class="fmt-card ciclo">
         <h3>CEEN Cycle</h3>
@@ -968,7 +1001,7 @@
           <li>A well-reasoned proposal in Notion, explored with you in the second meeting</li>
         </ul>
         <p class="fmt-n">Does not include a full review of the business, implementation or ongoing support.</p>
-        <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a>
+        <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('ciclo');">Book my CEEN Cycle</a>
       </div>
     </div>
     <p class="bk-note">The booking page is in Portuguese. If you have any questions about booking, feel free to <a href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20to%20book%20a%20CEEN%20session%2C%20but%20I%20have%20a%20question%20about%20the%20booking%3A%20%28your%20question%29" target="_blank" rel="noopener">send me a message</a>.</p>
@@ -1027,7 +1060,7 @@
 <section class="tight">
   <div class="wrap">
     <blockquote class="quote-block">
-      <p class="q2"><strong>“Having someone beside me who <br class="mb">sees me and my business as a whole.”</strong></p>
+      <p class="q2"><strong>“Having someone beside me who sees <br>me and my business as a whole.”</strong></p>
     </blockquote>
     <p style="font-size:16px;">It is through real-life experience that new decisions, questions and possibilities become visible. This is another client’s account of what she has been experiencing in her work with me:</p>
     <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph"><div class="ph"><div class="wab-wrap"><div class="wab"><p>Working with you has meant having <span class="hl">someone by my side who sees me and my business as a whole.</span> With respect for me, for my essence and <span class="ul">without “pushing” catchphrases and marketing strategies,</span> the ones that confused me for years and years 🙌🏻</p><p>You have been asking me key questions and making key comments so I can go a little deeper 🗝️ always with respect for me, for the time I need and for my family circumstances 🥹</p></div></div></div><div class="ph"><div class="wab-wrap"><div class="wab"><p>You helped me <span class="hl">review my communication</span> through the eyes of my clients, in a way that <span class="ul">I connected even more to myself, to my essence and to the mission of my company.</span></p><p>Thank you for your perspectives, your authenticity and the way you combine warmth with directness. And for our conversations that are always so <em>mind-blowing</em> 💥</p><p>Working with you is <span class="hl">one of the greatest gifts</span> someone can bring to a business (and to their life too) 🤭❤️</p><span class="tm">16:45</span></div></div></div></div>
@@ -1052,8 +1085,8 @@
     <h2 class="section-title">What is the next step for your business?</h2>
     <p class="softbr" style="text-align:left; font-size:16.5px;"><strong>To work on one central question during a single meeting, choose the CEEN Session. <br>To work on it across two meetings, with analysis of the agreed materials and a proposal prepared between them, choose the CEEN Cycle.</strong></p>
     <div class="cta-pair">
-      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Session</a>
-      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Book my CEEN Cycle</a>
+      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('sessao');">Book my CEEN Session</a>
+      <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('ciclo');">Book my CEEN Cycle</a>
     </div>
     <blockquote class="quote-block" style="margin-top:1.6rem;"><p><strong>Do you have a question about the format or booking?</strong> <a href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%E2%80%99ve%20had%20a%20look%20at%20the%20CEEN%20page%20and%20would%20love%20to%20understand%20which%20of%20the%20two%20formats%20would%20best%20suit%20what%20I%E2%80%99m%20looking%20for%20right%20now.%20Thank%20you" style="font:inherit; color:var(--orange);">Send me a message</a>.</p></blockquote>
   </div>
@@ -1065,44 +1098,26 @@
   <div class="wrap">
     <details class="faqmain"><summary class="section-title faqh">Questions you may have before taking the next step</summary>
     <div class="faqbody">
-    <details class="fold"><summary><span class="tri"></span>Is CEEN management consultancy?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No. CEEN does not replace technical support in management, marketing, finance, accounting or operations. It also does not include technical audits, copywriting or implementation by me. I bring together what I observe in you and your business with my knowledge of strategy and marketing to offer tailored possibilities, criteria and recommendations.</p></div></div>
+    <details class="fold"><summary><span class="tri"></span>What can I expect from CEEN?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>No. CEEN does not replace technical support in management, marketing, finance, accounting or operations. It also does not include technical audits, copywriting or implementation by me. I bring together what I observe in you and your business with my knowledge of strategy and marketing to offer tailored possibilities, criteria and recommendations.</p><p>I will help you recognize what may not yet be clear, offer recommendations and suggest possible directions. I do not decide or act for you: the final decisions and practical actions remain yours.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Are the sessions online or in person?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>All CEEN sessions are one-to-one and online: both the Session and the two sessions included in the Cycle.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri"></span>Does my business need to be fully structured?</summary>
+    <details class="fold"><summary><span class="tri"></span>Does my business need to be structured?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>No. Your business may be just starting, growing or being reorganized. If you are just starting, the CEEN Session is the format that makes sense, so we can clarify a central question and your first steps. The CEEN Cycle requires a business that is already up and running and engaging with the real world, with offerings, prices, communication, clients, sales or attempts to make sales, and concrete decisions we can explore.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Do I need to identify with a particular energy-based approach?</summary>
       <div class="fold-wrap"><div class="fold-body"><p>No. The energy dimension relates to what you are actually experiencing, which is not always immediately visible: attention, emotions, beliefs, habits, capacity and bodily responses. We use only what makes sense for you.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri"></span>Will I know exactly what I need to do?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>I will help you recognize what may not yet be clear, offer recommendations and suggest possible directions. I do not decide or act for you: the final decisions and practical actions remain yours.</p></div></div>
+    <details class="fold"><summary><span class="tri"></span>How do I choose between the CEEN Session and the CEEN Cycle?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>In the Session, we work on one central question during our meeting, through questions, analysis and recommendations developed together during the session. In the Cycle, we work on one central question across two meetings, with analysis of the agreed materials and a well-reasoned proposal prepared between them.</p><p>Both include a written record in Notion. With the Session, you receive a short summary of the work done during the meeting within five working days. With the Cycle, you receive a well-reasoned proposal based on the analysis carried out between the two meetings. The choice depends on the kind of work you are looking for, not the number of questions you bring.</p><p>You do not need a Session before the Cycle: you can book the CEEN Cycle directly if you are looking for analysis between meetings and a personalized proposal.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri"></span>Can a CEEN Session focus on a more personal question?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Yes, as long as it relates to how you experience your business, make decisions or take your place within it. We can explore identity, beliefs, patterns, fears, visibility, money or responsibility when they are influencing your professional choices.</p></div></div>
+    <details class="fold"><summary><span class="tri"></span>What questions can I bring?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Yes, as long as it relates to how you experience your business, make decisions or take your place within it. We can explore identity, beliefs, patterns, fears, visibility, money or responsibility when they are influencing your professional choices.</p><p>If you bring several questions, we agree on the priority for the session. We may explore relevant connections with the other questions, but the work remains focused on what we have agreed to address.</p></div></div>
     </details>
-    <details class="fold"><summary><span class="tri"></span>How do I know whether I need a CEEN Session or a CEEN Cycle?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>In the Session, we work on one central question during our meeting, through questions, analysis and recommendations developed together during the session. In the Cycle, we work on one central question across two meetings, with analysis of the agreed materials and a well-reasoned proposal prepared between them.</p><p>Both include a written record in Notion. With the Session, you receive a short summary of the work done during the meeting within five working days. With the Cycle, you receive a well-reasoned proposal based on the analysis carried out between the two meetings. The choice depends on the kind of work you are looking for, not the number of questions you bring.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Do I need to have a CEEN Session before booking the CEEN Cycle?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No. You can book the CEEN Cycle directly if you are looking for analysis between meetings and a personalized proposal.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Does the CEEN Session include analysis after the meeting?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No new analysis is included. The context review is brief and takes place before the meeting when needed. Analysis, recommendations and decisions are worked through during the session and, within 5 working days, you receive a short summary in Notion with the action points. Implementation and follow-up support are not included.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Does the CEEN Cycle analyze the whole business?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No. The analysis focuses on the central question and the materials agreed in the first meeting. I may recognize connections with other areas of your business, but the proposal responds to the agreed focus, not to a review of everything.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>What if I bring more than we can cover in a CEEN Session?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>If you bring several questions, we agree on the priority for the session. We may explore relevant connections with the other questions, but the work remains focused on what we have agreed to address.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Do I receive support between sessions or after the Cycle?</summary>
-      <div class="fold-wrap"><div class="fold-body">
-        <p>The CEEN Cycle does not include ongoing support. Within three days of the first meeting, you send the agreed materials and, if you wish, additional information related to the focus of the Cycle. During the analysis, I may ask focused questions or request clarification to prepare the proposal. These exchanges are intended to complete my understanding, not to support implementation or respond continuously to day-to-day questions.</p>
-        <p>The Cycle is complete after the second session. You can then move forward independently or book a new CEEN Session so we can keep working on other parts of your business.</p>
-      </div></div>
+    <details class="fold"><summary><span class="tri"></span>What happens after the meetings? Do I receive support?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p><strong>In the CEEN Session</strong>, no new analysis is included after the meeting. The context review is brief and takes place before the meeting when needed. Analysis, recommendations and decisions are worked through during the session and, within 5 working days, you receive a short summary in Notion with the action points.</p><p><strong>In the CEEN Cycle</strong>, the analysis focuses on the central question and the materials agreed in the first meeting, not on the whole business. Within three days of the first meeting, you send the agreed materials and, if you wish, additional information. During the analysis, I may ask focused questions or request clarification. These exchanges are intended to complete my understanding, not to support implementation.</p><p>Neither format includes implementation or ongoing support. Afterwards, you can move forward independently or book a new CEEN Session so we can keep working on other parts of your business.</p></div></div>
     </details>
     <button type="button" class="faq-close" onclick="var d=this.closest('details.faqmain'); d.open=false; d.scrollIntoView({behavior:'smooth',block:'center'});">↑ Close questions</button>
     </div></details>
@@ -1112,15 +1127,43 @@
 
 <div id="cookieVeilCeen" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.45); z-index:998;"></div>
 <div id="ceenCalendlyModal" style="display:none; position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem;">
-  <div style="background:#faf6ef; border-radius:16px; max-width:720px; width:100%; max-height:90vh; overflow-y:auto; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
-    <button onclick="document.getElementById('ceenCalendlyModal').style.display='none'; document.getElementById('cookieVeilCeen').style.display='none';" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:22px; color:#9a7e52; cursor:pointer; z-index:2;">×</button>
-    <div style="padding:1.5rem 1rem 1rem;">
-      <p style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:19px; color:#1a1410; text-align:center; margin:0 0 1rem;">Book my CEEN</p>
+  <div class="bk-box">
+    <button type="button" class="bk-x" onclick="fecharMarcacao()" aria-label="Close">×</button>
+    <div id="bkStep1" class="bk-step">
+      <p class="bk-eyebrow">Step 1 of 2</p>
+      <p class="bk-title">Book my CEEN</p>
+      <p class="bk-intro">Tell me a little about you and your business. In the next step you choose the day of your session.</p>
+      <form id="bkForm" novalidate>
+        <div class="bk-fmt">
+          <label><input type="radio" name="formato" value="Sessão CEEN · 250 €" checked><span><b>CEEN Session</b>€250</span></label>
+          <label><input type="radio" name="formato" value="Ciclo CEEN · 800 €"><span><b>CEEN Cycle</b>€800</span></label>
+        </div>
+        <label class="bk-f">Full name<input name="nome" required autocomplete="name"></label>
+        <label class="bk-f">Email<input name="email" type="email" required autocomplete="email"></label>
+        <label class="bk-f">Phone (WhatsApp)<input name="telemovel" type="tel" required autocomplete="tel"></label>
+        <label class="bk-f">Your business: what you do and for whom<span class="bk-ta"><textarea name="negocio" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🎤</button></span></label>
+        <label class="bk-f">How long it has existed
+          <select name="tempo"><option value="">Choose an option</option><option>Less than 1 year</option><option>1 to 3 years</option><option>More than 3 years</option></select></label>
+        <label class="bk-f">The central question you want to work on<span class="bk-ta"><textarea name="questao" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🎤</button></span></label>
+        <p class="bk-micnote">If you prefer to speak, press the 🎤 and what you say is written in the box.</p>
+        <label class="bk-f">Website or social media <i>(optional)</i><input name="links" placeholder="www… or @…"></label>
+        <label class="bk-f">How did you find me? <i>(optional)</i><input name="origem"></label>
+        <label class="bk-check"><input type="checkbox" name="termos" required><span>I have read and accept the <a href="termos-ceen-en.html" target="_blank">Terms</a> and the <a href="privacidade-en.html" target="_blank">Privacy Policy</a>.</span></label>
+        <p class="bk-err" id="bkErr"></p>
+        <p style="text-align:center; margin:1.2rem 0 0;"><button type="submit" class="cta-btn" id="bkBtn">Continue to choose the day</button></p>
+      </form>
+    </div>
+    <div id="bkStep2" class="bk-step" style="display:none;">
+      <p class="bk-eyebrow">Step 2 of 2</p>
+      <p class="bk-title">Thank you, <span id="bkNome"></span>! Choose the day</p>
+      <div class="bk-pay">
+        <p>Your session booking is confirmed once your payment of <strong id="bkValor">€250</strong> is confirmed. The payment methods are shown when you book the date of your session.</p>
+      </div>
       <div id="calendlyConsentPrompt" style="display:none; text-align:center; padding:1.5rem 1rem;">
-        <p style="margin-bottom:1.2rem;">To book here, we need to load the Calendly calendar, which uses its own cookies.</p>
+        <p style="margin-bottom:1.2rem;">To choose the day here, we need to load the Calendly calendar, which uses its own cookies.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); aceitarEAbrirCalendly();">Accept and continue</a>
       </div>
-      <div class="calendly-inline-widget" id="calendlyWidget" data-url="https://calendly.com/filipaosorio/ceen" style="min-width:280px; height:650px;"></div>
+      <div id="calendlyWidget" style="min-width:280px; height:650px;"></div>
     </div>
   </div>
 </div>
@@ -1179,40 +1222,97 @@
     if (consent.analytics) loadGA();
     if (consent.calendly) loadCalendly();
   }
-  window.openCeenCalendly = function(){
+  var W3K = 'b2feccdb-b682-491c-8fb8-a56fb482a4ed';
+  var BK = {};
+  function calUrl(){
+    var u = 'https://calendly.com/filipaosorio/ceen?hide_gdpr_banner=1';
+    if (BK.nome) u += '&name=' + encodeURIComponent(BK.nome);
+    if (BK.email) u += '&email=' + encodeURIComponent(BK.email);
+    // respostas do Calendly preenchidas: a1 WhatsApp, a3 contexto e questão, a4 site, a5 opção
+    if (BK.tel) u += '&a1=' + encodeURIComponent(BK.tel);
+    if (BK.contexto) u += '&a3=' + encodeURIComponent(BK.contexto);
+    if (BK.links) u += '&a4=' + encodeURIComponent(BK.links);
+    if (BK.opcao) u += '&a5=' + encodeURIComponent(BK.opcao);
+    return u;
+  }
+  function mostrarCalendario(){
+    var prompt_ = document.getElementById('calendlyConsentPrompt'), widget = document.getElementById('calendlyWidget');
+    if (window.__calLoaded && window.Calendly) {
+      prompt_.style.display = 'none'; widget.style.display = 'block';
+      if (!widget.dataset.done) { widget.innerHTML = ''; Calendly.initInlineWidget({ url: calUrl(), parentElement: widget }); widget.dataset.done = '1'; }
+    } else { prompt_.style.display = 'block'; widget.style.display = 'none'; }
+  }
+  window.fecharMarcacao = function(){
+    document.getElementById('ceenCalendlyModal').style.display='none';
+    document.getElementById('cookieVeilCeen').style.display='none';
+  };
+  window.openCeenCalendly = function(fmt){
     if (typeof gtag === 'function') { gtag('event', 'marcar_ceen_click', { idioma: document.documentElement.lang, pagina: location.pathname }); }
     document.getElementById('ceenCalendlyModal').style.display = 'flex';
     document.getElementById('cookieVeilCeen').style.display = 'block';
-    var prompt_ = document.getElementById('calendlyConsentPrompt');
-    var widget = document.getElementById('calendlyWidget');
-    if (window.__calLoaded) {
-      prompt_.style.display = 'none';
-      widget.style.display = 'block';
-    } else {
-      prompt_.style.display = 'block';
-      widget.style.display = 'none';
-    }
+    if (fmt) { var r = document.querySelector('#bkForm input[name=formato][value^="' + (fmt === 'ciclo' ? 'Ciclo' : 'Sessão') + '"]'); if (r) r.checked = true; }
+    if (BK.enviado) mostrarCalendario();
   };
   window.aceitarEAbrirCalendly = function(){
-    try {
-      localStorage.setItem(KEY, JSON.stringify({ ts: Date.now(), analytics:true, calendly:true }));
-    } catch(e){}
-    loadCalendly();
-    loadGA();
+    try { localStorage.setItem(KEY, JSON.stringify({ ts: Date.now(), analytics:true, calendly:true })); } catch(e){}
+    loadCalendly(); loadGA();
     var tries = 0;
-    var waitLoad = setInterval(function(){
-      tries++;
-      if (window.__calLoaded || tries > 40) {
-        clearInterval(waitLoad);
-        document.getElementById('calendlyConsentPrompt').style.display = 'none';
-        document.getElementById('calendlyWidget').style.display = 'block';
-      }
-    }, 150);
+    var waitLoad = setInterval(function(){ tries++; if (window.__calLoaded || tries > 40) { clearInterval(waitLoad); mostrarCalendario(); } }, 150);
   };
-  document.getElementById('cookieVeilCeen').addEventListener('click', function(){
-    document.getElementById('ceenCalendlyModal').style.display='none';
-    this.style.display='none';
+  document.getElementById('cookieVeilCeen').addEventListener('click', fecharMarcacao);
+
+  function enviar(subject, from, email, linhas){
+    return fetch('https://api.web3forms.com/submit', { method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+      body: JSON.stringify({ access_key: W3K, subject: subject, from_name: from, replyto: email, email: email, message: linhas.join('\n') }) })
+      .then(function(r){ return r.json(); }).then(function(j){ if (!j.success) throw new Error(j.message || 'erro'); });
+  }
+  function dados(form){ var o = {}; new FormData(form).forEach(function(v,k){ o[k] = String(v).trim(); }); return o; }
+  function validar(form, errEl){
+    var bad = Array.prototype.filter.call(form.querySelectorAll('[required]'), function(el){ return el.type === 'checkbox' ? !el.checked : !el.value.trim(); });
+    var em = form.querySelector('input[type=email]');
+    if (bad.length) { errEl.textContent = 'Please fill in the highlighted fields.'; bad.forEach(function(el){ el.classList.add('bk-bad'); el.addEventListener('input', function(){ el.classList.remove('bk-bad'); }, { once:true }); el.addEventListener('change', function(){ el.classList.remove('bk-bad'); }, { once:true }); }); bad[0].focus(); return false; }
+    if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value.trim())) { errEl.textContent = 'The email address does not look right.'; em.focus(); return false; }
+    errEl.textContent = ''; return true;
+  }
+
+  document.getElementById('bkForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var f = this, err = document.getElementById('bkErr'), btn = document.getElementById('bkBtn');
+    if (!validar(f, err)) return;
+    var d = dados(f);
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
+    enviar('Nova marcação CEEN · ' + d.nome + ' · ' + d.formato, 'Site · CEEN', d.email, L).then(function(){
+      BK = { nome: d.nome, email: d.email, tel: d.telemovel, contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', enviado: true };
+      document.getElementById('bkNome').textContent = d.nome.split(' ')[0];
+      document.getElementById('bkValor').textContent = d.formato.indexOf('Ciclo') === 0 ? '€800' : '€250';
+      document.getElementById('bkStep1').style.display = 'none';
+      document.getElementById('bkStep2').style.display = 'block';
+      document.querySelector('#ceenCalendlyModal .bk-box').scrollTop = 0;
+      mostrarCalendario();
+      if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado');
+    }).catch(function(){
+      err.innerHTML = 'Could not send. Please try again or write to me at <a href="mailto:mail@filipaosorio.com">mail@filipaosorio.com</a>.';
+    }).then(function(){ btn.disabled = false; btn.textContent = 'Continue to choose the day'; });
   });
+
+  (function(){
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var mics = document.querySelectorAll('.bk-mic');
+    if (!SR) { mics.forEach(function(b){ b.style.display = 'none'; }); document.querySelectorAll('.bk-micnote').forEach(function(n){ n.style.display = 'none'; }); return; }
+    var rec = null, ativo = null;
+    mics.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if (rec) { rec.stop(); return; }
+        var ta = btn.parentNode.querySelector('textarea'), base = ta.value ? ta.value.replace(/\s*$/, ' ') : '';
+        rec = new SR(); rec.lang = 'en-US'; rec.continuous = true; rec.interimResults = true;
+        rec.onresult = function(ev){ var t = ''; for (var i = 0; i < ev.results.length; i++) t += ev.results[i][0].transcript; ta.value = base + t; };
+        rec.onend = function(){ btn.classList.remove('on'); rec = null; };
+        rec.onerror = function(){ btn.classList.remove('on'); };
+        btn.classList.add('on'); rec.start();
+      });
+    });
+  })();
 
   // Google Analytics: eventos do Calendly (so enviados se a pessoa aceitou os cookies de analise)
   window.addEventListener('message', function(e){
