@@ -1284,6 +1284,8 @@
     try {
       var z = new URLSearchParams();
       z.append('assunto', subject); z.append('origem_form', from); z.append('email', email || ''); z.append('mensagem', linhas.join('\n')); z.append('data', new Date().toISOString());
+      var tp = /^ATUALIZA/.test(subject) ? 'atualizacao' : /^Marcou/.test(subject) ? 'marcou_data' : /^Convite/.test(subject) ? 'convite' : 'nova_marcacao';
+      z.append('tipo', tp); z.append('origem_notion', tp === 'convite' ? 'Convite comunidade ou empresa' : 'Marcação CEEN'); z.append('formato_curto', /Ciclo/.test(subject) ? 'Ciclo CEEN' : /Sessão/.test(subject) ? 'Sessão CEEN' : '');
       linhas.forEach(function(l){ var m = /^([^:]{2,30}):\s*(.*)$/.exec(l); if (m && m[2] && m[2] !== '—') { var k = m[1].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,''); if (k !== 'email' && k !== 'e_mail') z.append(k, m[2]); } });
       fetch('https://hooks.zapier.com/hooks/catch/29139062/419wv2h/', { method:'POST', mode:'no-cors', body: z }).catch(function(){});
     } catch (e) {}
