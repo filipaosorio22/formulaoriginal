@@ -57,7 +57,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .choice:has(input:checked){border-color:var(--gold);background:rgba(201,168,108,.10)}
 .choice input{margin-top:3px;accent-color:#a8854f}
 .choice b{font-weight:600}
-.choice .pr{margin-left:auto;font-weight:600;white-space:nowrap}
+.choice .pr{margin-left:auto;font-weight:600;white-space:nowrap;text-align:right}
+.choice .pr .was{display:block;font-weight:400;font-size:13px;opacity:.65}
 .hint{font-family:var(--sans);font-size:13.5px;color:var(--soft);margin:6px 0 0}
 .note{font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 16px}
 .chk{display:flex;gap:10px;align-items:flex-start;font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:4px}
@@ -93,11 +94,11 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2>A tua escolha</h2>
       <p class="sub" id="opSub">Escolhe a Leitura que queres.</p>
       <div id="ops">
-        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa em áudio, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
-        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="247"><span><b>Leitura + sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">247€</span></label>
+        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
+        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="247"><span><b>Leitura + sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">247€<s class="was">297€</s></span></label>
         <label class="choice" data-op="rssolo"><input type="radio" name="op" value="rssolo" data-p="197"><span><b>Só a Revolução Solar (escrita)</b><br>Lida em relação com o teu mapa natal. Em conjunto com a Leitura acrescenta só 100€.</span><span class="pr">197€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="150"><span><b>Só a sessão de aprofundamento</b><br>Sessão individual comigo, para quem já tem a Leitura ou quer começar por aqui.</span><span class="pr">150€</span></label>
-        <label class="choice" data-op="rs"><input type="radio" name="op" value="rs" data-p="247"><span><b>Leitura + Revolução Solar</b><br>Para quando fazes anos: os temas do teu novo ciclo anual.</span><span class="pr">247€</span></label>
+        <label class="choice" data-op="rs"><input type="radio" name="op" value="rs" data-p="247"><span><b>Leitura + Revolução Solar</b><br>Para quando fazes anos: os temas do teu novo ciclo anual.</span><span class="pr">247€<s class="was">344€</s></span></label>
       </div>
       <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +50€</b><br>Junto à Leitura o tipo, a estratégia, a autoridade e o perfil. <a href="human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
     </div>
@@ -145,7 +146,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <label class="chk"><input type="checkbox" id="sub"><span>Quero também receber os textos da Filipa no Substack (opcional, podes cancelar quando quiseres).</span></label>
       <p class="err" id="err" role="alert"></p>
       <div class="actions"><button class="btn" type="submit" id="go">Enviar pelo WhatsApp</button></div>
-      <p class="hint" style="text-align:center">As tuas respostas abrem numa mensagem de WhatsApp para mim. Depois envio-te os dados de pagamento.</p>
+      <p class="hint" style="text-align:center">As tuas respostas chegam-me por e-mail e segues para o pagamento seguro (Stripe).</p>
     </div>
   </form>
 
