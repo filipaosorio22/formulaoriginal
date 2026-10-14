@@ -216,6 +216,10 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
 h1{font-family:'Cormorant Garamond',var(--serif);font-weight:700;color:var(--wine);letter-spacing:0}
 h1 em{font-style:normal;color:var(--wine)}
 .res-head h2,.pillars h3,.cta h3,.layers h3,.gate h3{font-style:italic;color:var(--wine)}
+
+.cross{margin:14px auto 0;text-align:center;font-family:var(--sans);font-size:14px}
+.cross a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
+.cross.both{padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,0.35);font-size:15px}
 </style>
 </head>
 <body>
@@ -270,6 +274,7 @@ h1 em{font-style:normal;color:var(--wine)}
     <div class="res-head">
       <h2 id="resTitle">O teu desenho</h2>
       <p id="resMeta"></p>
+      <p class="cross" id="crossNote" hidden><span class="c1">Queres ver também o teu mapa astral? </span><a id="crossLink" href="mapa-astral.html">✦ Ver o meu mapa astral</a></p>
       <p class="note" id="resNote" hidden></p>
     </div>
     <div class="chart-wrap">
@@ -305,7 +310,7 @@ h1 em{font-style:normal;color:var(--wine)}
     <div class="cta">
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
       <p class="big" id="ctaText"></p>
-      <a class="btn" href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401">Quero a minha Leitura</a><br>
+      <a class="btn" href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
       <a class="soft" href="leitura-intuitiva.html#opcoes">Ver como funciona</a>
     </div>
     <p class="again"><button type="button" class="linkbtn" id="editBtn">Alterar os dados</button></p>
@@ -719,7 +724,9 @@ form.addEventListener('submit', function(e){
       ['type','authority','profile'].forEach(function(k){ if (alt[k] !== hd[k]) stable[k] = false; });
     }
   }
-  render(hd, { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, know: know, place: place, off: conv.offsetMin, stable: stable });
+  var info_ = { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, know: know, place: place, off: conv.offsetMin, stable: stable };
+  render(hd, info_);
+  if (window.FO_CROSS) window.FO_CROSS(info_);
 });
 // dados vindos do formulário da página da Leitura: desenha logo o Human Design
 (function(){
@@ -944,6 +951,22 @@ function describe(hd){
     (CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).map(function(c){ return CENTRE_NAMES[c]; }).join(', ') || 'nenhum') +
     '. Canais: ' + (hd.channels.map(function(c){ return c[0] + '-' + c[1]; }).join(', ') || 'nenhum') + '.';
 }
+})();
+</script>
+<script>
+// ligação para ver também o outro desenho com os mesmos dados
+(function(){
+  var p = document.getElementById('crossNote'), a = document.getElementById('crossLink'); if (!p || !a) return;
+  var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
+  if (both) p.classList.add('both');
+  window.FO_CROSS = function(info){
+    try {
+      function pad(n){ return (n < 10 ? '0' : '') + n; }
+      var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
+      a.href = 'mapa-astral.html?' + q.toString() + '#mapa';
+      p.hidden = false;
+    } catch (e) {}
+  };
 })();
 </script>
 </body>

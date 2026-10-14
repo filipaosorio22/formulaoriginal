@@ -230,6 +230,10 @@ h1 em{font-style:normal;color:var(--wine)}
 .pos summary::after{content:"+";font-family:var(--sans);font-style:normal;color:var(--deep);font-size:20px}
 .pos[open] summary::after{content:"−"}
 .pos .planets{margin:0 0 12px}
+
+.cross{margin:14px auto 0;text-align:center;font-family:var(--sans);font-size:14px}
+.cross a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
+.cross.both{padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,0.35);font-size:15px}
 </style>
 </head>
 <body>
@@ -289,6 +293,7 @@ h1 em{font-style:normal;color:var(--wine)}
     <div class="res-head">
       <h2 id="resTitle">O teu céu</h2>
       <p id="resMeta"></p>
+      <p class="cross" id="crossNote" hidden><span class="c1">Queres ver também o teu Human Design? </span><a id="crossLink" href="human-design.html">✦ Ver o meu Human Design</a></p>
       <p class="note" id="resNote" hidden></p>
     </div>
     <svg class="wheel" id="wheel" viewBox="0 0 640 640" role="img" aria-labelledby="wheelDesc"><desc id="wheelDesc">Mapa natal</desc></svg>
@@ -744,7 +749,9 @@ form.addEventListener('submit', function(e){
   if (!A){ err.textContent = 'Não foi possível carregar o motor de cálculo. Recarrega a página.'; return; }
   var conv = localToUTC(y, mo, d, hh, mi, place.tz);
   var chart = computeChart(A, conv.utc, place.lat, place.lon);
-  render(chart, { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, place: place, utc: conv.utc, off: conv.offsetMin });
+  var info_ = { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, place: place, utc: conv.utc, off: conv.offsetMin };
+  render(chart, info_);
+  if (window.FO_CROSS) window.FO_CROSS(info_);
 });
 // dados vindos do pop-up da página da Leitura: desenha logo o mapa
 (function(){
@@ -1061,6 +1068,22 @@ function describe(ch, info){
   t += '; Ascendente em ' + SIGNS[signOf(ch.asc)] + ' ' + fmtDeg(ch.asc) + '; Meio do Céu em ' + SIGNS[signOf(ch.mc)] + ' ' + fmtDeg(ch.mc);
   return t + '.';
 }
+})();
+</script>
+<script>
+// ligação para ver também o outro desenho com os mesmos dados
+(function(){
+  var p = document.getElementById('crossNote'), a = document.getElementById('crossLink'); if (!p || !a) return;
+  var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
+  if (both) p.classList.add('both');
+  window.FO_CROSS = function(info){
+    try {
+      function pad(n){ return (n < 10 ? '0' : '') + n; }
+      var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
+      a.href = 'human-design.html?' + q.toString() + '';
+      p.hidden = false;
+    } catch (e) {}
+  };
 })();
 </script>
 </body>
