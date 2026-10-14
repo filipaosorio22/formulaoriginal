@@ -239,6 +239,15 @@
   .offer-badge { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--wine); color:var(--btn-ink); font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; padding:4px 12px; border-radius:20px; white-space:nowrap; }
   .offer-name { font-family:'Spectral',serif; font-size:21px; font-style:italic; color:var(--ink); text-align:center; }
   .offer-price { font-family:'Spectral',serif; font-size:38px; font-weight:300; color:var(--wine); text-align:center; margin:0.2rem 0 1rem; }
+  .offer-was { text-align:center; font-family:'DM Sans',sans-serif; font-size:13.5px; color:var(--ink-soft); margin:-0.6rem 0 1rem; }
+  .offer-was s { color:var(--ink-soft); opacity:.75; }
+  .offer-was b { color:var(--wine); font-weight:600; }
+  .offer-solo { margin-top:1.3rem; border:0.5px solid var(--gline); border-radius:16px; padding:1.4rem 1.4rem; background:var(--card); display:flex; align-items:center; gap:1.4rem; justify-content:space-between; }
+  .offer-solo h3 { font-family:'Spectral',serif; font-size:19px; font-style:italic; font-weight:400; color:var(--ink); }
+  .offer-solo p { font-size:14.5px; line-height:1.6; color:var(--ink-soft); margin-top:.35rem; }
+  .offer-solo .solo-side { text-align:center; flex:none; }
+  .offer-solo .solo-price { font-family:'Spectral',serif; font-size:30px; font-weight:300; color:var(--wine); display:block; margin-bottom:.5rem; }
+  @media (max-width:760px){ .offer-solo { flex-direction:column; text-align:center; } }
   .offer ul { list-style:none; flex:1; margin-bottom:1.3rem; }
   .offer li { font-size:14.5px; line-height:1.6; color:var(--ink-soft); padding:0.45rem 0 0.45rem 1.2rem; position:relative; border-bottom:0.5px solid rgba(201,168,108,0.22); }
   .offer li::before { content:'✦'; position:absolute; left:0; color:var(--gold); font-size:11px; top:0.6rem; }
@@ -1020,6 +1029,8 @@
     <p class="body-text">A partir do que partilhas, ajudo-te a explorar as relações entre aquilo que sentes, as crenças que podem estar presentes e a forma como respondes às situações. Quando fizer sentido, trabalhamos essas crenças através das práticas que integro no meu acompanhamento. Se quiseres, podemos também aprofundar o teu mapa de Human Design.</p>
     <p class="body-text">Não ficamos apenas em compreender o padrão. Exploramos também o que desejas viver de outra forma e que passos podes experimentar na tua comunicação, nas tuas relações ou nas escolhas que tens pela frente.</p>
     <p class="statement sm">A Leitura abre perspetivas e reflexões. A sessão permite-te aprofundar e trabalhar as questões que surgirem, com o trabalho de crenças na minha metodologia única.</p>
+    <p class="body-text" style="text-align:center">Juntamente com a Leitura, a sessão custa <b>100€</b> em vez de <s>150€</s>. Também a podes marcar sozinha, por 150€.</p>
+    <p style="text-align:center"><a class="btn outline" href="#sessao-avulsa">Ver as opções da sessão</a></p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1044,6 +1055,7 @@
         <span class="offer-badge">A mais completa</span>
         <p class="offer-name">Leitura + sessão de aprofundamento</p>
         <p class="offer-price">247€</p>
+        <p class="offer-was">Leitura 147€ + sessão <s>150€</s> <b>100€</b></p>
         <ul>
           <li>Tudo o que está na Leitura Intuitiva</li>
           <li>Uma sessão individual comigo, depois de ouvires a Leitura</li>
@@ -1053,6 +1065,13 @@
         <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura o teu tipo, estratégia, autoridade e perfil, ligados ao tema que trazes.</span></label>
         <a class="btn" href="marcar-leitura.html?op=sessao" data-hd-href="marcar-leitura.html?op=sessao&amp;hd=1">Quero a Leitura e a sessão</a>
       </div>
+    </div>
+    <div class="offer-solo" id="sessao-avulsa">
+      <div>
+        <h3>Já tens a tua Leitura? Só a sessão de aprofundamento</h3>
+        <p>Uma sessão individual comigo para explorares o que surgiu e trabalharmos as crenças que fizerem sentido. Disponível para qualquer pessoa, tenha feito a Leitura comigo ou não.</p>
+      </div>
+      <div class="solo-side"><span class="solo-price">150€</span><a class="btn outline" href="marcar-leitura.html?op=sessaosolo">Quero só a sessão</a></div>
     </div>
     <details class="extra-rs" id="oferecer">
       <summary>🎁 Queres oferecer uma Leitura a alguém?</summary>
