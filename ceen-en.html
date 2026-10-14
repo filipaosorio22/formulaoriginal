@@ -1281,6 +1281,12 @@
   document.getElementById('cookieVeilCeen').addEventListener('click', fecharMarcacao);
 
   function enviar(subject, from, email, linhas){
+    try {
+      var z = new URLSearchParams();
+      z.append('assunto', subject); z.append('origem_form', from); z.append('email', email || ''); z.append('mensagem', linhas.join('\n')); z.append('data', new Date().toISOString());
+      linhas.forEach(function(l){ var m = /^([^:]{2,30}):\s*(.*)$/.exec(l); if (m && m[2] && m[2] !== '—') { var k = m[1].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,''); if (k !== 'email' && k !== 'e_mail') z.append(k, m[2]); } });
+      fetch('https://hooks.zapier.com/hooks/catch/29139062/419wv2h/', { method:'POST', mode:'no-cors', body: z }).catch(function(){});
+    } catch (e) {}
     return fetch('https://api.web3forms.com/submit', { method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
       body: JSON.stringify({ access_key: W3K, subject: subject, from_name: from, replyto: email, email: email, message: linhas.join('\n') }) })
       .then(function(r){ return r.json(); }).then(function(j){ if (!j.success) throw new Error(j.message || 'erro'); });
