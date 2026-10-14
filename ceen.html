@@ -567,6 +567,9 @@
   .bk-tel { display:flex; gap:0.5rem; margin-top:0.3rem; }
   .bk-f .bk-tel input { flex:1; min-width:0; width:auto; margin-top:0; }
   .bk-f .bk-tel select { flex:0 0 auto; width:auto; margin-top:0; padding-left:0.5rem; padding-right:0.3rem; }
+  .bk-ss { background:#f3e3d3; border-radius:10px; padding:0.9rem 1.1rem; margin:0 0 0.8rem; text-align:center; } .bk-ss p { margin:0 0 0.6rem; font-size:14.5px; }
+  .bk-ss-btn { display:inline-block; font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; color:#7a2535; border-radius:30px; padding:10px 22px; box-shadow:inset 0 0 0 1.5px #7a2535; transition:background 0.2s, color 0.2s; } .bk-ss-btn:hover { background:#7a2535; color:#f7f3ee; }
+  html[data-theme="dark"] .bk-ss { background:#382c22; } html[data-theme="dark"] .bk-ss-btn { color:var(--wine); box-shadow:inset 0 0 0 1.5px var(--wine); }
   .bk-back { margin:0 0 0.4rem; font-size:13.5px; } .bk-back a { color:var(--wine); }
   .bk-upd { font-size:13.5px; text-align:center; margin:-0.6rem 0 1rem; color:var(--gold-deep); }
   .bk-micnote { font-size:12.5px; color:var(--ink-soft); margin:-0.4rem 0 0.8rem; }
@@ -1221,6 +1224,7 @@
         <label class="bk-f">Site ou redes sociais <i>(opcional)</i><input name="links" placeholder="www… ou @…"></label>
         <label class="bk-f">Como chegaste até mim? <i>(opcional)</i><input name="origem"></label>
         <label class="bk-check"><input type="checkbox" name="termos" required><span>Li e aceito os <a href="termos-ceen.html" target="_blank">Termos</a> e a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.</span></label>
+        <label class="bk-check"><input type="checkbox" name="substack" value="sim"><span>Quero também receber os textos da Filipa no Substack <i>(opcional, podes cancelar quando quiseres)</i>.</span></label>
         <p class="bk-err" id="bkErr"></p>
         <p style="text-align:center; margin:1.2rem 0 0;"><button type="submit" class="cta-btn" id="bkBtn">Continuar para escolher o dia</button></p>
       </form>
@@ -1236,6 +1240,7 @@
         <p style="margin-bottom:1.2rem;">Para escolheres o dia aqui, precisamos de carregar o calendário do Calendly, que usa cookies próprios.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); aceitarEAbrirCalendly();">Aceitar e continuar</a>
       </div>
+      <div id="bkSubstack" class="bk-ss" style="display:none"><p>Obrigada, a tua data está marcada! Como pediste, falta só um passo para receberes os textos da Filipa no Substack:</p><a class="bk-ss-btn" id="bkSubstackLink" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscrever no Substack</a></div>
       <div id="calendlyWidget" style="min-width:280px; height:650px;"></div>
     </div>
   </div>
@@ -1393,8 +1398,9 @@
     if (!validar(f, err)) return;
     var d = dados(f);
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
+    if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
     var corpo = L.join('\n'), anterior = BK.ultimo;
-    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', formato: d.formato, enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
+    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
     // só envia o e-mail se for a primeira vez ou se a pessoa mudou alguma resposta
     if (corpo !== anterior) {
       var tinha = !!anterior;
@@ -1407,7 +1413,7 @@
     document.getElementById('bkStep2').style.display = 'block';
     document.getElementById('bkBtn').textContent = 'Atualizar e continuar';
     document.querySelector('#ceenCalendlyModal .bk-box').scrollTop = 0;
-    var wd = document.getElementById('calendlyWidget'); wd.innerHTML = ''; delete wd.dataset.done;
+    var wd = document.getElementById('calendlyWidget'); wd.innerHTML = ''; delete wd.dataset.done; document.getElementById('bkSubstack').style.display = 'none';
     mostrarCalendario();
     if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado');
   });
@@ -1416,6 +1422,7 @@
   window.addEventListener('message', function(e){
     if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
     var d = e.data; if (!d || d.event !== 'calendly.event_scheduled') return;
+    if (BK.substack) { var bs = document.getElementById('bkSubstack'); document.getElementById('bkSubstackLink').href = 'https://filipaosorio.substack.com/subscribe?email=' + encodeURIComponent(BK.email); bs.style.display = 'block'; try { bs.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(x){} }
     if (BK.enviado && !BK.reservaAvisada) {
       BK.reservaAvisada = true;
       enviar('Marcou a data · ' + BK.nome + ' · ' + BK.formato, 'Site · CEEN', BK.email, ['A pessoa marcou a data no Calendly.', 'Nome: ' + BK.nome, 'E-mail: ' + BK.email, 'Formato: ' + BK.formato]).catch(function(){ BK.reservaAvisada = false; });
