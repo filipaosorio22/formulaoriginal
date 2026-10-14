@@ -555,6 +555,30 @@
   .mpop .mp-combo li.active { background:var(--tint2); }
   .mpop .mp-combo li.none { cursor:default; color:var(--muted); font-size:13.5px; }
   @media (max-width:480px){ .mpop .mp-grid { grid-template-columns:1fr; } .mpop-box { padding:1.5rem 1.1rem 1.1rem; } }
+
+  /* ronda 4 (14 out): testemunho sem itálico, mais legível, com áudio; foto mais acima */
+  .feat .feat-full p { font-family:'Lora',serif; font-style:normal; font-size:18px; line-height:1.75; color:var(--ink); }
+  .feat .feat-full strong { font-weight:600; color:var(--wine); background:linear-gradient(transparent 55%, rgba(201,168,108,0.55) 55%); padding:0 2px; }
+  html[data-theme="dark"] .feat .feat-full strong { color:var(--ink); background:linear-gradient(transparent 55%, rgba(201,168,108,0.4) 55%); }
+  .feat .feat-ctx { font-size:16px; }
+  .feat .aud { display:flex; gap:1rem; align-items:center; background:rgba(201,168,108,0.18); border-radius:40px; padding:0.55rem 1.3rem 0.55rem 0.6rem; margin:0 0 1rem; }
+  .aud-btn { flex:0 0 40px; width:40px; height:40px; border-radius:50%; border:none; background:var(--wine); cursor:pointer; position:relative; padding:0; }
+  .aud-play { position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-left:11px solid #faf6ef; border-top:7px solid transparent; border-bottom:7px solid transparent; }
+  .aud-pause { display:none; position:absolute; inset:0; align-items:center; justify-content:center; gap:4px; }
+  .aud-pause b { width:4px; height:14px; background:#faf6ef; border-radius:2px; }
+  .aud.playing .aud-play { display:none; } .aud.playing .aud-pause { display:flex; }
+  .aud-main { flex:1; min-width:0; display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:1rem; }
+  .aud-q { font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:var(--wine); margin:0; white-space:nowrap; }
+  .aud-bar { position:relative; height:26px; cursor:pointer; overflow:hidden; }
+  .aud-wave { position:absolute; inset:0; display:flex; align-items:center; gap:3px; }
+  .aud-wave i { flex:1; background:rgba(122,37,53,0.28); border-radius:2px; }
+  .aud.playing .aud-wave i { animation:audpulse 1s ease-in-out infinite alternate; }
+  .aud.playing .aud-wave i:nth-child(odd) { animation-delay:0.25s; }
+  @keyframes audpulse { from { transform:scaleY(0.6); } to { transform:scaleY(1.15); } }
+  .aud-fill { position:absolute; left:0; top:0; bottom:0; width:0; border-right:2px solid var(--wine); background:rgba(122,37,53,0.12); pointer-events:none; }
+  .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); min-width:2.2rem; text-align:right; }
+  @media (max-width:680px){ .feat .aud { border-radius:22px; padding:0.6rem 0.9rem 0.6rem 0.6rem; } .aud-main { grid-template-columns:minmax(0,1fr) auto; gap:0.3rem 0.7rem; } .aud-q { grid-column:1 / -1; } .feat .feat-full p { font-size:17px; } }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 95% !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -642,13 +666,17 @@
     <div class="feat">
       <p class="feat-eyebrow">✦ A Leitura mais recente · testemunho em áudio</p>
       <p class="feat-quote">«Fez clique nos pontos onde tinha que fazer o clique.<br>Trouxe visões diferentes à minha realidade.»</p>
-      <p class="feat-ctx">Uma amiga e cliente de há anos, de quem conheço bem a história. Por isso mesmo estava curiosa para ver o que a Leitura lhe traria.</p>
+      <p class="feat-ctx">Uma cliente de há anos, que virou amiga também, de quem conheço muito bem a história e a ela, claro. Um caso bem especial, até com trocas de mensagens sobre a Leitura, por isso mesmo estava um bocadinho expectante e curiosa para ver o que a Leitura lhe traria.</p>
+      <div class="aud"><audio preload="metadata" src="feedback-leitura.mp3"></audio><button type="button" class="aud-btn" aria-label="Ouvir o testemunho"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">Ouvir o testemunho</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
       <details>
         <summary>Ler o testemunho completo</summary>
         <div class="feat-full">
-          <p>«(…) Voltando à Leitura e àquilo que eu senti da Leitura, <strong>eu gostei muito, muito mesmo</strong>. Achei que a conversa que nós tivemos depois da Leitura mostrou isso mesmo, que <strong>fez clique nos pontos onde tinha que fazer o clique</strong>.</p>
-          <p><strong>Trouxe visões diferentes à minha realidade.</strong> Houve coisas também que tu trouxeste, estou-me a lembrar aqui da <span class="secret" aria-label="parte omitida por privacidade">história que ficou entre nós</span> que tu trouxeste, mas não percebeste bem o significado, e <strong>para mim foi muito claro o significado</strong>, tal e qual como <span class="secret" aria-label="parte omitida por privacidade">aquela outra imagem</span>. Portanto, essas coisas tu trouxeste e <strong>eu consegui dar-lhes o significado dentro da minha realidade</strong>. (…)</p>
-          <p>Tanto consegui que <strong>ainda há insights que estão a vir</strong> (…). As mensagens ficaram e foram reverberando, e eu sei que <strong>quando lá voltar uma segunda vez vou ter mais</strong>, vou retirar outras coisas.»</p>
+          <p>«Então, minha querida, olha, eu gostei muito, já te tinha dito, <strong>gostei muito da Leitura!</strong> Apesar de tu teres dito que não estavas tão à vontade, que a certa altura achaste que eu podia ficar a achar que estavas a repetir aquilo que tu já sabias da minha história. Eu acho que isso também tem muito a ver com o facto de tu saberes tanto da minha história e de nós conversarmos tanto sobre o que se passa, que na realidade também não é a realidade que tu tens com todas as clientes (…)</p>
+          <p>Voltando à Leitura e àquilo que eu senti da Leitura, <strong>eu gostei muito, muito mesmo</strong>. Achei que, aliás, a conversa que nós tivemos depois da Leitura mostrou isso mesmo, que <strong>fez clique nos pontos onde tinha que fazer o clique</strong>.</p>
+          <p><strong>Trouxe visões diferentes à minha realidade</strong> daqui. Houve coisas também que tu trouxeste, estou-me a lembrar aqui da <span class="secret" aria-label="parte omitida por privacidade">história que ficou entre nós</span> e que tu trouxeste, mas não percebeste bem o significado, e <strong>para mim foi muito claro o significado</strong>, tal e qual como <span class="secret" aria-label="parte omitida por privacidade">aquela outra imagem</span>. Portanto, essas coisas tu trouxeste-as e <strong>eu consegui dar-lhes o significado dentro da minha realidade</strong>, no fundo (…)</p>
+          <p>E, mais uma vez, é óbvio que eu não consegui ouvir a Leitura como “deveria ser”, porque fui ouvindo aos bocadinhos, e no fundo o conselho que tu dás às tuas clientes é para <strong>tirarem um momento para elas e realmente se conectarem com a Leitura</strong>.</p>
+          <p>Seja por já estar meio habituada, seja porque realmente me consigo conectar com uma facilidade diferente, eu fui ouvindo a Leitura enquanto estava a fazer o jantar, depois, quando fui deitar os meninos à cama, coloquei os phones e fiquei a ouvir o resto da Leitura, e ao longo dessa escuta fui trocando mensagens contigo, <strong>fui aprofundando aquilo que estava a ouvir</strong>. Várias vezes fui metendo pausa e fomos tendo estas trocas, que na realidade não é a forma como a escuta da Leitura deveria ser feita.</p>
+          <p>Eu consegui, tanto consegui que <strong>ainda há insights que estão a vir</strong>, apesar de eu ainda não ter ouvido a Leitura pela segunda vez, sozinha, tranquilinha, porque ainda não me foi possível. Mas <strong>as mensagens ficaram e foram reverberando</strong>, e eu sei que <strong>quando lá voltar uma segunda vez vou ter mais</strong>, vou tirar outras coisas.»</p>
         </div>
       </details>
     </div>
@@ -889,7 +917,7 @@
       </div>
     </details>
     <details class="extra-rs">
-      <summary>Fazes anos em breve? Há uma opção com Revolução Solar</summary>
+      <summary>Fazes anos em breve ou fizeste recentemente?<br>A Leitura tem uma opção com Revolução Solar.</summary>
       <div class="extra-offer">
         <p class="eyebrow">Para quando fazes anos</p>
         <p class="extra-offer-name">Leitura Intuitiva + Revolução Solar · 247€</p>
@@ -1338,6 +1366,23 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
     if ((cb && cb.style.display !== 'none') || (mp && !mp.hidden)) { setTimeout(tryShow, 3000); return; }
     box.hidden = false; requestAnimationFrame(function(){ box.classList.add('open'); });
   }, 6000);
+})();
+</script>
+<script>
+(function(){
+  var cards = document.querySelectorAll('.aud');
+  function fmt(t){ if (!isFinite(t)) return '0:00'; var m = Math.floor(t / 60), s = Math.floor(t % 60); return m + ':' + (s < 10 ? '0' : '') + s; }
+  cards.forEach(function(c){
+    var a = c.querySelector('audio'), b = c.querySelector('.aud-btn'), f = c.querySelector('.aud-fill'), t = c.querySelector('.aud-t'), bar = c.querySelector('.aud-bar');
+    a.addEventListener('loadedmetadata', function(){ t.textContent = fmt(a.duration); });
+    a.addEventListener('timeupdate', function(){ if (a.duration) { f.style.width = (a.currentTime / a.duration * 100) + '%'; t.textContent = fmt(a.currentTime) + ' / ' + fmt(a.duration); } });
+    a.addEventListener('ended', function(){ c.classList.remove('playing'); f.style.width = '0'; t.textContent = fmt(a.duration); });
+    b.addEventListener('click', function(){
+      if (a.paused) { var fq = document.getElementById('freqAudio'); if (fq && !fq.paused) { var ft = document.getElementById('freqToggle'); if (ft) ft.click(); else fq.pause(); } a.play(); c.classList.add('playing'); if (typeof gtag === 'function') { gtag('event', 'audio_testemunho', { pagina: 'leitura' }); } }
+      else { a.pause(); c.classList.remove('playing'); }
+    });
+    bar.addEventListener('click', function(e){ if (a.duration) { var r = bar.getBoundingClientRect(); a.currentTime = (e.clientX - r.left) / r.width * a.duration; } });
+  });
 })();
 </script>
 </body>
