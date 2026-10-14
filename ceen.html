@@ -155,9 +155,12 @@
   .testimonial-photos-ph:hover::after { display:none; }
   .testimonial-photos-ph.open::after { content:'toca de novo para fechar'; }
   .testimonial-photos-ph .ph { border-radius:12px; overflow:hidden; background:transparent; border:none; padding:0; color:var(--gold-deep); font-family:'Lora',serif; font-size:11px; text-align:center; }
-  .fb-msg { display:block; width:min(420px, 100%); height:auto; margin:1.3rem auto 0; border-radius:12px; }
+  .fold-body p.fold-cta { text-align:center !important; margin:1.6rem 0 0.4rem; }
   .testimonial-photos-ph .ph img { width:100%; height:auto; display:block; border-radius:12px; }
   @media (max-width:560px){ .testimonial-photos-ph{ width:100%; } .testimonial-photos-ph.open{ grid-template-columns:1fr; } }
+  .testimonial-photos-ph.one { grid-template-columns:1fr; width:38%; }
+  .testimonial-photos-ph.one:hover, .testimonial-photos-ph.one.open { width:70%; }
+  @media (max-width:560px){ .testimonial-photos-ph.one { width:62%; } .testimonial-photos-ph.one.open { width:100%; } }
 
   .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.3rem; }
   @media (max-width:680px){ .pricing-grid{ grid-template-columns:1fr; } }
@@ -429,7 +432,7 @@
   html[data-theme="dark"] .cover { background-image:linear-gradient(120deg,#4a3430,#4a3a40,#4f4430,#523a36,#4a3a40,#4a3430); }
   html[data-theme="dark"] .pause .pause-quote:before { display:none; }
   html[data-theme="dark"] .cta-btn:hover, html[data-theme="dark"] .cta-btn:active, html[data-theme="dark"] .cta-btn:focus-visible { background-image:linear-gradient(120deg,#6a4838,#6a4a53,#6e5a34,#6a4a53,#6a4838); color:#f4e8d6; box-shadow:0 8px 18px rgba(0,0,0,0.35); }
-  html[data-theme="dark"] .popup { background:#26211c; }
+  html[data-theme="dark"] .popup, html[data-theme="dark"] .popup.popup-conv { background:#26211c; }
   html[data-theme="dark"] .popup-btn:hover { background-image:linear-gradient(120deg,#6a4838,#6a4a53,#6e5a34,#6a4a53,#6a4838); color:#f4e8d6; }
   html[data-theme="dark"] .callout.lilac { background:#3a3040; }
   html[data-theme="dark"] .callout.grayD { background:#332d25; }
@@ -524,7 +527,7 @@
   /* n57: citação em 2 linhas no telemóvel */
   @media (max-width:640px){ .pause .pause-quote.nobreak.fit2 { white-space:nowrap; font-size:min(26px, calc((100vw - 90px) / 11.6)); } }
   /* popup convites: em baixo à esquerda no computador; no telemóvel ocupa o lugar do popup principal */
-  .popup.popup-conv { right:auto; left:1.4rem; bottom:4.6rem; width:300px; padding:1.9rem 1rem 1rem; }
+  .popup.popup-conv { background:#f6e6d6; right:auto; left:1.4rem; bottom:4.6rem; width:300px; padding:1.9rem 1rem 1rem; }
   .popup-conv-img { display:block; width:100%; height:auto; border-radius:14px; box-shadow:0 1px 6px rgba(26,20,16,0.12); margin:0 0 0.9rem; }
   @media (max-width:600px){ .popup.popup-conv .popup-eyebrow { display:block; } .popup.popup-conv { left:0.8rem; right:0.8rem; bottom:1.4rem; width:auto; max-width:none; margin:0; } }
 </style>
@@ -704,6 +707,7 @@
         <p class="callout-label"><span class="nw">DIMENSÃO ENERGÉTICA ·</span><br><span class="nw">A PESSOA QUE O CONDUZ</span></p>
         <p style="margin-top:1.4rem;">Reconhecer o que te mobiliza, retrai ou esgota e como isso influencia as tuas escolhas e o papel que desejas ocupar no teu negócio.</p>
         <p>Consoante o que for mais relevante no teu momento, podemos observar a tua energia natural, desejos, crenças e padrões: elementos que influenciam aquilo que escolhes, comunicas e consegues sustentar.</p>
+        <p>Também podemos olhar para o teu dia a dia de trabalho, para perceber que tarefas, ritmos e formas de te relacionares com clientes te dão energia e quais te desgastam. E podemos ver como entras no teu modo de trabalho: que gestos simples, como a respiração ou a atenção ao corpo, te ajudam a passar da pressa e da autocobrança para um estado mais calmo e presente, a partir do qual decides e crias com mais clareza.</p>
       </div></div>
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
         <p class="callout-label"><span class="nw">DIMENSÃO ESTRATÉGICA ·</span><br><span class="nw">A TRADUÇÃO NO NEGÓCIO</span></p>
@@ -901,6 +905,7 @@
           <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Ver mais: Recomendações e próximos passos"><div class="finner"><div class="fface ffront"><b>Recomendações e próximos passos</b><span>Trabalhados na sessão e registados no Notion.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recomendações e próximos passos</h5><div class="fpar">A reflexão, a análise e as recomendações são trabalhadas durante a sessão. Em até 5 dias úteis, recebes no Notion um resumo curto do que foi trabalhado e os pontos de ação. Depois, podes avançar autonomamente ou marcar outro encontro quando sentires necessidade. A Sessão não inclui análise posterior, implementação ou acompanhamento.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">ver todos em detalhe</a></p>
+        <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar a minha Sessão CEEN</a></p>
       </div></div>
     </details>
 
@@ -919,6 +924,7 @@
           <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Ver mais: Segunda sessão · apresentar e alinhar"><div class="finner"><div class="fface ffront"><b>Segunda sessão</b><span>Entrega e apresentação da proposta.</span><i class="fhint"></i></div><div class="fface fback"><h5>Segunda sessão</h5><div class="fpar">No segundo encontro, exploramos as recomendações, as escolhas que abrem e os próximos passos possíveis, com base na análise feita entre sessões. Depois, podes avançar autonomamente ou marcar outro encontro quando sentires necessidade. Após a segunda sessão não existe análise posterior, implementação ou acompanhamento.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">ver todos em detalhe</a></p>
+        <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly();">Marcar o meu Ciclo CEEN</a></p>
       </div></div>
     </details>
   </div>
@@ -947,7 +953,7 @@
       <p class="q1" style="white-space:normal;"><strong>"Logo de seguida tinha recebido o contacto pelo meu website"</strong></p>
     </blockquote>
     <p style="font-size:15px;">Depois de estruturarmos juntas um novo serviço, esta cliente partilhou o que aconteceu a seguir:</p>
-    <img class="fb-msg" src="feedback-cliente-pacote.jpg?v=2" width="620" height="619" alt="Mensagem de uma cliente: depois de estruturarmos o pacote de atendimento para crianças e jovens, recebeu logo um pedido pelo website, o preço foi aceite e a sessão já está marcada.">
+    <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-pacote.jpg?v=3" width="922" height="920" alt="Mensagem de uma cliente: depois de estruturarmos o pacote de atendimento para crianças e jovens, recebeu logo um pedido pelo website, o preço foi aceite e a sessão já está marcada."></div></div>
   </div>
 </section>
 
@@ -1162,7 +1168,7 @@
 
 <footer>
   <div class="links">© 2026 Filipa Osório</div>
-  <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK</a><span>•</span><a href="mailto:mail@filipaosorio.com">MAIL</a></div>
+  <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK</a><span>•</span><a href="mailto:mail@filipaosorio.com">E-MAIL</a></div>
   <div class="links" style="margin-top:1.1rem;"><a href="termos-ceen.html">Termos e condições CEEN</a><span class="md">·</span><br class="mb"><a href="privacidade.html">Política de Privacidade</a><span>·</span><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a></div>
 </footer>
 
