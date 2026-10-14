@@ -630,6 +630,18 @@
   .hdq-t { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:21px; color:var(--wine); text-align:center; margin:2rem 0 1rem; }
   .hd-car { margin-top:0.6rem; }
   .hd-car .car-slide img { aspect-ratio:1/1 !important; }
+  /* ronda 9 */
+  .voice-quote p { font-size:clamp(18px,2.35vw,21px); color:var(--ink); }
+  .voice-quote { max-width:760px; margin-left:auto; margin-right:auto; }
+  .faixa { padding:4.4rem 1rem; margin:2rem 0; }
+  .faixa::before { inset:-60px 0; -webkit-mask-image:radial-gradient(closest-side, #000 62%, transparent 100%); mask-image:radial-gradient(closest-side, #000 62%, transparent 100%); }
+  @media (min-width:641px){ .faixa::before { left:calc(50% - min(47vw, 600px)); right:calc(50% - min(47vw, 600px)); } }
+  @media (max-width:640px){ .faixa { overflow-x:clip; } .faixa::before { inset:-50px -10px; } }
+  .nw { white-space:nowrap; }
+  .extra-offer-text { text-wrap:pretty; }
+  details.astro .astro-body h4.astro-h { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-deep); margin:1.4rem 0 0.7rem; }
+  details.astro .astro-body h4.astro-h:first-child { margin-top:0.4rem; }
+  details.astro .astro-body h4 + p { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--wine); }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -873,8 +885,9 @@
     <p class="body-text uso">Uso a intuição, a linguagem simbólica e a análise como partes do mesmo olhar: sensibilidade para o que ainda não foi dito e clareza para o transformar em reflexões que possas usar no teu dia a dia. O meu estudo do inconsciente, dos arquétipos e da alquimia faz parte desse percurso.</p>
     <p class="statement sm">Não separo a parte analítica da intuitiva. A Leitura é feita pelas duas.</p>
         <details class="astro">
-      <summary>Um bocadinho de mim pelos olhos da astrologia</summary>
+      <summary>Um bocadinho de mim pelos olhos da astrologia e do Human Design</summary>
       <div class="astro-body">
+        <h4 class="astro-h">Na astrologia</h4>
         <p>Gosto de imaginar o meu mapa como uma oficina alquímica: um lugar onde o fogo encontra matéria, as perguntas encontram imagens e aquilo que ainda não tem nome começa, pouco a pouco, a ganhar forma.</p>
         <p>A minha Lua em Carneiro guarda a chama de quem quer descobrir por si, sentir a vida de perto e abrir caminhos. Mercúrio e Vénus em Sagitário levam essa chama mais longe: são a viajante e a contadora de histórias, à procura de sentido, de beleza e de relações entre mundos que pareciam separados.</p>
         <p>O meu Sol em Capricórnio, junto a Marte, dá mãos a essa imaginação. É a construtora na oficina: escolhe os materiais, escuta o tempo e procura uma forma que consiga sustentar aquilo que nasceu como possibilidade. Não para apagar o mistério, mas para lhe dar um lugar na vida.</p>
@@ -882,19 +895,14 @@
         <p>Talvez seja por isso que me fascina tanto a linguagem dos símbolos. Uma imagem pode guardar uma pergunta; uma personagem pode dar rosto a um conflito; dois pontos, quando se aproximam, podem revelar uma história que ainda não tínhamos conseguido ver.</p>
         <p>É desse encontro entre imaginação e discernimento que procuro fazer as minhas Leituras: dar linguagem ao que reconheces, iluminar relações e encontrar uma passagem para a vida concreta.</p>
         <p>No meu mapa, encontro a contadora de histórias, a exploradora e a construtora a trabalhar na mesma oficina. Mercúrio e Vénus em Sagitário procuram sentido e palavras; Neptuno oferece-me uma imagem para a relação com o mistério; Capricórnio e Saturno lembram-me de cuidar da forma, dos limites e daquilo que consigo sustentar.</p>
-        <p>O meu mapa não me contém por inteiro. Mas oferece-me imagens para continuar a descobrir quem sou, e é com essa mesma curiosidade que me aproximo do teu.</p>
-      </div>
-    </details>
-    <details class="astro">
-      <summary>Um bocadinho de mim pelos olhos do Human Design</summary>
-      <div class="astro-body">
+        <h4 class="astro-h">No Human Design</h4>
         <p>Durante anos achei que tinha de escolher um caminho. Cinco anos em gestão, quatro empresas, seis funções diferentes, dois mestrados… e sempre a frustração de sentir que me estava a dispersar. O Human Design deu-me outra leitura: sou Geradora Manifestante, e não preciso de escolher um único foco.</p>
         <p>A minha energia ganha vida quando algo me entusiasma de verdade. É do «sim» do corpo que nasce a força para fazer muito, e depressa. Quando ajo sem esse sim, a frustração volta a aparecer, e aprendi a reconhecê-la como um sinal.</p>
         <p>A minha autoridade é emocional. As decisões pedem-me tempo, para que a onda assente e eu veja com clareza. É também por isso que dou tempo a cada Leitura: deixo que o que recebo amadureça antes de o partilhar contigo.</p>
         <p>O meu perfil é 3/5. Aprendo experimentando, errando e ajustando, e depois transformo essas experiências reais em algo que possa servir a outras pessoas. Muito do que partilho não vem só do estudo: foi vivido.</p>
         <p>Tenho o Baço definido, ligado à garganta: a intuição chega-me em rasgos, no momento, e precisa de ser dita. Os canais do Despertar e da Iniciação lembram-me de que estou aqui para viver a minha verdade, passar por grandes transformações e acompanhar outras pessoas nas suas.</p>
         <p>A minha Cruz é a do Véu do Amor, e a porta 10, a do amor-próprio, atravessa quase todo o meu desenho. Talvez seja esse o fio que liga tudo o que faço: ajudar-te a reconhecer quem és e a dar mais espaço a isso na tua vida.</p>
-        <p>Tal como o mapa, o meu desenho não me define por inteiro. Mas mostra-me como a minha energia funciona, e é com essa mesma escuta que olho para o teu.</p>
+        <p>Nem o meu mapa nem o meu desenho me contêm por inteiro. Mas oferecem-me imagens para continuar a descobrir quem sou e como a minha energia funciona, e é com essa mesma curiosidade e escuta que me aproximo dos teus.</p>
       </div>
     </details>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a>
@@ -988,7 +996,7 @@
         <p class="eyebrow">Para oferecer</p>
         <p class="extra-offer-name">Uma Leitura Intuitiva de presente</p>
         <p class="extra-offer-text">Só precisas de saber a data, a hora e o local de nascimento de quem recebe. Se souberes e quiseres, podes contar-me um pouco do momento que essa pessoa está a viver e do que acreditas que ela deseja. </p>
-        <p class="extra-offer-text">Podes oferecer a Leitura Intuitiva (147€) ou a Leitura com Revolução Solar (247€), ideal para um aniversário. A qualquer uma podes juntar o Human Design por apenas mais 50€.</p>
+        <p class="extra-offer-text">Podes oferecer a Leitura Intuitiva (147€) ou a Leitura com Revolução Solar (247€), ideal para um aniversário. A qualquer uma podes juntar o Human Design por apenas <span class="nw">mais 50€</span>.</p>
         <p class="extra-offer-text">Escolhes como entregar: um <strong>cartão de oferta</strong>, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a <strong>Leitura já pronta</strong>, em áudio, para lhe ofereceres.</p>
         <a class="btn" href="marcar-leitura.html?oferta=1">Oferecer uma Leitura</a>
       </div>
@@ -1010,23 +1018,19 @@
   <!-- PERGUNTAS -->
   <section class="reveal" id="perguntas">
     <details class="faqmain">
-      <summary><h2>Perguntas antes de escolheres</h2><span class="faq-count">14 perguntas</span></summary>
+      <summary><h2>Perguntas antes de escolheres</h2><span class="faq-count">11 perguntas</span></summary>
       <div class="faqbody faq">
-      <details><summary>Tenho de saber astrologia?</summary><div class="ans"><p>Não. Não precisas de conhecer linguagem técnica nem de acompanhar o desenho do mapa. A Leitura é apresentada de forma acessível, com ligações à vida prática.</p></div></details>
-      <details><summary>Tenho de escolher um tema específico?</summary><div class="ans"><p>Não tens de escolher uma categoria nem chegar com uma pergunta perfeita. Podes contar-me o que estás a viver, o que te inquieta e o que sentes que precisas de compreender. Se vários temas estiverem ligados, podes partilhá-los juntos. A partir daí, combinamos o foco da Leitura.</p></div></details>
-      <details><summary>E se não souber a hora de nascimento?</summary><div class="ans"><p>Fala comigo antes de comprar. A hora influencia elementos importantes do mapa, por isso precisamos de perceber o que é possível explorar com os dados que tens e quais serão as limitações.</p></div></details>
-      <details><summary>Como recebo a Leitura?</summary><div class="ans"><p>Recebes a tua Leitura personalizada em áudio, para escutares no teu tempo, fazeres pausas e regressares às passagens que te tocam.</p></div></details>
-      <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura base é gravada e não inclui um encontro ao vivo. Se escolheres Leitura Intuitiva + sessão de aprofundamento, tens também uma sessão individual comigo depois de ouvires a Leitura, para aprofundarmos os temas a partir das tuas reflexões e de exemplos reais.</p></div></details>
-      <details><summary>O que acontece na sessão de aprofundamento?</summary><div class="ans"><p>Partimos daquilo que reconheceste na Leitura e do que queres trazer da tua vida. Exploramos padrões, possíveis crenças e formas de responder às situações. Quando fizer sentido, integro práticas de trabalho de crenças e ajudamos a dar forma a próximos passos que possas experimentar.</p></div></details>
-      <details><summary>Tenho de preparar alguma coisa para a sessão?</summary><div class="ans"><p>Podes tomar notas e trazer perguntas ou exemplos, mas não é obrigatório. Basta partilhares aquilo que ficou contigo ou que desejas aprofundar.</p></div></details>
-      <details><summary>Posso oferecer uma Leitura a alguém?</summary><div class="ans"><p>Sim. Só precisas dos dados de nascimento de quem recebe. Podes oferecer um cartão, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a Leitura já pronta em áudio. Também podes oferecer a Leitura com Revolução Solar, ideal para um aniversário. <a href="#oferecer">Ver como oferecer</a>.</p></div></details>
-      <details><summary>Quanto tempo demora a chegar?</summary><div class="ans"><p>Até 14 dias úteis após a confirmação do pagamento.</p></div></details>
-      <details><summary>A história é a Leitura?</summary><div class="ans"><p>Não. A Leitura do teu mapa, orientada pelo que partilhas, é a entrega principal. A história simbólica é um complemento que reúne algumas das dinâmicas exploradas em imagens e personagens às quais podes regressar. Não é uma biografia nem uma previsão.</p></div></details>
-      <details><summary>Tenho de concordar com tudo o que ouço?</summary><div class="ans"><p>Não. Podes reconhecer-te, discordar ou dar outro sentido a uma imagem. A tua experiência é essencial para perceber o que faz sentido. Não precisas de te adaptar à interpretação.</p></div></details>
-      <details><summary>A Leitura vai dizer-me o que fazer?</summary><div class="ans"><p>Oferece perspetivas, perguntas e propostas práticas, não decisões tomadas por ti. Podes explorar o que ouves e escolher o que desejas experimentar.</p></div></details>
-      <details><summary>É uma previsão do futuro?</summary><div class="ans"><p>Não é esse o objetivo desta Leitura. O mapa é usado como linguagem simbólica para explorar as questões que trazes, não para determinar acontecimentos ou garantir resultados.</p></div></details>
-      <details><summary>Esta experiência substitui acompanhamento psicológico?</summary><div class="ans"><p>Não. A Leitura é uma prática espiritual e interpretativa de autoconhecimento. A sessão de aprofundamento aprofunda os temas e o trabalho de crenças, mas não é aqui apresentada como psicoterapia nem substitui acompanhamento médico ou psicológico.</p></div></details>
-      <details><summary>Posso fazer uma Revolução Solar depois?</summary><div class="ans"><p>Podes voltar a trabalhar comigo através de uma Leitura de Revolução Solar, dedicada à exploração simbólica do teu ciclo anual em relação com o mapa natal e com o momento que estás a viver, ideal para quando fazes anos (a tua volta ao Sol).</p></div></details>
+      <details><summary>Tenho de saber astrologia ou Human Design?</summary><div class="ans"><p>Não. Não precisas de conhecer linguagem técnica nem de acompanhar o desenho do mapa. A Leitura é apresentada de forma acessível, com ligações à vida prática. Basta vires com curiosidade e abertura para te conheceres melhor.</p></div></details>
+      <details><summary>E se não souber a hora de nascimento?</summary><div class="ans"><p>Pergunta a quem possa saber, como alguém da tua família, ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada. A hora influencia elementos importantes do mapa, e no Human Design ainda mais. Se mesmo assim não a conseguires, fala comigo antes de avançar, para vermos juntas o que é possível explorar com os dados que tens.</p></div></details>
+      <details><summary>O que torna esta Leitura diferente de pesquisar o meu mapa ou perguntar a uma IA?</summary><div class="ans"><p>Podes pesquisar o significado de um signo ou de um planeta, e uma IA pode ajudar-te a reunir essa informação. O que te proponho não se esgota aí. A Leitura é <strong>intuitiva</strong>, porque a minha sensibilidade participa na forma como reconheço associações e construo a interpretação. E é <strong>arquetípica</strong>, porque trabalho com imagens e temas humanos, como segurança, liberdade, desejo, pertença e criação, sem te reduzir a uma definição. Não quero que fiques só a pensar «isto descreve-me», mas a perguntar «onde reconheço isto e o que posso experimentar de diferente?».</p></div></details>
+      <details><summary>Porquê uma história?</summary><div class="ans"><p>Porque uma história liga o que uma lista separa. Em vez de características isoladas, acompanhas alguém que deseja alguma coisa, encontra um obstáculo e explora possibilidades. As personagens dão forma a tensões que podes reconhecer em ti. A história é um complemento da Leitura, criado a partir dos temas do teu mapa e do que partilhas. Não é a tua biografia nem uma previsão: podes reconhecer-te, discordar ou dar-lhe outro sentido.</p></div></details>
+      <details><summary>Como e quando recebo a Leitura?</summary><div class="ans"><p>Em áudio, até 14 dias úteis após a confirmação do pagamento. Escolho a voz porque o que te quero comunicar não está só nas palavras, está também no tom, no ritmo e nas pausas. Podes escutar no teu tempo, parar, repetir e regressar às passagens que te tocam.</p></div></details>
+      <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura é gravada. Se escolheres a Leitura com sessão de aprofundamento, encontramo-nos depois de a ouvires: partimos do que reconheceste, exploramos padrões e crenças e damos forma a próximos passos. Não precisas de preparar nada, mas podes trazer notas e exemplos.</p></div></details>
+      <details><summary>A Leitura vai dizer-me o que fazer ou prever o futuro?</summary><div class="ans"><p>Não. Oferece perspetivas, perguntas e propostas práticas, não decisões nem previsões. O mapa não é uma sentença, é um ponto de partida. Podes reconhecer-te, discordar ou dar outro sentido ao que ouves: a tua experiência é essencial.</p></div></details>
+      <details><summary>O que é a Revolução Solar?</summary><div class="ans"><p>Todos os anos, perto do teu aniversário, o Sol volta exatamente à posição em que estava quando nasceste. O mapa desse momento chama-se Revolução Solar e marca o início de um novo ciclo anual da tua vida. Na Leitura com Revolução Solar (247€), olho para esse mapa em relação com o teu mapa natal e com o que estás a viver, para explorar os temas que podem ganhar destaque até ao próximo aniversário. É ideal para quando fizeste anos há pouco ou vais fazer em breve.</p></div></details>
+      <details><summary>O que acrescenta o Human Design?</summary><div class="ans"><p>A astrologia e o Human Design partem do mesmo momento de nascimento e olham para ele de formas complementares: a astrologia fala dos arquétipos e das dinâmicas da tua vida; o Human Design mostra como a tua energia funciona e como tomas as melhores decisões. Por mais 50€, junto à Leitura o teu tipo, estratégia, autoridade e perfil, ligados ao tema que trazes, na mesma Leitura em áudio.</p></div></details>
+      <details><summary>Posso oferecer uma Leitura a alguém?</summary><div class="ans"><p>Sim. Só precisas dos dados de nascimento de quem recebe. Podes oferecer um cartão, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a Leitura já pronta em áudio. <a href="#oferecer">Ver como oferecer</a>.</p></div></details>
+      <details><summary>Esta experiência substitui acompanhamento psicológico?</summary><div class="ans"><p>Não. A Leitura é uma prática interpretativa de autoconhecimento e exploração simbólica. Não é um diagnóstico e não substitui acompanhamento médico ou psicológico.</p></div></details>
         <button type="button" class="faq-close" id="faqClose">↑ Fechar perguntas</button>
       </div>
     </details>
@@ -1441,10 +1445,10 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
   function openGift(){ var d = document.getElementById('oferecer'); if (d) d.open = true; }
   function close(){ box.classList.remove('open'); setTimeout(function(){ box.hidden = true; }, 500); }
   document.getElementById('giftTopX').addEventListener('click', close);
-  function slowTo(el){ var off = 110;
+  function slowTo(el){ var nv = document.querySelector('nav'); var off = (nv ? nv.getBoundingClientRect().bottom : 90) + 22;
     var y0 = window.scrollY, y1 = el.getBoundingClientRect().top + y0 - off, t0 = null, D = 1400;
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { window.scrollTo(0, y1); return; }
-    function step(t){ if (!t0) t0 = t; var k = Math.min(1, (t - t0) / D), e = k < 0.5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2; window.scrollTo(0, y0 + (y1 - y0) * e); if (k < 1) requestAnimationFrame(step); }
+    function step(t){ if (!t0) t0 = t; y1 = el.getBoundingClientRect().top + window.scrollY - off; var k = Math.min(1, (t - t0) / D), e = k < 0.5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2; window.scrollTo(0, y0 + (y1 - y0) * e); if (k < 1) requestAnimationFrame(step); }
     requestAnimationFrame(step); }
   document.getElementById('giftTopLink').addEventListener('click', function(e){ e.preventDefault(); openGift(); close(); var d = document.getElementById('oferecer'), ey = d && d.querySelector('.eyebrow'); if (ey) setTimeout(function(){ slowTo(ey); }, 30); });
   document.querySelectorAll('a[href="#oferecer"]').forEach(function(a){ a.addEventListener('click', openGift); });
