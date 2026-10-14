@@ -148,6 +148,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 </div>
 
 <script>
+// Pagamento: quando estiverem preenchidos, o formulário envia as respostas por e-mail (Web3Forms)
+// e abre o link de pagamento do Stripe certo. Enquanto estiverem vazios, segue por WhatsApp.
+window.FO_PAY = {
+  web3formsKey: '',
+  stripe: { 'leitura': '', 'leitura+hd': '', 'rs': '', 'rs+hd': '', 'sessao': '', 'sessao+hd': '' }
+};
+</script>
+<script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
   var VS = '︎';
@@ -197,6 +205,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   $('hd').addEventListener('change', updTotal);
   updTotal();
 
+  if ((window.FO_PAY || {}).web3formsKey){ $('go').textContent = 'Continuar para o pagamento'; var hn = $('go').parentNode.nextElementSibling; if (hn) hn.textContent = 'As tuas respostas chegam-me por e-mail e segues para o pagamento seguro com cartão (Stripe).'; }
   var NAMES = { leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
   function fmtDate(d){ var p = d.split('-'); return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : d; }
 
@@ -222,6 +231,15 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     if (data || hora || local) L.push('Nascimento: ' + [data ? fmtDate(data) : '', hora, local].filter(Boolean).join(', '));
     var qs = [['q1', $('q1l').textContent], ['q2', $('q2l').textContent], ['q3', $('q3l').textContent]];
     qs.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1].replace(/\s*\(opcional\)\s*$/, '')); L.push(v); } });
+    var PAY = window.FO_PAY || {}, link = PAY.stripe && PAY.stripe[sel().value + ($('hd').checked ? '+hd' : '')];
+    if (PAY.web3formsKey && link){
+      var btn = $('go'); btn.disabled = true; btn.textContent = 'A preparar o pagamento…';
+      var go = function(){ location.href = link + (link.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(email); };
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ access_key: PAY.web3formsKey, subject: (gift ? 'Oferta de Leitura · ' : 'Nova Leitura · ') + nome + ' · ' + total() + '€', from_name: 'Site · Leitura Intuitiva', replyto: email, email: email, message: L.join('\n') }) })
+        .then(go, go);
+      return;
+    }
     var url = 'https://wa.me/351939479755?text=' + encodeURIComponent(L.join('\n'));
     $('waAgain').href = url;
     window.open(url, '_blank', 'noopener');
