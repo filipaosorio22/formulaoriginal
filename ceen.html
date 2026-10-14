@@ -1380,8 +1380,14 @@
     if (!validar(f, err)) return;
     var d = dados(f);
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
-    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', enviado: true, enviadoEmail: BK.enviadoEmail,
-      pendente: { assunto: 'Nova marcação CEEN · ' + d.nome + ' · ' + d.formato, email: d.email, linhas: L } };
+    var corpo = L.join('\n'), anterior = BK.ultimo;
+    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', formato: d.formato, enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
+    // só envia o e-mail se for a primeira vez ou se a pessoa mudou alguma resposta
+    if (corpo !== anterior) {
+      var tinha = !!anterior;
+      BK.ultimo = corpo;
+      enviar((tinha ? 'ATUALIZAÇÃO · ' : '') + 'Nova marcação CEEN · ' + d.nome + ' · ' + d.formato, 'Site · CEEN', d.email, L).catch(function(){ BK.ultimo = anterior; });
+    }
     document.getElementById('bkNome').textContent = d.nome.split(' ')[0];
     document.getElementById('bkValor').textContent = f.querySelector('input[name=formato]:checked').getAttribute('data-valor');
     document.getElementById('bkStep1').style.display = 'none';
@@ -1393,13 +1399,13 @@
     if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado');
   });
 
-  // o e-mail com as respostas só é enviado quando a pessoa marca mesmo a data no Calendly
+  // aviso curto quando a pessoa marca mesmo a data no Calendly
   window.addEventListener('message', function(e){
     if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
     var d = e.data; if (!d || d.event !== 'calendly.event_scheduled') return;
-    if (BK.pendente && !BK.enviadoEmail) {
-      BK.enviadoEmail = true;
-      enviar(BK.pendente.assunto, 'Site · CEEN', BK.pendente.email, BK.pendente.linhas).catch(function(){ BK.enviadoEmail = false; });
+    if (BK.enviado && !BK.reservaAvisada) {
+      BK.reservaAvisada = true;
+      enviar('Marcou a data · ' + BK.nome + ' · ' + BK.formato, 'Site · CEEN', BK.email, ['A pessoa marcou a data no Calendly.', 'Nome: ' + BK.nome, 'E-mail: ' + BK.email, 'Formato: ' + BK.formato]).catch(function(){ BK.reservaAvisada = false; });
     }
   });
 
