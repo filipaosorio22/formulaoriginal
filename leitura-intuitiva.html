@@ -1159,10 +1159,10 @@
     <button class="mpop-x" type="button" aria-label="Fechar" data-mp-close>×</button>
     <form id="mpForm" novalidate autocomplete="off">
       <h3 id="mpTitle">Queres ver o teu mapa?</h3>
-      <p class="mp-sub">Diz-me quando e onde nasceste e escolhe o que queres ver: o teu mapa astral, com o Sol, a Lua e o Ascendente, o teu Human Design, ou os dois.</p>
+      <p class="mp-sub">Diz-me quando e onde nasceste e escolhe o que queres ver: o teu mapa astral, o teu Human Design, ou insights sobre os dois.</p>
       <div class="mp-grid">
         <div class="mp-full"><label class="mp-l" for="mpNome">Nome</label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name" required></div>
-        <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="date" id="mpData" min="1900-01-01" max="2100-12-31"></div>
+        <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="text" id="mpData" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10"></div>
         <div><label class="mp-l" for="mpHora">Hora de nascimento</label><input type="time" id="mpHora"></div>
         <div class="mp-full mp-combo"><label class="mp-l" for="mpLocal">Local de nascimento</label>
           <input type="text" id="mpLocal" maxlength="80" placeholder="Escreve a cidade, ex.: Coimbra" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="mpList">
@@ -1501,11 +1501,16 @@
   });
   list.addEventListener('mousedown', function(e){ var li = e.target.closest('li[data-i]'); if (!li) return; e.preventDefault(); pick(+li.getAttribute('data-i')); });
 
+  // data dd/mm/aaaa (máscara) e conversão para aaaa-mm-dd
+function maskD(el){ el.addEventListener('input', function(){ var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2); if (d.length > 2) o += '/' + d.slice(2, 4); if (d.length > 4) o += '/' + d.slice(4); this.value = o; }); }
+function isoD(v){ var m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v || ''); if (!m) return ''; var d = +m[1], mo = +m[2], y = +m[3], t = new Date(y, mo - 1, d); return (t.getFullYear() === y && t.getMonth() === mo - 1 && t.getDate() === d) ? m[3] + '-' + m[2] + '-' + m[1] : ''; }
+function fmtD(v){ var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : ''; }
+maskD($('mpData'));
   $('mpForm').addEventListener('submit', function(e){
     e.preventDefault();
-    var err = $('mpErr'), data = $('mpData').value, hora = $('mpHora').value;
+    var err = $('mpErr'), data = isoD($('mpData').value), hora = $('mpHora').value;
     if (!$('mpNome').value.trim()){ err.textContent = 'Escreve o teu nome.'; $('mpNome').focus(); return; }
-    if (!data){ err.textContent = 'Falta a data de nascimento.'; $('mpData').focus(); return; }
+    if (!data){ err.textContent = 'Confirma a data de nascimento (dd/mm/aaaa).'; $('mpData').focus(); return; }
     if (!hora){ err.textContent = 'Falta a hora de nascimento (está na tua certidão de nascimento).'; $('mpHora').focus(); return; }
     if (!chosen && inp.value.trim()){ render(); if (shownC.length === 1) pick(0); }
     if (!chosen){ err.textContent = 'Escolhe a tua cidade na lista.'; inp.focus(); render(); return; }

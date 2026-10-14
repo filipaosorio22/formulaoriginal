@@ -173,7 +173,7 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .layers{margin-top:34px;text-align:center}
 .layers h3{font-family:var(--serif);font-weight:300;font-size:clamp(23px,5.2vw,28px);margin:0 0 4px}
 .layers .sub{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.04em;margin:0 0 18px}
-.layers .ask{font-family:var(--serif);font-size:clamp(17px,4.4vw,19px);font-weight:300;line-height:1.55;color:var(--ink);margin:0 auto 20px;max-width:30em}
+.layers .ask{text-align:left;font-family:var(--serif);font-size:clamp(17px,4.4vw,19px);font-weight:300;line-height:1.55;color:var(--ink);margin:0 auto 20px;max-width:30em}
 .layers .ask em{color:var(--deep)}
 .layers .ask.mc{border:1px solid var(--line-soft);border-radius:14px;padding:16px 18px;background:var(--card);text-align:left}
 .layers .ask.mc strong{font-style:italic;font-weight:400;color:var(--wine)}
@@ -242,19 +242,19 @@ h1 em{font-style:normal;color:var(--wine)}
   <header>
     <p class="kicker"><span>✦</span>Leitura Intuitiva<span>✦</span></p>
     <h1>O teu <em>mapa astral</em></h1>
-    <p class="lead">Cálculo do mapa astral grátis, com o céu no instante em que chegaste. Indica a data, a hora e o local de nascimento e o teu mapa natal aparece aqui, traçado a ouro.</p>
+    <p class="lead">Cálculo do mapa astral grátis, com o céu no instante em que nasceste. Indica a data, a hora e o local de nascimento e o teu mapa natal aparece aqui, traçado a ouro.</p>
     <div class="rule">✦</div>
   </header>
 
   <form class="card" id="form" novalidate autocomplete="off">
     <div class="grid">
       <div class="full">
-        <label class="lbl" for="nome">Nome <span class="opt">(opcional)</span></label>
-        <input type="text" id="nome" maxlength="60" placeholder="Como te chamas?">
+        <label class="lbl" for="nome">Nome</label>
+        <input type="text" id="nome" maxlength="60" placeholder="Como te chamas?" required autocomplete="given-name">
       </div>
       <div>
         <label class="lbl" for="data">Data de nascimento</label>
-        <input type="date" id="data" min="1900-01-01" max="2100-12-31" required>
+        <input type="text" id="data" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10" required>
       </div>
       <div>
         <label class="lbl" for="hora">Hora de nascimento</label>
@@ -286,7 +286,7 @@ h1 em{font-style:normal;color:var(--wine)}
     </div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
-    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Só guardo os dados se me deres autorização abaixo para tos poder enviar.</p>
+    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Só guardo os dados se me deres autorização para te enviar mais info.</p>
   </form>
 
   <section id="result" hidden aria-live="polite">
@@ -303,7 +303,7 @@ h1 em{font-style:normal;color:var(--wine)}
     </details>
 
     <div class="pillars">
-      <h3>Os 3 pilares do mapa astral</h3>
+      <h3>3 pilares do mapa astral</h3>
       <p class="sub">Sol · Lua · Ascendente</p>
       <div id="pillars"></div>
     </div>
@@ -315,12 +315,12 @@ h1 em{font-style:normal;color:var(--wine)}
       </div>
       <form class="gate" id="gate" novalidate>
         <h3>Descobre mais sobre<br>a tua Lua e Ascendente</h3>
-        <p class="sub">Partilha o teu nome e e-mail para conheceres um bocadinho mais do teu mapa, antes da Leitura.</p>
+        <p class="sub">Partilha o teu nome e e-mail para conheceres um bocadinho<br>mais da minha visão sobre o teu mapa, antes da Leitura.</p>
         <div class="grid">
           <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" name="fields[name]" maxlength="60" autocomplete="given-name" required></div>
           <div><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" name="fields[email]" maxlength="120" autocomplete="email" inputmode="email" required></div>
         </div>
-        <label class="chk"><input type="checkbox" id="gOk" required><span>Quero receber os e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
+        <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
         <p class="err" id="gErr" role="alert"></p>
         <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver alguns insights do meu mapa</button></div>
       </form>
@@ -328,7 +328,7 @@ h1 em{font-style:normal;color:var(--wine)}
 
     <div class="cta">
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
-      <p class="big">O mapa é só o desenho. <em>A Leitura Intuitiva</em> é a forma de o transformares<br>em ação no teu momento presente.</p>
+      <p class="big">O mapa é só o desenho.<br><em>A Leitura Intuitiva</em> é a forma de o transformares em ação no teu momento presente.</p>
       <a class="btn" href="marcar-leitura.html">Quero a minha Leitura</a><br>
       <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a>
     </div>
@@ -730,10 +730,16 @@ function resolvePlace(){
   return null;
 }
 
+// data dd/mm/aaaa (máscara) e conversão para aaaa-mm-dd
+function maskD(el){ el.addEventListener('input', function(){ var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2); if (d.length > 2) o += '/' + d.slice(2, 4); if (d.length > 4) o += '/' + d.slice(4); this.value = o; }); }
+function isoD(v){ var m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v || ''); if (!m) return ''; var d = +m[1], mo = +m[2], y = +m[3], t = new Date(y, mo - 1, d); return (t.getFullYear() === y && t.getMonth() === mo - 1 && t.getDate() === d) ? m[3] + '-' + m[2] + '-' + m[1] : ''; }
+function fmtD(v){ var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : ''; }
+maskD($('data'));
 form.addEventListener('submit', function(e){
   e.preventDefault();
   var err = $('err'); err.textContent = '';
-  var dv = $('data').value;
+  if (!$('nome').value.trim()){ err.textContent = 'Escreve o teu nome.'; $('nome').focus(); return; }
+  var dv = isoD($('data').value);
   var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dv);
   if (!m){ err.textContent = 'Indica a tua data de nascimento.'; $('data').focus(); return; }
   var y = +m[1], mo = +m[2], d = +m[3];
@@ -758,7 +764,7 @@ form.addEventListener('submit', function(e){
   try {
     var q = new URLSearchParams(location.search);
     if (q.get('nome')) $('nome').value = q.get('nome').slice(0, 60);
-    if (/^\d{4}-\d{2}-\d{2}$/.test(q.get('data') || '')) $('data').value = q.get('data');
+    if (/^\d{4}-\d{2}-\d{2}$/.test(q.get('data') || '')) $('data').value = fmtD(q.get('data'));
     if (/^\d{2}:\d{2}$/.test(q.get('hora') || '')) $('hora').value = q.get('hora');
     var nm = (q.get('local') || '').slice(0, 80), lat = parseFloat(q.get('lat')), lon = parseFloat(q.get('lon')), tz = q.get('tz') || '';
     if (nm && isFinite(lat) && isFinite(lon) && TZS.indexOf(tz) > -1){
