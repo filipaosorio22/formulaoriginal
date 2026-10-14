@@ -84,6 +84,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   <div class="card done">
     <p>Vou começar a preparar a tua Leitura com todo o cuidado. Vais recebê-la em áudio, em até 14 dias úteis, e escrevo-te por e-mail se precisar de alguma informação.</p>
     <p>Se foi uma oferta, envio-te o cartão de oferta ou a Leitura pronta, conforme escolheste.</p>
+    <p id="subBox" hidden><a class="btn" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscrever os textos no Substack</a></p>
+    <script>try { if (localStorage.getItem("fo_sub") === "1") { document.getElementById("subBox").hidden = false; localStorage.removeItem("fo_sub"); } } catch (e) {}</script>
     <p>Tens alguma dúvida? <a href="https://wa.me/351939479755" target="_blank" rel="noopener">Fala comigo 💌</a></p>
     <p><a href="leitura-intuitiva.html">← Voltar à Leitura Intuitiva</a></p>
   </div>

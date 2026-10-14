@@ -142,6 +142,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <div class="card">
       <p class="total">Total: <b id="tot">147€</b></p>
       <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura Intuitiva</a>.</span></label>
+      <label class="chk"><input type="checkbox" id="sub"><span>Quero também receber os textos da Filipa no Substack. Depois do pagamento, confirmas a subscrição lá.</span></label>
       <p class="err" id="err" role="alert"></p>
       <div class="actions"><button class="btn" type="submit" id="go">Enviar pelo WhatsApp</button></div>
       <p class="hint" style="text-align:center">As tuas respostas abrem numa mensagem de WhatsApp para mim. Depois envio-te os dados de pagamento.</p>
@@ -262,6 +263,8 @@ window.FO_PAY = {
     if (data || hora || local) L.push('Nascimento: ' + [data ? fmtDate(data) : '', hora, local].filter(Boolean).join(', '));
     var qs = [['q1', $('q1l').textContent], ['q2', $('q2l').textContent], ['q3', $('q3l').textContent]];
     qs.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1].replace(/\s*\(opcional\)\s*$/, '')); L.push(v); } });
+    if ($('sub').checked) L.push('\nQuer subscrever o Substack: sim');
+    try { if ($('sub').checked) localStorage.setItem('fo_sub', '1'); else localStorage.removeItem('fo_sub'); } catch (e) {}
     var PAY = window.FO_PAY || {}, link = PAY.stripe && PAY.stripe[sel().value + ($('hd').checked ? '+hd' : '')];
     var url = 'https://wa.me/351939479755?text=' + encodeURIComponent(L.join('\n'));
     function finish(viaEmail){
