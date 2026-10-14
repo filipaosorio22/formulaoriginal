@@ -642,6 +642,38 @@
   details.astro .astro-body h4.astro-h { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-deep); margin:1.4rem 0 0.7rem; }
   details.astro .astro-body h4.astro-h:first-child { margin-top:0.4rem; }
   details.astro .astro-body h4 + p { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--wine); }
+  /* ronda 10 */
+  #testemunhos .voice-quote { margin-bottom:2.4rem; }
+  @media (min-width:641px){ .faixa::before { left:calc(50% - min(40vw, 470px)); right:calc(50% - min(40vw, 470px)); inset-block:-48px; } }
+  .faixa { padding:3.8rem 1rem; }
+  .texto-fundo::before { border-radius:22px; }
+  .bio-box { background:linear-gradient(135deg, rgba(240,222,182,0.42), rgba(250,243,230,0.2)) !important; border:0.5px solid var(--gold); border-radius:18px; }
+  html[data-theme="dark"] .bio-box { background:linear-gradient(135deg, rgba(120,92,48,0.24), rgba(60,48,34,0.12)) !important; }
+  .bio-box::before { display:none; }
+  .hdx { margin:1.6rem 0 0.6rem; padding:1.3rem 1.3rem 1.1rem; border:0.5px solid var(--gold); border-radius:16px; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); }
+  html[data-theme="dark"] .hdx { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
+  .hdx-eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 0.9rem; }
+  .hdx-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:640px){ .hdx-grid { grid-template-columns:1fr; } }
+  .hdx-c { background:var(--card); border-radius:12px; padding:0.9rem 1rem; }
+  .hdx-c p { font-family:'Lora',serif; font-size:15.5px; line-height:1.6; color:var(--ink); margin:0; }
+  .hdx-c .hdx-l { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--wine); margin-bottom:0.3rem; }
+  .hdx-j { font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); text-align:center; margin:1rem 0 0.6rem; }
+  .hdx-mini { list-style:none; padding:0; margin:0; border-top:0.5px solid var(--gline); }
+  .hdx-mini li { font-family:'Lora',serif; font-size:14.5px; line-height:1.6; color:var(--ink-soft); padding:0.6rem 0 0; }
+  .hdx-mini b { color:var(--wine); font-weight:600; }
+  #oferecer .extra-offer-text { text-align:justify; text-align-last:center; hyphens:auto; -webkit-hyphens:auto; }
+  #oferecer .gift-lead { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--ink); }
+  .gift-list { list-style:none; padding:0; margin:0.4rem auto 1rem; max-width:480px; text-align:left; }
+  .gift-list li { display:flex; flex-wrap:wrap; align-items:baseline; gap:0 0.5rem; padding:0.55rem 0; border-bottom:0.5px dashed var(--gline); font-family:'Lora',serif; font-size:15.5px; color:var(--ink); }
+  .gift-list li b { font-weight:600; }
+  .gift-list li em { font-style:italic; color:var(--ink-soft); font-size:14px; }
+  .gift-list li > span:last-child { margin-left:auto; color:var(--wine); font-weight:600; white-space:nowrap; }
+  .gift-ways { display:grid; grid-template-columns:1fr 1fr; gap:10px; max-width:480px; margin:0 auto 1.2rem; text-align:left; }
+  @media (max-width:520px){ .gift-ways { grid-template-columns:1fr; } }
+  .gift-ways > div { background:var(--card); border:0.5px solid var(--gline); border-radius:12px; padding:0.75rem 0.9rem; }
+  .gift-ways b { display:block; font-family:'Lora',serif; font-size:15px; color:var(--wine); font-weight:600; margin-bottom:0.2rem; }
+  .gift-ways span { font-family:'Lora',serif; font-size:14px; line-height:1.5; color:var(--ink-soft); }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -805,6 +837,19 @@
     <h2>E o Human Design?</h2>
     <p class="body-text">O Human Design junta a astrologia, o I Ching, a Cabala e o sistema dos chakras num mapa do teu corpo energético. Mostra como a tua energia funciona, como tomas as melhores decisões e onde te deixas condicionar pelos outros.</p>
     <p class="body-text">Podes juntá-lo à tua Leitura por apenas mais 50€. Recebes o teu tipo, a tua estratégia, a tua autoridade e o teu perfil, ligados ao tema que trazes, com formas práticas de os viveres no teu dia-a-dia.</p>
+    <p class="body-text">O Human Design traz um outro nível de profundidade ao mapa astral. As mesmas posições dos planetas ganham portas, linhas e canais que mostram como essa energia funciona no teu corpo, nas tuas decisões e nas tuas relações.</p>
+    <div class="hdx">
+      <p class="hdx-eyebrow">✦ Um exemplo: Vénus</p>
+      <div class="hdx-grid">
+        <div class="hdx-c"><p class="hdx-l">Na astrologia</p><p>Vénus em Escorpião fala de um amor intenso, de entrega total ou nada, e do que te faz sentir verdadeiramente valorizada.</p></div>
+        <div class="hdx-c"><p class="hdx-l">No Human Design</p><p>A mesma Vénus ativa uma porta e uma linha concretas. Mostra os valores que trazes às relações, o que para ti é certo, e se essa energia está do lado que reconheces em ti ou do lado que os outros veem antes de ti.</p></div>
+      </div>
+      <p class="hdx-j">Juntos, percebes não só como amas, mas onde está o teu magnetismo.</p>
+      <ul class="hdx-mini">
+        <li><b>Sol</b> · na astrologia, a tua identidade e o que te faz brilhar; no Human Design, o tema principal da tua vida, que carrega a maior parte da tua energia.</li>
+        <li><b>Lua</b> · na astrologia, as tuas emoções e o que te dá segurança; no Human Design, a força que te move.</li>
+      </ul>
+    </div>
     <h3 class="hdq-t">O que dizem sobre o Human Design comigo</h3>
     <div class="carousel hd-car">
       <button class="car-arrow car-prev" type="button" aria-label="Anterior">←</button>
@@ -902,6 +947,9 @@
         <p>O meu perfil é 3/5. Aprendo experimentando, errando e ajustando, e depois transformo essas experiências reais em algo que possa servir a outras pessoas. Muito do que partilho não vem só do estudo: foi vivido.</p>
         <p>Tenho o Baço definido, ligado à garganta: a intuição chega-me em rasgos, no momento, e precisa de ser dita. Os canais do Despertar e da Iniciação lembram-me de que estou aqui para viver a minha verdade, passar por grandes transformações e acompanhar outras pessoas nas suas.</p>
         <p>A minha Cruz é a do Véu do Amor, e a porta 10, a do amor-próprio, atravessa quase todo o meu desenho. Talvez seja esse o fio que liga tudo o que faço: ajudar-te a reconhecer quem és e a dar mais espaço a isso na tua vida.</p>
+        <h4 class="astro-h">Como se ligam</h4>
+        <p>Os dois partem do mesmo céu. O Human Design usa as posições dos planetas no momento em que nasci, e também cerca de 88 dias antes, e traduz cada uma numa porta do meu desenho. Por isso vejo-os a conversar.</p>
+        <p>A chama da Lua em Carneiro e a construtora do Sol em Capricórnio reconhecem-se na Geradora Manifestante: a energia que quer abrir caminho e a que precisa de responder antes de avançar. A contadora de histórias de Mercúrio e Vénus em Sagitário encontra eco na garganta definida, onde a intuição pede para ser dita. E o Ascendente em Aquário, que gosta de abrir janelas, conversa com o perfil 3/5, que aprende experimentando para depois partilhar.</p>
         <p>Nem o meu mapa nem o meu desenho me contêm por inteiro. Mas oferecem-me imagens para continuar a descobrir quem sou e como a minha energia funciona, e é com essa mesma curiosidade e escuta que me aproximo dos teus.</p>
       </div>
     </details>
@@ -995,9 +1043,17 @@
       <div class="extra-offer">
         <p class="eyebrow">Para oferecer</p>
         <p class="extra-offer-name">Uma Leitura Intuitiva de presente</p>
-        <p class="extra-offer-text">Só precisas de saber a data, a hora e o local de nascimento de quem recebe. Se souberes e quiseres, podes contar-me um pouco do momento que essa pessoa está a viver e do que acreditas que ela deseja. </p>
-        <p class="extra-offer-text">Podes oferecer a Leitura Intuitiva (147€) ou a Leitura com Revolução Solar (247€), ideal para um aniversário. A qualquer uma podes juntar o Human Design por apenas <span class="nw">mais 50€</span>.</p>
-        <p class="extra-offer-text">Escolhes como entregar: um <strong>cartão de oferta</strong>, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a <strong>Leitura já pronta</strong>, em áudio, para lhe ofereceres.</p>
+        <p class="extra-offer-text gift-lead">Oferecer uma Leitura é oferecer a alguém um olhar profundo sobre quem é e sobre o momento que está a viver. Um presente que não se gasta: fica em áudio, para ouvir e voltar a ouvir.</p>
+        <p class="extra-offer-text">Só precisas de saber a data, a hora e o local de nascimento de quem recebe. Se souberes e quiseres, podes contar-me um pouco do que essa pessoa está a viver e do que acreditas que ela deseja.</p>
+        <ul class="gift-list">
+          <li><b>Leitura Intuitiva</b><span>147€</span></li>
+          <li><b>Leitura com Revolução Solar</b><em>ideal para um aniversário</em><span>247€</span></li>
+          <li><b>+ Human Design</b><em>a qualquer uma das duas</em><span>por apenas <span class="nw">mais 50€</span></span></li>
+        </ul>
+        <div class="gift-ways">
+          <div><b>🎁 Cartão de oferta</b><span>A pessoa usa-o para marcar comigo no prazo de 1 mês.</span></div>
+          <div><b>🎧 Leitura já pronta</b><span>Em áudio, para lhe ofereceres tu.</span></div>
+        </div>
         <a class="btn" href="marcar-leitura.html?oferta=1">Oferecer uma Leitura</a>
       </div>
     </details>
@@ -1022,7 +1078,7 @@
       <div class="faqbody faq">
       <details><summary>Tenho de saber astrologia ou Human Design?</summary><div class="ans"><p>Não. Não precisas de conhecer linguagem técnica nem de acompanhar o desenho do mapa. A Leitura é apresentada de forma acessível, com ligações à vida prática. Basta vires com curiosidade e abertura para te conheceres melhor.</p></div></details>
       <details><summary>E se não souber a hora de nascimento?</summary><div class="ans"><p>Pergunta a quem possa saber, como alguém da tua família, ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada. A hora influencia elementos importantes do mapa, e no Human Design ainda mais. Se mesmo assim não a conseguires, fala comigo antes de avançar, para vermos juntas o que é possível explorar com os dados que tens.</p></div></details>
-      <details><summary>O que torna esta Leitura diferente de pesquisar o meu mapa ou perguntar a uma IA?</summary><div class="ans"><p>Podes pesquisar o significado de um signo ou de um planeta, e uma IA pode ajudar-te a reunir essa informação. O que te proponho não se esgota aí. A Leitura é <strong>intuitiva</strong>, porque a minha sensibilidade participa na forma como reconheço associações e construo a interpretação. E é <strong>arquetípica</strong>, porque trabalho com imagens e temas humanos, como segurança, liberdade, desejo, pertença e criação, sem te reduzir a uma definição. Não quero que fiques só a pensar «isto descreve-me», mas a perguntar «onde reconheço isto e o que posso experimentar de diferente?».</p></div></details>
+      <details><summary>O que torna esta Leitura diferente?</summary><div class="ans"><p>Não te entrego uma lista de significados de signos e planetas. A Leitura é <strong>intuitiva</strong>, porque a minha sensibilidade participa na forma como reconheço associações e construo a interpretação. E é <strong>arquetípica</strong>, porque trabalho com imagens e temas humanos, como segurança, liberdade, desejo, pertença e criação, sem te reduzir a uma definição. Não quero que fiques só a pensar «isto descreve-me», mas a perguntar «onde reconheço isto e o que posso experimentar de diferente?».</p></div></details>
       <details><summary>Porquê uma história?</summary><div class="ans"><p>Porque uma história liga o que uma lista separa. Em vez de características isoladas, acompanhas alguém que deseja alguma coisa, encontra um obstáculo e explora possibilidades. As personagens dão forma a tensões que podes reconhecer em ti. A história é um complemento da Leitura, criado a partir dos temas do teu mapa e do que partilhas. Não é a tua biografia nem uma previsão: podes reconhecer-te, discordar ou dar-lhe outro sentido.</p></div></details>
       <details><summary>Como e quando recebo a Leitura?</summary><div class="ans"><p>Em áudio, até 14 dias úteis após a confirmação do pagamento. Escolho a voz porque o que te quero comunicar não está só nas palavras, está também no tom, no ritmo e nas pausas. Podes escutar no teu tempo, parar, repetir e regressar às passagens que te tocam.</p></div></details>
       <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura é gravada. Se escolheres a Leitura com sessão de aprofundamento, encontramo-nos depois de a ouvires: partimos do que reconheceste, exploramos padrões e crenças e damos forma a próximos passos. Não precisas de preparar nada, mas podes trazer notas e exemplos.</p></div></details>
