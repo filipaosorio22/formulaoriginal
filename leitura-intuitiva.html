@@ -686,6 +686,16 @@
   #oferecer .extra-offer { text-align:left; }
   #oferecer .extra-offer .eyebrow, #oferecer .extra-offer-name { text-align:center; }
   #oferecer .extra-offer .btn { display:table; margin-left:auto; margin-right:auto; }
+  /* ronda 13 */
+  .feat .feat-quote { font-size:clamp(17px,2.1vw,20px); line-height:1.5; }
+  @media (hover:hover){
+    .car-slide:not(.car-video):hover img { transform:none; }
+    .car-slide:not(.car-video) { cursor:zoom-in; transition:transform 0.35s ease, box-shadow 0.35s ease; position:relative; z-index:1; }
+    .car-slide:not(.car-video):hover { transform:scale(1.18); z-index:6; box-shadow:0 14px 40px rgba(60,40,20,0.35); }
+    .car-track { padding-block:34px; margin-block:-34px; }
+  }
+  .car-slide.big { cursor:zoom-out; }
+  @media (hover:hover){ #testemunhos .carousel, .hd-car { margin-top:2rem; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -716,7 +726,7 @@
 
 <div class="gift-top" id="giftTop" role="dialog" aria-label="Oferecer uma Leitura" hidden>
   <span class="gt-ic" aria-hidden="true">🎁</span>
-  <p>Queres oferecer uma Leitura Intuitiva a alguém especial?<br>Que presente maravilhoso! <a href="#oferecer" id="giftTopLink">Ver como</a></p>
+  <p>Queres oferecer uma Leitura Intuitiva a alguém especial?<br>Que presente maravilhoso! Verás essa opção mais abaixo.</p>
   <button type="button" id="giftTopX" aria-label="Fechar">×</button>
 </div>
 
@@ -766,7 +776,7 @@
   <!-- TESTEMUNHOS -->
   <section class="reveal" id="testemunhos">
     <blockquote class="voice-quote">
-      <p><span>«Jamais duvides das informações que recebes. Além de seres tão precisa,</span> <span>a tua voz traz uma calma, uma tranquilidade, uma paz…</span> <span>É uma coisa muito bonita!»</span></p>
+      <p><span>«Jamais duvides das informações que recebes. Além de seres tão precisa,</span> <span>a tua voz traz uma calma, uma tranquilidade, uma paz… É uma coisa muito bonita!»</span></p>
       <cite>Uma colega de formação, logo depois de receber uma Leitura</cite>
     </blockquote>
     <h2>O que dizem as pessoas que já receberam uma Leitura minha</h2>
@@ -913,8 +923,8 @@
       <li>Uma história simbólica ligada ao teu momento, criada a partir do teu mapa e do teu tema</li>
       <li>Relações entre os temas do mapa e o que partilhas como ponto de partida</li>
       <li>Perguntas para reconheceres como um padrão aparece em situações concretas</li>
-      <li>Orientações e experiências práticas para o teu dia-a-dia com base nas crenças que surgirem na Leitura</li>
-      <li>Sugestões de práticas para o dia-a-dia e formas de levares a consciência do teu mapa para as tuas dinâmicas</li>
+      <li>Orientações práticas para o teu dia-a-dia com base nas crenças que surgirem na Leitura</li>
+      <li>Sugestões de formas de levares a consciência do teu mapa para as tuas dinâmicas</li>
       <li>A Leitura em áudio, gravada por mim, para ouvires quantas vezes quiseres</li>
     </ul>
   </section>
@@ -1507,12 +1517,6 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
   function openGift(){ var d = document.getElementById('oferecer'); if (d) d.open = true; }
   function close(){ box.classList.remove('open'); setTimeout(function(){ box.hidden = true; }, 500); }
   document.getElementById('giftTopX').addEventListener('click', close);
-  function slowTo(el){ var nv = document.querySelector('nav'); var off = (nv ? nv.getBoundingClientRect().bottom : 90) + 22;
-    var y0 = window.scrollY, y1 = el.getBoundingClientRect().top + y0 - off, t0 = null, D = 1400;
-    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { window.scrollTo(0, y1); return; }
-    function step(t){ if (!t0) t0 = t; y1 = el.getBoundingClientRect().top + window.scrollY - off; var k = Math.min(1, (t - t0) / D), e = k < 0.5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2; window.scrollTo(0, y0 + (y1 - y0) * e); if (k < 1) requestAnimationFrame(step); }
-    requestAnimationFrame(step); }
-  document.getElementById('giftTopLink').addEventListener('click', function(e){ e.preventDefault(); openGift(); close(); var d = document.getElementById('oferecer'), ey = d && d.querySelector('.eyebrow'); if (ey) setTimeout(function(){ slowTo(ey); }, 30); });
   document.querySelectorAll('a[href="#oferecer"]').forEach(function(a){ a.addEventListener('click', openGift); });
   if (location.hash === '#oferecer') openGift();
   setTimeout(function tryShow(){
@@ -1541,13 +1545,21 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
 </script>
 <script>
 (function(){
+  var hov = window.matchMedia && matchMedia('(hover: hover)').matches;
   document.querySelectorAll('.car-slide:not(.car-video)').forEach(function(sl){
-    sl.addEventListener('click', function(){
-      var tr = sl.parentNode, big = !sl.classList.contains('big');
-      [].forEach.call(tr.children, function(o){ o.classList.remove('big'); });
-      if (big) sl.classList.add('big');
-      setTimeout(function(){ tr.scrollTo({ left: Math.max(0, sl.offsetLeft - tr.offsetLeft - (tr.clientWidth - sl.offsetWidth) / 2), behavior:'smooth' }); }, 480);
-    });
+    if (hov) {
+      sl.addEventListener('mouseenter', function(){
+        var tr = sl.parentNode, r = sl.getBoundingClientRect(), t = tr.getBoundingClientRect();
+        sl.style.transformOrigin = (r.left - t.left < 24) ? 'left center' : (t.right - r.right < 24) ? 'right center' : 'center center';
+      });
+    } else {
+      sl.addEventListener('click', function(){
+        var tr = sl.parentNode, big = !sl.classList.contains('big');
+        [].forEach.call(tr.children, function(o){ o.classList.remove('big'); });
+        if (big) sl.classList.add('big');
+        setTimeout(function(){ tr.scrollTo({ left: Math.max(0, sl.offsetLeft - tr.offsetLeft - (tr.clientWidth - sl.offsetWidth) / 2), behavior:'smooth' }); }, 480);
+      });
+    }
   });
 })();
 </script>
