@@ -559,6 +559,11 @@
   .bk-mic { position:absolute; right:0.4rem; bottom:0.4rem; width:2rem; height:2rem; border-radius:50%; border:1px solid #d9c9ad; background:#faf6ef; cursor:pointer; font-size:15px; line-height:1; }
   .bk-mic.on { background:#f3d3ae; border-color:#7a2535; animation:pulse 1.2s infinite; }
   @keyframes pulse { 50% { box-shadow:0 0 0 6px rgba(122,37,53,0.12); } }
+  .bk-tel { display:flex; gap:0.5rem; margin-top:0.3rem; }
+  .bk-f .bk-tel input { flex:1; min-width:0; width:auto; margin-top:0; }
+  .bk-f .bk-tel select { flex:0 0 auto; width:auto; margin-top:0; padding-left:0.5rem; padding-right:0.3rem; }
+  .bk-back { margin:0 0 0.4rem; font-size:13.5px; } .bk-back a { color:var(--wine); }
+  .bk-upd { font-size:13.5px; text-align:center; margin:-0.6rem 0 1rem; color:var(--gold-deep); }
   .bk-micnote { font-size:12.5px; color:var(--ink-soft); margin:-0.4rem 0 0.8rem; }
   @media (max-width:600px){ .bk-box { padding:1.6rem 1rem 1.2rem; } .bk-row { grid-template-columns:1fr; gap:0; } }
   html[data-theme="dark"] .bk-box { background:#26211c; }
@@ -1132,7 +1137,8 @@
     <div id="bkStep1" class="bk-step">
       <p class="bk-eyebrow">Step 1 of 2</p>
       <p class="bk-title">Book my CEEN</p>
-      <p class="bk-intro">Tell me a little about you and your business. In the next step you choose the day of your session.</p>
+      <p class="bk-intro">Tell me a little about you and your business.<br>In the next step you choose the day of your session.</p>
+      <p class="bk-upd" id="bkUpd" style="display:none;">You can correct your answers. I will receive the updated version.</p>
       <form id="bkForm" novalidate>
         <div class="bk-fmt">
           <label><input type="radio" name="formato" value="Sessão CEEN · 250 €" checked><span><b>CEEN Session</b>€250</span></label>
@@ -1140,12 +1146,12 @@
         </div>
         <label class="bk-f">Full name<input name="nome" required autocomplete="name"></label>
         <label class="bk-f">Email<input name="email" type="email" required autocomplete="email"></label>
-        <label class="bk-f">Phone (WhatsApp)<input name="telemovel" type="tel" required autocomplete="tel"></label>
-        <label class="bk-f">Your business: what you do and for whom<span class="bk-ta"><textarea name="negocio" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🎤</button></span></label>
+        <div class="bk-f">Phone (WhatsApp)<span class="bk-tel"><select name="cc" class="bk-cc" aria-label="Country code"><option value="+351">🇵🇹 +351</option><option value="+55">🇧🇷 +55</option><option value="+34">🇪🇸 +34</option><option value="+33">🇫🇷 +33</option><option value="+44">🇬🇧 +44</option><option value="+1">🇺🇸 +1</option><option value="+49">🇩🇪 +49</option><option value="+41">🇨🇭 +41</option><option value="+352">🇱🇺 +352</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+32">🇧🇪 +32</option><option value="+353">🇮🇪 +353</option><option value="+46">🇸🇪 +46</option><option value="+244">🇦🇴 +244</option><option value="+258">🇲🇿 +258</option><option value="+238">🇨🇻 +238</option><option value="+61">🇦🇺 +61</option><option value="+971">🇦🇪 +971</option></select><input name="telemovel" type="tel" required autocomplete="tel-national" inputmode="tel"></span></div>
+        <label class="bk-f">Your business: what you do and for whom<span class="bk-ta"><textarea name="negocio" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🗣️</button></span></label>
         <label class="bk-f">How long it has existed
           <select name="tempo"><option value="">Choose an option</option><option>Less than 1 year</option><option>1 to 3 years</option><option>More than 3 years</option></select></label>
-        <label class="bk-f">The central question you want to work on<span class="bk-ta"><textarea name="questao" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🎤</button></span></label>
-        <p class="bk-micnote">If you prefer to speak, press the 🎤 and what you say is written in the box.</p>
+        <label class="bk-f">The central question you want to work on<span class="bk-ta"><textarea name="questao" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🗣️</button></span></label>
+        <p class="bk-micnote">If you prefer to speak, press the 🗣️ and what you say is written in the box.</p>
         <label class="bk-f">Website or social media <i>(optional)</i><input name="links" placeholder="www… or @…"></label>
         <label class="bk-f">How did you find me? <i>(optional)</i><input name="origem"></label>
         <label class="bk-check"><input type="checkbox" name="termos" required><span>I have read and accept the <a href="termos-ceen-en.html" target="_blank">Terms</a> and the <a href="privacidade-en.html" target="_blank">Privacy Policy</a>.</span></label>
@@ -1154,6 +1160,7 @@
       </form>
     </div>
     <div id="bkStep2" class="bk-step" style="display:none;">
+      <p class="bk-back"><a href="#" onclick="event.preventDefault(); voltarRespostas();">‹ Review my answers</a></p>
       <p class="bk-eyebrow">Step 2 of 2</p>
       <p class="bk-title">Thank you, <span id="bkNome"></span>! Choose the day</p>
       <div class="bk-pay">
@@ -1242,6 +1249,13 @@
       if (!widget.dataset.done) { widget.innerHTML = ''; Calendly.initInlineWidget({ url: calUrl(), parentElement: widget }); widget.dataset.done = '1'; }
     } else { prompt_.style.display = 'block'; widget.style.display = 'none'; }
   }
+  window.voltarRespostas = function(){
+    document.getElementById('bkStep2').style.display = 'none';
+    document.getElementById('bkStep1').style.display = 'block';
+    document.getElementById('bkUpd').style.display = 'block';
+    document.getElementById('bkBtn').textContent = 'Update and continue';
+    document.querySelector('#ceenCalendlyModal .bk-box').scrollTop = 0;
+  };
   window.fecharMarcacao = function(){
     document.getElementById('ceenCalendlyModal').style.display='none';
     document.getElementById('cookieVeilCeen').style.display='none';
@@ -1266,7 +1280,7 @@
       body: JSON.stringify({ access_key: W3K, subject: subject, from_name: from, replyto: email, email: email, message: linhas.join('\n') }) })
       .then(function(r){ return r.json(); }).then(function(j){ if (!j.success) throw new Error(j.message || 'erro'); });
   }
-  function dados(form){ var o = {}; new FormData(form).forEach(function(v,k){ o[k] = String(v).trim(); }); return o; }
+  function dados(form){ var o = {}; new FormData(form).forEach(function(v,k){ o[k] = String(v).trim(); }); if (o.telemovel !== undefined) { var n = o.telemovel.replace(/^0+/, ''); o.telemovel = /^\+/.test(n) ? n : ((o.cc || '') + ' ' + n).trim(); } return o; }
   function validar(form, errEl){
     var bad = Array.prototype.filter.call(form.querySelectorAll('[required]'), function(el){ return el.type === 'checkbox' ? !el.checked : !el.value.trim(); });
     var em = form.querySelector('input[type=email]');
@@ -1279,21 +1293,22 @@
     ev.preventDefault();
     var f = this, err = document.getElementById('bkErr'), btn = document.getElementById('bkBtn');
     if (!validar(f, err)) return;
-    var d = dados(f);
+    var d = dados(f), upd = !!BK.enviado;
     btn.disabled = true; btn.textContent = 'Sending…';
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
-    enviar('Nova marcação CEEN · ' + d.nome + ' · ' + d.formato, 'Site · CEEN', d.email, L).then(function(){
-      BK = { nome: d.nome, email: d.email, tel: d.telemovel, contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', enviado: true };
+    enviar((upd ? 'ATUALIZAÇÃO · ' : '') + 'Nova marcação CEEN · ' + d.nome + ' · ' + d.formato, 'Site · CEEN', d.email, L).then(function(){
+      BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', enviado: true };
       document.getElementById('bkNome').textContent = d.nome.split(' ')[0];
       document.getElementById('bkValor').textContent = d.formato.indexOf('Ciclo') === 0 ? '€800' : '€250';
       document.getElementById('bkStep1').style.display = 'none';
       document.getElementById('bkStep2').style.display = 'block';
       document.querySelector('#ceenCalendlyModal .bk-box').scrollTop = 0;
+      var wd = document.getElementById('calendlyWidget'); wd.innerHTML = ''; delete wd.dataset.done;
       mostrarCalendario();
       if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado');
     }).catch(function(){
       err.innerHTML = 'Could not send. Please try again or write to me at <a href="mailto:mail@filipaosorio.com">mail@filipaosorio.com</a>.';
-    }).then(function(){ btn.disabled = false; btn.textContent = 'Continue to choose the day'; });
+    }).then(function(){ btn.disabled = false; btn.textContent = BK.enviado ? 'Update and continue' : 'Continue to choose the day'; });
   });
 
   (function(){
