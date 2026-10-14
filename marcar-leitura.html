@@ -62,6 +62,11 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .note{font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 16px}
 .chk{display:flex;gap:10px;align-items:flex-start;font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:4px}
 .chk input{margin-top:3px;accent-color:#a8854f}
+.mic-row{display:flex;justify-content:flex-end;margin-top:6px}
+.mic{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:13px;color:var(--wine);background:none;border:1px solid var(--gold);border-radius:999px;padding:6px 12px;cursor:pointer}
+.mic:hover{background:rgba(201,168,108,.12)}
+.mic.on{background:var(--wine);border-color:var(--wine);color:#fff;animation:micp 1.4s ease-in-out infinite}
+@keyframes micp{50%{box-shadow:0 0 0 6px rgba(122,37,53,.15)}}
 .err{color:var(--wine);font-family:var(--sans);font-size:14px;margin:12px 0 0;text-align:center}
 .err:empty{display:none}
 .actions{text-align:center;margin-top:8px}
@@ -124,11 +129,11 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
     <div class="card">
       <h2 id="lifeT">O teu momento</h2>
-      <p class="note" id="lifeNote">Não precisas de escrever tudo perfeito. Escreve como te sair.</p>
+      <p class="note" id="lifeNote"><span id="lifeTxt">Não precisas de escrever tudo perfeito. Escreve como te sair</span><span class="mic-tip" hidden>, ou carrega em 🎙 e fala: a tua voz passa a texto, que podes corrigir antes de enviar</span>.</p>
       <div class="grid">
-        <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento? <span class="opt">(opcional)</span></label><textarea id="q1" maxlength="1200"></textarea></div>
-        <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora? <span class="opt">(opcional)</span></label><textarea id="q2" maxlength="1200"></textarea></div>
-        <div class="full"><label class="lbl" for="q3" id="q3l">Há algum tema ou pergunta que queiras trazer? <span class="opt">(opcional)</span></label><textarea id="q3" maxlength="800"></textarea></div>
+        <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento?</label><textarea id="q1" maxlength="3000"></textarea></div>
+        <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora?</label><textarea id="q2" maxlength="3000"></textarea></div>
+        <div class="full"><label class="lbl" for="q3" id="q3l">Há algum tema ou pergunta que queiras trazer?</label><textarea id="q3" maxlength="2000"></textarea></div>
       </div>
     </div>
 
@@ -181,10 +186,10 @@ window.FO_PAY = {
     $('recWrap').hidden = false;
     $('birthT').textContent = 'Dados de nascimento de quem recebe';
     $('lifeT').textContent = 'O momento de quem recebe';
-    $('lifeNote').textContent = 'Opcional. Escreve só o que souberes e quiseres partilhar.';
-    $('q1l').innerHTML = 'O que sabes do momento que essa pessoa está a viver? <span class="opt">(opcional)</span>';
-    $('q2l').innerHTML = 'O que acreditas que ela deseja aprofundar? <span class="opt">(opcional)</span>';
-    $('q3l').innerHTML = 'Há alguma mensagem tua que queiras que eu saiba? <span class="opt">(opcional)</span>';
+    $('lifeTxt').textContent = 'Escreve só o que souberes e quiseres partilhar';
+    $('q1l').innerHTML = 'O que sabes do momento que essa pessoa está a viver?';
+    $('q2l').innerHTML = 'O que acreditas que ela deseja aprofundar?';
+    $('q3l').innerHTML = 'Há alguma mensagem tua que queiras que eu saiba?';
     $('hdLink').textContent = 'Ver o mapa de Human Design';
   }
 
@@ -264,6 +269,37 @@ window.FO_PAY = {
     $('waAgain').href = url;
     window.open(url, '_blank', 'noopener');
     finish(false);
+  });
+})();
+</script>
+<script>
+(function(){
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition; if (!SR) return;
+  var tip = document.querySelector('.mic-tip'); if (tip) tip.hidden = false;
+  var cur = null;
+  ['q1','q2','q3'].forEach(function(id){
+    var ta = document.getElementById(id); if (!ta) return;
+    var row = document.createElement('div'); row.className = 'mic-row';
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'mic'; b.innerHTML = '🎙 <span>Falar em vez de escrever</span>';
+    row.appendChild(b); ta.parentNode.appendChild(row);
+    var rec = null, base = '';
+    function stop(){ if (rec) { try { rec.stop(); } catch(e){} } }
+    function idle(){ b.classList.remove('on'); b.querySelector('span').textContent = 'Falar em vez de escrever'; rec = null; if (cur === stop) cur = null; }
+    b.addEventListener('click', function(){
+      if (rec) { stop(); return; }
+      if (cur) cur();
+      rec = new SR(); rec.lang = 'pt-PT'; rec.continuous = true; rec.interimResults = true;
+      base = ta.value.replace(/\s+$/, ''); if (base) base += ' ';
+      rec.onresult = function(e){
+        var fin = '', tmp = '';
+        for (var i = 0; i < e.results.length; i++) { var t = e.results[i][0].transcript; if (e.results[i].isFinal) fin += t; else tmp += t; }
+        ta.value = (base + fin + tmp).slice(0, ta.maxLength > 0 ? ta.maxLength : 3000);
+      };
+      rec.onerror = function(e){ if (e.error === 'not-allowed' || e.error === 'service-not-allowed') alert('Para ditar, permite o acesso ao microfone no teu navegador.'); };
+      rec.onend = idle;
+      try { rec.start(); } catch(e){ idle(); return; }
+      cur = stop; b.classList.add('on'); b.querySelector('span').textContent = 'A ouvir… toca para parar';
+    });
   });
 })();
 </script>

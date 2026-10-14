@@ -601,10 +601,6 @@
   .car-slide:not(.car-video) { cursor:zoom-in; }
   .car-slide:not(.car-video) img { transition:transform 0.5s ease; }
   @media (hover:hover){ .car-slide:not(.car-video):hover img { transform:scale(1.06); } }
-  .zoom { position:fixed; inset:0; z-index:400; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(26,20,16,0.82); cursor:zoom-out; }
-  .zoom.open { display:flex; }
-  .zoom img { max-width:min(100%,900px); max-height:calc(100vh - 32px); width:auto; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.4); }
-  .zoom-x { position:absolute; top:10px; right:14px; background:none; border:0; color:#fff; font-size:30px; line-height:1; cursor:pointer; padding:6px; }
 
   /* ronda 6 (14 out) */
   @media (min-width:681px){ #quem-te-guia .bio-box .bio-photo { height:440px; } }
@@ -613,13 +609,27 @@
   .mp-choice .btn { flex:1 1 100%; }
   .mp-choice .btn.outline:active { background:linear-gradient(120deg,#ecd6a4,#d6b26f,#efdcae); color:#3d2814; }
   /* feedbacks do Human Design */
+
+  /* ronda 8 */
+  .gift-top { width:max-content; max-width:calc(100% - 32px); }
+  .gift-top p { flex:0 1 auto; }
+  .faixa { overflow:visible; }
+  .faixa::before { inset:-36px 0; -webkit-mask-image:radial-gradient(closest-side, #000 45%, transparent 100%); mask-image:radial-gradient(closest-side, #000 45%, transparent 100%); }
+  @media (max-width:640px){ .faixa::before { inset:-30px 0; } }
+  .voice-quote p { font-size:clamp(17px,2.1vw,19.5px); line-height:1.6; color:var(--wine); }
+  .voice-quote p span { display:block; }
+  @media (max-width:700px){ .voice-quote p span { display:inline; } }
+  .statement.gold { padding:1.2rem 1.4rem; border:0.5px solid var(--gold); border-radius:14px; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); max-width:none; }
+  html[data-theme="dark"] .statement.gold { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
+  #testemunhos .feat { margin-top:2rem; }
+  .car-slide { transition:flex-basis 0.45s ease; }
+  .car-slide:not(.car-video) { cursor:zoom-in; }
+  .car-slide.big { flex-basis:76% !important; cursor:zoom-out; }
+  @media (max-width:640px){ .car-slide.big { flex-basis:100% !important; } }
+  .car-slide.big img { transform:none !important; }
   .hdq-t { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:21px; color:var(--wine); text-align:center; margin:2rem 0 1rem; }
-  .hdq-grid { columns:2 260px; column-gap:14px; }
-  .hdq { break-inside:avoid; margin:0 0 14px; padding:1rem 1.1rem 0.9rem; border:0.5px solid var(--gold); border-left:3px solid var(--gold); border-radius:12px; background:linear-gradient(135deg, rgba(240,222,182,0.32), rgba(250,243,230,0.12)); }
-  html[data-theme="dark"] .hdq { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
-  .hdq blockquote { margin:0; font-family:'Lora',serif; font-size:16px; line-height:1.6; color:var(--ink); }
-  .hdq blockquote strong { font-weight:600; color:var(--wine); }
-  .hdq figcaption { margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-deep); }
+  .hd-car { margin-top:0.6rem; }
+  .hd-car .car-slide img { aspect-ratio:1/1 !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -700,10 +710,34 @@
   <!-- TESTEMUNHOS -->
   <section class="reveal" id="testemunhos">
     <blockquote class="voice-quote">
-      <p>«Jamais duvides das informações que recebes. Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz…<br>É uma coisa muito bonita!»</p>
+      <p><span>«Jamais duvides das informações que recebes.</span> <span>Além de seres tão precisa, a tua voz traz uma calma, uma tranquilidade, uma paz…</span> <span>É uma coisa muito bonita!»</span></p>
       <cite>Uma colega de formação, logo depois de receber uma Leitura</cite>
     </blockquote>
     <h2>O que dizem as pessoas que já receberam uma Leitura minha</h2>
+    <div class="carousel">
+      <button class="car-arrow car-prev" type="button" aria-label="Anterior">←</button>
+      <button class="car-arrow car-next" type="button" aria-label="Seguinte">→</button>
+      <div class="car-track" id="carTrack">
+        <div class="car-slide"><img src="feedback1-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback2-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback3-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback4-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback6-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback7-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback8-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback9-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback10-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback11-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback12-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback13-dourado.jpg" alt="Testemunho de uma cliente: «Esta viagem tem sido tão incrível… Veio sossegar o meu espírito desassossegado»" loading="lazy"></div>
+        <div class="car-slide car-video" id="carVideo" role="button" tabindex="0" aria-label="Ver o vídeo de testemunho"><img src="https://img.youtube.com/vi/MHyyFIKgRL4/hqdefault.jpg" alt="Vídeo de testemunho de uma cliente" loading="lazy" style="opacity:0.85;"><div class="play"><span>▶</span></div></div>
+      </div>
+      <div class="car-dots" id="carDots"></div>
+      <p class="swipe-hint">Desliza para o lado →</p>
+    </div>
+    <div class="aside">
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, pela lente da Astrologia, da Alquimia e dos Arquétipos, o que acrescenta novas camadas de compreensão e abre a porta a reflexões e aprofundamento que podes fazer a partir dela.</p>
+    </div>
     <div class="feat">
       <p class="feat-eyebrow">✦ A Leitura mais recente · testemunho em áudio</p>
       <p class="feat-quote">«Fez clique nos pontos onde tinha que fazer o clique.<br>Trouxe visões diferentes à minha realidade.»</p>
@@ -720,29 +754,6 @@
           <p>Eu consegui, tanto consegui que <strong>ainda há insights que estão a vir</strong>, apesar de eu ainda não ter ouvido a Leitura pela segunda vez, sozinha, tranquilinha, porque ainda não me foi possível. Mas <strong>as mensagens ficaram e foram reverberando</strong>, e eu sei que <strong>quando lá voltar uma segunda vez vou ter mais</strong>, vou tirar outras coisas.»</p>
         </div>
       </details>
-    </div>
-    <div class="carousel">
-      <button class="car-arrow car-prev" type="button" aria-label="Anterior">←</button>
-      <button class="car-arrow car-next" type="button" aria-label="Seguinte">→</button>
-      <div class="car-track" id="carTrack">
-        <div class="car-slide"><img src="feedback1-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback2-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback3-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback4-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback6-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback7-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback8-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback9-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback10-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback11-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback12-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide car-video" id="carVideo" role="button" tabindex="0" aria-label="Ver o vídeo de testemunho"><img src="https://img.youtube.com/vi/MHyyFIKgRL4/hqdefault.jpg" alt="Vídeo de testemunho de uma cliente" loading="lazy" style="opacity:0.85;"><div class="play"><span>▶</span></div></div>
-      </div>
-      <div class="car-dots" id="carDots"></div>
-      <p class="swipe-hint">Desliza para o lado →</p>
-    </div>
-    <div class="aside">
-      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, pela lente da Astrologia, da Alquimia e dos Arquétipos, o que acrescenta novas camadas de compreensão e abre a porta a reflexões e aprofundamento que podes fazer a partir dela.</p>
     </div>
   </section>
 
@@ -771,7 +782,7 @@
       </div></div>
     </div>
     <div class="flipall"><button type="button" id="flipAll">ver todos</button></div>
-    <p class="statement">Não para te dizer quem és. Para te oferecer uma perspetiva com a qual possas reconhecer-te, questionar e escolher.</p>
+    <p class="statement gold">Não para te dizer quem és. Para te oferecer uma perspetiva com a qual possas reconhecer-te, questionar e escolher.</p>
     <div class="mapa-cta"><p>Tens curiosidade de ver o teu mapa natal?<br>Escreve os teus dados e vê-o desenhado a dourado.</p><a class="btn outline" href="mapa-astral.html" data-mp-open>✦ Ver o meu mapa</a></div>
   </section>
 
@@ -783,7 +794,20 @@
     <p class="body-text">O Human Design junta a astrologia, o I Ching, a Cabala e o sistema dos chakras num mapa do teu corpo energético. Mostra como a tua energia funciona, como tomas as melhores decisões e onde te deixas condicionar pelos outros.</p>
     <p class="body-text">Podes juntá-lo à tua Leitura por apenas mais 50€. Recebes o teu tipo, a tua estratégia, a tua autoridade e o teu perfil, ligados ao tema que trazes, com formas práticas de os viveres no teu dia-a-dia.</p>
     <h3 class="hdq-t">O que dizem sobre o Human Design comigo</h3>
-    <div class="hdq-grid"><figure class="hdq"><blockquote>«Acabei de ver a tua aula. UAU ✨ Não sabia nada sobre Human Design e foi uma aula muito esclarecedora, porque expões o conteúdo de forma muito clara e apelativa. <strong>Respiras o que falas e isso sente-se na energia que transmites.</strong>»</blockquote><figcaption>Depois da aula de iniciação ao Human Design</figcaption></figure><figure class="hdq"><blockquote>«<strong>Encaixou como peças de puzzle</strong> 🧩 E acima de tudo está num “idioma” que ressoa ✨»</blockquote><figcaption>Ao receber o seu Human Design</figcaption></figure><figure class="hdq"><blockquote>«A forma como descreves e falas sobre o Human Design <strong>é apaixonante. Vibra mesmo!</strong>»</blockquote><figcaption>Uma cliente</figcaption></figure><figure class="hdq"><blockquote>«Não me faz sentido quando me passam informações sem explicar como funciona ou de onde vêm as coisas. <strong>Gosto de perceber as bases.</strong>»</blockquote><figcaption>Sobre a forma como explico o Human Design</figcaption></figure><figure class="hdq"><blockquote>«Estás a surpreender-me mesmo muito na exposição das ideias, dos conceitos (…) <strong>sinto tanto a tua alegria</strong>, adoro tanto 🥹»</blockquote><figcaption>Depois da aula de iniciação</figcaption></figure><figure class="hdq"><blockquote>«O que estás a criar <strong>é único e incrível e é tão teu…</strong> ❤️»</blockquote><figcaption>Uma cliente, a meio do acompanhamento</figcaption></figure></div>
+    <div class="carousel hd-car">
+      <button class="car-arrow car-prev" type="button" aria-label="Anterior">←</button>
+      <button class="car-arrow car-next" type="button" aria-label="Seguinte">→</button>
+      <div class="car-track">
+        <div class="car-slide"><img src="feedback-hd1-dourado.jpg" alt="Testemunho sobre o Human Design: «Acabei de ver a tua aula. UAU… Respiras o que falas e isso sente-se na energia que transmites»" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback-hd2-dourado.jpg" alt="Testemunho sobre o Human Design: «Estás a surpreender-me mesmo muito na exposição das ideias, dos conceitos… sinto tanto a tua alegria»" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback-hd3-dourado.jpg" alt="Testemunho sobre o Human Design: «Não me faz sentido quando me passam informações sem explicar como funciona… Gosto de perceber as bases»" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback-hd4-dourado.jpg" alt="Testemunho sobre o Human Design: «Encaixou como peças de puzzle. E acima de tudo está num idioma que ressoa»" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback-hd5-dourado.jpg" alt="Testemunho sobre o Human Design: «O que estás a criar é único e incrível e é tão teu…»" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback-hd6-dourado.jpg" alt="Testemunho sobre o Human Design: «A forma como descreves e falas sobre o Human Design é apaixonante. Vibra mesmo!»" loading="lazy"></div>
+      </div>
+      <div class="car-dots"></div>
+      <p class="swipe-hint">Desliza para o lado →</p>
+    </div>
     <div class="mapa-cta"><p>Tens curiosidade de ver o teu desenho?</p><a class="btn outline" href="human-design.html" data-mp-open>✦ Ver o meu Human Design</a><a class="btn outline" href="#opcoes" data-scroll="opcoes">Juntar à minha Leitura</a></div>
   </section>
 
@@ -858,8 +882,19 @@
         <p>Talvez seja por isso que me fascina tanto a linguagem dos símbolos. Uma imagem pode guardar uma pergunta; uma personagem pode dar rosto a um conflito; dois pontos, quando se aproximam, podem revelar uma história que ainda não tínhamos conseguido ver.</p>
         <p>É desse encontro entre imaginação e discernimento que procuro fazer as minhas Leituras: dar linguagem ao que reconheces, iluminar relações e encontrar uma passagem para a vida concreta.</p>
         <p>No meu mapa, encontro a contadora de histórias, a exploradora e a construtora a trabalhar na mesma oficina. Mercúrio e Vénus em Sagitário procuram sentido e palavras; Neptuno oferece-me uma imagem para a relação com o mistério; Capricórnio e Saturno lembram-me de cuidar da forma, dos limites e daquilo que consigo sustentar.</p>
-        <p>No Human Design, sou Geradora Manifestante, com autoridade emocional e perfil 3/5. A minha energia ganha vida quando algo me entusiasma de verdade, as decisões pedem-me tempo para que a onda emocional assente, e aprendo experimentando, para depois partilhar o que descobri.</p>
         <p>O meu mapa não me contém por inteiro. Mas oferece-me imagens para continuar a descobrir quem sou, e é com essa mesma curiosidade que me aproximo do teu.</p>
+      </div>
+    </details>
+    <details class="astro">
+      <summary>Um bocadinho de mim pelos olhos do Human Design</summary>
+      <div class="astro-body">
+        <p>Durante anos achei que tinha de escolher um caminho. Cinco anos em gestão, quatro empresas, seis funções diferentes, dois mestrados… e sempre a frustração de sentir que me estava a dispersar. O Human Design deu-me outra leitura: sou Geradora Manifestante, e não preciso de escolher um único foco.</p>
+        <p>A minha energia ganha vida quando algo me entusiasma de verdade. É do «sim» do corpo que nasce a força para fazer muito, e depressa. Quando ajo sem esse sim, a frustração volta a aparecer, e aprendi a reconhecê-la como um sinal.</p>
+        <p>A minha autoridade é emocional. As decisões pedem-me tempo, para que a onda assente e eu veja com clareza. É também por isso que dou tempo a cada Leitura: deixo que o que recebo amadureça antes de o partilhar contigo.</p>
+        <p>O meu perfil é 3/5. Aprendo experimentando, errando e ajustando, e depois transformo essas experiências reais em algo que possa servir a outras pessoas. Muito do que partilho não vem só do estudo: foi vivido.</p>
+        <p>Tenho o Baço definido, ligado à garganta: a intuição chega-me em rasgos, no momento, e precisa de ser dita. Os canais do Despertar e da Iniciação lembram-me de que estou aqui para viver a minha verdade, passar por grandes transformações e acompanhar outras pessoas nas suas.</p>
+        <p>A minha Cruz é a do Véu do Amor, e a porta 10, a do amor-próprio, atravessa quase todo o meu desenho. Talvez seja esse o fio que liga tudo o que faço: ajudar-te a reconhecer quem és e a dar mais espaço a isso na tua vida.</p>
+        <p>Tal como o mapa, o meu desenho não me define por inteiro. Mas mostra-me como a minha energia funciona, e é com essa mesma escuta que olho para o teu.</p>
       </div>
     </details>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a>
@@ -1106,8 +1141,9 @@
     }
   })();
 
-  // carrossel
-  var track = document.getElementById('carTrack'), dots = document.getElementById('carDots');
+  // carrosséis
+  document.querySelectorAll('.carousel').forEach(function(car){
+  var track = car.querySelector('.car-track'), dots = car.querySelector('.car-dots');
   if (track) {
     var slides = track.children;
     for (var i = 0; i < slides.length; i++) { (function(i){ var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', (EN ? 'Testimonial ' : 'Testemunho ') + (i + 1)); d.addEventListener('click', function(){ track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior:'smooth' }); }); dots.appendChild(d); })(i); }
@@ -1118,13 +1154,14 @@
     track.addEventListener('scroll', function(){ requestAnimationFrame(paintDots); }, { passive:true });
     paintDots();
     function go(dir){ var i = Math.max(0, Math.min(slides.length - 1, cur() + dir)); track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior:'smooth' }); }
-    document.querySelector('.car-prev').addEventListener('click', function(){ go(-1); });
-    document.querySelector('.car-next').addEventListener('click', function(){ go(1); });
-    var vid = document.getElementById('carVideo');
+    car.querySelector('.car-prev').addEventListener('click', function(){ go(-1); });
+    car.querySelector('.car-next').addEventListener('click', function(){ go(1); });
+    var vid = car.querySelector('#carVideo');
     function playVid(){ if (vid.querySelector('iframe')) return; vid.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/MHyyFIKgRL4?autoplay=1" title="Testemunho em vídeo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'; }
-    vid.addEventListener('click', playVid);
-    vid.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVid(); } });
+    if (vid) { vid.addEventListener('click', playVid);
+    vid.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVid(); } }); }
   }
+  });
 
   // cartões que viram
   var touch = window.matchMedia && matchMedia('(hover: none)').matches;
@@ -1404,7 +1441,12 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
   function openGift(){ var d = document.getElementById('oferecer'); if (d) d.open = true; }
   function close(){ box.classList.remove('open'); setTimeout(function(){ box.hidden = true; }, 500); }
   document.getElementById('giftTopX').addEventListener('click', close);
-  document.getElementById('giftTopLink').addEventListener('click', function(){ openGift(); close(); });
+  function slowTo(el){ var off = 110;
+    var y0 = window.scrollY, y1 = el.getBoundingClientRect().top + y0 - off, t0 = null, D = 1400;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { window.scrollTo(0, y1); return; }
+    function step(t){ if (!t0) t0 = t; var k = Math.min(1, (t - t0) / D), e = k < 0.5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2; window.scrollTo(0, y0 + (y1 - y0) * e); if (k < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step); }
+  document.getElementById('giftTopLink').addEventListener('click', function(e){ e.preventDefault(); openGift(); close(); var d = document.getElementById('oferecer'), ey = d && d.querySelector('.eyebrow'); if (ey) setTimeout(function(){ slowTo(ey); }, 30); });
   document.querySelectorAll('a[href="#oferecer"]').forEach(function(a){ a.addEventListener('click', openGift); });
   if (location.hash === '#oferecer') openGift();
   setTimeout(function tryShow(){
@@ -1431,16 +1473,16 @@ Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card)
   });
 })();
 </script>
-<div class="zoom" id="zoomBox" role="dialog" aria-modal="true" aria-label="Testemunho em grande" hidden><button class="zoom-x" type="button" aria-label="Fechar">×</button><img alt=""></div>
 <script>
 (function(){
-  var box = document.getElementById('zoomBox'), im = box.querySelector('img');
-  function close(){ box.classList.remove('open'); box.hidden = true; }
-  Array.prototype.forEach.call(document.querySelectorAll('.car-slide:not(.car-video) img'), function(t){
-    t.addEventListener('click', function(){ im.src = t.src; im.alt = t.alt; box.hidden = false; box.classList.add('open'); });
+  document.querySelectorAll('.car-slide:not(.car-video)').forEach(function(sl){
+    sl.addEventListener('click', function(){
+      var tr = sl.parentNode, big = !sl.classList.contains('big');
+      [].forEach.call(tr.children, function(o){ o.classList.remove('big'); });
+      if (big) sl.classList.add('big');
+      setTimeout(function(){ tr.scrollTo({ left: Math.max(0, sl.offsetLeft - tr.offsetLeft - (tr.clientWidth - sl.offsetWidth) / 2), behavior:'smooth' }); }, 480);
+    });
   });
-  box.addEventListener('click', close);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.classList.contains('open')) close(); });
 })();
 </script>
 </body>
