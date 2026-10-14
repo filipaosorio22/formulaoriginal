@@ -557,7 +557,14 @@
   .bk-bad { border-color:#a3263a !important; outline:1px solid #a3263a; }
   .bk-err { color:#a3263a; font-size:13.5px; text-align:center; margin:0.6rem 0 0; min-height:1em; }
   .bk-pay { background:#f8ecdf; border-radius:12px; padding:1rem 1.2rem; font-size:14.5px; margin:0 0 1.2rem; }
-  .bk-pay p { margin:0 0 0.6rem; } .bk-pay ul { margin:0 0 0.6rem; padding-left:1.1rem; } .bk-pay li { margin:0.25rem 0; } .bk-pay i { color:var(--ink-soft); font-size:12.5px; }
+  .bk-pay p { margin:0; } .bk-pay ul { margin:0 0 0.6rem; padding-left:1.1rem; } .bk-pay li { margin:0.25rem 0; } .bk-pay i { color:var(--ink-soft); font-size:12.5px; }
+  .bk-modal { position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem; background:rgba(26,20,16,0.45); }
+  .bk-ta { position:relative; display:block; }
+  .bk-ta textarea { padding-right:2.6rem !important; }
+  .bk-mic { position:absolute; right:0.4rem; bottom:0.4rem; width:2rem; height:2rem; border-radius:50%; border:1px solid #d9c9ad; background:#faf6ef; cursor:pointer; font-size:15px; line-height:1; }
+  .bk-mic.on { background:#f3d3ae; border-color:#7a2535; animation:pulse 1.2s infinite; }
+  @keyframes pulse { 50% { box-shadow:0 0 0 6px rgba(122,37,53,0.12); } }
+  .bk-micnote { font-size:12.5px; color:var(--ink-soft); margin:-0.4rem 0 0.8rem; }
   .conv-form { max-width:520px; margin:1.8rem auto 0; text-align:left; background:rgba(255,255,255,0.55); border:1px solid #e3d3b8; border-radius:14px; padding:1.4rem 1.3rem 1.2rem; }
   .conv-ftitle { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--wine); text-align:center; margin:0 0 1rem; }
   .conv-alt { text-align:center; font-size:13.5px; margin:0.9rem 0 0; } .conv-alt a { color:var(--orange); }
@@ -745,11 +752,11 @@
         <p class="callout-label"><span class="nw">DIMENSÃO ENERGÉTICA ·</span><br><span class="nw">A PESSOA QUE O CONDUZ</span></p>
         <p style="margin-top:1.4rem;">Reconhecer o que te mobiliza, retrai ou esgota e como isso influencia as tuas escolhas e o papel que desejas ocupar no teu negócio.</p>
         <p>Consoante o que for mais relevante no teu momento, podemos observar a tua energia natural, desejos, crenças e padrões: elementos que influenciam aquilo que escolhes, comunicas e consegues sustentar.</p>
-        <p>Também podemos olhar para o teu dia a dia de trabalho, para perceber que tarefas, ritmos e formas de te relacionares com clientes te dão energia e quais te desgastam. E podemos ver como entras no teu modo de trabalho: que gestos simples, como a respiração ou a atenção ao corpo, te ajudam a passar da pressa e da autocobrança para um estado mais calmo e presente, a partir do qual decides e crias com mais clareza.</p>
+        <p>Também podemos olhar para o teu dia a dia de trabalho, para perceber que tarefas, ritmos e formas de te relacionares com clientes te dão energia e quais te desgastam. E podemos ver como entras no teu modo de trabalho, se te interessar explorar mais a fundo como tirar mais proveito da tua energia.</p>
       </div></div>
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
         <p class="callout-label"><span class="nw">DIMENSÃO ESTRATÉGICA ·</span><br><span class="nw">A TRADUÇÃO NO NEGÓCIO</span></p>
-        <p style="margin-top:1.4rem;">Traduzir essa leitura em critérios, prioridades e recomendações concretas para o teu negócio, considerando a vida que desejas construir.</p>
+        <p style="margin-top:1.4rem;">Traduzir essa leitura em critérios, prioridades e recomendações para o teu negócio, considerando a vida que desejas construir.</p>
         <p>Consoante as questões ou a profundidade do trabalho, podemos observar ofertas, serviços, preços, posicionamento, comunicação, conteúdos, páginas de vendas, website, formatos de entrega, responsabilidades ou decisões.</p>
         <p>Também podemos desenhar os processos do teu negócio, do primeiro contacto à entrega, para perceber o que pode ser simplificado, delegado ou apoiado pela inteligência artificial, e onde a tua presença faz realmente diferença.</p>
       </div></div>
@@ -1163,22 +1170,7 @@
       <p class="t-sm">O encontro é pensado a partir do contexto e de um tema central, respeitando a participação e os limites de cada pessoa.</p>
       <div class="conv-aud"><p class="conv-cap">Depois de um encontro com uma comunidade</p><div class="aud-wrap"><div class="aud"><audio preload="metadata" src="feedback comunidade.MP3"></audio><button type="button" class="aud-btn" aria-label="Ouvir"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Foi… além da expectativa! <br>Foi mesmo muito, muito bom!”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Ler a transcrição</summary><div class="tr-body"><div lang="pt"><p>Alô, minha querida, agora sim consegui um tempinho aqui com calma e com a atenção devida que queria para mandar-te este “podcast” de agradecimento, porque efetivamente foi... além da expectativa! Foi mesmo muito, muito bom!</p><p>Acredito que todas elas tiraram muito proveito do momento e certamente muitas delas irão contactar-te para aprofundar um bocado mais e conhecerem-se ainda mais e adaptarem isso também aos seus negócios, portanto vi ali muito entusiasmo da parte delas e fico muito feliz por isso, porque efetivamente adoro trazer ferramentas novas e realmente trazer aqui algumas coisas que possam ajudá-las a prosperar cada vez mais, seja em que área for (...)</p><p>É muito, muito bom e fico muito feliz por elas terem gostado e toda a entrega e todo o momento incrível que nos proporcionaste, porque foi absolutamente fabuloso e, sem conseguir colocar em palavras, porque efetivamente foi mesmo muito, muito bom e gostei muito até mesmo para mim mesma!</p><p>Eu sabia que ia gostar para mim mesma, mas estava aqui ainda naquela coisa de como é que elas iriam reagir, como é que seria (...), mas é absolutamente interessante de ver como temos tanto em comum, apesar de sermos todos muito diferentes umas das outras, porque somos efetivamente pessoas diferentes, que têm formas de pensar e de agir diferentes, mas que há muita coisa que nos junta e que nos atrai umas às outras.</p><p>E é super engraçado ver, eu sei, eu acredito nisso, mas ao mesmo tempo estes momentos acabam por nos confirmar aquilo que nós de certa forma já sabíamos de alguma maneira, mas agora sabemos melhor, sabes?</p></div></div></details></div></div>
       <p class="t-sm">Não precisas de chegar com um formato definido. Podemos partir da tua ideia, conhecer o contexto da comunidade ou da empresa e definir o tema, o objetivo e um formato de encontro que faça sentido para as pessoas a quem se destina.</p>
-      <form id="convForm" class="conv-form" novalidate>
-        <p class="conv-ftitle">Vamos conversar e cocriar</p>
-        <label class="bk-f">Nome<input name="nome" required autocomplete="name"></label>
-        <label class="bk-f">E-mail<input name="email" type="email" required autocomplete="email"></label>
-        <label class="bk-f">Comunidade ou empresa<input name="organizacao" required></label>
-        <label class="bk-f">Que tipo de encontro imaginas? <i>(tema, objetivo, formato)</i><textarea name="ideia" rows="3"></textarea></label>
-        <div class="bk-row">
-          <label class="bk-f">Número aproximado de pessoas<input name="pessoas" inputmode="numeric"></label>
-          <label class="bk-f">Data aproximada<input name="data" placeholder="ex.: janeiro 2027"></label>
-        </div>
-        <label class="bk-check"><input type="checkbox" name="privacidade" required><span>Aceito que a Filipa use estes dados para me responder (<a href="privacidade.html" target="_blank">Privacidade</a>).</span></label>
-        <p class="bk-err" id="convErr"></p>
-        <p style="text-align:center; margin:1.1rem 0 0;"><button type="submit" class="cta-btn" id="convBtn">Enviar</button></p>
-        <p class="conv-alt">Prefiro falar por mensagem: <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20no%20teu%20site%20a%20possibilidade%20de%20levares%20estes%20temas%20a%20comunidades%20e%20grupos.%20Gostava%20de%20conversar%20contigo%20sobre%20um%20poss%C3%ADvel%20encontro%20para%20a%20minha%20comunidade%2Fempresa.%20Podemos%20conversar%3F" target="_blank" rel="noopener">abrir o WhatsApp</a></p>
-      </form>
-      <div id="convOk" class="conv-ok" style="display:none;"><p><strong>Obrigada!</strong> Recebi a tua mensagem e respondo-te por e-mail em breve.</p></div>
+      <p style="margin:1.6rem 0 0; text-align:center;"><a class="cta-btn" href="#" onclick="event.preventDefault(); abrirConvite();">Vamos conversar e cocriar</a></p>
     </div>
   </div>
 </section>
@@ -1196,13 +1188,14 @@
           <label><input type="radio" name="formato" value="Sessão CEEN · 250 €" checked><span><b>Sessão CEEN</b>250 €</span></label>
           <label><input type="radio" name="formato" value="Ciclo CEEN · 800 €"><span><b>Ciclo CEEN</b>800 €</span></label>
         </div>
-        <label class="bk-f">Nome<input name="nome" required autocomplete="name"></label>
-        <label class="bk-f">E-mail<input name="email" type="email" required autocomplete="email"></label>
-        <label class="bk-f">Telemóvel <i>(opcional)</i><input name="telemovel" type="tel" autocomplete="tel"></label>
-        <label class="bk-f">O teu negócio: o que fazes e para quem<textarea name="negocio" rows="3" required></textarea></label>
+        <label class="bk-f">Nome e apelido<input name="nome" required autocomplete="name"></label>
+        <label class="bk-f">e-mail<input name="email" type="email" required autocomplete="email"></label>
+        <label class="bk-f">Telemóvel (WhatsApp)<input name="telemovel" type="tel" required autocomplete="tel"></label>
+        <label class="bk-f">O teu negócio: o que fazes e para quem<span class="bk-ta"><textarea name="negocio" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Falar em vez de escrever" title="Falar em vez de escrever">🎤</button></span></label>
         <label class="bk-f">Há quanto tempo existe
           <select name="tempo"><option value="">Escolhe uma opção</option><option>Menos de 1 ano</option><option>Entre 1 e 3 anos</option><option>Mais de 3 anos</option></select></label>
-        <label class="bk-f">A questão central que queres trabalhar<textarea name="questao" rows="3" required></textarea></label>
+        <label class="bk-f">A questão central que queres trabalhar<span class="bk-ta"><textarea name="questao" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Falar em vez de escrever" title="Falar em vez de escrever">🎤</button></span></label>
+        <p class="bk-micnote">Se preferires falar, carrega no 🎤 e o que disseres é escrito na caixa.</p>
         <label class="bk-f">Site ou redes sociais <i>(opcional)</i><input name="links" placeholder="www… ou @…"></label>
         <label class="bk-f">Como chegaste até mim? <i>(opcional)</i><input name="origem"></label>
         <label class="bk-check"><input type="checkbox" name="termos" required><span>Li e aceito os <a href="termos-ceen.html" target="_blank">Termos</a> e a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.</span></label>
@@ -1214,13 +1207,7 @@
       <p class="bk-eyebrow">Passo 2 de 2</p>
       <p class="bk-title">Obrigada, <span id="bkNome"></span>! Escolhe o dia</p>
       <div class="bk-pay">
-        <p><strong>Para confirmar a marcação</strong>, faz o pagamento de <strong id="bkValor">250 €</strong> até 48 horas depois de escolheres o dia, por uma destas opções:</p>
-        <ul>
-          <li><b>Transferência bancária</b> · IBAN PT50 0000 0000 0000 0000 0000 0 <i>(a preencher)</i></li>
-          <li><b>MB WAY</b> · 9XX XXX XXX <i>(a preencher)</i></li>
-          <li><b>Revolut</b> · @utilizador <i>(a preencher)</i></li>
-        </ul>
-        <p>Envia o comprovativo para <a href="mailto:mail@filipaosorio.com">mail@filipaosorio.com</a>. A sessão fica confirmada quando o pagamento chegar.</p>
+        <p>A marcação da tua sessão fica confirmada após a confirmação do pagamento de <strong id="bkValor">250 €</strong>. Os métodos de pagamento encontram-se aquando da marcação da data da tua sessão.</p>
       </div>
       <div id="calendlyConsentPrompt" style="display:none; text-align:center; padding:1.5rem 1rem;">
         <p style="margin-bottom:1.2rem;">Para escolheres o dia aqui, precisamos de carregar o calendário do Calendly, que usa cookies próprios.</p>
@@ -1228,6 +1215,30 @@
       </div>
       <div id="calendlyWidget" style="min-width:280px; height:650px;"></div>
     </div>
+  </div>
+</div>
+
+<div id="convModal" class="bk-modal" style="display:none;">
+  <div class="bk-box">
+    <button type="button" class="bk-x" onclick="fecharConvite()" aria-label="Fechar">×</button>
+    <form id="convForm" novalidate>
+        <p class="bk-title">Vamos conversar e cocriar</p>
+        <p class="bk-intro">Conta-me um pouco sobre a tua comunidade ou empresa e o que imaginas. Respondo-te em breve.</p>
+        <label class="bk-f">Nome e apelido<input name="nome" required autocomplete="name"></label>
+        <label class="bk-f">e-mail<input name="email" type="email" required autocomplete="email"></label>
+        <label class="bk-f">Telemóvel (WhatsApp)<input name="telemovel" type="tel" required autocomplete="tel"></label>
+        <label class="bk-f">Comunidade ou empresa<input name="organizacao" required></label>
+        <label class="bk-f">Que tipo de encontro imaginas? <i>(tema, objetivo, formato)</i><span class="bk-ta"><textarea name="ideia" rows="3"></textarea><button type="button" class="bk-mic" aria-label="Falar em vez de escrever" title="Falar em vez de escrever">🎤</button></span></label>
+        <div class="bk-row">
+          <label class="bk-f">Número aproximado de pessoas<input name="pessoas" inputmode="numeric"></label>
+          <label class="bk-f">Data aproximada<input name="data" placeholder="ex.: janeiro 2027"></label>
+        </div>
+        <label class="bk-check"><input type="checkbox" name="privacidade" required><span>Aceito que a Filipa use estes dados para me responder (<a href="privacidade.html" target="_blank">Privacidade</a>).</span></label>
+        <p class="bk-err" id="convErr"></p>
+        <p style="text-align:center; margin:1.1rem 0 0;"><button type="submit" class="cta-btn" id="convBtn">Enviar</button></p>
+        <p class="conv-alt">Prefiro falar por mensagem: <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20no%20teu%20site%20a%20possibilidade%20de%20levares%20estes%20temas%20a%20comunidades%20e%20grupos.%20Gostava%20de%20conversar%20contigo%20sobre%20um%20poss%C3%ADvel%20encontro%20para%20a%20minha%20comunidade%2Fempresa.%20Podemos%20conversar%3F" target="_blank" rel="noopener">abrir o WhatsApp</a></p>
+    </form>
+    <div id="convOk" class="conv-ok" style="display:none;"><p><strong>Obrigada!</strong> Recebi a tua mensagem e respondo-te em breve.</p></div>
   </div>
 </div>
 
@@ -1297,6 +1308,11 @@
     var u = 'https://calendly.com/filipaosorio/ceen?hide_gdpr_banner=1';
     if (BK.nome) u += '&name=' + encodeURIComponent(BK.nome);
     if (BK.email) u += '&email=' + encodeURIComponent(BK.email);
+    // respostas do Calendly preenchidas: a1 WhatsApp, a3 contexto e questão, a4 site, a5 opção
+    if (BK.tel) u += '&a1=' + encodeURIComponent(BK.tel);
+    if (BK.contexto) u += '&a3=' + encodeURIComponent(BK.contexto);
+    if (BK.links) u += '&a4=' + encodeURIComponent(BK.links);
+    if (BK.opcao) u += '&a5=' + encodeURIComponent(BK.opcao);
     return u;
   }
   function mostrarCalendario(){
@@ -1345,9 +1361,9 @@
     if (!validar(f, err)) return;
     var d = dados(f);
     btn.disabled = true; btn.textContent = 'A enviar…';
-    var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + (d.telemovel || '—'), '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
+    var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
     enviar('Nova marcação CEEN · ' + d.nome + ' · ' + d.formato, 'Site · CEEN', d.email, L).then(function(){
-      BK = { nome: d.nome, email: d.email, enviado: true };
+      BK = { nome: d.nome, email: d.email, tel: d.telemovel, contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', enviado: true };
       document.getElementById('bkNome').textContent = d.nome.split(' ')[0];
       document.getElementById('bkValor').textContent = d.formato.indexOf('Ciclo') === 0 ? '800 €' : '250 €';
       document.getElementById('bkStep1').style.display = 'none';
@@ -1360,13 +1376,34 @@
     }).then(function(){ btn.disabled = false; btn.textContent = 'Continuar para escolher o dia'; });
   });
 
+  window.abrirConvite = function(){ var m = document.getElementById('convModal'); m.style.display = 'flex'; };
+  window.fecharConvite = function(){ document.getElementById('convModal').style.display = 'none'; };
+  document.getElementById('convModal').addEventListener('click', function(e){ if (e.target === this) fecharConvite(); });
+  (function(){
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var mics = document.querySelectorAll('.bk-mic');
+    if (!SR) { mics.forEach(function(b){ b.style.display = 'none'; }); document.querySelectorAll('.bk-micnote').forEach(function(n){ n.style.display = 'none'; }); return; }
+    var rec = null, ativo = null;
+    mics.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if (rec) { rec.stop(); return; }
+        var ta = btn.parentNode.querySelector('textarea'), base = ta.value ? ta.value.replace(/\s*$/, ' ') : '';
+        rec = new SR(); rec.lang = 'pt-PT'; rec.continuous = true; rec.interimResults = true;
+        rec.onresult = function(ev){ var t = ''; for (var i = 0; i < ev.results.length; i++) t += ev.results[i][0].transcript; ta.value = base + t; };
+        rec.onend = function(){ btn.classList.remove('on'); rec = null; };
+        rec.onerror = function(){ btn.classList.remove('on'); };
+        btn.classList.add('on'); rec.start();
+      });
+    });
+  })();
+
   document.getElementById('convForm').addEventListener('submit', function(ev){
     ev.preventDefault();
     var f = this, err = document.getElementById('convErr'), btn = document.getElementById('convBtn');
     if (!validar(f, err)) return;
     var d = dados(f);
     btn.disabled = true; btn.textContent = 'A enviar…';
-    var L = ['Nome: ' + d.nome, 'E-mail: ' + d.email, 'Comunidade ou empresa: ' + d.organizacao, '', 'Ideia de encontro: ' + (d.ideia || '—'), 'Pessoas: ' + (d.pessoas || '—'), 'Data aproximada: ' + (d.data || '—')];
+    var L = ['Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, 'Comunidade ou empresa: ' + d.organizacao, '', 'Ideia de encontro: ' + (d.ideia || '—'), 'Pessoas: ' + (d.pessoas || '—'), 'Data aproximada: ' + (d.data || '—')];
     enviar('Convite para encontro · ' + d.organizacao, 'Site · Convites e parcerias', d.email, L).then(function(){
       f.style.display = 'none'; document.getElementById('convOk').style.display = 'block';
     }).catch(function(){
