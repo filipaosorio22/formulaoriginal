@@ -123,7 +123,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <p class="sub" id="birthSub">A hora é importante para o Ascendente e para as casas do mapa.</p>
       <div class="grid">
         <div class="full" id="recWrap" hidden><label class="lbl" for="rnome">Nome de quem recebe</label><input type="text" id="rnome" maxlength="60"></div>
-        <div><label class="lbl" for="data">Data</label><input type="date" id="data"></div>
+        <div><label class="lbl" for="data">Data</label><input type="text" id="data" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10"></div>
         <div><label class="lbl" for="hora">Hora</label><input type="time" id="hora"></div>
         <div class="full"><label class="lbl" for="local">Local <span class="opt">(cidade e país)</span></label><input type="text" id="local" maxlength="80" placeholder="ex.: Lisboa, Portugal"></div>
       </div>
@@ -240,7 +240,18 @@ window.FO_PAY = {
     else { $('go').textContent = 'Enviar'; if (hn) hn.textContent = 'As tuas respostas chegam-me por e-mail. Depois envio-te os dados de pagamento.'; }
   })();
   var NAMES = { rssolo:'Só a Revolução Solar (escrita)', sessaosolo:'Só a sessão de aprofundamento', leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
-  function fmtDate(d){ var p = d.split('-'); return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : d; }
+  $('data').addEventListener('input', function(){
+    var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2);
+    if (d.length > 2) o += '/' + d.slice(2, 4);
+    if (d.length > 4) o += '/' + d.slice(4);
+    this.value = o;
+  });
+  function validDate(v){
+    var m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v); if (!m) return false;
+    var d = +m[1], mo = +m[2], y = +m[3], t = new Date(y, mo - 1, d);
+    return y > 1900 && t.getFullYear() === y && t.getMonth() === mo - 1 && t.getDate() === d && t <= new Date();
+  }
+  function fmtDate(d){ if (d.indexOf('/') > -1) return d; var p = d.split('-'); return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : d; }
 
   $('f').addEventListener('submit', function(e){
     e.preventDefault();
@@ -249,6 +260,7 @@ window.FO_PAY = {
     if (!nome){ err.textContent = 'Escreve o teu nome.'; $('nome').focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('email').focus(); return; }
     var data = $('data').value, hora = $('hora').value, local = $('local').value.trim();
+    if (data && !validDate(data)){ err.textContent = 'Confirma a data de nascimento (dd/mm/aaaa).'; $('data').focus(); return; }
     if (birthNeeded() && (!data || !hora || !local)){ err.textContent = 'Preciso da data, da hora e do local de nascimento.'; $('data').focus(); return; }
     if (gift && entrega() === 'ja' && !$('rnome').value.trim()){ err.textContent = 'Escreve o nome de quem recebe.'; $('rnome').focus(); return; }
     if (!$('ok').checked){ err.textContent = 'Para continuares, aceita os termos.'; return; }
