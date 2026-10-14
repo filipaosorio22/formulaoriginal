@@ -65,6 +65,9 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .err{color:var(--wine);font-family:var(--sans);font-size:14px;margin:12px 0 0;text-align:center}
 .err:empty{display:none}
 .actions{text-align:center;margin-top:8px}
+.bk-ss { background:#f3e3d3; border-radius:10px; padding:0.9rem 1.1rem; margin:1rem 0; text-align:center; } .bk-ss p { margin:0 0 0.6rem; font-size:14.5px; }
+.bk-ss-btn { display:inline-block; font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; color:#7a2535; border-radius:30px; padding:10px 22px; box-shadow:inset 0 0 0 1.5px #7a2535; transition:background 0.2s, color 0.2s; } .bk-ss-btn:hover { background:#7a2535; color:#f7f3ee; }
+html[data-theme="dark"] .bk-ss { background:#382c22; } html[data-theme="dark"] .bk-ss-btn { color:#e0a8b0; box-shadow:inset 0 0 0 1.5px #e0a8b0; }
 .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:.04em;
   color:#2b1f10;background:linear-gradient(135deg,#e2c891 0%,#c9a86c 45%,#a8854f 100%);border:0;border-radius:999px;padding:14px 30px;min-height:50px;cursor:pointer;text-decoration:none;
   box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 10px 24px -12px rgba(154,126,82,.75)}
@@ -84,8 +87,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   <div class="card done">
     <p>Vou começar a preparar a tua Leitura com todo o cuidado. Vais recebê-la em áudio, em até 14 dias úteis, e escrevo-te por e-mail se precisar de alguma informação.</p>
     <p>Se foi uma oferta, envio-te o cartão de oferta ou a Leitura pronta, conforme escolheste.</p>
-    <p id="subBox" hidden><a class="btn" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscrever os textos no Substack</a></p>
-    <script>try { if (localStorage.getItem("fo_sub") === "1") { document.getElementById("subBox").hidden = false; localStorage.removeItem("fo_sub"); } } catch (e) {}</script>
+    <div id="subBox" class="bk-ss" style="display:none"><p>Como pediste, falta só um passo para receberes os textos da Filipa no Substack:</p><a class="bk-ss-btn" id="subLink" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscrever no Substack</a></div>
+    <script>try { var e = localStorage.getItem("fo_sub"); if (e) { document.getElementById("subLink").href = "https://filipaosorio.substack.com/subscribe?email=" + encodeURIComponent(e); document.getElementById("subBox").style.display = "block"; localStorage.removeItem("fo_sub"); } } catch (e) {}</script>
     <p>Tens alguma dúvida? <a href="https://wa.me/351939479755" target="_blank" rel="noopener">Fala comigo 💌</a></p>
     <p><a href="leitura-intuitiva.html">← Voltar à Leitura Intuitiva</a></p>
   </div>
