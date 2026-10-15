@@ -1691,5 +1691,32 @@
 })();
 </script>
 
+<script>
+/* medição de cliques e de secções vistas (só envia se a pessoa aceitou as estatísticas) */
+(function(){
+  function ev(n, p){ try { if (typeof gtag === 'function') gtag('event', n, p || {}); } catch (e) {} }
+  function slug(t, n){ return (t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, n); }
+  function secaoDe(el){ var s = el.closest('section'); var h = s && s.querySelector('h2'); return h ? h.textContent.trim().replace(/\s+/g, ' ').slice(0, 60) : ''; }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest && e.target.closest('a, button, summary, [role=button]'); if (!el) return;
+    var lab = (el.getAttribute('aria-label') || el.textContent || '').trim().replace(/\s+/g, ' '); if (!lab) return;
+    var pre = el.tagName === 'SUMMARY' ? 'faq_' : 'clq_';
+    var nome = pre + slug(lab, 30); if (nome.length < 6) return;
+    ev(nome, { rotulo: lab.slice(0, 80), secao: secaoDe(el), idioma: document.documentElement.lang });
+  }, true);
+  if ('IntersectionObserver' in window) {
+    var visto = {};
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var h = en.target.querySelector('h2'); var k = slug(h ? h.textContent : en.target.id, 30);
+        if (!k || visto[k]) return; visto[k] = 1; io.unobserve(en.target);
+        ev('sec_' + k, { rotulo: h ? h.textContent.trim().replace(/\s+/g, ' ').slice(0, 80) : k, idioma: document.documentElement.lang });
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('section').forEach(function(s){ if (s.querySelector('h2')) io.observe(s); });
+  }
+})();
+</script>
 </body>
 </html>
