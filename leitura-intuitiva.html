@@ -637,6 +637,16 @@
   @media (max-width:640px){ .car-slide.big { flex-basis:100% !important; } }
   .car-slide.big img { transform:none !important; }
   .hdq-t { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:21px; color:var(--wine); text-align:center; margin:2rem 0 1rem; }
+  /* mensagens sobre o Human Design: uma mensagem por pessoa, com destaques */
+  .hdmsgs { column-count:2; column-gap:1.1rem; margin:0.4rem 0 1.6rem; }
+  .hdmsg { break-inside:avoid; position:relative; margin:0 0 1.1rem; padding:2rem 1.5rem 1.3rem; border:0.5px solid var(--gold); border-radius:14px; background:linear-gradient(135deg, rgba(240,222,182,0.42), rgba(250,243,230,0.22)); }
+  html[data-theme="dark"] .hdmsg { background:linear-gradient(135deg, rgba(120,92,48,0.24), rgba(60,48,34,0.16)); }
+  .hdmsg::before { content:'“'; position:absolute; top:0.15rem; left:1rem; font-family:'Spectral',serif; font-size:44px; line-height:1; color:var(--gold); }
+  .hdmsg p { font-family:'Lora',serif; font-size:17px; line-height:1.75; color:var(--ink); margin:0; }
+  .hdmsg strong { font-weight:600; color:var(--wine); background:rgba(201,168,108,0.42); border-radius:3px; padding:1px 3px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  html[data-theme="dark"] .hdmsg strong { color:var(--ink); background:rgba(201,168,108,0.32); }
+  .hdmsg u { text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:2px; text-underline-offset:4px; }
+  @media (max-width:680px){ .hdmsgs { column-count:1; } .hdmsg p { font-size:16.5px; } }
   .hd-car { margin-top:0.6rem; }
   .hd-car .car-slide img { aspect-ratio:1/1 !important; }
   /* ronda 9 */
@@ -876,19 +886,13 @@
       <p class="hdx-p">É isto que o Human Design acrescenta à minha leitura: não só o que reconheço nas minhas relações, mas também o que vivo sem me aperceber.</p>
     </div>
     <h3 class="hdq-t">O que dizem sobre o Human Design comigo</h3>
-    <div class="carousel hd-car">
-      <button class="car-arrow car-prev" type="button" aria-label="Anterior">←</button>
-      <button class="car-arrow car-next" type="button" aria-label="Seguinte">→</button>
-      <div class="car-track">
-        <div class="car-slide"><img src="feedback-hd1-dourado.jpg" alt="Testemunho sobre o Human Design: «Acabei de ver a tua aula. UAU… Respiras o que falas e isso sente-se na energia que transmites»" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback-hd2-dourado.jpg" alt="Testemunho sobre o Human Design: «Estás a surpreender-me mesmo muito na exposição das ideias, dos conceitos… sinto tanto a tua alegria»" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback-hd3-dourado.jpg" alt="Testemunho sobre o Human Design: «Não me faz sentido quando me passam informações sem explicar como funciona… Gosto de perceber as bases»" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback-hd4-dourado.jpg" alt="Testemunho sobre o Human Design: «Encaixou como peças de puzzle. E acima de tudo está num idioma que ressoa»" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback-hd5-dourado.jpg" alt="Testemunho sobre o Human Design: «O que estás a criar é único e incrível e é tão teu…»" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback-hd6-dourado.jpg" alt="Testemunho sobre o Human Design: «A forma como descreves e falas sobre o Human Design é apaixonante. Vibra mesmo!»" loading="lazy"></div>
-      </div>
-      <div class="car-dots"></div>
-      <p class="swipe-hint">Desliza para o lado →</p>
+    <div class="hdmsgs">
+      <blockquote class="hdmsg"><p>Bom dia, Filipa 💙 Acabei de ver a tua aula. UAU ✨ Adorei, mesmo 😍 Não sabia nada sobre Human Design e <strong>foi uma aula muito esclarecedora porque expões o conteúdo de forma muito clara e apelativa</strong>. <u>Respiras o que falas e isso sente-se na energia que transmites</u> 💙 Adorei a explicação sobre a origem do Human Design, fiquei rendida e a achar ainda mais interessante 😊 Obrigada por partilhares esta introdução tão útil 💙 Gostei muito muito muito. Amei conhecer os neutrinos ahahah ✨✨</p></blockquote>
+      <blockquote class="hdmsg"><p>Gosteiii muchoooo, <strong>estás a surpreender-me mesmo muito na exposição das ideias, dos conceitos</strong> – opaaa e não consigo não referir, dizer-te que <u>sinto tantoooo a tua alegriaaa</u>, adoro tanto 🥹😍</p></blockquote>
+      <blockquote class="hdmsg"><p>Eu acho mesmo que é o que faz sentido. Porque <strong>não me faz sentido quando me passam informações sem explicar como funciona ou de onde vêm as coisas</strong>. <u>Gosto de perceber as bases.</u> E adoro aprender coisas novas!</p></blockquote>
+      <blockquote class="hdmsg"><p><u>Encaixou como peças de puzzle</u> 🧩 E acima de tudo <strong>está num “idioma” que ressoa</strong> ✨ Já conseguiiiiii ✨✨✨ que trabalho lindo, Filipa. Muito entusiasmada por fazer este mergulho contigo 💙</p></blockquote>
+      <blockquote class="hdmsg"><p>Oh meu Deus que assim o meu coração não aguenta… a sério, <strong>o que estás a criar é único e incrível</strong> e <u>é tão teu…</u> ❤️</p></blockquote>
+      <blockquote class="hdmsg"><p>A forma como descreves e falas sobre o Human Design é <strong>apaixonante</strong>. <u>Vibra mesmo!!!!</u></p></blockquote>
     </div>
     <div class="mapa-cta"><p>Tens curiosidade de ver o teu desenho?</p><a class="btn outline" href="human-design.html" data-mp-open>✦ Ver o meu Human Design</a><a class="btn outline" href="#opcoes" data-scroll="opcoes">Juntar à minha Leitura</a></div>
   </section>
