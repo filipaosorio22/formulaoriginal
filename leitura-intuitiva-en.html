@@ -62,7 +62,6 @@
   .hamburger span { width:20px; height:1.5px; background:var(--ink); display:block; }
   .mobile-menu { display:none; position:fixed; top:84px; left:0; right:0; background:#faf6ef; z-index:101; padding:1rem 1.5rem; flex-direction:column; gap:1.1rem; border-bottom:0.5px solid var(--line); box-shadow:0 10px 20px rgba(26,20,16,0.08); }
   .mobile-menu a { font-family:'Lora',serif; font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:#1a1410; text-decoration:none; }
-  @media (min-width:1100px){ .langbar { height:67px; line-height:67px; padding:0 0 0 190px; text-align:left; background:transparent !important; pointer-events:none; } .langbar a { pointer-events:auto; } nav { top:0 !important; } }
   @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } .theme-btn { margin-left:0.5rem; margin-right:0.8rem; } .size-btn { margin-left:0.5rem; } .nav-wa { display:flex; margin-left:auto; } }
   html[data-theme="dark"] .langbar { background:rgba(29,25,21,0.98); color:#a89c8a; }
   html[data-theme="dark"] .langbar a { color:#a89c8a; }
@@ -495,6 +494,31 @@
   .mapa-cta { margin:1.8rem 0 0.4rem; padding:1.3rem 1.4rem; border:0.5px solid var(--gold); border-radius:14px; text-align:center; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); }
   html[data-theme="dark"] .mapa-cta { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
   .mapa-cta p { text-wrap:balance; font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); margin:0 0 0.9rem; line-height:1.45; }
+  .hdq-t { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:21px; color:var(--wine); text-align:center; margin:2rem 0 1rem; }
+  .hdmsgs { column-count:2; column-gap:1.1rem; margin:0.4rem 0 1.6rem; }
+  .hdmsg { break-inside:avoid; position:relative; margin:0 0 1.2rem; padding:0.85rem 1.15rem 1rem; border:0.5px solid var(--gold); border-radius:20px 20px 20px 5px; background:linear-gradient(135deg, rgba(240,222,182,0.5), rgba(250,243,230,0.35)); box-shadow:0 2px 8px -4px rgba(154,126,82,.5); }
+  html[data-theme="dark"] .hdmsg { background:linear-gradient(135deg, rgba(120,92,48,0.3), rgba(60,48,34,0.22)); }
+  .hdmsg::after { content:'✓✓'; display:block; text-align:right; font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:-1px; color:var(--gold-deep); margin-top:.35rem; }
+  .hdmsg p + p { margin-top:.6rem; }
+  .hdmsg p { font-family:'Lora',serif; font-size:17px; line-height:1.75; color:var(--ink); margin:0; }
+  .hdmsg strong { font-weight:600; color:var(--wine); background:rgba(201,168,108,0.42); border-radius:3px; padding:1px 3px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  html[data-theme="dark"] .hdmsg strong { color:var(--ink); background:rgba(201,168,108,0.32); }
+  .hdmsg u { text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:2px; text-underline-offset:4px; }
+  @media (max-width:680px){ .hdmsgs { column-count:1; } .hdmsg p { font-size:16.5px; } }
+  .hdx { margin:1.6rem 0 0.6rem; padding:1.3rem 1.3rem 1.1rem; border:0.5px solid rgba(122,37,53,0.3); border-radius:16px; background:linear-gradient(135deg, rgba(122,37,53,0.07), rgba(122,37,53,0.03)); }
+  html[data-theme="dark"] .hdx { border-color:rgba(228,167,179,0.3); background:linear-gradient(135deg, rgba(228,167,179,0.1), rgba(228,167,179,0.04)); }
+  .hdx-eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 0.9rem; }
+  .hdx-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .hdx-c { background:var(--card); border-radius:12px; padding:0.9rem 1rem; }
+  .hdx-c p { font-family:'Lora',serif; font-size:15.5px; line-height:1.6; color:var(--ink); margin:0; }
+  .hdx-c .hdx-l { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--wine); margin-bottom:0.3rem; }
+  .hdx-j { font-family:'Spectral',serif; font-style:italic; font-size:19px; color:var(--wine); text-align:center; margin:1rem 0 0.6rem; }
+  .hdx-mini { list-style:none; padding:0; margin:0; border-top:0.5px solid var(--gline); }
+  .hdx-mini li { font-family:'Lora',serif; font-size:14.5px; line-height:1.6; color:var(--ink-soft); padding:0.6rem 0 0; }
+  .hdx-mini b { color:var(--wine); font-weight:600; }
+  .hdx-p { font-family:'Lora',serif; font-size:16px; line-height:1.7; color:var(--ink); margin:0 0 0.7rem; }
+  .hdx-p:last-child { margin-bottom:0; }
+  .trad-note { font-size:13px; font-style:italic; color:var(--ink-soft); text-align:center; margin:-0.4rem 0 1rem; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -640,6 +664,36 @@
     <div class="flipall"><button type="button" id="flipAll">see all</button></div>
     <p class="statement">Not to tell you who you are. To offer you a perspective in which you can recognize yourself, ask questions and choose.</p>
     <div class="mapa-cta"><p>Curious to see your own birth chart? Enter your details and see it drawn in gold.</p><a class="btn outline" href="mapa-astral.html">✦ See my birth chart</a></div>
+  </section>
+
+  <div class="divider"><span></span><span></span></div>
+
+  <!-- HUMAN DESIGN -->
+  <section class="reveal" id="human-design">
+    <h2>And Human Design?</h2>
+    <p class="body-text">Human Design brings together astrology, the I Ching, the Kabbalah, the chakra system and quantum physics in a map of your energy body. It shows how your energy works, how you make your best decisions and where you let others condition you.</p>
+    <p class="body-text">You can add it to your Reading for just €50 more. You receive your type, your strategy, your authority, your profile and other strategic points of your chart, linked to the theme you bring, with practical ways to live them day to day.</p>
+    <p class="body-text">Human Design adds another level of depth to the birth chart. The same planetary positions gain gates, lines and channels that show how that energy works in your body, your decisions and your relationships.</p>
+    <div class="hdx">
+      <p class="hdx-eyebrow">✦ An example from my chart: Venus</p>
+      <p class="hdx-p">In my birth chart, Venus in Sagittarius, next to Mercury, says I love freedom, meaning and the stories that connect different worlds. It is true, and it is beautiful. But it is only one layer.</p>
+      <p class="hdx-p">In Human Design, Venus has two homes. The one I see, the conscious one, is in gate 11, line 2: ideas that bring people together and bring harmony. The one that lives in me without my noticing, the unconscious one, is in gate 59, line 6: breaking barriers to reach union, and realizing that vulnerability is the secret of intimacy.</p>
+      <p class="hdx-p">A chart shows you what you already recognize. Human Design shows you what you have not seen yet, and that is often where the answer to the question you bring lies. Once you see your Venus in both layers, a relationship stops being only “what I feel” and becomes also “what is going on underneath”, and that changes the conversation with yourself and with those around you.</p>
+    </div>
+    <h3 class="hdq-t">What people say about Human Design with me</h3>
+    <p class="trad-note">Messages translated from Portuguese (AI magic 🪄)</p>
+    <div class="hdmsgs">
+      <blockquote class="hdmsg"><p>Good morning, Filipa! I just watched your class. WOW ✨ I loved it, really 😍 I knew nothing about Human Design and <strong>it was a very enlightening class because you present the content so clearly and appealingly</strong>. <u>You breathe what you speak and it shows in the energy you give off</u> 💙 I loved the explanation of the origin of Human Design, I was won over and found it even more interesting 😊 Thank you for sharing such a useful introduction! I liked it very very very much. I loved learning about neutrinos hahaha ✨✨</p></blockquote>
+      <blockquote class="hdmsg"><p>The base is not new, but really <strong>the way you brought the (same) information made more sense to me</strong>, <u>as if it had resonated on another level</u> ☺️</p></blockquote>
+      <blockquote class="hdmsg"><p>I loved it sooo much, <strong>you are really surprising me with how you present the ideas, the concepts</strong>. Oh my, and I can't not mention it, tell you that <u>I feel your joyyy so muchhh</u>, I adore it 🥹😍</p></blockquote>
+      <blockquote class="hdmsg"><p>I really think that's what makes sense. Because <strong>it makes no sense to me when they give me information without explaining how it works or where things come from</strong>. <u>I like to understand the foundations.</u> And I love learning new things!</p></blockquote>
+      <blockquote class="hdmsg"><p>Wow! <u>So many good things to take in!!</u> It's something really goood!! 😍😍</p></blockquote>
+      <blockquote class="hdmsg"><p><u>It fit together like puzzle pieces</u> 🧩</p><p>And above all <strong>it's in a “language” that resonates</strong> ✨ What beautiful work, Filipa. So excited to dive into this with you 💙</p></blockquote>
+      <blockquote class="hdmsg"><p><u>I loved</u> <strong>how you are introducing me to my chart</strong> 🥹🦋</p></blockquote>
+      <blockquote class="hdmsg"><p>Oh my God, my heart can't take it… seriously, <strong>what you are creating is unique and incredible</strong> and <u>it's so you…</u> ❤️</p></blockquote>
+      <blockquote class="hdmsg"><p>Hello dear Filipa, I just stopped by to tell you that <u>our little chat has already had an effect</u>. <strong>Your words and your energy were a comfort I needed.</strong> Thank you, and thank the Universe, for this push I needed so much.</p></blockquote>
+      <blockquote class="hdmsg"><p>The way you describe and talk about Human Design is <strong>captivating</strong>. <u>It truly vibrates!!!!</u></p></blockquote>
+    </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>

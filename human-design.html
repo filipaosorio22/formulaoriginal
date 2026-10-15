@@ -956,6 +956,7 @@ $('gate').addEventListener('submit', function(e){
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
     b.append('fields[local_nascimento]', lastInfo.place.name);
   }
+  try { var hh = JSON.parse(localStorage.getItem('fo_hist') || '[]'); if (hh.length) b.append('fields[historico_mapas]', hh.slice(-6).join(' | ').slice(-250)); } catch (x) {}
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
@@ -994,6 +995,7 @@ function describe(hd){
   if (both) p.classList.add('both');
   window.FO_CROSS = function(info){
     try {
+      try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name; if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
       function pad(n){ return (n < 10 ? '0' : '') + n; }
       var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
       a.href = 'mapa-astral.html?' + q.toString() + '#mapa';
