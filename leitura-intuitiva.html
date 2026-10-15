@@ -753,7 +753,6 @@
   @media (hover:hover){ #testemunhos .carousel, .hd-car { margin-top:2rem; } }
 
   /* ronda 17 */
-  @media (min-width:1200px){ .langbar { height:67px; line-height:67px; padding:0 660px 0 190px; background:transparent !important; pointer-events:none; } .langbar a { pointer-events:auto; } nav { top:0 !important; } }
   .hdmsg::after { content:none !important; display:none !important; }
   .ffront { background:linear-gradient(135deg, rgba(240,222,182,0.95), rgba(250,240,220,0.9)); border-color:var(--gold-deep); }
   html[data-theme="dark"] .ffront { background:linear-gradient(135deg, rgba(120,92,48,0.55), rgba(70,56,38,0.5)); }
@@ -769,6 +768,29 @@
   .offers2 { grid-template-columns:repeat(2,minmax(0,1fr)) !important; max-width:820px; margin-left:auto; margin-right:auto; }
   @media (max-width:760px){ .offers2 { grid-template-columns:1fr !important; } }
   .add-note { text-align:center; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--ink-soft); margin-top:1.1rem; }
+
+  /* ronda 18 */
+  .gift-top { max-width:calc(100% - 32px) !important; }
+  @media (min-width:640px){ .gift-top p { white-space:nowrap; } }
+  .statement.gold { background:linear-gradient(135deg,#9b4558,#833548) !important; box-shadow:0 10px 26px -14px rgba(131,53,72,.6) !important; }
+  html[data-theme="dark"] .statement.gold { background:linear-gradient(135deg,#833548,#6c2a3b) !important; }
+  .hdmsg { transition:transform .25s, box-shadow .25s, border-color .25s; padding-top:1.9rem; }
+  .hdmsg::before { content:'“'; position:absolute; top:.1rem; left:.95rem; font-family:'Spectral',serif; font-size:40px; line-height:1; color:var(--gold); }
+  .hdmsg:hover { transform:translateY(-3px); border-color:var(--gold-deep); box-shadow:0 10px 22px -12px rgba(154,126,82,.65); }
+  @media (min-width:681px){ #quem-te-guia .bio-box .bio-photo img { object-position:50% 68% !important; } }
+  .ses-box { background:var(--card) !important; border:1.5px solid var(--wine) !important; color:var(--ink) !important; box-shadow:0 12px 30px -20px rgba(122,37,53,.4) !important; }
+  .ses-box h2 { color:var(--wine); }
+  .ses-eye { color:var(--gold-deep); }
+  .ses-lead { color:var(--wine); }
+  .ses-p { color:var(--ink); }
+  .ses-st { background:var(--tint); border:0.5px solid var(--gold); }
+  .ses-st span { background:var(--wine); color:#faf3e6; }
+  .ses-st b { color:var(--wine); }
+  .ses-st p { color:var(--ink-soft); }
+  .ses-state { color:var(--wine); border-top:0.5px solid var(--gold); }
+  .ses-price { background:var(--tint); color:var(--ink); }
+  .ses-price b { color:var(--wine); }
+  .offers1 { grid-template-columns:minmax(0,500px) !important; justify-content:center; max-width:none !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -799,7 +821,7 @@
 
 <div class="gift-top" id="giftTop" role="dialog" aria-label="Oferecer uma Leitura" hidden>
   <span class="gt-ic" aria-hidden="true">🎁</span>
-  <p>Gostarias de oferecer uma Leitura Intuitiva a alguém?<br>É um presente maravilhoso e verás essa opção mais abaixo.</p>
+  <p>Gostarias de oferecer uma Leitura Intuitiva a alguém?<br>É um presente maravilhoso!</p>
   <button type="button" id="giftTopX" aria-label="Fechar">×</button>
 </div>
 
@@ -1059,7 +1081,7 @@
       <span>Criatividade e prazer</span>
       <span>Tempo e ritmo da vida</span>
     </div>
-    <p class="soft-note">Não precisas de separar aquilo que, na tua experiência, está ligado. Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade.<br>No momento da marcação da tua Leitura terás oportunidade de me contar mais.</p>
+    <p class="soft-note">Não precisas de separar aquilo que, na tua experiência, está ligado. Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade no momento da marcação da tua Leitura.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1082,32 +1104,22 @@
   <!-- OPÇÕES -->
   <section class="reveal" id="opcoes">
     <h2>Escolhe a tua Leitura</h2>
-    <div class="offers offers2">
-      <div class="offer">
+    <div class="offers offers1">
+      <div class="offer offer-featured">
         <p class="offer-name">Leitura Intuitiva</p>
         <p class="offer-price">147€</p>
         <ul>
-          <li>Leitura do teu mapa astral, orientada pelo teu tema</li>
+          <li>Leitura do teu mapa astral,<br>orientada pelo teu tema</li>
           <li>História simbólica personalizada</li>
           <li>Perguntas e orientações práticas</li>
-          <li>A tua Leitura por escrito, para leres ao teu ritmo</li>
+          <li>A tua Leitura por escrito,<br>para leres ao teu ritmo</li>
         </ul>
-        <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura os pontos estratégicos do teu mapa de Human Design, ligados ao tema que trazes.</span></label>
-        <a class="btn outline" href="marcar-leitura.html?op=leitura" data-hd-href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a>
-      </div>
-      <div class="offer offer-featured">
-        <p class="offer-name">Leitura + sessão de aprofundamento</p>
-        <p class="offer-price">297€</p>
-        <ul>
-          <li>Tudo o que está na Leitura Intuitiva</li>
-          <li>Uma sessão individual de 1 hora comigo, depois de leres a tua Leitura</li>
-          <li>Aprofundamos os temas e trabalhamos as crenças relevantes</li>
-        </ul>
-        <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura os pontos estratégicos do teu mapa de Human Design, ligados ao tema que trazes.</span></label>
-        <a class="btn" href="marcar-leitura.html?op=sessao" data-hd-href="marcar-leitura.html?op=sessao&amp;hd=1">Quero a Leitura e a sessão</a>
+        <label class="hd-add" data-extra="hd" data-p="50"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura os pontos estratégicos do teu mapa de Human Design, ligados ao tema que trazes.</span></label>
+        <label class="hd-add" data-extra="ses" data-p="150"><input type="checkbox" class="hd-chk"><span><strong>Juntar a sessão de aprofundamento · +150€</strong><br>Uma sessão individual de 1 hora comigo, depois de leres a tua Leitura, para aprofundar os temas e trabalhar as crenças relevantes.</span></label>
+        <label class="hd-add" data-extra="rs" data-p="100"><input type="checkbox" class="hd-chk"><span><strong>Juntar a Revolução Solar · +100€</strong><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
+        <a class="btn" href="marcar-leitura.html?op=leitura">Quero a minha Leitura</a>
       </div>
     </div>
-    <p class="add-note">No formulário de marcação podes ainda acrescentar a Revolução Solar, e vês logo a diferença de preços.</p>
     <div class="more-opts">
       <a class="mo-row" id="oferecer" href="marcar-leitura.html?oferta=1"><span class="mo-ic">🎁</span><span class="mo-tx"><b>Oferecer uma Leitura a alguém</b><em>Com um cartão de oferta (a pessoa marca comigo no prazo de 1 mês) ou com a Leitura já pronta. Só precisas dos dados de nascimento.</em></span><span class="mo-pr">desde 147€</span></a>
     </div>
@@ -1553,16 +1565,34 @@ maskD($('mpData'));
 <script>window.FO_NL_URL = '';</script>
 <script src="newsletter.js" defer></script>
 <script>
-// Human Design como acrescento (+50€): atualiza o preço e a ligação de cada opção
-Array.prototype.forEach.call(document.querySelectorAll('.offer'), function(card){
-  var chk = card.querySelector('.hd-chk'); if (!chk) return;
-  var price = card.querySelector('.offer-price'), btn = card.querySelector('a.btn'), base = parseInt(price.textContent, 10), href = btn.getAttribute('href');
-  chk.addEventListener('change', function(){
-    price.textContent = (base + (chk.checked ? 50 : 0)) + '€';
-    btn.setAttribute('href', chk.checked ? btn.getAttribute('data-hd-href') : href);
-    chk.closest('.hd-add').classList.toggle('on', chk.checked);
-  });
-});
+// extras da Leitura (Human Design +50, sessão +150, Revolução Solar +100): atualiza o preço e a ligação
+(function(){
+  var card = document.querySelector('.offers1 .offer'); if (!card) return;
+  var price = card.querySelector('.offer-price'), btn = card.querySelector('a.btn'), base = 147;
+  var ex = card.querySelectorAll('.hd-add');
+  function upd(){
+    var t = base, on = {};
+    Array.prototype.forEach.call(ex, function(l){ var c = l.querySelector('input').checked; l.classList.toggle('on', c); if (c){ t += +l.getAttribute('data-p'); on[l.getAttribute('data-extra')] = 1; } });
+    price.textContent = t + '€';
+    var op = on.rs && on.ses ? 'rssessao' : on.rs ? 'rs' : on.ses ? 'sessao' : 'leitura';
+    btn.setAttribute('href', 'marcar-leitura.html?op=' + op + (on.hd ? '&hd=1' : ''));
+  }
+  Array.prototype.forEach.call(ex, function(l){ l.querySelector('input').addEventListener('change', upd); });
+  upd();
+})();
+(function(){
+  function fit(){
+    Array.prototype.forEach.call(document.querySelectorAll('.feat .feat-quote'), function(q){
+      q.style.fontSize = ''; if (window.innerWidth < 900) return;
+      q.style.whiteSpace = 'nowrap'; q.style.display = 'block';
+      var s = 30; q.style.fontSize = s + 'px';
+      while (s > 14 && q.scrollWidth > q.clientWidth + 1){ s -= 0.5; q.style.fontSize = s + 'px'; }
+    });
+  }
+  window.addEventListener('resize', fit); window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  fit();
+})();
 </script>
 <script>
 (function(){
