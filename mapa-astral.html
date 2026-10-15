@@ -255,6 +255,15 @@ h1 em{font-style:normal;color:var(--wine)}
 .dual .wrap>#result,.dual .wrap>#hdCol{grid-column:auto}
 #hdCol iframe{width:100%;border:0;display:block;min-height:900px;background:transparent}
 @media (max-width:1000px){.dual .wrap{display:block;max-width:660px}}
+
+.who-wrap{position:relative;display:inline-block}
+.whobtn{font:inherit;color:inherit;background:none;border:0;border-bottom:1px dotted currentColor;padding:0;cursor:pointer}
+.whomenu{position:absolute;left:50%;top:calc(100% + 8px);transform:translateX(-50%);z-index:50;min-width:230px;background:var(--card,#fff);border:.5px solid var(--gold,#c9a86c);border-radius:12px;box-shadow:0 10px 28px rgba(26,20,16,.18);padding:6px;font-family:'DM Sans',sans-serif;font-style:normal;font-size:14px;text-align:left}
+.whomenu[hidden]{display:none}
+.whomenu button{display:block;width:100%;text-align:left;background:none;border:0;border-radius:8px;padding:8px 12px;font:inherit;color:var(--ink,#333);cursor:pointer}
+.whomenu button:hover{background:rgba(201,168,108,.22)}
+.whomenu button.cur{font-weight:600;color:var(--wine,#7a2535)}
+.whomenu button.nw{border-top:.5px solid var(--gold,#c9a86c);border-radius:0 0 8px 8px;margin-top:4px;color:var(--wine,#7a2535)}
 </style>
 </head>
 <body>
@@ -1106,6 +1115,31 @@ function describe(ch, info){
 <script>
 // ligação para ver também o outro desenho com os mesmos dados
 (function(){
+
+  function foWho(info, qs){
+    try {
+      var P = []; try { P = JSON.parse(localStorage.getItem('fo_people') || '[]'); } catch (x) {}
+      P = P.filter(function(o){ return o.q !== qs; }); P.push({ n: info.name || 'Sem nome', q: qs, d: info.d + '/' + info.mo + '/' + info.y });
+      P = P.slice(-8); try { localStorage.setItem('fo_people', JSON.stringify(P)); } catch (x) {}
+      var T = document.getElementById('resTitle'), nm = info.name; if (!T || !nm) return;
+      var tx = T.textContent, i = tx.lastIndexOf(nm); if (i < 0) return;
+      var pre = tx.slice(0, i), wrap = document.createElement('span'); wrap.className = 'who-wrap';
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'whobtn'; btn.textContent = nm + ' '; var ar = document.createElement('span'); ar.textContent = '▾'; ar.style.cssText = 'font-size:.5em;vertical-align:.25em;font-family:DM Sans,sans-serif'; btn.appendChild(ar); btn.setAttribute('aria-haspopup', 'true');
+      var menu = document.createElement('div'); menu.className = 'whomenu'; menu.hidden = true;
+      P.slice().reverse().forEach(function(o){
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = o.n + ' · ' + o.d; if (o.q === qs) b.className = 'cur';
+        b.addEventListener('click', function(){ goPerson(o.q); }); menu.appendChild(b);
+      });
+      var nw = document.createElement('button'); nw.type = 'button'; nw.className = 'nw'; nw.textContent = '＋ Gerar um novo mapa';
+      nw.addEventListener('click', function(){ menu.hidden = true; newMap(); }); menu.appendChild(nw);
+      wrap.appendChild(btn); wrap.appendChild(menu); T.textContent = pre; T.appendChild(wrap);
+      btn.addEventListener('click', function(e){ e.stopPropagation(); menu.hidden = !menu.hidden; });
+      document.addEventListener('click', function(){ menu.hidden = true; });
+    } catch (x) {}
+  }
+  function goPerson(q){ location.href = 'mapa-astral.html?' + q + (new URLSearchParams(location.search).get('tambem') ? '&tambem=hd' : '') + '#mapa'; }
+  function newMap(){ document.getElementById('editBtn').click(); }
+  window.addEventListener('message', function(e){ var d = e.data || {}; if (d.fo === 'new') newMap(); if (d.fo === 'go' && typeof d.q === 'string') goPerson(d.q); });
   var p = document.getElementById('crossNote'), a = document.getElementById('crossLink'); if (!p || !a) return;
   var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
   if (both) p.classList.add('both');
@@ -1115,6 +1149,7 @@ function describe(ch, info){
       function pad(n){ return (n < 10 ? '0' : '') + n; }
       var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
       a.href = 'human-design.html?' + q.toString() + '';
+      foWho(info, q.toString());
       if (both){
         document.body.classList.add('dual');
         var col = document.getElementById('hdCol');
