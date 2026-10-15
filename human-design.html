@@ -812,6 +812,18 @@ function labelPos(g){
   return [r1(p[0] + dx / L * k), r1(p[1] + dy / L * k)];
 }
 
+function rrect(pts, r){
+  var n = pts.length, d = '';
+  for (var i = 0; i < n; i++){
+    var p0 = pts[(i + n - 1) % n], p1 = pts[i], p2 = pts[(i + 1) % n];
+    var v1 = [p0[0] - p1[0], p0[1] - p1[1]], v2 = [p2[0] - p1[0], p2[1] - p1[1]];
+    var l1 = Math.sqrt(v1[0]*v1[0] + v1[1]*v1[1]), l2 = Math.sqrt(v2[0]*v2[0] + v2[1]*v2[1]);
+    var rr = Math.min(r, l1 / 2.4, l2 / 2.4);
+    var a = [p1[0] + v1[0] / l1 * rr, p1[1] + v1[1] / l1 * rr], c = [p1[0] + v2[0] / l2 * rr, p1[1] + v2[1] / l2 * rr];
+    d += (i ? 'L' : 'M') + r1(a[0]) + ' ' + r1(a[1]) + 'Q' + p1[0] + ' ' + p1[1] + ' ' + r1(c[0]) + ' ' + r1(c[1]);
+  }
+  return d + 'Z';
+}
 function renderBody(hd, info){
   var s = [];
   s.push('<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--cfill2)"/><stop offset="1" stop-color="var(--cfill)"/></linearGradient></defs>');
@@ -835,8 +847,8 @@ function renderBody(hd, info){
   // centres
   s.push('<g>');
   CENTRE_ORDER.forEach(function(c, i){
-    var pts = SHAPES[c].map(function(p){ return p.join(','); }).join(' ');
-    s.push('<polygon class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" points="' + pts + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (indefinido)') + '</title></polygon>');
+    var tri = SHAPES[c].length === 3;
+    s.push('<path class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" d="' + rrect(SHAPES[c], tri ? 9 : 11) + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (indefinido)') + '</title></path>');
   });
   s.push('</g>');
   // gate numbers
