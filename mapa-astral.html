@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
 <title>Mapa Astral Grátis Online · Calcula o teu Mapa Natal | Filipa Osório</title>
 <meta name="description" content="Cálculo do mapa astral grátis: Sol, Lua, Ascendente, planetas e casas do teu mapa natal, com textos de astrologia em português de Portugal.">
 <link rel="canonical" href="https://filipaosorio.com/mapa-astral.html">
@@ -178,7 +178,7 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .layers .ask.mc{border:1px solid var(--line-soft);border-radius:14px;padding:16px 18px;background:var(--card);text-align:left}
 .layers .ask.mc strong{font-style:italic;font-weight:400;color:var(--wine)}
 .layers .pillar h4 small{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.02em;margin-left:6px;white-space:nowrap}
-.layers .close{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;line-height:1.6;margin:14px auto 0;max-width:32em}
+.layers .close{font-family:var(--body);font-style:italic;color:#faf3e6;font-size:16px;line-height:1.65;margin:22px auto 0;max-width:34em;padding:20px 22px;border-radius:16px;background:linear-gradient(135deg,#7a2535,#5e1b29);border:0.5px solid var(--gold);text-align:left}
 
 .cta{margin-top:40px;text-align:center;padding:34px 22px 30px;border-radius:20px;border:1px solid var(--line);
   background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.16),transparent 70%),var(--card);position:relative;overflow:hidden}
@@ -219,6 +219,7 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
 h1{font-family:'Cormorant Garamond',var(--serif);font-weight:700;color:var(--wine);letter-spacing:0}
 h1 em{font-style:normal;color:var(--wine)}
 .res-head h2,.pillars h3,.cta h3,.layers h3,.gate h3{font-style:italic;color:var(--wine)}
+.hn{font-family:var(--sans);font-size:11px;fill:var(--soft);opacity:.85}
 .seo{margin-top:48px;padding-top:28px;border-top:1px solid var(--line-soft)}
 .seo h2{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--wine);font-size:clamp(23px,5vw,28px);text-align:center;margin:0 0 18px}
 .seo h3{font-family:var(--serif);font-weight:400;font-size:19px;margin:22px 0 6px}
@@ -234,6 +235,26 @@ h1 em{font-style:normal;color:var(--wine)}
 .cross{margin:14px auto 0;text-align:center;font-family:var(--sans);font-size:14px}
 .cross a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
 .cross.both{padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,0.35);font-size:15px}
+
+.okpop[hidden]{display:none}
+.okpop{position:fixed;inset:0;z-index:400;background:rgba(26,20,16,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.okbox{position:relative;max-width:440px;width:100%;background:var(--card);border:1px solid var(--gold);border-radius:18px;padding:30px 26px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.okbox .okx{position:absolute;top:8px;right:12px;background:none;border:0;font-size:24px;color:var(--soft);cursor:pointer}
+.okbox .oktitle{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.35;color:var(--wine);margin:0 0 12px}
+.okbox p{font-family:var(--sans);font-size:14.5px;line-height:1.65;color:var(--ink);margin:0 0 18px}
+.okbox p b{color:var(--wine)}
+.fbt{position:fixed;left:16px;bottom:16px;z-index:300;max-width:340px;background:linear-gradient(135deg,#f6ecd2,#faf3e6);border:0.5px solid var(--gold);border-radius:20px 20px 20px 5px;padding:14px 38px 12px 16px;box-shadow:0 10px 30px rgba(26,20,16,.22);font-family:var(--body);font-size:15px;line-height:1.55;color:#1a1410;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s;pointer-events:none}
+.fbt.on{opacity:1;transform:none;pointer-events:auto}
+.fbt .fbx{position:absolute;top:4px;right:8px;background:none;border:0;font-size:20px;color:#7a6a58;cursor:pointer}
+.fbt u{text-decoration-color:#c9a86c;text-decoration-thickness:2px;text-underline-offset:3px}
+.fbt small{display:block;text-align:right;font-family:var(--sans);font-size:11px;color:#9a7e52;margin-top:4px}
+@media (max-width:520px){.fbt{left:10px;right:10px;max-width:none;bottom:10px}}
+
+.dual .wrap{max-width:1320px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;align-items:start}
+.dual .wrap>*{grid-column:1/-1}
+.dual .wrap>#result,.dual .wrap>#hdCol{grid-column:auto}
+#hdCol iframe{width:100%;border:0;display:block;min-height:900px;background:transparent}
+@media (max-width:1000px){.dual .wrap{display:block;max-width:660px}}
 </style>
 </head>
 <body>
@@ -242,7 +263,7 @@ h1 em{font-style:normal;color:var(--wine)}
   <header>
     <p class="kicker"><span>✦</span>Leitura Intuitiva<span>✦</span></p>
     <h1>O teu <em>mapa astral</em></h1>
-    <p class="lead">Cálculo do mapa astral grátis, com o céu no instante em que nasceste. Indica a data, a hora e o local de nascimento e o teu mapa natal aparece aqui, traçado a ouro.</p>
+    <p class="lead">Cálculo do mapa astral grátis, com o céu no instante em que nasceste. Indica a data, a hora e o local de nascimento e o teu mapa natal aparece aqui, traçado a dourado.</p>
     <div class="rule">✦</div>
   </header>
 
@@ -328,12 +349,12 @@ h1 em{font-style:normal;color:var(--wine)}
 
     <div class="cta">
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
-      <p class="big">O mapa é só o desenho.<br><em>A Leitura Intuitiva</em> é a forma de o transformares em ação no teu momento presente.</p>
+      <p class="big">O mapa é só o desenho.<br>Com <em>a Leitura Intuitiva</em> podes transformá-lo<br>em ação alinhada no teu momento presente.</p>
       <a class="btn" href="marcar-leitura.html">Quero a minha Leitura</a><br>
       <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a>
     </div>
     <p class="bday" id="bday" hidden>O teu aniversário está perto: é o momento da tua Revolução Solar, o início de um novo ciclo anual. <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20meu%20mapa%20e%20gostava%20de%20saber%20mais%20sobre%20a%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Fala comigo</a> se quiseres juntá-la à tua Leitura.</p>
-    <p class="again"><button type="button" class="linkbtn" id="editBtn">Alterar os dados</button></p>
+    <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
   </section>
 
   <section class="seo" aria-labelledby="seoT">
@@ -348,6 +369,7 @@ h1 em{font-style:normal;color:var(--wine)}
     <p>Sim. O cálculo do mapa astral é gratuito. Se quiseres ir mais longe, a Leitura Intuitiva junta estes pontos às casas e às ligações do teu mapa, numa leitura escrita sobre o momento que estás a viver.</p>
   </section>
   <footer>✦ ✦ ✦</footer>
+<div class="okpop" id="okPop" role="dialog" aria-modal="true" aria-labelledby="okTitle" hidden><div class="okbox"><button class="okx" type="button" id="okX" aria-label="Fechar">×</button><p class="oktitle" id="okTitle"></p><p>Se não o vires, espreita a pasta de spam e marca-o como «não é spam». Guarda também <b>mail@filipaosorio.com</b> nos teus contactos para receberes tudo na caixa principal.</p><button class="btn" type="button" id="okGo">Continuar</button></div></div>
 </div>
 
 <script src="astronomy.browser.min.js"></script>
@@ -778,7 +800,7 @@ form.addEventListener('submit', function(e){
     }
   } catch (e) {}
 })();
-$('editBtn').addEventListener('click', function(){ form.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('data').focus({ preventScroll: true }); });
+$('editBtn').addEventListener('click', function(){ var seoEl = document.querySelector('.seo'); if (seoEl) seoEl.hidden = false; form.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('data').focus({ preventScroll: true }); });
 
 // ---------- wheel ----------
 var C = 320, R0 = 284, R1 = 244, RP = 207, RH = 160, RA = 130;
@@ -837,7 +859,7 @@ function render(ch, info){
     ch.cusps.forEach(function(c, k){
       if (k % 3 !== 0){ s.push(line(c, RA, RH, 'cusp')); s.push(line(c, RH, R1, 'cusp', ' stroke-opacity=".2"')); }
       var hp = P(c + norm(ch.cusps[(k + 1) % 12] - c) / 2, (RA + RH) / 2); // number in the middle of the (unequal) house
-      // números das casas não aparecem: a leitura das casas fica para a Leitura
+      s.push('<text class="hn" x="' + hp[0] + '" y="' + hp[1] + '" text-anchor="middle" dominant-baseline="central">' + (k + 1) + '</text>');
     });
     // axes ASC–DSC, MC–IC
     s.push(line(ch.asc, RA, R0 + 10, 'axis'));
@@ -949,14 +971,15 @@ function render(ch, info){
     // Meio do Céu: signo, regente do Ascendente e planeta mais perto do MC
     var mcS = signOf(ch.mc), ark = RULER[as], aName = RULER_ART[ark] || ch.planets.filter(function(p){ return p.key === ark; })[0].name;
     var near = ch.planets.slice().sort(function(x, y){ return angDist(x.lon, ch.mc) - angDist(y.lon, ch.mc); })[0];
-    var mcTxt = 'O teu Meio do Céu está em ' + SIGNS[mcS] + '. É o ponto mais alto do céu no instante em que nasceste: a montanha que a tua alma veio subir. Não é só a tua profissão, é a presença que vieste acender no mundo, e chega com maturidade. Na Leitura vemos como o teu Ascendente em ' + SIGNS[as] + ', regido ' + (ark === 'Sun' ? 'pelo Sol' : ark === 'Moon' ? 'pela Lua' : 'por ' + aName) + ', te ajuda a chegar lá, o que ' + (RULER_ART[near.key] || near.name) + ', o planeta mais perto deste ponto, traz a todo o teu mapa, e o que te faz forçar o caminho antes do tempo.';
+    var mcTxt = 'O teu Meio do Céu está em ' + SIGNS[mcS] + '. É o ponto mais alto do céu no instante em que nasceste: a montanha que a tua alma veio subir. Não é só a tua profissão, é a presença que vieste acender no mundo, e chega com maturidade. Há muito para reconhecer na forma como o teu Ascendente em ' + SIGNS[as] + ', o planeta mais próximo deste ponto e o resto do teu mapa se ligam a esta montanha, e é esse trabalho profundo de reconhecimento que fazemos juntas na análise da tua Leitura.';
     lh += '<p class="ask mc"><strong>O teu Meio do Céu</strong><br>' + mcTxt + '</p>';
     lastSum.mc = mcTxt;
-    lh += '<p class="close">Na Leitura, olho para estas casas e ligações no teu mapa e mostro-te onde colocar o teu foco no momento que estás a viver. Recebes perguntas e práticas para o teu dia-a-dia, para começares a trabalhar as crenças que reconheces em ti. E nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, transformamos as crenças que te prendem, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
+    lh += '<p class="close">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a trabalhar as crenças que reconheces em ti. Nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, fazemos um trabalho do sistema de crenças que te prendem, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
     lay.innerHTML = lh; lay.hidden = false;
   }
 
   var res = $('result'); res.hidden = false;
+  var seoEl = document.querySelector('.seo'); if (seoEl) seoEl.hidden = true;
   requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
 }
 function spread(items, MIN){
@@ -1015,7 +1038,7 @@ $('gate').addEventListener('submit', function(e){
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
   if (!nome){ err.textContent = 'Escreve o teu nome.'; $('gNome').focus(); return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('gEmail').focus(); return; }
-  if (!$('gOk').checked){ err.textContent = 'Para continuares, aceita receber os e-mails.'; return; }
+  if (!$('gOk').checked){ err.textContent = 'Falta só um passo: marca a caixa para aceitares receber os meus e-mails e veres o que preparei para ti ✦'; return; }
   err.textContent = '';
   var b = new URLSearchParams();
   b.append('fields[name]', nome);
@@ -1033,17 +1056,20 @@ $('gate').addEventListener('submit', function(e){
     setLocked(false);
     var g = $('gate');
     g.style.display = 'none';
-    var ok = document.createElement('p'); ok.className = 'gate-ok'; ok.setAttribute('role', 'status');
-    ok.style.cssText = 'text-align:center;font-family:var(--sans);font-size:14px;color:var(--soft);margin:18px auto 0;max-width:30em';
-    ok.innerHTML = 'Obrigada, ' + nome.split(' ')[0].replace(/[<>&]/g, '') + '! Enviei-te um e-mail para confirmares a subscrição.<br>Se não o vires, espreita a pasta de spam ou lixo e marca-o como «não é spam». Guarda também mail@filipaosorio.com nos teus contactos para receberes tudo na caixa principal.';
-    $('locked').appendChild(ok);
-    $('pillars2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    showOk(nome.split(' ')[0].replace(/[<>&]/g, ''), '.pillars');
   }
   fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(done, function(){
     btn.disabled = false; btn.textContent = '✦ Ver alguns insights do meu mapa';
     err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
   });
 });
+
+function showOk(first, target){
+  var pop = $('okPop'); $('okTitle').textContent = 'Obrigada, ' + first + '! Enviei-te um e-mail para confirmares a subscrição.';
+  pop.hidden = false;
+  function close(){ pop.hidden = true; var t = document.querySelector(target); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  $('okX').onclick = close; $('okGo').onclick = close;
+}
 function pad(n){ return (n < 10 ? '0' : '') + n; }
 function fmtOff(o){
   var sg = o >= 0 ? '+' : '−', ao = Math.abs(Math.round(o));
@@ -1087,7 +1113,18 @@ function describe(ch, info){
       function pad(n){ return (n < 10 ? '0' : '') + n; }
       var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
       a.href = 'human-design.html?' + q.toString() + '';
-      p.hidden = false;
+      if (both){
+        document.body.classList.add('dual');
+        var col = document.getElementById('hdCol');
+        if (!col){
+          col = document.createElement('section'); col.id = 'hdCol';
+          col.innerHTML = '<iframe id="hdFrame" title="O teu Human Design" scrolling="no"></iframe>';
+          var res = document.getElementById('result'); res.parentNode.insertBefore(col, res.nextSibling);
+          window.addEventListener('message', function(e){ if (e.data && e.data.fo === 'hdh') document.getElementById('hdFrame').style.height = (e.data.h + 8) + 'px'; });
+        }
+        document.getElementById('hdFrame').src = 'human-design.html?' + q.toString() + '&embed=1';
+        p.hidden = true;
+      } else p.hidden = false;
     } catch (e) {}
   };
 })();

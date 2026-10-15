@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://filipaosorio.com/leitura-intuitiva.html">
 <meta property="og:image" content="https://filipaosorio.com/novahero.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Leitura Intuitiva", "serviceType": "Leitura de mapa astral", "provider": {"@type": "Person", "name": "Filipa Osório", "url": "https://filipaosorio.com/"}, "areaServed": "PT", "availableLanguage": ["pt-PT", "en"], "description": "Leitura escrita do mapa astral, astrologia, Human Design e intuição.", "offers": [{"@type": "Offer", "name": "Leitura Intuitiva", "price": "147", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Leitura + sessão de aprofundamento", "price": "247", "priceCurrency": "EUR"}]}</script>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -132,7 +132,8 @@
   .recognize-hint { font-family:'DM Sans',sans-serif; font-size:12.5px; color:var(--muted); margin:0 0 0.9rem; }
   .recognize-out { font-family:'Spectral',serif; font-style:italic; font-size:18px; color:var(--wine); min-height:1.6em; margin-top:1rem; transition:opacity 0.3s; }
   .jump-link { font-family:'Lora',serif; font-size:17px; color:var(--wine); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; }
-  .jump-row { text-align:center; margin-top:1.6rem; }
+  .jump-row { text-align:center; margin-top:1.1rem; }
+  .gold-rule { width:90px; height:0; border-top:1.5px solid var(--gold); margin:1.8rem auto 0; }
   .jump-row small { display:block; font-size:14px; color:var(--ink-soft); margin-top:0.2rem; }
 
   /* testemunhos */
@@ -166,7 +167,7 @@
   .fcard.flipped .finner { transform:rotateY(180deg); }
   @media (hover:hover){ .fcard:hover .finner, .fcard:focus-visible .finner { transform:rotateY(180deg); } }
   .fface { grid-area:1/1; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:14px; padding:1.5rem 1.3rem; }
-  .ffront { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:linear-gradient(145deg, var(--tint2), var(--tint)); border:0.5px solid var(--gline); position:relative; }
+  .ffront { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:linear-gradient(145deg, var(--tint2), var(--tint)); border:1px solid var(--gold); position:relative; }
   .ffront .sym { font-family:'Spectral',serif; font-size:30px; color:var(--gold); line-height:1; margin-bottom:0.8rem; }
   .ffront b { font-family:'Spectral',serif; font-weight:400; font-style:italic; font-size:22px; line-height:1.2; color:var(--wine); }
   .fhint { position:absolute; left:0; right:0; bottom:14px; font-family:'DM Sans',sans-serif; font-size:11.5px; color:var(--gold-deep); }
@@ -488,7 +489,7 @@
   .feat { position:relative; margin:1.4rem 0 1.8rem; padding:1.6rem 1.6rem 1.3rem; border:0.5px solid var(--gold); border-radius:14px; background:linear-gradient(135deg, rgba(240,222,182,0.38), rgba(250,243,230,0.2)); }
   html[data-theme="dark"] .feat { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.15)); }
   .feat .feat-eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 0.8rem; }
-  .feat .feat-quote { font-family:'Spectral',serif; font-style:italic; font-size:clamp(20px,2.6vw,24px); line-height:1.45; color:var(--wine); margin:0 0 0.8rem; }
+  .feat .feat-quote { font-family:'Spectral',serif; font-style:italic; font-size:clamp(14px,3.9vw,16.5px); white-space:normal; line-height:1.45; color:var(--wine); margin:0 0 0.8rem; }
   .feat .feat-ctx { font-family:'Lora',serif; font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 0.9rem; }
   .feat details summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem; font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.04em; color:var(--gold-deep); text-decoration:underline; text-underline-offset:3px; }
   .feat details summary::-webkit-details-marker { display:none; }
@@ -516,6 +517,23 @@
   }
   #quem-te-guia .bio-box .bio-photo img { object-position:50% 28% !important; }
   @media (max-width:680px){ #quem-te-guia .bio-box .bio-photo { aspect-ratio:3/4.4 !important; } }
+  .offers3 { grid-template-columns:repeat(3,1fr); }
+  @media (max-width:980px){ .offers3 { grid-template-columns:1fr; } }
+  .offer-badge.gold { background:linear-gradient(135deg,#e2c891,#c9a86c); color:#2b1f10; }
+  .ses-box { padding:2.2rem 1.8rem 1.9rem; border-radius:20px; border:0.5px solid var(--gold); background:linear-gradient(145deg, #7a2535 0%, #5e1b29 55%, #43121d 100%); color:#faf3e6; box-shadow:0 18px 40px -22px rgba(94,27,41,.75); }
+  .ses-box h2 { color:#fff; margin-bottom:1rem; }
+  .ses-eye { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#e2c891; margin:0 0 .8rem; }
+  .ses-lead { font-family:'Spectral',serif; font-style:italic; font-size:22px; line-height:1.45; color:#f3dfae; margin:0 0 1.1rem; text-wrap:balance; }
+  .ses-p { font-family:'Lora',serif; font-size:16.5px; line-height:1.7; color:#f4ebdd; margin:0 0 1.1rem; }
+  .ses-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:1.3rem 0 1.4rem; }
+  .ses-st { background:rgba(255,255,255,.07); border:0.5px solid rgba(226,200,145,.55); border-radius:14px; padding:1rem 1rem .9rem; }
+  .ses-st span { display:flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:#e2c891; color:#43121d; font-family:'Spectral',serif; font-size:15px; margin-bottom:.5rem; }
+  .ses-st b { display:block; font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:20px; color:#fff; margin-bottom:.25rem; }
+  .ses-st p { font-size:14px; line-height:1.6; color:#f0e4d2; margin:0; }
+  .ses-state { font-family:'Spectral',serif; font-style:italic; font-size:19px; line-height:1.5; color:#f3dfae; margin:0 0 1.2rem; padding-top:1.1rem; border-top:0.5px solid rgba(226,200,145,.45); }
+  .ses-price { font-family:'DM Sans',sans-serif; font-size:15px; line-height:1.65; color:#faf3e6; margin:0; padding:.9rem 1.1rem; border-radius:12px; background:rgba(0,0,0,.22); text-align:center; }
+  .ses-price b { color:#e2c891; font-size:19px; }
+  @media (max-width:760px){ .ses-steps { grid-template-columns:1fr; } .ses-box { padding:1.8rem 1.2rem 1.5rem; } }
   .more-opts { margin:1.6rem auto 0; max-width:760px; }
   .more-t { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 .8rem; }
   .mo-row { display:flex; align-items:center; gap:1rem; padding:1rem 1.2rem; margin:0 0 .7rem; border:0.5px solid var(--gline); border-radius:14px; background:var(--card); text-decoration:none; color:var(--ink); transition:border-color .2s, transform .2s; }
@@ -547,7 +565,7 @@
   .gift-top { position:fixed; top:96px; left:50%; z-index:160; width:min(580px, calc(100% - 32px)); display:flex; align-items:center; gap:12px; padding:12px 14px 12px 16px; background:var(--card); border:0.5px solid var(--gold); border-radius:14px; box-shadow:0 8px 28px rgba(26,20,16,0.14); font-family:'DM Sans',sans-serif; font-size:14px; line-height:1.45; color:var(--ink); opacity:0; transform:translate(-50%,-14px); transition:opacity 0.45s, transform 0.45s; pointer-events:none; }
   .gift-top.open { opacity:1; transform:translate(-50%,0); pointer-events:auto; }
   .gift-top .gt-ic { font-size:22px; line-height:1; }
-  .gift-top p { margin:0; flex:1; }
+  .gift-top p { margin:0; flex:1; text-align:left; }
   .gift-top a { color:var(--wine); font-weight:500; white-space:nowrap; }
   .gift-top button { background:none; border:0; color:var(--ink-soft); font-size:20px; line-height:1; cursor:pointer; padding:2px 4px; }
   @media (min-width:1100px){ .gift-top { top:84px; } }
@@ -575,11 +593,13 @@
   .mpop .mp-combo li { padding:9px 10px; border-radius:8px; cursor:pointer; font-size:15px; color:var(--ink); }
   .mpop .mp-combo li small { color:var(--muted); font-size:12.5px; margin-left:4px; }
   .mpop .mp-combo li.active { background:var(--tint2); }
+  .mpop .mp-foot { font-family:'DM Sans',sans-serif; font-size:12.5px; line-height:1.55; color:var(--ink-soft); text-align:center; margin:1rem 0 .2rem; }
+  .mpop .mp-foot b { color:var(--gold-deep); }
   .mpop .mp-combo li.none { cursor:default; color:var(--muted); font-size:13.5px; }
   @media (max-width:480px){ .mpop .mp-grid { grid-template-columns:1fr; } .mpop-box { padding:1.5rem 1.1rem 1.1rem; } }
 
   /* ronda 4 (14 out): testemunho sem itálico, mais legível, com áudio; foto mais acima */
-  .feat .feat-full p { font-family:'Lora',serif; font-style:normal; font-size:15.5px; line-height:1.7; color:var(--ink); }
+  .feat .feat-full p { font-family:'Lora',serif; font-style:normal; font-size:14px; line-height:1.65; color:var(--ink); }
   .feat .feat-full strong { font-weight:600; color:var(--wine); background:linear-gradient(transparent 55%, rgba(201,168,108,0.55) 55%); padding:0 2px; }
   html[data-theme="dark"] .feat .feat-full strong { color:var(--ink); background:linear-gradient(transparent 55%, rgba(201,168,108,0.4) 55%); }
   .feat .feat-ctx { font-size:16px; }
@@ -599,7 +619,7 @@
   @keyframes audpulse { from { transform:scaleY(0.6); } to { transform:scaleY(1.15); } }
   .aud-fill { position:absolute; left:0; top:0; bottom:0; width:0; border-right:2px solid var(--wine); background:rgba(122,37,53,0.12); pointer-events:none; }
   .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); min-width:2.2rem; text-align:right; }
-  @media (max-width:680px){ .feat .aud { border-radius:22px; padding:0.6rem 0.9rem 0.6rem 0.6rem; } .aud-main { grid-template-columns:minmax(0,1fr) auto; gap:0.3rem 0.7rem; } .aud-q { grid-column:1 / -1; } .feat .feat-full p { font-size:15px; } }
+  @media (max-width:680px){ .feat .aud { border-radius:22px; padding:0.6rem 0.9rem 0.6rem 0.6rem; } .aud-main { grid-template-columns:minmax(0,1fr) auto; gap:0.3rem 0.7rem; } .aud-q { grid-column:1 / -1; } .feat .feat-full p { font-size:13.5px; } }
   #quem-te-guia .bio-box .bio-photo img { object-position:50% 95% !important; }
 
   /* ronda 5 (14 out) */
@@ -627,6 +647,8 @@
   /* ronda 6 (14 out) */
   @media (min-width:681px){ #quem-te-guia .bio-box .bio-photo { height:440px; } }
   #quem-te-guia .bio-box .bio-photo img { object-position:50% 64% !important; }
+  @media (min-width:681px){ #quem-te-guia .bio-box .bio { grid-template-columns:310px 1fr !important; } #quem-te-guia .bio-box .bio-photo { height:560px !important; } }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 22% !important; }
   .voice-quote p { font-size:clamp(26px,3.6vw,33px); line-height:1.45; }
   .mp-choice .btn { flex:1 1 100%; }
   .mp-choice .btn.outline:active { background:linear-gradient(120deg,#ecd6a4,#d6b26f,#efdcae); color:#3d2814; }
@@ -641,8 +663,8 @@
   .voice-quote p { font-size:clamp(17px,2.1vw,19.5px); line-height:1.6; color:var(--wine); }
   .voice-quote p span { display:block; }
   @media (max-width:700px){ .voice-quote p span { display:inline; } }
-  .statement.gold { padding:1.2rem 1.4rem; border:0.5px solid var(--gold); border-radius:14px; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); max-width:none; }
-  html[data-theme="dark"] .statement.gold { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
+  .statement.gold { padding:1.5rem 1.6rem; border:0.5px solid var(--gold); border-radius:14px; background:linear-gradient(135deg, #7a2535, #5e1b29); color:#faf3e6; max-width:none; box-shadow:0 10px 26px -14px rgba(94,27,41,.6); }
+  html[data-theme="dark"] .statement.gold { background:linear-gradient(135deg, #5e1b29, #43121d); color:#faf3e6; }
   #testemunhos .feat { margin-top:2rem; }
   .car-slide { transition:flex-basis 0.45s ease; }
   .car-slide:not(.car-video) { cursor:zoom-in; }
@@ -652,9 +674,9 @@
   .hdq-t { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:21px; color:var(--wine); text-align:center; margin:2rem 0 1rem; }
   /* mensagens sobre o Human Design: uma mensagem por pessoa, com destaques */
   .hdmsgs { column-count:2; column-gap:1.1rem; margin:0.4rem 0 1.6rem; }
-  .hdmsg { break-inside:avoid; position:relative; margin:0 0 1.1rem; padding:2rem 1.5rem 1.3rem; border:0.5px solid var(--gold); border-radius:14px; background:linear-gradient(135deg, rgba(240,222,182,0.42), rgba(250,243,230,0.22)); }
-  html[data-theme="dark"] .hdmsg { background:linear-gradient(135deg, rgba(120,92,48,0.24), rgba(60,48,34,0.16)); }
-  .hdmsg::before { content:'“'; position:absolute; top:0.15rem; left:1rem; font-family:'Spectral',serif; font-size:44px; line-height:1; color:var(--gold); }
+  .hdmsg { break-inside:avoid; position:relative; margin:0 0 1.2rem; padding:0.85rem 1.15rem 1rem; border:0.5px solid var(--gold); border-radius:20px 20px 20px 5px; background:linear-gradient(135deg, rgba(240,222,182,0.5), rgba(250,243,230,0.35)); box-shadow:0 2px 8px -4px rgba(154,126,82,.5); }
+  html[data-theme="dark"] .hdmsg { background:linear-gradient(135deg, rgba(120,92,48,0.3), rgba(60,48,34,0.22)); }
+  .hdmsg::after { content:'✓✓'; display:block; text-align:right; font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:-1px; color:var(--gold-deep); margin-top:.35rem; }
   .hdmsg p + p { margin-top:.6rem; }
   .hdmsg p { font-family:'Lora',serif; font-size:17px; line-height:1.75; color:var(--ink); margin:0; }
   .hdmsg strong { font-weight:600; color:var(--wine); background:rgba(201,168,108,0.42); border-radius:3px; padding:1px 3px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
@@ -683,8 +705,8 @@
   .bio-box { background:linear-gradient(135deg, rgba(240,222,182,0.42), rgba(250,243,230,0.2)) !important; border:0.5px solid var(--gold); border-radius:18px; }
   html[data-theme="dark"] .bio-box { background:linear-gradient(135deg, rgba(120,92,48,0.24), rgba(60,48,34,0.12)) !important; }
   .bio-box::before { display:none; }
-  .hdx { margin:1.6rem 0 0.6rem; padding:1.3rem 1.3rem 1.1rem; border:0.5px solid var(--gold); border-radius:16px; background:linear-gradient(135deg, rgba(240,222,182,0.35), rgba(250,243,230,0.15)); }
-  html[data-theme="dark"] .hdx { background:linear-gradient(135deg, rgba(120,92,48,0.22), rgba(60,48,34,0.12)); }
+  .hdx { margin:1.6rem 0 0.6rem; padding:1.3rem 1.3rem 1.1rem; border:0.5px solid rgba(122,37,53,0.3); border-radius:16px; background:linear-gradient(135deg, rgba(122,37,53,0.07), rgba(122,37,53,0.03)); }
+  html[data-theme="dark"] .hdx { border-color:rgba(228,167,179,0.3); background:linear-gradient(135deg, rgba(228,167,179,0.1), rgba(228,167,179,0.04)); }
   .hdx-eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 0.9rem; }
   .hdx-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   @media (max-width:640px){ .hdx-grid { grid-template-columns:1fr; } }
@@ -720,7 +742,8 @@
   #oferecer .extra-offer .eyebrow, #oferecer .extra-offer-name { text-align:center; }
   #oferecer .extra-offer .btn { display:table; margin-left:auto; margin-right:auto; }
   /* ronda 13 */
-  .feat .feat-quote { font-size:clamp(17px,2.1vw,20px); line-height:1.5; }
+  .feat .feat-quote { font-size:clamp(13px,3.7vw,15.5px); line-height:1.5; }
+  @media (min-width:900px){ .feat .feat-quote { white-space:nowrap; } }
   @media (hover:hover){
     .car-slide:not(.car-video):hover img { transform:none; }
     .car-slide:not(.car-video) { cursor:zoom-in; transition:transform 0.35s ease, box-shadow 0.35s ease; position:relative; z-index:1; }
@@ -759,7 +782,7 @@
 
 <div class="gift-top" id="giftTop" role="dialog" aria-label="Oferecer uma Leitura" hidden>
   <span class="gt-ic" aria-hidden="true">🎁</span>
-  <p>Queres oferecer uma Leitura Intuitiva a alguém especial?<br>Que presente maravilhoso! Verás essa opção mais abaixo.</p>
+  <p>Gostarias de oferecer uma Leitura Intuitiva a alguém?<br>É um presente maravilhoso e verás essa opção mais abaixo.</p>
   <button type="button" id="giftTopX" aria-label="Fechar">×</button>
 </div>
 
@@ -770,28 +793,26 @@
     <div class="cover-li">
       <div class="cover-text">
     <h1>Leitura Intuitiva</h1>
-    <p class="h1-sub">Uma Leitura feita com intuição e método, sobre o que estás a viver e desejas para ti.</p>
+    <p class="h1-sub">Uma Leitura totalmente personalizada e única feita com intuição e método</p>
       </div>
     </div>
     <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
   </header>
 
   <!-- TEXTO SOBRE A FOTO DE FUNDO -->
-  <div class="texto-fundo reveal" id="comeco">
+  \1
     <p class="body-text">Existe em ti uma forma única de te moveres pela vida.</p>
-    <p class="body-text">Essa forma não se revela apenas no teu ritmo ou na tua energia. Revela-se nos padrões que repetes, nas escolhas que fazes, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
-    <p class="body-text">Talvez também a reconheças de uma forma menos fácil de explicar: num sonho que fica contigo, numa imagem que te toca ou numa sensação que ainda não consegues colocar em palavras.</p>
-    <p class="body-text">Há histórias que se repetem ao longo da tua vida. Na forma como te relacionas. Nas decisões que tomas. Nos desafios que encontras e na forma como respondes a eles.</p>
+    <p class="body-text">Essa forma não se revela apenas no teu ritmo ou na tua energia. Revela-se nos padrões que repetes, nas escolhas que fazes, nos desafios que encontras e na forma como respondes a eles.</p>
+    <p class="body-text">Revela-se nas histórias que se repetem ao longo da tua vida, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
+    <p class="body-text">Talvez também a reconheças de uma forma menos fácil de explicar: num sonho que fica contigo, numa sincronicidade que te tocou ou numa sensação que ainda não consegues colocar em palavras.</p>
     <p class="body-text">Ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de umas determinadas lentes.<br>Sobre amor. Sobre valor, segurança, sucesso, liberdade, expressão…</p>
-    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti, e <strong>tu és mais do que essas histórias e do que as formas que encontraste para te adaptares.</strong></p>
-    <p class="body-text">A Leitura Intuitiva é um convite para te recentrares: para veres os padrões, as crenças e as dinâmicas do teu momento e a forma como te influenciam. Quando vês o que está a operar por trás das tuas escolhas, ganhas mais espaço para escolher de forma diferente, com mais consciência.</p>
-  </div>
-
-  <div class="faixa reveal"><p>O que acreditas sobre ti molda mais as tuas escolhas do que imaginas!</p></div>
+    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti, mas <strong>sabes que és mais do que essas histórias e do que as formas que foste encontrando para te adaptares.</strong></p>
+    <p class="body-text">A Leitura Intuitiva é um convite para te recentrares: para veres possíveis padrões, crenças e dinâmicas e a forma como te influenciam. Quando vês o que está a operar por trás das tuas escolhas, ganhas mais espaço para escolher de forma diferente, com mais consciência e amor, acima de tudo por ti.</p>
+  \2<p>O que acreditas sobre ti molda mais as tuas escolhas do que imaginas!</p></div>
 
   <!-- SE SENTES QUE -->
   <section class="reveal" id="se-sentes">
-    <h2>Vem conhecer novas camadas de ti, se sentes que…</h2>
+    <h2>Vem conhecer novas camadas de ti, se…</h2>
     <ul class="recognize stagger">
       <li><span class="mk">✦</span><span>Desejas conhecer mais de ti, na tua essência mais livre</span></li>
       <li><span class="mk">✦</span><span>Reconheces algo nos sonhos, símbolos e sinais na vida</span></li>
@@ -800,7 +821,7 @@
       <li><span class="mk">✦</span><span>Estás a viver uma transição e procuras clareza sobre o teu processo</span></li>
       <li><span class="mk">✦</span><span>Queres tomar decisões alinhadas, sem te perderes no ruído da mente</span></li>
     </ul>
-    <div class="divider"><span></span><span></span></div>
+    <div class="gold-rule" aria-hidden="true"></div>
     <p class="jump-row"><a class="jump-link" href="#quem-te-guia" onclick="jumpToBio(); return false;">Conhece quem te guia</a><small>(vem primeiro conhecer-me)</small></p>
   </section>
 
@@ -840,8 +861,8 @@
     <div class="feat">
       <p class="feat-eyebrow">✦ A Leitura mais recente · testemunho em áudio</p>
       <p class="feat-quote">«Fez clique nos pontos onde tinha que fazer o clique. Trouxe visões diferentes à minha realidade.»</p>
-      <p class="feat-ctx">Uma cliente de há anos, que virou amiga também, de quem conheço muito bem a história e a ela, claro. Um caso bem especial, até com trocas de mensagens sobre a Leitura, por isso mesmo estava um bocadinho expectante e curiosa para ver o que a Leitura lhe traria neste momento.</p>
-      <div class="aud"><audio preload="metadata" src="feedback-leitura.mp3"></audio><button type="button" class="aud-btn" aria-label="Ouvir o testemunho"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">«Trouxe visões diferentes»</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
+      <p class="feat-ctx">Uma cliente de há anos, que virou amiga também, de quem conheço muito bem a história e a ela, claro. Um caso bem especial, até com trocas de mensagens sobre a Leitura, por isso mesmo estava um bocadinho expectante e curiosa para ver o que a Leitura lhe traria agora.</p>
+      <div class="aud"><audio preload="metadata" src="Feedback%20LA%20nova%20Cristiana.MP3"></audio><button type="button" class="aud-btn" aria-label="Ouvir o testemunho"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">«Trouxe visões diferentes»</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
       <details>
         <summary>Ler o testemunho completo</summary>
         <div class="feat-full">
@@ -849,7 +870,6 @@
           <p>Voltando à Leitura e àquilo que eu senti da Leitura, <strong>eu gostei muito, muito mesmo</strong>. Achei que, aliás, a conversa que nós tivemos depois da Leitura mostrou isso mesmo, que <strong>fez clique nos pontos onde tinha que fazer o clique</strong>.</p>
           <p><strong>Trouxe visões diferentes à minha realidade</strong> daqui. Houve coisas também que tu trouxeste, estou-me a lembrar aqui da <span class="secret" aria-label="parte omitida por privacidade">história que ficou entre nós</span> e que tu trouxeste, mas não percebeste bem o significado, e <strong>para mim foi muito claro o significado</strong>, tal e qual como <span class="secret" aria-label="parte omitida por privacidade">aquela outra imagem</span>. Portanto, essas coisas tu trouxeste-as e <strong>eu consegui dar-lhes o significado dentro da minha realidade</strong>, no fundo (…)</p>
           <p>E, mais uma vez, é óbvio que eu não consegui ouvir a Leitura como “deveria ser”, porque fui ouvindo aos bocadinhos, e no fundo o conselho que tu dás às (tuas) clientes é para <strong>tirarem um momento para elas e realmente se conectarem com a Leitura</strong>.</p>
-          <p>Seja por já estar meio habituada, seja porque realmente me consigo conectar com uma facilidade diferente, eu fui ouvindo a Leitura enquanto estava a fazer o jantar, depois, quando fui deitar os meninos à cama, coloquei os phones e fiquei a ouvir o resto da Leitura, e ao longo dessa escuta fui trocando mensagens contigo, <strong>fui aprofundando aquilo que estava a ouvir</strong>. Várias vezes fui metendo pausa e fomos tendo estas trocas, que na realidade não é a forma como a escuta da Leitura deveria ser feita.</p>
           <p>Eu consegui, tanto consegui que <strong>ainda há insights que estão a vir</strong>, apesar de eu ainda não ter ouvido a Leitura pela segunda vez, sozinha, tranquilinha, porque ainda não me foi possível. Mas <strong>as mensagens ficaram e foram reverberando</strong>, e eu sei que <strong>quando lá voltar uma segunda vez vou ter mais</strong>, vou tirar outras coisas.»</p>
         </div>
       </details>
@@ -861,7 +881,7 @@
   <!-- O QUE É -->
   <section class="reveal" id="o-que-e">
     <h2>O que é a Leitura Intuitiva</h2>
-    <p class="body-text">É um olhar intuitivo e profundo com base no teu mapa natal, orientado pelo tema que trazes e o que desejas para ti. Não te entrego uma lista de signos, planetas e informação solta: exploro as relações entre os símbolos do teu mapa e faço uma leitura intuitiva do teu campo de energia para abrir perguntas sobre os teus padrões, as tuas crenças e as possibilidades a que desejas dar mais espaço.</p>
+    <p class="body-text">É um olhar intuitivo e profundo com base no teu mapa natal (mapa astral e/ou Human Design), orientado pelo tema que trazes e o que desejas para ti. Não te entrego uma lista de signos, planetas e informação solta: exploro as relações entre os símbolos do teu mapa e o que me transmites sobre o teu momento e faço uma leitura intuitiva para abrir perguntas sobre os teus padrões, as tuas crenças e as possibilidades a que desejas dar mais espaço.</p>
     <div class="flip-grid">
       <div class="fcard" tabindex="0"><div class="finner">
         <div class="fface ffront"><span class="sym">☉</span><b>O mapa como<br>ponto de partida</b><span class="fhint"></span></div>
@@ -869,11 +889,11 @@
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
         <div class="fface ffront"><span class="sym book"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></span><b>Uma história só tua</b><span class="fhint"></span></div>
-        <div class="fface fback"><h3>Uma história só tua</h3><p>Como complemento à Leitura, os temas explorados ganham forma numa história simbólica personalizada. Uma história liga o que uma lista separa. As imagens e personagens dão forma a desejos, conflitos e possibilidades, oferecendo-te uma visualização à qual podes regressar para explorar o que reconheces em ti.</p></div>
+        <div class="fface fback"><h3>Uma história só tua</h3><p>Dentro da tua Leitura, os temas explorados ganham forma numa história simbólica personalizada. Uma pequena história liga o que uma lista separa. As imagens e personagens podem dar forma a desejos, conflitos e possibilidades, oferecendo-te uma visualização à qual podes regressar para explorar o que reconheces em ti.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
         <div class="fface ffront"><span class="sym">☽</span><b>As crenças<br>por trás do mapa</b><span class="fhint"></span></div>
-        <div class="fface fback"><h3>As crenças por trás do mapa</h3><p>O mapa mostra onde certas crenças podem estar a agir: sobre o teu valor, a segurança, o pertencer, o que mereces. Na Leitura nomeio as que surgem em torno do tema que trazes, com perguntas para as reconheceres e uma frase nova para experimentares na vida real.</p></div>
+        <div class="fface fback"><h3>As crenças por trás do mapa</h3><p>O mapa mostra onde certas crenças podem estar a agir: sobre o teu valor, a segurança, o pertencer, o que mereces. Na Leitura nomeio as que surgem em torno do tema que trazes, com perguntas para as reconheceres e uma visão nova para experimentares na vida real.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
         <div class="fface ffront"><span class="sym">✦</span><b>Da compreensão à prática</b><span class="fhint"></span></div>
@@ -905,9 +925,9 @@
       <blockquote class="hdmsg"><p>A base não é nova, mas realmente <strong>a forma como trouxeste a (mesma) informação fez-me mais sentido</strong>, <u>como se tivesse ressoado a outro nível</u> ☺️</p></blockquote>
       <blockquote class="hdmsg"><p>Gosteiii muchoooo, <strong>estás a surpreender-me mesmo muito na exposição das ideias, dos conceitos</strong>. Opaaa e não consigo não referir, dizer-te que <u>sinto tantoooo a tua alegriaaa</u>, adoro tanto 🥹😍</p></blockquote>
       <blockquote class="hdmsg"><p>Eu acho mesmo que é o que faz sentido. Porque <strong>não me faz sentido quando me passam informações sem explicar como funciona ou de onde vêm as coisas</strong>. <u>Gosto de perceber as bases.</u> E adoro aprender coisas novas!</p></blockquote>
-      <blockquote class="hdmsg"><p>Uau! <u>Tanta coisa boa para absorver!!</u> É qualquer coisa de muito bomm!! 😍😍🪄</p></blockquote>
-      <blockquote class="hdmsg"><p><u>Encaixou como peças de puzzle</u> 🧩</p><p>E acima de tudo <strong>está num “idioma” que ressoa</strong> ✨</p><p>Que trabalho lindo, Filipa. Muito entusiasmada por fazer este mergulho contigo ❤️</p></blockquote>
-      <blockquote class="hdmsg"><p>Adoreiiii <strong>como estás a introduzir-me ao meu mapa</strong> 🥹🦋</p></blockquote>
+      <blockquote class="hdmsg"><p>Uau! <u>Tanta coisa boa para absorver!!</u> É qualquer coisa de muito bomm!! 😍😍</p></blockquote>
+      <blockquote class="hdmsg"><p><u>Encaixou como peças de puzzle</u> 🧩</p><p>E acima de tudo <strong>está num “idioma” que ressoa</strong> ✨ Que trabalho lindo, Filipa. Muito entusiasmada por fazer este mergulho contigo 💙</p></blockquote>
+      <blockquote class="hdmsg"><p><u>Adoreiiii</u> <strong>como estás a introduzir-me ao meu mapa</strong> 🥹🦋</p></blockquote>
       <blockquote class="hdmsg"><p>Oh meu Deus que assim o meu coração não aguenta… a sério, <strong>o que estás a criar é único e incrível</strong> e <u>é tão teu…</u> ❤️</p></blockquote>
       <blockquote class="hdmsg"><p>Olá querida Filipa, passei só para te dizer que <u>a nossa pequena conversa já fez efeito</u>. <strong>As tuas palavras e a tua energia foram um aconchego que eu precisava.</strong> Obrigada a ti e ao Universo por este empurrão que eu tanto precisava.</p></blockquote>
       <blockquote class="hdmsg"><p>A forma como descreves e falas sobre o Human Design é <strong>apaixonante</strong>. <u>Vibra mesmo!!!!</u></p></blockquote>
@@ -919,7 +939,7 @@
 
   <!-- E DEPOIS -->
   <section class="reveal" id="pratica">
-    <h2>«E depois, o que faço com essa informação?»</h2>
+    <h2>“E depois, o que faço com essa informação?”</h2>
     <p class="body-text">Não se trata de informação, trata-se de transformação, de consciência, de propostas de trabalho de crenças que podes fazer usando esta linguagem simbólica (e outras nas sessões, caso desejes aprofundar).</p>
     <p class="body-text">Saber que tens o Sol em Capricórnio pode despertar curiosidade, mas como pode essa informação ajudar-te a compreender a tua relação com o trabalho, a responsabilidade e o sucesso?</p>
     <p class="body-text">Por exemplo: o que te faz sentir realizada, como lidas com a exigência e o que precisas para reconhecer o valor do que fazes? A Leitura passa da linguagem simbólica dos arquétipos dos signos e dos planetas para perguntas e experiências que podes levar para o teu dia-a-dia.</p>
@@ -954,7 +974,7 @@
       <li>Uma história simbólica ligada ao teu momento, criada a partir do teu mapa e do teu tema</li>
       <li>Relações entre os temas do mapa e o que partilhas como ponto de partida</li>
       <li>Perguntas para reconheceres como um padrão aparece em situações concretas</li>
-      <li>As crenças que o teu mapa sugere em torno do teu tema, com uma frase nova para experimentares</li>
+      <li>As crenças que o teu mapa sugere sobre o teu tema, com uma visão nova para experimentares</li>
       <li>Orientações práticas para o teu dia-a-dia com base nelas</li>
       <li>Sugestões de formas de levares a consciência do teu mapa para as tuas dinâmicas</li>
       <li>A Leitura por escrito para leres quantas vezes quiseres</li>
@@ -1020,7 +1040,7 @@
       <span>Criatividade e prazer</span>
       <span>Tempo e ritmo da vida</span>
     </div>
-    <p class="soft-note">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade.<br>Não precisas de separar aquilo que, na tua experiência, está ligado. No momento da marcação terás oportunidade de me contar mais.</p>
+    <p class="soft-note">Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade.<br>Não precisas de separar aquilo que, na tua experiência, está ligado.<br>No momento da marcação da tua Leitura terás oportunidade de me contar mais.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1033,25 +1053,9 @@
       <div class="tl-step"><span class="tl-dot">2</span><h3>Partilhas os teus dados e o teu tema</h3><p>Data, hora e local de nascimento, o que estás a viver e o contexto que achas importante.</p></div>
       <div class="tl-step"><span class="tl-dot">3</span><h3>Preparo a tua Leitura</h3><p>Escrevo a tua Leitura e a tua história, com intuição e um olhar arquetípico sobre o teu mapa, ligando tudo a perguntas e orientações práticas.</p></div>
       <div class="tl-step"><span class="tl-dot">4</span><h3>Recebes a tua Leitura</h3><p>Por escrito, até 14 dias úteis após a confirmação do pagamento.</p></div>
-      <div class="tl-step"><span class="tl-dot">5</span><h3>Lês e integras</h3><p>No teu tempo, quantas vezes quiseres.<br>Podes tomar notas das tuas reflexões e trazer exemplos concretos.</p></div>
+      <div class="tl-step"><span class="tl-dot">5</span><h3>Lês e integras</h3><p>No teu tempo, quantas vezes quiseres.<br>Podes tomar notas das tuas reflexões e trazer exemplos concretos para a sessão, se escolheres essa opção.</p></div>
       <div class="tl-step opt"><span class="tl-dot">6</span><h3>Sessão de aprofundamento</h3><p>Aprofundamos os temas, trabalhamos as crenças relevantes e exploramos formas de responder às situações reais.</p></div>
     </div>
-    <p style="text-align:center; margin-top:1.6rem; font-size:15px; color:var(--ink-soft);">🎁 Também podes oferecer a Leitura a alguém. <a class="link-soft" href="#oferecer">Vê como</a></p>
-  </section>
-
-  <div class="divider"><span></span><span></span></div>
-
-  <!-- SESSÃO DE APROFUNDAMENTO -->
-  <section class="reveal" id="sessao">
-    <p class="eyebrow">Para ires mais fundo</p>
-    <h2>Sessão de aprofundamento e trabalho de crenças</h2>
-    <p class="body-text">Depois de leres a tua Leitura, podes sentir vontade de aprofundar algum dos temas que reconheceste.</p>
-    <p class="body-text">Nesta sessão individual de 1 hora, trazes o que surgiu: perguntas, reflexões ou exemplos concretos da tua vida. Não precisas de preparar nada nem de chegar com uma explicação organizada.</p>
-    <p class="body-text">A partir do que partilhas, ajudo-te a ver as crenças que podem estar por trás do que sentes: as que aprendeste cedo, muitas vezes sem dares conta, sobre o que mereces, o que é seguro e o que tens de fazer para seres aceite. Podem ser também promessas silenciosas que fizeste a ti ou à tua família e que ainda hoje orientam as tuas escolhas.</p>
-    <p class="body-text">Quando fizer sentido, trabalhamos essas crenças através das práticas que integro no meu acompanhamento: nomeamos a crença, percebemos de onde vem e o que te custa mantê-la, e escolhemos a que gostarias de viver. Se quiseres, podemos também aprofundar o teu Human Design.</p>
-    <p class="body-text">Não ficamos apenas em compreender o padrão. Exploramos também o que desejas viver de outra forma e que passos podes experimentar na tua comunicação, nas tuas relações ou nas escolhas que tens pela frente. A ideia é saíres com uma crença nomeada, uma frase nova e um passo concreto para a semana seguinte.</p>
-    <p class="statement sm">A Leitura abre perspetivas e reflexões. A sessão permite-te aprofundar e trabalhar as questões que surgirem, com o trabalho de crenças na minha metodologia única.</p>
-    <p class="body-text" style="text-align:center">Juntamente com a Leitura, a sessão custa <b>100€</b> em vez de <s>150€</s>. Se não te identificares com a Leitura podes sempre avançar para uma sessão comigo.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1059,7 +1063,33 @@
   <!-- OPÇÕES -->
   <section class="reveal" id="opcoes">
     <h2>Escolhe a tua Leitura</h2>
-    <div class="offers">
+    <div class="offers offers3">
+      <div class="offer">
+        <span class="offer-badge gold">A mais completa</span>
+        <p class="offer-name">Leitura + Revolução Solar + sessão de aprofundamento</p>
+        <p class="offer-price">347€</p>
+        <p class="offer-was">Leitura 147€ + Revolução Solar 100€ + sessão <s>150€</s> <b>100€</b></p>
+        <ul>
+          <li>Tudo o que está na Leitura com Revolução Solar</li>
+          <li>Uma sessão individual de 1 hora comigo, depois de leres a tua Leitura</li>
+          <li>Aprofundamos os temas e trabalhamos as crenças relevantes</li>
+        </ul>
+        <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura o teu tipo, estratégia, autoridade, perfil e outros pontos estratégicos do teu mapa, ligados ao tema que trazes.</span></label>
+        <a class="btn outline" href="marcar-leitura.html?op=rssessao" data-hd-href="marcar-leitura.html?op=rssessao&amp;hd=1">Quero a Leitura completa</a>
+      </div>
+      <div class="offer offer-featured">
+        <span class="offer-badge">Recomendada</span>
+        <p class="offer-name">Leitura + Revolução Solar</p>
+        <p class="offer-price">247€</p>
+        <p class="offer-was">Revolução Solar com a Leitura: <b>+100€</b> em vez de <s>197€</s></p>
+        <ul>
+          <li>Tudo o que está na Leitura Intuitiva</li>
+          <li>Revolução Solar: os temas do teu ciclo anual, lidos em relação com o teu mapa natal</li>
+          <li>Se o teu aniversário está a chegar (cerca de 1 mês antes), analiso o novo ciclo; se não, o ciclo que estás a viver</li>
+        </ul>
+        <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura o teu tipo, estratégia, autoridade, perfil e outros pontos estratégicos do teu mapa, ligados ao tema que trazes.</span></label>
+        <a class="btn" href="marcar-leitura.html?op=rs" data-hd-href="marcar-leitura.html?op=rs&amp;hd=1">Quero a Leitura com Revolução Solar</a>
+      </div>
       <div class="offer">
         <p class="offer-name">Leitura Intuitiva</p>
         <p class="offer-price">147€</p>
@@ -1072,28 +1102,35 @@
         <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura o teu tipo, estratégia, autoridade, perfil e outros pontos estratégicos do teu mapa, ligados ao tema que trazes.</span></label>
         <a class="btn outline" href="marcar-leitura.html?op=leitura" data-hd-href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a>
       </div>
-      <div class="offer offer-featured">
-        <span class="offer-badge">A mais completa</span>
-        <p class="offer-name">Leitura + sessão de aprofundamento</p>
-        <p class="offer-price">247€</p>
-        <p class="offer-was">Leitura 147€ + sessão <s>150€</s> <b>100€</b></p>
-        <ul>
-          <li>Tudo o que está na Leitura Intuitiva</li>
-          <li>Uma sessão individual de 1 hora comigo, depois de leres a tua Leitura</li>
-          <li>Trazes as tuas reflexões e exemplos reais</li>
-          <li>Aprofundamos os temas e trabalhamos as crenças relevantes</li>
-        </ul>
-        <label class="hd-add"><input type="checkbox" class="hd-chk"><span><strong>Juntar o meu Human Design · +50€</strong><br>Junto à Leitura o teu tipo, estratégia, autoridade, perfil e outros pontos estratégicos do teu mapa, ligados ao tema que trazes.</span></label>
-        <a class="btn" href="marcar-leitura.html?op=sessao" data-hd-href="marcar-leitura.html?op=sessao&amp;hd=1">Quero a Leitura e a sessão</a>
-      </div>
     </div>
     <div class="more-opts">
       <p class="more-t">Outras formas de começar</p>
-      <a class="mo-row" id="sessao-avulsa" href="marcar-leitura.html?op=sessaosolo"><span class="mo-ic">✦</span><span class="mo-tx"><b>Só a sessão de aprofundamento</b><em>1 hora comigo para explorar o que surgiu e trabalhar as crenças que fizerem sentido. Para qualquer pessoa, tenha feito a Leitura ou não.</em></span><span class="mo-pr">150€</span></a>
+      <a class="mo-row" href="marcar-leitura.html?op=sessao"><span class="mo-ic">✦</span><span class="mo-tx"><b>Leitura + sessão de aprofundamento</b><em>A Leitura Intuitiva e uma sessão individual de 1 hora comigo, para trabalhar as crenças que surgirem.</em></span><span class="mo-pr">247€</span></a>
+      <a class="mo-row" id="sessao-avulsa" href="marcar-leitura.html?op=sessaosolo"><span class="mo-ic">☽</span><span class="mo-tx"><b>Só a sessão de aprofundamento</b><em>1 hora comigo para explorar o que o teu momento te traz e trabalhar as crenças que te impedem de viver a realidade que desejas.<br>Para qualquer pessoa, tenha feito a Leitura ou não.</em></span><span class="mo-pr">150€</span></a>
+      <a class="mo-row" href="marcar-leitura.html?op=rssolo"><span class="mo-ic">☉</span><span class="mo-tx"><b>Só a Revolução Solar</b><em>Feita em relação com o teu mapa natal. Totalmente recomendada em conjunto com a Leitura.</em></span><span class="mo-pr">197€</span></a>
       <a class="mo-row" id="oferecer" href="marcar-leitura.html?oferta=1"><span class="mo-ic">🎁</span><span class="mo-tx"><b>Oferecer uma Leitura a alguém</b><em>Com um cartão de oferta (a pessoa marca comigo no prazo de 1 mês) ou com a Leitura já pronta. Só precisas dos dados de nascimento.</em></span><span class="mo-pr">desde 147€</span></a>
-      <a class="mo-row" href="marcar-leitura.html?op=rs"><span class="mo-ic">☉</span><span class="mo-tx"><b>Leitura com Revolução Solar</b><em>Para quando fazes anos em breve ou fizeste há pouco: os temas do teu novo ciclo anual, lidos em relação com o teu mapa natal. Só a Revolução Solar: 197€.</em></span><span class="mo-pr">247€</span></a>
     </div>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20tua%20p%C3%A1gina%20sobre%20a%20Leitura%20Intuitiva%20e%20gostava%20de%20marcar%20a%20minha.%20Tenho%20s%C3%B3%20uma%20quest%C3%A3o%3A%20%28a%20tua%20quest%C3%A3o%29." target="_blank" rel="noopener">Tens uma questão antes de escolher? Fala comigo 💌</a></p>
+  </section>
+
+  <div class="divider"><span></span><span></span></div>
+
+  <!-- SESSÃO DE APROFUNDAMENTO -->
+  <section class="reveal" id="sessao">
+    <div class="ses-box">
+      <p class="ses-eye">Para ires mais fundo</p>
+      <h2>Sessão de aprofundamento e trabalho de crenças</h2>
+      <p class="ses-lead">Há padrões que se compreendem. E há padrões que só mudam quando trabalhamos a crença que os sustenta.</p>
+      <p class="ses-p">Nesta sessão individual de 1 hora, trazes o que a Leitura despertou: uma pergunta, uma reação, um exemplo concreto da tua vida. Não precisas de preparar nada nem de chegar com uma explicação organizada.</p>
+      <div class="ses-steps">
+        <div class="ses-st"><span>1</span><b>Nomear</b><p>A crença por trás do padrão: muitas vezes aprendida cedo, ou herdada sem darmos conta, e até promessas silenciosas que fizeste a ti ou à tua família.</p></div>
+        <div class="ses-st"><span>2</span><b>Compreender</b><p>De onde vem, o que te custa mantê-la e o que ela tenta proteger em ti.</p></div>
+        <div class="ses-st"><span>3</span><b>Escolher</b><p>A crença que queres viver e um passo concreto para a semana seguinte: na comunicação, nas relações ou nas escolhas que tens pela frente.</p></div>
+      </div>
+      <p class="ses-p">Trabalhamos através das práticas que integro no meu acompanhamento e, se quiseres, podemos também aprofundar o teu Human Design.</p>
+      <p class="ses-state">A Leitura abre perspetivas e reflexões. A sessão dá-te o espaço para as transformar, com o trabalho de crenças na minha metodologia única.</p>
+      <p class="ses-price">Juntamente com a Leitura, a sessão custa <b>100€</b> em vez de <s>150€</s>.<br>Se não te identificares com a Leitura podes sempre avançar para uma sessão comigo.</p>
+    </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1110,7 +1147,7 @@
       <details><summary>Como e quando recebo a Leitura?</summary><div class="ans"><p>Por escrito, até 14 dias úteis após a confirmação do pagamento. Podes ler no teu tempo, parar, repetir e regressar às passagens que te tocam, quantas vezes quiseres.</p></div></details>
       <details><summary>Há uma sessão ao vivo?</summary><div class="ans"><p>A Leitura é escrita. Se escolheres a Leitura com sessão de aprofundamento, encontramo-nos depois de a leres: partimos do que reconheceste, exploramos padrões e crenças e damos forma a próximos passos. Não precisas de preparar nada, mas podes trazer notas e exemplos.</p></div></details>
       <details><summary>A Leitura vai dizer-me o que fazer ou prever o futuro?</summary><div class="ans"><p>Não. Oferece perspetivas, perguntas e propostas práticas, não decisões nem previsões. O mapa não é uma sentença, é um ponto de partida. Podes reconhecer-te, discordar ou dar outro sentido ao que lês: a tua experiência é essencial.</p></div></details>
-      <details><summary>O que é a Revolução Solar?</summary><div class="ans"><p>Todos os anos, perto do teu aniversário, o Sol volta exatamente à posição em que estava quando nasceste. O mapa desse momento chama-se Revolução Solar e marca o início de um novo ciclo anual da tua vida. Na Leitura com Revolução Solar (247€), olho para esse mapa em relação com o teu mapa natal e com o que estás a viver, para explorar os temas que podem ganhar destaque até ao próximo aniversário. É ideal para quando fizeste anos há pouco ou vais fazer em breve.</p></div></details>
+      <details><summary>O que é a Revolução Solar?</summary><div class="ans"><p>Todos os anos, perto do teu aniversário, o Sol volta exatamente à posição em que estava quando nasceste. O mapa desse momento chama-se Revolução Solar e marca o início de um novo ciclo anual da tua vida. Na Leitura com Revolução Solar (247€), olho para esse mapa em relação com o teu mapa natal e com o que estás a viver. Se o teu aniversário está a chegar (cerca de 1 mês antes), analiso o novo ciclo; se estás a meio de um ciclo, analiso o que estás a viver agora e os impactos do teu ano. Podes pedi-la em qualquer altura.</p></div></details>
       <details><summary>O que acrescenta o Human Design?</summary><div class="ans"><p>A astrologia e o Human Design partem do mesmo momento de nascimento e olham para ele de formas complementares: a astrologia fala dos arquétipos e das dinâmicas da tua vida; o Human Design mostra como a tua energia funciona e como tomas as melhores decisões. Por mais 50€, junto à Leitura o teu tipo, estratégia, autoridade, perfil e outros pontos estratégicos do teu mapa, ligados ao tema que trazes, na mesma Leitura.</p></div></details>
       <details><summary>Posso oferecer uma Leitura a alguém?</summary><div class="ans"><p>Sim. Só precisas dos dados de nascimento de quem recebe. Podes oferecer um cartão, que a pessoa usa para marcar comigo no prazo de 1 mês, ou a Leitura já pronta, escrita. <a href="#oferecer">Ver como oferecer</a>.</p></div></details>
       <details><summary>Esta experiência substitui acompanhamento psicológico?</summary><div class="ans"><p>Não. A Leitura é uma prática interpretativa de autoconhecimento e exploração simbólica. Não é um diagnóstico e não substitui acompanhamento médico ou psicológico.</p></div></details>
@@ -1148,7 +1185,7 @@
     <button class="mpop-x" type="button" aria-label="Fechar" data-mp-close>×</button>
     <form id="mpForm" novalidate autocomplete="off">
       <h3 id="mpTitle">Queres ver o teu mapa?</h3>
-      <p class="mp-sub">Diz-me quando e onde nasceste e escolhe o que queres ver: o teu mapa astral, o teu Human Design, ou insights sobre os dois.</p>
+      <p class="mp-sub">Escreve os dados abaixo e escolhe o que queres ver: o teu mapa astral, o teu mapa Human Design, ou insights dos dois.</p>
       <div class="mp-grid">
         <div class="mp-full"><label class="mp-l" for="mpNome">Nome</label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name" required></div>
         <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="text" id="mpData" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10"></div>
@@ -1160,6 +1197,7 @@
       </div>
       <p class="mp-err" id="mpErr" role="alert"></p>
       <div class="mp-choice"><button class="btn outline" type="submit" id="mpBtn" value="mapa">✦ Ver o mapa astral</button><button class="btn outline" type="submit" id="mpBtnHd" value="hd">✦ Ver o Human Design</button><button class="btn outline" type="submit" id="mpBtnAmbos" value="ambos">✦ Ver os dois</button></div>
+      <p class="mp-foot"><b>✦</b> O mapa é calculado aqui, no teu browser. Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais info.</p>
       <button class="mp-no" type="button" data-mp-close>Agora não</button>
     </form>
   </div>

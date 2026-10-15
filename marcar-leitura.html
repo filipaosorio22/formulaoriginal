@@ -6,7 +6,7 @@
 <title>Marcar a Leitura Intuitiva | Filipa Osório</title>
 <meta name="description" content="Formulário para marcares ou ofereceres a tua Leitura Intuitiva com a Filipa Osório.">
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
 <script>
   try { var t = localStorage.getItem('fo_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
@@ -76,6 +76,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 10px 24px -12px rgba(154,126,82,.75)}
 .total{font-family:var(--sans);font-size:15px;color:var(--muted);text-align:center;margin:0 0 12px}
 .total b{color:var(--ink);font-size:18px}
+.prazo{font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink);text-align:center;margin:0 0 14px;padding:10px 14px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(201,168,108,.12)}
+.prazo b{color:var(--wine)}
 [hidden]{display:none !important}
 .done{text-align:center}
 .done p{color:var(--muted)}
@@ -95,12 +97,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <p class="sub" id="opSub">Escolhe a Leitura que queres.</p>
       <div id="ops">
         <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
+        <label class="choice" data-op="rs"><input type="radio" name="op" value="rs" data-p="247"><span><b>Leitura + Revolução Solar · recomendada</b><br>Os temas do teu ciclo anual: o novo, se o teu aniversário está a chegar, ou o que estás a viver agora.</span><span class="pr">247€<s class="was">344€</s></span></label>
+        <label class="choice" data-op="rssessao"><input type="radio" name="op" value="rssessao" data-p="347"><span><b>Leitura + Revolução Solar + Sessão de Aprofundamento · a mais completa</b><br>A Leitura, a Revolução Solar e uma sessão individual comigo para trabalhar as crenças.</span><span class="pr">347€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="247"><span><b>Leitura + sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">247€<s class="was">297€</s></span></label>
-        <label class="choice" data-op="rssolo"><input type="radio" name="op" value="rssolo" data-p="197"><span><b>Só a Revolução Solar (escrita)</b><br>Lida em relação com o teu mapa natal. Em conjunto com a Leitura acrescenta só 100€.</span><span class="pr">197€</span></label>
+        <label class="choice" data-op="rssolo"><input type="radio" name="op" value="rssolo" data-p="197"><span><b>Só a Revolução Solar</b><br>Feita em relação com o teu mapa natal.<br>Em conjunto com a Leitura acrescenta apenas 100€.</span><span class="pr">197€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="150"><span><b>Só a sessão de aprofundamento</b><br>Sessão individual comigo, para quem já tem a Leitura ou quer começar por aqui.</span><span class="pr">150€</span></label>
-        <label class="choice" data-op="rs"><input type="radio" name="op" value="rs" data-p="247"><span><b>Leitura + Revolução Solar</b><br>Para quando fazes anos: os temas do teu novo ciclo anual.</span><span class="pr">247€<s class="was">344€</s></span></label>
       </div>
-      <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +50€</b><br>Junto à Leitura o tipo, a estratégia, a autoridade e o perfil. <a href="human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
+      <p class="hint" id="sesNote" hidden></p>
+      <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +50€</b><br>Junto à Leitura o tipo, a estratégia, a autoridade e o perfil.<br><a href="https://filipaosorio.com/human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
     </div>
 
     <div class="card" id="giftCard" hidden>
@@ -127,7 +131,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
         <div><label class="lbl" for="hora">Hora</label><input type="time" id="hora"></div>
         <div class="full"><label class="lbl" for="local">Local <span class="opt">(cidade e país)</span></label><input type="text" id="local" maxlength="80" placeholder="ex.: Lisboa, Portugal"></div>
       </div>
-      <p class="hint">Não sabes a hora? Podes pedi-la na tua certidão de nascimento, ou fala comigo antes de avançar.</p>
+      <p class="hint">Não sabes a hora? Podes pedi-la na <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">tua certidão de nascimento</a>, ou fala comigo antes de avançar.</p>
     </div>
 
     <div class="card">
@@ -142,11 +146,12 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
     <div class="card">
       <p class="total">Total: <b id="tot">147€</b></p>
+      <p class="prazo" id="prazo">✦ Prazo de entrega da Leitura: <b>até 14 dias úteis</b> após a confirmação do pagamento e a receção de todos os dados.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura Intuitiva</a>.</span></label>
-      <label class="chk"><input type="checkbox" id="sub"><span>Quero também receber os textos da Filipa no Substack (opcional, podes cancelar quando quiseres).</span></label>
+      <label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo da Filipa no Substack (opcional, podes cancelar quando quiseres)</span></label>
       <p class="err" id="err" role="alert"></p>
       <div class="actions"><button class="btn" type="submit" id="go">Enviar pelo WhatsApp</button></div>
-      <p class="hint" style="text-align:center">As tuas respostas chegam-me por e-mail e segues para o pagamento seguro (Stripe).</p>
+      <p class="hint" style="text-align:center;margin-top:26px">As tuas respostas chegam-me por e-mail e<br>segues para o pagamento seguro com cartão (Stripe).</p>
     </div>
   </form>
 
@@ -167,6 +172,8 @@ window.FO_PAY = {
     'leitura+hd': 'https://buy.stripe.com/9B68wP5Jb5kD1a5234fw40e',
     'rs': 'https://buy.stripe.com/9B6bJ10oReVdg4Z6jkfw40f',
     'rs+hd': 'https://buy.stripe.com/aFa5kD2wZdR94mhcHIfw40g',
+    'rssessao': '',
+    'rssessao+hd': 'https://buy.stripe.com/cNi14n6Nf8wP9GB378fw40m',
     'sessao': 'https://buy.stripe.com/9B64gzc7z6oH4mh5fgfw40h',
     'sessao+hd': 'https://buy.stripe.com/7sYcN53B3dR98CxdLMfw40i',
     'sessaosolo': 'https://buy.stripe.com/3cI00j3B3bJ1cSNazAfw40j',
@@ -196,6 +203,7 @@ window.FO_PAY = {
     document.querySelector('[data-op="sessao"]').hidden = true;
     document.querySelector('[data-op="sessaosolo"]').hidden = true;
     document.querySelector('[data-op="rssolo"]').hidden = true;
+    document.querySelector('[data-op="rssessao"]').hidden = true;
     if (op !== 'rs') document.querySelector('input[value="leitura"]').checked = true;
     $('giftCard').hidden = false;
     $('recWrap').hidden = false;
@@ -227,6 +235,11 @@ window.FO_PAY = {
     if (!ok) $('hd').checked = false;
     box.hidden = !ok;
     $('tot').textContent = total() + '€';
+    var v = sel().value, sn = $('sesNote');
+    var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
+    sn.hidden = !hasS;
+    sn.textContent = v === 'sessaosolo' ? 'A sessão não é marcada agora: depois de confirmado o pagamento envio-te as opções de data.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
+    $('prazo').hidden = v === 'sessaosolo';
   }
   document.querySelectorAll('input[name=op]').forEach(function(x){ x.addEventListener('change', updTotal); });
   $('hd').addEventListener('change', updTotal);
@@ -236,10 +249,10 @@ window.FO_PAY = {
     var P = window.FO_PAY || {}, hasLinks = P.stripe && Object.keys(P.stripe).some(function(k){ return P.stripe[k]; });
     if (!P.web3formsKey) return;
     var hn = $('go').parentNode.nextElementSibling;
-    if (hasLinks){ $('go').textContent = 'Continuar para o pagamento'; if (hn) hn.textContent = 'As tuas respostas chegam-me por e-mail e segues para o pagamento seguro com cartão (Stripe).'; }
+    if (hasLinks){ $('go').textContent = 'Continuar para o pagamento'; if (hn) hn.innerHTML = 'As tuas respostas chegam-me por e-mail e<br>segues para o pagamento seguro com cartão (Stripe).'; }
     else { $('go').textContent = 'Enviar'; if (hn) hn.textContent = 'As tuas respostas chegam-me por e-mail. Depois envio-te os dados de pagamento.'; }
   })();
-  var NAMES = { rssolo:'Só a Revolução Solar (escrita)', sessaosolo:'Só a sessão de aprofundamento', leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
+  var NAMES = { rssessao:'Leitura + Revolução Solar + Sessão de Aprofundamento', rssolo:'Só a Revolução Solar', sessaosolo:'Só a sessão de aprofundamento', leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
   $('data').addEventListener('input', function(){
     var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2);
     if (d.length > 2) o += '/' + d.slice(2, 4);

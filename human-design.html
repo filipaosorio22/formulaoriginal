@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
 <title>O teu Human Design · Leitura Intuitiva</title>
 <meta name="description" content="Desenha o teu corpo gráfico de Human Design: tipo, estratégia, autoridade e perfil, calculados no teu browser.">
 <script>
@@ -101,7 +101,8 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .privacy b{color:var(--gold);font-weight:400}
 
 /* intro */
-.intro{margin:30px auto 0;text-align:center;max-width:34em}
+.intro{margin:30px auto 0;text-align:left;max-width:34em}
+.intro h2{text-align:center}
 .intro h2{font-family:var(--serif);font-weight:300;font-size:clamp(22px,5vw,26px);margin:0 0 8px}
 .intro p{margin:0;color:var(--muted);font-size:16px}
 
@@ -220,6 +221,24 @@ h1 em{font-style:normal;color:var(--wine)}
 .cross{margin:14px auto 0;text-align:center;font-family:var(--sans);font-size:14px}
 .cross a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
 .cross.both{padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,0.35);font-size:15px}
+
+.okpop[hidden]{display:none}
+.okpop{position:fixed;inset:0;z-index:400;background:rgba(26,20,16,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.okbox{position:relative;max-width:440px;width:100%;background:var(--card);border:1px solid var(--gold);border-radius:18px;padding:30px 26px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.okbox .okx{position:absolute;top:8px;right:12px;background:none;border:0;font-size:24px;color:var(--soft);cursor:pointer}
+.okbox .oktitle{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.35;color:var(--wine);margin:0 0 12px}
+.okbox p{font-family:var(--sans);font-size:14.5px;line-height:1.65;color:var(--ink);margin:0 0 18px}
+.okbox p b{color:var(--wine)}
+.fbt{position:fixed;left:16px;bottom:16px;z-index:300;max-width:340px;background:linear-gradient(135deg,#f6ecd2,#faf3e6);border:0.5px solid var(--gold);border-radius:20px 20px 20px 5px;padding:14px 38px 12px 16px;box-shadow:0 10px 30px rgba(26,20,16,.22);font-family:var(--body);font-size:15px;line-height:1.55;color:#1a1410;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s;pointer-events:none}
+.fbt.on{opacity:1;transform:none;pointer-events:auto}
+.fbt .fbx{position:absolute;top:4px;right:8px;background:none;border:0;font-size:20px;color:#7a6a58;cursor:pointer}
+.fbt u{text-decoration-color:#c9a86c;text-decoration-thickness:2px;text-underline-offset:3px}
+.fbt small{display:block;text-align:right;font-family:var(--sans);font-size:11px;color:#9a7e52;margin-top:4px}
+@media (max-width:520px){.fbt{left:10px;right:10px;max-width:none;bottom:10px}}
+
+html.embed .top,html.embed header,html.embed #form,html.embed #intro,html.embed footer,html.embed .cta,html.embed .again,html.embed .cross,html.embed .fbt{display:none!important}
+html.embed .wrap{padding-top:0;padding-bottom:8px}
+html.embed body{background:transparent}
 </style>
 </head>
 <body>
@@ -228,7 +247,7 @@ h1 em{font-style:normal;color:var(--wine)}
   <header>
     <p class="kicker"><span>✦</span>Leitura Intuitiva<span>✦</span></p>
     <h1>O teu <em>Human Design</em></h1>
-    <p class="lead">O desenho da energia com que chegaste. Indica a data, a hora e o lugar e o teu corpo gráfico aparece aqui, traçado a ouro.</p>
+    <p class="lead">O desenho da energia com que chegaste. Indica a data, a hora e o lugar e o teu corpo gráfico aparece aqui, traçado a dourado.</p>
     <div class="rule">✦</div>
   </header>
 
@@ -280,7 +299,7 @@ h1 em{font-style:normal;color:var(--wine)}
     <div class="chart-wrap">
       <svg class="body" id="body" viewBox="0 0 420 652" role="img" aria-labelledby="bodyDesc"><desc id="bodyDesc">Corpo gráfico de Human Design</desc></svg>
     </div>
-    <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro aberto</span><span><i style="background:var(--deep)"></i>consciente</span><span><i style="background:var(--gold)"></i>inconsciente</span></p>
+    <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro indefinido</span><span><i style="background:var(--deep)"></i>consciente</span><span><i style="background:var(--gold)"></i>inconsciente</span></p>
 
     <details class="more">
       <summary>Ver as ativações planetárias</summary>
@@ -294,7 +313,7 @@ h1 em{font-style:normal;color:var(--wine)}
       <div class="locked" id="locked">
         <div class="lk" id="lk"><ul class="facts" id="facts"></ul><div id="pillars2"></div></div>
         <form class="gate" id="gate" novalidate>
-          <h3>Descobre o teu desenho completo</h3>
+          <h3>Descobre mais do teu desenho</h3>
           <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, o teu ambiente, a tua digestão e o teu sentido mais forte. Partilha o teu nome e e-mail para os veres.</p>
           <div class="grid">
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
@@ -313,11 +332,16 @@ h1 em{font-style:normal;color:var(--wine)}
       <a class="btn" href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
       <a class="soft" href="leitura-intuitiva.html#opcoes">Ver como funciona</a>
     </div>
-    <p class="again"><button type="button" class="linkbtn" id="editBtn">Alterar os dados</button></p>
+    <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
   </section>
   <footer>✦ ✦ ✦</footer>
+<div class="okpop" id="okPop" role="dialog" aria-modal="true" aria-labelledby="okTitle" hidden><div class="okbox"><button class="okx" type="button" id="okX" aria-label="Fechar">×</button><p class="oktitle" id="okTitle"></p><p>Se não o vires, espreita a pasta de spam e marca-o como «não é spam». Guarda também <b>mail@filipaosorio.com</b> nos teus contactos para receberes tudo na caixa principal.</p><button class="btn" type="button" id="okGo">Continuar</button></div></div>
+<div class="fbt" id="fbt" role="status" aria-live="polite"><button class="fbx" type="button" id="fbX" aria-label="Fechar">×</button><div id="fbBody"></div><small>mensagem de uma cliente</small></div>
 </div>
 
+<script>
+if (/[?&]embed=1/.test(location.search)) { document.documentElement.classList.add('embed'); Element.prototype.scrollIntoView = function(){}; }
+</script>
 <script src="astronomy.browser.min.js"></script>
 <script>
 (function(){
@@ -550,7 +574,7 @@ CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
 
 // ---------- texts (from Filipa's Notion notes; see hd-textos.md) ----------
 var TXT = {
-  intro: 'O Human Design (ou Desenho Humano) junta a Astrologia, a Cabala, o sistema de chakras, o I Ching e a física quântica numa linguagem nova. A partir do dia, da hora e do lugar em que nasceste, desenha o teu corpo gráfico: um mapa de como a energia flui em ti e de como foste feita para funcionar, decidir e relacionar-te com o mundo. Não é uma fórmula mágica: é um caminho de regresso a quem já és, por baixo dos condicionamentos.',
+  intro: 'O Human Design (ou Desenho Humano) junta a Astrologia, a Cabala, o sistema de chakras, o I Ching e a física quântica numa linguagem nova. A partir dos teus dados de nascimento, desenha o teu corpo gráfico e é um mapa que promete revelar como a energia flui em ti e de como foste feita/o para funcionar, decidir e relacionar-te com o mundo. Não é uma fórmula mágica: é um caminho de regresso a quem já és, por baixo dos condicionamentos.',
   types: {
     mg: { name: 'Geradora Manifestante', nick: 'a multipotencial', strategy: 'Responder e informar', signature: 'Satisfação e paz',
       text: ['Tens a força constante do Sacral e uma garganta ligada a um motor: és rápida, tens muitas paixões e não vieste para fazer sempre a mesma coisa. Vieste abrir caminhos e criar o novo, e não precisas de fazer sentido para ninguém.',
@@ -565,7 +589,7 @@ var TXT = {
       text: ['Vês o que os outros ainda não viram e sabes guiar a energia de quem está à tua volta. Estás aqui para ser valorizada pelo que vês, não pelo que fazes.',
              'A tua estratégia é aguardar o convite e o reconhecimento nas grandes decisões, e cuidar do teu descanso enquanto isso. Quando vives assim, a assinatura é sucesso.'] },
     reflector: { name: 'Refletor/a', nick: 'a mística', strategy: 'Aguardar um ciclo lunar', signature: 'Encantamento',
-      text: ['Todos os teus centros estão abertos: és espelho do ambiente e das pessoas com quem estás, e sentes como ninguém o movimento da Lua.',
+      text: ['Todos os teus centros são indefinidos: és espelho do ambiente e das pessoas com quem estás, e sentes como ninguém o movimento da Lua.',
              'A tua estratégia é dar tempo às grandes decisões, um ciclo lunar inteiro, e escolher bem onde e com quem vives. Quando vives assim, a assinatura é encantamento.'] }
   },
   auth: {
@@ -593,7 +617,7 @@ var TXT = {
   },
   centres: {
     defined: 'Os centros a dourado são definidos: energia constante, aquilo com que podes contar em ti e que transmites sempre.',
-    open: 'Os centros abertos são onde recebes e amplificas a energia dos outros. É aí que mora o maior potencial de sabedoria, e também o maior condicionamento.'
+    open: 'Os centros indefinidos são onde recebes e amplificas a energia dos outros. É aí que mora o maior potencial de sabedoria, e também o maior condicionamento.'
   },
   cta: 'O desenho é só o mapa. <em>A Leitura Intuitiva</em> pode incluir a leitura do teu Human Design, por mais 50€: para o sentires no corpo e o viveres, não apenas o conheceres.'
 };
@@ -812,7 +836,7 @@ function renderBody(hd, info){
   s.push('<g>');
   CENTRE_ORDER.forEach(function(c, i){
     var pts = SHAPES[c].map(function(p){ return p.join(','); }).join(' ');
-    s.push('<polygon class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" points="' + pts + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (aberto)') + '</title></polygon>');
+    s.push('<polygon class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" points="' + pts + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (indefinido)') + '</title></polygon>');
   });
   s.push('</g>');
   // gate numbers
@@ -922,7 +946,7 @@ $('gate').addEventListener('submit', function(e){
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
   if (!nome){ err.textContent = 'Escreve o teu nome.'; $('gNome').focus(); return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('gEmail').focus(); return; }
-  if (!$('gOk').checked){ err.textContent = 'Para continuares, aceita receber os e-mails.'; return; }
+  if (!$('gOk').checked){ err.textContent = 'Falta só um passo: marca a caixa para aceitares receber os meus e-mails e veres o que preparei para ti ✦'; return; }
   err.textContent = '';
   var b = new URLSearchParams();
   b.append('fields[name]', nome);
@@ -938,17 +962,20 @@ $('gate').addEventListener('submit', function(e){
     try { localStorage.setItem('hdDesbloqueado', '1'); } catch (x) {}
     setLocked(false);
     $('gate').style.display = 'none';
-    var ok = document.createElement('p'); ok.setAttribute('role', 'status');
-    ok.style.cssText = 'text-align:center;font-family:var(--sans);font-size:14px;color:var(--soft);margin:18px auto 0;max-width:30em';
-    ok.textContent = 'Obrigada, ' + nome.split(' ')[0] + '! O teu desenho completo já está aqui em cima.';
-    $('locked').appendChild(ok);
-    $('pillars2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    showOk(nome.split(' ')[0], '.pillars');
   }
   fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(done, function(){
     btn.disabled = false; btn.textContent = '✦ Ver o meu desenho completo';
     err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
   });
 });
+
+function showOk(first, target){
+  var pop = $('okPop'); $('okTitle').textContent = 'Obrigada, ' + first + '! Enviei-te um e-mail para confirmares a subscrição.';
+  pop.hidden = false;
+  function close(){ pop.hidden = true; var t = document.querySelector(target); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  $('okX').onclick = close; $('okGo').onclick = close;
+}
 function joinPt(a){ return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' e ' + a[a.length - 1]; }
 function pad(n){ return (n < 10 ? '0' : '') + n; }
 function describe(hd){
@@ -973,6 +1000,28 @@ function describe(hd){
       p.hidden = false;
     } catch (e) {}
   };
+})();
+</script>
+<script>
+// embed (lado a lado com o mapa astral): avisa a página-mãe da altura
+(function(){
+  if (!document.documentElement.classList.contains('embed') || !window.parent) return;
+  function post(){ parent.postMessage({ fo: 'hdh', h: document.documentElement.scrollHeight }, '*'); }
+  if (window.ResizeObserver) new ResizeObserver(post).observe(document.body);
+  window.addEventListener('load', post); setInterval(post, 1500);
+})();
+// pop-up com feedback de clientes quando o desenho aparece
+(function(){
+  if (document.documentElement.classList.contains('embed')) return;
+  var box = document.getElementById('fbt'), body = document.getElementById('fbBody'), res = document.getElementById('result');
+  if (!box || !res) return;
+  var MSG = ['A forma como descreves e falas sobre o Human Design é <u>apaixonante</u>. Vibra mesmo!!!!',
+             '<u>Encaixou como peças de puzzle</u> 🧩<br>E acima de tudo está num “idioma” que ressoa ✨ Que trabalho lindo, Filipa. Muito entusiasmada por fazer este mergulho contigo 💙'];
+  var i = 0, started = false, closed = false;
+  try { closed = sessionStorage.getItem('hdFbX') === '1'; } catch (e) {}
+  function show(){ if (closed) return; body.innerHTML = MSG[i % MSG.length]; box.classList.add('on'); i++; if (i < 4) setTimeout(function(){ box.classList.remove('on'); setTimeout(show, 700); }, 11000); else setTimeout(function(){ box.classList.remove('on'); }, 11000); }
+  document.getElementById('fbX').addEventListener('click', function(){ closed = true; box.classList.remove('on'); try { sessionStorage.setItem('hdFbX', '1'); } catch (e) {} });
+  new MutationObserver(function(){ if (!res.hidden && !started){ started = true; setTimeout(show, 7000); } }).observe(res, { attributes: true, attributeFilter: ['hidden'] });
 })();
 </script>
 </body>
