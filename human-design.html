@@ -124,8 +124,10 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .body .ch.full{stroke-width:4.6}
 .body .ctr{fill:var(--bg);stroke:var(--gold);stroke-width:1.2;stroke-opacity:.75;stroke-linejoin:round}
 .body .ctr.def{fill:url(#cg);stroke:var(--deep);stroke-opacity:1;stroke-width:1.4}
-.body .gn{font-size:9px;fill:var(--gate-off);text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
-.body .gn.on{fill:var(--ink);font-weight:600}
+.body .gc{fill:#fff;stroke:#b8a37a;stroke-width:.8}
+.body .gc.on{fill:#e2c891;stroke:#9a7e52}
+.body .gn{font-size:8px;fill:#7a6a50;text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
+.body .gn.on{fill:#3d2814;font-weight:600}
 .legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;font-family:var(--sans);font-size:12.5px;color:var(--soft);margin:6px 0 0}
 .legend i{display:inline-block;width:18px;height:3.5px;border-radius:2px;vertical-align:middle;margin-right:6px}
 .legend .sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid var(--deep);background:var(--cfill)}
@@ -195,7 +197,6 @@ footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;f
   .pillar{grid-template-columns:42px 1fr;gap:13px;padding:18px 16px}
   .pillar .ic{width:42px;height:42px}
   .btn{width:100%;padding:14px 18px}
-  .body .gn{font-size:10px}
 }
 /* gate: Autoridade, Perfil e Centros depois de nome + email */
 .locked{position:relative}
@@ -249,6 +250,15 @@ html.embed body{background:transparent}
 .whomenu button.cur{font-weight:600;color:var(--wine,#7a2535)}
 .whomenu button.nw{border-top:.5px solid var(--gold,#c9a86c);border-radius:0 0 8px 8px;margin-top:4px;color:var(--wine,#7a2535)}
 </style>
+<script>
+/* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
+(function(){var u=new URLSearchParams(location.search);if(u.get('confirmado')!=='1')return;
+try{localStorage.setItem('mapaDesbloqueado','1');localStorage.setItem('hdDesbloqueado','1');}catch(e){}
+var q='',both='';try{var P=JSON.parse(localStorage.getItem('fo_people')||'[]');if(P.length)q=P[P.length-1].q;both=localStorage.getItem('fo_both')||'';}catch(e){}
+if(q){location.replace('human-design.html?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
+document.addEventListener('DOMContentLoaded',function(){var d=document.createElement('div');d.setAttribute('style','position:relative;z-index:50;background:#f4ead6;color:#5b2a35;text-align:center;padding:14px 18px;font:15px/1.5 Georgia,serif');d.textContent='E-mail confirmado ✦ Gera o teu mapa abaixo e vê-lo-ás completo, já desbloqueado.';document.body.insertBefore(d,document.body.firstChild);});
+})();
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -323,7 +333,7 @@ html.embed body{background:transparent}
         <div class="lk" id="lk"><ul class="facts" id="facts"></ul><div id="pillars2"></div></div>
         <form class="gate" id="gate" novalidate>
           <h3>Descobre mais do teu desenho</h3>
-          <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, o teu ambiente, a tua digestão e o teu sentido mais forte. Partilha o teu nome e e-mail para os veres.</p>
+          <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, e o teu ambiente. Partilha o teu nome e e-mail para os veres.</p>
           <div class="grid">
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
             <div><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
@@ -628,7 +638,7 @@ var TXT = {
     defined: 'Os centros a dourado são definidos: energia constante, aquilo com que podes contar em ti e que transmites sempre.',
     open: 'Os centros indefinidos são onde recebes e amplificas a energia dos outros. É aí que mora o maior potencial de sabedoria, e também o maior condicionamento.'
   },
-  cta: 'O desenho é só o mapa. <em>A Leitura Intuitiva</em> pode incluir a leitura do teu Human Design, por mais 50€: para o sentires no corpo e o viveres, não apenas o conheceres.'
+  cta: 'O desenho é só o mapa. <em>A Leitura Intuitiva</em> pode incluir insights do teu Human Design, por apenas mais 50€: para o sentires no corpo e o viveres, não apenas o conheceres.'
 };
 var CENTRE_NAMES = { head: 'Cabeça', ajna: 'Ajna', throat: 'Garganta', g: 'G', heart: 'Coração', spleen: 'Esplénico', sp: 'Plexo Solar', sacral: 'Sacral', root: 'Raiz' };
 var CENTRE_ORDER = ['head','ajna','throat','g','heart','spleen','sp','sacral','root'];
@@ -864,7 +874,9 @@ function renderBody(hd, info){
   s.push('<g class="fade" style="animation-delay:.4s">');
   Object.keys(GP).forEach(function(g){
     var lp = labelPos(+g);
-    s.push('<text class="gn' + (hd.gates[g] ? ' on' : '') + '" x="' + lp[0] + '" y="' + lp[1] + '">' + g + '</text>');
+    var on = hd.gates[g] ? ' on' : '';
+    s.push('<circle class="gc' + on + '" cx="' + lp[0] + '" cy="' + lp[1] + '" r="7.2"/>');
+    s.push('<text class="gn' + on + '" x="' + lp[0] + '" y="' + lp[1] + '">' + g + '</text>');
   });
   s.push('</g>');
   var svg = $('body');
@@ -906,7 +918,7 @@ function render(hd, info){
   var facts = [
     ['Tipo', T.name], ['Autoridade', Au.name], ['Perfil', hd.profile],
     ['Tema do não-ser', NOTSELF[hd.type]], ['Definição', DEF_NAMES[Math.min(hd.definition, 4)]],
-    ['Ambiente', V.ambiente], ['Digestão', V.digestao], ['Sentido mais forte', V.sentido]
+    ['Ambiente', V.ambiente]
   ];
   $('facts').innerHTML = facts.map(function(f){ return '<li><span class="k">' + f[0] + '</span><span class="v">' + esc(f[1]) + '</span></li>'; }).join('');
   // activations
@@ -980,9 +992,7 @@ $('gate').addEventListener('submit', function(e){
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
-    try { localStorage.setItem('hdDesbloqueado', '1'); } catch (x) {}
-    setLocked(false);
-    $('gate').style.display = 'none';
+    pendente($('gate'));
     showOk(nome.split(' ')[0], '.pillars');
   }
   fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(done, function(){
@@ -991,6 +1001,9 @@ $('gate').addEventListener('submit', function(e){
   });
 });
 
+function pendente(g){
+  g.innerHTML = '<h3>Quase lá ✦</h3><p style="font-family:var(--sans);font-size:14.5px;color:var(--muted);line-height:1.6;margin:8px 0 0">Enviei-te um e-mail. Clica no link de confirmação e esta página abre-se completa, já desbloqueada (confere também o lixo eletrónico).</p>';
+}
 function showOk(first, target){
   var pop = $('okPop'); var ot = $('okTitle'); ot.textContent = ''; ot.appendChild(document.createTextNode('Obrigada, ' + first + '! Enviei-te um e-mail')); ot.appendChild(document.createElement('br')); ot.appendChild(document.createTextNode('para confirmares a subscrição.'));
   pop.hidden = false;
@@ -1037,6 +1050,7 @@ function describe(hd){
   function newMap(){ if (EMB) parent.postMessage({ fo: 'new' }, '*'); else document.getElementById('editBtn').click(); }
   var p = document.getElementById('crossNote'), a = document.getElementById('crossLink'); if (!p || !a) return;
   var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
+  try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_both', both ? '1' : '0'); } catch (x) {}
   if (both) p.classList.add('both');
   window.FO_CROSS = function(info){
     try {
