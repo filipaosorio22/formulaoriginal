@@ -275,7 +275,8 @@ h1 em{font-style:normal;color:var(--wine)}
 (function(){var u=new URLSearchParams(location.search);if(u.get('confirmado')!=='1')return;
 try{localStorage.setItem('mapaDesbloqueado','1');localStorage.setItem('hdDesbloqueado','1');}catch(e){}
 var q='',both='';try{var P=JSON.parse(localStorage.getItem('fo_people')||'[]');if(P.length)q=P[P.length-1].q;both=localStorage.getItem('fo_both')||'';}catch(e){}
-if(q){location.replace('mapa-astral.html?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
+var last='';try{last=localStorage.getItem('fo_last')||'';}catch(e){}
+if(q){location.replace((last==='hd'?'human-design.html':'mapa-astral.html')+'?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
 document.addEventListener('DOMContentLoaded',function(){var d=document.createElement('div');d.setAttribute('style','position:relative;z-index:50;background:#f4ead6;color:#5b2a35;text-align:center;padding:14px 18px;font:15px/1.5 Georgia,serif');d.textContent='E-mail confirmado ✦ Gera o teu mapa abaixo e vê-lo-ás completo, já desbloqueado.';document.body.insertBefore(d,document.body.firstChild);});
 })();
 </script>
@@ -1076,6 +1077,7 @@ $('gate').addEventListener('submit', function(e){
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
+    try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'mapa'); } catch (x) {}
     pendente($('gate'));
     showOk(nome.split(' ')[0].replace(/[<>&]/g, ''), '.pillars');
   }

@@ -585,6 +585,26 @@
   .cover-li .h1-sub { font-size:clamp(19px,2.6vw,25px) !important; color:#3d2814 !important; }
   .cover-li::before { content:''; position:absolute; right:max(16px,calc(50% - 600px)); top:50%; width:340px; height:340px; transform:translateY(-50%); opacity:.38; z-index:-1; pointer-events:none; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%237a2535' stroke-width='.6'%3E%3Ccircle cx='100' cy='100' r='96'/%3E%3Ccircle cx='100' cy='100' r='78'/%3E%3Ccircle cx='100' cy='100' r='46'/%3E%3Cg%3E%3Cpath d='M100 4v36M100 160v36M4 100h36M160 100h36M32 32l26 26M142 142l26 26M168 32l-26 26M58 142l-26 26'/%3E%3C/g%3E%3Cpath d='M100 22l6 20h20l-16 12 6 20-16-12-16 12 6-20-16-12h20z' stroke-width='.8'/%3E%3C/svg%3E") center/contain no-repeat; }
   @media (max-width:760px){ .cover-li::before { width:220px; height:220px; right:-40px; opacity:.25; } }
+  .feat .aud { display:flex; gap:1rem; align-items:center; background:rgba(201,168,108,0.18); border-radius:40px; padding:0.55rem 1.3rem 0.55rem 0.6rem; margin:0 0 1rem; }
+  .aud-btn { flex:0 0 40px; width:40px; height:40px; border-radius:50%; border:none; background:var(--wine); cursor:pointer; position:relative; padding:0; }
+  .aud-play { position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-left:11px solid #faf6ef; border-top:7px solid transparent; border-bottom:7px solid transparent; }
+  .aud-pause { display:none; position:absolute; inset:0; align-items:center; justify-content:center; gap:4px; }
+  .aud-pause b { width:4px; height:14px; background:#faf6ef; border-radius:2px; }
+  .aud.playing .aud-play { display:none; } .aud.playing .aud-pause { display:flex; }
+  .aud-main { flex:1; min-width:0; display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:1rem; }
+  .aud-q { font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:var(--wine); margin:0; white-space:nowrap; }
+  .aud-bar { position:relative; height:26px; cursor:pointer; overflow:hidden; }
+  .aud-wave { position:absolute; inset:0; display:flex; align-items:center; gap:3px; }
+  .aud-wave i { flex:1; background:rgba(122,37,53,0.28); border-radius:2px; }
+  .aud.playing .aud-wave i { animation:audpulse 1s ease-in-out infinite alternate; }
+  .aud.playing .aud-wave i:nth-child(odd) { animation-delay:0.25s; }
+  @keyframes audpulse { from { transform:scaleY(0.6); } to { transform:scaleY(1.15); } }
+  .aud-fill { position:absolute; left:0; top:0; bottom:0; width:0; border-right:2px solid var(--wine); background:rgba(122,37,53,0.12); pointer-events:none; }
+  .aud-t { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--ink-soft); min-width:2.2rem; text-align:right; }
+  @media (max-width:680px){ .feat .aud { border-radius:22px; padding:0.6rem 0.9rem 0.6rem 0.6rem; } .aud-main { grid-template-columns:minmax(0,1fr) auto; gap:0.3rem 0.7rem; } .aud-q { grid-column:1 / -1; } .feat .feat-full p { font-size:13.5px; } }
+  /* ronda 5 (14 out) */
+  .feat .feat-full strong { background:rgba(201,168,108,0.42); border-radius:3px; padding:1px 3px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  html[data-theme="dark"] .feat .feat-full strong { background:rgba(201,168,108,0.32); }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -666,6 +686,8 @@
       <p class="feat-eyebrow">✦ The most recent Reading · audio testimonial</p>
       <p class="feat-quote">“It clicked exactly where it needed to click. It brought different perspectives to my reality.”</p>
       <p class="feat-ctx">A friend and client of many years, whose story I know well. That is exactly why I was curious to see what the Reading would bring her.</p>
+      <div class="aud"><audio preload="metadata" src="Feedback%20LA%20nova%20Cristiana.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen to the testimonial"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“It brought different perspectives”</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
+      <p class="trad-note" style="margin:.2rem 0 .8rem">Audio in Portuguese · full transcript in English below</p>
       <details>
         <summary>Read the full testimonial</summary>
         <div class="feat-full">
@@ -1250,6 +1272,23 @@ Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), funct
   Array.prototype.forEach.call(ex, function(l){ l.querySelector('input').addEventListener('change', upd); });
   upd();
 });
+</script>
+<script>
+(function(){
+  var cards = document.querySelectorAll('.aud');
+  function fmt(t){ if (!isFinite(t)) return '0:00'; var m = Math.floor(t / 60), s = Math.floor(t % 60); return m + ':' + (s < 10 ? '0' : '') + s; }
+  cards.forEach(function(c){
+    var a = c.querySelector('audio'), b = c.querySelector('.aud-btn'), f = c.querySelector('.aud-fill'), t = c.querySelector('.aud-t'), bar = c.querySelector('.aud-bar');
+    a.addEventListener('loadedmetadata', function(){ t.textContent = fmt(a.duration); });
+    a.addEventListener('timeupdate', function(){ if (a.duration) { f.style.width = (a.currentTime / a.duration * 100) + '%'; t.textContent = fmt(a.currentTime) + ' / ' + fmt(a.duration); } });
+    a.addEventListener('ended', function(){ c.classList.remove('playing'); f.style.width = '0'; t.textContent = fmt(a.duration); });
+    b.addEventListener('click', function(){
+      if (a.paused) { var fq = document.getElementById('freqAudio'); if (fq && !fq.paused) { var ft = document.getElementById('freqToggle'); if (ft) ft.click(); else fq.pause(); } a.play(); c.classList.add('playing'); if (typeof gtag === 'function') { gtag('event', 'audio_testemunho', { pagina: 'leitura' }); } }
+      else { a.pause(); c.classList.remove('playing'); }
+    });
+    bar.addEventListener('click', function(e){ if (a.duration) { var r = bar.getBoundingClientRect(); a.currentTime = (e.clientX - r.left) / r.width * a.duration; } });
+  });
+})();
 </script>
 </body>
 </html>
