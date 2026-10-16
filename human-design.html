@@ -905,6 +905,8 @@ function renderBody(hd, info){
     s.push('<text class="gn' + on + '" x="' + lp[0] + '" y="' + lp[1] + '">' + g + '</text>');
   });
   s.push('</g>');
+  // setas do topo: Design (esquerda, ouro) e Personalidade (direita, bordô)
+  s.push('<g class="fade" style="animation-delay:.6s"><path d="M118 40H84l8-8M84 40l8 8" fill="none" stroke="var(--gold)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M302 40h34l-8-8M336 40l-8 8" fill="none" stroke="var(--wine)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g>');
   var svg = $('body');
   svg.classList.remove('anim'); void svg.getBoundingClientRect();
   svg.innerHTML = '<desc id="bodyDesc">' + esc(describe(hd)) + '</desc>' + s.join('');
