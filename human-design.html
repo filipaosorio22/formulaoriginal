@@ -118,16 +118,40 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .chart-wrap::before{content:"";position:absolute;inset:6% 4%;border-radius:50%;background:radial-gradient(closest-side,var(--disc1),transparent);opacity:.9;pointer-events:none}
 .body{position:relative;width:100%;display:block;aspect-ratio:420/652;overflow:visible}
 .body text{font-family:var(--sans)}
-.body .ch{fill:none;stroke:var(--chan);stroke-width:2.2;stroke-linecap:round}
-.body .ch.on{stroke:var(--gold);stroke-width:3.4}
-.body .ch.on.p{stroke:var(--deep)}
-.body .ch.full{stroke-width:4.6}
-.body .ctr{fill:var(--bg);stroke:var(--gold);stroke-width:1.2;stroke-opacity:.75;stroke-linejoin:round}
-.body .ctr.def{fill:url(#cg);stroke:var(--deep);stroke-opacity:1;stroke-width:1.4}
-.body .gc{fill:#fff;stroke:#b8a37a;stroke-width:.8}
-.body .gc.on{fill:#e2c891;stroke:#9a7e52}
-.body .gn{font-size:8px;fill:#7a6a50;text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
-.body .gn.on{fill:#3d2814;font-weight:600}
+.body .cw{fill:none;stroke:var(--deep);stroke-opacity:.55;stroke-width:9;stroke-linecap:butt}
+.body .cn{fill:none;stroke:var(--bg);stroke-width:6.6;stroke-linecap:butt}
+.body .cf{fill:none;stroke-width:6.6;stroke-linecap:butt}
+.body .cf.p{stroke:var(--wine)}
+.body .cf.d{stroke:var(--gold)}
+.body .cf.d.s{stroke-dasharray:4 4}
+.body .ctr{fill:var(--bg);stroke:var(--deep);stroke-width:1.3;stroke-opacity:.8;stroke-linejoin:round}
+.body .ctr.def{fill:url(#cg);stroke:var(--deep);stroke-opacity:1;stroke-width:1.6}
+.body .gc{stroke:none}
+.body .gc.p{fill:var(--wine)}
+.body .gc.d{fill:var(--gold)}
+.body .gc2{fill:none;stroke:var(--gold);stroke-width:1.6}
+.body .gn{font-size:8.4px;fill:var(--gate-off);text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
+.body .gn.on{fill:#fffaf0;font-weight:600}
+.body .gn.on.d{fill:#3d2814}
+.bgrid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
+.bgrid .chart-wrap{margin:0 auto;width:100%}
+.acol{font-family:var(--sans);font-size:13.5px}
+.acol h4{margin:0 0 6px;font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-align:center}
+.acol.des h4{color:var(--deep)}.acol.pers h4{color:var(--wine)}
+.acol ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;max-width:260px;margin:0 auto}
+.acol li{display:flex;align-items:baseline;justify-content:center;gap:6px;padding:3px 6px;border-radius:6px;font-variant-numeric:tabular-nums}
+.acol.des li{background:rgba(201,168,108,.22)}
+.acol.pers li{background:rgba(122,37,53,.12)}
+.acol .g{font-family:var(--sym);width:1.2em;text-align:center}
+.acol.des .g{color:var(--deep)}.acol.pers .g{color:var(--wine)}
+.acol .v{color:var(--ink)}
+.bgrid .des{order:2}.bgrid .pers{order:3}.bgrid .chart-wrap{order:1}
+@media (min-width:700px){
+  .bgrid{grid-template-columns:104px minmax(0,440px) 104px;gap:10px;justify-content:center;align-items:start}
+  .bgrid .des{order:1}.bgrid .chart-wrap{order:2}.bgrid .pers{order:3}
+  .acol ul{grid-template-columns:1fr;gap:4px;max-width:none}
+  .acol h4{font-size:10.5px;letter-spacing:.12em}
+}
 .legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;font-family:var(--sans);font-size:12.5px;color:var(--soft);margin:6px 0 0}
 .legend i{display:inline-block;width:18px;height:3.5px;border-radius:2px;vertical-align:middle;margin-right:6px}
 .legend .sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid var(--deep);background:var(--cfill)}
@@ -316,15 +340,14 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <p class="cross" id="crossNote" hidden><span class="c1">Queres ver também o teu mapa astral? </span><a id="crossLink" href="mapa-astral.html">✦ Ver o meu mapa astral</a></p>
       <p class="note" id="resNote" hidden></p>
     </div>
-    <div class="chart-wrap">
-      <svg class="body" id="body" viewBox="0 0 420 652" role="img" aria-labelledby="bodyDesc"><desc id="bodyDesc">Corpo gráfico de Human Design</desc></svg>
+    <div class="bgrid">
+      <div class="acol des" id="actsD"></div>
+      <div class="chart-wrap">
+        <svg class="body" id="body" viewBox="0 0 420 652" role="img" aria-labelledby="bodyDesc"><desc id="bodyDesc">Corpo gráfico de Human Design</desc></svg>
+      </div>
+      <div class="acol pers" id="actsP"></div>
     </div>
-    <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro indefinido</span><span><i style="background:var(--deep)"></i>consciente</span><span><i style="background:var(--gold)"></i>inconsciente</span></p>
-
-    <details class="more">
-      <summary>Ver as ativações planetárias</summary>
-      <div class="acts" id="acts"></div>
-    </details>
+    <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro indefinido</span><span><i style="background:var(--wine)"></i>Personalidade (consciente)</span><span><i style="background:var(--gold)"></i>Design (inconsciente)</span></p>
 
     <div class="pillars">
       <h3>O teu desenho em quatro chaves</h3>
@@ -337,7 +360,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
           <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, e o teu ambiente. Partilha o teu nome e e-mail para os veres.</p>
           <div class="grid">
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
-            <div><label class="lbl" for="gApelido">Apelido <span style="opacity:.6">(opcional)</span></label><input type="text" id="gApelido" maxlength="60" autocomplete="family-name"></div>
+            <div><label class="lbl" for="gApelido">Apelido</label><input type="text" id="gApelido" maxlength="60" autocomplete="family-name"></div>
             <div style="grid-column:1/-1"><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
           </div>
           <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
@@ -351,7 +374,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
       <p class="big" id="ctaText"></p>
       <a class="btn" href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
-      <a class="soft" href="leitura-intuitiva.html#opcoes">Ver como funciona</a>
+      <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a>
     </div>
     <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
   </section>
@@ -640,7 +663,7 @@ var TXT = {
     defined: 'Os centros a dourado são definidos: energia constante, aquilo com que podes contar em ti e que transmites sempre.',
     open: 'Os centros indefinidos são onde recebes e amplificas a energia dos outros. É aí que mora o maior potencial de sabedoria, e também o maior condicionamento.'
   },
-  cta: 'O desenho é só o mapa. <em>A Leitura Intuitiva</em> pode incluir insights do teu Human Design, por apenas mais 50€: para o sentires no corpo e o viveres, não apenas o conheceres.'
+  cta: 'O desenho é só o mapa. <em>A Leitura Intuitiva</em> pode incluir insights do teu Human Design, por apenas mais 50€: para o sentires no corpo e o viveres, não apenas para o conheceres como mais informação.'
 };
 var CENTRE_NAMES = { head: 'Cabeça', ajna: 'Ajna', throat: 'Garganta', g: 'G', heart: 'Coração', spleen: 'Esplénico', sp: 'Plexo Solar', sacral: 'Sacral', root: 'Raiz' };
 var CENTRE_ORDER = ['head','ajna','throat','g','heart','spleen','sp','sacral','root'];
@@ -849,7 +872,7 @@ function renderBody(hd, info){
   var s = [];
   s.push('<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--cfill2)"/><stop offset="1" stop-color="var(--cfill)"/></linearGradient></defs>');
   var on = {}; hd.channels.forEach(function(c){ on[c[0] + '-' + c[1]] = true; });
-  // channels: two halves, each lit when its gate is active
+  // channels: corridors (outlined bands), each half filled by the activation that lights it
   s.push('<g>');
   var k = 0;
   CHANNELS.forEach(function(c){
@@ -857,10 +880,11 @@ function renderBody(hd, info){
     var mid = via || [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
     [[c[0], a], [c[1], b]].forEach(function(half){
       var g = hd.gates[half[0]], d = 'M' + r1(half[1][0]) + ' ' + r1(half[1][1]) + 'L' + r1(mid[0]) + ' ' + r1(mid[1]);
-      s.push('<path class="ch" d="' + d + '"/>');
+      s.push('<path class="cw" d="' + d + '"/><path class="cn" d="' + d + '"/>');
       if (g){
-        var cls = 'ch on' + (g.p ? ' p' : '') + (on[key] ? ' full' : '');
-        s.push('<path class="' + cls + ' draw" pathLength="1" d="' + d + '" style="animation-delay:' + (0.5 + (k++) * 0.035).toFixed(2) + 's"/>');
+        var dl = 'animation-delay:' + (0.4 + (k++) * 0.03).toFixed(2) + 's';
+        if (g.p && g.d) s.push('<path class="cf p fade" d="' + d + '" style="' + dl + '"/><path class="cf d s fade" d="' + d + '" style="' + dl + '"/>');
+        else s.push('<path class="cf ' + (g.p ? 'p' : 'd') + ' fade" d="' + d + '" style="' + dl + '"/>');
       }
     });
   });
@@ -876,8 +900,8 @@ function renderBody(hd, info){
   s.push('<g class="fade" style="animation-delay:.4s">');
   Object.keys(GP).forEach(function(g){
     var lp = labelPos(+g);
-    var on = hd.gates[g] ? ' on' : '';
-    s.push('<circle class="gc' + on + '" cx="' + lp[0] + '" cy="' + lp[1] + '" r="7.2"/>');
+    var gg = hd.gates[g], on = gg ? ' on ' + (gg.p ? 'p' : 'd') : '';
+    if (gg) s.push('<circle class="gc' + on + '" cx="' + lp[0] + '" cy="' + lp[1] + '" r="6.6"/>' + (gg.p && gg.d ? '<circle class="gc2" cx="' + lp[0] + '" cy="' + lp[1] + '" r="8.4"/>' : ''));
     s.push('<text class="gn' + on + '" x="' + lp[0] + '" y="' + lp[1] + '">' + g + '</text>');
   });
   s.push('</g>');
@@ -924,13 +948,14 @@ function render(hd, info){
   ];
   $('facts').innerHTML = facts.map(function(f){ return '<li><span class="k">' + f[0] + '</span><span class="v">' + esc(f[1]) + '</span></li>'; }).join('');
   // activations
-  function col(arr, title, color){
-    return '<div><h4><i style="background:' + color + '"></i>' + title + '</h4><ul>' + arr.map(function(a){
+  function col(arr, title, cls){
+    return '<h4>' + title + '</h4><ul>' + arr.map(function(a){
       var inf = ACT_INFO[a.key];
-      return '<li><span class="g" aria-hidden="true">' + inf[0] + VS + '</span><span>' + inf[1] + '</span><span class="v">' + a.gate + '.' + a.line + '</span></li>';
-    }).join('') + '</ul></div>';
+      return '<li title="' + inf[1] + '"><span class="g" aria-hidden="true">' + inf[0] + VS + '</span><span class="v">' + a.gate + '.' + a.line + '</span></li>';
+    }).join('') + '</ul>';
   }
-  $('acts').innerHTML = col(hd.des, 'Design', 'var(--gold)') + col(hd.pers, 'Personalidade', 'var(--deep)');
+  $('actsD').innerHTML = col(hd.des, 'Design');
+  $('actsP').innerHTML = col(hd.pers, 'Personalidade');
   // pillars
   var defNames = CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).map(function(c){ return CENTRE_NAMES[c]; });
   var html = '';
