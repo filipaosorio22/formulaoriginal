@@ -97,13 +97,10 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <p class="sub" id="opSub">Escolhe a Leitura que queres.</p>
       <div id="ops">
         <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
-        <label class="choice" data-op="rs"><input type="radio" name="op" value="rs" data-p="247"><span><b>Leitura + Revolução Solar · recomendada</b><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, o novo se o teu aniversário está a chegar.</span><span class="pr">247€</span></label>
-        <label class="choice" data-op="rssessao"><input type="radio" name="op" value="rssessao" data-p="397"><span><b>Leitura + Revolução Solar + Sessão de Aprofundamento · a mais completa</b><br>A Leitura, a Revolução Solar e uma sessão individual comigo para trabalhar as crenças.</span><span class="pr">397€</span></label>
-        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura + sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
-        <label class="choice" data-op="rssolo"><input type="radio" name="op" value="rssolo" data-p="197"><span><b>Só a Revolução Solar</b><br>Feita em relação com o teu mapa natal.<br>Em conjunto com a Leitura acrescenta apenas 100€.</span><span class="pr">197€</span></label>
-        <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="150"><span><b>Só a sessão de aprofundamento</b><br>Sessão individual comigo, para quem já tem a Leitura ou quer começar por aqui.</span><span class="pr">150€</span></label>
+        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
+      <label class="choice"><input type="checkbox" id="rs"><span><b>Juntar a Revolução Solar · +100€</b><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
       <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +50€</b><br>Junto à Leitura os pontos estratégicos do teu mapa de Human Design, ligados ao tema que trazes.<br><a href="https://filipaosorio.com/human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
     </div>
 
@@ -192,19 +189,16 @@ window.FO_PAY = {
   var q = new URLSearchParams(location.search);
   var gift = q.get('oferta') === '1';
   var op = q.get('op');
-  if (op) { var r = document.querySelector('input[name=op][value="' + op + '"]'); if (r) r.checked = true; }
+  if (op) { var r = document.querySelector('input[name=op][value="' + (op === 'sessao' || op === 'rssessao' ? 'sessao' : 'leitura') + '"]'); if (r) r.checked = true; if (op === 'rs' || op === 'rssessao') $('rs').checked = true; }
   if (q.get('hd') === '1') $('hd').checked = true;
 
   if (gift) {
     document.title = 'Oferecer uma Leitura Intuitiva | Filipa Osório';
     $('t1').textContent = 'Oferecer uma Leitura';
     $('lead').textContent = 'Que presente maravilhoso! Só preciso dos dados de nascimento de quem recebe. Se souberes um pouco do momento dessa pessoa e do que ela deseja aprofundar, podes partilhar comigo para a Leitura ser mais direcionada.';
-    $('opSub').textContent = 'Podes oferecer a Leitura Intuitiva ou a Leitura com Revolução Solar, com ou sem Human Design.';
+    $('opSub').textContent = 'Podes oferecer a Leitura Intuitiva, com ou sem Human Design e Revolução Solar.';
     document.querySelector('[data-op="sessao"]').hidden = true;
-    document.querySelector('[data-op="sessaosolo"]').hidden = true;
-    document.querySelector('[data-op="rssolo"]').hidden = true;
-    document.querySelector('[data-op="rssessao"]').hidden = true;
-    if (op !== 'rs') document.querySelector('input[value="leitura"]').checked = true;
+    document.querySelector('input[value="leitura"]').checked = true;
     $('giftCard').hidden = false;
     $('recWrap').hidden = false;
     $('birthT').textContent = 'Dados de nascimento de quem recebe';
@@ -217,7 +211,7 @@ window.FO_PAY = {
   }
 
   function entrega(){ var e = document.querySelector('input[name=entrega]:checked'); return e ? e.value : ''; }
-  function birthNeeded(){ return sel().value !== 'sessaosolo' && (!gift || entrega() === 'ja'); }
+  function birthNeeded(){ return !gift || entrega() === 'ja'; }
   function syncGift(){
     if (!gift) return;
     $('birthSub').textContent = birthNeeded()
@@ -227,9 +221,13 @@ window.FO_PAY = {
   document.querySelectorAll('input[name=entrega]').forEach(function(x){ x.addEventListener('change', syncGift); });
   syncGift();
 
-  function sel(){ return document.querySelector('input[name=op]:checked'); }
+  function base(){ return document.querySelector('input[name=op]:checked'); }
+  function sel(){
+    var ses = base().value === 'sessao', rs = $('rs').checked;
+    return { value: rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura'), getAttribute: function(){ return String(+base().getAttribute('data-p') + (rs ? 100 : 0)); } };
+  }
   function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked ? 50 : 0); }
-  function hdOk(){ return sel().value !== 'sessaosolo' && sel().value !== 'rssolo'; }
+  function hdOk(){ return true; }
   function updTotal(){
     var ok = hdOk(), box = $('hd').closest('label');
     if (!ok) $('hd').checked = false;
@@ -243,6 +241,7 @@ window.FO_PAY = {
   }
   document.querySelectorAll('input[name=op]').forEach(function(x){ x.addEventListener('change', updTotal); });
   $('hd').addEventListener('change', updTotal);
+  $('rs').addEventListener('change', updTotal);
   updTotal();
 
   (function(){

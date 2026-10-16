@@ -595,6 +595,17 @@
   .callout.case-callout .ctext p, .callout.case-callout .ctext p.callout-label { padding-right:0 !important; max-width:none !important; }
   details.case { padding-right:1rem; }
   details.case .fold-body, details.case .fold-body > p { padding-right:0 !important; max-width:none !important; }
+
+  /* ronda 20 */
+  .nav-lang { display:none; }
+  @media (min-width:761px){
+    .langbar { display:none !important; }
+    nav { top:0 !important; }
+    .cover-li, .cover { margin-top:67px !important; }
+    .nav-links .nav-lang { display:inline; font-family:'Lora',serif; font-size:11px; letter-spacing:.04em; text-transform:none; color:#8a7e6d; margin-right:.3rem; }
+    .nav-links .nav-lang a { font-size:11px; letter-spacing:.04em; text-transform:none; color:#8a7e6d; text-decoration:underline; text-decoration-color:rgba(138,126,109,.4); }
+    html[data-theme="dark"] .nav-links .nav-lang, html[data-theme="dark"] .nav-links .nav-lang a { color:#a89c8a; }
+  }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -606,7 +617,8 @@
 <nav>
   <a class="nav-logo" href="index.html">Filipa Osório</a>
   <div class="nav-links">
-    <a href="ceen.html" class="active">CEEN • Negócio</a>
+    <span class="nav-lang">Also available in English · <a href="ceen-en.html" hreflang="en" lang="en">English version</a></span>
+    <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
     <a href="#convites-parcerias">💌 Convites e parcerias</a>
     <a href="#novidades">✉ Newsletter</a>
   </div>
@@ -616,7 +628,7 @@
   <button class="hamburger" onclick="document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="ceen.html">CEEN • Negócio</a>
+  <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
   <a href="#convites-parcerias" onclick="document.getElementById('mobileMenu').style.display='none';">💌 Convites e parcerias</a>
   <a href="#novidades">✉ Newsletter</a>
 </div>

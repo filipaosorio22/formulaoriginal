@@ -580,11 +580,6 @@
   .jump-link { display:inline-block; padding:.65rem 1.7rem; border:1.5px solid var(--wine); border-radius:14px; text-decoration:none; transition:background .25s,color .25s; }
   .jump-link:hover { background:var(--wine); color:#faf3e6; }
   @media (min-width:681px){ #quem-te-guia .bio-box .bio-photo img { object-position:50% 88% !important; } }
-  .cover-li { min-height:400px; background:linear-gradient(120deg,#ecc977,#f8e5ad,#e0b259,#f5deA0,#e8c06a,#f8e5ad) !important; background-size:300% 300% !important; }
-  .cover-li h1 { font-size:clamp(50px,9vw,88px) !important; }
-  .cover-li .h1-sub { font-size:clamp(19px,2.6vw,25px) !important; color:#3d2814 !important; }
-  .cover-li::before { content:''; position:absolute; right:max(16px,calc(50% - 600px)); top:50%; width:340px; height:340px; transform:translateY(-50%); opacity:.38; z-index:-1; pointer-events:none; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%237a2535' stroke-width='.6'%3E%3Ccircle cx='100' cy='100' r='96'/%3E%3Ccircle cx='100' cy='100' r='78'/%3E%3Ccircle cx='100' cy='100' r='46'/%3E%3Cg%3E%3Cpath d='M100 4v36M100 160v36M4 100h36M160 100h36M32 32l26 26M142 142l26 26M168 32l-26 26M58 142l-26 26'/%3E%3C/g%3E%3Cpath d='M100 22l6 20h20l-16 12 6 20-16-12-16 12 6-20-16-12h20z' stroke-width='.8'/%3E%3C/svg%3E") center/contain no-repeat; }
-  @media (max-width:760px){ .cover-li::before { width:220px; height:220px; right:-40px; opacity:.25; } }
   .feat .aud { display:flex; gap:1rem; align-items:center; background:rgba(201,168,108,0.18); border-radius:40px; padding:0.55rem 1.3rem 0.55rem 0.6rem; margin:0 0 1rem; }
   .aud-btn { flex:0 0 40px; width:40px; height:40px; border-radius:50%; border:none; background:var(--wine); cursor:pointer; position:relative; padding:0; }
   .aud-play { position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-left:11px solid #faf6ef; border-top:7px solid transparent; border-bottom:7px solid transparent; }
@@ -605,6 +600,45 @@
   /* ronda 5 (14 out) */
   .feat .feat-full strong { background:rgba(201,168,108,0.42); border-radius:3px; padding:1px 3px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
   html[data-theme="dark"] .feat .feat-full strong { background:rgba(201,168,108,0.32); }
+
+  /* ronda 20 */
+  .nav-lang { display:none; }
+  @media (min-width:761px){
+    .langbar { display:none !important; }
+    nav { top:0 !important; }
+    .cover-li, .cover { margin-top:67px !important; }
+    .nav-links .nav-lang { display:inline; font-family:'Lora',serif; font-size:11px; letter-spacing:.04em; text-transform:none; color:#8a7e6d; margin-right:.3rem; }
+    .nav-links .nav-lang a { font-size:11px; letter-spacing:.04em; text-transform:none; color:#8a7e6d; text-decoration:underline; text-decoration-color:rgba(138,126,109,.4); }
+    html[data-theme="dark"] .nav-links .nav-lang, html[data-theme="dark"] .nav-links .nav-lang a { color:#a89c8a; }
+  }
+
+  /* texto-fundo: imagem mais curta, a acabar junto ao fim do texto */
+  .texto-fundo::before { inset:1.2rem 0 1.8rem 0 !important; -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 16%, black 78%, transparent 100%) !important; mask-image:linear-gradient(to bottom, transparent 0%, black 16%, black 78%, transparent 100%) !important; }
+  /* faixa: nuvem muito subtil */
+  .faixa::before { opacity:.34 !important; filter:blur(46px) !important; }
+  /* bio */
+  @media (min-width:681px){ #quem-te-guia .bio-box .bio-photo { min-height:0 !important; } }
+  #quem-te-guia .bio-box .back-link { display:flex; width:fit-content; margin:1.8rem auto 0; padding:.65rem 1.7rem; border:1.5px solid var(--wine); border-radius:14px; font-family:'Lora',serif; font-size:17px; font-weight:400; text-decoration:none; transition:background .25s,color .25s; }
+  #quem-te-guia .bio-box .back-link:hover { background:var(--wine); color:#faf3e6; }
+  #como-funciona { scroll-margin-top:120px; }
+  /* preços alinhados */
+  @media (min-width:761px){ .offers2 .offer-name { min-height:2.7em; display:flex; align-items:center; justify-content:center; text-align:center; } }
+  /* Vénus em toggle */
+  details.hdx-d > summary { cursor:pointer; list-style:none; margin-bottom:0.9rem; }
+  details.hdx-d > summary::-webkit-details-marker { display:none; }
+  details.hdx-d:not([open]) > summary { margin-bottom:0; }
+  details.hdx-d > summary:hover { color:var(--wine); }
+  .hdx-ch { display:inline-block; transition:transform .25s; margin-left:.3rem; }
+  details.hdx-d[open] .hdx-ch { transform:rotate(180deg); }
+  /* extras no Como funciona */
+  .tl-extra { margin:1.6rem 0 0; padding:1.3rem 1.4rem 1.1rem; border:1.5px solid var(--gold); border-radius:16px; background:linear-gradient(135deg, rgba(184,150,90,0.14), rgba(184,150,90,0.05)); }
+  .tl-extra-t { font-family:'Spectral',serif; font-style:italic; font-size:20px; color:var(--wine); text-align:center; margin:0 0 1rem; }
+  .tl-extra-g { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:680px){ .tl-extra-g { grid-template-columns:1fr; } }
+  .tl-extra-g > div { background:var(--card); border-radius:12px; padding:.9rem 1rem; }
+  .tl-extra-g b { display:block; font-family:'Spectral',serif; font-size:17.5px; font-weight:500; color:var(--wine); margin-bottom:.35rem; }
+  .tl-extra-g p { font-family:'Lora',serif; font-size:14.5px; line-height:1.6; color:var(--ink); margin:0; }
+  .tl-extra-n { font-family:'DM Sans',sans-serif; font-size:13.5px; color:var(--ink-soft); text-align:center; margin:.9rem 0 0; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -617,8 +651,8 @@
 <nav>
   <a class="nav-logo" href="index.html">Filipa Osório</a>
   <div class="nav-links">
+    <span class="nav-lang">Disponível também em português · <a href="leitura-intuitiva.html" hreflang="pt" lang="pt">Versão em português</a></span>
     <a href="ceen-en.html">CEEN • Business</a>
-    <a href="leitura-intuitiva-en.html" class="active">Intuitive Reading</a>
     <a href="ceen.html#convites-parcerias">💌 Invitations and partnerships</a>
   </div>
   <a class="nav-wa" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%20saw%20your%20website%20and%20would%20love%20to%20work%20with%20you%2C%20but%20I%20have%20a%20question%20before%20moving%20forward%3A%20%28your%20question%29" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
@@ -628,7 +662,6 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="ceen-en.html">CEEN • Business</a>
-  <a href="leitura-intuitiva-en.html">Intuitive Reading</a>
   <a href="ceen.html#convites-parcerias">💌 Invitations and partnerships</a>
 </div>
 
@@ -670,7 +703,7 @@
       <li><span class="mk">✦</span><span>You want to make aligned decisions without getting lost in the noise of the mind</span></li>
     </ul>
     <div class="divider"><span></span><span></span></div>
-    <p class="jump-row"><a class="jump-link" href="#quem-te-guia" onclick="jumpToBio(); return false;">Meet your guide</a><small>(come and get to know me first)</small></p>
+    <p class="jump-row"><a class="jump-link" href="#quem-te-guia" onclick="jumpToBio(); return false;">Start by getting to know your guide</a></p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -759,14 +792,15 @@
   <!-- HUMAN DESIGN -->
   <section class="reveal" id="human-design">
     <h2>And Human Design?</h2>
-    <p class="body-text">Human Design brings together astrology, the I Ching, the Kabbalah, the chakra system and quantum physics in a map of your energy body. It shows how your energy works, how you make your best decisions and where you let others condition you.</p>
+    <p class="body-text">The birth chart shows the sky of the moment you were born and is the foundation of your Reading. Human Design starts from that same sky and adds the I Ching, the Kabbalah, the chakra system and quantum physics in a map of your energy body. It shows how your energy works, how you make your best decisions and where you let others condition you.</p>
     <p class="body-text">You can add it to your Reading for just €50 more. You receive your type, your strategy, your authority, your profile and other strategic points of your chart, linked to the theme you bring, with practical ways to live them day to day.</p>
     <p class="body-text">Human Design adds another level of depth to the birth chart. The same planetary positions gain gates, lines and channels that show how that energy works in your body, your decisions and your relationships.</p>
     <div class="hdx">
-      <p class="hdx-eyebrow">✦ An example from my chart: Venus</p>
+      <details class="hdx-d"><summary class="hdx-eyebrow">✦ An example from my chart: Venus <span class="hdx-ch">▾</span></summary>
       <p class="hdx-p">In my birth chart, Venus in Sagittarius, next to Mercury, in house 10, brings language, value and relationship together in a search for meaning. Sagittarius brings the horizon; house 10 brings the mountain: direction, responsibility and the place I take in the world. It asks me whether what I say, what I value and the path I follow are walking together. It is true, and it is beautiful, but it is only one layer.</p>
       <p class="hdx-p">Venus speaks of what we love and the worth we give ourselves: how we connect, what attracts us and what we feel we deserve to receive. In Human Design, my Venus has two more homes. The conscious one, the one I see best, is in gate 11, line 2: ideas that look for new ways to bring people closer and bring harmony, in the family, at work or in relationships. Here consensus is worth more than a single voice, and when I share ideas with people who do not recognize them, I feel the boredom of line 2. The unconscious one, the one that lives in me without my noticing, is in gate 59, line 6: breaking down barriers to reach union, because vulnerability is the secret of intimacy, and only with time do I see who, what and when make sense in my intimate life.</p>
       <p class="hdx-p">The two charts start from the same sky, but tell different things. The birth chart tells me what moves me and in which area of life it happens (house 10). Human Design shows how that same energy acts in me, in my decisions and my relationships, through gates and lines (11.2 and 59.6). Together they show the what and the how. Once you see your Venus in both layers, a relationship stops being only “what I feel” and becomes also “what is going on underneath”, and that changes the conversation with yourself and with those around you.</p>
+    </details>
     </div>
     <h3 class="hdq-t">What people say about Human Design with me</h3>
     <p class="trad-note">Messages translated from Portuguese (AI magic 🪄)</p>
@@ -792,6 +826,7 @@
     <p class="body-text">It isn’t just about receiving information, it’s about transformation, awareness and belief-work proposals you can explore through this symbolic language (and others in the sessions, if you want to go deeper).</p>
     <p class="body-text">Knowing that your Sun is in Capricorn may spark your curiosity, but how can that help you understand your relationship with work, responsibility and success? In which house is that Sun, and what links might it have with the place where its ruler sits? <strong>It opens a world of symbolic possibilities to help you dive deeper.</strong></p>
     <p class="body-text">For example: what makes you feel fulfilled, how you handle pressure, and what you need to recognize the value of what you do? The Reading moves from the symbolic language of the archetypes of the signs and planets to questions and experiments you can carry into your everyday life.</p>
+    <p class="body-text">These examples give an idea of the depth we can bring to the session after the Reading, at the level of the specific examples you feel in your own life. In that session, starting from what the Reading awakened, we go deeper into each one and also use other therapeutic tools, beyond the symbolic language of the chart.</p>
     <p class="recognize-hint">Choose an example:</p>
     <div class="tabs" role="tablist">
       <button type="button" role="tab" aria-selected="true" aria-controls="tp1" id="tb1">Communication</button>
@@ -893,8 +928,16 @@
       <div class="tl-step"><span class="tl-dot">2</span><h3>You share your details and your theme</h3><p>Date, time and place of birth, what you are going through and any context you feel is important.</p></div>
       <div class="tl-step"><span class="tl-dot">3</span><h3>I prepare your Reading</h3><p>With intuition and an archetypal look at your chart, connecting the Reading to questions and practical guidance.</p></div>
       <div class="tl-step"><span class="tl-dot">4</span><h3>You receive your Reading</h3><p>In writing, within 14 business days of payment confirmation.</p></div>
-      <div class="tl-step"><span class="tl-dot">5</span><h3>You read and integrate</h3><p>In your own time, as many times as you like.<br>You can take notes on your reflections and bring specific examples.</p></div>
+      <div class="tl-step"><span class="tl-dot">5</span><h3>You read and integrate</h3><p>In your own time, as many times as you like. You can take notes on your reflections and bring specific examples.</p></div>
       <div class="tl-step opt"><span class="tl-dot">6</span><h3>In-depth session</h3><p>We go deeper into the themes, work on the relevant beliefs and explore ways of responding to real situations.</p></div>
+    </div>
+    <div class="tl-extra">
+      <p class="tl-extra-t">✦ And, if you want to go further, you can add</p>
+      <div class="tl-extra-g">
+        <div><b>Your Human Design · +50€</b><p>The drawing of your energy body read alongside your birth chart: how your energy works, how you make your best decisions and where you let others condition you. It is the layer that helps you feel and live what the Reading reveals, instead of just knowing it.</p></div>
+        <div><b>Your Solar Return · +100€</b><p>The map of your year, from birthday to birthday: the themes asking for your attention now and what you can cultivate in this cycle, read in relation to your birth chart. It makes special sense if your birthday is coming up or was recent.</p></div>
+      </div>
+      <p class="tl-extra-n">You can add one or both when you book your Reading.</p>
     </div>
   </section>
 

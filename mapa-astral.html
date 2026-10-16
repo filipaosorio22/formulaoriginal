@@ -269,6 +269,11 @@ h1 em{font-style:normal;color:var(--wine)}
 .whomenu button:hover{background:rgba(201,168,108,.22)}
 .whomenu button.cur{font-weight:600;color:var(--wine,#7a2535)}
 .whomenu button.nw{border-top:.5px solid var(--gold,#c9a86c);border-radius:0 0 8px 8px;margin-top:4px;color:var(--wine,#7a2535)}
+.pos{border:0;background:none;padding:0;margin:18px 0 0;text-align:center}
+.pos summary{display:block;font-family:var(--sans);font-style:normal;font-size:14px;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);padding:0}
+.pos summary::after{content:none}
+.pos[open] summary{margin-bottom:10px}
+.pos .planets{text-align:left}
 </style>
 <script>
 /* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
@@ -1062,7 +1067,7 @@ $('gate').addEventListener('submit', function(e){
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
   if (!nome){ err.textContent = 'Escreve o teu nome.'; $('gNome').focus(); return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('gEmail').focus(); return; }
-  if (!$('gOk').checked){ err.textContent = 'Falta só um passo: marca a caixa para aceitares receber os meus e-mails e veres o que preparei para ti ✦'; return; }
+  if (!$('gOk').checked){ err.innerHTML = 'Falta só um passo: marca a caixa para aceitares receber<br>os meus e-mails e veres o que preparei para ti ✦'; return; }
   err.textContent = '';
   var b = new URLSearchParams();
   b.append('fields[name]', nome);
@@ -1088,7 +1093,7 @@ $('gate').addEventListener('submit', function(e){
 });
 
 function pendente(g){
-  g.innerHTML = '<h3>Quase lá ✦</h3><p style="font-family:var(--sans);font-size:14.5px;color:var(--muted);line-height:1.6;margin:8px 0 0">Enviei-te um e-mail. Clica no link de confirmação e esta página abre-se completa, já desbloqueada (confere também o lixo eletrónico).</p>';
+  g.innerHTML = '<h3>Quase lá ✦</h3><p style="font-family:var(--sans);font-size:14.5px;color:var(--muted);line-height:1.6;margin:8px 0 0">Enviei-te um e-mail. Clica no link de confirmação e esta página abre-se completa, já desbloqueada (confere no spam).</p>';
 }
 function showOk(first, target){
   var pop = $('okPop'); var ot = $('okTitle'); ot.textContent = ''; ot.appendChild(document.createTextNode('Obrigada, ' + first + '! Enviei-te um e-mail')); ot.appendChild(document.createElement('br')); ot.appendChild(document.createTextNode('para confirmares a subscrição.'));
