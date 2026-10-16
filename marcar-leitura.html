@@ -101,7 +101,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Juntar a Revolução Solar · +100€</b><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
-      <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +50€</b><br>Junto à Leitura os pontos estratégicos do teu mapa de Human Design, ligados ao tema que trazes.<br><a href="https://filipaosorio.com/human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
+      <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +100€</b><br>Junto à Leitura os pontos estratégicos do teu mapa de Human Design, ligados ao tema que trazes.<br><a href="https://filipaosorio.com/human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
     </div>
 
     <div class="card" id="giftCard" hidden>
@@ -166,13 +166,9 @@ window.FO_PAY = {
   web3formsKey: 'b2feccdb-b682-491c-8fb8-a56fb482a4ed',
   stripe: {
     'leitura': 'https://buy.stripe.com/4gM6oHdbD4gz4mhazAfw40d',
-    'leitura+hd': 'https://buy.stripe.com/9B68wP5Jb5kD1a5234fw40e',
     'rs': 'https://buy.stripe.com/9B6bJ10oReVdg4Z6jkfw40f',
-    'rs+hd': 'https://buy.stripe.com/aFa5kD2wZdR94mhcHIfw40g',
     'rssessao': 'https://buy.stripe.com/8x214n0oRbJ1dWR7nofw40q',
-    'rssessao+hd': 'https://buy.stripe.com/aFa3cv7RjcN52e95fgfw40r',
     'sessao': 'https://buy.stripe.com/4gMcN59Zr3cvcSNePQfw40o',
-    'sessao+hd': 'https://buy.stripe.com/9B67sL6Nf3cv1a5cHIfw40p',
     'sessaosolo': 'https://buy.stripe.com/3cI00j3B3bJ1cSNazAfw40j',
     'rssolo': 'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'
   }
@@ -226,7 +222,7 @@ window.FO_PAY = {
     var ses = base().value === 'sessao', rs = $('rs').checked;
     return { value: rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura'), getAttribute: function(){ return String(+base().getAttribute('data-p') + (rs ? 100 : 0)); } };
   }
-  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked ? 50 : 0); }
+  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked ? 100 : 0); }
   function hdOk(){ return true; }
   function updTotal(){
     var ok = hdOk(), box = $('hd').closest('label');
