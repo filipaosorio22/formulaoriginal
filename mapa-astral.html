@@ -274,6 +274,7 @@ h1 em{font-style:normal;color:var(--wine)}
 .pos summary::after{content:none}
 .pos[open] summary{margin-bottom:10px}
 .pos .planets{text-align:left}
+.gout{margin-top:6px}#gOutroWrap{margin-top:8px}#gOutroWrap input{width:100%;box-sizing:border-box}
 </style>
 <script>
 /* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
@@ -364,14 +365,16 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
         <div class="layers" id="layers" hidden></div>
       </div>
       <form class="gate" id="gate" novalidate>
-        <h3>Descobre mais sobre<br>a tua Lua e Ascendente</h3>
+        <h3>Descobre mais do teu mapa</h3>
         <p class="sub">Partilha o teu nome e e-mail para conheceres um bocadinho<br>mais da minha visão sobre o teu mapa, antes da Leitura.</p>
         <div class="grid">
           <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" name="fields[name]" maxlength="60" autocomplete="given-name" required></div>
           <div><label class="lbl" for="gApelido">Apelido</label><input type="text" id="gApelido" maxlength="60" autocomplete="family-name"></div>
           <div style="grid-column:1/-1"><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" name="fields[email]" maxlength="120" autocomplete="email" inputmode="email" required></div>
         </div>
-        <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
+        <label class="chk gout"><input type="checkbox" id="gOutra"><span>Este mapa é de outra pessoa</span></label>
+        <div id="gOutroWrap" hidden><label class="lbl" for="gOutro">Nome da outra pessoa</label><input type="text" id="gOutro" maxlength="60"></div>
+          <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
         <p class="err" id="gErr" role="alert"></p>
         <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver alguns insights do meu mapa</button></div>
       </form>
@@ -1054,7 +1057,7 @@ function pillar(kind, icon, title, zg, text, n){
   return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true"' + icStyle + '>' + icon + (icon === 'AC' ? '' : VS) + '</div><div><p class="k">' + kind + '</p><h4>' + title + (zg ? '<span class="zs" aria-hidden="true">' + zg + VS + '</span>' : '') + '</h4><p>' + text + '</p></div></div>';
 }
 // gate: MailerLite (grupo do mapa astral)
-var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201213025790723620/subscribe';
+var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201213025790723620/subscribe'; window.FO_ML = ML_URL;
 var lastInfo = null, lastSum = null;
 function unlocked(){ try { return localStorage.getItem('mapaDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
@@ -1063,6 +1066,17 @@ function setLocked(on){
   $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
   if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
 }
+// «este mapa é de outra pessoa»: a ficha fica com os dados de quem subscreve, nunca com os da outra pessoa
+(function(){
+  var c = $('gOutra'), w = $('gOutroWrap'), l = document.querySelector('label[for="gNome"]'), curName = '';
+  function upd(){
+    w.hidden = !c.checked; l.textContent = c.checked ? 'O teu nome' : 'Nome';
+    if (c.checked){ if (!$('gOutro').value) $('gOutro').value = curName; if (curName && $('gNome').value === curName) $('gNome').value = ''; }
+    else if (!$('gNome').value && curName) $('gNome').value = curName;
+  }
+  c.addEventListener('change', upd);
+  window.foGateOther = function(other, name){ curName = name || ''; $('gOutro').value = other ? curName : ''; c.checked = !!other; upd(); };
+})();
 $('gate').addEventListener('submit', function(e){
   e.preventDefault();
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
@@ -1075,7 +1089,8 @@ $('gate').addEventListener('submit', function(e){
   b.append('fields[email]', email);
   var apel = ($('gApelido').value || '').trim(); if (apel) b.append('fields[last_name]', apel);
   // só o primeiro mapa gerado neste navegador (o da própria pessoa) atualiza os dados da ficha
-  var ownChart = true; try { var o_ = localStorage.getItem('fo_own'); ownChart = !o_ || o_ === window.foCurQs; } catch (x) {}
+  var other = $('gOutra').checked, ownChart = !other;
+  if (other){ var on_ = ($('gOutro').value || '').trim(); if (!on_){ err.textContent = 'Escreve o nome da outra pessoa.'; $('gOutro').focus(); return; } }
   if (lastInfo && ownChart){
     b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
@@ -1086,6 +1101,7 @@ $('gate').addEventListener('submit', function(e){
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
+    try { localStorage.setItem('fo_email', email); } catch (x) {}
     try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'mapa'); } catch (x) {}
     var again = false; try { again = localStorage.getItem('fo_pend') === '1'; localStorage.setItem('fo_pend', '1'); } catch (x) {}
     pendente($('gate'), again);
@@ -1146,7 +1162,7 @@ function describe(ch, info){
 (function(){
 
   function foWho(info, qs){
-    window.foCurQs = qs; try { if (!localStorage.getItem('fo_own')) localStorage.setItem('fo_own', qs); } catch (x) {}
+    window.foCurQs = qs; try { if (!localStorage.getItem('fo_own') && !/[?&]outra=1/.test(location.search)) localStorage.setItem('fo_own', qs); } catch (x) {}
     try {
       var P = []; try { P = JSON.parse(localStorage.getItem('fo_people') || '[]'); } catch (x) {}
       P = P.filter(function(o){ return o.q !== qs; }); P.push({ n: info.name || 'Sem nome', q: qs, d: info.d + '/' + info.mo + '/' + info.y });
@@ -1176,11 +1192,15 @@ function describe(ch, info){
   if (both) p.classList.add('both');
   window.FO_CROSS = function(info){
     try {
-      try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name; if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
       function pad(n){ return (n < 10 ? '0' : '') + n; }
       var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
       a.href = 'human-design.html?' + q.toString() + '';
       foWho(info, q.toString());
+      var other = false; try { other = localStorage.getItem('fo_own') !== q.toString() || /[?&]outra=1/.test(location.search); } catch (x) {}
+      try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
+      if (window.foGateOther) window.foGateOther(other, info.name || '');
+      try { var em = localStorage.getItem('fo_email'), un = localStorage.getItem('hdDesbloqueado') === '1' || localStorage.getItem('mapaDesbloqueado') === '1';
+        if (em && un && window.FO_ML){ var Ls = JSON.parse(localStorage.getItem('fo_hist') || '[]'), bb = new URLSearchParams(); bb.append('fields[email]', em); bb.append('fields[historico_mapas]', Ls.slice(-6).join(' | ').slice(-250)); bb.append('ml-submit', '1'); bb.append('anticsrf', 'true'); fetch(window.FO_ML, { method: 'POST', mode: 'no-cors', body: bb }); } } catch (x) {}
       if (both){
         document.body.classList.add('dual');
         var col = document.getElementById('hdCol');

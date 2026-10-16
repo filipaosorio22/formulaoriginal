@@ -127,8 +127,8 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .body .gc{fill:var(--bg);stroke:var(--deep);stroke-opacity:.7;stroke-width:1}
 .body .gc.p{fill:var(--wine);stroke:none}
 .body .gc.d{fill:var(--gold);stroke:none}
-.body .gn{font-size:7.4px;fill:var(--gate-off);text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
-.body .gn.on{fill:#fffaf0;font-weight:600}
+.body .gn{font-size:7.4px;fill:var(--soft);text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
+.body .gn.on{fill:var(--ink);font-weight:700}
 .bgrid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
 .bgrid .chart-wrap{margin:0 auto;width:100%}
 .acol{font-family:var(--sans);font-size:13.5px}
@@ -269,6 +269,19 @@ html.embed body{background:transparent}
 .whomenu button:hover{background:rgba(201,168,108,.22)}
 .whomenu button.cur{font-weight:600;color:var(--wine,#7a2535)}
 .whomenu button.nw{border-top:.5px solid var(--gold,#c9a86c);border-radius:0 0 8px 8px;margin-top:4px;color:var(--wine,#7a2535)}
+.gout{margin-top:6px}#gOutroWrap{margin-top:8px}#gOutroWrap input{width:100%;box-sizing:border-box}
+.bgrid,.bgrid .chart-wrap{display:block}.bgrid .chart-wrap{max-width:440px;margin:6px auto 0}
+.pos{margin:14px auto 4px;text-align:center}
+.pos summary{cursor:pointer;list-style:none;display:block;font-family:var(--sans);font-size:14px;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.pos summary::-webkit-details-marker{display:none}
+.pos[open] summary{margin-bottom:12px}
+.posgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;max-width:560px;margin:0 auto;text-align:left}
+@media(max-width:560px){.posgrid{grid-template-columns:1fr}}
+.acol ul{grid-template-columns:1fr;max-width:none;gap:3px}
+.acol li{justify-content:flex-start}
+.acol li .n{flex:1;color:var(--muted)}
+.acol h4{text-align:left;letter-spacing:.12em}
+.hdclose{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.6;color:var(--wine);text-align:center;margin:18px 0 0}
 </style>
 <script>
 /* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
@@ -337,12 +350,14 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <p class="note" id="resNote" hidden></p>
     </div>
     <div class="bgrid">
-      <div class="acol des" id="actsD"></div>
       <div class="chart-wrap">
         <svg class="body" id="body" viewBox="0 0 420 652" role="img" aria-labelledby="bodyDesc"><desc id="bodyDesc">Corpo gráfico de Human Design</desc></svg>
       </div>
-      <div class="acol pers" id="actsP"></div>
     </div>
+    <details class="pos" id="posBox">
+      <summary>Ver as posições planetárias</summary>
+      <div class="posgrid"><div class="acol des" id="actsD"></div><div class="acol pers" id="actsP"></div></div>
+    </details>
     <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro indefinido</span><span><i style="background:var(--wine)"></i>Personalidade (consciente)</span><span><i style="background:var(--gold)"></i>Design (inconsciente)</span></p>
 
     <div class="pillars">
@@ -353,12 +368,14 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
         <div class="lk" id="lk"><ul class="facts" id="facts"></ul><div id="pillars2"></div></div>
         <form class="gate" id="gate" novalidate>
           <h3>Descobre mais do teu desenho</h3>
-          <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, e o teu ambiente. Partilha o teu nome e e-mail para os veres.</p>
+          <p class="sub">Partilha o teu nome e e-mail para conheceres um bocadinho<br>mais da minha visão sobre o teu mapa, antes da Leitura.</p>
           <div class="grid">
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
             <div><label class="lbl" for="gApelido">Apelido</label><input type="text" id="gApelido" maxlength="60" autocomplete="family-name"></div>
             <div style="grid-column:1/-1"><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
           </div>
+          <label class="chk gout"><input type="checkbox" id="gOutra"><span>Este mapa é de outra pessoa</span></label>
+          <div id="gOutroWrap" hidden><label class="lbl" for="gOutro">Nome da outra pessoa</label><input type="text" id="gOutro" maxlength="60"></div>
           <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
           <p class="err" id="gErr" role="alert"></p>
           <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver o meu desenho completo</button></div>
@@ -614,21 +631,21 @@ CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
 
 // ---------- texts (from Filipa's Notion notes; see hd-textos.md) ----------
 var TXT = {
-  intro: 'O Human Design (ou Desenho Humano) junta a Astrologia, a Cabala, o sistema de chakras, o I Ching e a física quântica numa linguagem nova. A partir dos teus dados de nascimento, desenha o teu corpo gráfico e é um mapa que promete revelar como a energia flui em ti e de como foste feita/o para funcionar, decidir e relacionar-te com o mundo. Não é uma fórmula mágica: é um caminho de regresso a quem já és, por baixo dos condicionamentos.',
+  intro: 'O Human Design (ou Desenho Humano) junta a Astrologia, a Cabala, o sistema de chakras, o I Ching e a física quântica numa linguagem nova. A partir dos teus dados de nascimento, desenha o teu corpo gráfico e é um mapa que promete revelar como a energia flui em ti e como funcionas, decides e te relacionas com o mundo. Não é uma fórmula mágica: é um caminho de regresso a quem já és, por baixo dos condicionamentos.',
   types: {
-    mg: { name: 'Geradora Manifestante', nick: 'a multipotencial', strategy: 'Responder e informar', signature: 'Satisfação e paz',
-      text: ['Tens a força constante do Sacral e uma garganta ligada a um motor: és rápida, tens muitas paixões e não vieste para fazer sempre a mesma coisa. Vieste abrir caminhos e criar o novo, e não precisas de fazer sentido para ninguém.',
+    mg: { name: 'Gerador/a Manifestante', nick: 'multipotencial', strategy: 'Responder e informar', signature: 'Satisfação e paz',
+      text: ['Tens a força constante do Sacral e uma garganta ligada a um motor: tens rapidez, muitas paixões e não vieste para fazer sempre a mesma coisa. Vieste abrir caminhos e criar o novo, e não precisas de fazer sentido para ninguém.',
              'A tua estratégia é esperar que a vida te traga algo a que responder, sentir o «sim» do corpo, provar e informar quem vai ser tocado pela tua decisão. Quando vives assim, a assinatura é satisfação e paz.'] },
-    generator: { name: 'Geradora', nick: 'a criadora', strategy: 'Responder à vida', signature: 'Satisfação',
+    generator: { name: 'Gerador/a', nick: 'força criadora', strategy: 'Responder à vida', signature: 'Satisfação',
       text: ['Tens acesso constante à força vital do Sacral: uma energia que te deixa continuar quando outros já pararam. O teu desafio não é a capacidade, é o discernimento: saber onde a pões.',
              'A tua estratégia é responder ao que a vida te traz, em vez de forçar. Quando fazes o que te entusiasma, a assinatura é satisfação.'] },
-    manifestor: { name: 'Manifestador/a', nick: 'a iniciadora', strategy: 'Seguir as urgências e informar', signature: 'Paz',
+    manifestor: { name: 'Manifestador/a', nick: 'quem inicia', strategy: 'Seguir as urgências e informar', signature: 'Paz',
       text: ['Vieste iniciar e pôr as coisas em movimento sem depender de ninguém. A tua energia chega em ondas: age na onda, descansa depois.',
              'A tua estratégia é seguir as tuas urgências e informar antes de agir. Informar não é pedir licença: é abrir caminho. Quando vives assim, a assinatura é paz.'] },
-    projector: { name: 'Projetor/a', nick: 'a guia', strategy: 'Aguardar o reconhecimento', signature: 'Sucesso',
-      text: ['Vês o que os outros ainda não viram e sabes guiar a energia de quem está à tua volta. Estás aqui para ser valorizada pelo que vês, não pelo que fazes.',
+    projector: { name: 'Projetor/a', nick: 'quem guia', strategy: 'Aguardar o reconhecimento', signature: 'Sucesso',
+      text: ['Vês o que os outros ainda não viram e sabes guiar a energia de quem está à tua volta. Estás aqui para que o teu olhar seja reconhecido, mais do que o teu fazer.',
              'A tua estratégia é aguardar o convite e o reconhecimento nas grandes decisões, e cuidar do teu descanso enquanto isso. Quando vives assim, a assinatura é sucesso.'] },
-    reflector: { name: 'Refletor/a', nick: 'a mística', strategy: 'Aguardar um ciclo lunar', signature: 'Encantamento',
+    reflector: { name: 'Refletor/a', nick: 'espelho lunar', strategy: 'Aguardar um ciclo lunar', signature: 'Encantamento',
       text: ['Todos os teus centros são indefinidos: és espelho do ambiente e das pessoas com quem estás, e sentes como ninguém o movimento da Lua.',
              'A tua estratégia é dar tempo às grandes decisões, um ciclo lunar inteiro, e escolher bem onde e com quem vives. Quando vives assim, a assinatura é encantamento.'] }
   },
@@ -642,18 +659,18 @@ var TXT = {
     lunar:     { name: 'Lunar', line: 'Dá às grandes decisões um ciclo lunar inteiro, 28 dias, e repara no que se mantém verdadeiro.' }
   },
   profiles: {
-    '1/3': ['A instauradora da verdade e do conhecimento', 'Investigas a fundo e aprendes na pele: precisas de bases sólidas para te lançares à experiência.'],
-    '1/4': ['A professora omnisciente', 'Aprofundas o que te fascina e partilhas o que descobres com as tuas pessoas.'],
-    '2/4': ['A génia tranquila', 'Talentos naturais que pedem recolhimento e que chegam ao mundo através das tuas ligações.'],
-    '2/5': ['A heroína relutante', 'Entre a paz da tua caverna e as pessoas que te procuram para soluções práticas.'],
-    '3/5': ['A grande experimentadora da vida', 'Aprendes a fazer: na tua vida não há erros, só aprendizagens que se tornam soluções para os outros.'],
+    '1/3': ['Verdade e conhecimento', 'Investigas a fundo e aprendes na pele: precisas de bases sólidas para te lançares à experiência.'],
+    '1/4': ['Saber que se partilha', 'Aprofundas o que te fascina e partilhas o que descobres com as tuas pessoas.'],
+    '2/4': ['Talento tranquilo', 'Talentos naturais que pedem recolhimento e que chegam ao mundo através das tuas ligações.'],
+    '2/5': ['Heroísmo relutante', 'Entre a paz da tua caverna e as pessoas que te procuram para soluções práticas.'],
+    '3/5': ['A vida como experiência', 'Aprendes a fazer: na tua vida não há erros, só aprendizagens que se tornam soluções para os outros.'],
     '3/6': ['O contraste vivo', 'Vives com intensidade, e cada experiência transforma-se em sabedoria para partilhar.'],
-    '4/6': ['A figura real de autoridade', 'Coração do teu grupo: a tua sabedoria chega aos outros através das tuas relações.'],
+    '4/6': ['Autoridade com coração', 'Coração do teu grupo: a tua sabedoria chega aos outros através das tuas relações.'],
     '4/1': ['Vida «bónus»', 'Segues o teu caminho, fiel ao coração, e partilhas o que descobres com quem te é próximo.'],
-    '5/1': ['A solucionadora de desafios', 'As pessoas veem em ti soluções; a tua base de conhecimento torna-as práticas.'],
-    '5/2': ['A heroína automotivada', 'Um talento raro que só sai da caverna quando tu própria o reconheces.'],
-    '6/2': ['O humano exemplar', 'Uma alma antiga que mostra, pelo exemplo, que há poder em ser quem és.'],
-    '6/3': ['A aventureira responsável', 'Sábia e divertida: és um farol para um mundo onde a singularidade de cada pessoa é honrada.']
+    '5/1': ['Soluções para os desafios', 'As pessoas veem em ti soluções; a tua base de conhecimento torna-as práticas.'],
+    '5/2': ['Heroísmo automotivado', 'Um talento raro que só sai da caverna quando tu o reconheces.'],
+    '6/2': ['Exemplo vivo', 'Uma alma antiga que mostra, pelo exemplo, que há poder em ser quem és.'],
+    '6/3': ['Aventura responsável', 'Sabedoria e leveza: és um farol para um mundo onde a singularidade de cada pessoa é honrada.']
   },
   centres: {
     defined: 'Os centros a dourado são definidos: energia constante, aquilo com que podes contar em ti e que transmites sempre.',
@@ -848,7 +865,7 @@ var CENTROID = {}; Object.keys(SHAPES).forEach(function(c){ CENTROID[c] = centro
 function r1(n){ return Math.round(n * 10) / 10; }
 function labelPos(g){
   var p = GP[g], c = CENTROID[GATE_CENTER[g]], dx = c[0] - p[0], dy = c[1] - p[1], L = Math.sqrt(dx*dx + dy*dy) || 1;
-  var k = Math.min(10.5, L * 0.6);
+  var k = Math.min(11.5, L * 0.62);
   return [r1(p[0] + dx / L * k), r1(p[1] + dy / L * k)];
 }
 
@@ -894,14 +911,15 @@ function renderBody(hd, info){
     s.push('<path class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" d="' + rrect(SHAPES[c], tri ? 11 : 17) + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (indefinido)') + '</title></path>');
   });
   s.push('</g>');
-  // gates: round, numbered, on the edge of each centre
+  // portas: pequenas bolas na ponta de cada centro, com o número dentro do centro
   s.push('<g class="fade" style="animation-delay:.4s">');
   Object.keys(GP).forEach(function(g){
-    var p = GP[g], x = r1(p[0]), y = r1(p[1]), gg = hd.gates[g], R = 5.9;
+    var p = GP[g], x = r1(p[0]), y = r1(p[1]), gg = hd.gates[g], R = 3.4;
     if (gg && gg.p && gg.d){
       s.push('<path class="gc d" d="M' + x + ' ' + (y - R) + 'A' + R + ' ' + R + ' 0 0 0 ' + x + ' ' + (y + R) + 'Z"/><path class="gc p" d="M' + x + ' ' + (y - R) + 'A' + R + ' ' + R + ' 0 0 1 ' + x + ' ' + (y + R) + 'Z"/>');
     } else s.push('<circle class="gc' + (gg ? ' on ' + (gg.p ? 'p' : 'd') : '') + '" cx="' + x + '" cy="' + y + '" r="' + R + '"/>');
-    s.push('<text class="gn' + (gg ? ' on' : '') + '" x="' + x + '" y="' + y + '">' + g + '</text>');
+    var lp = labelPos(g);
+    s.push('<text class="gn' + (gg ? ' on' : '') + '" x="' + lp[0] + '" y="' + lp[1] + '">' + g + '</text>');
   });
   s.push('</g>');
   // setas do topo: Design (esquerda, ouro) e Personalidade (direita, bordô)
@@ -952,11 +970,11 @@ function render(hd, info){
   function col(arr, title, cls){
     return '<h4>' + title + '</h4><ul>' + arr.map(function(a){
       var inf = ACT_INFO[a.key];
-      return '<li title="' + inf[1] + '"><span class="g" aria-hidden="true">' + inf[0] + VS + '</span><span class="v">' + a.gate + '.' + a.line + '</span></li>';
+      return '<li><span class="g" aria-hidden="true">' + inf[0] + VS + '</span><span class="n">' + inf[1] + '</span><span class="v">' + a.gate + '.' + a.line + '</span></li>';
     }).join('') + '</ul>';
   }
-  $('actsD').innerHTML = col(hd.des, 'Design');
-  $('actsP').innerHTML = col(hd.pers, 'Personalidade');
+  $('actsD').innerHTML = col(hd.des, 'Design (inconsciente)');
+  $('actsP').innerHTML = col(hd.pers, 'Personalidade (consciente)');
   // pillars
   var defNames = CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).map(function(c){ return CENTRE_NAMES[c]; });
   var html = '';
@@ -966,6 +984,7 @@ function render(hd, info){
   html += pillar('Perfil', '<span>' + hd.profile + '</span>', 'Perfil ' + hd.profile, P[0], [P[1]], 2);
   html += pillar('Centros', ICONS.centres, nDef + ' de 9 centros definidos', '',
     [defNames.length ? 'Definidos em ti: ' + joinPt(defNames) + '. ' + TXT.centres.defined : 'Nenhum centro definido: tudo em ti é abertura. ' + TXT.centres.defined, TXT.centres.open], 3);
+  html += '<p class="hdclose">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a transformar as crenças que reconheces em ti. Nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
   $('pillars2').innerHTML = html;
   lastHD = hd; lastInfo = info;
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
@@ -993,7 +1012,7 @@ function variables(hd){
   };
 }
 // ---------- gate: MailerLite (grupo Human Design) ----------
-var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201215536048113230/subscribe';
+var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201215536048113230/subscribe'; window.FO_ML = ML_URL;
 var lastHD = null, lastInfo = null;
 function unlocked(){ try { return localStorage.getItem('hdDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
@@ -1001,6 +1020,17 @@ function setLocked(on){
   $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
   if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
 }
+// «este mapa é de outra pessoa»: a ficha fica com os dados de quem subscreve, nunca com os da outra pessoa
+(function(){
+  var c = $('gOutra'), w = $('gOutroWrap'), l = document.querySelector('label[for="gNome"]'), curName = '';
+  function upd(){
+    w.hidden = !c.checked; l.textContent = c.checked ? 'O teu nome' : 'Nome';
+    if (c.checked){ if (!$('gOutro').value) $('gOutro').value = curName; if (curName && $('gNome').value === curName) $('gNome').value = ''; }
+    else if (!$('gNome').value && curName) $('gNome').value = curName;
+  }
+  c.addEventListener('change', upd);
+  window.foGateOther = function(other, name){ curName = name || ''; $('gOutro').value = other ? curName : ''; c.checked = !!other; upd(); };
+})();
 $('gate').addEventListener('submit', function(e){
   e.preventDefault();
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
@@ -1013,7 +1043,8 @@ $('gate').addEventListener('submit', function(e){
   b.append('fields[email]', email);
   var apel = ($('gApelido').value || '').trim(); if (apel) b.append('fields[last_name]', apel);
   // só o primeiro mapa gerado neste navegador (o da própria pessoa) atualiza os dados da ficha
-  var ownChart = true; try { var o_ = localStorage.getItem('fo_own'); ownChart = !o_ || o_ === window.foCurQs; } catch (x) {}
+  var other = $('gOutra').checked, ownChart = !other;
+  if (other){ var on_ = ($('gOutro').value || '').trim(); if (!on_){ err.textContent = 'Escreve o nome da outra pessoa.'; $('gOutro').focus(); return; } }
   if (lastInfo && lastHD && ownChart){
     b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
@@ -1024,6 +1055,7 @@ $('gate').addEventListener('submit', function(e){
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
+    try { localStorage.setItem('fo_email', email); } catch (x) {}
     try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'hd'); } catch (x) {}
     var again = false; try { again = localStorage.getItem('fo_pend') === '1'; localStorage.setItem('fo_pend', '1'); } catch (x) {}
     pendente($('gate'), again);
@@ -1062,7 +1094,7 @@ function describe(hd){
 (function(){
 
   function foWho(info, qs){
-    window.foCurQs = qs; try { if (!localStorage.getItem('fo_own')) localStorage.setItem('fo_own', qs); } catch (x) {}
+    window.foCurQs = qs; try { if (!localStorage.getItem('fo_own') && !/[?&]outra=1/.test(location.search)) localStorage.setItem('fo_own', qs); } catch (x) {}
     try {
       var P = []; try { P = JSON.parse(localStorage.getItem('fo_people') || '[]'); } catch (x) {}
       P = P.filter(function(o){ return o.q !== qs; }); P.push({ n: info.name || 'Sem nome', q: qs, d: info.d + '/' + info.mo + '/' + info.y });
@@ -1092,11 +1124,15 @@ function describe(hd){
   if (both) p.classList.add('both');
   window.FO_CROSS = function(info){
     try {
-      try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name; if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
       function pad(n){ return (n < 10 ? '0' : '') + n; }
       var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
       a.href = 'mapa-astral.html?' + q.toString() + '#mapa';
       foWho(info, q.toString());
+      var other = false; try { other = localStorage.getItem('fo_own') !== q.toString() || /[?&]outra=1/.test(location.search); } catch (x) {}
+      try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
+      if (window.foGateOther) window.foGateOther(other, info.name || '');
+      try { var em = localStorage.getItem('fo_email'), un = localStorage.getItem('hdDesbloqueado') === '1' || localStorage.getItem('mapaDesbloqueado') === '1';
+        if (em && un && window.FO_ML){ var Ls = JSON.parse(localStorage.getItem('fo_hist') || '[]'), bb = new URLSearchParams(); bb.append('fields[email]', em); bb.append('fields[historico_mapas]', Ls.slice(-6).join(' | ').slice(-250)); bb.append('ml-submit', '1'); bb.append('anticsrf', 'true'); fetch(window.FO_ML, { method: 'POST', mode: 'no-cors', body: bb }); } } catch (x) {}
       p.hidden = false;
     } catch (e) {}
   };
