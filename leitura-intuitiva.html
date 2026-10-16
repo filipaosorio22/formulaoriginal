@@ -856,18 +856,22 @@
   .pr-box p { margin:0; }
 
   /* ronda 24: capa dourada com relevo, como pedra/papel texturado */
-  .cover-li { background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22700%22 height=%22360%22%3E%3Cfilter id=%22f%22 x=%220%22 y=%220%22 width=%22100%25%22 height=%22100%25%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.011 0.016%22 numOctaves=%225%22 seed=%2211%22 result=%22n%22/%3E%3CfeDiffuseLighting in=%22n%22 lighting-color=%22%23fff6dc%22 surfaceScale=%223.2%22%3E%3CfeDistantLight azimuth=%22230%22 elevation=%2252%22/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url%28%23f%29%22/%3E%3C/svg%3E") center/cover, linear-gradient(120deg,#f0d995 0%,#e2c074 50%,#d3ac5f 100%) !important; background-blend-mode:multiply !important; }
-  html[data-theme="dark"] .cover-li { background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22700%22 height=%22360%22%3E%3Cfilter id=%22f%22 x=%220%22 y=%220%22 width=%22100%25%22 height=%22100%25%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.011 0.016%22 numOctaves=%225%22 seed=%2211%22 result=%22n%22/%3E%3CfeDiffuseLighting in=%22n%22 lighting-color=%22%23fff6dc%22 surfaceScale=%223.2%22%3E%3CfeDistantLight azimuth=%22230%22 elevation=%2252%22/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url%28%23f%29%22/%3E%3C/svg%3E") center/cover, linear-gradient(120deg,#8a6a38 0%,#74562c 55%,#614523 100%) !important; background-blend-mode:multiply !important; }
+  .cover-li { background:linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; background-size:300% 300% !important; }
   .cover-li::before { display:none !important; }
   .cover-li::after { background:linear-gradient(105deg, transparent 38%, rgba(255,236,190,0.22) 50%, transparent 62%) !important; background-size:250% 100% !important; }
-  .cover-li h1 { color:#4a1722 !important; text-shadow:0 1px 0 rgba(255,240,200,.45) !important; }
-  .cover-li .h1-sub { color:#5e3a17 !important; }
-  html[data-theme="dark"] .cover-li h1 { color:#f7e8c4 !important; text-shadow:0 1px 8px rgba(0,0,0,.35) !important; }
-  html[data-theme="dark"] .cover-li .h1-sub { color:#ecd9a8 !important; }
   .car-slide.rh:not(.car-video) img { transform:translateY(16px); transition:transform .5s ease; }
 
+  /* ronda 25: presente só com o ícone; ao clicar abre/fecha o texto */
+  html .gift-top { left:16px !important; transform:translate(0,-14px) !important; width:auto !important; max-width:calc(100% - 32px) !important; padding:6px !important; gap:0 !important; border-radius:999px !important; }
+  html .gift-top.open { transform:translate(0,0) !important; }
+  html .gift-top .gt-ic { background:none; border:0; cursor:pointer; font-size:24px !important; line-height:1; padding:4px 6px; }
+  html .gift-top p { display:none !important; }
+  html .gift-top.txt { border-radius:14px !important; padding:6px 16px 6px 6px !important; gap:8px !important; }
+  html .gift-top.txt p { display:block !important; white-space:normal !important; }
+  #human-design .body-text, #pratica .body-text { text-align:justify !important; hyphens:auto; }
+
   /* ronda 22 */
-  #quem-te-guia .bio-box .bio-photo img { object-position:50% 58% !important; }
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 63% !important; }
   .hdx { transition:background .3s, border-color .3s; }
   .hdx:hover { background:rgba(122,37,53,.17) !important; border-color:rgba(122,37,53,.45); }
   html[data-theme="dark"] .hdx:hover { background:rgba(228,167,179,.2) !important; }
@@ -887,7 +891,7 @@
   html[data-theme="dark"] .statement.gold { background:rgba(228,167,179,.07) !important; color:#e8b9c4 !important; border-color:#c97b8f !important; }
   .faixa { padding:1.2rem 1rem !important; margin:0 !important; }
   .faixa::before { inset-block:-14px !important; }
-  #quem-te-guia .bio-box .bio-photo img { transform:scale(1.16) !important; transform-origin:50% 38% !important; }
+  #quem-te-guia .bio-box .bio-photo img { transform:scale(1.08) !important; transform-origin:50% 38% !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -915,10 +919,9 @@
   <a href="#novidades">✉ Newsletter</a>
 </div>
 
-<div class="gift-top" id="giftTop" role="dialog" aria-label="Oferecer uma Leitura" hidden>
-  <span class="gt-ic" aria-hidden="true">🎁</span>
+<div class="gift-top" id="giftTop" aria-label="Oferecer uma Leitura" hidden>
+  <button type="button" class="gt-ic" id="giftTopBtn" aria-expanded="false" aria-label="Oferecer uma Leitura">🎁</button>
   <p><a href="marcar-leitura.html?oferta=1">Um presente muito bonito e personalizado</a></p>
-  <button type="button" id="giftTopX" aria-label="Fechar">×</button>
 </div>
 <a class="mapa-fab" href="mapa-astral.html" data-mp-open>✦ Ver o meu mapa</a>
 
@@ -937,7 +940,7 @@
 
   <!-- TEXTO SOBRE A FOTO DE FUNDO -->
   <div class="texto-fundo reveal" id="comeco">
-    <p class="body-text">Existe em ti uma forma única de te moveres pela vida.</p>
+    <p class="body-text"><strong>Existe em ti uma forma única de te moveres pela vida.</strong></p>
     <p class="body-text">Essa forma não se revela apenas no teu ritmo ou na tua energia. Revela-se nos padrões que repetes, nas escolhas que fazes, nos desafios que encontras e na forma como respondes a eles.</p>
     <p class="body-text">Revela-se nas histórias que se repetem ao longo da tua vida, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
     <p class="body-text">Talvez também a reconheças de uma forma menos fácil de explicar: num sonho que fica contigo, numa sincronicidade que te tocou ou numa sensação que ainda não consegues colocar em palavras.</p>
@@ -994,7 +997,7 @@
       <p class="swipe-hint">Desliza para o lado →</p>
     </div>
     <div class="aside">
-      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, pela lente da Astrologia, da Alquimia e dos Arquétipos, o que acrescenta novas camadas de compreensão e abre a porta a reflexões e aprofundamento que podes fazer a partir dela.</p>
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, <strong>pela lente da Astrologia e/ou do Human Design e de uma abordagem arquetípica, o que acrescenta novas camadas de compreensão e abre a porta a reflexões e aprofundamento que podes fazer a partir dela.</strong></p>
     </div>
   </section>
 
@@ -1006,6 +1009,7 @@
     <h2>A minha visão da Leitura de mapas</h2>
     <p class="body-text">Nem tudo o que nos é familiar continua a fazer sentido para nós. Por vezes, a forma como trabalhamos, nos relacionamos, cuidamos dos outros ou usamos o nosso tempo responde mais ao que aprendemos a fazer para sermos aceites e nos sentirmos seguras do que àquilo que hoje desejamos.</p>
     <p class="body-text">Vejo a Leitura como uma oportunidade de olhar para essas diferenças com curiosidade e carinho, não porque o mapa saiba a verdade sobre ti, mas porque a sua linguagem simbólica pode trazer imagens e perguntas que te ajudam a reconhecer como estás a viver.</p>
+    <p class="body-text">É aqui que os arquétipos encontram lugar: dão forma a temas profundamente humanos, como o desejo de pertencer, a necessidade de segurança, a liberdade ou a transformação. São imagens que atravessam épocas e culturas, mas ganham uma expressão singular na história de cada pessoa. Na Leitura, ajudam a aproximar os símbolos do mapa da tua experiência e a dar linguagem ao que talvez ainda seja difícil nomear.</p>
     <p class="body-text vis-q">Estou a escolher isto porque o desejo ou porque receio desiludir alguém? Este caminho faz sentido para mim ou tornou-se apenas o mais conhecido? O que procuro proteger quando me calo, me esforço demasiado ou adio aquilo que quero? Do que tenho medo se me expressar com vulnerabilidade?</p>
     <p class="body-text">O mapa, por si só, não permite distinguir o que nasce de um desejo, de um medo ou de uma experiência dolorosa. É no encontro entre a interpretação e a tua história que podemos explorar o que faz sentido e deixar de lado o que não faz.</p>
     <p class="body-text">Também não procuro tratar as tuas formas de proteção como falhas: algumas foram importantes para atravessares o que viveste. A pergunta é se hoje continuam a cuidar de ti.</p>
@@ -1077,7 +1081,7 @@
   <!-- HUMAN DESIGN -->
   <section class="reveal" id="human-design">
     <h2>Astrologia e aprofundamento com o Human Design</h2>
-    <p class="body-text">A astrologia que uso tem uma Leitura alquímica. O mapa natal é o céu no momento da tua primeira respiração, «o céu na terra»: os doze signos são doze estados do ser, cada um com o seu arquétipo; os planetas dão corpo a esses arquétipos e levam até ti a energia dos signos; e as doze casas, fixas, correspondem a doze áreas da vida. Como diz a máxima atribuída a Hermes Trismegisto, «o que está em baixo é como o que está em cima».</p>
+    <p class="body-text">A astrologia que uso tem uma Leitura alquímica. Os doze signos são doze estados do ser, cada um com o seu arquétipo; os planetas dão corpo a esses arquétipos e levam até ti a energia dos signos; e as doze casas, fixas, correspondem a doze áreas da vida. Como diz a máxima atribuída a Hermes Trismegisto, «o que está em baixo é como o que está em cima».</p>
     <p class="body-text">O mapa astral mostra o céu do momento em que nasceste e é a base da tua Leitura. O Human Design parte desse mesmo céu e junta-lhe o I Ching, a Cabala, o sistema dos chakras e a física quântica num mapa do teu corpo energético. Mostra como a tua energia funciona, como tomas as melhores decisões e onde te deixas condicionar pelos outros.</p>
     <p class="body-text">O Human Design traz um outro nível de profundidade ao mapa astral. As mesmas posições dos planetas ganham portas, linhas e canais que mostram como essa energia funciona no teu corpo, nas tuas decisões e nas tuas relações.</p>
     <p class="body-text">Podes receber alguns destes insights relevantes para o teu tema, juntando à tua Leitura o complemento do Human Design. Recebes o teu tipo, a tua estratégia, a tua autoridade, o teu perfil e os pontos estratégicos do teu mapa ligados ao tema que trazes, com formas práticas de os viveres no teu dia-a-dia.</p>
@@ -1129,9 +1133,9 @@
     <h2>O que recebes</h2>
     <ul class="clean stagger">
       <li>Uma Leitura personalizada do teu mapa, centrada no teu tema e no momento que estás a viver.</li>
-      <li>Uma história simbólica criada para ti, que dá forma aos desejos, tensões e possibilidades explorados na Leitura.</li>
+      <li>Uma história simbólica, que dá forma aos desejos, tensões e possibilidades explorados na Leitura.</li>
       <li>Um olhar sobre padrões e crenças que podes reconhecer, com perguntas para os relacionares com situações concretas e abrires outras perspetivas.</li>
-      <li>Orientações e pequenas experiências práticas, para levares a reflexão às tuas relações, escolhas e quotidiano.</li>
+      <li>Orientações e experiências práticas, para levares a reflexão às tuas relações, escolhas e quotidiano.</li>
       <li>A Leitura por escrito, para releres ao teu ritmo e regressares ao que fizer sentido para ti.</li>
     </ul>
   </section>
@@ -1712,8 +1716,8 @@ Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), funct
   function set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
   var box = document.getElementById('giftTop'); if (!box) return;
   function openGift(){ var d = document.getElementById('oferecer'); if (d) d.open = true; }
-  function close(){ box.classList.remove('open'); setTimeout(function(){ box.hidden = true; }, 500); }
-  document.getElementById('giftTopX').addEventListener('click', close);
+  var gb = document.getElementById('giftTopBtn');
+  gb.addEventListener('click', function(){ var o = box.classList.toggle('txt'); gb.setAttribute('aria-expanded', o ? 'true' : 'false'); });
   document.querySelectorAll('a[href="#oferecer"]').forEach(function(a){ a.addEventListener('click', openGift); });
   if (location.hash === '#oferecer') openGift();
   setTimeout(function tryShow(){
