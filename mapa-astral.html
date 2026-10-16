@@ -1083,8 +1083,9 @@ $('gate').addEventListener('submit', function(e){
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
     try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'mapa'); } catch (x) {}
-    pendente($('gate'));
-    showOk(nome.split(' ')[0].replace(/[<>&]/g, ''), '.pillars');
+    var again = false; try { again = localStorage.getItem('fo_pend') === '1'; localStorage.setItem('fo_pend', '1'); } catch (x) {}
+    pendente($('gate'), again);
+    if (!again) showOk(nome.split(' ')[0].replace(/[<>&]/g, ''), '.pillars');
   }
   fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(done, function(){
     btn.disabled = false; btn.textContent = '✦ Ver alguns insights do meu mapa';
@@ -1092,8 +1093,11 @@ $('gate').addEventListener('submit', function(e){
   });
 });
 
-function pendente(g){
-  g.innerHTML = '<h3>Quase lá ✦</h3><p style="font-family:var(--sans);font-size:14.5px;color:var(--muted);line-height:1.6;margin:8px 0 0">Enviei-te um e-mail. Clica no link de confirmação e esta página abre-se completa, já desbloqueada (confere no spam).</p>';
+function pendente(g, again){
+  g.innerHTML = '<h3>Quase lá ✦</h3><p style="font-family:var(--sans);font-size:14.5px;color:var(--muted);line-height:1.6;margin:8px 0 0">' + (again
+    ? 'Se já tinhas confirmado a subscrição, não vais receber outro e-mail de confirmação.'
+    : 'Enviei-te um e-mail. Clica no link de confirmação e esta página abre-se completa, já desbloqueada (confere no spam).') + '</p>' +
+    (again ? '<p style="margin:16px 0 0"><a class="btn" href="mapa-astral.html?confirmado=1" style="text-decoration:none">Já confirmei, ver o meu mapa completo</a></p>' : '');
 }
 function showOk(first, target){
   var pop = $('okPop'); var ot = $('okTitle'); ot.textContent = ''; ot.appendChild(document.createTextNode('Obrigada, ' + first + '! Enviei-te um e-mail')); ot.appendChild(document.createElement('br')); ot.appendChild(document.createTextNode('para confirmares a subscrição.'));
