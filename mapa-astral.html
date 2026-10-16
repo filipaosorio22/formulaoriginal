@@ -275,6 +275,13 @@ h1 em{font-style:normal;color:var(--wine)}
 .pos[open] summary{margin-bottom:10px}
 .pos .planets{text-align:left}
 .gout{margin-top:6px}#gOutroWrap{margin-top:8px}#gOutroWrap input{width:100%;box-sizing:border-box}
+.mailwall{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;background:rgba(26,20,16,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:16px}
+.mwbox{background:var(--bg);border:1px solid var(--line);border-radius:16px;max-width:420px;width:100%;padding:24px;text-align:left;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)}
+.mwbox h3{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--wine);margin:0 0 8px}.mwbox p{font-size:14.5px;line-height:1.6;color:var(--muted);margin:0 0 12px}
+.mwbox input[type=text],.mwbox input[type=email]{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.mwbox .chk{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;margin:6px 0}.mwbox .btn{width:100%;margin-top:8px}
+.gen{display:flex;gap:16px;align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;margin:10px 0 0;flex-wrap:wrap}.gen .lbl{margin:0}.gen label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.genrow{font-family:var(--sans);font-size:13px;color:var(--muted);margin:6px 0 0;text-align:center}.genrow .linkbtn{font-size:13px}
 </style>
 <script>
 /* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
@@ -335,6 +342,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
         </div>
       </div>
     </div>
+    <div class="gen"><span class="lbl">Linguagem do texto</span><label><input type="radio" name="gen" value="f"> feminino</label><label><input type="radio" name="gen" value="m"> masculino</label></div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
     <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.<br>O primeiro mapa e/ou desenho que geras deve ser o teu, logo a seguir podes gerar os de outras pessoas, se quiseres.</p>
@@ -344,6 +352,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
     <div class="res-head">
       <h2 id="resTitle">O teu céu</h2>
       <p id="resMeta"></p>
+      <p class="genrow">Texto em: <button type="button" class="linkbtn" data-g="f">feminino</button> · <button type="button" class="linkbtn" data-g="m">masculino</button></p>
       <p class="cross" id="crossNote" hidden><span class="c1">Queres ver também o teu Human Design? </span><a id="crossLink" href="human-design.html">✦ Ver o meu Human Design</a></p>
       <p class="note" id="resNote" hidden></p>
     </div>
@@ -632,7 +641,7 @@ function fold(s){ return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(
 CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
 
 // ---------- texts ----------
-var TXT = {
+var TXT_F = {
   // Textos baseados nas notas de estudo da Filipa (Astrologia Alquímica da Alma)
   sol: [
     'O Sol está exaltado em Carneiro: a tua essência é a da guerreira que veio aprender a coragem de começar e de abrir caminho.',
@@ -692,6 +701,10 @@ var TXT = {
     ['O grande mar', 'O inconsciente, as memórias, a intuição e a forma como vives a espiritualidade.']
   ]
 };
+var MASC = [['a da guerreira que','a do guerreiro que'],['a da construtora:','a do construtor:']];
+function genPick(){ var g = 'f'; try { g = localStorage.getItem('fo_gen') === 'm' ? 'm' : 'f'; } catch (x) {} return g; }
+function buildTXT(g){ if (g !== 'm') return TXT_F; var t = JSON.stringify(TXT_F); MASC.forEach(function(p){ t = t.split(p[0]).join(p[1]); }); return JSON.parse(t); }
+var TXT = buildTXT(genPick());
 // regente de cada signo, segundo a lista de regências das aulas (Carneiro → Peixes)
 var RULER = ['Mars','Venus','Mercury','Moon','Sun','Mercury','Venus','Pluto','Jupiter','Saturn','Saturn','Jupiter'];
 var RULER_ART = { Sun:'o Sol', Moon:'a Lua' };
@@ -1057,6 +1070,11 @@ function pillar(kind, icon, title, zg, text, n){
   return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true"' + icStyle + '>' + icon + (icon === 'AC' ? '' : VS) + '</div><div><p class="k">' + kind + '</p><h4>' + title + (zg ? '<span class="zs" aria-hidden="true">' + zg + VS + '</span>' : '') + '</h4><p>' + text + '</p></div></div>';
 }
 // gate: MailerLite (grupo do mapa astral)
+(function(){
+  var g = genPick();
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="gen"]'), function(r){ r.checked = r.value === g; r.addEventListener('change', function(){ if (r.checked){ try { localStorage.setItem('fo_gen', r.value); } catch (x) {} } }); });
+  Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), function(b){ b.style.fontWeight = b.getAttribute('data-g') === g ? '700' : '400'; b.addEventListener('click', function(){ try { localStorage.setItem('fo_gen', b.getAttribute('data-g')); } catch (x) {} location.reload(); }); });
+})();
 var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201213025790723620/subscribe'; window.FO_ML = ML_URL;
 var lastInfo = null, lastSum = null;
 function unlocked(){ try { return localStorage.getItem('mapaDesbloqueado') === '1'; } catch (e) { return false; } }
@@ -1077,6 +1095,27 @@ function setLocked(on){
   c.addEventListener('change', upd);
   window.foGateOther = function(other, name){ curName = name || ''; $('gOutro').value = other ? curName : ''; c.checked = !!other; upd(); };
 })();
+// mapas de outras pessoas: só se vêem depois de a pessoa deixar o seu próprio e-mail (fica associado na ficha do MailerLite)
+window.foNeedMail = function(){
+  var old = document.getElementById('mailWall'); if (old) return;
+  var w = document.createElement('div'); w.id = 'mailWall'; w.className = 'mailwall'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true');
+  w.innerHTML = '<div class="mwbox"><h3>Deixa o teu e-mail para veres este mapa</h3><p>Para veres o mapa de outra pessoa, preciso do teu e-mail. Assim ficam guardados na tua ficha os mapas que geras.</p>' +
+    '<input id="wNome" type="text" maxlength="60" placeholder="O teu nome" autocomplete="given-name"><input id="wEmail" type="email" maxlength="120" placeholder="O teu e-mail" autocomplete="email" inputmode="email">' +
+    '<label class="chk"><input type="checkbox" id="wOk"><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser.</span></label>' +
+    '<p class="err" id="wErr" role="alert"></p><button class="btn" type="button" id="wBtn">Ver o mapa</button></div>';
+  document.body.appendChild(w);
+  var gn = $('gNome').value; if (gn) $('wNome').value = gn;
+  $('wBtn').addEventListener('click', function(){
+    var n = $('wNome').value.trim(), em = $('wEmail').value.trim(), e = $('wErr');
+    if (!n){ e.textContent = 'Escreve o teu nome.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ e.textContent = 'Confirma o teu e-mail.'; return; }
+    if (!$('wOk').checked){ e.textContent = 'Marca a caixa para aceitares receber os meus e-mails.'; return; }
+    e.textContent = ''; $('gNome').value = n; $('gEmail').value = em; $('gOk').checked = true;
+    $('gate').dispatchEvent(new Event('submit', { cancelable: true }));
+    setTimeout(function(){ if ($('mailWall')) e.textContent = $('gErr').textContent; }, 900);
+  });
+  document.addEventListener('fo-mail', function(){ var m = document.getElementById('mailWall'); if (m) m.remove(); });
+};
 $('gate').addEventListener('submit', function(e){
   e.preventDefault();
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
@@ -1102,6 +1141,7 @@ $('gate').addEventListener('submit', function(e){
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
     try { localStorage.setItem('fo_email', email); } catch (x) {}
+    document.dispatchEvent(new Event('fo-mail'));
     try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'mapa'); } catch (x) {}
     var again = false; try { again = localStorage.getItem('fo_pend') === '1'; localStorage.setItem('fo_pend', '1'); } catch (x) {}
     pendente($('gate'), again);
@@ -1199,6 +1239,7 @@ function describe(ch, info){
       var other = false; try { other = localStorage.getItem('fo_own') !== q.toString() || /[?&]outra=1/.test(location.search); } catch (x) {}
       try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
       if (window.foGateOther) window.foGateOther(other, info.name || '');
+      try { if (other && !/embed=1/.test(location.search) && !localStorage.getItem('fo_email') && window.foNeedMail) window.foNeedMail(); } catch (x) {}
       try { var em = localStorage.getItem('fo_email'), un = localStorage.getItem('hdDesbloqueado') === '1' || localStorage.getItem('mapaDesbloqueado') === '1';
         if (em && un && window.FO_ML){ var Ls = JSON.parse(localStorage.getItem('fo_hist') || '[]'), bb = new URLSearchParams(); bb.append('fields[email]', em); bb.append('fields[historico_mapas]', Ls.slice(-6).join(' | ').slice(-250)); bb.append('ml-submit', '1'); bb.append('anticsrf', 'true'); fetch(window.FO_ML, { method: 'POST', mode: 'no-cors', body: bb }); } } catch (x) {}
       if (both){

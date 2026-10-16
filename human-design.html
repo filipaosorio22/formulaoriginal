@@ -282,6 +282,13 @@ html.embed body{background:transparent}
 .acol li .n{flex:1;color:var(--muted)}
 .acol h4{text-align:left;letter-spacing:.12em}
 .hdclose{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.6;color:var(--wine);text-align:center;margin:18px 0 0}
+.gen{display:flex;gap:16px;align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;margin:10px 0 0;flex-wrap:wrap}.gen .lbl{margin:0}.gen label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.genrow{font-family:var(--sans);font-size:13px;color:var(--muted);margin:6px 0 0;text-align:center}.genrow .linkbtn{font-size:13px}
+.mailwall{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;background:rgba(26,20,16,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:16px}
+.mwbox{background:var(--bg);border:1px solid var(--line);border-radius:16px;max-width:420px;width:100%;padding:24px;text-align:left;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)}
+.mwbox h3{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--wine);margin:0 0 8px}.mwbox p{font-size:14.5px;line-height:1.6;color:var(--muted);margin:0 0 12px}
+.mwbox input[type=text],.mwbox input[type=email]{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.mwbox .chk{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;margin:6px 0}.mwbox .btn{width:100%;margin-top:8px}
 </style>
 <script>
 /* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
@@ -332,6 +339,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
         </div>
       </div>
     </div>
+    <div class="gen"><span class="lbl">Linguagem do texto</span><label><input type="radio" name="gen" value="f"> feminino</label><label><input type="radio" name="gen" value="m"> masculino</label></div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu Human Design</button></div>
     <p class="privacy"><b>✦</b> O desenho é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.<br>O primeiro mapa e/ou desenho que geras deve ser o teu, logo a seguir podes gerar os de outras pessoas, se quiseres.</p>
@@ -346,6 +354,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
     <div class="res-head">
       <h2 id="resTitle">O teu desenho</h2>
       <p id="resMeta"></p>
+      <p class="genrow">Texto em: <button type="button" class="linkbtn" data-g="f">feminino</button> · <button type="button" class="linkbtn" data-g="m">masculino</button></p>
       <p class="cross" id="crossNote" hidden><span class="c1">Queres ver também o teu mapa astral? </span><a id="crossLink" href="mapa-astral.html">✦ Ver o meu mapa astral</a></p>
       <p class="note" id="resNote" hidden></p>
     </div>
@@ -387,7 +396,8 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
       <p class="big" id="ctaText"></p>
       <a class="btn" href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
-      <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a>
+      <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a><br>
+      <a class="soft" href="marcar-leitura.html?op=hdsolo">Só a Leitura de Human Design · 147€</a>
     </div>
     <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
   </section>
@@ -630,22 +640,22 @@ function fold(s){ return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(
 CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
 
 // ---------- texts (from Filipa's Notion notes; see hd-textos.md) ----------
-var TXT = {
-  intro: 'O Human Design (ou Desenho Humano) junta a Astrologia, a Cabala, o sistema de chakras, o I Ching e a física quântica numa linguagem nova. A partir dos teus dados de nascimento, desenha o teu corpo gráfico e é um mapa que promete revelar como a energia flui em ti e como funcionas, decides e te relacionas com o mundo. Não é uma fórmula mágica: é um caminho de regresso a quem já és, por baixo dos condicionamentos.',
+var TXT_F = {
+  intro: 'O Human Design (ou Desenho Humano) junta a Astrologia, a Cabala, o sistema de chakras, o I Ching e a física quântica numa linguagem nova. A partir dos teus dados de nascimento, desenha o teu corpo gráfico e é um mapa que promete revelar como a energia flui em ti e de como foste feita para funcionar, decidir e relacionar-te com o mundo. Não é uma fórmula mágica: é um caminho de regresso a quem já és, por baixo dos condicionamentos.',
   types: {
-    mg: { name: 'Gerador/a Manifestante', nick: 'multipotencial', strategy: 'Responder e informar', signature: 'Satisfação e paz',
-      text: ['Tens a força constante do Sacral e uma garganta ligada a um motor: tens rapidez, muitas paixões e não vieste para fazer sempre a mesma coisa. Vieste abrir caminhos e criar o novo, e não precisas de fazer sentido para ninguém.',
+    mg: { name: 'Geradora Manifestante', nick: 'a multipotencial', strategy: 'Responder e informar', signature: 'Satisfação e paz',
+      text: ['Tens a força constante do Sacral e uma garganta ligada a um motor: és rápida, tens muitas paixões e não vieste para fazer sempre a mesma coisa. Vieste abrir caminhos e criar o novo, e não precisas de fazer sentido para ninguém.',
              'A tua estratégia é esperar que a vida te traga algo a que responder, sentir o «sim» do corpo, provar e informar quem vai ser tocado pela tua decisão. Quando vives assim, a assinatura é satisfação e paz.'] },
-    generator: { name: 'Gerador/a', nick: 'força criadora', strategy: 'Responder à vida', signature: 'Satisfação',
+    generator: { name: 'Geradora', nick: 'a criadora', strategy: 'Responder à vida', signature: 'Satisfação',
       text: ['Tens acesso constante à força vital do Sacral: uma energia que te deixa continuar quando outros já pararam. O teu desafio não é a capacidade, é o discernimento: saber onde a pões.',
              'A tua estratégia é responder ao que a vida te traz, em vez de forçar. Quando fazes o que te entusiasma, a assinatura é satisfação.'] },
-    manifestor: { name: 'Manifestador/a', nick: 'quem inicia', strategy: 'Seguir as urgências e informar', signature: 'Paz',
+    manifestor: { name: 'Manifestadora', nick: 'a iniciadora', strategy: 'Seguir as urgências e informar', signature: 'Paz',
       text: ['Vieste iniciar e pôr as coisas em movimento sem depender de ninguém. A tua energia chega em ondas: age na onda, descansa depois.',
              'A tua estratégia é seguir as tuas urgências e informar antes de agir. Informar não é pedir licença: é abrir caminho. Quando vives assim, a assinatura é paz.'] },
-    projector: { name: 'Projetor/a', nick: 'quem guia', strategy: 'Aguardar o reconhecimento', signature: 'Sucesso',
-      text: ['Vês o que os outros ainda não viram e sabes guiar a energia de quem está à tua volta. Estás aqui para que o teu olhar seja reconhecido, mais do que o teu fazer.',
+    projector: { name: 'Projetora', nick: 'a guia', strategy: 'Aguardar o reconhecimento', signature: 'Sucesso',
+      text: ['Vês o que os outros ainda não viram e sabes guiar a energia de quem está à tua volta. Estás aqui para ser valorizada pelo que vês, não pelo que fazes.',
              'A tua estratégia é aguardar o convite e o reconhecimento nas grandes decisões, e cuidar do teu descanso enquanto isso. Quando vives assim, a assinatura é sucesso.'] },
-    reflector: { name: 'Refletor/a', nick: 'espelho lunar', strategy: 'Aguardar um ciclo lunar', signature: 'Encantamento',
+    reflector: { name: 'Refletora', nick: 'a mística', strategy: 'Aguardar um ciclo lunar', signature: 'Encantamento',
       text: ['Todos os teus centros são indefinidos: és espelho do ambiente e das pessoas com quem estás, e sentes como ninguém o movimento da Lua.',
              'A tua estratégia é dar tempo às grandes decisões, um ciclo lunar inteiro, e escolher bem onde e com quem vives. Quando vives assim, a assinatura é encantamento.'] }
   },
@@ -659,18 +669,18 @@ var TXT = {
     lunar:     { name: 'Lunar', line: 'Dá às grandes decisões um ciclo lunar inteiro, 28 dias, e repara no que se mantém verdadeiro.' }
   },
   profiles: {
-    '1/3': ['Verdade e conhecimento', 'Investigas a fundo e aprendes na pele: precisas de bases sólidas para te lançares à experiência.'],
-    '1/4': ['Saber que se partilha', 'Aprofundas o que te fascina e partilhas o que descobres com as tuas pessoas.'],
-    '2/4': ['Talento tranquilo', 'Talentos naturais que pedem recolhimento e que chegam ao mundo através das tuas ligações.'],
-    '2/5': ['Heroísmo relutante', 'Entre a paz da tua caverna e as pessoas que te procuram para soluções práticas.'],
-    '3/5': ['A vida como experiência', 'Aprendes a fazer: na tua vida não há erros, só aprendizagens que se tornam soluções para os outros.'],
+    '1/3': ['A instauradora da verdade e do conhecimento', 'Investigas a fundo e aprendes na pele: precisas de bases sólidas para te lançares à experiência.'],
+    '1/4': ['A professora omnisciente', 'Aprofundas o que te fascina e partilhas o que descobres com as tuas pessoas.'],
+    '2/4': ['A génia tranquila', 'Talentos naturais que pedem recolhimento e que chegam ao mundo através das tuas ligações.'],
+    '2/5': ['A heroína relutante', 'Entre a paz da tua caverna e as pessoas que te procuram para soluções práticas.'],
+    '3/5': ['A grande experimentadora da vida', 'Aprendes a fazer: na tua vida não há erros, só aprendizagens que se tornam soluções para os outros.'],
     '3/6': ['O contraste vivo', 'Vives com intensidade, e cada experiência transforma-se em sabedoria para partilhar.'],
-    '4/6': ['Autoridade com coração', 'Coração do teu grupo: a tua sabedoria chega aos outros através das tuas relações.'],
+    '4/6': ['A figura real de autoridade', 'Coração do teu grupo: a tua sabedoria chega aos outros através das tuas relações.'],
     '4/1': ['Vida «bónus»', 'Segues o teu caminho, fiel ao coração, e partilhas o que descobres com quem te é próximo.'],
-    '5/1': ['Soluções para os desafios', 'As pessoas veem em ti soluções; a tua base de conhecimento torna-as práticas.'],
-    '5/2': ['Heroísmo automotivado', 'Um talento raro que só sai da caverna quando tu o reconheces.'],
-    '6/2': ['Exemplo vivo', 'Uma alma antiga que mostra, pelo exemplo, que há poder em ser quem és.'],
-    '6/3': ['Aventura responsável', 'Sabedoria e leveza: és um farol para um mundo onde a singularidade de cada pessoa é honrada.']
+    '5/1': ['A solucionadora de desafios', 'As pessoas veem em ti soluções; a tua base de conhecimento torna-as práticas.'],
+    '5/2': ['A heroína automotivada', 'Um talento raro que só sai da caverna quando tu própria o reconheces.'],
+    '6/2': ['O humano exemplar', 'Uma alma antiga que mostra, pelo exemplo, que há poder em ser quem és.'],
+    '6/3': ['A aventureira responsável', 'Sábia e divertida: és um farol para um mundo onde a singularidade de cada pessoa é honrada.']
   },
   centres: {
     defined: 'Os centros a dourado são definidos: energia constante, aquilo com que podes contar em ti e que transmites sempre.',
@@ -678,6 +688,14 @@ var TXT = {
   },
   cta: 'O desenho é só o mapa. <em>A Leitura Intuitiva</em> pode incluir insights do teu Human Design, por mais 100€: para o sentires no corpo e o viveres, não apenas para o conheceres como mais informação.'
 };
+var MASC = [['Geradora Manifestante', 'Gerador Manifestante'], ['"name":"Geradora"', '"name":"Gerador"'], ['Manifestadora', 'Manifestador'], ['Projetora', 'Projetor'], ['Refletora', 'Refletor'], ['"a multipotencial"', '"o multipotencial"'], ['"a criadora"', '"o criador"'], ['"a iniciadora"', '"o iniciador"'], ['"a guia"', '"o guia"'], ['"a mística"', '"o místico"'], ['és rápida', 'és rápido'], ['ser valorizada', 'ser valorizado'], ['foste feita', 'foste feito'], ['A instauradora da verdade', 'O instaurador da verdade'], ['A professora omnisciente', 'O professor omnisciente'], ['A génia tranquila', 'O génio tranquilo'], ['A heroína relutante', 'O herói relutante'], ['A grande experimentadora', 'O grande experimentador'], ['A solucionadora de desafios', 'O solucionador de desafios'], ['A heroína automotivada', 'O herói automotivado'], ['tu própria', 'tu próprio'], ['A aventureira responsável', 'O aventureiro responsável'], ['Sábia e divertida', 'Sábio e divertido']];
+
+function genPick(){ var g = 'f'; try { g = localStorage.getItem('fo_gen') === 'm' ? 'm' : 'f'; } catch (x) {} return g; }
+function buildTXT(g){
+  if (g !== 'm') return TXT_F;
+  var t = JSON.stringify(TXT_F); MASC.forEach(function(p){ t = t.split(p[0]).join(p[1]); }); return JSON.parse(t);
+}
+var TXT = buildTXT(genPick());
 var CENTRE_NAMES = { head: 'Cabeça', ajna: 'Ajna', throat: 'Garganta', g: 'G', heart: 'Coração', spleen: 'Esplénico', sp: 'Plexo Solar', sacral: 'Sacral', root: 'Raiz' };
 var CENTRE_ORDER = ['head','ajna','throat','g','heart','spleen','sp','sacral','root'];
 var DEF_NAMES = ['Sem definição', 'Singular', 'Bipartida', 'Tripartida', 'Quadripartida'];
@@ -939,7 +957,7 @@ function pillar(kind, icon, title, sub, body, n, extra){
   return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true">' + icon + '</div><div><p class="k">' + kind + '</p><h4>' + title + (sub ? ' <small>' + sub + '</small>' : '') + '</h4>' +
     body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + (extra || '') + '</div></div>';
 }
-function render(hd, info){
+function render(hd, info, keep){
   renderBody(hd, info);
   var T = TXT.types[hd.type], Au = TXT.auth[hd.authority], P = TXT.profiles[hd.profile] || ['', ''];
   // header
@@ -990,7 +1008,7 @@ function render(hd, info){
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
   setLocked(!unlocked());
   var res = $('result'); res.hidden = false;
-  requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
+  if (!keep) requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
 }
 // ---------- variáveis (cor e tom das ativações de Design) ----------
 var NOTSELF = { mg: 'Frustração e raiva', generator: 'Frustração', manifestor: 'Raiva', projector: 'Amargura', reflector: 'Desilusão' };
@@ -1014,6 +1032,17 @@ function variables(hd){
 // ---------- gate: MailerLite (grupo Human Design) ----------
 var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201215536048113230/subscribe'; window.FO_ML = ML_URL;
 var lastHD = null, lastInfo = null;
+function setGender(g, silent){
+  try { localStorage.setItem('fo_gen', g); } catch (x) {}
+  TXT = buildTXT(g);
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="gen"]'), function(r){ r.checked = r.value === g; });
+  Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), function(b){ b.style.fontWeight = b.getAttribute('data-g') === g ? '700' : '400'; });
+  $('introText').textContent = TXT.intro; $('ctaText').innerHTML = TXT.cta;
+  if (lastHD && lastInfo) render(lastHD, lastInfo, true);
+}
+Array.prototype.forEach.call(document.querySelectorAll('input[name="gen"]'), function(r){ r.addEventListener('change', function(){ if (r.checked) setGender(r.value); }); });
+Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), function(b){ b.addEventListener('click', function(){ setGender(b.getAttribute('data-g')); }); });
+setGender(genPick(), true);
 function unlocked(){ try { return localStorage.getItem('hdDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
   $('locked').classList.toggle('on', on);
@@ -1031,6 +1060,27 @@ function setLocked(on){
   c.addEventListener('change', upd);
   window.foGateOther = function(other, name){ curName = name || ''; $('gOutro').value = other ? curName : ''; c.checked = !!other; upd(); };
 })();
+// mapas de outras pessoas: só se vêem depois de a pessoa deixar o seu próprio e-mail (fica associado na ficha do MailerLite)
+window.foNeedMail = function(){
+  var old = document.getElementById('mailWall'); if (old) return;
+  var w = document.createElement('div'); w.id = 'mailWall'; w.className = 'mailwall'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true');
+  w.innerHTML = '<div class="mwbox"><h3>Deixa o teu e-mail para veres este mapa</h3><p>Para veres o mapa de outra pessoa, preciso do teu e-mail. Assim ficam guardados na tua ficha os mapas que geras.</p>' +
+    '<input id="wNome" type="text" maxlength="60" placeholder="O teu nome" autocomplete="given-name"><input id="wEmail" type="email" maxlength="120" placeholder="O teu e-mail" autocomplete="email" inputmode="email">' +
+    '<label class="chk"><input type="checkbox" id="wOk"><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser.</span></label>' +
+    '<p class="err" id="wErr" role="alert"></p><button class="btn" type="button" id="wBtn">Ver o mapa</button></div>';
+  document.body.appendChild(w);
+  var gn = $('gNome').value; if (gn) $('wNome').value = gn;
+  $('wBtn').addEventListener('click', function(){
+    var n = $('wNome').value.trim(), em = $('wEmail').value.trim(), e = $('wErr');
+    if (!n){ e.textContent = 'Escreve o teu nome.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ e.textContent = 'Confirma o teu e-mail.'; return; }
+    if (!$('wOk').checked){ e.textContent = 'Marca a caixa para aceitares receber os meus e-mails.'; return; }
+    e.textContent = ''; $('gNome').value = n; $('gEmail').value = em; $('gOk').checked = true;
+    $('gate').dispatchEvent(new Event('submit', { cancelable: true }));
+    setTimeout(function(){ if ($('mailWall')) e.textContent = $('gErr').textContent; }, 900);
+  });
+  document.addEventListener('fo-mail', function(){ var m = document.getElementById('mailWall'); if (m) m.remove(); });
+};
 $('gate').addEventListener('submit', function(e){
   e.preventDefault();
   var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
@@ -1049,13 +1099,14 @@ $('gate').addEventListener('submit', function(e){
     b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
     b.append('fields[local_nascimento]', lastInfo.place.name);
-    try { b.append('fields[hd_tipo]', TXT.types[lastHD.type].name); b.append('fields[hd_autoridade]', TXT.auth[lastHD.authority].name); b.append('fields[hd_perfil]', lastHD.profile); } catch (x) {}
+    try { b.append('fields[hd_tipo]', TXT_F.types[lastHD.type].name); b.append('fields[hd_autoridade]', TXT.auth[lastHD.authority].name); b.append('fields[hd_perfil]', lastHD.profile); } catch (x) {}
   }
   try { var hh = JSON.parse(localStorage.getItem('fo_hist') || '[]'); if (hh.length) b.append('fields[historico_mapas]', hh.slice(-6).join(' | ').slice(-250)); } catch (x) {}
   b.append('ml-submit', '1'); b.append('anticsrf', 'true');
   var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
   function done(){
     try { localStorage.setItem('fo_email', email); } catch (x) {}
+    document.dispatchEvent(new Event('fo-mail'));
     try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'hd'); } catch (x) {}
     var again = false; try { again = localStorage.getItem('fo_pend') === '1'; localStorage.setItem('fo_pend', '1'); } catch (x) {}
     pendente($('gate'), again);
@@ -1131,6 +1182,7 @@ function describe(hd){
       var other = false; try { other = localStorage.getItem('fo_own') !== q.toString() || /[?&]outra=1/.test(location.search); } catch (x) {}
       try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
       if (window.foGateOther) window.foGateOther(other, info.name || '');
+      try { if (other && !/embed=1/.test(location.search) && !localStorage.getItem('fo_email') && window.foNeedMail) window.foNeedMail(); } catch (x) {}
       try { var em = localStorage.getItem('fo_email'), un = localStorage.getItem('hdDesbloqueado') === '1' || localStorage.getItem('mapaDesbloqueado') === '1';
         if (em && un && window.FO_ML){ var Ls = JSON.parse(localStorage.getItem('fo_hist') || '[]'), bb = new URLSearchParams(); bb.append('fields[email]', em); bb.append('fields[historico_mapas]', Ls.slice(-6).join(' | ').slice(-250)); bb.append('ml-submit', '1'); bb.append('anticsrf', 'true'); fetch(window.FO_ML, { method: 'POST', mode: 'no-cors', body: bb }); } } catch (x) {}
       p.hidden = false;

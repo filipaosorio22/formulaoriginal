@@ -878,6 +878,7 @@
   .gift-top a { text-decoration:none; }
   .gift-top p { font-style:normal; }
   @media (max-width:700px){ .mapa-fab { top:68px; padding:7px 12px; font-size:11.5px; } .gift-top { top:108px !important; } }
+  .vis-q { font-family:'Spectral',serif; font-style:italic; color:var(--wine); }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -991,6 +992,21 @@
   <div class="divider"><span></span><span></span></div>
 
   <!-- O QUE É -->
+  <!-- A MINHA VISÃO DA LEITURA DE MAPAS -->
+  <section class="reveal" id="minha-visao">
+    <h2>A minha visão da leitura de mapas</h2>
+    <p class="body-text">Nem tudo o que nos é familiar continua a fazer sentido para nós. Por vezes, a forma como trabalhamos, nos relacionamos, cuidamos dos outros ou usamos o nosso tempo responde mais ao que aprendemos a fazer para sermos aceites e nos sentirmos seguras do que àquilo que hoje desejamos.</p>
+    <p class="body-text">Vejo a leitura como uma oportunidade de olhar para essas diferenças com curiosidade e carinho. Não porque o mapa saiba a verdade sobre ti, mas porque a sua linguagem simbólica pode trazer imagens e perguntas que te ajudam a reconhecer como estás a viver.</p>
+    <p class="body-text vis-q">Estou a escolher isto porque o desejo ou porque receio desiludir alguém? Este caminho faz sentido para mim ou tornou-se apenas o mais conhecido? O que procuro proteger quando me calo, me esforço demasiado ou adio aquilo que quero?</p>
+    <p class="body-text">O mapa, por si só, não permite distinguir o que nasce de um desejo, de um medo ou de uma experiência dolorosa. É no encontro entre a interpretação e a tua história que podemos explorar o que faz sentido — e deixar de lado o que não faz.</p>
+    <p class="body-text">Também não procuro tratar as tuas formas de proteção como falhas. Algumas podem ter sido importantes para atravessares o que viveste. A pergunta é se continuam a cuidar de ti ou se hoje precisas de outras possibilidades.</p>
+    <p class="body-text">Para mim, conheceres-te não é encontrares uma versão definitiva de quem és. É perceberes melhor o que valorizas, o que desejas e onde tens espaço para escolher, sem esquecer que as circunstâncias e as outras pessoas também contam.</p>
+    <p class="body-text">É por isso que a leitura não termina na interpretação. Ganha vida quando a levas para uma conversa, um limite, uma decisão ou um pequeno gesto diferente.</p>
+    <p class="statement gold">Não para o mapa te dizer como viver. Para poderes perguntar, com mais consciência: esta é a forma como quero estar na minha vida?</p>
+  </section>
+
+  <div class="divider"><span></span><span></span></div>
+
   <section class="reveal" id="o-que-e">
     <h2>O que é a Leitura Intuitiva</h2>
     <p class="body-text">É um olhar intuitivo e profundo com base no teu mapa natal (mapa astral e/ou Human Design), orientado pelo tema que trazes e o que desejas para ti. Não te entrego uma lista de signos, planetas e informação solta: exploro as relações entre os símbolos do teu mapa e o que me transmites sobre o teu momento e faço uma leitura intuitiva para abrir perguntas sobre os teus padrões, as tuas crenças e as possibilidades a que desejas dar mais espaço.</p>
@@ -1103,14 +1119,11 @@
   <section class="reveal" id="o-que-recebes">
     <h2>O que recebes</h2>
     <ul class="clean stagger">
-      <li>Uma Leitura personalizada do teu mapa astral, orientada pelo que estás a viver agora</li>
-      <li>Uma história simbólica ligada ao teu momento, criada a partir do teu mapa e do teu tema</li>
-      <li>Relações entre os temas do mapa e o que partilhas como ponto de partida</li>
-      <li>Perguntas para reconheceres como um padrão aparece em situações concretas</li>
-      <li>As crenças que o teu mapa sugere sobre o teu tema, com uma visão nova para experimentares</li>
-      <li>Orientações práticas para o teu dia-a-dia com base nelas</li>
-      <li>Sugestões de formas de levares a consciência do teu mapa para as tuas dinâmicas</li>
-      <li>A Leitura por escrito para leres quantas vezes quiseres</li>
+      <li>Uma leitura personalizada do teu mapa, centrada no teu tema e no momento que estás a viver.</li>
+      <li>Uma história simbólica criada para ti, que dá forma aos desejos, tensões e possibilidades explorados na leitura.</li>
+      <li>Um olhar sobre padrões e crenças que podes reconhecer, com perguntas para os relacionares com situações concretas e abrires outras perspetivas.</li>
+      <li>Orientações e pequenas experiências práticas, para levares a reflexão às tuas relações, escolhas e quotidiano.</li>
+      <li>A leitura por escrito, para releres ao teu ritmo e regressares ao que fizer sentido para ti.</li>
     </ul>
   </section>
 
@@ -1288,6 +1301,7 @@
       <div class="mp-grid">
         <div class="mp-full"><label class="mp-l" for="mpNome" id="mpNomeL">Nome</label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name" required></div>
         <label class="mp-chk mp-full" style="margin:0"><input type="checkbox" id="mpOutra"><span>É o mapa de outra pessoa</span></label>
+        <div class="mp-full mp-gen" style="font-size:12.5px;color:var(--ink-soft)">Linguagem do texto: <label style="margin:0 8px"><input type="radio" name="mpGen" value="f" checked> feminino</label><label><input type="radio" name="mpGen" value="m"> masculino</label></div>
         <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="text" id="mpData" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10"></div>
         <div><label class="mp-l" for="mpHora">Hora de nascimento</label><input type="time" id="mpHora"></div>
         <div class="mp-full mp-combo"><label class="mp-l" for="mpLocal">Local de nascimento</label>
@@ -1644,6 +1658,7 @@ maskD($('mpData'));
     if (!chosen){ err.textContent = 'Escolhe a tua cidade na lista.'; inp.focus(); render(); return; }
     var q = new URLSearchParams({ nome: $('mpNome').value.trim(), data: data, hora: hora, local: chosen.name, pais: chosen.country, lat: chosen.lat, lon: chosen.lon, tz: chosen.tz });
     if ($('mpOutra').checked) q.append('outra', '1');
+    var gsel = pop.querySelector('input[name="mpGen"]:checked'); set('fo_gen', gsel ? gsel.value : 'f');
     set('mpopFechado', String(Date.now()));
     var v = e.submitter ? e.submitter.value : 'mapa', hd = v === 'hd';
     if (v === 'ambos') q.append('tambem', 'hd');

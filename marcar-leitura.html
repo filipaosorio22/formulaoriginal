@@ -98,6 +98,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <div id="ops">
         <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
+        <label class="choice" data-op="hdsolo" hidden><input type="radio" name="op" value="hdsolo" data-p="147"><span><b>Leitura de Human Design</b><br>A leitura do teu Human Design, só por escrito, sem o mapa astral.</span><span class="pr">147€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Juntar a Revolução Solar · +100€</b><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
@@ -174,7 +175,8 @@ window.FO_PAY = {
     'sessao': 'https://buy.stripe.com/14AcN5gnP9ATaKFfTUfw40y',
     'sessao+hd': 'https://buy.stripe.com/fZu6oH6Nf3cv061azAfw40u',
     'sessaosolo': 'https://buy.stripe.com/3cI00j3B3bJ1cSNazAfw40j',
-    'rssolo': 'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'
+    'rssolo': 'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k',
+    'hdsolo': 'https://buy.stripe.com/aFa9ATc7z6oH7yt6jkfw40A'
   }
 };
 </script>
@@ -189,6 +191,7 @@ window.FO_PAY = {
   var q = new URLSearchParams(location.search);
   var gift = q.get('oferta') === '1';
   var op = q.get('op');
+  if (op === 'hdsolo'){ var hs = document.querySelector('[data-op="hdsolo"]'); hs.hidden = false; hs.querySelector('input').checked = true; document.querySelector('[data-op="leitura"]').hidden = true; document.querySelector('[data-op="sessao"]').hidden = true; op = null; }
   if (op) { var r = document.querySelector('input[name=op][value="' + (op === 'sessao' || op === 'rssessao' ? 'sessao' : 'leitura') + '"]'); if (r) r.checked = true; if (op === 'rs' || op === 'rssessao') $('rs').checked = true; }
   if (q.get('hd') === '1') $('hd').checked = true;
 
@@ -223,13 +226,16 @@ window.FO_PAY = {
 
   function base(){ return document.querySelector('input[name=op]:checked'); }
   function sel(){
+    if (base().value === 'hdsolo') return { value: 'hdsolo', getAttribute: function(){ return '147'; } };
     var ses = base().value === 'sessao', rs = $('rs').checked;
     return { value: rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura'), getAttribute: function(){ return String(+base().getAttribute('data-p') + (rs ? 100 : 0)); } };
   }
-  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked ? 100 : 0); }
+  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked && sel().value !== 'hdsolo' ? 100 : 0); }
   function hdOk(){ return true; }
   function updTotal(){
-    var ok = hdOk(), box = $('hd').closest('label');
+    var solo = base().value === 'hdsolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
+    $('rs').closest('label').hidden = solo;
+    var ok = hdOk() && !solo, box = $('hd').closest('label');
     if (!ok) $('hd').checked = false;
     box.hidden = !ok;
     $('tot').textContent = total() + '€';
@@ -251,7 +257,7 @@ window.FO_PAY = {
     if (hasLinks){ $('go').textContent = 'Continuar para o pagamento'; if (hn) hn.innerHTML = 'As tuas respostas chegam-me por e-mail e<br>segues para o pagamento seguro com cartão (Stripe).'; }
     else { $('go').textContent = 'Enviar'; if (hn) hn.textContent = 'As tuas respostas chegam-me por e-mail. Depois envio-te os dados de pagamento.'; }
   })();
-  var NAMES = { rssessao:'Leitura + Revolução Solar + Sessão de Aprofundamento', rssolo:'Só a Revolução Solar', sessaosolo:'Só a sessão de aprofundamento', leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
+  var NAMES = { rssessao:'Leitura + Revolução Solar + Sessão de Aprofundamento', rssolo:'Só a Revolução Solar', hdsolo:'Leitura de Human Design', sessaosolo:'Só a sessão de aprofundamento', leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
   $('data').addEventListener('input', function(){
     var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2);
     if (d.length > 2) o += '/' + d.slice(2, 4);
