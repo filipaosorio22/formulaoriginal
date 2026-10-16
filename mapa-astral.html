@@ -253,6 +253,11 @@ h1 em{font-style:normal;color:var(--wine)}
 .dual .wrap{max-width:1320px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;align-items:start}
 .dual .wrap>*{grid-column:1/-1}
 .dual .wrap>#result,.dual .wrap>#hdCol{grid-column:auto}
+.dual .wrap>.cta{max-width:640px;width:100%;justify-self:center;box-sizing:border-box}
+.dual .wrap>.again,.dual .wrap>.bday{text-align:center}
+#hdCol{position:relative}
+.dual #hdCol::before{content:'';position:absolute;left:-21px;top:20px;bottom:20px;width:1px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
+@media (max-width:1000px){.dual #hdCol::before{display:none}}
 #hdCol iframe{width:100%;border:0;display:block;min-height:900px;background:transparent}
 @media (max-width:1000px){.dual .wrap{display:block;max-width:660px}}
 
@@ -316,7 +321,7 @@ h1 em{font-style:normal;color:var(--wine)}
     </div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
-    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Só guardo os dados se me deres autorização para te enviar mais info.</p>
+    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.</p>
   </form>
 
   <section id="result" hidden aria-live="polite">
@@ -328,7 +333,7 @@ h1 em{font-style:normal;color:var(--wine)}
     </div>
     <svg class="wheel" id="wheel" viewBox="0 0 640 640" role="img" aria-labelledby="wheelDesc"><desc id="wheelDesc">Mapa natal</desc></svg>
     <details class="pos" id="posBox">
-      <summary>Posições dos planetas e pontos principais</summary>
+      <summary>Ver as posições planetárias</summary>
       <ul class="planets" id="planets"></ul>
     </details>
 
@@ -378,7 +383,7 @@ h1 em{font-style:normal;color:var(--wine)}
     <p>Sim. O cálculo do mapa astral é gratuito. Se quiseres ir mais longe, a Leitura Intuitiva junta estes pontos às casas e às ligações do teu mapa, numa leitura escrita sobre o momento que estás a viver.</p>
   </section>
   <footer>✦ ✦ ✦</footer>
-<div class="okpop" id="okPop" role="dialog" aria-modal="true" aria-labelledby="okTitle" hidden><div class="okbox"><button class="okx" type="button" id="okX" aria-label="Fechar">×</button><p class="oktitle" id="okTitle"></p><p>Se não o vires, espreita a pasta de spam e marca-o como «não é spam». Guarda também <b>mail@filipaosorio.com</b> nos teus contactos para receberes tudo na caixa principal.</p><button class="btn" type="button" id="okGo">Continuar</button></div></div>
+<div class="okpop" id="okPop" role="dialog" aria-modal="true" aria-labelledby="okTitle" hidden><div class="okbox"><button class="okx" type="button" id="okX" aria-label="Fechar">×</button><p class="oktitle" id="okTitle"></p><p>Se não o vires, espreita a pasta de lixo eletrónico e marca-o como «não é spam». Guarda também <b>mail@filipaosorio.com</b> nos teus contactos para receberes tudo na caixa principal.</p><button class="btn" type="button" id="okGo">Continuar</button></div></div>
 </div>
 
 <script src="astronomy.browser.min.js"></script>
@@ -936,7 +941,7 @@ function render(ch, info){
   svg.classList.add('anim');
 
   // header
-  var who = info.name ? 'O mapa do teu céu • ' + esc(info.name) : 'O teu céu';
+  var who = info.name ? 'Mapa astral • ' + esc(info.name) : 'Mapa astral';
   $('resTitle').innerHTML = who;
   var ds = pad(info.d) + '/' + pad(info.mo) + '/' + info.y, ts = pad(info.hh) + ':' + pad(info.mi);
   $('resMeta').textContent = 'Nascida/o a ' + ds + ', às ' + ts + ' (hora legal: ' + fmtOff(info.off) + ') · ' + info.place.name;
@@ -959,11 +964,11 @@ function render(ch, info){
 
   // pillars
   var sun = signOf(ch.planets[0].lon), moon = signOf(ch.planets[1].lon);
-  var html = pillar('Sol', '☉', 'Sol em ' + SIGNS[sun], SIGN_GLYPHS[sun], TXT.sol[sun], 0);
+  var html = pillar('Sol', '☉', SIGNS[sun], SIGN_GLYPHS[sun], TXT.sol[sun], 0);
   $('pillars').innerHTML = html;
   var as = signOf(ch.asc);
-  $('pillars2').innerHTML = pillar('Lua', '☽', 'Lua em ' + SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1) +
-    pillar('Ascendente', 'AC', 'Ascendente em ' + SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
+  $('pillars2').innerHTML = pillar('Lua', '☽', SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1) +
+    pillar('Ascendente', 'AC', SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
   lastInfo = info;
   lastSum = { sol: 'Sol em ' + SIGNS[sun] + '. ' + TXT.sol[sun], lua: 'Lua em ' + SIGNS[moon] + '. ' + TXT.lua[moon], asc: 'Ascendente em ' + SIGNS[as] + '. ' + TXT.asc[as] };
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
@@ -981,9 +986,9 @@ function render(ch, info){
     var mcS = signOf(ch.mc), ark = RULER[as], aName = RULER_ART[ark] || ch.planets.filter(function(p){ return p.key === ark; })[0].name;
     var near = ch.planets.slice().sort(function(x, y){ return angDist(x.lon, ch.mc) - angDist(y.lon, ch.mc); })[0];
     var mcTxt = 'O teu Meio do Céu está em ' + SIGNS[mcS] + '. É o ponto mais alto do céu no instante em que nasceste: a montanha que a tua alma veio subir. Não é só a tua profissão, é a presença que vieste acender no mundo, e chega com maturidade. Há muito para reconhecer na forma como o teu Ascendente em ' + SIGNS[as] + ', o planeta mais próximo deste ponto e o resto do teu mapa se ligam a esta montanha, e é esse trabalho profundo de reconhecimento que fazemos juntas na análise da tua Leitura.';
-    lh += '<p class="ask mc"><strong>O teu Meio do Céu</strong><br>' + mcTxt + '</p>';
+    lh += '<p class="ask mc"><strong>O teu Meio do Céu • Profissional e o teu legado</strong><br>' + mcTxt + '</p>';
     lastSum.mc = mcTxt;
-    lh += '<p class="close">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a trabalhar as crenças que reconheces em ti. Nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, fazemos um trabalho do sistema de crenças que te prendem, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
+    lh += '<p class="close">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a transformar as crenças que reconheces em ti. Nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
     lay.innerHTML = lh; lay.hidden = false;
   }
 
@@ -1038,7 +1043,7 @@ var lastInfo = null, lastSum = null;
 function unlocked(){ try { return localStorage.getItem('mapaDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
   $('locked').classList.toggle('on', on);
-  $('posBox').hidden = on; // as posições dos planetas e graus só aparecem depois do e-mail
+  $('posBox').hidden = false;
   $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
   if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
 }
@@ -1075,7 +1080,7 @@ $('gate').addEventListener('submit', function(e){
 });
 
 function showOk(first, target){
-  var pop = $('okPop'); $('okTitle').textContent = 'Obrigada, ' + first + '! Enviei-te um e-mail para confirmares a subscrição.';
+  var pop = $('okPop'); var ot = $('okTitle'); ot.textContent = ''; ot.appendChild(document.createTextNode('Obrigada, ' + first + '! Enviei-te um e-mail')); ot.appendChild(document.createElement('br')); ot.appendChild(document.createTextNode('para confirmares a subscrição.'));
   pop.hidden = false;
   function close(){ pop.hidden = true; var t = document.querySelector(target); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   $('okX').onclick = close; $('okGo').onclick = close;
@@ -1160,6 +1165,7 @@ function describe(ch, info){
           window.addEventListener('message', function(e){ if (e.data && e.data.fo === 'hdh') document.getElementById('hdFrame').style.height = (e.data.h + 8) + 'px'; });
         }
         document.getElementById('hdFrame').src = 'human-design.html?' + q.toString() + '&embed=1';
+        var anc = col; ['.cta', '#bday', '.again'].forEach(function(sel){ var el = document.querySelector(sel); if (el){ anc.parentNode.insertBefore(el, anc.nextSibling); anc = el; } });
         p.hidden = true;
       } else p.hidden = false;
     } catch (e) {}
