@@ -289,11 +289,13 @@ html.embed body{background:transparent}
 .mwbox h3{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--wine);margin:0 0 8px}.mwbox p{font-size:14.5px;line-height:1.6;color:var(--muted);margin:0 0 12px}
 .mwbox input[type=text],.mwbox input[type=email]{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
 .mwbox .chk{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;margin:6px 0}.mwbox .btn{width:100%;margin-top:8px}
+.privacy .firstmap{display:block;margin:10px auto 0;padding:8px 12px;border:1px solid var(--wine);border-radius:10px;background:rgba(122,37,53,.06);color:var(--wine);font-weight:500;font-size:14.5px;line-height:1.5;max-width:460px}
+.crossend{margin:18px auto 0;text-align:center;font-family:var(--sans);font-size:15px;padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,.35)}.crossend a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
 </style>
 <script>
 /* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
 (function(){var u=new URLSearchParams(location.search);if(u.get('confirmado')!=='1')return;
-try{localStorage.setItem('mapaDesbloqueado','1');localStorage.setItem('hdDesbloqueado','1');}catch(e){}
+try{localStorage.setItem('hdDesbloqueado','1');if(localStorage.getItem('fo_both')==='1')localStorage.setItem('mapaDesbloqueado','1');}catch(e){}
 var q='',both='';try{var P=JSON.parse(localStorage.getItem('fo_people')||'[]');if(P.length)q=P[P.length-1].q;both=localStorage.getItem('fo_both')||'';}catch(e){}
 var last='';try{last=localStorage.getItem('fo_last')||'';}catch(e){}
 if(q){location.replace('human-design.html'+'?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
@@ -342,7 +344,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
     <div class="gen"><span class="lbl">Linguagem do texto</span><label><input type="radio" name="gen" value="f"> feminino</label><label><input type="radio" name="gen" value="m"> masculino</label></div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu Human Design</button></div>
-    <p class="privacy"><b>✦</b> O desenho é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.<br>O primeiro mapa e/ou desenho que geras deve ser o teu, logo a seguir podes gerar os de outras pessoas, se quiseres.</p>
+    <p class="privacy"><b>✦</b> O desenho é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.<br><b class="firstmap">O primeiro mapa e/ou desenho que geras deve ser o teu, logo a seguir podes gerar os de outras pessoas, se quiseres.</b></p>
   </form>
 
   <section class="intro" id="intro">
@@ -1006,6 +1008,7 @@ function render(hd, info, keep){
   $('pillars2').innerHTML = html;
   lastHD = hd; lastInfo = info;
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
+  try { var fe = localStorage.getItem('fo_email'); if (fe && !$('gEmail').value) $('gEmail').value = fe; } catch (x) {}
   setLocked(!unlocked());
   var res = $('result'); res.hidden = false;
   if (!keep) requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
@@ -1108,7 +1111,7 @@ $('gate').addEventListener('submit', function(e){
     try { localStorage.setItem('fo_email', email); } catch (x) {}
     document.dispatchEvent(new Event('fo-mail'));
     try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'hd'); } catch (x) {}
-    var again = false; try { again = localStorage.getItem('fo_pend') === '1'; localStorage.setItem('fo_pend', '1'); } catch (x) {}
+    var again = false; try { again = localStorage.getItem('fo_pend_hd') === '1'; localStorage.setItem('fo_pend_hd', '1'); } catch (x) {}
     pendente($('gate'), again);
     if (!again) showOk(nome.split(' ')[0], '.pillars');
   }
@@ -1173,6 +1176,13 @@ function describe(hd){
   var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
   try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_both', both ? '1' : '0'); } catch (x) {}
   if (both) p.classList.add('both');
+  window.foCrossEnd = function(href, p){
+    try {
+      var ce = document.getElementById('crossEnd');
+      if (!ce){ ce = document.createElement('p'); ce.id = 'crossEnd'; ce.className = 'crossend'; var cta = document.querySelector('.cta'); if (cta) cta.parentNode.insertBefore(ce, cta); else return; }
+      ce.innerHTML = p.querySelector('.c1').outerHTML + '<a href="' + href + '">' + p.querySelector('a').textContent + '</a>';
+    } catch (e) {}
+  };
   window.FO_CROSS = function(info){
     try {
       function pad(n){ return (n < 10 ? '0' : '') + n; }
@@ -1186,6 +1196,7 @@ function describe(hd){
       try { var em = localStorage.getItem('fo_email'), un = localStorage.getItem('hdDesbloqueado') === '1' || localStorage.getItem('mapaDesbloqueado') === '1';
         if (em && un && window.FO_ML){ var Ls = JSON.parse(localStorage.getItem('fo_hist') || '[]'), bb = new URLSearchParams(); bb.append('fields[email]', em); bb.append('fields[historico_mapas]', Ls.slice(-6).join(' | ').slice(-250)); bb.append('ml-submit', '1'); bb.append('anticsrf', 'true'); fetch(window.FO_ML, { method: 'POST', mode: 'no-cors', body: bb }); } } catch (x) {}
       p.hidden = false;
+      window.foCrossEnd(a.href, p);
     } catch (e) {}
   };
 })();

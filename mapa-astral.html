@@ -282,11 +282,13 @@ h1 em{font-style:normal;color:var(--wine)}
 .mwbox .chk{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;margin:6px 0}.mwbox .btn{width:100%;margin-top:8px}
 .gen{display:flex;gap:16px;align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;margin:10px 0 0;flex-wrap:wrap}.gen .lbl{margin:0}.gen label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
 .genrow{font-family:var(--sans);font-size:13px;color:var(--muted);margin:6px 0 0;text-align:center}.genrow .linkbtn{font-size:13px}
+.privacy .firstmap{display:block;margin:10px auto 0;padding:8px 12px;border:1px solid var(--wine);border-radius:10px;background:rgba(122,37,53,.06);color:var(--wine);font-weight:500;font-size:14.5px;line-height:1.5;max-width:460px}
+.crossend{margin:18px auto 0;text-align:center;font-family:var(--sans);font-size:15px;padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,.35)}.crossend a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
 </style>
 <script>
 /* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
 (function(){var u=new URLSearchParams(location.search);if(u.get('confirmado')!=='1')return;
-try{localStorage.setItem('mapaDesbloqueado','1');localStorage.setItem('hdDesbloqueado','1');}catch(e){}
+try{localStorage.setItem('mapaDesbloqueado','1');if(localStorage.getItem('fo_both')==='1')localStorage.setItem('hdDesbloqueado','1');}catch(e){}
 var q='',both='';try{var P=JSON.parse(localStorage.getItem('fo_people')||'[]');if(P.length)q=P[P.length-1].q;both=localStorage.getItem('fo_both')||'';}catch(e){}
 var last='';try{last=localStorage.getItem('fo_last')||'';}catch(e){}
 if(q){location.replace('mapa-astral.html'+'?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
@@ -345,7 +347,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
     <div class="gen"><span class="lbl">Linguagem do texto</span><label><input type="radio" name="gen" value="f"> feminino</label><label><input type="radio" name="gen" value="m"> masculino</label></div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
-    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.<br>O primeiro mapa e/ou desenho que geras deve ser o teu, logo a seguir podes gerar os de outras pessoas, se quiseres.</p>
+    <p class="privacy"><b>✦</b> O mapa é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.<br><b class="firstmap">O primeiro mapa e/ou desenho que geras deve ser o teu, logo a seguir podes gerar os de outras pessoas, se quiseres.</b></p>
   </form>
 
   <section id="result" hidden aria-live="polite">
@@ -1004,6 +1006,7 @@ function render(ch, info){
   lastInfo = info;
   lastSum = { sol: 'Sol em ' + SIGNS[sun] + '. ' + TXT.sol[sun], lua: 'Lua em ' + SIGNS[moon] + '. ' + TXT.lua[moon], asc: 'Ascendente em ' + SIGNS[as] + '. ' + TXT.asc[as] };
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
+  try { var fe = localStorage.getItem('fo_email'); if (fe && !$('gEmail').value) $('gEmail').value = fe; } catch (x) {}
   setLocked(!unlocked());
 
   // layers: house of the Sun + ruler of the Sun's sign
@@ -1143,7 +1146,7 @@ $('gate').addEventListener('submit', function(e){
     try { localStorage.setItem('fo_email', email); } catch (x) {}
     document.dispatchEvent(new Event('fo-mail'));
     try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'mapa'); } catch (x) {}
-    var again = false; try { again = localStorage.getItem('fo_pend') === '1'; localStorage.setItem('fo_pend', '1'); } catch (x) {}
+    var again = false; try { again = localStorage.getItem('fo_pend_mapa') === '1'; localStorage.setItem('fo_pend_mapa', '1'); } catch (x) {}
     pendente($('gate'), again);
     if (!again) showOk(nome.split(' ')[0].replace(/[<>&]/g, ''), '.pillars');
   }
@@ -1230,6 +1233,13 @@ function describe(ch, info){
   var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
   try { localStorage.setItem('fo_both', both ? '1' : '0'); } catch (x) {}
   if (both) p.classList.add('both');
+  window.foCrossEnd = function(href, p){
+    try {
+      var ce = document.getElementById('crossEnd');
+      if (!ce){ ce = document.createElement('p'); ce.id = 'crossEnd'; ce.className = 'crossend'; var cta = document.querySelector('.cta'); if (cta) cta.parentNode.insertBefore(ce, cta); else return; }
+      ce.innerHTML = p.querySelector('.c1').outerHTML + '<a href="' + href + '">' + p.querySelector('a').textContent + '</a>';
+    } catch (e) {}
+  };
   window.FO_CROSS = function(info){
     try {
       function pad(n){ return (n < 10 ? '0' : '') + n; }
@@ -1254,7 +1264,7 @@ function describe(ch, info){
         document.getElementById('hdFrame').src = 'human-design.html?' + q.toString() + '&embed=1';
         var anc = col; ['.cta', '#bday', '.again'].forEach(function(sel){ var el = document.querySelector(sel); if (el){ anc.parentNode.insertBefore(el, anc.nextSibling); anc = el; } });
         p.hidden = true;
-      } else p.hidden = false;
+      } else { p.hidden = false; window.foCrossEnd(a.href, p); }
     } catch (e) {}
   };
 })();
