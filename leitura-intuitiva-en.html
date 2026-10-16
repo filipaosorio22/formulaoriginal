@@ -558,6 +558,33 @@
   .ses-price { background:var(--tint); color:var(--ink); }
   .ses-price b { color:var(--wine); }
   .offers1 { grid-template-columns:minmax(0,500px) !important; justify-content:center; max-width:none !important; }
+  .more-opts { margin:1.6rem auto 0; max-width:760px; }
+  .more-t { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 .8rem; }
+  .mo-row { display:flex; align-items:center; gap:1rem; padding:1rem 1.2rem; margin:0 0 .7rem; border:0.5px solid var(--gline); border-radius:14px; background:var(--card); text-decoration:none; color:var(--ink); transition:border-color .2s, transform .2s; }
+  .mo-row:hover { border-color:var(--gold); transform:translateY(-1px); }
+  .mo-ic { flex:none; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--tint); font-size:17px; color:var(--gold-deep); }
+  .mo-tx { flex:1; min-width:0; }
+  .mo-tx b { display:block; font-family:'Spectral',serif; font-size:18px; font-weight:400; font-style:italic; }
+  .mo-tx em { display:block; font-style:normal; font-size:14px; line-height:1.55; color:var(--ink-soft); margin-top:.2rem; }
+  .mo-pr { flex:none; font-family:'Spectral',serif; font-size:19px; color:var(--wine); text-align:right; }
+  @media (max-width:560px){ .mo-row { flex-wrap:wrap; } .mo-tx { flex-basis:calc(100% - 60px); } .mo-pr { margin-left:54px; } }
+  details.extra-rs { margin-top:1.2rem; text-align:center; }
+  .hd-add { display:flex; gap:10px; align-items:flex-start; margin:-0.3rem 0 1.1rem; padding:0.75rem 0.85rem; border:0.5px dashed var(--gold); border-radius:12px; background:var(--tint); cursor:pointer; font-size:14px; line-height:1.5; color:var(--ink-soft); text-align:left; }
+  .hd-add input { width:18px; height:18px; margin:2px 0 0; flex:none; accent-color:#9a7e52; cursor:pointer; }
+  .hd-add strong { color:var(--ink); font-weight:500; }
+  .hd-add.on { border-style:solid; background:var(--tint2); }
+  .offers2 { grid-template-columns:repeat(2,minmax(0,1fr)) !important; max-width:820px; margin-left:auto; margin-right:auto; }
+  @media (max-width:760px){ .offers2 { grid-template-columns:1fr !important; } }
+  .add-note { text-align:center; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--ink-soft); margin-top:1.1rem; }
+  /* ronda 19 */
+  .jump-link { display:inline-block; padding:.65rem 1.7rem; border:1.5px solid var(--wine); border-radius:14px; text-decoration:none; transition:background .25s,color .25s; }
+  .jump-link:hover { background:var(--wine); color:#faf3e6; }
+  @media (min-width:681px){ #quem-te-guia .bio-box .bio-photo img { object-position:50% 88% !important; } }
+  .cover-li { min-height:400px; background:linear-gradient(120deg,#ecc977,#f8e5ad,#e0b259,#f5deA0,#e8c06a,#f8e5ad) !important; background-size:300% 300% !important; }
+  .cover-li h1 { font-size:clamp(50px,9vw,88px) !important; }
+  .cover-li .h1-sub { font-size:clamp(19px,2.6vw,25px) !important; color:#3d2814 !important; }
+  .cover-li::before { content:''; position:absolute; right:max(16px,calc(50% - 600px)); top:50%; width:340px; height:340px; transform:translateY(-50%); opacity:.38; z-index:-1; pointer-events:none; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%237a2535' stroke-width='.6'%3E%3Ccircle cx='100' cy='100' r='96'/%3E%3Ccircle cx='100' cy='100' r='78'/%3E%3Ccircle cx='100' cy='100' r='46'/%3E%3Cg%3E%3Cpath d='M100 4v36M100 160v36M4 100h36M160 100h36M32 32l26 26M142 142l26 26M168 32l-26 26M58 142l-26 26'/%3E%3C/g%3E%3Cpath d='M100 22l6 20h20l-16 12 6 20-16-12-16 12 6-20-16-12h20z' stroke-width='.8'/%3E%3C/svg%3E") center/contain no-repeat; }
+  @media (max-width:760px){ .cover-li::before { width:220px; height:220px; right:-40px; opacity:.25; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -685,7 +712,7 @@
     <div class="flip-grid">
       <div class="fcard" tabindex="0"><div class="finner">
         <div class="fface ffront"><span class="sym">☉</span><b>The chart as<br>a starting point</b><span class="fhint"></span></div>
-        <div class="fface fback"><h3>The chart as a starting point</h3><p>The chart is not a verdict. What interests me is the conversation between its elements: the desires, the tensions and the possibilities that can find expression in your life.</p></div>
+        <div class="fface fback"><h3>The chart as a starting point</h3><p>The chart is not a verdict, it is a compass. What interests me is the conversation between its elements: the desires, the tensions and the possibilities that can find expression in your life, so that you can transform them once you recognize them.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
         <div class="fface ffront"><span class="sym book"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></span><b>A story that is yours alone</b><span class="fhint"></span></div>
@@ -715,9 +742,9 @@
     <p class="body-text">Human Design adds another level of depth to the birth chart. The same planetary positions gain gates, lines and channels that show how that energy works in your body, your decisions and your relationships.</p>
     <div class="hdx">
       <p class="hdx-eyebrow">✦ An example from my chart: Venus</p>
-      <p class="hdx-p">In my birth chart, Venus in Sagittarius, next to Mercury, says I love freedom, meaning and the stories that connect different worlds. It is true, and it is beautiful. But it is only one layer.</p>
-      <p class="hdx-p">In Human Design, Venus has two homes. The one I see, the conscious one, is in gate 11, line 2: ideas that bring people together and bring harmony. The one that lives in me without my noticing, the unconscious one, is in gate 59, line 6: breaking barriers to reach union, and realizing that vulnerability is the secret of intimacy.</p>
-      <p class="hdx-p">A chart shows you what you already recognize. Human Design shows you what you have not seen yet, and that is often where the answer to the question you bring lies. Once you see your Venus in both layers, a relationship stops being only “what I feel” and becomes also “what is going on underneath”, and that changes the conversation with yourself and with those around you.</p>
+      <p class="hdx-p">In my birth chart, Venus in Sagittarius, next to Mercury, in house 10, brings language, value and relationship together in a search for meaning. Sagittarius brings the horizon; house 10 brings the mountain: direction, responsibility and the place I take in the world. It asks me whether what I say, what I value and the path I follow are walking together. It is true, and it is beautiful, but it is only one layer.</p>
+      <p class="hdx-p">Venus speaks of what we love and the worth we give ourselves: how we connect, what attracts us and what we feel we deserve to receive. In Human Design, my Venus has two more homes. The conscious one, the one I see best, is in gate 11, line 2: ideas that look for new ways to bring people closer and bring harmony, in the family, at work or in relationships. Here consensus is worth more than a single voice, and when I share ideas with people who do not recognize them, I feel the boredom of line 2. The unconscious one, the one that lives in me without my noticing, is in gate 59, line 6: breaking down barriers to reach union, because vulnerability is the secret of intimacy, and only with time do I see who, what and when make sense in my intimate life.</p>
+      <p class="hdx-p">The two charts start from the same sky, but tell different things. The birth chart tells me what moves me and in which area of life it happens (house 10). Human Design shows how that same energy acts in me, in my decisions and my relationships, through gates and lines (11.2 and 59.6). Together they show the what and the how. Once you see your Venus in both layers, a relationship stops being only “what I feel” and becomes also “what is going on underneath”, and that changes the conversation with yourself and with those around you.</p>
     </div>
     <h3 class="hdq-t">What people say about Human Design with me</h3>
     <p class="trad-note">Messages translated from Portuguese (AI magic 🪄)</p>
@@ -740,8 +767,8 @@
   <!-- E DEPOIS -->
   <section class="reveal" id="pratica">
     <h2>And then, what do I do with this information?</h2>
-    <p class="body-text">It isn’t about information, it’s about transformation, awareness and belief-work proposals you can explore through this symbolic language (and others in the sessions, if you want to go deeper).</p>
-    <p class="body-text">Knowing that your Sun is in Capricorn may spark your curiosity, but how can that help you understand your relationship with work, responsibility and success?</p>
+    <p class="body-text">It isn’t just about receiving information, it’s about transformation, awareness and belief-work proposals you can explore through this symbolic language (and others in the sessions, if you want to go deeper).</p>
+    <p class="body-text">Knowing that your Sun is in Capricorn may spark your curiosity, but how can that help you understand your relationship with work, responsibility and success? In which house is that Sun, and what links might it have with the place where its ruler sits? <strong>It opens a world of symbolic possibilities to help you dive deeper.</strong></p>
     <p class="body-text">For example: what makes you feel fulfilled, how you handle pressure, and what you need to recognize the value of what you do? The Reading moves from the symbolic language of the archetypes of the signs and planets to questions and experiments you can carry into your everyday life.</p>
     <p class="recognize-hint">Choose an example:</p>
     <div class="tabs" role="tablist">
@@ -867,41 +894,36 @@
   <!-- OPÇÕES -->
   <section class="reveal" id="opcoes">
     <h2>Choose your Reading</h2>
-    <div class="offers">
-      <div class="offer">
+    <div class="offers offers2">
+      <div class="offer" data-ses="0">
         <p class="offer-name">Intuitive Reading</p>
         <p class="offer-price">147€</p>
         <ul>
-          <li>A Reading of your birth chart, guided by your theme</li>
+          <li>A Reading of your birth chart,<br>guided by your theme</li>
           <li>A personalized symbolic story</li>
           <li>Questions and practical guidance</li>
-          <li>Your Reading in writing, to read at your own pace</li>
+          <li>Your Reading in writing,<br>to read at your own pace</li>
         </ul>
-        <a class="btn outline" href="https://buy.stripe.com/5kQbJ1gnPbJ1cSN8rsfw401" target="_blank" rel="noopener">I want my Reading</a>
+        <label class="hd-add" data-extra="hd" data-p="50"><input type="checkbox" class="hd-chk"><span><strong>Add my Human Design · +50€</strong><br>I add the key points of your Human Design chart to the Reading, linked to the theme you bring.</span></label>
+        <label class="hd-add" data-extra="rs" data-p="100"><input type="checkbox" class="hd-chk"><span><strong>Add the Solar Return · +100€</strong><br>More insight into your current moment: the themes of your yearly cycle, read in relation to your birth chart.</span></label>
+        <a class="btn outline" href="marcar-leitura.html?op=leitura">I want my Reading</a>
       </div>
-      <div class="offer offer-featured">
-        <span class="offer-badge">The most complete</span>
-        <p class="offer-name">Reading + in-depth session</p>
+      <div class="offer offer-featured" data-ses="1">
+        <p class="offer-name">Reading with in-depth session</p>
         <p class="offer-price">297€</p>
         <ul>
-          <li>Everything included in the Intuitive Reading</li>
-          <li>A one-to-one session with me, after you’ve read it</li>
-          <li>You bring your reflections and real-life examples</li>
-          <li>We go deeper into the themes and work on the relevant beliefs</li>
-          <li>If you like, we also go deeper into your Human Design</li>
+          <li>Everything in the Intuitive Reading</li>
+          <li>A one-hour one-to-one session with me,<br>after you have read your Reading</li>
+          <li>We go deeper into the themes and work<br>on the relevant beliefs</li>
         </ul>
-        <a class="btn" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20in-depth%20session." target="_blank" rel="noopener">I want the Reading and the session</a>
+        <label class="hd-add" data-extra="hd" data-p="50"><input type="checkbox" class="hd-chk"><span><strong>Add my Human Design · +50€</strong><br>I add the key points of your Human Design chart to the Reading, linked to the theme you bring.</span></label>
+        <label class="hd-add" data-extra="rs" data-p="100"><input type="checkbox" class="hd-chk"><span><strong>Add the Solar Return · +100€</strong><br>More insight into your current moment: the themes of your yearly cycle, read in relation to your birth chart.</span></label>
+        <a class="btn" href="marcar-leitura.html?op=sessao">I want the Reading and the session</a>
       </div>
     </div>
-    <details class="extra-rs">
-      <summary>Do you have a birthday coming up? There is an option with the Solar Return</summary>
-      <div class="extra-offer">
-        <p class="eyebrow">For your birthday</p>
-        <p class="extra-offer-name">Intuitive Reading + Solar Return · 247€</p>
-        <p class="extra-offer-text">Ideal if your birthday was recently or is coming up soon: the start of a new trip around the Sun, a new yearly cycle in your life. In astrology, this moment is called the Solar Return, and it lets us explore the themes that may come to the fore between this birthday and the next.</p>
-        <a class="link-soft" href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20I%27d%20like%20the%20Leitura%20Intuitiva%20%2B%20Solar%20Return." target="_blank" rel="noopener">I want the Reading with the Solar Return</a>
-      </div>
-    </details>
+    <div class="more-opts">
+      <a class="mo-row" id="oferecer" href="marcar-leitura.html?oferta=1"><span class="mo-ic">🎁</span><span class="mo-tx"><b>Give a Reading to someone</b><em>With a gift card (the person books with me within 1 month) or with the Reading already done. You only need their birth details.</em></span><span class="mo-pr">from 147€</span></a>
+    </div>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20I%20saw%20your%20Intuitive%20Reading%20page%20and%20would%20like%20to%20book%20mine.%20I%20just%20have%20one%20question%3A%20%28your%20question%29." target="_blank" rel="noopener">Have a question before choosing? Talk to me 💌</a></p>
   </section>
 
@@ -1212,6 +1234,22 @@
   }
   attachCookieHandlers();
 })();
+</script>
+<script>
+// extras da Leitura (Human Design +50, session, Solar Return +100): updates price and link
+Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), function(card){
+  var price = card.querySelector('.offer-price'), btn = card.querySelector('a.btn'), base = parseInt(price.textContent, 10), ses = card.getAttribute('data-ses') === '1';
+  var ex = card.querySelectorAll('.hd-add');
+  function upd(){
+    var t = base, on = {};
+    Array.prototype.forEach.call(ex, function(l){ var c = l.querySelector('input').checked; l.classList.toggle('on', c); if (c){ t += +l.getAttribute('data-p'); on[l.getAttribute('data-extra')] = 1; } });
+    price.textContent = t + '€';
+    var op = on.rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura');
+    btn.setAttribute('href', 'marcar-leitura.html?op=' + op + (on.hd ? '&hd=1' : ''));
+  }
+  Array.prototype.forEach.call(ex, function(l){ l.querySelector('input').addEventListener('change', upd); });
+  upd();
+});
 </script>
 </body>
 </html>
