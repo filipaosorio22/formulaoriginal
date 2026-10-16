@@ -256,7 +256,7 @@ html.embed body{background:transparent}
 try{localStorage.setItem('mapaDesbloqueado','1');localStorage.setItem('hdDesbloqueado','1');}catch(e){}
 var q='',both='';try{var P=JSON.parse(localStorage.getItem('fo_people')||'[]');if(P.length)q=P[P.length-1].q;both=localStorage.getItem('fo_both')||'';}catch(e){}
 var last='';try{last=localStorage.getItem('fo_last')||'';}catch(e){}
-if(q){location.replace((last==='hd'?'human-design.html':'mapa-astral.html')+'?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
+if(q){location.replace('human-design.html'+'?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
 document.addEventListener('DOMContentLoaded',function(){var d=document.createElement('div');d.setAttribute('style','position:relative;z-index:50;background:#f4ead6;color:#5b2a35;text-align:center;padding:14px 18px;font:15px/1.5 Georgia,serif');d.textContent='E-mail confirmado ✦ Gera o teu mapa abaixo e vê-lo-ás completo, já desbloqueado.';document.body.insertBefore(d,document.body.firstChild);});
 })();
 </script>
@@ -337,7 +337,8 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
           <p class="sub">A tua autoridade, o teu perfil, o tema do não-ser, e o teu ambiente. Partilha o teu nome e e-mail para os veres.</p>
           <div class="grid">
             <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
-            <div><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
+            <div><label class="lbl" for="gApelido">Apelido <span style="opacity:.6">(opcional)</span></label><input type="text" id="gApelido" maxlength="60" autocomplete="family-name"></div>
+            <div style="grid-column:1/-1"><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
           </div>
           <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
           <p class="err" id="gErr" role="alert"></p>
@@ -984,6 +985,7 @@ $('gate').addEventListener('submit', function(e){
   var b = new URLSearchParams();
   b.append('fields[name]', nome);
   b.append('fields[email]', email);
+  var apel = ($('gApelido').value || '').trim(); if (apel) b.append('fields[last_name]', apel);
   if (lastInfo && lastHD){
     b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
     b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
