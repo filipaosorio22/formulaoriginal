@@ -643,6 +643,17 @@
   .jump-row-box .jump-link:hover { background:var(--wine); color:#faf3e6; }
   .jump-row-box .jump-sub { display:block; margin-top:.55rem; font-size:14px; }
   .fb-aprofundar { margin-top:1.8rem; }
+
+  /* ronda 29 */
+  @media (min-width:761px){ .callout.intro-box { flex-direction:row-reverse; padding:1rem 1rem 1rem 2.4rem; } }
+  .section-gap-top { padding-top:2.6rem !important; }
+  @media (min-width:700px){ .callout .ctext p.oneline-note { white-space:normal; max-width:21rem; text-wrap:balance; } }
+  .conv-split { display:flex; gap:1.8rem; align-items:flex-start; }
+  .conv-split .conv-txt { flex:1; min-width:0; }
+  .conv-split .conv-txt p.t-sm { text-align:left; }
+  .conv-vid { flex:0 0 220px; width:220px; margin:.3rem 0 0; border-radius:14px; overflow:hidden; box-shadow:0 5px 16px rgba(120,80,30,.18); background:#000; line-height:0; }
+  .conv-vid video { width:100%; height:auto; display:block; }
+  @media (max-width:760px){ .conv-split { flex-direction:column; } .conv-vid { flex:none; width:min(240px,70%); margin:1rem auto 0; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -769,7 +780,7 @@
   </div>
 </section>
 
-<section class="pause pause-b" style="padding-top:0;">
+<section class="pause pause-b section-gap-top" style="padding-top:0;">
   <div class="wrap-wide">
     <p class="pause-quote duo">CEEN helps you explore not only the direction of your business but also the way you want to work in it, <br>and what you need to recognize, decide and try in order to make room for that possibility.</p>
   </div>
