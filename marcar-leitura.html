@@ -148,8 +148,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <div class="card" id="fam" hidden>
       <h2>Sobre os mapas</h2>
       <div class="grid">
-        <div class="full"><label class="lbl" for="famA">Já conheces o teu mapa astral?</label><textarea id="famA" maxlength="1000" placeholder="ex.: nunca vi / já li a minha Lua e o meu Ascendente…"></textarea></div>
-        <div class="full"><label class="lbl" for="famH">Já conheces o teu mapa de Human Design?</label><textarea id="famH" maxlength="1000" placeholder="ex.: sei o meu tipo e a minha autoridade / ainda não…"></textarea></div>
+        <div class="full"><label class="lbl" for="famA">Já conheces o teu mapa astral?</label><textarea id="famA" placeholder="ex.: nunca vi / já li a minha Lua e o meu Ascendente…"></textarea></div>
+        <div class="full"><label class="lbl" for="famH">Já conheces o teu mapa de Human Design?</label><textarea id="famH" placeholder="ex.: sei o meu tipo e a minha autoridade / ainda não…"></textarea></div>
       </div>
     </div>
 
@@ -157,10 +157,10 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2 id="lifeT">O teu momento</h2>
       <p class="note" id="lifeNote"><span id="lifeTxt">Não precisas de escrever tudo perfeito. Escreve como te sair</span><span class="mic-tip" hidden>, ou carrega em 🎙 e fala: a tua voz passa a texto, que podes corrigir antes de enviar</span>.</p>
       <div class="grid">
-        <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento?</label><textarea id="q1" maxlength="10000"></textarea></div>
-        <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora?</label><textarea id="q2" maxlength="10000"></textarea></div>
-        <div class="full"><label class="lbl" for="q3" id="q3l">Há algum tema ou pergunta que queiras trazer?</label><textarea id="q3" maxlength="10000"></textarea></div>
-        <div class="full" id="q4w" hidden><label class="lbl" for="q4" id="q4l">Queres falar mais de ti? <span class="opt">(opcional)</span></label><textarea id="q4" maxlength="20000" placeholder="Se quiseres, conta-me mais sobre ti, sem limite de tamanho."></textarea></div>
+        <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento?</label><textarea id="q1"></textarea></div>
+        <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora?</label><textarea id="q2"></textarea></div>
+        <div class="full"><label class="lbl" for="q3" id="q3l">Há algum tema ou pergunta que queiras trazer?</label><textarea id="q3"></textarea></div>
+        <div class="full" id="q4w"><label class="lbl" for="q4" id="q4l">Queres falar mais de ti? <span class="opt">(opcional)</span></label><textarea id="q4" placeholder="Se quiseres, conta-me mais sobre ti, sem limite de tamanho."></textarea></div>
       </div>
     </div>
 
@@ -259,7 +259,7 @@ window.FO_PAY = {
     $('tot').textContent = total() + '€';
     var v = sel().value, sn = $('sesNote');
     var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
-    sn.hidden = !hasS; $('fam').hidden = !hasS; $('q4w').hidden = !hasS;
+    sn.hidden = !hasS; $('fam').hidden = !hasS;
     sn.textContent = v === 'sessaosolo' ? 'A sessão não é marcada agora: depois de confirmado o pagamento envio-te as opções de data.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
     $('prazo').hidden = v === 'sessaosolo';
   }
@@ -317,7 +317,7 @@ window.FO_PAY = {
     if (gift && $('rnome').value.trim()) L.push('Para: ' + $('rnome').value.trim());
     if (data || hora || local) L.push('Nascimento: ' + [data ? fmtDate(data) : '', hora, local].filter(Boolean).join(', '));
     var famQ = [['famA','Já conheces o teu mapa astral?'],['famH','Já conheces o teu mapa de Human Design?']];
-    if (!$('q4w').hidden && $('q4').value.trim()){ L.push(''); L.push('Queres falar mais de ti?'); L.push($('q4').value.trim()); }
+    if ($('q4').value.trim()){ L.push(''); L.push('Queres falar mais de ti?'); L.push($('q4').value.trim()); }
     if (!$('fam').hidden) famQ.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1]); L.push(v); } });
     var qs = [['q1', $('q1l').textContent], ['q2', $('q2l').textContent], ['q3', $('q3l').textContent]];
     qs.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1].replace(/\s*\(opcional\)\s*$/, '')); L.push(v); } });
@@ -403,7 +403,7 @@ window.FO_PAY = {
       rec.onresult = function(e){
         var fin = '', tmp = '';
         for (var i = 0; i < e.results.length; i++) { var t = e.results[i][0].transcript; if (e.results[i].isFinal) fin += t; else tmp += t; }
-        ta.value = (base + fin + tmp).slice(0, ta.maxLength > 0 ? ta.maxLength : 3000); if (window.foGrow) window.foGrow(ta);
+        ta.value = (base + fin + tmp); if (window.foGrow) window.foGrow(ta);
       };
       rec.onerror = function(e){ if (e.error === 'not-allowed' || e.error === 'service-not-allowed') alert('Para ditar, permite o acesso ao microfone no teu navegador.'); };
       rec.onend = idle;
