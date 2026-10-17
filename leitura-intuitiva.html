@@ -859,7 +859,6 @@
   .cover-li { background:linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; background-size:300% 300% !important; }
   .cover-li::before { display:none !important; }
   .cover-li::after { background:linear-gradient(105deg, transparent 38%, rgba(255,236,190,0.22) 50%, transparent 62%) !important; background-size:250% 100% !important; }
-  .car-slide.rh:not(.car-video) img { transform:translateY(16px); transition:transform .5s ease; }
 
   /* ronda 25: presente só com o ícone; ao clicar abre/fecha o texto */
   html .gift-top { left:16px !important; transform:translate(0,-14px) !important; width:auto !important; max-width:calc(100% - 32px) !important; padding:6px !important; gap:0 !important; border-radius:999px !important; }
@@ -870,10 +869,25 @@
   html .gift-top.txt p { display:block !important; white-space:normal !important; }
   #human-design .body-text, #pratica .body-text { text-align:justify !important; hyphens:auto; }
 
+  /* ronda 27 */
+  .spop .mpop-box, .spop .mpop-box p, .spop .mpop-box h3 { text-align:left !important; }
+  .bio-box .bio + p.body-text { margin-top:1.3rem; }
+  #quem-te-guia .bio-box .bio-photo { min-height:0 !important; }
+  #quem-te-guia .bio-box .bio-photo img { height:100%; }
+  main .body-text, main .aside p, main .ans p, main details.astro .astro-body p, main .hdx-p, main .ses-p, main .feat .feat-ctx { text-align:justify !important; hyphens:auto; -webkit-hyphens:auto; }
+  main .mapa-cta p, main .faixa p, main .statement, main .tagline p, main .legal, main .ses-solo p, main .deliv, main .sess-link { text-align:center !important; hyphens:none; }
+  main .legal { text-align:left !important; }
+  /* feedbacks das sessões em estilo WhatsApp */
+  .sesmsgs { column-count:auto !important; display:flex; flex-direction:column; gap:10px; padding:20px 16px; border-radius:16px; background:#efeae2; max-width:640px; margin-left:auto; margin-right:auto; }
+  html[data-theme="dark"] .sesmsgs { background:#0b141a; }
+  .sesmsgs .hdmsg { position:relative; margin:0 !important; max-width:92%; padding:.5rem .75rem .6rem !important; background:#fff !important; border:0 !important; border-radius:0 12px 12px 12px !important; box-shadow:0 1px 1px rgba(11,20,26,.14) !important; }
+  .sesmsgs .hdmsg::before { content:'' !important; position:absolute; left:-7px; top:0; width:0; height:0; border-top:8px solid #fff; border-left:8px solid transparent; background:none !important; }
+  html[data-theme="dark"] .sesmsgs .hdmsg { background:#202c33 !important; }
+  html[data-theme="dark"] .sesmsgs .hdmsg::before { border-top-color:#202c33; }
+  .sesmsgs .hdmsg p { font-family:-apple-system,'Segoe UI',Helvetica,Arial,'DM Sans',sans-serif !important; font-size:15.5px !important; line-height:1.45 !important; color:#111b21 !important; text-align:left !important; hyphens:none !important; }
+  html[data-theme="dark"] .sesmsgs .hdmsg p { color:#e9edef !important; }
+  .sesmsgs .hdmsg strong { background:rgba(255,224,130,.55) !important; color:inherit !important; font-weight:500 !important; }
   /* ronda 26 */
-  .cover-facts { margin:.7rem 0 0; font-family:'DM Sans',sans-serif; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase; color:#5e3a17; }
-  html[data-theme="dark"] .cover-facts { color:#d3b67f; }
-  @media (max-width:640px){ .cover-facts { font-size:11px; letter-spacing:.04em; line-height:1.5; } }
   .deliv { text-align:center; font-family:'DM Sans',sans-serif; font-size:15px; line-height:1.6; color:var(--ink); margin:0 auto 1.4rem; padding:.7rem 1rem; max-width:640px; border:0.5px solid var(--gold); border-radius:12px; background:var(--tint); }
   .deliv b { color:var(--wine); font-weight:600; }
   .feat .feat-ctx b { font-weight:600; color:var(--wine); }
@@ -917,7 +931,7 @@
   html[data-theme="dark"] .statement.gold { background:rgba(228,167,179,.07) !important; color:#e8b9c4 !important; border-color:#c97b8f !important; }
   .faixa { padding:1.2rem 1rem !important; margin:0 !important; }
   .faixa::before { inset-block:-14px !important; }
-  #quem-te-guia .bio-box .bio-photo img { transform:scale(1.08) !important; transform-origin:50% 38% !important; }
+  #quem-te-guia .bio-box .bio-photo img { transform:none !important; transform-origin:50% 38% !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -959,7 +973,6 @@
       <div class="cover-text">
     <h1>Leitura Intuitiva</h1>
     <p class="h1-sub">Uma Leitura totalmente personalizada e única feita com intuição e método</p>
-    <p class="cover-facts">Mapa astral como base · Human Design opcional · Entrega até 14 dias úteis</p>
       </div>
     </div>
     <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
@@ -968,11 +981,10 @@
   <!-- TEXTO SOBRE A FOTO DE FUNDO -->
   <div class="texto-fundo reveal" id="comeco">
     <p class="body-text"><strong>Existe em ti uma forma única de te moveres pela vida.</strong></p>
-    <p class="body-text">Essa forma não se revela apenas no teu ritmo ou na tua energia. Revela-se nos padrões que repetes, nas escolhas que fazes, nos desafios que encontras e na forma como respondes a eles.</p>
-    <p class="body-text">Revela-se nas histórias que se repetem ao longo da tua vida, nas relações que crias, na forma como trabalhas e descansas, te posicionas e te expressas no mundo.</p>
-    <p class="body-text">Talvez também a reconheças de uma forma menos fácil de explicar: num sonho que fica contigo, numa sincronicidade que te tocou ou numa sensação que ainda não consegues colocar em palavras.</p>
-    <p class="body-text">Ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de umas determinadas lentes.<br>Sobre amor. Sobre valor, segurança, sucesso, liberdade, expressão…</p>
-    <p class="body-text">E sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti, mas <strong>sabes que és mais do que essas histórias e do que as formas que foste encontrando para te adaptares.</strong></p>
+    <p class="body-text">Essa forma não se revela apenas no teu ritmo ou na tua energia; revela-se nos padrões que repetes, nas escolhas que fazes, nas histórias que te contas, nos desafios que encontras e na forma como te habituas a responder a eles.</p>
+    <p class="body-text">Revela-se também nas relações que crias, na forma como trabalhas e descansas, como te posicionas e te expressas no mundo; e de formas menos fáceis de explicar: num sonho que fica contigo, numa sincronicidade que te tocou ou numa sensação que ainda não consegues colocar em palavras.</p>
+    <p class="body-text">Ao longo do tempo, foste absorvendo crenças, referências e formas de funcionar que te fizeram ver a vida através de umas determinadas lentes. Sobre amor, valor, segurança, sucesso, liberdade…</p>
+    <p class="body-text">Sem te dares conta, começaste a mover-te entre a tua verdade e o que acreditas que o mundo espera de ti, mas <strong>tu sabes que és mais do que essas histórias e do que as formas que foste encontrando para te adaptares e até pertenceres.</strong></p>
     <p class="body-text">A Leitura Intuitiva é um convite para te recentrares: para veres possíveis padrões, crenças e dinâmicas e a forma como te influenciam. Quando vês o que está a operar por trás das tuas escolhas, ganhas mais espaço para escolher de forma diferente, com mais consciência e amor, acima de tudo por ti.</p>
   </div>
 
@@ -1017,13 +1029,14 @@
         <div class="car-slide"><img src="feedback10-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
         <div class="car-slide"><img src="feedback11-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
         <div class="car-slide"><img src="feedback12-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback14-dourado.jpg" alt="Testemunho de uma cliente sobre a Leitura de Aura" loading="lazy"></div>
         <div class="car-slide car-video" id="carVideo" role="button" tabindex="0" aria-label="Ver o vídeo de testemunho"><img src="https://img.youtube.com/vi/MHyyFIKgRL4/hqdefault.jpg" alt="Vídeo de testemunho de uma cliente" loading="lazy" style="opacity:0.85;"><div class="play"><span>▶</span></div></div>
       </div>
       <div class="car-dots" id="carDots"></div>
       <p class="swipe-hint">Desliza para o lado →</p>
     </div>
     <div class="aside">
-      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora o teu mapa natal como base, <strong>pela lente da Astrologia e/ou do Human Design e de uma abordagem arquetípica, o que acrescenta novas camadas de compreensão e abre a porta a reflexões e aprofundamento que podes fazer a partir dela.</strong></p>
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que leio de forma intuitiva o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e tem agora <strong>a lente da Astrologia e/ou do Human Design e uma abordagem arquetípica, o que acrescenta novas camadas de compreensão e abre a porta a novas reflexões.</strong></p>
     </div>
   </section>
 
@@ -1084,9 +1097,9 @@
       <div>
         <p class="body-text">Tenho formação e experiência profissional em gestão e estratégia e, há vários anos, dedico-me também a estudar o comportamento humano, as crenças e os padrões que nos movem sem darmos conta, desde a infância.</p>
         <p class="body-text">O meu percurso de estudo reúne diferentes áreas: a educação e o desenvolvimento infantil; práticas como as Constelações Familiares, a Leitura de Aura, o ThetaHealing<sup style="font-size:0.6em;">®</sup> e o innerdance (energia vital); e linguagens simbólicas como os sonhos, a alquimia, a Astrologia e o Human Design, incluindo aplicações aos negócios e às crianças (está mais relacionado do que parece).</p>
-        <p class="body-text">Com estes estudos e a experiência de acompanhar pessoas, fui construindo uma metodologia própria. O estudo do desenvolvimento do cérebro, da neurociência e dos processos de aprendizagem também informa o meu olhar sobre a forma como construímos hábitos, crenças e respostas ao longo da vida.</p>
       </div>
     </div>
+    <p class="body-text">Com estes estudos e a experiência de acompanhar pessoas, fui construindo uma metodologia própria. O estudo do desenvolvimento do cérebro, da neurociência e dos processos de aprendizagem também informa o meu olhar sobre a forma como construímos hábitos, crenças e respostas ao longo da vida.</p>
     <p class="body-text uso">Uso a intuição, a Leitura de campo, a interpretação da linguagem simbólica e a análise como partes do mesmo olhar, assim como a minha sensibilidade para explorar o que ainda não ganhou palavras e clareza para o transformar em reflexões para o dia-a-dia.</p>
     <p class="statement sm">Não separo a parte analítica da intuitiva. A tua Leitura é feita pelas duas.</p>
         <details class="astro">
@@ -1284,7 +1297,7 @@
       <div class="ses-steps">
         <div class="ses-st"><span>1</span><b>Nomear</b><p>Dar palavras ao que acontece: o que sentes, como respondes e o que acreditas sobre ti ou sobre os outros nessa situação. Podemos encontrar regras aprendidas cedo, expectativas familiares ou compromissos internos que nunca tinhas parado para questionar.</p></div>
         <div class="ses-st"><span>2</span><b>Compreender</b><p>Explorar como essas respostas podem ter feito sentido na tua história, o que procuram proteger e o que te custa mantê-las hoje. Sem tratar as tuas formas de proteção como falhas.</p></div>
-        <div class="ses-st"><span>3</span><b>Experimentar outra resposta</b><p>Encontrar uma perspetiva que queiras cultivar e um passo possível para a semana seguinte: expressar uma necessidade, comunicar um limite ou responder de outra maneira a uma situação conhecida.</p></div>
+        <div class="ses-st"><span>3</span><b>Experimentar</b><p>Encontrar uma perspetiva que queiras cultivar e um passo possível para a semana seguinte: expressar uma necessidade, comunicar um limite ou responder de outra maneira a uma situação conhecida.</p></div>
       </div>
       <p class="ses-p">As práticas que integro são escolhidas em função do que trazes e do que combinamos trabalhar.</p>
       <p class="ses-state">A Leitura abre perspetivas. A sessão oferece um espaço de escuta e trabalho conjunto para explorares como levá-las à tua vida. Não precisas de resolver tudo numa hora para começares a fazer diferente.</p>
@@ -1347,10 +1360,10 @@
 <div class="mpop spop" id="spop" role="dialog" aria-modal="true" aria-labelledby="spTitle" hidden>
   <div class="mpop-box">
     <button class="mpop-x" type="button" aria-label="Fechar" data-sp-close>×</button>
-    <h3 id="spTitle">Não precisas de começar pelo mapa.</h3>
+    <h3 id="spTitle">Não tens de começar pelo mapa.</h3>
     <p class="sp-q">Há alguma situação que gostavas de compreender melhor ou uma forma de reagir que te custa mudar?</p>
     <p>Numa sessão individual de uma hora, partimos do que estás a viver para explorar crenças, emoções e possibilidades de responder de outra maneira, com escuta, cuidado e um próximo passo possível.</p>
-    <p>Podes marcar esta sessão sem fazeres uma Leitura Intuitiva.</p>
+    <p>Podes marcar esta sessão sem fazeres a Leitura.</p>
     <a class="btn" href="#sessao" data-sp-go>Conhecer a sessão individual</a>
     <button class="mp-no" type="button" data-sp-close>Agora não</button>
   </div>
@@ -1848,17 +1861,6 @@ Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), funct
   });
 })();
 </script>
-<script>
-// ronda 21: nos pares de testemunhos, a imagem da direita desce um pouco
-(function(){
-  var track = document.querySelector('#testemunhos .car-track'); if (!track) return;
-  function mark(){
-    var r = track.getBoundingClientRect(), two = r.width > 560;
-    [].forEach.call(track.children, function(sl){ var l = sl.getBoundingClientRect().left - r.left; sl.classList.toggle('rh', two && l > r.width * 0.3 && l < r.width); });
-  }
-  track.addEventListener('scroll', function(){ requestAnimationFrame(mark); }, { passive:true });
-  window.addEventListener('resize', mark); window.addEventListener('load', mark); mark();
-})();
-</script>
+
 </body>
 </html>
