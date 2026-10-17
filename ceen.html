@@ -606,9 +606,15 @@
     .nav-links .nav-lang a { font-size:11px; letter-spacing:.04em; text-transform:none; color:#8a7e6d; text-decoration:underline; text-decoration-color:rgba(138,126,109,.4); }
     html[data-theme="dark"] .nav-links .nav-lang, html[data-theme="dark"] .nav-links .nav-lang a { color:#a89c8a; }
   }
-  .foto-abre { position:relative; width:min(300px,72%); margin:0 auto 2.2rem; border-radius:14px; overflow:hidden; box-shadow:0 6px 20px rgba(120,80,30,.14); }
+  .intro-split { display:flex; gap:1.6rem; align-items:flex-start; margin:1.8rem 0; }
+  .intro-split .intro-callout { margin:0; flex:1; min-width:0; }
+  .foto-abre { position:relative; flex:0 0 300px; width:300px; margin:0; border-radius:14px; overflow:hidden; box-shadow:0 6px 20px rgba(120,80,30,.14); }
   .foto-abre img { width:100%; height:auto; display:block; }
-  .foto-abre::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 100% 0%, rgba(255,196,96,.42) 0%, rgba(255,196,96,.14) 30%, rgba(255,196,96,0) 55%); mix-blend-mode:screen; }
+  .foto-abre::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 100% 0%, rgba(255,190,90,.40) 0%, rgba(255,190,90,.12) 30%, rgba(255,190,90,0) 55%); mix-blend-mode:screen; }
+  @media (max-width:760px){ .intro-split { flex-direction:column; align-items:center; gap:1.2rem; } .intro-split .intro-callout { width:100%; } .foto-abre { flex:none; width:min(300px,78%); } }
+  .foto-par { display:grid; grid-template-columns:1fr 1fr; gap:1rem; width:78%; margin:0 auto; }
+  .foto-par img { width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 5px 16px rgba(120,80,30,.14); }
+  @media (max-width:560px){ .foto-par { width:100%; gap:.6rem; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -651,11 +657,11 @@
 
 <section class="tight" style="padding-top:12px;">
   <div class="wrap">
-    <div class="callout grayD intro-callout"><div class="ctext">
+    <div class="intro-split"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure><div class="callout grayD intro-callout"><div class="ctext">
       <p><strong>A CEEN é um trabalho individual de análise e orientação para reveres a forma como trabalhas e ocupas o teu lugar no negócio, sem separar essas decisões da vida que queres construir e de quem és, tendo por base a tua energia pessoal.</strong></p>
       <p>Partimos de uma questão central do teu negócio, que se pode relacionar com diferentes áreas. Enquanto te escuto, presto atenção à forma como falas sobre o negócio, ao que te entusiasma ou retrai e ao peso que atribuis a determinadas decisões. Coloco perguntas e devolvo-te ligações que reconheço naquilo que partilhas.</p>
       <p>Esta escuta ajuda-nos a reconhecer crenças, receios e padrões que podem estar a influenciar as tuas escolhas, mesmo quando ainda não os identificas. Relacionamos o que observamos com a realidade do negócio e com aquilo que desejas mudar.</p>
-    </div></div>
+    </div></div></div>
   </div>
 </section>
 
@@ -669,7 +675,6 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
-    <figure class="foto-abre"><img src="foto-ceen.jpg" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure>
     <blockquote class="quote-block hang"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">O negócio é o centro da CEEN, mas <br class="mb">não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:19px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
   </div>
 </section>
@@ -800,6 +805,13 @@
     <p class="lead hlbox" style="margin-top:2.6rem;">Observar sem estruturar pode trazer mais consciência, mas deixar-te sem saber o que fazer com ela. Estruturar sem observar pode levar-te a escolher uma estratégia que não consegues ou não desejas sustentar. <strong>É, então, neste diálogo entre energia e estratégia que <br class="mb">a CEEN acontece.</strong></p>
   </div>
 </section>
+
+<section class="tight" style="padding-top:1.2rem; padding-bottom:1.6rem;">
+  <div class="wrap">
+    <div class="foto-par"><img src="foto-ceen-sofa.jpg" width="418" height="740" alt="Filipa a trabalhar sentada no chão da sala" loading="lazy"><img src="foto-ceen-costas.jpg" width="402" height="728" alt="Filipa de costas, a trabalhar no portátil no chão da sala" loading="lazy"></div>
+  </div>
+</section>
+
 
 <hr class="div">
 
@@ -1135,6 +1147,13 @@
     <iframe class="amostra-frame" src="ciclo-ceen-amostra.html" title="Exemplo ilustrativo de uma entrega do Ciclo CEEN"></iframe>
   </div>
 </section>
+
+<section class="tight" style="padding-top:1.2rem; padding-bottom:1.6rem;">
+  <div class="wrap">
+    <div class="foto-par"><img src="foto-ceen-teclado.jpg" width="415" height="734" alt="Mãos a escrever no portátil, vistas de cima" loading="lazy"><img src="foto-ceen-maos.jpg" width="406" height="728" alt="Mão no teclado do portátil, em grande plano" loading="lazy"></div>
+  </div>
+</section>
+
 
 <hr class="div">
 
