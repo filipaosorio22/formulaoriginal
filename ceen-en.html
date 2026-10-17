@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&family=Spectral:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
 <meta name="color-scheme" content="light dark">
 <script>(function(){var m=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)");function a(){var t=null;try{t=localStorage.getItem("fo_theme");}catch(e){}var d=t?t==="dark":(m&&m.matches);document.documentElement.setAttribute("data-theme",d?"dark":"light");}a();if(m&&m.addEventListener){m.addEventListener("change",a);}})();</script>
 <script>try{if(localStorage.getItem('fo_size')==='large')document.documentElement.setAttribute('data-size','large');}catch(e){}</script>
@@ -206,7 +206,7 @@
   .ci.shine::after { content:''; position:absolute; top:-20%; left:-90%; width:55%; height:140%; background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent); transform:skewX(-20deg); }
   .callout:hover .ci.shine::after { left:140%; transition:left 0.9s ease; }
   .pause { padding:56px 0; text-align:center; }
-  .pause .pause-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:clamp(20px,2.7vw,27px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
+  .pause .pause-quote { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:clamp(20px,2.7vw,27px); line-height:1.25; color:var(--wine); text-align:center; margin:0 0 0.4rem; max-width:720px; display:inline-block; position:relative; isolation:isolate; padding:0.8rem 2.4rem; }
   .pause .pause-quote:before { content:''; position:absolute; inset:-46px -130px; z-index:-1; background:radial-gradient(ellipse 52% 62% at 24% 52%, rgba(188,202,215,0.95), rgba(188,202,215,0) 72%), radial-gradient(ellipse 50% 66% at 52% 44%, rgba(234,205,199,0.95), rgba(234,205,199,0) 72%), radial-gradient(ellipse 52% 62% at 78% 54%, rgba(238,218,178,0.95), rgba(238,218,178,0) 72%); filter:blur(26px); opacity:0.95; animation:cloud 26s ease-in-out infinite alternate; }
   @keyframes cloud { 0% { transform:translate(-14px,2px) scale(1); } 100% { transform:translate(14px,-3px) scale(1.06); } }
   .pause { overflow-x:clip; }
