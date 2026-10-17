@@ -117,6 +117,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <div class="grid">
         <div><label class="lbl" for="nome">Nome</label><input type="text" id="nome" maxlength="60" autocomplete="name"></div>
         <div><label class="lbl" for="email">E-mail</label><input type="email" id="email" maxlength="120" autocomplete="email" inputmode="email"></div>
+        <div class="full"><label class="lbl" for="nif">NIF <span class="opt">(opcional, para a fatura)</span></label><input type="text" id="nif" maxlength="12" inputmode="numeric" autocomplete="off" placeholder="ex.: 123456789"></div>
       </div>
     </div>
 
@@ -293,6 +294,7 @@ window.FO_PAY = {
     if (gift) L.push('Entrega: ' + (entrega() === 'ja' ? 'Leitura pronta para oferecer' : 'cartão de oferta'));
     L.push('Nome: ' + nome);
     L.push('E-mail: ' + email);
+    if ($('nif').value.trim()) L.push('NIF: ' + $('nif').value.trim());
     if (gift && $('rnome').value.trim()) L.push('Para: ' + $('rnome').value.trim());
     if (data || hora || local) L.push('Nascimento: ' + [data ? fmtDate(data) : '', hora, local].filter(Boolean).join(', '));
     var famQ = [['famA','Já conheces o teu mapa astral?'],['famH','Já conheces o teu mapa de Human Design?']];
