@@ -965,9 +965,24 @@
   html .gift-top.txt .gt-x { display:block !important; }
   .gift-top .gt-x { display:none; background:none; border:0; color:var(--ink-soft); font-size:22px; line-height:1; cursor:pointer; padding:0 4px; align-self:flex-start; }
   html .gift-top.txt p { white-space:normal !important; }
-  .mpop-box { background:linear-gradient(135deg,#f7e9c8,#efd59c 55%,#f9efd6) !important; border-color:#c9a45c !important; }
-  .mpop-box input[type=text], .mpop-box input[type=time], .mpop-box input[type=email], .mpop-box select { background:#fffaf0 !important; }
-  html[data-theme="dark"] .mpop-box { background:linear-gradient(135deg,#3a2f1f,#4a3a22) !important; }
+
+  /* ronda 32 */
+  .cover-li { height:34vh !important; min-height:230px !important; max-height:310px !important; --cd:clamp(380px,62vh,560px); background:linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; background-size:300% 300% !important; }
+  .cover-li::before { content:'' !important; display:block !important; position:absolute; z-index:0; top:50%; right:calc(var(--cd) / -2); width:var(--cd); height:var(--cd); transform:translateY(-50%); background:url('capa-astrolabio.svg') center/contain no-repeat; pointer-events:none; }
+  @media (max-width:640px){ .cover-li { min-height:220px !important; --cd:380px; } }
+  .h2-sub { display:block; margin-top:0.35rem; font-family:'DM Sans',sans-serif; font-size:13.5px; font-weight:400; letter-spacing:0.04em; color:var(--gold-deep); }
+  main .body-text, main .aside p, main .ans p, main details.astro .astro-body p, main .hdx-p, main .ses-p, main .feat .feat-ctx, #human-design .body-text, #pratica .body-text { hyphens:none !important; -webkit-hyphens:none !important; }
+  .bio-box p.body-text.uso { margin-top:0 !important; }
+  .ses-lead { font-size:18px !important; color:var(--ink) !important; font-style:normal !important; }
+  details.faqmain > summary h2 { font-size:21px !important; }
+  .mapa-fab:hover, .mapa-fab:focus-visible { background:#9a7440 !important; border-color:#9a7440 !important; color:#fff8ec !important; }
+  details.comp-tg, details.rs-tg { margin:1.4rem 0 0; text-align:center; }
+  details.comp-tg > summary { display:inline-block; list-style:none; cursor:pointer; background:var(--wine); color:#fff8ec; font-family:'DM Sans',sans-serif; font-size:13.5px; letter-spacing:0.04em; padding:0.7rem 1.4rem; border-radius:999px; }
+  details.comp-tg > summary::-webkit-details-marker { display:none; }
+  details.comp-tg > summary::after { content:' ▾'; } details.comp-tg[open] > summary::after { content:' ▴'; }
+  details.comp-tg > .tl-extra { text-align:left; margin-top:1.2rem; }
+  details.rs-tg > summary { background:linear-gradient(120deg,#e6c98a,#d4a85a) !important; color:#3d2a14 !important; }
+  .bio-box .bio-photo img, #quem-te-guia .bio-box .bio-photo img { object-position:50% 52% !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -1017,7 +1032,7 @@
 
   <!-- TEXTO SOBRE A FOTO DE FUNDO -->
   <div class="texto-fundo reveal" id="comeco">
-    <div class="tf-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="fundo-leitura-foto.jpg"><source src="fundo-leitura2.webm" type="video/webm"><source src="fundo-leitura2.mp4" type="video/mp4"></video><img src="fundo-leitura-foto.jpg" alt=""></div>
+    <div class="tf-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="fundo-leitura-foto.jpg"><source src="fundo-leitura3.webm" type="video/webm"><source src="fundo-leitura3.mp4" type="video/mp4"></video><img src="fundo-leitura-foto.jpg" alt=""></div>
     <p class="body-text"><strong>Existe em ti uma forma única de te moveres pela vida.</strong></p>
     <p class="body-text">Essa forma não se revela apenas no teu ritmo ou na tua energia; <strong>revela-se nos padrões que repetes, nas escolhas que fazes, nas histórias que te contas, nos desafios que encontras e na forma como te habituas a responder a eles.</strong></p>
     <p class="body-text">Revela-se também <strong>nas relações que crias, na forma como trabalhas e descansas, como te posicionas e te expressas no mundo</strong>; e de formas menos fáceis de explicar: num sonho que fica contigo, numa sincronicidade que te tocou ou numa sensação que ainda não consegues colocar em palavras.</p>
@@ -1030,7 +1045,7 @@
 
   <!-- SE SENTES QUE -->
   <section class="reveal" id="se-sentes">
-    <h2>Vem conhecer novas camadas de ti, se algum destes pontos te toca…</h2>
+    <h2>Vem conhecer novas camadas de ti...<br><span class="h2-sub">se algum destes pontos te tocar…</span></h2>
     <ul class="recognize stagger">
       <li><span class="mk">✦</span><span>Desejas conhecer mais de ti, na tua essência mais livre</span></li>
       <li><span class="mk">✦</span><span>Reconheces algo nos sonhos, símbolos e sinais na vida</span></li>
@@ -1067,14 +1082,14 @@
         <div class="car-slide"><img src="feedback10-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
         <div class="car-slide"><img src="feedback11-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
         <div class="car-slide"><img src="feedback12-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback14-dourado.jpg?v=2" alt="Testemunho de uma cliente sobre a Leitura de Aura" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback14-dourado.jpg?v=3" alt="Testemunho de uma cliente sobre a Leitura de Aura" loading="lazy"></div>
         <div class="car-slide car-video" id="carVideo" role="button" tabindex="0" aria-label="Ver o vídeo de testemunho"><img src="https://img.youtube.com/vi/MHyyFIKgRL4/hqdefault.jpg" alt="Vídeo de testemunho de uma cliente" loading="lazy" style="opacity:0.85;"><div class="play"><span>▶</span></div></div>
       </div>
       <div class="car-dots" id="carDots"></div>
       <p class="swipe-hint">Desliza para o lado →</p>
     </div>
     <div class="aside">
-      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que lia intuitivamente o momento da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e integra agora a Astrologia e o Human Design numa abordagem simbólica e arquetípica, com perguntas e propostas práticas ligadas ao teu momento presente.</p>
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que lia de forma intuitiva o campo energético da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e integra agora a Astrologia e o Human Design numa abordagem simbólica e arquetípica, com perguntas e propostas práticas ligadas ao teu momento presente.</p>
     </div>
   </section>
 
@@ -1099,7 +1114,7 @@
 
   <section class="reveal" id="o-que-e">
     <h2>O que é a Leitura Intuitiva</h2>
-    <p class="body-text">A Leitura Intuitiva é uma interpretação simbólica e personalizada que cruza o teu mapa astral e o teu Human Design com o tema que trazes e o momento que estás a viver.</p>
+    <p class="body-text"><strong>A Leitura Intuitiva é uma interpretação simbólica e personalizada que cruza o teu mapa astral e o teu Human Design com o tema que trazes e o momento que estás a viver.</strong></p>
     <p class="body-text">Não te entrego dois relatórios separados, nem uma lista de signos, planetas, tipos e perfis. Relaciono os elementos das duas linguagens com o contexto que partilhas e com as associações que surgem na minha interpretação intuitiva, construindo um fio que possas acompanhar. A partir daí, exploro possíveis padrões e crenças, crio uma história simbólica e proponho perguntas e pequenas experiências para levares essa reflexão à tua vida.</p>
     <div class="flip-grid">
       <div class="fcard" tabindex="0"><div class="finner">
@@ -1138,7 +1153,7 @@
         <p class="body-text">O meu percurso de estudo reúne diferentes áreas e diferentes ferramentas como Coaching, Constelações Familiares, Leitura de Aura, Reiki, ThetaHealing<sup style="font-size:0.6em;">®</sup>, innerdance (energia vital); e linguagens simbólicas como os sonhos, a alquimia, a Astrologia e o Human Design, incluindo aplicações aos negócios e às crianças (e digo-te que está mais relacionado do que parece).</p>
       </div>
     </div>
-    <p class="body-text">Com estes estudos e a experiência de acompanhar pessoas, fui construindo uma metodologia própria holística e integrativa. O estudo do desenvolvimento do cérebro, da neurociência e dos processos de aprendizagem também informa o meu olhar sobre a forma como construímos hábitos, crenças e respostas ao longo da vida.</p>
+    <p class="body-text">Com estes estudos e a experiência de acompanhar pessoas, fui construindo uma metodologia própria holística e integrativa. O estudo do desenvolvimento do cérebro, da neurociência e dos processos de aprendizagem também informa o meu olhar sobre a forma como construímos hábitos, crenças e respostas.</p>
     <p class="body-text uso">Uso a intuição, a leitura de energia, a interpretação da linguagem simbólica e a análise como partes do mesmo olhar, assim como a minha sensibilidade para explorar o que pede clareza para o transformar em reflexões para o dia-a-dia.</p>
         <details class="astro">
       <summary>Um olhar sobre mim pelos olhos da Astrologia e do Human Design</summary>
@@ -1163,16 +1178,6 @@
     <h2>Astrologia e aprofundamento com o Human Design</h2>
     <p class="body-text"><strong>A Astrologia que uso tem uma leitura alquímica.</strong> Na abordagem alquímica que sigo, <strong>os planetas representam funções e movimentos, os signos dão-lhes uma qualidade de expressão e as casas situam os temas nas diferentes áreas da vida.</strong> Interessa-me a conversa entre estes elementos e aquilo que ela pode ajudar-te a explorar na tua experiência. Como diz a máxima atribuída a Hermes Trismegisto, <em>“o que está em baixo é como o que está em cima.”</em></p>
     <p class="body-text">O Human Design combina referências astrológicas com o I Ching, a Cabala e o sistema dos chakras numa linguagem própria de autoconhecimento. <strong>Oferece outra linguagem para explorares o teu ritmo, a forma como decides e te relacionas.</strong> Neste sistema, as posições planetárias correspondem a ativações de portais e linhas, que interpreto como referências simbólicas para aprofundar essa reflexão.</p>
-    <div class="hdx">
-      <details class="hdx-d"><summary class="hdx-eyebrow">Um exemplo do meu mapa: Vénus, uma chave para o meu coração <span class="hdx-ch">▾</span></summary>
-      <p class="hdx-p">No meu mapa astral, Vénus em Sagitário, junto de Mercúrio, na casa 10, aproxima linguagem, valor e relação numa procura de sentido. <strong>Sagitário traz o horizonte, a casa 10 traz a montanha que venho subir:</strong> o caminho que escolho e o lugar que assumo no mundo. Esta imagem convida-me a perguntar se <strong>aquilo que digo, aquilo que valorizo e a vida que construo estão a caminhar juntos</strong>.</p>
-      <p class="hdx-p">No Human Design, a minha Vénus acrescenta duas imagens: o portal 11, o mesmo que o de Mercúrio, e o portal 59. O primeiro fala de <strong>ideias e imaginação</strong> que podem aproximar pessoas; o segundo, <strong>de intimidade e do discernimento</strong> que amadurece com o tempo: com quem, quando e como me quero abrir.</p>
-      <p class="hdx-p">É neste encontro que a Leitura se torna mais íntima: olhar para estas imagens ajuda-me a <strong>distinguir</strong> o encanto de imaginar possibilidades da confiança que se constrói na convivência e a lembrar-me de que posso criar proximidade sem apressar a minha abertura.</p>
-      <p class="hdx-p">Estas linguagens simbólicas abrem uma pergunta que atravessa o amor e o trabalho:<br><strong>como posso dar voz ao que valorizo e criar proximidade sem me afastar de mim?</strong></p>
-      <p class="hdx-p"><strong>Para levar esta reflexão à vida</strong>, posso perguntar: o que estou a imaginar, o que tenho observado e o que preciso de dizer? <strong>Depois, escolher um gesto pequeno</strong>: fazer um pedido claro, comunicar um limite ou dar espaço a um valor numa decisão.</p>
-      <p class="hdx-p">Com base nesta Leitura, abro portas para <strong>o que quero trabalhar em mim e para aquilo a que quero dar mais espaço</strong>: a liberdade de dizer o que sinto, a calma de deixar a confiança crescer e a coragem de escolher caminhos onde os meus valores também tenham lugar.</p>
-    </details>
-    </div>
     <h3 class="hdq-t">O que dizem sobre o Human Design comigo</h3>
     <div class="hdmsgs">
       <blockquote class="hdmsg"><p>Bom dia, Filipa! Acabei de ver a tua aula. UAU ✨ Adorei, mesmo 😍 Não sabia nada sobre Human Design e <strong>foi uma aula muito esclarecedora porque expões o conteúdo de forma muito clara e apelativa</strong>. <u>Respiras o que falas e isso sente-se na energia que transmites</u> 💙 Adorei a explicação sobre a origem do Human Design, fiquei rendida e a achar ainda mais interessante 😊 Obrigada por partilhares esta introdução tão útil! Gostei muito muito muito. Amei conhecer os neutrinos ahahah ✨✨</p></blockquote>
@@ -1194,20 +1199,17 @@
   <!-- E DEPOIS -->
   <section class="reveal" id="pratica">
     <h2>“E depois, o que faço com essa informação?”</h2>
-    <p class="body-text">A Leitura não é um conjunto de características para guardares sobre ti. O que lhe dá utilidade é a possibilidade de relacionares as imagens e perguntas que encontras com situações concretas da tua vida.</p>
-    <p class="body-text">Por exemplo, o Sol em Capricórnio pode abrir uma reflexão sobre a tua relação com o trabalho, a responsabilidade ou o sucesso. Mais do que ficares com a ideia de que és uma pessoa responsável ou persistente, interessa perguntar: o que é a realização para ti? Quando é que o compromisso se transforma em sobrecarga? Há momentos em que sentes que precisas de fazer sempre mais para ter valor?</p>
-    <p class="body-text">O Human Design pode acrescentar outras perguntas a essa exploração. Se o teu desenho indicar autoridade emocional, por exemplo, podemos olhar para a relação entre aquilo que sentes e o momento em que decides. O que muda quando não respondes de imediato? O que permanece depois de passar o entusiasmo ou o desconforto inicial? Em que situações sentes pressão para decidir antes de ser o teu momento ideal?</p>
-    <p class="body-text">Não se trata de concluir que uma posição no mapa explica a tua sobrecarga ou que uma autoridade determina a forma certa de decidires. Trata-se de usar estas linguagens para observar a tua experiência com mais atenção: reconhecer o que acontece, questionar interpretações habituais e descobrir outras respostas possíveis.</p>
-    <p class="body-text">É aqui que a Leitura passa da interpretação à prática. Ao longo da Leitura, encontras perguntas de reflexão e pequenas experiências ligadas ao tema que trazes. Podes, por exemplo, observar o que te leva a aceitar mais uma responsabilidade, dar tempo a uma decisão quando isso é possível ou experimentar comunicar uma necessidade que costumas deixar para depois.</p>
-    <p class="body-text">Não precisas de mudar tudo de uma vez, nem de fazer da Leitura mais uma exigência sobre como deverias ser. Podes escolher uma pergunta, levá-la contigo durante alguns dias e reparar no que descobres. O que reconheces? O que não encaixa? O que muda quando experimentas responder de outra forma?</p>
-    <p class="body-text">A tua experiência continua a ser a referência. Podes reconhecer-te na interpretação, discordar ou dar-lhe outro sentido. Não precisas de confirmar os mapas: interessa perceber se esta reflexão te ajuda a viver com mais consciência e espaço de escolha.</p>
-    <div class="tabpanel pr-box"><p class="qa-a">Se quiseres aprofundar o que descobres, ou sentires dificuldade em fazer diferente mesmo reconhecendo um padrão, podes fazê-lo nas sessões comigo. Partimos de situações concretas da tua vida para explorar as crenças, emoções e circunstâncias envolvidas, recorrendo às ferramentas que fizerem sentido para o que combinamos trabalhar.</p></div>
-    <p class="body-text">A Leitura oferece-te um ponto de partida para essa exploração. As sessões são um espaço opcional para a continuarmos em conjunto.</p>
+    <p class="body-text"><strong>A Leitura não é um conjunto de características para guardares sobre ti.</strong> O que lhe dá utilidade é a possibilidade de relacionares as imagens e perguntas que encontras com situações concretas da tua vida.</p>
+    <p class="body-text">Por exemplo, o Sol em Capricórnio pode abrir uma reflexão sobre a tua relação com o trabalho, a responsabilidade ou o sucesso. Mais do que ficares com a ideia de que és uma pessoa responsável ou persistente, interessa perguntar: <em>o que é a realização para ti? Quando é que o compromisso se transforma em sobrecarga? Há momentos em que sentes que precisas de fazer sempre mais para ter valor?</em></p>
+    <p class="body-text"><strong>O Human Design pode acrescentar outras perguntas a essa exploração.</strong> Se o teu desenho indicar autoridade emocional, por exemplo, podemos olhar para a relação entre aquilo que sentes e o momento em que decides. <em>O que muda quando não respondes de imediato? O que permanece depois de passar o entusiasmo ou o desconforto inicial? Em que situações sentes pressão para decidir antes de ser o teu momento ideal?</em></p>
+    <p class="body-text">Não se trata de concluir que uma posição no mapa explica a tua sobrecarga ou que uma autoridade determina a forma certa de decidires. <strong>Trata-se de usar estas linguagens para observar a tua experiência com mais atenção: reconhecer o que acontece, questionar interpretações habituais e descobrir outras respostas possíveis.</strong></p>
+    <p class="body-text">Não precisas de mudar tudo de uma vez, nem de fazer da Leitura mais uma exigência sobre como deverias ser. Podes escolher uma pergunta, levá-la contigo durante alguns dias e reparar no que descobres. <em>O que reconheces? O que não encaixa? O que muda quando experimentas responder de outra forma?</em></p>
+    <div class="tabpanel pr-box"><p class="qa-a"><strong>Se quiseres aprofundar</strong> o que descobres, ou sentires dificuldade em fazer diferente mesmo reconhecendo um padrão, <strong>podes fazê-lo nas sessões comigo.</strong> Partimos de situações concretas da tua vida para explorar as crenças, emoções e circunstâncias envolvidas, recorrendo às ferramentas que fizerem sentido para o que combinamos trabalhar.</p></div>
   
     <div class="feat feat-pr">
       <p class="feat-eyebrow">✦ A Leitura mais recente · testemunho em áudio</p>
       <p class="feat-quote">«Fez clique nos pontos onde tinha que fazer o clique. Trouxe visões diferentes à minha realidade.»</p>
-      <p class="feat-ctx">Uma cliente de há anos, que virou amiga também, de quem conheço muito bem a sua história. Um caso bem especial, por isso mesmo estava curiosa para ver o que esta Leitura lhe traria. <b>Esta Leitura foi entregue em áudio, num formato anterior; a Leitura Intuitiva é escrita.</b></p>
+      <p class="feat-ctx">Uma cliente de há anos, que virou amiga também, de quem conheço muito bem a sua história. Um caso bem especial, por isso mesmo estava curiosa para ver o que esta Leitura lhe traria. Esta Leitura foi entregue em áudio, num formato anterior, a Leitura Intuitiva é escrita.</p>
       <div class="aud"><audio preload="metadata" src="Feedback%20LA%20nova%20Cristiana.MP3"></audio><button type="button" class="aud-btn" aria-label="Ouvir o testemunho"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">«Trouxe visões diferentes»</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
       <details>
         <summary>Ler o testemunho completo</summary>
@@ -1229,9 +1231,9 @@
     <h2>O que recebes</h2>
     <ul class="clean stagger">
       <li>Uma Leitura integrada dos teus mapas, orientada pelo teu tema e pelo contexto que partilhas.</li>
-      <li>Uma história simbólica personalizada, que dá forma aos desejos, tensões e possibilidades explorados.</li>
-      <li>Perguntas sobre possíveis padrões e crenças, para relacionares a interpretação com situações concretas da tua vida.</li>
-      <li>Propostas de observação e pequenas experiências práticas, para explorares outras formas de escolher e agir.</li>
+      <li>Uma história simbólica personalizada, que dá forma aos temas explorados.</li>
+      <li>Perguntas sobre possíveis padrões e crenças, para relacionares com situações da tua vida.</li>
+      <li>Propostas de observação e pequenas práticas, para explorares outras formas de escolher e agir.</li>
       <li>A Leitura por escrito, para releres ao teu ritmo e regressares ao que fizer sentido para ti.</li>
     </ul>
   </section>
@@ -1254,7 +1256,7 @@
       <span>Criatividade e prazer</span>
       <span>Tempo e ritmo da vida</span>
     </div>
-    <p class="soft-note">Não precisas de separar aquilo que, na tua experiência, está ligado. Se ressoaste com mais do que um, podes partilhar comigo o teu momento com liberdade no momento da marcação da tua Leitura.</p>
+    <p class="soft-note">Não precisas de separar aquilo que, na tua experiência, está ligado. Se ressoaste com mais do que um, podes partilhar comigo o teu momento com toda a liberdade no momento da marcação da tua Leitura Intuitiva.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1270,17 +1272,19 @@
       <div class="tl-step"><span class="tl-dot">5</span><h3>Lês e integras</h3><p>No teu tempo, quantas vezes quiseres. Podes tomar notas das tuas reflexões e trazer exemplos concretos para a sessão, se escolheres essa opção.</p></div>
       <div class="tl-step opt"><span class="tl-dot">6</span><h3>Sessão de aprofundamento</h3><p>Caso escolhas essa opção, aprofundamos os temas, trabalhamos as crenças relevantes e exploramos formas de responder às situações reais.</p></div>
     </div>
+    <details class="comp-tg"><summary>Complemento opcional</summary>
     <div class="tl-extra">
-      <p class="tl-extra-t">Complemento opcional</p>
       <div class="tl-extra-g one">
-        <div><b>A tua Revolução Solar · +100€</b><p>O mapa do teu ano, de aniversário a aniversário: os temas que estão a pedir a tua atenção no ciclo atual e o que podes cultivar neste ciclo, lidos em relação com o teu mapa natal. Pode ter um significado ainda mais especial se fazes anos em breve ou fizeste há pouco tempo, para dar mote ao teu novo ciclo, mas pode ser lida em qualquer momento sobre o teu ciclo atual.</p></div>
+        <div><b>A tua Revolução Solar · +100€</b><p>Mais informação sobre o teu ciclo anual (de aniversário a aniversário): temas para explorar, possibilidades a cultivar e perguntas para as escolhas que tens pela frente, em diálogo com o teu mapa natal.</p></div>
       </div>
       <p class="tl-extra-n">Podes juntar a Revolução Solar na altura de marcação da Leitura.</p>
     </div>
+    </details>
     <details class="rs-tg"><summary>O que dizem sobre a Revolução Solar</summary>
     <div class="hdmsgs rsmsgs">
       <blockquote class="hdmsg"><p>Obrigada mesmo pela tua dedicação!</p><p>No fundo compilaste num documento que é algo maior do que eu estava à espera, e pelo que percebi do que tinhas planeado, mas mesmo assim eu consigo perceber que é <u>um resumo resumidinho de muita coisa que tu tiveste que estudar, ver, analisar e entrecruzar</u> as informações e por isso, muito obrigada por todo esse trabalho, essa dedicação.</p><p>Depois, sem dúvida, <strong>é mágico como de facto aquilo que o mapa revelou, é aquilo que nós já tínhamos percebido que eu precisava, que era o momento em que estava e acima de tudo é aquilo que eu sinto mesmo que está a acontecer que estou a viver</strong>.</p><p>E acima de tudo foi <strong>muito bom ver essa confirmação</strong>, no fundo é isso, uma confirmação daquilo que tínhamos pensado para todo este processo, para este momento em específico, e alinham-se muito com o que eu quero também.</p><p>Enfim, todos os pontinhos, todas as coisinhas que tu escreveste, para já <u>escreveste de uma forma muito clara, que chegou bem cá dentro, ressoou muito cá dentro e que já está muito alinhado com aquilo que eu sinto, que eu quero e com aquilo que quero trabalhar comigo mesma, comigo mesma e contigo também</u>, foi maravilhoso todos os pontinhos mesmo.<br>Foi tudo maravilhoso e é algo que tem que me acompanhar durante todo o ano, mesmo <strong>as perguntas que tu colocaste foi muito interessante refletir sobre elas</strong> e tenho consciência que se reler e fizer essas mesmas questões daqui a cinco meses vou ter uma perspectiva diferente sobre todas aquelas questões e mesmo sobre aquilo que está escrito.</p><p><strong>Muito bom! Adorei, adorei, adorei e vamos agora a isso!</strong> Vamos tratar agora desta fase de transformação de perceber qual o próximo passo que podemos dar neste processo para desenvolver aquilo que tem que ser desenvolvido, criar espaço para o que tem que ter espaço e depois como expressar, como pôr cá fora todas estas ideias.</p></blockquote>
     </div>
+    <button type="button" class="astro-up" aria-label="Fechar os testemunhos" onclick="var d=this.closest('details');d.open=false;d.scrollIntoView({block:'center',behavior:'smooth'});">↑</button>
     </details>
   </section>
 
@@ -1289,19 +1293,19 @@
   <!-- OPÇÕES -->
   <section class="reveal" id="opcoes">
     <h2>Escolhe a tua Leitura</h2>
-    <p class="deliv">✦ A Leitura é escrita e entregue <b>até 14 dias úteis após a marcação</b> (pagamento confirmado e dados recebidos).</p>
+    <p class="deliv">✦ A Leitura é escrita e entregue <b>até 14 dias úteis após marcação confirmada</b>.</p>
     <div class="offers offers2">
       <div class="offer" data-ses="0">
         <p class="offer-name">Leitura Intuitiva</p>
         <p class="offer-price">247€</p>
         <ul>
-          <li><span class="nb">Leitura do teu mapa astral e do teu Human Design,</span> orientada pelo teu tema</li>
+          <li>Leitura dos teus mapas, orientada pelo teu tema e contexto</li>
           <li>História simbólica personalizada</li>
           <li>Perguntas e orientações práticas</li>
           <li>A tua Leitura por escrito,<br>para leres ao teu ritmo</li>
         </ul>
         <details class="comp"><summary>Complemento opcional</summary>
-        <label class="hd-add" data-extra="rs" data-p="100"><input type="checkbox" class="hd-chk"><span><strong>Juntar a Revolução Solar · +100€</strong><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
+        <label class="hd-add" data-extra="rs" data-p="100"><input type="checkbox" class="hd-chk"><span><strong>Juntar a Revolução Solar · +100€</strong><br>Mais informação sobre o teu momento atual: sobre os temas e possibilidades do teu ciclo anual, em diálogo com o teu mapa natal.</span></label>
         </details>
         <a class="btn outline" href="marcar-leitura.html?op=leitura">Quero a minha Leitura</a>
       </div>
@@ -1310,19 +1314,19 @@
         <p class="offer-price">397€</p>
         <ul>
           <li>Tudo o que está na Leitura Intuitiva</li>
-          <li>Uma sessão individual de até 1h30 comigo,<br>depois de leres a tua Leitura</li>
-          <li>Aprofundamos os temas e trabalhamos<br>as crenças relevantes</li>
+          <li>Uma sessão individual comigo depois de leres a tua Leitura (até 1h30)</li>
+          <li>Aprofundamos os temas e trabalhamos<br>as crenças e os padrões relevantes para o teu momento</li>
         </ul>
         <details class="comp"><summary>Complemento opcional</summary>
-        <label class="hd-add" data-extra="rs" data-p="100"><input type="checkbox" class="hd-chk"><span><strong>Juntar a Revolução Solar · +100€</strong><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
+        <label class="hd-add" data-extra="rs" data-p="100"><input type="checkbox" class="hd-chk"><span><strong>Juntar a Revolução Solar · +100€</strong><br>Mais informação sobre o teu momento atual: sobre os temas e possibilidades do teu ciclo anual, em diálogo com o teu mapa natal.</span></label>
         </details>
         <a class="btn" href="marcar-leitura.html?op=sessao">Quero a Leitura e a sessão</a>
       </div>
     </div>
     <div class="more-opts">
-      <a class="mo-row" id="oferecer" href="marcar-leitura.html?oferta=1"><span class="mo-ic">🎁</span><span class="mo-tx"><b>Oferecer uma Leitura a alguém</b><em>Com um cartão de oferta (a pessoa marca comigo no prazo de 1 mês) ou com a Leitura já pronta. Só precisas dos dados de nascimento.</em></span><span class="mo-pr">desde 247€</span></a>
+      <a class="mo-row" id="oferecer" href="marcar-leitura.html?oferta=1"><span class="mo-ic">🎁</span><span class="mo-tx"><b>Oferecer uma Leitura a alguém</b><em>Com um cartão de oferta (a pessoa marca comigo no prazo de 1 mês) ou com a Leitura já pronta. Só precisas dos dados de nascimento e do seu consentimento, caso seja a Leitura pronta.</em></span><span class="mo-pr">desde 247€</span></a>
     </div>
-    <p class="sess-link">Preferes começar por uma conversa sobre o que estás a viver? <a href="#sessao">Conhece a sessão individual</a>: não precisas de fazer uma Leitura.</p>
+    <p class="sess-link">Preferes começar por uma conversa sobre o que estás a viver?<br><a href="#sessao">Conhece a sessão individual</a>: não precisas de fazer uma Leitura.</p>
     <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20%5BA%20tua%20apresenta%C3%A7%C3%A3o%5D%20Vi%20a%20tua%20Leitura%20Intuitiva%2C%20mas%20tenho%20uma%20quest%C3%A3o%20antes%20de%20avan%C3%A7ar%3A%20%28a%20tua%20quest%C3%A3o%29." target="_blank" rel="noopener">Tens uma questão antes de escolher? Fala comigo 💌</a></p>
   </section>
 
@@ -1334,21 +1338,20 @@
       <p class="ses-eye">Para ires mais fundo</p>
       <h2>Sessão de aprofundamento e trabalho de crenças</h2>
       <p class="ses-lead">Por vezes, compreender um padrão não chega para conseguirmos responder de outra forma. Nesta sessão, exploramos as crenças, emoções e circunstâncias que podem estar a mantê-lo e as possibilidades que queres começar a construir.</p>
-      <p class="ses-p">Durante até 1h30, partimos do que a Leitura despertou: uma pergunta, uma reação ou uma situação concreta da tua vida.</p>
       <div class="ses-steps">
         <div class="ses-st"><span>1</span><b>Nomear</b><p>Dar palavras ao que acontece: o que sentes, como respondes e o que acreditas sobre ti ou sobre os outros nessa situação. Podemos encontrar regras aprendidas cedo, expectativas familiares ou compromissos internos que nunca tinhas parado para questionar.</p></div>
         <div class="ses-st"><span>2</span><b>Compreender</b><p>Explorar como essas respostas podem ter feito sentido na tua história, o que procuram proteger e o que te custa mantê-las hoje. Sem tratar as tuas formas de proteção como falhas.</p></div>
         <div class="ses-st"><span>3</span><b>Experimentar</b><p>Encontrar uma perspetiva que queiras cultivar e um passo possível para a semana seguinte: expressar uma necessidade, comunicar um limite ou responder de outra maneira a uma situação conhecida.</p></div>
       </div>
-      <p class="ses-p">As práticas que integro são escolhidas em função do que trazes e do que combinamos trabalhar.</p>
-      <p class="ses-state">A Leitura abre perspetivas. A sessão oferece um espaço de escuta e trabalho conjunto para explorares como levá-las à tua vida. Não precisas de resolver tudo numa só sessão para começares a fazer diferente.</p>
-      <p class="ses-p">Depois de receberes a tua Leitura, podes marcar sessões comigo com base nela. Como já a fiz, conheço o teu mapa e o que partilhaste, por isso não começamos do zero: partimos diretamente do que ela despertou em ti.</p>
-      <div class="ses-solo"><p><b>Podes também marcar uma sessão sem receberes primeiro a Leitura Intuitiva.</b> Nesse caso, partimos diretamente do tema que queres trabalhar.</p><a class="btn" href="marcar-leitura.html?op=sessaosolo">Marcar só a sessão · 175€</a><span class="ses-note">Se a juntares à Leitura, a sessão fica por 150€.</span></div>
+      <p class="ses-p">As práticas que integro são escolhidas consoante o que trazes e o que combinamos.</p>
+      <p class="ses-state">A sessão oferece um espaço de escuta e trabalho conjunto para explorares como levar as novas perspetivas para a tua vida, para as situações concretas do teu momento.</p>
+      <p class="ses-p">Depois de receberes a tua Leitura, podes marcar sessões comigo com base nela. Como já a fiz, conheço o teu mapa e o que partilhaste, por isso não começamos do zero: partimos diretamente do que ela começa a despertar em ti.</p>
+      <div class="ses-solo"><p><b>Podes também marcar uma sessão sem receberes primeiro a Leitura Intuitiva.</b> Nesse caso, partimos diretamente do tema que queres trabalhar.</p><a class="btn" href="marcar-leitura.html?op=sessaosolo">Marcar só a sessão · 179€</a><span class="ses-note">Se a juntares à Leitura, a sessão fica por 150€.</span></div>
     </div>
     <h3 class="hdq-t sesq-t">O que dizem sobre as sessões comigo</h3>
     <div class="sesimgs">
-      <img src="feedback-sessao-one-in-a-kind.jpg" alt="Testemunho de uma cliente sobre a sessão: «a sessão que tivemos foi one-in-a-kind»" loading="lazy">
-      <img src="feedback-sessao-esta-viagem.jpg" alt="Testemunho de uma cliente: «Esta viagem tem sido tão incrível… Veio sossegar o meu espírito desassossegado»" loading="lazy">
+      <img src="feedback-sessao-one-in-a-kind.jpg?v=2" alt="Testemunho de uma cliente sobre a sessão: «a sessão que tivemos foi one-in-a-kind»" loading="lazy">
+      <img src="feedback-sessao-esta-viagem.jpg?v=2" alt="Testemunho de uma cliente: «Esta viagem tem sido tão incrível… Veio sossegar o meu espírito desassossegado»" loading="lazy">
     </div>
   </section>
 
@@ -1385,7 +1388,7 @@
       <p class="body-text">A forma como te vês influencia a vida que constróis, e nenhuma dessas histórias é definitiva. Vamos olhar para o teu mapa e para o teu momento em conjunto, com profundidade e leveza.</p>
       <a class="btn" href="#opcoes" data-scroll="opcoes">Escolher a minha Leitura</a>
     </div>
-    <p class="legal">O mapa é usado como linguagem simbólica de reflexão, não como diagnóstico nem como uma definição fechada de quem és, mas abre portas para trabalharmos em conjunto em sessões. Esta Leitura não é uma previsão de acontecimentos e não substitui acompanhamento médico, psicológico ou outro aconselhamento profissional.</p>
+    <p class="legal">A Astrologia e o Human Design são usados nesta Leitura como linguagens simbólicas de reflexão, não como métodos científicos de avaliação ou diagnóstico. A interpretação não é uma definição fechada de quem és nem uma previsão de acontecimentos: cabe-te reconhecer o que faz sentido à luz da tua experiência e questionar o que não faz. A Leitura não substitui acompanhamento médico, psicológico ou outro aconselhamento profissional.</p>
   </section>
 
 </main>
@@ -1419,7 +1422,7 @@
       <div class="mp-grid">
         <div class="mp-full"><label class="mp-l" for="mpNome" id="mpNomeL">Nome</label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name" required></div>
         <label class="mp-chk mp-full" style="margin:0"><input type="checkbox" id="mpOutra"><span>É o mapa de outra pessoa</span></label>
-        <p class="mp-full mp-cons" id="mpCons" hidden style="font-size:12.5px;color:var(--ink-soft);margin:0">Ao gerares o mapa de outra pessoa, deves ter o consentimento dela.</p>
+        <p class="mp-full mp-cons" id="mpCons" hidden style="font-size:12.5px;color:var(--ink-soft);margin:0">Ao gerares o mapa de outra pessoa, deves ter consentimento.</p>
         <div class="mp-full mp-gen" style="font-size:12.5px;color:var(--ink-soft)">Linguagem do texto: <label style="margin:0 8px"><input type="radio" name="mpGen" value="f" checked> feminino</label><label><input type="radio" name="mpGen" value="m"> masculino</label></div>
         <div><label class="mp-l" for="mpData">Data de nascimento</label><input type="text" id="mpData" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10"></div>
         <div><label class="mp-l" for="mpHora">Hora de nascimento</label><input type="time" id="mpHora"></div>

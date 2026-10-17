@@ -71,7 +71,7 @@
   .mobile-menu a { font-family:'Lora',serif; font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:#1a1410; text-decoration:none; }
   @media (max-width:760px){ .nav-links{ display:none; } .hamburger{ display:flex; } }
 
-  .cover { position:relative; height:24vh; min-height:165px; max-height:215px; background:linear-gradient(120deg,#f1c9b3,#eacdc7,#eedab2,#f3d3ae,#eacdc7,#f1c9b3); background-size:100% 100%; animation:none; margin-top:88px; display:flex; align-items:flex-end; }
+  .cover { position:relative; height:34vh; min-height:230px; max-height:310px; background:linear-gradient(120deg,#f1c9b3,#eacdc7,#eedab2,#f3d3ae,#eacdc7,#f1c9b3); background-size:100% 100%; animation:none; margin-top:88px; display:flex; align-items:flex-end; }
   .cover-text { width:100%; max-width:800px; margin:0 auto; padding:0 24px 1.4rem; position:relative; z-index:1; }
   .cover-text-bg h2 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:clamp(28px,4.6vw,36px); line-height:1.05; margin:0 0 0.1rem; color:var(--wine); }
   .cover-text-bg .eyebrow { color:var(--orange); margin:0; font-style:italic; font-weight:700; font-size:18px; white-space:nowrap; }
@@ -668,6 +668,11 @@
   .conv-rest { margin-top:.6rem; }
   .conv-rest p.t-sm { text-align:left; }
   @media (min-width:601px){ .popup.popup-conv { left:auto; right:1.4rem; } }
+
+  /* ronda 32 */
+  @media (min-width:601px){ .popup.popup-conv { left:1.4rem !important; right:auto !important; top:96px !important; bottom:auto !important; width:300px !important; } }
+  @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 310px; width:310px; } .callout.intro-box { padding:1rem 1rem 1rem 2.4rem; } }
+  .intro-box .foto-abre img { transform:none !important; object-position:50% 100% !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -680,7 +685,6 @@
   <a class="nav-logo" href="index.html">Filipa Osório</a>
   <div class="nav-links">
     <span class="nav-lang">Also available in English · <a href="ceen-en.html" hreflang="en" lang="en">English version</a></span>
-    <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
     <a href="#convites-parcerias">💌 Convites e parcerias</a>
     <a href="#novidades">✉ Newsletter</a>
   </div>
@@ -690,7 +694,6 @@
   <button class="hamburger" onclick="document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="leitura-intuitiva.html">Leitura Intuitiva</a>
   <a href="#convites-parcerias" onclick="document.getElementById('mobileMenu').style.display='none';">💌 Convites e parcerias</a>
   <a href="#novidades">✉ Newsletter</a>
 </div>
@@ -1808,6 +1811,7 @@
     var pc = document.getElementById('popupConv'), p = document.getElementById('popup'); if (!pc || !p) return;
     function pos(){
       if (window.innerWidth <= 600){ pc.style.bottom = ''; pc.style.width = ''; return; }
+      if (true){ pc.style.bottom = ''; pc.style.width = ''; return; }
       pc.style.width = p.offsetWidth + 'px';
       var base = parseFloat(getComputedStyle(p).bottom) || 22;
       pc.style.bottom = (p.classList.contains('visible') ? base + p.offsetHeight + 14 : base) + 'px';
