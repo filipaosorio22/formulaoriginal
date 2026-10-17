@@ -1103,7 +1103,7 @@
     <div class="fmt">
       <div class="fmt-card sessao">
         <h3>CEEN Session</h3>
-        <p class="fmt-price">250€</p>
+        <p class="fmt-price">269€</p>
         <p class="fmt-l">We work on one central question during our meeting, through questions, analysis and recommendations developed together during the session.</p>
         <ul>
           <li>One-to-one online session</li>
@@ -1264,10 +1264,10 @@
       <p class="bk-upd" id="bkUpd" style="display:none;">You can correct your answers before choosing the day.</p>
       <form id="bkForm" novalidate>
         <div class="bk-fmt">
-          <label><input type="radio" name="formato" value="Sessão CEEN · 250€" checked data-valor="250€"><span><b>CEEN Session</b>250€</span></label>
+          <label><input type="radio" name="formato" value="Sessão CEEN · 269€" checked data-valor="269€"><span><b>CEEN Session</b>269€</span></label>
           <label><input type="radio" name="formato" value="Ciclo CEEN · 800€" data-valor="800€"><span><b>CEEN Cycle</b>800€</span></label>
         </div>
-        <p class="bk-paynote">Your session booking is confirmed once your payment of <strong id="bkValor1">250€</strong> is confirmed. The payment methods are shown when you book the date of your session.</p>
+        <p class="bk-paynote">Your session booking is confirmed once your payment of <strong id="bkValor1">269€</strong> is confirmed. The payment methods are shown when you book the date of your session.</p>
         <label class="bk-f">Full name<input name="nome" required autocomplete="name"></label>
         <label class="bk-f">Email<input name="email" type="email" required autocomplete="email"></label>
         <div class="bk-f">Phone (WhatsApp)<span class="bk-tel"><select name="cc" class="bk-cc" aria-label="Country code"><option value="+351">🇵🇹 +351</option><option value="+55">🇧🇷 +55</option><option value="+34">🇪🇸 +34</option><option value="+33">🇫🇷 +33</option><option value="+44">🇬🇧 +44</option><option value="+1">🇺🇸 +1</option><option value="+49">🇩🇪 +49</option><option value="+41">🇨🇭 +41</option><option value="+352">🇱🇺 +352</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+32">🇧🇪 +32</option><option value="+353">🇮🇪 +353</option><option value="+46">🇸🇪 +46</option><option value="+244">🇦🇴 +244</option><option value="+258">🇲🇿 +258</option><option value="+238">🇨🇻 +238</option><option value="+61">🇦🇺 +61</option><option value="+971">🇦🇪 +971</option></select><input name="telemovel" type="tel" required autocomplete="tel-national" inputmode="tel"></span></div>
@@ -1289,7 +1289,7 @@
       <p class="bk-eyebrow">Step 2 of 2</p>
       <p class="bk-title">Thank you, <span id="bkNome"></span>! Choose the day</p>
       <div class="bk-pay">
-        <p>Your session booking is confirmed once your payment of <strong id="bkValor">250€</strong> is confirmed. The payment methods are shown when you book the date of your session.</p>
+        <p>Your session booking is confirmed once your payment of <strong id="bkValor">269€</strong> is confirmed. The payment methods are shown when you book the date of your session.</p>
       </div>
       <div id="calendlyConsentPrompt" style="display:none; text-align:center; padding:1.5rem 1rem;">
         <p style="margin-bottom:1.2rem;">To choose the day here, we need to load the Calendly calendar, which uses its own cookies.</p>
@@ -1425,7 +1425,7 @@
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
     if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
     var corpo = L.join('\n'), anterior = BK.ultimo;
-    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (250€)', formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
+    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (269€)', formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
     // só envia o e-mail se for a primeira vez ou se a pessoa mudou alguma resposta
     if (corpo !== anterior) {
       var tinha = !!anterior;
