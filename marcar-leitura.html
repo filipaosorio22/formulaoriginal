@@ -98,8 +98,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <div id="ops">
         <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="247" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa astral e do Human Design, história simbólica, perguntas e práticas.</span><span class="pr">247€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="397"><span><b>Leitura com sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">397€</span></label>
-        <label class="choice" data-op="sessaosolo" hidden><input type="radio" name="op" value="sessaosolo" data-p="150"><span><b>Sessão de aprofundamento, sem Leitura</b><br>Uma sessão individual de 1 hora, a partir do tema que queres trabalhar.</span><span class="pr">150€</span></label>
-        <label class="choice" data-op="hdsolo"><input type="radio" name="op" value="hdsolo" data-p="147"><span><b>Leitura de Human Design</b><br>A leitura do teu Human Design, só por escrito, sem o mapa astral.</span><span class="pr">147€</span></label>
+        <label class="choice" data-op="sessaosolo" hidden><input type="radio" name="op" value="sessaosolo" data-p="175"><span><b>Sessão de aprofundamento, sem Leitura</b><br>Uma sessão individual de até 1h30, a partir do tema que queres trabalhar.</span><span class="pr">175€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Juntar a Revolução Solar · +100€</b><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
@@ -131,6 +130,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
         <div class="full"><label class="lbl" for="local">Local <span class="opt">(cidade e país)</span></label><input type="text" id="local" maxlength="80" placeholder="ex.: Lisboa, Portugal"></div>
       </div>
       <p class="hint">Não sabes a hora? Podes pedi-la na <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">tua certidão de nascimento</a>, ou fala comigo antes de avançar.</p>
+    </div>
+
+    <div class="card" id="fam" hidden>
+      <h2>Antes da sessão</h2>
+      <div class="grid">
+        <div class="full"><label class="lbl" for="famA">Já conheces o teu mapa astral? <span class="opt">(opcional)</span></label><textarea id="famA" maxlength="1000" placeholder="ex.: nunca vi / já li a minha Lua e o meu Ascendente…"></textarea></div>
+        <div class="full"><label class="lbl" for="famH">Já conheces o teu mapa de Human Design? <span class="opt">(opcional)</span></label><textarea id="famH" maxlength="1000" placeholder="ex.: sei o meu tipo e a minha autoridade / ainda não…"></textarea></div>
+      </div>
     </div>
 
     <div class="card">
@@ -175,9 +182,8 @@ window.FO_PAY = {
     'rssessao+hd': 'https://buy.stripe.com/8x228r0oR00j1a56jkfw40v',
     'sessao': 'https://buy.stripe.com/14AcN5gnP9ATaKFfTUfw40y',
     'sessao+hd': 'https://buy.stripe.com/fZu6oH6Nf3cv061azAfw40u',
-    'sessaosolo': 'https://buy.stripe.com/3cI00j3B3bJ1cSNazAfw40j',
-    'rssolo': 'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k',
-    'hdsolo': 'https://buy.stripe.com/aFa9ATc7z6oH7yt6jkfw40A'
+    'sessaosolo': '', // 175€: falta criar o link no Stripe (o antigo era 150€)
+    'rssolo': 'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'
   }
 };
 </script>
@@ -193,7 +199,6 @@ window.FO_PAY = {
   var gift = q.get('oferta') === '1';
   var op = q.get('op');
   if (op === 'sessaosolo'){ var ss = document.querySelector('[data-op="sessaosolo"]'); ss.hidden = false; ss.querySelector('input').checked = true; op = null; }
-  if (op === 'hdsolo'){ document.querySelector('[data-op="hdsolo"] input').checked = true; op = null; }
   if (op) { var r = document.querySelector('input[name=op][value="' + (op === 'sessao' || op === 'rssessao' ? 'sessao' : 'leitura') + '"]'); if (r) r.checked = true; if (op === 'rs' || op === 'rssessao') $('rs').checked = true; }
 
   if (gift) {
@@ -226,20 +231,20 @@ window.FO_PAY = {
 
   function base(){ return document.querySelector('input[name=op]:checked'); }
   function sel(){
-    var bv = base().value; if (bv === 'hdsolo' || bv === 'sessaosolo') return { value: bv, getAttribute: function(){ return bv === 'hdsolo' ? '147' : '150'; } };
+    var bv = base().value; if (bv === 'sessaosolo') return { value: bv, getAttribute: function(){ return '175'; } };
     var ses = base().value === 'sessao', rs = $('rs').checked;
     return { value: rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura'), getAttribute: function(){ return String(+base().getAttribute('data-p') + (rs ? 100 : 0)); } };
   }
   function total(){ return +sel().getAttribute('data-p'); }
   function hdOk(){ return true; }
   function updTotal(){
-    var solo = base().value === 'hdsolo' || base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
+    var solo = base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
     $('rs').closest('label').hidden = solo;
     $('hd').checked = !solo;
     $('tot').textContent = total() + '€';
     var v = sel().value, sn = $('sesNote');
     var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
-    sn.hidden = !hasS;
+    sn.hidden = !hasS; $('fam').hidden = !hasS;
     sn.textContent = v === 'sessaosolo' ? 'A sessão não é marcada agora: depois de confirmado o pagamento envio-te as opções de data.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
     $('prazo').hidden = v === 'sessaosolo';
   }
@@ -255,7 +260,7 @@ window.FO_PAY = {
     if (hasLinks){ $('go').textContent = 'Continuar para o pagamento'; if (hn) hn.innerHTML = 'As tuas respostas chegam-me por e-mail e<br>segues para o pagamento seguro com cartão (Stripe).'; }
     else { $('go').textContent = 'Enviar'; if (hn) hn.textContent = 'As tuas respostas chegam-me por e-mail. Depois envio-te os dados de pagamento.'; }
   })();
-  var NAMES = { rssessao:'Leitura + Revolução Solar + Sessão de Aprofundamento', rssolo:'Só a Revolução Solar', hdsolo:'Leitura de Human Design', sessaosolo:'Só a sessão de aprofundamento', leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
+  var NAMES = { rssessao:'Leitura + Revolução Solar + Sessão de Aprofundamento', rssolo:'Só a Revolução Solar', sessaosolo:'Só a sessão de aprofundamento', leitura:'Leitura Intuitiva', sessao:'Leitura + sessão de aprofundamento', rs:'Leitura + Revolução Solar' };
   $('data').addEventListener('input', function(){
     var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2);
     if (d.length > 2) o += '/' + d.slice(2, 4);
@@ -290,6 +295,8 @@ window.FO_PAY = {
     L.push('E-mail: ' + email);
     if (gift && $('rnome').value.trim()) L.push('Para: ' + $('rnome').value.trim());
     if (data || hora || local) L.push('Nascimento: ' + [data ? fmtDate(data) : '', hora, local].filter(Boolean).join(', '));
+    var famQ = [['famA','Já conheces o teu mapa astral?'],['famH','Já conheces o teu mapa de Human Design?']];
+    if (!$('fam').hidden) famQ.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1]); L.push(v); } });
     var qs = [['q1', $('q1l').textContent], ['q2', $('q2l').textContent], ['q3', $('q3l').textContent]];
     qs.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1].replace(/\s*\(opcional\)\s*$/, '')); L.push(v); } });
     if ($('sub').checked) L.push('\nSubstack: quer subscrever');

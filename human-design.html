@@ -386,6 +386,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
             <div style="grid-column:1/-1"><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
           </div>
           <label class="chk gout"><input type="checkbox" id="gOutra"><span>Este mapa é de outra pessoa</span></label>
+          <p class="gcons" id="gCons" hidden style="font-size:12.5px;color:var(--ink-soft);margin:0.3rem 0 0">Ao gerares o mapa de outra pessoa, deves ter o consentimento dela.</p>
           <div id="gOutroWrap" hidden><label class="lbl" for="gOutro">Nome da outra pessoa</label><input type="text" id="gOutro" maxlength="60"></div>
           <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
           <p class="err" id="gErr" role="alert"></p>
@@ -399,7 +400,6 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <p class="big" id="ctaText"></p>
       <a class="btn" href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
       <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a><br>
-      <a class="soft" href="marcar-leitura.html?op=hdsolo">Só a Leitura de Human Design · 147€</a>
     </div>
     <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
   </section>
@@ -1054,6 +1054,7 @@ function setLocked(on){
 }
 // «este mapa é de outra pessoa»: a ficha fica com os dados de quem subscreve, nunca com os da outra pessoa
 (function(){
+  $('gOutra').addEventListener('change', function(){ $('gCons').hidden = !this.checked; });
   var c = $('gOutra'), w = $('gOutroWrap'), l = document.querySelector('label[for="gNome"]'), curName = '';
   function upd(){
     w.hidden = !c.checked; l.textContent = c.checked ? 'O teu nome' : 'Nome';
