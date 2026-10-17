@@ -608,13 +608,16 @@
   }
   .intro-split { display:flex; gap:1.6rem; align-items:flex-start; margin:1.8rem 0; }
   .intro-split .intro-callout { margin:0; flex:1; min-width:0; }
-  .foto-abre { position:relative; flex:0 0 300px; width:300px; margin:0; border-radius:14px; overflow:hidden; box-shadow:0 6px 20px rgba(120,80,30,.14); }
+  .foto-abre { position:relative; flex:0 0 276px; width:276px; margin:0; border-radius:14px; overflow:hidden; box-shadow:0 6px 20px rgba(120,80,30,.14); }
   .foto-abre img { width:100%; height:auto; display:block; }
   .foto-abre::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 100% 0%, rgba(255,190,90,.40) 0%, rgba(255,190,90,.12) 30%, rgba(255,190,90,0) 55%); mix-blend-mode:screen; }
-  @media (max-width:760px){ .intro-split { flex-direction:column; align-items:center; gap:1.2rem; } .intro-split .intro-callout { width:100%; } .foto-abre { flex:none; width:min(300px,78%); } }
-  .foto-par { display:grid; grid-template-columns:1fr 1fr; gap:1rem; width:78%; margin:0 auto; }
-  .foto-par img { width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 5px 16px rgba(120,80,30,.14); }
-  @media (max-width:560px){ .foto-par { width:100%; gap:.6rem; } }
+  @media (max-width:760px){ .intro-split { flex-direction:column; align-items:center; gap:1.2rem; } .intro-split .intro-callout { width:100%; } .foto-abre { flex:none; width:min(276px,78%); } }
+  .sucesso-flex { display:flex; gap:1.4rem; align-items:flex-start; }
+  .sucesso-flex .sf-text { flex:1; min-width:0; }
+  .sucesso-flex figure { flex:0 0 235px; margin:.4rem 0 0; }
+  .sucesso-flex img, .foto-h img { width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 5px 16px rgba(120,80,30,.14); }
+  .foto-h { width:78%; margin:0 auto; }
+  @media (max-width:640px){ .sucesso-flex { flex-direction:column-reverse; gap:.8rem; } .sucesso-flex figure { flex:none; width:80%; margin:0 auto; } .foto-h { width:100%; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -700,8 +703,9 @@
 <section>
   <div class="wrap">
     <h2 class="section-title">A tua definição de sucesso profissional é só tua</h2>
-    <p class="t-sm">Talvez sucesso profissional signifique, para ti, crescer, aumentar o rendimento ou chegar a mais pessoas. Talvez signifique ter mais tempo livre, mais autonomia, reconhecimento, impacto ou realização. Ou talvez seja tomar decisões com confiança e comunicar com autenticidade, relacionar-te com o teu trabalho com mais leveza e deixares de viver certas questões profissionais com tanto desgaste emocional.</p>
+    <div class="sucesso-flex"><div class="sf-text">    <p class="t-sm">Talvez sucesso profissional signifique, para ti, crescer, aumentar o rendimento ou chegar a mais pessoas. Talvez signifique ter mais tempo livre, mais autonomia, reconhecimento, impacto ou realização. Ou talvez seja tomar decisões com confiança e comunicar com autenticidade, relacionar-te com o teu trabalho com mais leveza e deixares de viver certas questões profissionais com tanto desgaste emocional.</p>
     <p class="t-sm">Podes já ter alcançado resultados que, para ti, representaram sucesso e, ainda assim, sentir que a forma como trabalhas hoje deixou de te representar. Isso não retira valor ao que construíste. Pode apenas indicar que chegou o momento de o reformular para acompanhar a tua evolução.</p>
+    </div><figure><img src="foto-ceen-costas-zoom.jpg" width="362" height="378" alt="Filipa de costas, a trabalhar no portátil no chão da sala" loading="lazy"></figure></div>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
       <p class="t-xs"><strong>Na CEEN, não partimos do princípio de que existe algo de errado contigo ou com o teu negócio</strong>, nem de que existe uma versão ideal à qual deverias corresponder ou uma fórmula de sucesso que deverias seguir. A melhor estratégia é a que se adequa a ti! Uma escolha pode fazer sentido e continuar a trazer medo ou desconforto. Alinhamento não precisa de significar ausência de tensão e rever o que construíste não retira valor ao teu percurso; permite-te escolher como queres continuar.</p>
     </div></div>
@@ -710,7 +714,7 @@
 
 <hr class="div">
 
-<section>
+<section style="padding-bottom:10px;">
   <div class="wrap-wide">
     <h2 class="section-title">O que pode trazer-te à CEEN</h2>
     <p class="t-sm">Podes querer alcançar novos resultados e, ao mesmo tempo, mudar a forma como os estás a construir. Estas duas necessidades podem fazer parte do mesmo momento do negócio:</p>
@@ -743,7 +747,7 @@
   </div>
 </section>
 
-<section class="pause pause-b">
+<section class="pause pause-b" style="padding-top:0;">
   <div class="wrap-wide">
     <p class="pause-quote duo">A CEEN ajuda-te a explorar não só a direção do negócio, mas a forma como desejas trabalhar nele, <br>e o que precisas de reconhecer, decidir e experimentar para dar espaço a essa possibilidade.</p>
   </div>
@@ -806,11 +810,6 @@
   </div>
 </section>
 
-<section class="tight" style="padding-top:1.2rem; padding-bottom:1.6rem;">
-  <div class="wrap">
-    <div class="foto-par"><img src="foto-ceen-sofa.jpg" width="418" height="740" alt="Filipa a trabalhar sentada no chão da sala" loading="lazy"><img src="foto-ceen-costas.jpg" width="402" height="728" alt="Filipa de costas, a trabalhar no portátil no chão da sala" loading="lazy"></div>
-  </div>
-</section>
 
 
 <hr class="div">
@@ -1150,9 +1149,10 @@
 
 <section class="tight" style="padding-top:1.2rem; padding-bottom:1.6rem;">
   <div class="wrap">
-    <div class="foto-par"><img src="foto-ceen-teclado.jpg" width="415" height="734" alt="Mãos a escrever no portátil, vistas de cima" loading="lazy"><img src="foto-ceen-maos.jpg" width="406" height="728" alt="Mão no teclado do portátil, em grande plano" loading="lazy"></div>
+    <div class="foto-h"><img src="foto-ceen-teclado-h.jpg" width="734" height="415" alt="Mãos a escrever no portátil, vistas de cima" loading="lazy"></div>
   </div>
 </section>
+
 
 
 <hr class="div">
