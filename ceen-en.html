@@ -615,6 +615,20 @@
   .sucesso-flex img, .foto-h img { width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 5px 16px rgba(120,80,30,.14); }
   .foto-h { width:78%; margin:0 auto; }
   @media (max-width:640px){ .sucesso-flex { flex-direction:column-reverse; gap:.8rem; } .sucesso-flex figure { flex:none; width:80%; margin:0 auto; } .foto-h { width:100%; } }
+  .intro-split .foto-abre { align-self:stretch; flex:0 0 276px; }
+  .intro-split .foto-abre img { height:100%; object-fit:cover; object-position:50% 100%; }
+  .intro-callout-2 { margin-top:1.2rem; }
+  .sucesso-flex { align-items:stretch; }
+  .sucesso-flex figure { margin:0; }
+  .sucesso-flex figure img { height:100%; object-fit:cover; object-position:50% 40%; }
+  .ciclo-split { display:flex; gap:1.4rem; align-items:stretch; margin-top:1.6rem; }
+  .ciclo-split .ciclo-note { margin:0 !important; flex:1; min-width:0; }
+  .ciclo-split figure { flex:0 0 235px; margin:0; display:flex; }
+  .ciclo-split figure img { width:100%; height:100%; object-fit:cover; object-position:50% 50%; display:block; border-radius:12px; box-shadow:0 5px 16px rgba(120,80,30,.14); }
+  @media (max-width:760px){ .ciclo-split { flex-direction:column; } .ciclo-split figure { flex:none; width:70%; margin:0 auto; } }
+  .intro-split .foto-abre, .sucesso-flex figure, .ciclo-split figure { position:relative; display:block; }
+  .intro-split .foto-abre img, .sucesso-flex figure img, .ciclo-split figure img { position:absolute; inset:0; width:100%; height:100% !important; object-fit:cover; }
+  @media (max-width:760px){ .intro-split .foto-abre { height:340px; } .sucesso-flex figure { height:300px; } .ciclo-split figure { height:300px; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -657,8 +671,10 @@
     <div class="intro-split"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório smiling while working at her laptop"></figure><div class="callout grayD intro-callout"><div class="ctext">
       <p><strong>CEEN is a one-to-one process of analysis and guidance that helps you review how you work and the role you play in your business. It considers these decisions in the context of who you are, the life you want to build and your energy.</strong></p>
       <p>We start with one central question about your business and explore how it connects with different areas. As I listen, I pay attention to how you talk about your business, what excites you or holds you back and the weight you give to certain decisions. I ask questions and reflect back the connections I notice in what you share.</p>
-      <p>This way of listening helps us recognize beliefs, fears and patterns that may be influencing your choices, even when you are not yet aware of them. We connect what we notice with the reality of your business and what you want to change.</p>
     </div></div></div>
+    <div class="callout grayD intro-callout intro-callout-2"><div class="ctext">
+      <p>This way of listening helps us recognize beliefs, fears and patterns that may be influencing your choices, even when you are not yet aware of them. We connect what we notice with the reality of your business and what you want to change.</p>
+    </div></div>
   </div>
 </section>
 
@@ -699,7 +715,7 @@
     <h2 class="section-title">Your definition of professional success is yours alone</h2>
     <div class="sucesso-flex"><div class="sf-text">    <p class="t-sm">For you, professional success may mean growing, increasing your income or reaching more people. It may mean having more free time, more autonomy, recognition, impact or fulfilment. Or it may mean making decisions with confidence and communicating authentically, feeling more at ease with your work, and no longer experiencing certain professional challenges as such an emotional drain.</p>
     <p class="t-sm">You may already have achieved results that represented success for you, yet still feel that the way you work today no longer reflects who you are. That does not diminish the value of what you have built. It may simply mean that it is time to reshape it so it can evolve with you.</p>
-    </div><figure><img src="foto-ceen-costas-zoom.jpg" width="362" height="378" alt="Filipa seen from behind, working on her laptop on the living room floor" loading="lazy"></figure></div>
+    </div><figure><img src="foto-ceen-costas-v.jpg" width="340" height="578" alt="Filipa seen from behind, working on her laptop on the living room floor" loading="lazy"></figure></div>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
       <p class="t-xs"><strong>In CEEN, we do not assume that there is something wrong with you or your business</strong>, that there is an ideal version to live up to, or a formula for success to follow. The best strategy is the one that fits you! A choice can make sense and still bring fear or discomfort. Alignment does not mean the absence of tension, and reviewing what you have built does not diminish your journey; it lets you choose how to continue.</p>
     </div></div>
@@ -859,6 +875,18 @@
       <p style="font-size:17px;"><strong>CEEN does not replace technical consultancy or specialist implementation.</strong><br>We may look at offerings, prices, communication, sales pages or decisions, and identify connections and possible changes. In-depth technical audits, comprehensive planning, copywriting and implementation by me are not included.</p>
     </div></div>
     <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>My role is to listen, question, develop hypotheses, connect the dots and offer concrete recommendations. The final decisions always remain yours.</strong></p></blockquote>
+  </div>
+</section>
+
+<hr class="div">
+
+<section class="tight" style="padding-top:2.6rem;">
+  <div class="wrap">
+    <blockquote class="quote-block">
+      <p class="q1" style="white-space:normal;"><strong>"You see the person behind the business"</strong></p>
+    </blockquote>
+    <p style="font-size:15px;">After working with another company, this client wrote to me about the difference they noticed:</p>
+    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph one"><div class="ph"><div class="wab-wrap"><div class="wab"><p>There’s simply no comparison between the other company’s work and yours. What you brought to the table is a major differentiator: <span class="hl">you see the person behind the business.</span> I’d already told you that: that’s how you work, and it really shows in what you deliver.</p></div></div></div></div>
   </div>
 </section>
 
@@ -1041,18 +1069,6 @@
 
 <hr class="div">
 
-<section class="tight" style="padding-top:2.6rem;">
-  <div class="wrap">
-    <blockquote class="quote-block">
-      <p class="q1" style="white-space:normal;"><strong>"You see the person behind the business"</strong></p>
-    </blockquote>
-    <p style="font-size:15px;">After working with another company, this client wrote to me about the difference they noticed:</p>
-    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph one"><div class="ph"><div class="wab-wrap"><div class="wab"><p>There’s simply no comparison between the other company’s work and yours. What you brought to the table is a major differentiator: <span class="hl">you see the person behind the business.</span> I’d already told you that: that’s how you work, and it really shows in what you deliver.</p></div></div></div></div>
-  </div>
-</section>
-
-<hr class="div">
-
 <section id="investimento">
   <div class="wrap-wide">
     <h2 class="section-title">Investment</h2>
@@ -1116,13 +1132,13 @@
         </ul>
       </div></div>
     </div>
-    <div class="callout grayD ciclo-note" style="margin-top:1.6rem;"><div class="ctext">
+    <div class="ciclo-split"><div class="callout grayD ciclo-note"><div class="ctext">
       <p class="oneline-note"><strong>How we define the scope of the CEEN Cycle</strong></p>
       <p>In the first meeting, we agree on the aim of the analysis, the materials included and what falls outside it. That agreement guides the work between sessions.</p>
       <p>Over the following three days, you send the agreed materials and, if you wish, additional information related to the focus of the Cycle. This period is for completing the context, not for adding new questions or opening other lines of analysis.</p>
       <p>If a new request comes up, we consider whether it relates directly to the agreed focus. If it requires additional work, it falls outside this Cycle and any new work is agreed separately.</p>
       <p>The Cycle ends with the second meeting and the delivery of the proposal. It does not include implementation, later review of new materials or ongoing support by message.</p>
-    </div></div>
+    </div></div><figure><img src="foto-ceen-teclado.jpg" width="415" height="734" alt="Hands typing on a laptop, seen from above" loading="lazy"></figure></div>
   </div>
 </section>
 
@@ -1136,11 +1152,6 @@
   </div>
 </section>
 
-<section class="tight" style="padding-top:1.2rem; padding-bottom:1.6rem;">
-  <div class="wrap">
-    <div class="foto-h"><img src="foto-ceen-teclado-h.jpg" width="734" height="415" alt="Hands typing on a laptop, seen from above" loading="lazy"></div>
-  </div>
-</section>
 
 
 
