@@ -51,7 +51,7 @@ label.lbl{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500
 input[type=text],input[type=email],input[type=tel],input[type=date],input[type=time],textarea{
   width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--field);
   border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px;outline:none;appearance:none;-webkit-appearance:none}
-textarea{min-height:110px;resize:vertical;line-height:1.5}
+textarea{min-height:150px;resize:vertical;line-height:1.5;overflow:hidden}
 input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,108,.18)}
 .choice{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-family:var(--sans);font-size:15px;line-height:1.45}
 .choice:has(input:checked){border-color:var(--gold);background:rgba(201,168,108,.10)}
@@ -403,7 +403,7 @@ window.FO_PAY = {
       rec.onresult = function(e){
         var fin = '', tmp = '';
         for (var i = 0; i < e.results.length; i++) { var t = e.results[i][0].transcript; if (e.results[i].isFinal) fin += t; else tmp += t; }
-        ta.value = (base + fin + tmp).slice(0, ta.maxLength > 0 ? ta.maxLength : 3000);
+        ta.value = (base + fin + tmp).slice(0, ta.maxLength > 0 ? ta.maxLength : 3000); if (window.foGrow) window.foGrow(ta);
       };
       rec.onerror = function(e){ if (e.error === 'not-allowed' || e.error === 'service-not-allowed') alert('Para ditar, permite o acesso ao microfone no teu navegador.'); };
       rec.onend = idle;
@@ -411,6 +411,17 @@ window.FO_PAY = {
       cur = stop; b.classList.add('on'); b.querySelector('span').textContent = 'A ouvir… toca para parar';
     });
   });
+})();
+</script>
+<script>
+(function(){
+  function grow(t){ t.style.height='auto'; t.style.height=Math.max(t.scrollHeight+2,150)+'px'; }
+  document.querySelectorAll('textarea').forEach(function(t){
+    t.addEventListener('input',function(){grow(t)});
+    t.addEventListener('focus',function(){grow(t)});
+  });
+  window.addEventListener('load',function(){document.querySelectorAll('textarea').forEach(function(t){if(t.value)grow(t)})});
+  window.foGrow=grow;
 })();
 </script>
 </body>
