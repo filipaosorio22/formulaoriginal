@@ -166,8 +166,8 @@ h1 { font-family:'Spectral',serif; font-weight:300; font-style:italic; font-size
       } else {
         var s = ans.slice(0,2).filter(function(a){ return a === 'S'; }).length, b = ans[2] === 'B';
         if (b) result('Leitura + Revolução Solar · 247 €', ['Estás a começar (ou prestes a começar) uma nova volta ao Sol. Além da tua Leitura, exploramos os temas que podem ganhar destaque neste novo ciclo anual.'], '', s ? 'Se depois quiseres conversar sobre o que ouviste, podemos marcar uma sessão de integração.' : '', { label:'Ver esta opção', href:OPCOES });
-        else if (s >= 1) result('Leitura + sessão de aprofundamento · 297 €', ['Gostas de ler e depois conversar. Na sessão, partimos do que reconheceste na Leitura e trabalhamos as crenças e os padrões que quiseres aprofundar.'], '', '', { label:'Ver esta opção', href:OPCOES });
-        else result('Leitura Intuitiva · 147 €', ['Gostas de receber e de refletir no teu tempo. A Leitura escrita dá-te espaço para ler, pausar e voltar às partes que te tocam.'], '', '', { label:'Quero a minha Leitura', href:STRIPE });
+        else if (s >= 1) result('Leitura + sessão de aprofundamento · 397 €', ['Gostas de ler e depois conversar. Na sessão, partimos do que reconheceste na Leitura e trabalhamos as crenças e os padrões que quiseres aprofundar.'], '', '', { label:'Ver esta opção', href:OPCOES });
+        else result('Leitura Intuitiva · 247 €', ['Gostas de receber e de refletir no teu tempo. A Leitura escrita dá-te espaço para ler, pausar e voltar às partes que te tocam.'], '', '', { label:'Quero a minha Leitura', href:STRIPE });
       }
     }
     ask(0);
