@@ -98,6 +98,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <div id="ops">
         <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
+        <label class="choice" data-op="sessaosolo" hidden><input type="radio" name="op" value="sessaosolo" data-p="150"><span><b>Sessão de aprofundamento, sem Leitura</b><br>Uma sessão individual de 1 hora, a partir do tema que queres trabalhar.</span><span class="pr">150€</span></label>
         <label class="choice" data-op="hdsolo"><input type="radio" name="op" value="hdsolo" data-p="147"><span><b>Leitura de Human Design</b><br>A leitura do teu Human Design, só por escrito, sem o mapa astral.</span><span class="pr">147€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
@@ -191,6 +192,7 @@ window.FO_PAY = {
   var q = new URLSearchParams(location.search);
   var gift = q.get('oferta') === '1';
   var op = q.get('op');
+  if (op === 'sessaosolo'){ var ss = document.querySelector('[data-op="sessaosolo"]'); ss.hidden = false; ss.querySelector('input').checked = true; op = null; }
   if (op === 'hdsolo'){ document.querySelector('[data-op="hdsolo"] input').checked = true; op = null; }
   if (op) { var r = document.querySelector('input[name=op][value="' + (op === 'sessao' || op === 'rssessao' ? 'sessao' : 'leitura') + '"]'); if (r) r.checked = true; if (op === 'rs' || op === 'rssessao') $('rs').checked = true; }
   if (q.get('hd') === '1') $('hd').checked = true;
@@ -226,14 +228,14 @@ window.FO_PAY = {
 
   function base(){ return document.querySelector('input[name=op]:checked'); }
   function sel(){
-    if (base().value === 'hdsolo') return { value: 'hdsolo', getAttribute: function(){ return '147'; } };
+    var bv = base().value; if (bv === 'hdsolo' || bv === 'sessaosolo') return { value: bv, getAttribute: function(){ return bv === 'hdsolo' ? '147' : '150'; } };
     var ses = base().value === 'sessao', rs = $('rs').checked;
     return { value: rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura'), getAttribute: function(){ return String(+base().getAttribute('data-p') + (rs ? 100 : 0)); } };
   }
-  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked && sel().value !== 'hdsolo' ? 100 : 0); }
+  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked && sel().value !== 'hdsolo' && sel().value !== 'sessaosolo' ? 100 : 0); }
   function hdOk(){ return true; }
   function updTotal(){
-    var solo = base().value === 'hdsolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
+    var solo = base().value === 'hdsolo' || base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
     $('rs').closest('label').hidden = solo;
     var ok = hdOk() && !solo, box = $('hd').closest('label');
     if (!ok) $('hd').checked = false;
