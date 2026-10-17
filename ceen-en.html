@@ -629,6 +629,20 @@
   .intro-split .foto-abre, .sucesso-flex figure, .ciclo-split figure { position:relative; display:block; }
   .intro-split .foto-abre img, .sucesso-flex figure img, .ciclo-split figure img { position:absolute; inset:0; width:100%; height:100% !important; object-fit:cover; }
   @media (max-width:760px){ .intro-split .foto-abre { height:340px; } .sucesso-flex figure { height:300px; } .ciclo-split figure { height:300px; } }
+
+  /* ronda 28 */
+  .callout.intro-box { display:flex; gap:1.6rem; align-items:stretch; padding:1rem 2.4rem 1rem 1rem; margin:1.8rem 0; }
+  .intro-box .foto-abre { position:relative; flex:0 0 250px; width:250px; margin:0; border-radius:12px; overflow:hidden; box-shadow:0 5px 16px rgba(120,80,30,.14); align-self:stretch; }
+  .intro-box .foto-abre img { position:absolute; inset:0; width:100%; height:100% !important; object-fit:cover; object-position:85% 100%; }
+  .intro-box .ctext { padding:.5rem 0; }
+  @media (max-width:760px){ .callout.intro-box { flex-direction:column; align-items:center; padding:1rem 1.1rem 1.3rem; } .intro-box .foto-abre { flex:none; width:min(260px,80%); height:340px; } .intro-box .ctext { padding:0; } }
+  .sucesso-flex figure { margin:0 !important; }
+  .sucesso-flex .sf-text > p:last-child { margin-bottom:0; }
+  .jump-row-box { margin-top:1.8rem; }
+  .jump-row-box .jump-link { display:inline-block; padding:.65rem 1.7rem; border:1.5px solid var(--wine); border-radius:14px; text-decoration:none; font-size:17px; transition:background .25s,color .25s; }
+  .jump-row-box .jump-link:hover { background:var(--wine); color:#faf3e6; }
+  .jump-row-box .jump-sub { display:block; margin-top:.55rem; font-size:14px; }
+  .fb-aprofundar { margin-top:1.8rem; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -668,12 +682,10 @@
 
 <section class="tight" style="padding-top:12px;">
   <div class="wrap">
-    <div class="intro-split"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório smiling while working at her laptop"></figure><div class="callout grayD intro-callout"><div class="ctext">
+    <div class="callout grayD intro-callout intro-box"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório smiling while working at her laptop"></figure><div class="ctext">
       <p><strong>CEEN is a one-to-one process of analysis and guidance that helps you review how you work and the role you play in your business. It considers these decisions in the context of who you are, the life you want to build and your energy.</strong></p>
-      <p>We start with one central question about your business and explore how it connects with different areas. As I listen, I pay attention to how you talk about your business, what excites you or holds you back and the weight you give to certain decisions. I ask questions and reflect back the connections I notice in what you share.</p>
-    </div></div></div>
-    <div class="callout grayD intro-callout intro-callout-2"><div class="ctext">
-      <p>This way of listening helps us recognize beliefs, fears and patterns that may be influencing your choices, even when you are not yet aware of them. We connect what we notice with the reality of your business and what you want to change.</p>
+      <p>We start with one central question about your business and explore how it connects with different areas. As I listen, I pay attention to how you talk about your business, what excites you or holds you back and the weight you give to certain decisions. I ask questions and reflect back the connections I recognize in what you share.</p>
+      <p>This way of listening helps us recognize beliefs, fears and patterns that may be influencing your choices, even when you are not yet aware of them. We connect what we notice with the reality of your business and what you want for your life.</p>
     </div></div>
   </div>
 </section>
@@ -700,7 +712,7 @@
     <p class="t-sm">CEEN is for independent professionals and for anyone running a business in which their knowledge, perspective and way of working are an essential part of the value it offers.</p>
     <p class="t-sm">Your business is already up and running, but you want to review not only what you offer and how you present it, but also how you organize your week, deliver your work and take your place in the business.</p>
     <p class="t-sm">Perhaps you want to keep doing what you do, but in a different way. Or you feel drawn to a new direction that is still hard to imagine being possible for you.</p>
-    <p style="margin-top:1.4rem; font-size:17px;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Get to know me and how I work</a></p>
+    <p class="jump-row-box"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Get to know me and how I work</a></p>
   </div>
 </section>
 
@@ -793,6 +805,15 @@
         <p style="font-style:italic; color:var(--orange); margin-top:2.8rem; font-size:17px;"><strong>CEEN did not choose for her. It helped her see clearly so she could choose.</strong></p>
       </div></div>
     </details>
+
+    <div class="fb-aprofundar">
+    <blockquote class="quote-block">
+      <p class="q1" style="white-space:normal;"><strong>“Right after, I had received a contact through my website”</strong></p>
+    </blockquote>
+    <p style="font-size:15px;">Another client, after we structured a new service together:</p>
+    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph one"><div class="ph"><div class="wab-wrap"><div class="wab"><p>And btw, I’m so glad <span class="hl">we used our last session to put together the service package</span> for children and young people. Right after, I had received a contact through my website about sessions for a young person, and possibly for their parents too. <span class="hl">I sent them my price, which they accepted, and we’ve already booked an initial session</span> to meet. I’ve since found out they came across my work through a blog post I wrote 🥹<span class="tm">18:33</span></p></div></div></div></div>
+  
+    </div>
   </div>
 </section>
 
@@ -835,6 +856,13 @@
   <div class="wrap">
     <h2 class="section-title vi">An integrated view of your business</h2>
     <p class="t-sm" style="text-align:left !important;">If you would like to explore the approach in more depth, open the topics below: how different areas of your business influence one another, and how your energy shapes your professional decisions.</p>
+    <div class="fb-aprofundar">
+    <blockquote class="quote-block">
+      <p class="q1" style="white-space:normal;"><strong>"You see the person behind the business"</strong></p>
+    </blockquote>
+    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph one"><div class="ph"><div class="wab-wrap"><div class="wab"><p>There’s simply no comparison between the other delivery and yours. What you brought to the table is a major differentiator: <span class="hl">you see the person behind the business.</span> I’d already told you that: that’s how you work, and it really shows in what you deliver.</p></div></div></div></div>
+  
+    </div>
 
     <details class="fold slower feature">
       <summary><span class="tri"></span>🧩 Your business as a system</summary>
@@ -875,18 +903,6 @@
       <p style="font-size:17px;"><strong>CEEN does not replace technical consultancy or specialist implementation.</strong><br>We may look at offerings, prices, communication, sales pages or decisions, and identify connections and possible changes. In-depth technical audits, comprehensive planning, copywriting and implementation by me are not included.</p>
     </div></div>
     <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>My role is to listen, question, develop hypotheses, connect the dots and offer concrete recommendations. The final decisions always remain yours.</strong></p></blockquote>
-  </div>
-</section>
-
-<hr class="div">
-
-<section class="tight" style="padding-top:2.6rem;">
-  <div class="wrap">
-    <blockquote class="quote-block">
-      <p class="q1" style="white-space:normal;"><strong>"You see the person behind the business"</strong></p>
-    </blockquote>
-    <p style="font-size:15px;">After working with another company, this client wrote to me about the difference they noticed:</p>
-    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph one"><div class="ph"><div class="wab-wrap"><div class="wab"><p>There’s simply no comparison between the other company’s work and yours. What you brought to the table is a major differentiator: <span class="hl">you see the person behind the business.</span> I’d already told you that: that’s how you work, and it really shows in what you deliver.</p></div></div></div></div>
   </div>
 </section>
 
@@ -1057,18 +1073,6 @@
 
 <hr class="div">
 
-<section class="tight" style="padding-top:2.6rem;">
-  <div class="wrap">
-    <blockquote class="quote-block">
-      <p class="q1" style="white-space:normal;"><strong>“Right after, I had received a contact through my website”</strong></p>
-    </blockquote>
-    <p style="font-size:15px;">After we structured a new service together, this client shared what happened next:</p>
-    <p class="trad-note">Message translated from Portuguese (AI magic 🪄)</p><div class="testimonial-photos-ph one"><div class="ph"><div class="wab-wrap"><div class="wab"><p>And btw, I’m so glad <span class="hl">we used our last session to put together the service package</span> for children and young people. Right after, I had received a contact through my website about sessions for a young person, and possibly for their parents too. <span class="hl">I sent them my price, which they accepted, and we’ve already booked an initial session</span> to meet. I’ve since found out they came across my work through a blog post I wrote 🥹<span class="tm">18:33</span></p></div></div></div></div>
-  </div>
-</section>
-
-<hr class="div">
-
 <section id="investimento">
   <div class="wrap-wide">
     <h2 class="section-title">Investment</h2>
@@ -1137,7 +1141,7 @@
       <p>In the first meeting, we agree on the aim of the analysis, the materials included and what falls outside it. That agreement guides the work between sessions.</p>
       <p>Over the following three days, you send the agreed materials and, if you wish, additional information related to the focus of the Cycle. This period is for completing the context, not for adding new questions or opening other lines of analysis.</p>
       <p>If a new request comes up, we consider whether it relates directly to the agreed focus. If it requires additional work, it falls outside this Cycle and any new work is agreed separately.</p>
-      <p>The Cycle ends with the second meeting and the delivery of the proposal. It does not include implementation, later review of new materials or ongoing support by message.</p>
+      <p>The Cycle ends with the second meeting and the delivery of the proposal. It does not include implementation, later review or ongoing support by message.</p>
     </div></div><figure><img src="foto-ceen-teclado.jpg" width="415" height="734" alt="Hands typing on a laptop, seen from above" loading="lazy"></figure></div>
   </div>
 </section>

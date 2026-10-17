@@ -632,6 +632,20 @@
   .intro-split .foto-abre, .sucesso-flex figure, .ciclo-split figure { position:relative; display:block; }
   .intro-split .foto-abre img, .sucesso-flex figure img, .ciclo-split figure img { position:absolute; inset:0; width:100%; height:100% !important; object-fit:cover; }
   @media (max-width:760px){ .intro-split .foto-abre { height:340px; } .sucesso-flex figure { height:300px; } .ciclo-split figure { height:300px; } }
+
+  /* ronda 28 */
+  .callout.intro-box { display:flex; gap:1.6rem; align-items:stretch; padding:1rem 2.4rem 1rem 1rem; margin:1.8rem 0; }
+  .intro-box .foto-abre { position:relative; flex:0 0 250px; width:250px; margin:0; border-radius:12px; overflow:hidden; box-shadow:0 5px 16px rgba(120,80,30,.14); align-self:stretch; }
+  .intro-box .foto-abre img { position:absolute; inset:0; width:100%; height:100% !important; object-fit:cover; object-position:85% 100%; }
+  .intro-box .ctext { padding:.5rem 0; }
+  @media (max-width:760px){ .callout.intro-box { flex-direction:column; align-items:center; padding:1rem 1.1rem 1.3rem; } .intro-box .foto-abre { flex:none; width:min(260px,80%); height:340px; } .intro-box .ctext { padding:0; } }
+  .sucesso-flex figure { margin:0 !important; }
+  .sucesso-flex .sf-text > p:last-child { margin-bottom:0; }
+  .jump-row-box { margin-top:1.8rem; }
+  .jump-row-box .jump-link { display:inline-block; padding:.65rem 1.7rem; border:1.5px solid var(--wine); border-radius:14px; text-decoration:none; font-size:17px; transition:background .25s,color .25s; }
+  .jump-row-box .jump-link:hover { background:var(--wine); color:#faf3e6; }
+  .jump-row-box .jump-sub { display:block; margin-top:.55rem; font-size:14px; }
+  .fb-aprofundar { margin-top:1.8rem; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -674,12 +688,10 @@
 
 <section class="tight" style="padding-top:12px;">
   <div class="wrap">
-    <div class="intro-split"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure><div class="callout grayD intro-callout"><div class="ctext">
+    <div class="callout grayD intro-callout intro-box"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure><div class="ctext">
       <p><strong>A CEEN é um trabalho individual de análise e orientação para reveres a forma como trabalhas e ocupas o teu lugar no negócio, sem separar essas decisões da vida que queres construir e de quem és, tendo por base a tua energia pessoal.</strong></p>
-      <p>Partimos de uma questão central do teu negócio, que se pode relacionar com diferentes áreas. Enquanto te escuto, presto atenção à forma como falas sobre o negócio, ao que te entusiasma ou retrai e ao peso que atribuis a determinadas decisões. Coloco perguntas e devolvo-te ligações que reconheço naquilo que partilhas.</p>
-    </div></div></div>
-    <div class="callout grayD intro-callout intro-callout-2"><div class="ctext">
-      <p>Esta escuta ajuda-nos a reconhecer crenças, receios e padrões que podem estar a influenciar as tuas escolhas, mesmo quando ainda não os identificas. Relacionamos o que observamos com a realidade do negócio e com aquilo que desejas mudar.</p>
+      <p>Partimos de uma questão central do teu negócio, que se pode relacionar com diferentes áreas. Enquanto te escuto, presto atenção à forma como falas sobre o negócio, ao que te entusiasma ou retrai e ao peso que atribuis a determinadas decisões. Coloco perguntas e devolvo ligações que reconheço no que partilhas.</p>
+      <p>Esta escuta ajuda-nos a reconhecer crenças, receios e padrões que podem estar a influenciar as tuas escolhas, mesmo quando ainda não os identificas. Relacionamos o que observamos com a realidade do negócio e com aquilo que desejas para a tua vida.</p>
     </div></div>
   </div>
 </section>
@@ -706,7 +718,7 @@
     <p class="t-sm">A CEEN é para profissionais independentes e para quem conduz um negócio em que o seu conhecimento, olhar e forma de trabalhar são uma parte essencial do valor que oferece.</p>
     <p class="t-sm">Já tens uma atividade em funcionamento, mas queres rever não só o que ofereces e como o apresentas, como também a forma como organizas a tua semana, entregas o trabalho e ocupas o teu lugar no negócio.</p>
     <p class="t-sm">Talvez queiras continuar a fazer o que fazes, mas não da mesma maneira ou sintas vontade de dar espaço a uma direção que ainda te custa imaginar como possível para ti.</p>
-    <p style="margin-top:1.4rem; font-size:17px;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Quem te acompanha na CEEN</a> <br class="mb"><span style="font-size:14px;">(vem primeiro conhecer-me)</span></p>
+    <p class="jump-row-box"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Quem te acompanha na CEEN</a><span class="jump-sub">(vem primeiro conhecer-me)</span></p>
   </div>
 </section>
 
@@ -799,6 +811,15 @@
         <p style="font-style:italic; color:var(--orange); margin-top:2.8rem; font-size:17px;"><strong>A CEEN não escolheu por ela. Ajudou-a a ver com clareza para poder escolher.</strong></p>
       </div></div>
     </details>
+
+    <div class="fb-aprofundar">
+    <blockquote class="quote-block">
+      <p class="q1" style="white-space:normal;"><strong>"Logo de seguida tinha recebido o contacto pelo meu website"</strong></p>
+    </blockquote>
+    <p style="font-size:15px;">Uma outra cliente depois de estruturarmos juntas um novo serviço:</p>
+    <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-pacote.jpg?v=4" width="922" height="920" alt="Mensagem de uma cliente: depois de estruturarmos o pacote de atendimento para crianças e jovens, recebeu logo um pedido pelo website, o preço foi aceite e a sessão já está marcada."></div></div>
+  
+    </div>
   </div>
 </section>
 
@@ -840,7 +861,14 @@
 <section>
   <div class="wrap">
     <h2 class="section-title vi">Uma visão integrada do negócio</h2>
-    <p class="t-sm" style="text-align:left !important;">Se quiseres aprofundar a abordagem, abre os temas abaixo: como as áreas do negócio se influenciam e como a tua energia entra nas decisões profissionais.</p>
+    <p class="t-sm" style="text-align:left !important;">Se quiseres aprofundar a abordagem, abre os temas abaixo: como as áreas do negócio se influenciam e como a tua energia e pessoa que és entra nas tuas decisões profissionais.</p>
+    <div class="fb-aprofundar">
+    <blockquote class="quote-block">
+      <p class="q1" style="white-space:normal;"><strong>"Tu olhas para a pessoa por trás do negócio"</strong></p>
+    </blockquote>
+    <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-olhar.jpg?v=3" width="922" height="516" alt="Mensagem de uma cliente: a outra entrega, não há comparação possível; o diferencial é que olho para a pessoa por trás do negócio, e essa é a minha forma de trabalhar."></div></div>
+  
+    </div>
 
     <details class="fold slower feature">
       <summary><span class="tri"></span>🧩 O negócio como um sistema</summary>
@@ -881,18 +909,6 @@
       <p style="font-size:17px;"><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong><br>Podemos observar ofertas, preços, comunicação, páginas de vendas ou decisões e identificar relações e possíveis alterações. Não estão incluídas auditorias técnicas aprofundadas, planeamento integral, <em>copywriting</em> ou implementação feita por mim.</p>
     </div></div>
     <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
-  </div>
-</section>
-
-<hr class="div">
-
-<section class="tight" style="padding-top:2.6rem;">
-  <div class="wrap">
-    <blockquote class="quote-block">
-      <p class="q1" style="white-space:normal;"><strong>"Tu olhas para a pessoa por trás do negócio"</strong></p>
-    </blockquote>
-    <p style="font-size:15px;">Depois de ter trabalhado com outra empresa, esta cliente escreveu-me sobre a diferença que sentiu:</p>
-    <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-olhar.jpg?v=2" width="922" height="516" alt="Mensagem de uma cliente: a outra entrega, da outra empresa e a minha, não há comparação possível; o diferencial é que olho para a pessoa por trás do negócio, e essa é a minha forma de trabalhar."></div></div>
   </div>
 </section>
 
@@ -1069,18 +1085,6 @@
 
 <hr class="div">
 
-<section class="tight" style="padding-top:2.6rem;">
-  <div class="wrap">
-    <blockquote class="quote-block">
-      <p class="q1" style="white-space:normal;"><strong>"Logo de seguida tinha recebido o contacto pelo meu website"</strong></p>
-    </blockquote>
-    <p style="font-size:15px;">Depois de estruturarmos juntas um novo serviço, esta cliente partilhou o que aconteceu a seguir:</p>
-    <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-pacote.jpg?v=4" width="922" height="920" alt="Mensagem de uma cliente: depois de estruturarmos o pacote de atendimento para crianças e jovens, recebeu logo um pedido pelo website, o preço foi aceite e a sessão já está marcada."></div></div>
-  </div>
-</section>
-
-<hr class="div">
-
 <section id="investimento">
   <div class="wrap-wide">
     <h2 class="section-title">Investimento</h2>
@@ -1148,7 +1152,7 @@
       <p>No primeiro encontro, acordamos o objetivo da análise, os materiais incluídos e o que fica fora. Esse acordo orienta o trabalho entre sessões.</p>
       <p>Nos três dias seguintes, envias os materiais acordados e, se quiseres, informação complementar. Este período serve para completar o contexto, não para acrescentar novas questões ou abrir outras frentes de análise.</p>
       <p>Se surgir um novo pedido, avaliamos se está diretamente relacionado com o foco definido. Se implicar trabalho adicional, fica fora deste Ciclo e qualquer novo trabalho é acordado separadamente.</p>
-      <p>O Ciclo termina com o segundo encontro e a entrega da proposta. Não inclui implementação, revisão posterior de novos materiais ou apoio contínuo por mensagem.</p>
+      <p>O Ciclo termina com o segundo encontro e a entrega da proposta. Não inclui implementação, revisão posterior ou apoio contínuo por mensagem.</p>
     </div></div><figure><img src="foto-ceen-teclado.jpg" width="415" height="734" alt="Mãos a escrever no portátil, vistas de cima" loading="lazy"></figure></div>
   </div>
 </section>
