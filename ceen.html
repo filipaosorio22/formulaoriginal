@@ -606,6 +606,9 @@
     .nav-links .nav-lang a { font-size:11px; letter-spacing:.04em; text-transform:none; color:#8a7e6d; text-decoration:underline; text-decoration-color:rgba(138,126,109,.4); }
     html[data-theme="dark"] .nav-links .nav-lang, html[data-theme="dark"] .nav-links .nav-lang a { color:#a89c8a; }
   }
+  .foto-abre { position:relative; width:min(300px,72%); margin:0 auto 2.2rem; border-radius:14px; overflow:hidden; box-shadow:0 6px 20px rgba(120,80,30,.14); }
+  .foto-abre img { width:100%; height:auto; display:block; }
+  .foto-abre::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 100% 0%, rgba(255,196,96,.42) 0%, rgba(255,196,96,.14) 30%, rgba(255,196,96,0) 55%); mix-blend-mode:screen; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -666,6 +669,7 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
+    <figure class="foto-abre"><img src="foto-ceen.jpg" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure>
     <blockquote class="quote-block hang"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">O negócio é o centro da CEEN, mas <br class="mb">não é observado separadamente de ti.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:19px;">A tua identidade, energia, capacidade, desejos e momento de vida ajudam-nos a reconhecer o que ainda te representa e como queres continuar a trabalhar e evoluir.</span></p></blockquote>
   </div>
 </section>
@@ -1044,7 +1048,7 @@
       <p class="q1" style="white-space:normal;"><strong>"Tu olhas para a pessoa por trás do negócio"</strong></p>
     </blockquote>
     <p style="font-size:15px;">Depois de ter trabalhado com outra empresa, esta cliente escreveu-me sobre a diferença que sentiu:</p>
-    <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-olhar.jpg" width="922" height="516" alt="Mensagem de uma cliente: a outra entrega, da outra empresa e a minha, não há comparação possível; o diferencial é que olho para a pessoa por trás do negócio, e essa é a minha forma de trabalhar."></div></div>
+    <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-olhar.jpg?v=2" width="922" height="516" alt="Mensagem de uma cliente: a outra entrega, da outra empresa e a minha, não há comparação possível; o diferencial é que olho para a pessoa por trás do negócio, e essa é a minha forma de trabalhar."></div></div>
   </div>
 </section>
 
