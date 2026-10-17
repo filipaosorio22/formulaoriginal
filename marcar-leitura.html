@@ -96,14 +96,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2>A tua escolha</h2>
       <p class="sub" id="opSub">Escolhe a Leitura que queres.</p>
       <div id="ops">
-        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="147" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa, história simbólica, perguntas e práticas.</span><span class="pr">147€</span></label>
-        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
+        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="247" checked><span><b>Leitura Intuitiva</b><br>Leitura do mapa astral e do Human Design, história simbólica, perguntas e práticas.</span><span class="pr">247€</span></label>
+        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="397"><span><b>Leitura com sessão de aprofundamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">397€</span></label>
         <label class="choice" data-op="sessaosolo" hidden><input type="radio" name="op" value="sessaosolo" data-p="150"><span><b>Sessão de aprofundamento, sem Leitura</b><br>Uma sessão individual de 1 hora, a partir do tema que queres trabalhar.</span><span class="pr">150€</span></label>
         <label class="choice" data-op="hdsolo"><input type="radio" name="op" value="hdsolo" data-p="147"><span><b>Leitura de Human Design</b><br>A leitura do teu Human Design, só por escrito, sem o mapa astral.</span><span class="pr">147€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Juntar a Revolução Solar · +100€</b><br>Mais informação sobre o teu momento atual: os temas do teu ciclo anual, lidos em relação com o teu mapa natal.</span></label>
-      <label class="choice"><input type="checkbox" id="hd"><span><b>Juntar o Human Design · +100€</b><br>Junto à Leitura os pontos estratégicos do teu mapa de Human Design, ligados ao tema que trazes.<br><a href="https://filipaosorio.com/human-design.html" target="_blank" rel="noopener" id="hdLink">Ver o meu Human Design</a></span></label>
+      <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
     </div>
 
     <div class="card" id="giftCard" hidden>
@@ -144,7 +144,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     </div>
 
     <div class="card">
-      <p class="total">Total: <b id="tot">147€</b></p>
+      <p class="total">Total: <b id="tot">247€</b></p>
       <p class="prazo" id="prazo">✦ Prazo de entrega da Leitura: <b>até 14 dias úteis</b> após a confirmação do pagamento e a receção de todos os dados.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura Intuitiva</a>.</span></label>
       <label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo da Filipa no Substack (opcional, podes cancelar quando quiseres)</span></label>
@@ -195,13 +195,12 @@ window.FO_PAY = {
   if (op === 'sessaosolo'){ var ss = document.querySelector('[data-op="sessaosolo"]'); ss.hidden = false; ss.querySelector('input').checked = true; op = null; }
   if (op === 'hdsolo'){ document.querySelector('[data-op="hdsolo"] input').checked = true; op = null; }
   if (op) { var r = document.querySelector('input[name=op][value="' + (op === 'sessao' || op === 'rssessao' ? 'sessao' : 'leitura') + '"]'); if (r) r.checked = true; if (op === 'rs' || op === 'rssessao') $('rs').checked = true; }
-  if (q.get('hd') === '1') $('hd').checked = true;
 
   if (gift) {
     document.title = 'Oferecer uma Leitura Intuitiva | Filipa Osório';
     $('t1').textContent = 'Oferecer uma Leitura';
     $('lead').textContent = 'Que presente maravilhoso! Só preciso dos dados de nascimento de quem recebe. Se souberes um pouco do momento dessa pessoa e do que ela deseja aprofundar, podes partilhar comigo para a Leitura ser mais direcionada.';
-    $('opSub').textContent = 'Podes oferecer a Leitura Intuitiva, com ou sem Human Design e Revolução Solar.';
+    $('opSub').textContent = 'Podes oferecer a Leitura Intuitiva, com ou sem Revolução Solar. O Human Design está incluído.';
     document.querySelector('[data-op="sessao"]').hidden = true;
     document.querySelector('input[value="leitura"]').checked = true;
     $('giftCard').hidden = false;
@@ -212,7 +211,6 @@ window.FO_PAY = {
     $('q1l').innerHTML = 'O que sabes do momento que essa pessoa está a viver?';
     $('q2l').innerHTML = 'O que acreditas que ela deseja aprofundar?';
     $('q3l').innerHTML = 'Há alguma mensagem tua que queiras que eu saiba?';
-    $('hdLink').textContent = 'Ver o mapa de Human Design';
   }
 
   function entrega(){ var e = document.querySelector('input[name=entrega]:checked'); return e ? e.value : ''; }
@@ -232,14 +230,12 @@ window.FO_PAY = {
     var ses = base().value === 'sessao', rs = $('rs').checked;
     return { value: rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura'), getAttribute: function(){ return String(+base().getAttribute('data-p') + (rs ? 100 : 0)); } };
   }
-  function total(){ return (+sel().getAttribute('data-p')) + ($('hd').checked && sel().value !== 'hdsolo' && sel().value !== 'sessaosolo' ? 100 : 0); }
+  function total(){ return +sel().getAttribute('data-p'); }
   function hdOk(){ return true; }
   function updTotal(){
     var solo = base().value === 'hdsolo' || base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
     $('rs').closest('label').hidden = solo;
-    var ok = hdOk() && !solo, box = $('hd').closest('label');
-    if (!ok) $('hd').checked = false;
-    box.hidden = !ok;
+    $('hd').checked = !solo;
     $('tot').textContent = total() + '€';
     var v = sel().value, sn = $('sesNote');
     var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
