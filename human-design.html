@@ -127,6 +127,11 @@ select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),l
 .body .gc{fill:var(--bg);stroke:var(--deep);stroke-opacity:.7;stroke-width:1}
 .body .gc.p{fill:var(--wine);stroke:none}
 .body .gc.d{fill:var(--gold);stroke:none}
+.body .gb{fill:var(--card,#fffaf0);stroke:var(--deep);stroke-opacity:.35;stroke-width:.8}
+.body .gb.p{fill:var(--wine);stroke:none}
+.body .gb.d{fill:var(--gold);stroke:none}
+.body .gn.on.wp{fill:#fff}
+.body .gn.on.both{fill:#fff;stroke:rgba(40,20,10,.6);stroke-width:.6px;paint-order:stroke}
 .body .gn{font-size:7.4px;fill:var(--soft);text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
 .body .gn.on{fill:var(--ink);font-weight:700}
 .bgrid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
@@ -938,8 +943,11 @@ function renderBody(hd, info){
     if (gg && gg.p && gg.d){
       s.push('<path class="gc d" d="M' + x + ' ' + (y - R) + 'A' + R + ' ' + R + ' 0 0 0 ' + x + ' ' + (y + R) + 'Z"/><path class="gc p" d="M' + x + ' ' + (y - R) + 'A' + R + ' ' + R + ' 0 0 1 ' + x + ' ' + (y + R) + 'Z"/>');
     } else s.push('<circle class="gc' + (gg ? ' on ' + (gg.p ? 'p' : 'd') : '') + '" cx="' + x + '" cy="' + y + '" r="' + R + '"/>');
-    var lp = labelPos(g);
-    s.push('<text class="gn' + (gg ? ' on' : '') + '" x="' + lp[0] + '" y="' + lp[1] + '">' + g + '</text>');
+    var lp = labelPos(g), lx = r1(lp[0]), ly = r1(lp[1]), BR = 5.6;
+    if (gg && gg.p && gg.d){
+      s.push('<path class="gb d" d="M' + lx + ' ' + (ly - BR) + 'A' + BR + ' ' + BR + ' 0 0 0 ' + lx + ' ' + (ly + BR) + 'Z"/><path class="gb p" d="M' + lx + ' ' + (ly - BR) + 'A' + BR + ' ' + BR + ' 0 0 1 ' + lx + ' ' + (ly + BR) + 'Z"/>');
+    } else s.push('<circle class="gb' + (gg ? ' ' + (gg.p ? 'p' : 'd') : '') + '" cx="' + lx + '" cy="' + ly + '" r="' + BR + '"/>');
+    s.push('<text class="gn' + (gg ? ' on' + (gg.p && !gg.d ? ' wp' : (gg.p && gg.d ? ' both' : '')) : '') + '" x="' + lx + '" y="' + ly + '">' + g + '</text>');
   });
   s.push('</g>');
   // setas do topo: Design (esquerda, ouro) e Personalidade (direita, bordô)
@@ -1068,7 +1076,7 @@ function setLocked(on){
 window.foNeedMail = function(){
   var old = document.getElementById('mailWall'); if (old) return;
   var w = document.createElement('div'); w.id = 'mailWall'; w.className = 'mailwall'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true');
-  w.innerHTML = '<div class="mwbox"><h3>Deixa o teu e-mail para veres este mapa</h3><p>Para veres o mapa de outra pessoa, preciso do teu e-mail. Assim ficam guardados na tua ficha os mapas que geras.</p>' +
+  w.innerHTML = '<div class="mwbox"><h3>Qual o teu e-mail?</h3>' +
     '<input id="wNome" type="text" maxlength="60" placeholder="O teu nome" autocomplete="given-name"><input id="wEmail" type="email" maxlength="120" placeholder="O teu e-mail" autocomplete="email" inputmode="email">' +
     '<label class="chk"><input type="checkbox" id="wOk"><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser.</span></label>' +
     '<p class="err" id="wErr" role="alert"></p><button class="btn" type="button" id="wBtn">Ver o mapa</button></div>';

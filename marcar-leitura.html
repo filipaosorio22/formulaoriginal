@@ -127,7 +127,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <div class="grid">
         <div><label class="lbl" for="nome">Nome</label><input type="text" id="nome" maxlength="60" autocomplete="given-name" required></div>
         <div><label class="lbl" for="apelido">Apelido</label><input type="text" id="apelido" maxlength="60" autocomplete="family-name" required></div>
-        <div><label class="lbl" for="tel">Telemóvel (WhatsApp)</label><input type="tel" id="tel" maxlength="24" autocomplete="tel" inputmode="tel" placeholder="ex.: +351 912 345 678" required></div>
+        <div><label class="lbl" for="tel">Telemóvel (WhatsApp)</label><input type="tel" id="tel" maxlength="24" autocomplete="tel" inputmode="tel" placeholder="ex.: +351 912 345 678" required><p class="micn" hidden style="font-size:12.5px;color:var(--ink-soft);margin:6px 0 0">Se preferires falar, carrega no 🗣️ e o que disseres é escrito na caixa.</p></div>
         <div><label class="lbl" for="email">E-mail</label><input type="email" id="email" maxlength="120" autocomplete="email" inputmode="email" required></div>
         <div class="full"><label class="lbl" for="nif">NIF <span class="opt">(opcional, para a fatura)</span></label><input type="text" id="nif" maxlength="12" inputmode="numeric" autocomplete="off" placeholder="ex.: 123456789"></div>
       </div>
@@ -155,7 +155,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
     <div class="card">
       <h2 id="lifeT">O teu momento</h2>
-      <p class="note" id="lifeNote"><span id="lifeTxt">Não precisas de escrever tudo perfeito. Escreve como te sair</span><span class="mic-tip" hidden>, ou carrega em 🎙 e fala: a tua voz passa a texto, que podes corrigir antes de enviar</span>.</p>
+      <p class="note" id="lifeNote"><span id="lifeTxt">Não precisas de escrever tudo perfeito. Escreve como te sair</span><span class="mic-tip" hidden>, ou carrega em 🗣️ e fala: a tua voz passa a texto, que podes corrigir antes de enviar</span>.</p>
       <div class="grid">
         <div class="full"><label class="lbl" for="q1" id="q1l">O que estás a viver neste momento?</label><textarea id="q1"></textarea></div>
         <div class="full"><label class="lbl" for="q2" id="q2l">O que desejas para a tua vida agora?</label><textarea id="q2"></textarea></div>
@@ -385,12 +385,12 @@ window.FO_PAY = {
 <script>
 (function(){
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition; if (!SR) return;
-  var tip = document.querySelector('.mic-tip'); if (tip) tip.hidden = false;
+  var tip = document.querySelector('.mic-tip'); if (tip) tip.hidden = false; var mn = document.querySelector('.micn'); if (mn) mn.hidden = false;
   var cur = null;
-  ['q1','q2','q3'].forEach(function(id){
+  ['q1','q2','q3','q4'].forEach(function(id){
     var ta = document.getElementById(id); if (!ta) return;
     var row = document.createElement('div'); row.className = 'mic-row';
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'mic'; b.innerHTML = '🎙 <span>Falar em vez de escrever</span>';
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'mic'; b.innerHTML = '🗣️ <span>Falar em vez de escrever</span>';
     row.appendChild(b); ta.parentNode.appendChild(row);
     var rec = null, base = '';
     function stop(){ if (rec) { try { rec.stop(); } catch(e){} } }

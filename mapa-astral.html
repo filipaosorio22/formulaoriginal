@@ -1104,7 +1104,7 @@ function setLocked(on){
 window.foNeedMail = function(){
   var old = document.getElementById('mailWall'); if (old) return;
   var w = document.createElement('div'); w.id = 'mailWall'; w.className = 'mailwall'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true');
-  w.innerHTML = '<div class="mwbox"><h3>Deixa o teu e-mail para veres este mapa</h3><p>Para veres o mapa de outra pessoa, preciso do teu e-mail. Assim ficam guardados na tua ficha os mapas que geras.</p>' +
+  w.innerHTML = '<div class="mwbox"><h3>Qual o teu e-mail?</h3>' +
     '<input id="wNome" type="text" maxlength="60" placeholder="O teu nome" autocomplete="given-name"><input id="wEmail" type="email" maxlength="120" placeholder="O teu e-mail" autocomplete="email" inputmode="email">' +
     '<label class="chk"><input type="checkbox" id="wOk"><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser.</span></label>' +
     '<p class="err" id="wErr" role="alert"></p><button class="btn" type="button" id="wBtn">Ver o mapa</button></div>';
