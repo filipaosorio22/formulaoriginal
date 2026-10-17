@@ -877,16 +877,10 @@
   main .body-text, main .aside p, main .ans p, main details.astro .astro-body p, main .hdx-p, main .ses-p, main .feat .feat-ctx { text-align:justify !important; hyphens:auto; -webkit-hyphens:auto; }
   main .mapa-cta p, main .faixa p, main .statement, main .tagline p, main .legal, main .ses-solo p, main .deliv, main .sess-link { text-align:center !important; hyphens:none; }
   main .legal { text-align:left !important; }
-  /* feedbacks das sessões em estilo WhatsApp */
-  .sesmsgs { column-count:auto !important; display:flex; flex-direction:column; gap:10px; padding:20px 16px; border-radius:16px; background:#efeae2; max-width:640px; margin-left:auto; margin-right:auto; }
-  html[data-theme="dark"] .sesmsgs { background:#0b141a; }
-  .sesmsgs .hdmsg { position:relative; margin:0 !important; max-width:92%; padding:.5rem .75rem .6rem !important; background:#fff !important; border:0 !important; border-radius:0 12px 12px 12px !important; box-shadow:0 1px 1px rgba(11,20,26,.14) !important; }
-  .sesmsgs .hdmsg::before { content:'' !important; position:absolute; left:-7px; top:0; width:0; height:0; border-top:8px solid #fff; border-left:8px solid transparent; background:none !important; }
-  html[data-theme="dark"] .sesmsgs .hdmsg { background:#202c33 !important; }
-  html[data-theme="dark"] .sesmsgs .hdmsg::before { border-top-color:#202c33; }
-  .sesmsgs .hdmsg p { font-family:-apple-system,'Segoe UI',Helvetica,Arial,'DM Sans',sans-serif !important; font-size:15.5px !important; line-height:1.45 !important; color:#111b21 !important; text-align:left !important; hyphens:none !important; }
-  html[data-theme="dark"] .sesmsgs .hdmsg p { color:#e9edef !important; }
-  .sesmsgs .hdmsg strong { background:rgba(255,224,130,.55) !important; color:inherit !important; font-weight:500 !important; }
+  .sesimgs { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+  .sesimgs img { width:100%; height:auto; display:block; border-radius:14px; }
+  @media (max-width:680px){ .sesimgs { grid-template-columns:1fr; } }
+  .rsmsgs { column-count:1 !important; max-width:760px; margin-left:auto; margin-right:auto; }
   /* ronda 26 */
   .deliv { text-align:center; font-family:'DM Sans',sans-serif; font-size:15px; line-height:1.6; color:var(--ink); margin:0 auto 1.4rem; padding:.7rem 1rem; max-width:640px; border:0.5px solid var(--gold); border-radius:12px; background:var(--tint); }
   .deliv b { color:var(--wine); font-weight:600; }
@@ -1223,6 +1217,10 @@
       </div>
       <p class="tl-extra-n">Podes juntar um deles ou os dois, na altura de marcar a tua Leitura.</p>
     </div>
+    <h3 class="hdq-t rsq-t">O que dizem sobre a Revolução Solar</h3>
+    <div class="hdmsgs rsmsgs">
+      <blockquote class="hdmsg"><p>Obrigada mesmo pela tua dedicação!</p><p>No fundo compilaste num documento que é algo maior do que eu estava à espera, e pelo que percebi do que tinhas planeado, mas mesmo assim eu consigo perceber que é <u>um resumo resumidinho de muita coisa</u> que tu tiveste que estudar, ver, analisar e entrecruzar as informações e por isso, muito obrigada por todo esse trabalho, essa dedicação.</p><p>Depois, sem dúvida, <strong>é mágico como de facto aquilo que o mapa revelou, é aquilo que nós já tínhamos percebido que eu precisava</strong>, que era o momento em que estava e acima de tudo é aquilo que eu sinto mesmo que está a acontecer que estou a viver.</p><p>Há ali várias coisas que tu dizes que podem começar a surgir e que eu já sinto e já noto essas mudanças, de vontade ou de transformação da forma como vejo o mundo. Há ali vários pontos e eu hoje também ao fazer a releitura ando ali a sublinhar o documento, algumas coisinhas que quis marcar, pontos-chave.</p><p>Outras que ainda não, mas são coisas que eu quero e que perspectivo e que sei que está num momento delas.</p><p>E acima de tudo foi <strong>muito bom ver essa confirmação</strong>, no fundo é isso, uma confirmação daquilo que tínhamos pensado para todo este processo, para este momento em específico, e alinham-se muito com o que eu quero também.</p><p>De não me prender àquilo que supostamente faz sentido, aquilo que como eu costumo dizer, nada, que estrategicamente supostamente funciona e não sei quê, mas não ser aquilo que eu de alma quero realmente fazer naquele momento.</p><p>Enfim, todos os pontinhos, todas as coisinhas que tu escreveste, para já escreveste de uma forma muito clara, que chegou bem cá dentro, <strong>ressoou muito cá dentro</strong> e que já está muito alinhado com aquilo que eu sinto, que eu quero e com aquilo que quero trabalhar comigo mesma, comigo mesma e contigo também, foi maravilhoso todos os pontinhos mesmo.<br>Foi tudo maravilhoso e é algo que tem que me acompanhar durante todo o ano, mesmo as perguntas que tu colocaste foi muito interessante refletir sobre elas e tenho consciência que se reler e fizer essas mesmas questões daqui a cinco meses vou ter uma perspectiva diferente sobre todas aquelas questões e mesmo sobre aquilo que está escrito.</p><p>Muito bom! <strong>Adorei, adorei, adorei</strong> e vamos agora a isso! Vamos tratar agora desta fase de transformação de perceber qual o próximo passo que podemos dar neste processo para desenvolver aquilo que tem que ser desenvolvido, criar espaço para o que tem que ter espaço e depois como também já tínhamos falado como expressar, como pôr cá fora todas estas ideias.</p></blockquote>
+    </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1304,9 +1302,9 @@
       <div class="ses-solo"><p><b>Podes também marcar uma sessão sem receberes primeiro a Leitura Intuitiva.</b> Nesse caso, partimos diretamente do tema que queres trabalhar.</p><a class="btn" href="marcar-leitura.html?op=sessaosolo">Marcar só a sessão · 150€</a></div>
     </div>
     <h3 class="hdq-t sesq-t">O que dizem sobre as sessões comigo</h3>
-    <div class="hdmsgs sesmsgs">
-      <blockquote class="hdmsg"><p>Bom dia!!! Amei, ainda estou a absorver toda a informação.</p><p>No entanto, quero dizer-te que <strong>a sessão que tivemos foi one-in-a-kind</strong>. Foi das <strong>melhores experiências que já tive, mais reveladoras</strong> e só pensava que adorava causar um impacto tão grande e bom em alguém como aquele que senti contigo.</p></blockquote>
-      <blockquote class="hdmsg"><p>Esta viagem tem sido tão incrível… Veio <strong>sossegar o meu espírito desassossegado</strong> e confirmar que <strong>não é suposto encaixar-me em padrões que não foram criados por mim</strong> e em caixas pré-fabricadas por alguém que achou que toda a gente vive pelas mesmas convicções.</p><p>Sinto que <u>finalmente estou no meu caminho de auto-descoberta</u> e consciência plena do papel que vim desempenhar nesta vida. <strong>Sou um ser livre, nascido do cosmos, em constante transmutação.</strong></p><p>Estou muito curiosa para onde esta viagem me leva a seguir. Para já, vou desfrutando do caminho ✨</p></blockquote>
+    <div class="sesimgs">
+      <img src="feedback15-dourado.jpg" alt="Testemunho de uma cliente sobre a sessão: «a sessão que tivemos foi one-in-a-kind»" loading="lazy">
+      <img src="feedback13-dourado.jpg" alt="Testemunho de uma cliente: «Esta viagem tem sido tão incrível… Veio sossegar o meu espírito desassossegado»" loading="lazy">
     </div>
   </section>
 
