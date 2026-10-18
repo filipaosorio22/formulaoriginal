@@ -728,6 +728,25 @@
   .fmt-card p.fmt-n { text-wrap:pretty; }
   @media (min-width:601px){ .popup.popup-conv { top:78px !important; padding-top:1.5rem !important; } .popup-conv-img { width:76% !important; margin:0 auto 0.55rem !important; } .popup-conv .popup-rest { margin-top:.5rem; } }
   @media (min-width:601px){ #popup { width:232px !important; max-width:232px !important; } }
+
+  /* Polimento visual: introdução e popup de testemunho */
+  @media (min-width:761px){
+    .callout.intro-box { flex-direction:row-reverse !important; padding:1.5rem 1.5rem 1.5rem 2rem; }
+    .callout.intro-box .foto-abre { margin-left:0; margin-right:0; }
+  }
+  .intro-box .ctext p.intro-lead { text-align:left !important; }
+  .intro-box .ctext p.intro-emphasis { font-weight:700; }
+  .popup.popup-conv { border:1px solid rgba(122,37,53,.14); border-radius:18px; box-shadow:0 14px 40px rgba(50,30,24,.18); }
+  .popup.popup-conv .popup-tg { text-align:left !important; font-family:'Lora',serif; font-size:14px !important; line-height:1.45 !important; font-weight:600; color:var(--wine); padding:0 1.6rem 0 .2rem !important; }
+  .popup.popup-conv .tgarr { margin-left:.2rem; }
+  .popup.popup-conv .popup-rest { margin-top:1rem; }
+  .popup-conv-img { width:100%; border-radius:10px; margin-bottom:.9rem; }
+  .popup.popup-conv .popup-btn { display:block; text-align:center; font-size:14px; line-height:1.4; border-radius:12px; padding:.8rem .75rem; }
+  @media (min-width:601px){
+    .popup.popup-conv { width:320px !important; }
+    .popup-conv-img { width:100% !important; }
+  }
+
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -770,7 +789,7 @@
   <div class="wrap">
     <div class="callout grayD intro-callout intro-box"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure><div class="ctext">
       <p class="intro-lead"><strong>O teu negócio não existe separado de ti.</strong></p>
-      <p>A forma como trabalhas, as decisões que tomas e aquilo que queres mudar estão ligados à pessoa que és e à vida que desejas construir.</p>
+      <p class="intro-emphasis">A forma como trabalhas, as decisões que tomas e aquilo que queres mudar estão ligados à pessoa que és e à vida que desejas construir.</p>
       <p>A CEEN é um <strong>trabalho individual de análise e orientação</strong> para profissionais independentes que querem olhar para o seu negócio e encontrar uma direção que tenha em conta a realidade do negócio e a vida que querem construir.</p>
       <p>Partimos de uma questão concreta e exploramos, através da conversa, o que pode estar a influenciar as tuas escolhas. Depois, relacionamos essa leitura com decisões práticas: a oferta, os preços, a comunicação e a organização do trabalho.</p>
       <p>O objetivo não é encaixar-te numa fórmula de sucesso, mas ajudar-te a reconhecer o que faz sentido manter, o que precisa de ser revisto e que outras possibilidades podes considerar.</p>
@@ -1422,7 +1441,7 @@
 
 <div class="popup popup-conv" id="popupConv" aria-label="Convite para comunidades">
   <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Fechar">×</button>
-  <p class="popup-eyebrow popup-tg" role="button" tabindex="0" aria-expanded="false" style="text-align:center; margin:0; padding:0 1rem; text-transform:none; letter-spacing:0.03em; font-size:13px; line-height:1.5; cursor:pointer;" onclick="var b=document.getElementById('popupConv'); b.classList.toggle('open'); this.setAttribute('aria-expanded', b.classList.contains('open'))" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">Depois da minha apresentação na sua comunidade maravilhosa <span class="tgarr">▾</span></p>
+  <p class="popup-eyebrow popup-tg" role="button" tabindex="0" aria-expanded="false" style="text-align:center; margin:0; padding:0 1rem; text-transform:none; letter-spacing:0.03em; font-size:13px; line-height:1.5; cursor:pointer;" onclick="var b=document.getElementById('popupConv'); b.classList.toggle('open'); this.setAttribute('aria-expanded', b.classList.contains('open'))" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">Uma mensagem depois da partilha <span class="tgarr">▾</span></p>
   <div class="popup-rest">
   <img class="popup-conv-img" src="feedback-comunidade-msg.jpg" alt="Mensagem: «Minha querida, daqui a pouco, com tempo, envio um podcast de agradecimento profundo. Obrigada mesmo mesmo! Foi fenomenal. Obrigada pela tua partilha e entrega incrível.»" width="620" height="289" loading="lazy">
   <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">Vamos cocriar na tua comunidade ou empresa?</a>
