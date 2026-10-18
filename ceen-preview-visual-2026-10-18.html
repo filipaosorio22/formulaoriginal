@@ -55,7 +55,7 @@
   html[data-size="large"] .size-btn .pl { display:inline; }
   html[data-size="large"] .size-btn .mi { display:none; }
   .size-btn:hover { background:rgba(201,168,108,0.18); }
-  @media (min-width:641px){ html { font-size:90%; } html[data-size="large"] { font-size:100%; } }
+  @media (min-width:641px){ html { font-size:100%; } html[data-size="large"] { font-size:100%; } }
   .nav-wa { display:none; width:30px; height:30px; border-radius:50%; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.5); align-items:center; justify-content:center; flex-shrink:0; }
   .nav-wa svg { width:15px; height:15px; }
   br.mb { display:none; }
@@ -798,30 +798,26 @@
   }
 
   .quiz-desc { max-width:780px; margin:.3rem 0 .8rem; font-size:14px; line-height:1.6; }
-  /* Desktop windows keep a fixed layout; narrow windows crop/scroll instead of reflowing the page */
-  @media (hover:hover) and (pointer:fine) {
-    html, body { min-width:1100px !important; }
-  }
-  @media (hover:hover) and (pointer:fine) and (max-width:1050px) {
-    .callout.intro-box { flex-direction:row-reverse !important; align-items:stretch !important; gap:1.6rem !important; padding:1.5rem 1.5rem 1.5rem 2rem !important; }
-    .callout.intro-box .foto-abre { flex:0 0 300px !important; width:300px !important; height:auto !important; margin:0 !important; }
-    .intro-box .ctext { padding:.35rem 0 !important; }
-    .intro-box .ctext p.intro-lead strong { white-space:nowrap !important; font-size:clamp(1.45rem,1.8vw,1.75rem) !important; }
+  /* Keep the desktop canvas at its normal width on a narrow desktop window. */
+  @media (hover:hover) and (pointer:fine) { html, body { min-width:1100px !important; } }
+  /* Keep the bio callout in its original visual treatment. */
+  #quem-te-acompanha .callout.brown { display:block !important; box-shadow:none !important; border-radius:0 !important; }
+  #quem-te-acompanha .two-col { grid-template-columns:repeat(2,minmax(0,1fr)) !important; align-items:stretch !important; }
+  #quem-te-acompanha .bio-photo-ph { max-width:none !important; }
+  @media (hover:hover) and (pointer:fine) and (max-width:760px) {
+    .wrap, .wrap-wide { width:1100px !important; max-width:none !important; }
+    .callout.intro-box { flex-direction:row-reverse !important; align-items:stretch !important; }
+    .callout.intro-box .foto-abre { flex:0 0 340px !important; width:340px !important; height:auto !important; }
+    .intro-box .ctext p.intro-lead strong { white-space:normal !important; }
     .two-col { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
-    .intro-split, .ciclo-split, .conv-split { flex-direction:row !important; }
-    .intro-split .foto-abre, .sucesso-flex figure, .ciclo-split figure { flex:none !important; }
-    .sucesso-flex { flex-direction:row !important; }
-    .bk-row { grid-template-columns:1fr 1fr !important; }
-    .callout .ctext p.oneline-note, blockquote.quote-block p.q2, blockquote.quote-block p.q1, .pause .pause-quote.big1, .pause .pause-quote.nobreak { white-space:normal !important; max-width:none !important; }
-    .callout.intro-box .foto-abre { height:auto !important; }
   }
   /* Return to the proposed compact opening box: a one-line lead and a slightly wider photo */
   .callout.intro-box { flex-direction:row-reverse !important; gap:1.6rem !important; padding:1.5rem 1.5rem 1.5rem 2rem !important; }
-  .callout.intro-box .foto-abre { flex:0 0 300px !important; width:300px !important; min-width:0 !important; margin:0 !important; }
+  .callout.intro-box .foto-abre { flex:0 0 340px !important; width:340px !important; min-width:0 !important; margin:0 !important; }
   .intro-box .ctext p.intro-lead strong { font-size:clamp(1.45rem,1.8vw,1.75rem) !important; line-height:1.15 !important; white-space:nowrap !important; }
   @media (max-width:760px) {
     .callout.intro-box { flex-direction:column !important; align-items:center !important; padding:1rem 1.1rem 1.3rem !important; gap:1.2rem !important; }
-    .callout.intro-box .foto-abre { flex:none !important; width:min(260px,80%) !important; min-width:0 !important; height:340px !important; }
+    .callout.intro-box .foto-abre { flex:none !important; width:min(300px,85%) !important; min-width:0 !important; height:340px !important; }
     .intro-box .ctext p.intro-lead strong { white-space:normal !important; font-size:1.7rem !important; }
   }
 </style>
@@ -859,7 +855,7 @@
 </div>
 
 <header class="wrap" style="padding:5.8rem 24px 1.6rem;">
-  <h1 class="hero-title">Aproxima o teu negócio de quem és e da tua fase de vida atual, permitindo que ele evolua contigo</h1>
+  <h1 class="hero-title">Aproxima o teu negócio de quem és e da tua fase<br>de vida atual, permitindo que ele evolua contigo</h1>
 </header>
 
 <section class="tight" style="padding-top:12px;">
@@ -895,7 +891,7 @@
     <h2 class="section-title">Para quem é a CEEN?</h2>
     <p class="t-sm">A CEEN é para profissionais independentes que conduzem um negócio em que o seu <strong>conhecimento, olhar e forma de trabalhar</strong> são uma parte essencial do valor que oferecem.</p>
     <p class="t-sm">Talvez queiras continuar a fazer o que fazes, mas não da mesma maneira. Ou sintas <strong>vontade de dar espaço a uma nova direção</strong> que ainda te custa imaginar como possível.</p>
-    <p class="jump-row-box"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Quem te acompanha na CEEN</a><span class="jump-sub">(vem primeiro conhecer-me)</span></p>
+    <p class="jump-row-box" style="margin-top:2.5rem;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Quem te acompanha na CEEN</a><span class="jump-sub">(vem primeiro conhecer-me)</span></p>
   </div>
 </section>
 
@@ -913,8 +909,7 @@
     <p class="t-sm">Podes já ter alcançado resultados que, para ti, antes representaram sucesso e, ainda assim, sentir que a forma como trabalhas hoje deixou de te representar. Isso não retira valor ao que construíste. Pode apenas indicar que chegou o momento de o reformular para acompanhar a tua evolução.</p>
     </div><figure><img src="foto-ceen-costas-v.jpg" width="340" height="578" alt="Filipa de costas, a trabalhar no portátil no chão da sala" loading="lazy"></figure></div>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
-      <p class="t-xs"><strong>Na CEEN, não partimos do princípio de que há algo de errado contigo</strong>, nem de que existe uma versão ideal à qual deves corresponder ou uma fórmula de sucesso que tens de seguir. <strong>A melhor estratégia é a que faz sentido</strong> para ti, para o teu negócio e para a vida que queres construir.</p>
-      <p class="t-xs">Estar em alinhamento não significa que todas as escolhas sejam fáceis ou que deixem de trazer medo ou desconforto. Uma decisão pode fazer sentido e, ainda assim, desafiar-te. Da mesma forma, rever o que construíste não diminui o valor do teu percurso. Dá-te a oportunidade de olhar para ele de outra perspetiva e escolher, com maior consciência, como queres continuar.</p>
+      <p class="t-xs"><strong>Na CEEN, não partimos do princípio de que há algo de errado contigo</strong>, nem de que existe uma versão ideal à qual deves corresponder ou uma fórmula de sucesso que tens de seguir. <strong>A melhor estratégia é a que faz sentido</strong> para ti e para o teu negócio.</p>
     </div></div>
   </div>
 </section>
@@ -947,7 +942,7 @@
     </div>
     <div class="callout grayD narrow" style="margin-top:-0.6rem;"><div class="ci">🔍</div><div class="ctext">
       <p><strong>Nem todas as dificuldades se resolvem com uma nova estratégia.</strong></p>
-      <p>Estas situações podem envolver questões estratégicas e, ao mesmo tempo, levantar questões sobre aquilo que valorizas, receias ou estás disponível para mudar.</p>
+      <p>Estas situações podem envolver questões estratégicas e, ao mesmo tempo, levantar questões sobre aquilo que valorizas, receias ou queres mudar.</p>
           </div></div>
     <p class="lead hlbox" style="margin-top:3.6rem;"><strong>A clareza não faz a mudança por ti, mas pode encurtar o tempo que passas a insistir numa direção que te esgota, a adiar decisões ou a tentar resolver apenas no negócio aquilo que também precisa de ser reconhecido em ti.</strong></p>
   </div>
@@ -966,14 +961,13 @@
     <h2 class="section-title">Um olhar externo para veres com mais clareza</h2>
     <p class="t-sm"><strong>Quando estás dentro do teu negócio, pode ser difícil distinguir o que continua a fazer sentido daquilo que manténs por hábito, segurança ou receio de mudança.</strong></p>
     <p class="t-sm">Na CEEN, escuto a forma como falas do teu trabalho, coloco perguntas e devolvo-te as ligações, as diferenças ou as contradições que reconheço no que partilhas. Não para interpretar a tua experiência por ti, mas para te ajudar a olhar para ela de outra perspetiva.</p>
-    <p class="casep" style="margin-top:2.6rem;"><strong>Este caso mostra como este trabalho pode mudar uma decisão sobre a oferta:</strong></p>
 
     <div class="callout brown case-callout"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Rever a oferta é também reconhecer o que já não te representa</p>
       <p style="margin-top:1.3rem;"><strong>Uma cliente chegou à sessão convencida de que queria continuar a apostar em determinados serviços.</strong> Racionalmente, pareciam-lhe as opções mais seguras e aquelas que faziam mais sentido para si manter, sem sequer colocar isso em causa.</p>
       <p>Através das perguntas e das observações que fomos explorando, reconheceu que aquilo que acreditava que <em>deveria</em> manter já não correspondia ao que realmente queria desenvolver e sustentar.</p>
       <p>Decidiu concentrar a oferta e a comunicação nos serviços que despertavam mais o seu entusiasmo e, depois dessas mudanças, <strong>voltou a receber contactos e a gerar vendas.</strong></p>
-      <p class="case-close"><strong>A CEEN não escolheu por ela. Ajudou-a a ver com clareza para poder escolher.</strong></p>
+      <p class="case-close" style="text-align:center;"><strong>A CEEN não escolheu por ela. Ajudou-a a ver com clareza para poder escolher.</strong></p>
           </div></div>
 
     <div class="fb-aprofundar">
@@ -1029,14 +1023,14 @@
     <p class="t-sm" style="text-align:left !important;">Esta visão permite-nos olhar para as diferentes áreas sem assumir que cada uma funciona isoladamente. Partimos sempre da questão que trazes e exploramos apenas as ligações que forem relevantes para o trabalho.</p>
     <div class="fb-aprofundar">
     <blockquote class="quote-block">
-      <p class="q1" style="white-space:normal; margin-top:0.3rem;"><strong>"Tu olhas para a pessoa por trás do negócio"</strong></p>
+      <p class="q1" style="white-space:normal; margin-top:0;"><strong>"Tu olhas para a pessoa por trás do negócio"</strong></p>
     </blockquote>
     <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-olhar.jpg?v=5" width="922" height="516" alt="Mensagem de uma cliente: a outra entrega, não há comparação possível; o diferencial é que olho para a pessoa por trás do negócio, e essa é a minha forma de trabalhar."></div></div>
   
     </div>
 
     <details class="fold slower feature">
-      <summary><span class="tri"></span>🧩 O negócio como um sistema</summary>
+      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">🧩 O negócio como um sistema</span></summary>
       <div class="fold-wrap"><div class="fold-body">
         <p>Consoante o teu momento, podemos observar:</p>
         <ul class="plain">
@@ -1054,7 +1048,7 @@
     </details>
 
     <details class="fold slower feature">
-      <summary><span class="tri"></span>⚡ A energia pessoal como informação estratégica</summary>
+      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">⚡ A energia pessoal como informação estratégica</span></summary>
       <div class="fold-wrap"><div class="fold-body">
         <p>Na CEEN, a dimensão energética ajuda-nos a observar a tua experiência para <strong>além da análise racional</strong>: o que te desperta interesse, o que gera resistência, o que te preocupa e o que sentes que consegues sustentar.</p>
         <p>Uma decisão profissional pode envolver <strong>muito mais do que uma avaliação de vantagens e desvantagens</strong>. Pode também tocar na segurança, na identidade, no reconhecimento, na liberdade ou na forma como antecipas a reação dos outros.</p>
@@ -1071,7 +1065,7 @@
     <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
       <p style="font-size:17px;"><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong><br>Não inclui auditorias, <em>copywriting</em> ou implementação feita por mim.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
+    <blockquote class="quote-block" style="margin-top:4.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
   </div>
 </section>
 
@@ -1287,6 +1281,8 @@
 <section id="amostra">
   <div class="wrap-wide">
     <h2 class="section-title">Da conversa a uma proposta que podes voltar a consultar</h2>
+    <p class="t-sm">No Ciclo CEEN, o trabalho não fica apenas na conversa. Recebes também um documento no Notion que reúne as observações, as ligações identificadas e as recomendações relacionadas com a questão que trabalhámos.</p>
+    <p class="t-sm">O documento é construído a partir do teu contexto e dos materiais acordados. Não é uma fórmula genérica nem um plano igual para todos os negócios.</p>
     <p class="amostra-legenda" style="margin-bottom:0;">Exemplo ilustrativo. <br class="mb">Cada entrega depende do contexto e dos temas trabalhados.</p>
     <iframe class="amostra-frame" src="ciclo-ceen-amostra.html" title="Exemplo ilustrativo de uma entrega do Ciclo CEEN"></iframe>
   </div>
@@ -1316,8 +1312,40 @@
   <div class="wrap">
     <div class="callout grayD softer" style="padding-right:1.7rem;"><div class="ci">↻</div><div class="ctext">
       <p class="callout-label">Podes regressar à CEEN <br class="mb">sempre que precisares</p>
-      <p>Depois de uma Sessão ou do Ciclo, podes avançar autonomamente ou marcar uma nova Sessão CEEN quando surgirem decisões, dúvidas ou mudanças que queiras trabalhar comigo. Não precisas de definir antecipadamente o teu percurso na CEEN.</p>
+      <p>Não precisas de definir antecipadamente um percurso nem de assumir um acompanhamento contínuo. Depois de uma Sessão ou do Ciclo, podes avançar autonomamente. Se mais tarde surgirem outras decisões, dúvidas ou mudanças que queiras explorar, podes marcar uma nova Sessão CEEN.</p>
     </div></div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section>
+  <div class="wrap">
+    <details class="faqmain"><summary class="section-title faqh">Se tens estas perguntas antes de avançar</summary>
+    <div class="faqbody">
+    <details class="fold"><summary><span class="tri"></span>O que não devo esperar da CEEN?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>A CEEN não substitui apoio técnico especializado em gestão, marketing, finanças, contabilidade ou operação. Também não inclui auditorias técnicas aprofundadas, <em>copywriting</em> ou implementação feita por mim.</p><p>O meu trabalho consiste em escutar, analisar o contexto, relacionar o que observo no negócio com aquilo que partilhas e apresentar possibilidades, critérios e recomendações ajustadas à questão. Não decido nem ajo por ti: as decisões finais e as ações concretas continuam a ser tuas.</p></div></div>
+    </details></details>
+    <details class="fold"><summary><span class="tri"></span>As sessões são online ou presenciais?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Todas as sessões CEEN são online, tanto na Sessão como no Ciclo CEEN.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri"></span>Preciso de ter o negócio estruturado?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Não precisas de ter tudo definido, mas precisamos de ter uma questão real para trabalhar.</p><p>A Sessão CEEN pode ser útil para explorar uma questão concreta numa fase inicial ou num momento de reorganização. O Ciclo CEEN é mais indicado quando já existe uma atividade em funcionamento e materiais que possamos analisar, como ofertas, preços, comunicação, páginas de vendas ou outros elementos relacionados com a questão central.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri"></span>Preciso de me identificar com uma abordagem energética?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Não. A dimensão energética permite explorar aquilo que estás a viver e que pode influenciar a forma como decides, comunicas e trabalhas: emoções, crenças, hábitos, receios, disponibilidade e respostas perante determinadas situações. Exploramos o que for relevante para a tua questão e fizer sentido para ti.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri"></span>Como escolho entre a Sessão e o Ciclo CEEN?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Na Sessão, trabalhamos uma questão central durante o encontro, com perguntas, análise e recomendações no momento. Recebes um resumo curto e pontos de ação no Notion.</p><p>No Ciclo, trabalhamos uma questão central em dois encontros, com análise dos materiais acordados e uma proposta fundamentada preparada entre eles.</p><p>A escolha depende do tipo de trabalho que procuras: conversar e explorar uma decisão contigo ou ter também uma análise dos materiais e uma proposta personalizada preparada entre encontros.</p><p>Não precisas de fazer uma Sessão antes do Ciclo.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri"></span>Que questões posso trazer?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Podes trazer uma questão do negócio ou uma questão pessoal que sintas estar a influenciar a forma como o conduzes. Podemos explorar temas como a oferta, os preços, a comunicação, a visibilidade, o dinheiro, as crenças, os receios, os limites ou o lugar que ocupas no negócio, quando forem relevantes para a questão central.</p><p>Se trouxeres várias questões, escolhemos uma prioridade para o trabalho. Podemos reconhecer ligações com outros temas, mas isso não significa que todas as questões fiquem incluídas no mesmo encontro.</p></div></div>
+    </details>
+    <details class="fold"><summary><span class="tri"></span>O que acontece depois dos encontros? Tenho acompanhamento?</summary>
+      <div class="fold-wrap"><div class="fold-body"><p>Nenhum dos formatos inclui implementação ou acompanhamento contínuo.</p><p>Na Sessão CEEN, a análise e as recomendações são trabalhadas durante o encontro. Em até cinco dias úteis, recebes um resumo curto e os pontos de ação no Notion. No Ciclo CEEN, analiso os materiais acordados entre os dois encontros e preparo uma proposta fundamentada que exploramos em conjunto na segunda sessão.</p><p>Depois, podes avançar autonomamente ou marcar uma nova Sessão CEEN quando quiseres trabalhar outra questão.</p></div></div>
+    </details>
+    <button type="button" class="faq-close" onclick="var d=this.closest('details.faqmain'); d.open=false; d.scrollIntoView({behavior:'smooth',block:'center'});">↑ Fechar perguntas</button>
+    </div></details>
   </div>
 </section>
 
@@ -1337,35 +1365,7 @@
 
 <hr class="div">
 
-<section>
-  <div class="wrap">
-    <details class="faqmain"><summary class="section-title faqh">Se tens estas perguntas antes de avançar</summary>
-    <div class="faqbody">
-    <details class="fold"><summary><span class="tri"></span>O que não esperar da CEEN</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>A CEEN não substitui apoio técnico de gestão, marketing, finanças, contabilidade ou operação. Também não inclui auditorias técnicas, <em>copywriting</em> ou implementação feita por mim. Cruzo o que observo em ti e no negócio com os meus conhecimentos de estratégia e marketing, assim como de desenvolvimento pessoal, para apresentar possibilidades, critérios e recomendações ajustadas.</p><p>Vou ajudar-te a reconhecer aquilo que pode não estar claro, apresentar recomendações e sugerir possíveis direções. Não decido nem ajo por ti: as decisões finais e as ações concretas continuam a ser tuas.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>As sessões são online ou presenciais?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Todas as sessões CEEN são online, tanto na Sessão como no Ciclo CEEN.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Preciso de ter o negócio estruturado?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Não. O negócio pode estar a começar, em crescimento ou em reorganização. Se estás a começar, faz sentido escolheres a Sessão CEEN, para clarificarmos uma questão central e os primeiros passos. O Ciclo CEEN pede um negócio já em funcionamento e em contacto com a realidade, com ofertas, preços, comunicação, clientes, vendas ou tentativas de venda e decisões concretas que possamos observar.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Preciso de me identificar com alguma abordagem energética?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Não. A dimensão energética está relacionada com aquilo que estás concretamente a viver e que nem sempre é imediatamente visível: atenção, emoções, crenças, hábitos, capacidade e respostas do corpo. Usamos sempre apenas aquilo que fizer sentido para ti.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Como escolho entre a Sessão e o Ciclo CEEN?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Na Sessão, trabalhamos uma questão central durante o encontro, com perguntas, análise e recomendações no momento. No Ciclo, trabalhamos uma questão central em dois encontros, com análise dos materiais acordados e uma proposta fundamentada preparada entre eles. Ambos incluem um registo no Notion. Na Sessão, recebes um resumo do trabalho realizado no encontro, em até 5 dias úteis. No Ciclo, recebes uma proposta fundamentada, preparada a partir da análise feita entre os dois encontros.</p><p>A escolha depende do tipo de trabalho que procuras, não do número de questões que trazes. Não precisas de fazer uma Sessão antes do Ciclo: podes marcar diretamente o Ciclo CEEN se procuras a análise entre encontros e a proposta personalizada.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>Que questões posso trazer?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>Uma questão do negócio ou uma questão tua que sintas que está a ter impacto no negócio, que esteja relacionada com a forma como estás a viver, decidir ou ocupar o teu lugar no negócio. Podemos trabalhar identidade, crenças, padrões, receios, visibilidade, dinheiro ou responsabilidade quando estiverem a influenciar as tuas escolhas profissionais.</p><p>Se trouxeres várias questões, escolhemos a prioridade para este encontro. As restantes não ficam incluídas por serem mencionadas, mas podemos reconhecer ligações relevantes, mantendo o trabalho centrado no foco acordado.</p></div></div>
-    </details>
-    <details class="fold"><summary><span class="tri"></span>O que acontece depois dos encontros? Tenho acompanhamento?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p><strong>Na Sessão CEEN</strong>, não há análise nova depois do encontro. A leitura do contexto é breve e acontece antes, quando necessário. A análise, as recomendações e as decisões são trabalhadas durante a sessão e, em até 5 dias úteis, recebes no Notion um resumo curto do que foi trabalhado e os pontos de ação.</p><p><strong>No Ciclo CEEN</strong>, a análise incide sobre a questão central e os materiais acordados no primeiro encontro, não sobre todo o negócio. Nos três dias seguintes ao primeiro encontro, envias os materiais e, se quiseres, informação complementar. Durante a análise, posso colocar-te perguntas dirigidas ou pedir esclarecimentos. Estes contactos servem para completar a leitura, não para acompanhar a implementação.</p><p>Nenhum dos formatos inclui implementação nem acompanhamento contínuo. Depois, podes avançar autonomamente ou marcar uma nova Sessão CEEN para continuarmos a trabalhar outras partes do teu negócio.</p></div></div>
-    </details>
-    <button type="button" class="faq-close" onclick="var d=this.closest('details.faqmain'); d.open=false; d.scrollIntoView({behavior:'smooth',block:'center'});">↑ Fechar perguntas</button>
-    </div></details>
-  </div>
-</section>
+
 
 <hr class="div">
 
@@ -1379,10 +1379,9 @@
       <p class="t-sm">Há perguntas que ganham outra dimensão quando as exploramos em conjunto: <strong>como queremos trabalhar e viver, o que desejamos criar e que contributo queremos deixar através do nosso trabalho.</strong></p>
       </div><figure class="conv-vid"><video autoplay loop muted playsinline preload="metadata" aria-label="Momento de um encontro com uma comunidade"><source src="comunidade-loop.webm" type="video/webm"><source src="comunidade-loop.mp4" type="video/mp4"></video></figure></div>
       <div class="conv-rest">
-      <p class="t-sm conv-first"><strong>Se criaste, dinamizas ou fazes parte de uma comunidade</strong> de empreendedores ou criadores, <strong>ou se representas uma empresa</strong> e gostavas de trazer estes temas para um encontro com a tua equipa, <strong>vamos conversar</strong>.</p>
-      <p class="t-sm">Podemos explorar a relação entre vida pessoal e trabalho, o que significa sucesso para cada pessoa e como dar expressão ao que somos, ao que sabemos e àquilo em que acreditamos, <em>extraindo</em> o melhor de cada pessoa.</p>
-      <p class="t-sm">Em contexto de empresa, podemos trazer estas perguntas para a realidade da equipa: como cada pessoa vive o seu papel, contribui com o seu conhecimento e se relaciona com o trabalho, com os outros e com as responsabilidades que assume.</p>
-      <p class="t-sm">O encontro é pensado a partir do contexto e de um tema central, respeitando a participação, os limites de cada pessoa e os valores da comunidade ou empresa.</p>
+      <p class="t-sm conv-first">Se criaste, dinamizas ou fazes parte de uma comunidade de empreendedores ou criadores, ou se representas uma empresa e gostavas de trazer estes temas para um encontro com a tua equipa, podemos conversar.</p>
+      <p class="t-sm">O formato é pensado a partir do contexto, das pessoas e do tema que faz sentido explorar. Podemos abordar a relação entre vida pessoal e trabalho, as diferentes definições de sucesso, a forma como cada pessoa ocupa o seu papel e como o conhecimento individual pode contribuir para o coletivo.</p>
+      <p class="t-sm">Cada encontro é preparado de acordo com o objetivo, respeitando a participação, os limites de cada pessoa e os valores da comunidade ou empresa.</p>
       </div>
       <div class="conv-aud"><p class="conv-cap">Depois de um encontro com uma comunidade</p><div class="aud-wrap"><div class="aud"><audio preload="metadata" src="feedback comunidade.MP3"></audio><button type="button" class="aud-btn" aria-label="Ouvir"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Foi… além da expectativa! <br>Foi mesmo muito, muito bom!”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Ler a transcrição</summary><div class="tr-body"><div lang="pt"><p>Alô, minha querida, agora sim consegui um tempinho aqui com calma e com a atenção devida que queria para mandar-te este “podcast” de agradecimento, porque efetivamente foi... além da expectativa! Foi mesmo muito, muito bom!</p><p>Acredito que todas elas tiraram muito proveito do momento e certamente muitas delas irão contactar-te para aprofundar um bocado mais e conhecerem-se ainda mais e adaptarem isso também aos seus negócios, portanto vi ali muito entusiasmo da parte delas e fico muito feliz por isso, porque efetivamente adoro trazer ferramentas novas e realmente trazer aqui algumas coisas que possam ajudá-las a prosperar cada vez mais, seja em que área for (...)</p><p>É muito, muito bom e fico muito feliz por elas terem gostado e toda a entrega e todo o momento incrível que nos proporcionaste, porque foi absolutamente fabuloso e, sem conseguir colocar em palavras, porque efetivamente foi mesmo muito, muito bom e gostei muito até mesmo para mim mesma!</p><p>Eu sabia que ia gostar para mim mesma, mas estava aqui ainda naquela coisa de como é que elas iriam reagir, como é que seria (...), mas é absolutamente interessante de ver como temos tanto em comum, apesar de sermos todos muito diferentes umas das outras, porque somos efetivamente pessoas diferentes, que têm formas de pensar e de agir diferentes, mas que há muita coisa que nos junta e que nos atrai umas às outras.</p><p>E é super engraçado ver, eu sei, eu acredito nisso, mas ao mesmo tempo estes momentos acabam por nos confirmar aquilo que nós de certa forma já sabíamos de alguma maneira, mas agora sabemos melhor, sabes?</p></div></div></details></div></div>
       <p class="t-sm">Não precisas de chegar com um formato definido. Podemos partir da tua ideia, conhecer o contexto da comunidade ou da empresa e definir o tema, o objetivo e um formato de encontro que faça sentido para as pessoas a quem se destina.</p>
