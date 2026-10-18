@@ -696,7 +696,7 @@
   .fb-aprofundar .testimonial-photos-ph.one { margin-left:auto; margin-right:auto; }
   .pause-quote.two { position:relative; top:-16px; }
   .back-link { display:block; text-align:center; }
-  @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 270px; width:270px; } }
+  @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 340px; width:340px; } }
   .intro-box .foto-abre img { object-position:88% 100% !important; transform:scale(1.07) !important; transform-origin:62% 55% !important; }
   .popup-conv .popup-rest { display:none; margin-top:.8rem; }
   .popup-conv.open .popup-rest { display:block; }
@@ -720,7 +720,7 @@
   .popup .popup-eyebrow, .popup .popup-btn { font-family:'Lora',serif; }
   .quiz-group { color:var(--wine); }
   .pause:has(.pause-quote.two) { padding-top:2.4rem; }
-  .callout.case-callout .case-close { font-style:italic; color:var(--wine); margin:1.4rem 0 0; font-size:17px; text-align:left; }
+  .callout.case-callout .case-close { font-style:italic; color:var(--wine); margin:1.4rem 0 0; font-size:17px; text-align:center; }
   .effort-box { border:1.5px solid rgba(122,37,53,0.55); border-radius:12px; padding:0.85rem 1.1rem; margin-top:1.3rem; }
   .bk-micnote { margin-top:0.5rem; }
   .fb-aprofundar { margin-top:calc(1.8rem + 59px); }
@@ -747,6 +747,15 @@
     .popup-conv-img { width:100% !important; }
   }
 
+  /* Ajustes pedidos: manter a composição desktop ao redimensionar a janela, sem comprimir o texto. */
+  @media (hover:hover) and (pointer:fine) { html, body { min-width:1100px !important; } }
+  @media (hover:hover) and (pointer:fine) and (max-width:1050px) {
+    .callout.intro-box { flex-direction:row !important; align-items:stretch !important; gap:1.6rem !important; padding:1.5rem 1.5rem 1.5rem 2rem !important; }
+    .callout.intro-box .foto-abre { flex:0 0 340px !important; width:340px !important; height:auto !important; margin:0 !important; }
+    .intro-box .ctext { padding:.35rem 0 !important; }
+    .two-col { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  }
+  @media (min-width:641px) { body { zoom:1 !important; } html[data-size="large"] body { zoom:1 !important; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -836,7 +845,7 @@
     <p class="t-sm">Podes já ter alcançado resultados que, para ti, antes representaram sucesso e, ainda assim, sentir que a forma como trabalhas hoje deixou de te representar. Isso não retira valor ao que construíste. Pode apenas indicar que chegou o momento de o reformular para acompanhar a tua evolução.</p>
     </div><figure><img src="foto-ceen-costas-v.jpg" width="340" height="578" alt="Filipa de costas, a trabalhar no portátil no chão da sala" loading="lazy"></figure></div>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
-      <p class="t-xs"><strong>Na CEEN, não partimos do princípio de que há algo de errado contigo</strong>, nem de que existe uma versão ideal à qual deves corresponder ou uma fórmula de sucesso que tens de seguir. <strong>A melhor estratégia é a que faz sentido</strong> para ti, para o teu negócio e para a vida que queres construir.</p>
+      <p class="t-xs"><strong>Na CEEN, não partimos do princípio de que há algo de errado contigo</strong>, nem de que existe uma versão ideal à qual deves corresponder ou uma fórmula de sucesso que tens de seguir. <strong>A melhor estratégia é a que faz sentido</strong> para ti e para o teu negócio.</p>
       <p class="t-xs">Estar em alinhamento não significa que todas as escolhas sejam fáceis ou que deixem de trazer medo ou desconforto. Uma decisão pode fazer sentido e, ainda assim, desafiar-te. Da mesma forma, rever o que construíste não diminui o valor do teu percurso. Dá-te a oportunidade de olhar para ele de outra perspetiva e escolher, com maior consciência, como queres continuar.</p>
     </div></div>
   </div>
@@ -995,7 +1004,7 @@
     <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
       <p style="font-size:17px;"><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong><br>Não inclui auditorias, <em>copywriting</em> ou implementação feita por mim.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
+    <blockquote class="quote-block" style="margin-top:4.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
   </div>
 </section>
 
