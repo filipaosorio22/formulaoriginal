@@ -798,28 +798,22 @@
   }
 
   .quiz-desc { max-width:780px; margin:.3rem 0 .8rem; font-size:14px; line-height:1.6; }
-  /* Responsive refinements: compact proportions without browser zoom or clipped text */
-  @media (min-width:641px) {
-    html { font-size:clamp(14px, 1.1vw, 16px) !important; }
-    html[data-size="large"] { font-size:16px !important; }
-    section { padding-block:clamp(38px, 5.2vw, 76px); }
-    .wrap, .wrap-wide { width:100%; max-width:800px; padding-left:clamp(18px, 2.2vw, 24px); padding-right:clamp(18px, 2.2vw, 24px); }
-    h1, h2, h3, p, li, blockquote, .pause-quote, .callout .ctext p, .oneline-note { overflow-wrap:anywhere; }
+  /* Desktop windows keep a fixed layout; narrow windows crop/scroll instead of reflowing the page */
+  @media (hover:hover) and (pointer:fine) {
+    html, body { min-width:1100px !important; }
   }
-  @media (min-width:761px) and (max-width:1050px) {
-    .callout.intro-box { flex-direction:column !important; align-items:stretch !important; gap:1.1rem !important; padding:1.25rem !important; }
-    .callout.intro-box .foto-abre { flex:none !important; width:min(260px, 65%) !important; height:300px !important; margin:0 auto !important; }
-    .callout.intro-box .ctext { padding:0 !important; }
-    .intro-box .ctext p.intro-lead strong { white-space:normal !important; font-size:clamp(1.45rem, 2.3vw, 1.75rem) !important; }
-    .intro-box .ctext p { text-align:left !important; }
-    .two-col { grid-template-columns:minmax(0, 1fr) !important; }
-    blockquote.quote-block p.q2, blockquote.quote-block p.q1, .pause .pause-quote.big1, .pause .pause-quote.nobreak, .callout .ctext p.oneline-note {
-      white-space:normal !important; max-width:100% !important; text-wrap:balance;
-    }
-  }
-  @media (min-width:641px) and (max-width:760px) {
-    .wrap, .wrap-wide { padding-left:18px; padding-right:18px; }
-    .section-title, h1.hero-title, .cover-text-bg h2 { text-wrap:balance; }
+  @media (hover:hover) and (pointer:fine) and (max-width:1050px) {
+    .callout.intro-box { flex-direction:row-reverse !important; align-items:stretch !important; gap:1.6rem !important; padding:1.5rem 1.5rem 1.5rem 2rem !important; }
+    .callout.intro-box .foto-abre { flex:0 0 300px !important; width:300px !important; height:auto !important; margin:0 !important; }
+    .intro-box .ctext { padding:.35rem 0 !important; }
+    .intro-box .ctext p.intro-lead strong { white-space:nowrap !important; font-size:clamp(1.45rem,1.8vw,1.75rem) !important; }
+    .two-col { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+    .intro-split, .ciclo-split, .conv-split { flex-direction:row !important; }
+    .intro-split .foto-abre, .sucesso-flex figure, .ciclo-split figure { flex:none !important; }
+    .sucesso-flex { flex-direction:row !important; }
+    .bk-row { grid-template-columns:1fr 1fr !important; }
+    .callout .ctext p.oneline-note, blockquote.quote-block p.q2, blockquote.quote-block p.q1, .pause .pause-quote.big1, .pause .pause-quote.nobreak { white-space:normal !important; max-width:none !important; }
+    .callout.intro-box .foto-abre { height:auto !important; }
   }
   /* Return to the proposed compact opening box: a one-line lead and a slightly wider photo */
   .callout.intro-box { flex-direction:row-reverse !important; gap:1.6rem !important; padding:1.5rem 1.5rem 1.5rem 2rem !important; }
