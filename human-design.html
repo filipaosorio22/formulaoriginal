@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <div>
         <label class="lbl" for="hora">Hora de nascimento</label>
         <input type="time" id="hora" required aria-describedby="horaHint">
-        <p class="hint" id="horaHint">Não sabes a hora? Pergunta a quem possa saber ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada.</p>
+        <p class="hint" id="horaHint">Confirma se nasceste durante o dia ou à noite (AM ou PM). Não sabes a hora? Pergunta a quem possa saber ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada.</p>
       </div>
       <div class="full">
         <label class="lbl" for="local">Local de nascimento</label>
@@ -376,6 +376,13 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
     </details>
     <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro indefinido</span><span><i style="background:var(--wine)"></i>Personalidade (consciente)</span><span><i style="background:var(--gold)"></i>Design (inconsciente)</span></p>
 
+    <div class="cta">
+      <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
+      <p class="big" id="ctaText"></p>
+      <a class="btn" href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
+      <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a><br>
+    </div>
+
     <div class="pillars">
       <h3>O teu desenho em quatro chaves</h3>
       <p class="sub">Tipo · Autoridade · Perfil · Centros</p>
@@ -400,12 +407,6 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       </div>
     </div>
 
-    <div class="cta">
-      <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
-      <p class="big" id="ctaText"></p>
-      <a class="btn" href="marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
-      <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a><br>
-    </div>
     <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
   </section>
   <footer>✦ ✦ ✦</footer>
@@ -910,12 +911,19 @@ function renderBody(hd, info){
   var s = [];
   s.push('<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--cfill2)"/><stop offset="1" stop-color="var(--cfill)"/></linearGradient></defs>');
   var on = {}; hd.channels.forEach(function(c){ on[c[0] + '-' + c[1]] = true; });
+  // centres
+  s.push('<g>');
+  CENTRE_ORDER.forEach(function(c, i){
+    var tri = SHAPES[c].length === 3;
+    s.push('<path class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" d="' + rrect(SHAPES[c], tri ? 11 : 17) + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (indefinido)') + '</title></path>');
+  });
+  s.push('</g>');
   // channels: thin lines joining round gates; each half takes the colour of its activation
   s.push('<g>');
   var k = 0;
   function off(a, b, d){ var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.sqrt(dx*dx + dy*dy) || 1; return [-dy / L * d, dx / L * d]; }
   CHANNELS.forEach(function(c){
-    var a = GP[c[0]], b = GP[c[1]], key = c[0] + '-' + c[1], via = VIA[key];
+    var a = labelPos(c[0]), b = labelPos(c[1]), key = c[0] + '-' + c[1], via = VIA[key];
     var mid = via || [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
     [[c[0], a], [c[1], b]].forEach(function(half){
       var g = hd.gates[half[0]], p0 = half[1];
@@ -929,20 +937,10 @@ function renderBody(hd, info){
     });
   });
   s.push('</g>');
-  // centres
-  s.push('<g>');
-  CENTRE_ORDER.forEach(function(c, i){
-    var tri = SHAPES[c].length === 3;
-    s.push('<path class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" d="' + rrect(SHAPES[c], tri ? 11 : 17) + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (indefinido)') + '</title></path>');
-  });
-  s.push('</g>');
-  // portas: pequenas bolas na ponta de cada centro, com o número dentro do centro
+  // portas: bolas com o número, dentro do centro; os traços saem diretamente delas
   s.push('<g class="fade" style="animation-delay:.4s">');
   Object.keys(GP).forEach(function(g){
-    var p = GP[g], x = r1(p[0]), y = r1(p[1]), gg = hd.gates[g], R = 3.4;
-    if (gg && gg.p && gg.d){
-      s.push('<path class="gc d" d="M' + x + ' ' + (y - R) + 'A' + R + ' ' + R + ' 0 0 0 ' + x + ' ' + (y + R) + 'Z"/><path class="gc p" d="M' + x + ' ' + (y - R) + 'A' + R + ' ' + R + ' 0 0 1 ' + x + ' ' + (y + R) + 'Z"/>');
-    } else s.push('<circle class="gc' + (gg ? ' on ' + (gg.p ? 'p' : 'd') : '') + '" cx="' + x + '" cy="' + y + '" r="' + R + '"/>');
+    var gg = hd.gates[g];
     var lp = labelPos(g), lx = r1(lp[0]), ly = r1(lp[1]), BR = 5.6;
     if (gg && gg.p && gg.d){
       s.push('<path class="gb d" d="M' + lx + ' ' + (ly - BR) + 'A' + BR + ' ' + BR + ' 0 0 0 ' + lx + ' ' + (ly + BR) + 'Z"/><path class="gb p" d="M' + lx + ' ' + (ly - BR) + 'A' + BR + ' ' + BR + ' 0 0 1 ' + lx + ' ' + (ly + BR) + 'Z"/>');
@@ -1007,13 +1005,13 @@ function render(hd, info, keep){
   var defNames = CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).map(function(c){ return CENTRE_NAMES[c]; });
   var html = '';
   html += pillar('Tipo', ICONS.type, T.name, T.nick, T.text.slice(0, 1), 0);
-  $('pillars').innerHTML = html; html = '';
+  tipoHtml = html; html = '';
   html += pillar('Autoridade', ICONS.auth, 'Autoridade ' + Au.name, '', [Au.line], 1);
   html += pillar('Perfil', '<span>' + hd.profile + '</span>', 'Perfil ' + hd.profile, P[0], [P[1]], 2);
   html += pillar('Centros', ICONS.centres, nDef + ' de 9 centros definidos', '',
     [defNames.length ? 'Definidos em ti: ' + joinPt(defNames) + '. ' + TXT.centres.defined : 'Nenhum centro definido: tudo em ti é abertura. ' + TXT.centres.defined, TXT.centres.open], 3);
   html += '<p class="hdclose">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a transformar as crenças que reconheces em ti. Nas sessões de aprofundamento vamos mais longe: com outras ferramentas e o meu método único, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
-  $('pillars2').innerHTML = html;
+  restHtml = html;
   lastHD = hd; lastInfo = info;
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
   try { var fe = localStorage.getItem('fo_email'); if (fe && !$('gEmail').value) $('gEmail').value = fe; } catch (x) {}
@@ -1042,7 +1040,7 @@ function variables(hd){
 }
 // ---------- gate: MailerLite (grupo Human Design) ----------
 var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201215536048113230/subscribe'; window.FO_ML = ML_URL;
-var lastHD = null, lastInfo = null;
+var lastHD = null, lastInfo = null, tipoHtml = '', restHtml = '';
 function setGender(g, silent){
   try { localStorage.setItem('fo_gen', g); } catch (x) {}
   TXT = buildTXT(g);
@@ -1056,6 +1054,9 @@ Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), func
 setGender(genPick(), true);
 function unlocked(){ try { return localStorage.getItem('hdDesbloqueado') === '1'; } catch (e) { return false; } }
 function setLocked(on){
+  // desbloqueado: primeiro a informação geral, depois o tipo junto com autoridade, perfil e centros
+  $('pillars').innerHTML = on ? tipoHtml : '';
+  $('pillars2').innerHTML = on ? restHtml : tipoHtml + restHtml;
   $('locked').classList.toggle('on', on);
   $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
   if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
@@ -1217,6 +1218,8 @@ function describe(hd){
   function post(){ parent.postMessage({ fo: 'hdh', h: document.documentElement.scrollHeight }, '*'); }
   if (window.ResizeObserver) new ResizeObserver(post).observe(document.body);
   window.addEventListener('load', post); setInterval(post, 1500);
+  // se o desenho não arrancou sozinho (dados vindos do mapa), tenta outra vez
+  setTimeout(function(){ var r = document.getElementById('result'), f = document.getElementById('form'); if (r && r.hidden && f && f.requestSubmit && document.getElementById('data').value && document.getElementById('hora').value) f.requestSubmit(); }, 2500);
 })();
 // pop-up com feedback de clientes quando o desenho aparece
 (function(){

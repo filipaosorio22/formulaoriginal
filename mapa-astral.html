@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <div>
         <label class="lbl" for="hora">Hora de nascimento</label>
         <input type="time" id="hora" required aria-describedby="horaHint">
-        <p class="hint" id="horaHint">Não sabes a hora? Pergunta a quem possa saber ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada.</p>
+        <p class="hint" id="horaHint">Confirma se nasceste durante o dia ou à noite (AM ou PM). Não sabes a hora? Pergunta a quem possa saber ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada.</p>
       </div>
       <div class="full">
         <label class="lbl" for="local">Local de nascimento</label>
@@ -364,6 +364,13 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       <ul class="planets" id="planets"></ul>
     </details>
 
+    <div class="cta">
+      <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
+      <p class="big">O mapa é só o desenho.<br>Com <em>a Leitura Intuitiva</em> podes transformá-lo<br>em ação alinhada no teu momento presente.</p>
+      <a class="btn" href="marcar-leitura.html">Quero a minha Leitura</a><br>
+      <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a>
+    </div>
+
     <div class="pillars">
       <h3>3 pilares do mapa astral</h3>
       <p class="sub">Sol · Lua · Ascendente</p>
@@ -392,12 +399,6 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
       </form>
     </div>
 
-    <div class="cta">
-      <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
-      <p class="big">O mapa é só o desenho.<br>Com <em>a Leitura Intuitiva</em> podes transformá-lo<br>em ação alinhada no teu momento presente.</p>
-      <a class="btn" href="marcar-leitura.html">Quero a minha Leitura</a><br>
-      <a class="soft" href="leitura-intuitiva.html#como-funciona">Ver como funciona</a>
-    </div>
     <p class="bday" id="bday" hidden>O teu aniversário está perto: é o momento da tua Revolução Solar, o início de um novo ciclo anual. <a href="https://wa.me/351939479755?text=Ol%C3%A1%20Filipa%2C%20vi%20o%20meu%20mapa%20e%20gostava%20de%20saber%20mais%20sobre%20a%20Revolu%C3%A7%C3%A3o%20Solar." target="_blank" rel="noopener">Fala comigo</a> se quiseres juntá-la à tua Leitura.</p>
     <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
   </section>
@@ -1263,7 +1264,7 @@ function describe(ch, info){
           var res = document.getElementById('result'); res.parentNode.insertBefore(col, res.nextSibling);
           window.addEventListener('message', function(e){ if (e.data && e.data.fo === 'hdh') document.getElementById('hdFrame').style.height = (e.data.h + 8) + 'px'; });
         }
-        document.getElementById('hdFrame').src = 'human-design.html?' + q.toString() + '&embed=1';
+        var hf = document.getElementById('hdFrame'); hf.style.minHeight = '640px'; hf.src = 'human-design.html?' + q.toString() + '&embed=1&r=' + Date.now();
         var anc = col; ['.cta', '#bday', '.again'].forEach(function(sel){ var el = document.querySelector(sel); if (el){ anc.parentNode.insertBefore(el, anc.nextSibling); anc = el; } });
         p.hidden = true;
       } else { p.hidden = false; window.foCrossEnd(a.href, p); }
