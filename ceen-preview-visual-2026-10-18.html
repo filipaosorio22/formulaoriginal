@@ -774,6 +774,14 @@
   }
 
   .quiz-desc { max-width:780px; margin:.3rem 0 .8rem; font-size:14px; line-height:1.6; }
+  /* Restore the original visual proportions of the opening text box */
+  .callout.intro-box { flex-direction:row-reverse !important; gap:1.6rem !important; padding:1.5rem 1.5rem 1.5rem 2rem !important; }
+  .callout.intro-box .foto-abre { flex:0 0 312px !important; width:312px !important; min-width:0 !important; margin:0 !important; }
+  .intro-box .ctext p.intro-lead strong { font-size:clamp(1.8rem,2.3vw,2.35rem) !important; line-height:1.12 !important; white-space:normal !important; }
+  @media (max-width:760px) {
+    .callout.intro-box { flex-direction:column !important; align-items:center !important; padding:1rem 1.1rem 1.3rem !important; gap:1.2rem !important; }
+    .callout.intro-box .foto-abre { flex:none !important; width:min(260px,80%) !important; min-width:0 !important; height:340px !important; }
+  }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
