@@ -673,6 +673,21 @@
   @media (min-width:601px){ .popup.popup-conv { left:1.4rem !important; right:auto !important; top:96px !important; bottom:auto !important; width:300px !important; } }
   @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 310px; width:310px; } .callout.intro-box { padding:1rem 1rem 1rem 2.4rem; } }
   .intro-box .foto-abre img { transform:none !important; object-position:50% 100% !important; }
+  /* Ajuste visual da introdução CEEN */
+  @media (min-width:761px){
+    .callout.intro-box { flex-direction:row !important; gap:2rem; padding:1.5rem 2rem 1.5rem 1.5rem; }
+    .callout.intro-box .foto-abre { flex:0 0 36%; width:36%; min-width:280px; }
+    .callout.intro-box .ctext { flex:1; min-width:0; padding:.45rem 0; }
+  }
+  .intro-box .ctext p { line-height:1.7; margin:0 0 1rem; }
+  .intro-box .ctext p.intro-lead { margin-bottom:.6rem; }
+  .intro-box .ctext p.intro-lead strong { display:block; font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,2.3vw,2.35rem); line-height:1.12; font-weight:600; color:var(--wine); }
+  .intro-box .ctext p:last-child { margin-bottom:0; }
+  @media (max-width:760px){
+    .callout.intro-box { gap:1.2rem; }
+    .intro-box .foto-abre { width:min(300px,86%); height:320px; }
+    .intro-box .ctext p.intro-lead strong { font-size:1.9rem; }
+  }
   /* ronda 33 */
   .fmt-card .fmt-price { font-family:'Spectral',serif !important; font-weight:300 !important; font-size:34px !important; letter-spacing:0; }
   .case-close { font-style:italic; color:var(--orange); margin:1.8rem 0 0; font-size:17px; text-align:center; }
@@ -754,9 +769,11 @@
 <section class="tight" style="padding-top:12px;">
   <div class="wrap">
     <div class="callout grayD intro-callout intro-box"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure><div class="ctext">
-      <p><strong>O teu negócio não existe separado de ti.</strong> A forma como trabalhas, as decisões que tomas e aquilo que queres mudar estão ligados à pessoa que és e à vida que desejas construir.</p>
-      <p>A CEEN é um <strong>trabalho individual de análise e orientação</strong> para profissionais independentes que querem olhar para o seu negócio e encontrar uma direção que faça sentido para si e para a realidade do negócio.</p>
-      <p>Partimos de uma questão concreta. Através da conversa, exploramos o que pode estar a influenciar as tuas escolhas e relacionamos essa leitura com decisões como a oferta, os preços, a comunicação ou a organização do trabalho.</p>
+      <p class="intro-lead"><strong>O teu negócio não existe separado de ti.</strong></p>
+      <p>A forma como trabalhas, as decisões que tomas e aquilo que queres mudar estão ligados à pessoa que és e à vida que desejas construir.</p>
+      <p>A CEEN é um <strong>trabalho individual de análise e orientação</strong> para profissionais independentes que querem olhar para o seu negócio e encontrar uma direção que tenha em conta a realidade do negócio e a vida que querem construir.</p>
+      <p>Partimos de uma questão concreta e exploramos, através da conversa, o que pode estar a influenciar as tuas escolhas. Depois, relacionamos essa leitura com decisões práticas: a oferta, os preços, a comunicação e a organização do trabalho.</p>
+      <p>O objetivo não é encaixar-te numa fórmula de sucesso, mas ajudar-te a reconhecer o que faz sentido manter, o que precisa de ser revisto e que outras possibilidades podes considerar.</p>
     </div></div>
   </div>
 </section>
