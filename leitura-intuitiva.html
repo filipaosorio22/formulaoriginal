@@ -17,7 +17,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <meta name="color-scheme" content="light dark">
 <script>(function(){var m=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)");function a(){var t=null;try{t=localStorage.getItem("fo_theme");}catch(e){}var d=t?t==="dark":(m&&m.matches);document.documentElement.setAttribute("data-theme",d?"dark":"light");}a();if(m&&m.addEventListener){m.addEventListener("change",a);}})();</script>
 <script>try{if(localStorage.getItem('fo_size')==='large')document.documentElement.setAttribute('data-size','large');}catch(e){}</script>
@@ -995,6 +995,24 @@
   .aud-note { margin-top:1rem; }
   .tabpanel.pr-box { display:block !important; }
   .pr-box .qa-a { margin:0; text-align:left; }
+
+  /* ronda 34 */
+  html[data-theme="dark"] .cover-li h1, html[data-theme="dark"] .cover-li .h1-sub { color:#7a2535 !important; }
+  .cover-li::before { left:calc(50% + 80px) !important; transform:translateY(-50%) rotate(-24deg) !important; }
+  @media (max-width:640px){ .cover-li::before { left:calc(50% + 10px) !important; } }
+  main .faixa.faixa-ac { padding:1.9rem 1rem !important; margin-top:2.4rem !important; }
+  p.body-text.vis-q { font-size:17.5px !important; line-height:1.9 !important; }
+  .bio-box p.body-text, .bio-box .bio p.body-text, .bio-box p.body-text.uso { font-size:16.5px !important; line-height:1.8 !important; }
+  .bio-box p.body-text.uso { margin-top:0 !important; }
+  .bio-box .bio-photo img, #quem-te-guia .bio-box .bio-photo img { object-position:50% 57% !important; }
+  details.astro > summary { border:1.5px solid var(--wine); border-radius:14px; padding:0.8rem 1.1rem; }
+  .hdq-t:not(.sesq-t) { margin-top:3.8rem; }
+  #pratica h2 { font-style:italic; }
+  .pr-box .qa-a { display:block !important; }
+  .rs-box { margin:1.6rem 0 0; padding:1.1rem 1.3rem 0.4rem; border:1.5px solid rgba(201,168,108,0.65); border-radius:16px; background:var(--tint); }
+  .rs-box .rs-bt { font-family:'Spectral',serif; font-weight:700; font-size:20px; color:var(--wine); text-align:center; margin:0 0 0.9rem; }
+  .mpop label.mp-l { color:var(--wine); }
+  .rs-box .hdmsgs, .rs-box .rsmsgs { border:none !important; background:none !important; box-shadow:none !important; padding:0 !important; margin-top:0 !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -1094,14 +1112,14 @@
         <div class="car-slide"><img src="feedback10-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
         <div class="car-slide"><img src="feedback11-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
         <div class="car-slide"><img src="feedback12-dourado.jpg" alt="Testemunho de uma cliente" loading="lazy"></div>
-        <div class="car-slide"><img src="feedback14-dourado.jpg?v=3" alt="Testemunho de uma cliente sobre a Leitura de Aura" loading="lazy"></div>
+        <div class="car-slide"><img src="feedback14-dourado.jpg?v=4" alt="Testemunho de uma cliente sobre a Leitura de Aura" loading="lazy"></div>
         <div class="car-slide car-video" id="carVideo" role="button" tabindex="0" aria-label="Ver o vídeo de testemunho"><img src="https://img.youtube.com/vi/MHyyFIKgRL4/hqdefault.jpg" alt="Vídeo de testemunho de uma cliente" loading="lazy" style="opacity:0.85;"><div class="play"><span>▶</span></div></div>
       </div>
       <div class="car-dots" id="carDots"></div>
       <p class="swipe-hint">Desliza para o lado →</p>
     </div>
     <div class="aside">
-      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que lia de forma intuitiva o campo energético da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e integra agora a Astrologia e o Human Design numa abordagem simbólica e arquetípica, com perguntas e propostas práticas ligadas ao teu momento presente.</p>
+      <p>Estes testemunhos são das minhas Leituras de Aura, anteriores a este formato, em que lia de forma intuitiva o campo energético da pessoa. A Leitura Intuitiva nasce dessa mesma sensibilidade e integra as linguagens simbólicas da Astrologia e do Human Design.</p>
     </div>
   </section>
 
@@ -1112,11 +1130,11 @@
   <section class="reveal" id="minha-visao">
     <h2>A minha visão da Leitura de mapas</h2>
     <p class="body-text"><strong>Nem tudo o que nos é familiar continua a fazer sentido para nós.</strong> Por vezes, a forma como trabalhamos, nos relacionamos ou usamos o nosso tempo está <strong>mais ligada ao que aprendemos a fazer para sermos aceites e nos sentirmos seguros do que àquilo que hoje desejamos.</strong></p>
-    <p class="body-text">Vejo a Leitura como um espaço para olhar para essas diferenças, com curiosidade e carinho, onde a Astrologia e o Human Design entram como duas linguagens simbólicas que coloco em diálogo. Através delas, <strong>exploro temas como pertença, segurança, expressão e mudança, mas também perguntas sobre o teu ritmo, a forma como decides e a influência das expectativas à tua volta</strong>. Não procuro fazer a tua experiência caber nos mapas, mas é a partir do que partilhas sobre o teu momento que essa exploração ganha um contexto ainda mais específico.</p>
-    <p class="body-text"><strong>É aqui que entram os arquétipos: imagens que dão forma a experiências humanas,</strong> como procurar segurança, desejar pertencer, afirmar a própria vontade ou atravessar uma mudança. Não os uso para te encaixar numa personagem, mas para dar linguagem à forma singular como esses temas aparecem na tua vida.</p>
+    <p class="body-text">Vejo a Leitura como um espaço para olhar para essas diferenças, com curiosidade e carinho, onde através da Astrologia e do Human Design <strong>exploramos temas como pertença, segurança, expressão e mudança, mas também perguntas sobre o teu ritmo, a forma como decides e a influência das expectativas à tua volta</strong>. Não procuro fazer a tua experiência caber nos mapas, mas é a partir do que partilhas sobre o teu momento que essa exploração ganha um contexto ainda mais específico.</p>
+    <p class="body-text"><strong>É aqui que entram os arquétipos: imagens que dão forma a experiências humanas,</strong> como procurar segurança, desejar pertencer, afirmar a própria vontade ou atravessar uma mudança. Não os uso para te encaixar em personagens, mas para dar linguagem à forma singular como esses temas aparecem na tua vida.</p>
     <p class="body-text vis-q">Estou a escolher isto porque o desejo ou porque receio desiludir alguém? Este caminho ainda faz sentido para mim ou é apenas aquele que conheço melhor? Poderei vê-lo de outra forma se me desprender do que acho que terá de ser? O que procuro proteger quando me calo, me esforço demasiado ou adio aquilo que quero? O que receio que aconteça se mostrar o que sinto?</p>
-    <p class="body-text"><strong>Os mapas, por si só, não respondem a estas perguntas.</strong> Não permitem saber se uma escolha nasce de um desejo, de um medo, de uma experiência dolorosa ou de várias coisas ao mesmo tempo. É no encontro entre os símbolos e a tua história que podemos explorar essas possibilidades. <strong>A tua experiência não tem de caber na interpretação:</strong> é a interpretação que precisa de fazer sentido à luz do que vives.</p>
-    <p class="body-text"><strong>Também não olho para as tuas formas de proteção como falhas a corrigir.</strong> Algumas podem ter sido importantes para atravessares o que viveste. Podemos reconhecer o que te permitiram e, ao mesmo tempo, perguntar se continuam a cuidar de ti? Se há espaço para responder de outra maneira, ao teu ritmo.</p>
+    <p class="body-text"><strong>Os mapas, por si só, não respondem a estas perguntas.</strong> Não permitem saber se uma escolha nasce de um desejo, de um medo, de uma experiência dolorosa ou de várias coisas ao mesmo tempo. É no encontro entre os símbolos e a tua história que podemos explorar essas possibilidades.</p>
+    <p class="body-text"><strong>Também não olho para as tuas formas de proteção como falhas a corrigir.</strong> Algumas podem ter sido importantes para atravessares o que viveste. Podemos reconhecer o que te permitiram e, ao mesmo tempo, perguntar se continuam a cuidar de ti ou se agora há espaço para responder de outra maneira, ao teu ritmo.</p>
     <p class="body-text"><strong>Uma das coisas de que mais gosto neste trabalho é trazer diferentes perspetivas sobre uma mesma experiência.</strong> Não para te dizer como deves pensar ou agir, mas para que aquilo que parecia ter uma única resposta possa ganhar outras possibilidades.</p>
     <p class="body-text">Para mim, <strong>conheceres-te não é encontrares uma versão definitiva de quem és.</strong> É perceberes melhor o que valorizas, o que desejas, o que procuras proteger e onde tens espaço para escolher. É por isso que <strong>a Leitura não termina na interpretação</strong>, ela ganha vida quando alguma coisa do que reconheceste encontra lugar no quotidiano: numa conversa, num limite, numa decisão ou num pequeno gesto diferente.</p>
     <p class="statement gold">Não para o mapa te dizer como viver. Para poderes questionar, com mais consciência: esta é a forma como quero estar na minha vida?</p>
@@ -1127,11 +1145,11 @@
   <section class="reveal" id="o-que-e">
     <h2>O que é a Leitura Intuitiva</h2>
     <p class="body-text"><strong>A Leitura Intuitiva é uma interpretação simbólica e personalizada que cruza o teu mapa astral e o teu Human Design com o tema que trazes e o momento que estás a viver.</strong></p>
-    <p class="body-text">Não te entrego dois relatórios separados, nem uma lista de signos, planetas, tipos e perfis. Relaciono os elementos das duas linguagens com o contexto que partilhas e com as associações que surgem na minha interpretação intuitiva, construindo um fio que possas acompanhar. A partir daí, exploro possíveis padrões e crenças, crio uma história simbólica e proponho perguntas e pequenas experiências para levares essa reflexão à tua vida.</p>
-    <p class="body-text">A Leitura não percorre todos os elementos do teu mapa astral e do teu Human Design, ponto por ponto. É uma interpretação intuitiva e focada: a partir do tema e do contexto que partilhas, seleciono e relaciono os símbolos que considero mais relevantes para explorar o teu momento. A profundidade está nas relações que construo entre esses elementos e a tua experiência, não na quantidade de informação sobre os mapas.</p>
+    <p class="body-text">Não te entrego dois relatórios separados, nem uma lista de signos, planetas, tipos e perfis. Relaciono os elementos das duas linguagens com o contexto que partilhas e com as associações que surgem na minha interpretação intuitiva, construindo um fio que possas acompanhar. A partir daí, <strong>exploro possíveis padrões e crenças, crio uma história simbólica e proponho perguntas e pequenas experiências para levares essa reflexão à tua vida.</strong></p>
+    <p class="body-text">A Leitura não percorre todos os elementos do teu mapa astral e do teu Human Design, ponto por ponto. <strong>É uma interpretação intuitiva e focada:</strong> a partir do tema e do contexto que partilhas, seleciono e relaciono os símbolos que considero mais relevantes para explorar o teu momento. <strong>A profundidade está nas relações que construo entre esses elementos e a tua experiência, não na quantidade de informação sobre os diferentes mapas.</strong></p>
     <div class="flip-grid">
       <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym">☉</span><b>O mapa como<br>ponto de partida</b><span class="fhint"></span></div>
+        <div class="fface ffront"><span class="sym">🗺️</span><b>O mapa como<br>ponto de partida</b><span class="fhint"></span></div>
         <div class="fface fback"><h3>O mapa como ponto de partida</h3><p>O mapa não é uma sentença, é uma bússola. Interessa-me a conversa entre os seus elementos que ele revela: os desejos, as tensões e as possibilidades que podem ganhar expressão na tua vida para as poderes transformar depois de as reconheceres.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
@@ -1143,7 +1161,7 @@
         <div class="fface fback"><h3>As crenças por trás do mapa</h3><p>Os símbolos do mapa e o contexto que partilhas dão-nos pistas para explorar possíveis crenças sobre valor, segurança, pertença ou liberdade. A tua experiência ajuda-nos a perceber quais fazem sentido.</p></div>
       </div></div>
       <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym">✦</span><b>Da compreensão à prática</b><span class="fhint"></span></div>
+        <div class="fface ffront"><span class="sym">🎯</span><b>Da compreensão à prática</b><span class="fhint"></span></div>
         <div class="fface fback"><h3>Da compreensão à prática</h3><p>Depois da história e das crenças, passamos ao concreto: onde reconheces estas dinâmicas, que perguntas vale a pena fazer e uma pequena experiência para fazeres ao longo de uma semana. Não apenas «o que diz o meu mapa sobre mim?», mas «como posso trabalhar com aquilo que reconheço nele?».</p></div>
       </div></div>
     </div>
@@ -1163,7 +1181,7 @@
       <div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div>
       <div>
         <p class="body-text">Tenho formação e experiência profissional em gestão e estratégia e, há vários anos, dedico-me também a estudar o desenvolvimento infantil, o comportamento humano, as crenças e os padrões que nos movem sem darmos conta, desde a infância.</p>
-        <p class="body-text">O meu percurso de estudo reúne diferentes áreas e ferramentas como Coaching, Constelações Familiares, Leitura de Aura, Reiki, ThetaHealing<sup style="font-size:0.6em;">®</sup>, innerdance (energia vital); e linguagens simbólicas como os sonhos, a alquimia, a Astrologia e o Human Design, incluindo aplicações aos negócios e às crianças (e digo-te que está mais relacionado do que parece).</p>
+        <p class="body-text">O meu percurso de estudo reúne diferentes áreas e ferramentas como Coaching, Constelações Familiares, Leitura de Aura, Reiki, ThetaHealing<sup style="font-size:0.6em;">®</sup>, innerdance (energia vital); e linguagens simbólicas como os sonhos, a alquimia, a Astrologia e o Human Design, incluindo aplicações aos negócios e às crianças (e digo-te desde já que está mais relacionado do que parece).</p>
       </div>
     </div>
     <p class="body-text">Com este conhecimento e a experiência de acompanhar pessoas, fui construindo <strong>uma metodologia própria que une diversas sabedorias.</strong> O estudo do desenvolvimento do cérebro, da neurociência e dos processos de aprendizagem também informa o meu olhar sobre a forma como construímos hábitos, crenças e respostas.</p>
@@ -1220,7 +1238,7 @@
     <div class="tabpanel pr-box"><p class="qa-a"><strong>Se quiseres aprofundar</strong> o que descobres, ou sentires dificuldade em fazer diferente mesmo reconhecendo um padrão, <strong>podes fazê-lo nas sessões comigo.</strong> Partimos de situações concretas da tua vida para explorar as crenças, emoções e circunstâncias envolvidas, recorrendo às ferramentas que fizerem sentido para o que combinamos trabalhar.</p></div>
   
     <div class="feat feat-pr">
-      <p class="feat-eyebrow">✦ A Leitura mais recente · testemunho em áudio</p>
+      <p class="feat-eyebrow">A Leitura mais recente · testemunho em áudio</p>
       <p class="feat-quote">«Fez clique nos pontos onde tinha que fazer o clique. Trouxe visões diferentes à minha realidade.»</p>
       <p class="feat-ctx">Uma cliente de há anos, que virou amiga também, de quem conheço muito bem a sua história. Um caso bem especial, por isso mesmo estava curiosa para ver o que esta Leitura lhe traria. Esta Leitura foi entregue em áudio, num formato anterior, a Leitura Intuitiva é escrita.</p>
       <div class="aud"><audio preload="metadata" src="Feedback%20LA%20nova%20Cristiana.MP3"></audio><button type="button" class="aud-btn" aria-label="Ouvir o testemunho"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">«Trouxe visões diferentes»</p><div class="aud-bar"><div class="aud-wave"><i style="height:8px"></i><i style="height:28px"></i><i style="height:22px"></i><i style="height:26px"></i><i style="height:23px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:25px"></i><i style="height:8px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:8px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:14px"></i><i style="height:23px"></i><i style="height:16px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:10px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:19px"></i><i style="height:16px"></i></div><div class="aud-fill"></div></div><span class="aud-t">2:09</span></div></div>
@@ -1244,13 +1262,12 @@
     <h2>O que recebes</h2>
     <ul class="clean stagger">
       <li>Uma Leitura integrada dos teus mapas, orientada pelo teu tema e pelo contexto que partilhas.</li>
-      <li>Uma história simbólica personalizada, que dá forma aos temas explorados.</li>
+      <li>Uma curta história simbólica personalizada, que dá forma aos temas explorados.</li>
       <li>Perguntas sobre possíveis padrões e crenças, para relacionares com situações da tua vida.</li>
       <li>Propostas de observação e pequenas práticas, para explorares outras formas de escolher e agir.</li>
       <li>A Leitura por escrito, para releres ao teu ritmo e regressares ao que fizer sentido para ti.</li>
-      <li>Um áudio personalizado de integração da tua Leitura.</li>
+      <li>Um áudio extra personalizado apenas de integração da tua Leitura.</li>
     </ul>
-    <p class="body-text aud-note">No áudio, dou voz ao fio que liga os temas da tua Leitura e deixo-te perguntas e uma proposta prática para começares a explorá-los. O texto fica contigo para aprofundares e regressares ao que fizer sentido, ao teu ritmo.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1290,17 +1307,16 @@
     <details class="comp-tg"><summary>Complemento opcional</summary>
     <div class="tl-extra">
       <div class="tl-extra-g one">
-        <div><b>A tua Revolução Solar · +100€</b><p>Mais informação sobre o teu ciclo anual (de aniversário a aniversário): temas para explorar, possibilidades a cultivar e perguntas para as escolhas que tens pela frente, em diálogo com o teu mapa natal.</p></div>
+        <div><b>A tua Revolução Solar · +100€</b><p>Mais informação sobre o teu ciclo anual (de aniversário a aniversário): temas para explorar, possibilidades a cultivar e perguntas para as escolhas que tens pela frente neste momento, em diálogo com o teu mapa natal.</p></div>
       </div>
       <p class="tl-extra-n">Podes juntar a Revolução Solar na altura de marcação da Leitura.</p>
     </div>
     </details>
-    <details class="rs-tg"><summary>O que dizem sobre a Revolução Solar</summary>
+    <div class="rs-box"><p class="rs-bt">O que dizem sobre a Revolução Solar</p>
     <div class="hdmsgs rsmsgs">
       <blockquote class="hdmsg"><p>Obrigada mesmo pela tua dedicação!</p><p>No fundo compilaste num documento que é algo maior do que eu estava à espera, e pelo que percebi do que tinhas planeado, mas mesmo assim eu consigo perceber que é <u>um resumo resumidinho de muita coisa que tu tiveste que estudar, ver, analisar e entrecruzar</u> as informações e por isso, muito obrigada por todo esse trabalho, essa dedicação.</p><p>Depois, sem dúvida, <strong>é mágico como de facto aquilo que o mapa revelou, é aquilo que nós já tínhamos percebido que eu precisava, que era o momento em que estava e acima de tudo é aquilo que eu sinto mesmo que está a acontecer que estou a viver</strong>.</p><p>E acima de tudo foi <strong>muito bom ver essa confirmação</strong>, no fundo é isso, uma confirmação daquilo que tínhamos pensado para todo este processo, para este momento em específico, e alinham-se muito com o que eu quero também.</p><p>Enfim, todos os pontinhos, todas as coisinhas que tu escreveste, para já <u>escreveste de uma forma muito clara, que chegou bem cá dentro, ressoou muito cá dentro e que já está muito alinhado com aquilo que eu sinto, que eu quero e com aquilo que quero trabalhar comigo mesma, comigo mesma e contigo também</u>, foi maravilhoso todos os pontinhos mesmo.<br>Foi tudo maravilhoso e é algo que tem que me acompanhar durante todo o ano, mesmo <strong>as perguntas que tu colocaste foi muito interessante refletir sobre elas</strong> e tenho consciência que se reler e fizer essas mesmas questões daqui a cinco meses vou ter uma perspectiva diferente sobre todas aquelas questões e mesmo sobre aquilo que está escrito.</p><p><strong>Muito bom! Adorei, adorei, adorei e vamos agora a isso!</strong> Vamos tratar agora desta fase de transformação de perceber qual o próximo passo que podemos dar neste processo para desenvolver aquilo que tem que ser desenvolvido, criar espaço para o que tem que ter espaço e depois como expressar, como pôr cá fora todas estas ideias.</p></blockquote>
     </div>
-    <button type="button" class="astro-up" aria-label="Fechar os testemunhos" onclick="var d=this.closest('details');d.open=false;d.scrollIntoView({block:'center',behavior:'smooth'});">↑</button>
-    </details>
+    </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1450,8 +1466,8 @@
         </div>
       </div>
       <p class="mp-err" id="mpErr" role="alert"></p>
-      <div class="mp-choice"><button class="btn outline" type="submit" id="mpBtn" value="mapa">✦ Ver o mapa astral</button><button class="btn outline" type="submit" id="mpBtnHd" value="hd">✦ Ver o Human Design</button><button class="btn outline" type="submit" id="mpBtnAmbos" value="ambos">✦ Ver os dois</button></div>
-      <p class="mp-foot"><b>✦</b> O mapa é calculado aqui, no teu browser. Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais info.</p>
+      <div class="mp-choice"><button class="btn outline" type="submit" id="mpBtn" value="mapa">Ver o mapa astral</button><button class="btn outline" type="submit" id="mpBtnHd" value="hd">Ver o Human Design</button><button class="btn outline" type="submit" id="mpBtnAmbos" value="ambos">Ver os dois</button></div>
+      <p class="mp-foot"><b>✦</b> O mapa é calculado aqui, no teu browser. Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.</p>
       <button class="mp-no" type="button" data-mp-close>Agora não</button>
     </form>
   </div>
@@ -1614,7 +1630,7 @@
 <div id="cookieVeil" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.35); z-index:998;"></div>
 <div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem calc(1.25rem + env(safe-area-inset-bottom, 0px)); box-shadow:0 -4px 24px rgba(26,20,16,0.12); max-height:85vh; overflow-y:auto;">
   <div id="cookieSimple" style="max-width:760px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
-    <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0;">Uso cookies para estatísticas (Google Analytics). <a href="privacidade.html" style="color:#7a2535; text-decoration:underline;">Saber mais</a></p>
+    <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0;">Antes de continuares: uso cookies de estatística (Google Analytics) para perceber o que ajuda quem passa por aqui e, assim, melhorar a tua experiência no site. Só os ativo se aceitares. <a href="privacidade.html" style="color:#7a2535; text-decoration:underline;">Saber mais</a></p>
     <div style="display:flex; gap:0.6rem; flex-shrink:0; flex-wrap:wrap;">
       <button id="cookieReject" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:1px solid #7a2535; color:#7a2535; border-radius:30px; padding:10px 18px; cursor:pointer;">Recusar</button>
       <button id="cookieManage" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:1px solid #9a7e52; color:#9a7e52; border-radius:30px; padding:10px 18px; cursor:pointer;">Gerir preferências</button>
