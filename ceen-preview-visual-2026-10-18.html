@@ -750,6 +750,30 @@
   }
 
 
+  /* Community invitation: show the button only, without a beige popup card */
+  .popup.popup-conv {
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    padding:0 !important;
+    width:max-content !important;
+    max-width:calc(100vw - 2rem) !important;
+    border-radius:0 !important;
+  }
+  .popup.popup-conv .popup-btn {
+    background:transparent !important;
+    box-shadow:none !important;
+    border:1px solid var(--wine) !important;
+    color:var(--wine) !important;
+    margin:0 !important;
+  }
+  .popup.popup-conv .popup-btn:hover {
+    background:transparent !important;
+    box-shadow:none !important;
+    transform:translateY(-1px);
+  }
+  .popup.popup-conv .popup-close { background:transparent !important; }
+
   /* Ajuste visual apenas da primeira caixa de apresentação */
   .callout.intro-box {
     border:1px solid rgba(122,37,53,.12) !important;
