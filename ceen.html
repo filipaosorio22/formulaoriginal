@@ -747,6 +747,30 @@
     .popup-conv-img { width:100% !important; }
   }
 
+  /* Convite para comunidades: mostrar apenas o botão, sem cartão de fundo nem imagem. */
+  .popup.popup-conv {
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    padding:0 !important;
+    width:max-content !important;
+    max-width:calc(100vw - 2rem) !important;
+    border-radius:0 !important;
+  }
+  .popup.popup-conv .popup-btn {
+    background:transparent !important;
+    box-shadow:none !important;
+    border:1px solid var(--wine) !important;
+    color:var(--wine) !important;
+    margin:0 !important;
+  }
+  .popup.popup-conv .popup-btn:hover {
+    background:transparent !important;
+    box-shadow:none !important;
+    transform:translateY(-1px);
+  }
+  .popup.popup-conv .popup-close { background:transparent !important; }
+
   /* Ajustes pedidos: manter a composição desktop ao redimensionar a janela, sem comprimir o texto. */
   @media (hover:hover) and (pointer:fine) { html, body { min-width:1100px !important; } }
   @media (hover:hover) and (pointer:fine) and (max-width:1050px) {
@@ -1339,9 +1363,8 @@
       </div><figure class="conv-vid"><video autoplay loop muted playsinline preload="metadata" aria-label="Momento de um encontro com uma comunidade"><source src="comunidade-loop.webm" type="video/webm"><source src="comunidade-loop.mp4" type="video/mp4"></video></figure></div>
       <div class="conv-rest">
       <p class="t-sm conv-first">Se criaste, dinamizas ou fazes parte de uma comunidade de empreendedores ou criadores, ou se representas uma empresa e gostavas de trazer estes temas para um encontro com a tua equipa, podemos conversar.</p>
-      <p class="t-sm">Podemos explorar a relação entre vida pessoal e trabalho, o que significa sucesso para cada pessoa e como dar expressão ao que somos, ao que sabemos e àquilo em que acreditamos, <em>extraindo</em> o melhor de cada pessoa.</p>
-      <p class="t-sm">Em contexto de empresa, podemos trazer estas perguntas para a realidade da equipa: como cada pessoa vive o seu papel, contribui com o seu conhecimento e se relaciona com o trabalho, com os outros e com as responsabilidades que assume.</p>
-      <p class="t-sm">O encontro é pensado a partir do contexto e de um tema central, respeitando a participação, os limites de cada pessoa e os valores da comunidade ou empresa.</p>
+      <p class="t-sm">O formato é pensado a partir do contexto, das pessoas e do tema que faz sentido explorar. Podemos abordar a relação entre vida pessoal e trabalho, as diferentes definições de sucesso, a forma como cada pessoa ocupa o seu papel e como o conhecimento individual pode contribuir para o coletivo.</p>
+      <p class="t-sm">Cada encontro é preparado de acordo com o objetivo, respeitando a participação, os limites de cada pessoa e os valores da comunidade ou empresa.</p>
       </div>
       <div class="conv-aud"><p class="conv-cap">Depois de um encontro com uma comunidade</p><div class="aud-wrap"><div class="aud"><audio preload="metadata" src="feedback comunidade.MP3"></audio><button type="button" class="aud-btn" aria-label="Ouvir"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“Foi… além da expectativa! <br>Foi mesmo muito, muito bom!”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Ler a transcrição</summary><div class="tr-body"><div lang="pt"><p>Alô, minha querida, agora sim consegui um tempinho aqui com calma e com a atenção devida que queria para mandar-te este “podcast” de agradecimento, porque efetivamente foi... além da expectativa! Foi mesmo muito, muito bom!</p><p>Acredito que todas elas tiraram muito proveito do momento e certamente muitas delas irão contactar-te para aprofundar um bocado mais e conhecerem-se ainda mais e adaptarem isso também aos seus negócios, portanto vi ali muito entusiasmo da parte delas e fico muito feliz por isso, porque efetivamente adoro trazer ferramentas novas e realmente trazer aqui algumas coisas que possam ajudá-las a prosperar cada vez mais, seja em que área for (...)</p><p>É muito, muito bom e fico muito feliz por elas terem gostado e toda a entrega e todo o momento incrível que nos proporcionaste, porque foi absolutamente fabuloso e, sem conseguir colocar em palavras, porque efetivamente foi mesmo muito, muito bom e gostei muito até mesmo para mim mesma!</p><p>Eu sabia que ia gostar para mim mesma, mas estava aqui ainda naquela coisa de como é que elas iriam reagir, como é que seria (...), mas é absolutamente interessante de ver como temos tanto em comum, apesar de sermos todos muito diferentes umas das outras, porque somos efetivamente pessoas diferentes, que têm formas de pensar e de agir diferentes, mas que há muita coisa que nos junta e que nos atrai umas às outras.</p><p>E é super engraçado ver, eu sei, eu acredito nisso, mas ao mesmo tempo estes momentos acabam por nos confirmar aquilo que nós de certa forma já sabíamos de alguma maneira, mas agora sabemos melhor, sabes?</p></div></div></details></div></div>
       <p class="t-sm">Não precisas de chegar com um formato definido. Podemos partir da tua ideia, conhecer o contexto da comunidade ou da empresa e definir o tema, o objetivo e um formato de encontro que faça sentido para as pessoas a quem se destina.</p>
@@ -1452,11 +1475,7 @@
 
 <div class="popup popup-conv" id="popupConv" aria-label="Convite para comunidades">
   <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Fechar">×</button>
-  <p class="popup-eyebrow popup-tg" role="button" tabindex="0" aria-expanded="false" style="text-align:center; margin:0; padding:0 1rem; text-transform:none; letter-spacing:0.03em; font-size:13px; line-height:1.5; cursor:pointer;" onclick="var b=document.getElementById('popupConv'); b.classList.toggle('open'); this.setAttribute('aria-expanded', b.classList.contains('open'))" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">Uma mensagem depois da partilha <span class="tgarr">▾</span></p>
-  <div class="popup-rest">
-  <img class="popup-conv-img" src="feedback-comunidade-msg.jpg" alt="Mensagem: «Minha querida, daqui a pouco, com tempo, envio um podcast de agradecimento profundo. Obrigada mesmo mesmo! Foi fenomenal. Obrigada pela tua partilha e entrega incrível.»" width="620" height="289" loading="lazy">
-  <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">Vamos cocriar na tua comunidade ou empresa?</a>
-  </div>
+  <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">VAMOS COCRIAR NA TUA<br>COMUNIDADE OU EMPRESA?</a>
 </div>
 <div class="popup" id="popup">
   <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
