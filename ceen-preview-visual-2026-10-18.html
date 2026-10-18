@@ -55,7 +55,7 @@
   html[data-size="large"] .size-btn .pl { display:inline; }
   html[data-size="large"] .size-btn .mi { display:none; }
   .size-btn:hover { background:rgba(201,168,108,0.18); }
-  @media (min-width:641px){ body { zoom:0.9; } html[data-size="large"] body { zoom:1; } }
+  @media (min-width:641px){ html { font-size:90%; } html[data-size="large"] { font-size:100%; } }
   .nav-wa { display:none; width:30px; height:30px; border-radius:50%; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.5); align-items:center; justify-content:center; flex-shrink:0; }
   .nav-wa svg { width:15px; height:15px; }
   br.mb { display:none; }
@@ -451,7 +451,7 @@
     .popup { width:calc(100vw - 2rem); }
   }
   @media (max-width:640px){
-    body { zoom:0.9; }
+    html { font-size:100%; }
     .size-btn { display:none; }
     h1.hero-title { padding-left:1.1rem; }
     .md { display:none; }
