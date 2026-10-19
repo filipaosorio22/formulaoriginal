@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
 <meta name="color-scheme" content="light dark">
 <script>(function(){var m=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)");function a(){var t=null;try{t=localStorage.getItem("fo_theme");}catch(e){}var d=t?t==="dark":(m&&m.matches);document.documentElement.setAttribute("data-theme",d?"dark":"light");}a();if(m&&m.addEventListener){m.addEventListener("change",a);}})();</script>
-<script>try{if(localStorage.getItem('fo_size')==='large')document.documentElement.setAttribute('data-size','large');}catch(e){}</script>
+<script>try{if(localStorage.getItem('fo_size')==='compact')document.documentElement.setAttribute('data-size','compact');}catch(e){}</script>
 <style>
   :root {
     --cream: #f3ecdf; --ink: #27211b; --ink-soft: #55493c;
@@ -40,11 +40,12 @@
   .theme-btn:hover { background:rgba(201,168,108,0.12); }
   .size-btn { width:34px; height:34px; margin-left:0.7rem; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid var(--gold); border-radius:50%; color:var(--wine); cursor:pointer; padding:0; }
   .size-btn svg { width:17px; height:17px; display:block; }
-  .size-btn .mi { display:none; }
-  html[data-size="large"] .size-btn .pl { display:none; }
-  html[data-size="large"] .size-btn .mi { display:inline; }
+  .size-btn .pl { display:none; }
+  .size-btn .mi { display:inline; }
+  html[data-size="compact"] .size-btn .pl { display:inline; }
+  html[data-size="compact"] .size-btn .mi { display:none; }
   .size-btn:hover { background:rgba(201,168,108,0.18); }
-  @media (min-width:641px){ html[data-size="large"] body { zoom:1.11; } }
+  @media (min-width:641px){ body { zoom:1.11; } html[data-size="compact"] body { zoom:1; } }
   .nav-wa { display:none; width:30px; height:30px; border-radius:50%; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.5); align-items:center; justify-content:center; flex-shrink:0; }
   .nav-wa svg { width:15px; height:15px; }
   br.mb { display:none; }
@@ -787,7 +788,7 @@
     <p class="t-sm">You may already have achieved results that, for you, once represented success, yet still feel that the way you work today no longer reflects who you are. That does not diminish the value of what you have built. It may simply mean that it is time to reshape it so it can evolve with you.</p>
     </div><figure><img src="foto-ceen-costas-v.jpg?v=2" width="340" height="578" alt="Filipa seen from behind, working on her laptop on the living room floor" loading="lazy"></figure></div>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
-      <p class="t-xs"><strong>In CEEN, we do not assume that there is something wrong with you</strong>, that there is an ideal version to live up to, or a formula for success to follow. <strong>The best strategy is the one that fits you!</strong> Alignment does not have to mean the absence of tension; a choice can make sense and still bring fear or discomfort. Just as reviewing what you have built does not diminish your journey; it simply allows you to choose how you want to continue.</p>
+      <p class="t-xs"><strong>In CEEN, we do not assume that there is something wrong with you</strong>, that there is an ideal version you should live up to, or a formula for success you have to follow. <strong>In CEEN, the best strategy is the one that makes sense for you!</strong> Alignment does not have to mean the absence of tension; a choice can make sense and still bring fear or discomfort. Just as reviewing what you have built does not diminish your journey; it simply allows you to choose how you want to continue.</p>
     </div></div>
   </div>
 </section>
@@ -880,7 +881,7 @@
         <p>We can also map out the processes of your business, from first contact to delivery, to see what could be simplified, delegated or supported by artificial intelligence, and where your presence truly makes a difference as the central element.</p>
       </div></div>
     </div>
-    <p class="lead hlbox" style="margin-top:2.6rem;">Exploring without creating structure can bring greater awareness but leave you unsure what to do with it. Creating structure without exploring can lead you to choose a strategy you cannot, or do not want to, sustain. <strong>CEEN takes place in this ongoing dialogue between energy and strategy.</strong></p>
+    <p class="lead hlbox" style="margin-top:2.6rem;"><strong>CEEN is this dialogue between energy and strategy.</strong> Observing without turning it into decisions can bring awareness, but no direction. Creating structure without questioning what lies behind your choices can lead you to follow a strategy that does not make sense for you.</p>
   </div>
 </section>
 
@@ -987,22 +988,21 @@
     <div class="callout infoC"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">This way of working may be right for you if…</p>
       <ul class="plain">
-        <li>you want to understand not only what you want to do, but also what influences your <br>choices and decisions, so you can bring greater awareness to your business;</li>
-        <li>you are willing to question what you maintain out of habit, security or expectation, and open yourself to new possibilities and experiences;</li>
-        <li>you are looking for questions that open doors and personalized recommendations, and <br>want to take ownership of your decisions and next steps;</li>
-        <li>you want your business decisions to respect your personal and family life;</li>
-        <li>you want to grow and evolve, using your business as a catalyst.</li>
+        <li>You want to understand a question about your business better and explore new ways of approaching it;</li>
+        <li>You are willing to question choices you keep out of habit, security or expectation, and open yourself to new possibilities and experiences;</li>
+        <li>You are looking for questions, perspectives and personalized recommendations rather than a universal formula;</li>
+        <li>You want to own your decisions and next steps, with greater clarity about the possibilities;</li>
+        <li>You want your business to fit around your personal and family life, rather than requiring everything else to organize itself around it.</li>
       </ul>
     </div></div>
     <details class="fold padr">
       <summary><span class="tri"></span>This may not be the right format for you if…</summary>
       <div class="fold-wrap"><div class="fold-body">
         <ul class="plain small">
-          <li>you are looking for a universal formula or someone to decide for you;</li>
-          <li>you are looking for technical consultancy in management, marketing, finance or operations;</li>
-          <li>there is not yet any real business or brand material for us to explore;</li>
-          <li>you are still only exploring an idea or need to build your business from scratch;</li>
-          <li>you are looking for implementation or ongoing support included in this investment.</li>
+          <li>You are looking for someone to decide for you or to guarantee specific results;</li>
+          <li>You need specialized technical consultancy in management, finance, marketing or operations;</li>
+          <li>There is not yet any real business or brand material for us to explore;</li>
+          <li>You are looking for implementation or ongoing support included in this investment.</li>
         </ul>
       </div></div>
     </details>
@@ -1033,7 +1033,7 @@
 
     <div class="fmt-pick">
       <div class="fmt-opt">
-        <h3 class="fmt-t">CEEN Session · I want to think and decide with you</h3>
+        <h3 class="fmt-t">CEEN Session<br>I want to think and decide with you</h3>
         <p class="t-sm">For when you have a central question you want to explore with me, with questions, analysis and recommendations worked on during the meeting.</p>
         <p class="fmt-if">It may be right for you if:</p>
         <ul class="fmt-ul">
@@ -1041,12 +1041,11 @@
           <li>You feel something in your business needs to change, but you don’t yet know where to start.</li>
           <li>You already know what you want to review and want to explore possibilities and next steps with me.</li>
         </ul>
-        <p class="fmt-meta">A one-to-one online session of up to two hours, with a summary and action points in Notion.</p>
         <a class="cta-btn" href="#como-funciona-sessao" onclick="pickDepth('como-funciona-sessao'); return false;">See how the CEEN Session works</a>
       </div>
       <div class="fmt-opt">
-        <h3 class="fmt-t">CEEN Cycle · I would prefer that you also analyze what I have</h3>
-        <p class="t-sm">For when you are looking for work with time for analysis between two meetings and a personalized proposal, grounded in the materials we agree on.</p>
+        <h3 class="fmt-t">CEEN Cycle<br>Adding in-depth analysis</h3>
+        <p class="t-sm">For when you are looking for work with time for analysis between sessions and a personalized proposal, grounded in the materials we agree on.</p>
         <p class="fmt-if">It may be right for you if:</p>
         <ul class="fmt-ul">
           <li>Your work has evolved and you want to understand what no longer reflects what you do today.</li>
@@ -1057,7 +1056,7 @@
       </div>
     </div>
 
-    <p class="lead" style="font-size:16.5px; margin-top:2.4rem; text-align:left;">You do not need to start with a CEEN Session before moving on to the CEEN Cycle. You can choose directly the format that matches the work you need.</p>
+    <p class="lead" style="font-size:16.5px; margin-top:2.4rem; text-align:left;">You do not need to start with a CEEN Session before moving on to the CEEN Cycle.<br>You can choose directly the format that matches the work you need.</p>
   </div>
 </section>
 
@@ -1069,9 +1068,9 @@
       <summary><span class="tri"></span><span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(21px,2.5vw,26px); color:var(--wine);">How the CEEN Session works</span></summary>
       <div class="fold-wrap"><div class="fold-body" style="padding-left:0;">
         <div class="frow">
-          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Context and materials</b><span>You share your question and, <br class="mb">if you have one, the main piece of material.</span><i class="fhint"></i></div><div class="fface fback"><h5>Context and key material</h5><div class="fpar">Before the session, you share some context and what you would like to work on. Where relevant, you can send one key item, such as a sales page, a pricing table or a service description. I briefly review it so I can come to our meeting with the necessary context.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session<br>up to 2 hours</b><span>I listen, ask questions and <br class="mb">reflect back what I notice.</span><i class="fhint"></i></div><div class="fface fback"><h5>One-to-one session</h5><div class="fpar">We start from the central question you bring and explore whatever proves most relevant to it. I listen, ask questions, reflect back what I notice, connect the dots, and offer new perspectives and concrete recommendations during our meeting.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Recommendations and next steps</b><span>Developed in the session<br>and recorded in Notion.</span><i class="fhint"></i></div><div class="fface fback"><h5>Recommendations and next steps</h5><div class="fpar">Reflection, analysis and recommendations are developed during the session. Within 5 business days, you receive a short summary in Notion of what we covered, along with your next steps. Afterwards, you can move forward independently or book another meeting when you feel the need. The Session does not include further analysis, implementation or ongoing support.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">1</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Context and central question</b><span>You share your question <br class="mb">and the context needed.</span><i class="fhint"></i></div><div class="fface fback"><h5>Context and central question</h5><div class="fpar">Before the session, you share the question you would like to work on and the context needed to understand it. When relevant, you can send one main piece of material, such as a sales page, a price list or the description of an offer.</div><div class="fpar">I do a brief review so that I arrive at the meeting with the framing I need.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Session<br>up to 2 hours</b><span>I listen, ask questions and <br class="mb">reflect back what I notice.</span><i class="fhint"></i></div><div class="fface fback"><h5>One-to-one session</h5><div class="fpar">We start from the central question and go deeper into whatever proves most relevant to it.</div><div class="fpar">I listen, ask questions, reflect back what I recognize, connect the points that emerge and offer new perspectives and concrete recommendations during the meeting.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard ses" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Summary and next steps</b><span>Developed in the session<br>and recorded in Notion.</span><i class="fhint"></i></div><div class="fface fback"><h5>Summary and next steps</h5><div class="fpar">The analysis and recommendations are worked on during the session. Within five business days, you receive a short summary in Notion of what was explored, along with action points.</div><div class="fpar">Afterwards, you can move forward on your own or book another meeting when a new question arises that you want to work on.</div><div class="fpar">The Session does not include further analysis, implementation or ongoing support.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">View all steps in detail</a></p>
         <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('sessao');">Book my CEEN Session</a></p>
@@ -1084,13 +1083,13 @@
         <p class="t-sm" style="margin-top:0.6rem;"><strong>One central focus, with time for analysis between two meetings</strong></p>
         <div style="margin-bottom:1.6rem;"></div>
         <div class="frow">
-          <div class="fstep"><div class="fdot">1</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>First session</b><span>Listening<br>and focusing.</span><i class="fhint"></i></div><div class="fface fback"><h5>First session</h5><div class="fpar">A one-to-one online session lasting up to two hours. We explore your central question and the current stage of your business in depth. We agree on the aim of the analysis and the materials included.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">2</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Three days after the session</b><span>Observation<br>and sharing.</span><i class="fhint"></i></div><div class="fface fback"><h5>Three days after the session</h5><div class="fpar">Within three days of the first meeting, you send the agreed materials needed for the analysis and, if you wish, additional information related to the focus of the Cycle. This period does not include new questions, advice by message or analysis of additional materials outside the agreed scope.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">3</div><div class="fcard cic work" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Analysis and preparation</b><span>Up to 10 business days.</span><i class="fhint"></i></div><div class="fface fback"><h5>Analysis and preparation</h5><div class="fpar">I analyze the agreed materials, relate them to what you shared and prepare a well-reasoned proposal. I may ask focused questions or request any clarification needed for the analysis.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">1</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>First session</b><span>Listening<br>and focusing.</span><i class="fhint"></i></div><div class="fface fback"><h5>First session</h5><div class="fpar">In a one-to-one online session of up to two hours, we explore the central question and the current moment of the business in depth.</div><div class="fpar">We agree on the aim of the analysis, the materials to consider and the limits of the work.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">2</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Sharing the materials</b><span>Within the next<br>three days.</span><i class="fhint"></i></div><div class="fface fback"><h5>Sharing the materials</h5><div class="fpar">In the three days after the first meeting, you send the agreed materials and, if you wish, additional information related to the focus of the Cycle.</div><div class="fpar">This phase is to complete the context, not to add new questions or open other areas of analysis.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">3</div><div class="fcard cic work" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Analysis and preparation</b><span>Up to 10 business days.</span><i class="fhint"></i></div><div class="fface fback"><h5>Analysis and preparation</h5><div class="fpar">I analyze the agreed materials, connect them with what you shared and prepare a well-reasoned proposal. If necessary, I may ask targeted questions or ask for clarification.</div></div></div></div></div>
         </div>
         <div class="frow two">
-          <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic work" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Proposal in Notion</b><span>Analysis, recommendations and priorities.</span><i class="fhint"></i></div><div class="fface fback"><h5>Proposal in Notion</h5><div class="fpar">You receive a document focused on the question and materials we have agreed on, with key observations, the connections I have identified and recommendations supported by the reasoning behind them.</div><div class="fpar">Depending on the agreed focus, it may include possible changes to your offers, communication or service delivery. It provides a starting point for exploring your choices in our second session, not a comprehensive review of your business or a plan you are expected to follow.</div></div></div></div></div>
-          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Second session</b><span>Review, choose and define next steps.</span><i class="fhint"></i></div><div class="fface fback"><h5>Second session</h5><div class="fpar">In the second meeting, we explore the recommendations, the choices they open up and the possible next steps, drawing on the analysis completed between sessions. Afterwards, you can move forward independently or book another meeting when you feel the need. There is no further analysis, implementation or support after the second session.</div></div></div></div></div>
+          <div class="fstep span2"><div class="fdot">4</div><div class="fcard cic work" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Proposal in Notion</b><span>Analysis, recommendations and priorities.</span><i class="fhint"></i></div><div class="fface fback"><h5>Proposal in Notion</h5><div class="fpar">You receive a document centered on the question and the agreed materials, with the main observations, the connections I recognized and recommendations along with the reasons that support them.</div><div class="fpar">Depending on the focus, it may include possible changes to your offer, communication, prices or delivery.</div><div class="fpar">It is a working basis for exploring your choices in the second meeting, not a full review of the business or a plan you have to follow.</div></div></div></div></div>
+          <div class="fstep"><div class="fdot">5</div><div class="fcard cic" tabindex="0" role="button" aria-label="Read more"><div class="finner"><div class="fface ffront"><b>Second session</b><span>Review, choose and define next steps.</span><i class="fhint"></i></div><div class="fface fback"><h5>Second session</h5><div class="fpar">We explore the recommendations, the options they open up and the possible next steps, based on the analysis done between sessions.</div><div class="fpar">The Cycle ends with this meeting and the delivery of the proposal. It does not include implementation or ongoing support.</div></div></div></div></div>
         </div>
         <p class="flipall"><a href="#" role="button">View all steps in detail</a></p>
         <p class="fold-cta"><a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('ciclo');">Book my CEEN Cycle</a></p>
@@ -1122,13 +1121,12 @@
         <p class="fmt-price">269€ <span class="launch">(price valid until the end of 2026)</span></p>
         <p class="fmt-l">We work on one central question during our meeting, through questions, analysis and recommendations developed together during the session.</p>
         <ul>
-          <li>One-to-one online session</li>
-          <li>Brief review of your context</li>
-          <li>Up to 2 hours of listening, analysis and dialogue</li>
-          <li>Recommendations and next steps developed during the meeting</li>
-          <li>Short summary and action points in Notion, within 5 business days after the session</li>
+          <li>One-to-one online session, up to 2 hours</li>
+          <li>Brief review of your context and, when relevant, one main piece of material</li>
+          <li>Listening, analysis, dialogue and recommendations during the meeting</li>
+          <li>Short summary and action points in Notion, within 5 business days after</li>
         </ul>
-        <p class="fmt-n fmt-n-nb">Does not include further analysis or ongoing support within this same investment.</p>
+        <p class="fmt-n fmt-n-nb">Does not include further analysis or ongoing support within this investment.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('sessao');">Book my CEEN Session</a>
       </div>
       <div class="fmt-card ciclo">
@@ -1136,10 +1134,11 @@
         <p class="fmt-price">800€ <span class="launch">(3 places available at this price until the end of 2026)</span></p>
         <p class="fmt-l">We work on one central question across two meetings, with analysis of the agreed materials and a well-reasoned proposal prepared between them.</p>
         <ul>
-          <li>Defining the focus and the materials to be analyzed by me between sessions</li>
-          <li>Two one-to-one online sessions</li>
-          <li>Analysis between meetings, taking up to 10 business days</li>
-          <li>A well-reasoned proposal in Notion, explored with you in the second meeting</li>
+          <li>Two one-to-one online meetings</li>
+          <li>Defining the focus and the materials to be analyzed</li>
+          <li>Analysis of the agreed materials, up to 10 business days</li>
+          <li>A well-reasoned proposal in Notion</li>
+          <li>A second meeting to explore the recommendations and next steps</li>
         </ul>
         <p class="fmt-n">Does not include a full review of the business, implementation or ongoing support.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('ciclo');">Book my CEEN Cycle</a>
@@ -1153,29 +1152,6 @@
 
 <section>
   <div class="wrap-wide">
-    <h2 class="section-title">What you receive</h2>
-    <div class="two-col">
-      <div class="callout sessao"><div class="ci">📌</div><div class="ctext">
-        <p class="callout-label" style="margin-bottom:0.9rem;">IN THE CEEN SESSION</p>
-        <ul class="plain">
-          <li>a brief sharing of your context and, where available, the main piece of material;</li>
-          <li>up to 2 hours of listening, analysis and dialogue;</li>
-          <li>questions, reflections, new perspectives and recommendations during the meeting;</li>
-          <li>criteria, decisions and next steps developed during the session;</li>
-          <li>a short summary and action points in Notion, within 5 business days.</li>
-        </ul>
-      </div></div>
-      <div class="callout ciclo"><div class="ci">🗺️</div><div class="ctext">
-        <p class="callout-label" style="margin-bottom:0.9rem;">IN THE CEEN CYCLE</p>
-        <ul class="plain">
-          <li>a first meeting to explore your central question in depth and agree on the focus, the materials to be reviewed and what falls outside the scope;</li>
-          <li>three days to send the agreed materials and, if you wish, additional information related to the focus of the Cycle;</li>
-          <li>analysis of the agreed materials (within up to 10 business days), before booking the second session;</li>
-          <li>a well-reasoned proposal in Notion, with observations, criteria, recommendations and the reasoning behind them;</li>
-          <li>a second meeting to explore the recommendations and possible next steps.</li>
-        </ul>
-      </div></div>
-    </div>
     <div class="ciclo-split"><div class="callout grayD ciclo-note"><div class="ctext">
       <p class="oneline-note"><strong>How we define the scope of the CEEN Cycle</strong></p>
       <p>In the first meeting, we agree on the aim of the analysis, the materials included and what falls outside it. That agreement guides the analysis work between sessions.</p>
@@ -1739,11 +1715,11 @@
 (function(){
   var b = document.querySelector('.size-btn'); if (!b) return; var h = document.documentElement;
   var LT = ((h.lang || 'pt').indexOf('en') === 0) ? { more: 'View larger', less: 'View smaller' } : { more: 'Ver em maior', less: 'Ver mais pequeno' };
-  function paint(){ var l = h.getAttribute('data-size') === 'large'; b.title = l ? LT.less : LT.more; b.setAttribute('aria-label', b.title); b.setAttribute('aria-pressed', l ? 'true' : 'false'); }
+  function paint(){ var l = h.getAttribute('data-size') !== 'compact'; b.title = l ? LT.less : LT.more; b.setAttribute('aria-label', b.title); b.setAttribute('aria-pressed', l ? 'true' : 'false'); }
   b.addEventListener('click', function(){
-    var l = h.getAttribute('data-size') === 'large';
-    if (l) { h.removeAttribute('data-size'); try { localStorage.setItem('fo_size', 'compact'); } catch(e){} }
-    else { h.setAttribute('data-size', 'large'); try { localStorage.setItem('fo_size', 'large'); } catch(e){} }
+    var l = h.getAttribute('data-size') !== 'compact';
+    if (l) { h.setAttribute('data-size', 'compact'); try { localStorage.setItem('fo_size', 'compact'); } catch(e){} }
+    else { h.removeAttribute('data-size'); try { localStorage.setItem('fo_size', 'large'); } catch(e){} }
     paint(); setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 80);
   });
   paint();
