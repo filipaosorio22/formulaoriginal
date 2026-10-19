@@ -924,6 +924,19 @@
   .popup:not(.popup-conv) .popup-eyebrow { font-size:11px !important; line-height:1.4 !important; margin-bottom:.5rem !important; }
   .popup:not(.popup-conv) .popup-btn { font-size:10.5px !important; padding:8px 12px !important; }
   @media (max-width:600px){ .popup.popup-conv, .popup:not(.popup-conv) { width:min(215px,calc(100vw - 2rem)) !important; } }
+  /* ronda 42 */
+  .ceen-option-a h1.ceen-headline { font-size:clamp(26px,2.5vw,32px) !important; line-height:1.14 !important; }
+  @media (max-width:760px){ .ceen-option-a h1.ceen-headline { font-size:26px !important; } }
+  .ceen-option-a .wrap { max-width:1060px !important; }
+  @media (min-width:761px){ #popup { width:178px !important; max-width:178px !important; } }
+  @media (min-width:601px){ .popup.popup-conv { transform:translateX(-26px) scale(.96); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1) !important; } .popup.popup-conv.visible { transform:none; } }
+  .sucesso-flex .sf-text p.t-sm { text-align:justify !important; hyphens:auto; }
+  @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:minmax(0,260px) minmax(0,1fr) !important; } }
+  .quote-block p.tuconsegues { font-size:19px !important; line-height:1.35 !important; }
+  .fmt-opt:nth-child(1) { background:var(--sessao) !important; } .fmt-opt:nth-child(2) { background:var(--ciclo) !important; }
+  .conv-split { align-items:stretch !important; }
+  .pause.pause-fm { padding-top:19px !important; padding-bottom:33px !important; }
+  .pause:has(.pause-quote.two) { padding-top:66px !important; padding-bottom:8px !important; margin-top:0 !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -964,11 +977,11 @@
       <figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure>
       <div class="ctext">
         <div class="ceen-brand">CEEN · FILIPA OSÓRIO</div>
-        <h1 class="ceen-headline">Aproxima o teu negócio de quem és<br>e da tua fase de vida atual,<br>permitindo que ele evolua contigo</h1>
+        <h1 class="ceen-headline">Aproxima o teu negócio de<br>quem és e da tua fase de vida atual,<br>permitindo que ele evolua contigo</h1>
         <p class="intro-lead"><strong>O teu negócio não existe separado de ti.</strong></p>
         <p class="intro-emphasis">A forma como trabalhas, as decisões que tomas e aquilo que queres mudar estão ligados à pessoa que és e à vida que desejas construir.</p>
         <p>A CEEN é um <strong>trabalho individual de análise e orientação</strong> para quem quer olhar para o seu negócio e encontrar uma direção que tenha em conta a realidade do negócio e a vida que quer construir.</p>
-        <p>Partimos de uma questão concreta e exploramos, através da conversa, o que pode estar a influenciar as tuas escolhas. Depois, relacionamos essa leitura com decisões práticas: a oferta, os preços, a comunicação e a organização do trabalho.</p>
+        <p>Partimos de uma questão concreta e exploramos, através da conversa, o que pode estar a influenciar as tuas escolhas. Depois, relacionamos com decisões práticas: a oferta, os preços, a comunicação e a organização do trabalho.</p>
         <p>O objetivo não é encaixar-te numa fórmula de sucesso, mas ajudar-te a reconhecer o que faz sentido manter, o que precisa de ser revisto e que outras possibilidades podes considerar.</p>
       </div>
     </div>
@@ -995,8 +1008,8 @@
   <div class="wrap">
     <h2 class="section-title">Para quem é a CEEN?</h2>
     <p class="t-sm">A CEEN é para profissionais independentes que conduzem um negócio em que o seu <strong>conhecimento, olhar e forma de trabalhar</strong> são uma parte essencial do valor que oferecem.</p>
-    <p class="t-sm">É para quem quer olhar para o negócio de forma integrada, considerando não só as decisões estratégicas, mas também a pessoa que as toma. Para quem reconhece que a forma como trabalha, as escolhas que faz e o negócio que constrói não existem separados de si — e quer compreender melhor como estas dimensões se relacionam.</p>
-    <p class="t-sm">Talvez queiras continuar a fazer o que fazes, mas não da mesma maneira. Ou sintas <strong>vontade de dar espaço a uma nova direção</strong> que ainda te custa imaginar como possível.</p>
+    <p class="t-sm">É para quem quer olhar para o negócio de forma integrada, considerando não só as decisões estratégicas, mas também a pessoa que as toma. Para quem reconhece que a forma como trabalha, as escolhas que faz e o negócio que constrói não existem separados de si e quer compreender melhor como estas dimensões se relacionam.</p>
+    <p class="t-sm">Talvez queiras continuar a fazer o que fazes, mas não da mesma maneira.<br>Ou sintas <strong>vontade de dar espaço a uma nova direção</strong> que ainda te custa imaginar como possível.</p>
     <p class="jump-row-box" style="margin-top:3.5rem;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Quem te acompanha na CEEN</a><span class="jump-sub">(vem primeiro conhecer-me)</span></p>
   </div>
 </section>
@@ -1208,7 +1221,7 @@
     <div id="bioRest"><p>O meu percurso foi sendo consolidado pelo meu próprio desenvolvimento pessoal e profissional e pelo acompanhamento de outras pessoas nos seus processos de autoconhecimento, a compreender crenças e padrões que as afastam de si e a aproximarem-se da sua essência, na forma como se veem, escolhem e vivem.</p></div>
     <p style="margin-top:1.2rem;">Hoje, junto estas duas vertentes numa prática que combina capacidade de análise e escuta atenta, com clareza, sensibilidade e frontalidade, em diferentes áreas da vida.</p>
     <blockquote class="quote-block" style="margin-top:2.2rem;">
-      <p class="tuconsegues" style="line-height:1.3; font-size:21px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras, <br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
+      <p class="tuconsegues" style="line-height:1.3; font-size:21px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras,<br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
       <p class="attrib">— feedback de uma cliente num áudio durante um acompanhamento comigo</p>
     </blockquote>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar a explorar a CEEN desde início</a>
@@ -1480,9 +1493,9 @@
       <h2 class="section-title">E se levássemos esta conversa à tua comunidade ou empresa?</h2>
       <p class="t-sm"><strong>Para além do trabalho individual da CEEN, também levo estes temas a encontros com comunidades e equipas.</strong></p>
       <p class="t-sm">Há perguntas que ganham outra dimensão quando as exploramos em conjunto: <strong>como queremos trabalhar e viver, o que desejamos criar e que contributo queremos deixar através do nosso trabalho.</strong></p>
+      <p class="t-sm">Se criaste, dinamizas ou fazes parte de uma comunidade de empreendedores ou criadores, ou se representas uma empresa e gostavas de trazer estes temas para um encontro com a tua equipa, podemos conversar.</p>
       </div><figure class="conv-vid"><video autoplay loop muted playsinline preload="metadata" aria-label="Momento de um encontro com uma comunidade"><source src="comunidade-loop.webm" type="video/webm"><source src="comunidade-loop.mp4" type="video/mp4"></video></figure></div>
       <div class="conv-rest">
-      <p class="t-sm conv-first">Se criaste, dinamizas ou fazes parte de uma comunidade de empreendedores ou criadores, ou se representas uma empresa e gostavas de trazer estes temas para um encontro com a tua equipa, podemos conversar.</p>
       <p class="t-sm">O formato é pensado a partir do contexto, das pessoas e do tema que faz sentido explorar. Podemos abordar a relação entre vida pessoal e trabalho, as diferentes definições de sucesso, a forma como cada pessoa ocupa o seu papel e como o conhecimento individual pode contribuir para o coletivo.</p>
       <p class="t-sm">Cada encontro é preparado de acordo com o objetivo, respeitando a participação, os limites de cada pessoa e os valores da comunidade ou empresa.</p>
       </div>
