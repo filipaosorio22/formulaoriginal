@@ -963,6 +963,8 @@
   html[data-theme="dark"] .conv-tab-x { background:#26211c; color:#f0d9c9; border-color:rgba(240,217,201,.25); }
   @media (min-width:601px){ #popupConv.popup.popup-conv { left:48px !important; top:38% !important; right:auto !important; bottom:auto !important; } }
   @media (max-width:600px){ .conv-tab-wrap { top:30%; } .conv-tab { font-size:12px; padding:13px 8px; } }
+
+  @media (max-width:640px){ br.nbm { display:none; } .ffront b { font-size:17px; } .ffront span { font-size:16px; } .fback h5 { font-size:17px; } .fpar { font-size:16px !important; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1034,8 +1036,8 @@
   <div class="wrap">
     <h2 class="section-title">Para quem é a CEEN?</h2>
     <p class="t-sm">A CEEN é para profissionais independentes que conduzem um negócio em que o seu <strong>conhecimento, olhar e forma de trabalhar</strong> são uma parte essencial do valor que oferecem.</p>
-    <p class="t-sm">É para quem quer olhar para o negócio de forma integrada, considerando não só as decisões estratégicas, mas também a pessoa que as toma. Para quem reconhece que a forma como trabalha, as escolhas que faz e o negócio que constrói não existem separados de si e quer compreender melhor como estas dimensões se relacionam.</p>
-    <p class="t-sm">Talvez queiras continuar a fazer o que fazes, mas não da mesma maneira.<br>Ou sintas <strong>vontade de dar espaço a uma nova direção</strong> que ainda te custa imaginar como possível.</p>
+    <p class="t-sm">É para quem quer olhar para o negócio de forma integrada, considerando não só as decisões estratégicas, mas também a pessoa que as toma. <br class="mb">Para quem reconhece que a forma como trabalha, as escolhas que faz e o negócio que constrói não existem separados de si e quer compreender melhor como estas dimensões se relacionam.</p>
+    <p class="t-sm">Talvez queiras continuar a fazer o que fazes, mas não da mesma maneira.<br class="nbm"> Ou sintas <strong>vontade de dar espaço a uma nova direção</strong> que ainda te custa imaginar como possível.</p>
     <p class="jump-row-box" style="margin-top:3.5rem;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Quem te acompanha na CEEN</a><span class="jump-sub">(vem primeiro conhecer-me)</span></p>
   </div>
 </section>
@@ -1324,7 +1326,7 @@
       </div>
     </div>
 
-    <p class="lead" style="font-size:16.5px; margin-top:2.4rem; text-align:left;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo.<br>Podes escolher diretamente o formato que corresponde ao trabalho de que precisas.</p>
+    <p class="lead" style="font-size:16.5px; margin-top:2.4rem; text-align:left;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo.<br class="nbm"> Podes escolher diretamente o formato que corresponde ao trabalho de que precisas.</p>
   </div>
 </section>
 
@@ -1847,7 +1849,7 @@
     window.__savedScrollY = window.scrollY;
     var el = document.getElementById('quem-te-acompanha');
     var h2 = el && (el.querySelector('h2') || el);
-    if (h2) smoothScrollTo(function(){ return h2.getBoundingClientRect().top + window.scrollY - 90; }, 2400);
+    if (h2) smoothScrollTo(function(){ var nv = document.querySelector('nav, header.nav, .nav'); var off = nv ? nv.getBoundingClientRect().bottom + 34 : 120; return h2.getBoundingClientRect().top + window.scrollY - off; }, 2400);
   };
   window.restoreScroll = function(){
     smoothScrollTo(window.__savedScrollY || 0, 2400);
