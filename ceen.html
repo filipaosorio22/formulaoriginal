@@ -888,7 +888,7 @@
   @media (max-width:600px){ .popup.popup-conv { width:min(252px,calc(100vw - 2rem)) !important; } }
 
   /* ronda 40: tamanhos mais uniformes e site mais reduzido */
-  @media (min-width:641px){ body { zoom:.94 !important; } html[data-size="compact"] body { zoom:.84 !important; } }
+  @media (min-width:641px){ body { zoom:1 !important; } html[data-size="compact"] body { zoom:.88 !important; } }
   section p.t-sm, section p.t-xs, section .ctext p, section .fold-body p, section .two-col p, section .callout p, .lead.hlbox, section ul.plain li, section p.effort-box { font-size:16px !important; line-height:1.7; }
   .lead.hlbox { font-size:16.5px !important; }
   p.t-sm, p.t-xs { font-size:16px !important; }
@@ -905,17 +905,21 @@
   .pause-quote.big1 { font-size:28px !important; } .pause-quote.two, .pause-quote.nobreak { font-size:24px !important; }
   /* primeira caixa: largura e espaço iguais aos textos abaixo */
   .ceen-option-a { padding-top:3.8rem !important; }
-  .ceen-option-a .wrap { max-width:800px !important; }
+  .ceen-option-a .wrap { max-width:1000px !important; }
   .ceen-option-a h1.ceen-headline { font-size:clamp(22px,2.2vw,25px) !important; line-height:1.12 !important; margin-bottom:16px !important; text-wrap:initial !important; }
   .ceen-option-a .intro-box .ctext p, .ceen-option-a .intro-box .ctext p.intro-lead strong { font-size:15.5px !important; line-height:1.7 !important; }
   .ceen-option-a .intro-box { gap:20px !important; padding:clamp(14px,2vw,24px) !important; }
   .ceen-option-a .foto-abre { min-height:300px !important; }
     .fmt-card p.fmt-price, .fmt .fmt-card .fmt-price { font-size:30px !important; }
   .quote-block p.attrib, p.attrib { font-size:15px !important; }
-/* popups mais pequenos */
+.quote-block p.papel { font-size:15.5px !important; line-height:1.55; }
+  .quote-block p.tuconsegues { font-size:24px !important; line-height:1.3; }
+  #quem-te-acompanha .two-col { grid-template-columns:minmax(0,376px) minmax(0,1fr) !important; }
+  @media (max-width:680px){ #quem-te-acompanha .two-col { grid-template-columns:1fr !important; } }
+  /* popups mais pequenos */
   .popup.popup-conv { width:200px !important; padding:.75rem .75rem .7rem !important; }
   .popup.popup-conv .popup-conv-msg { font-size:12.5px !important; margin-bottom:.55rem !important; }
-  .popup.popup-conv .popup-btn { font-size:11.5px !important; padding:.42rem .6rem !important; }
+  .popup.popup-conv .popup-btn { font-size:10.5px !important; padding:.42rem .6rem !important; }
   .popup:not(.popup-conv) { width:215px !important; padding:.65rem .75rem .7rem !important; }
   .popup:not(.popup-conv) .popup-eyebrow { font-size:11px !important; line-height:1.4 !important; margin-bottom:.5rem !important; }
   .popup:not(.popup-conv) .popup-btn { font-size:10.5px !important; padding:8px 12px !important; }
@@ -1168,7 +1172,7 @@
     <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
       <p style="font-size:17px;"><strong>A CEEN não substitui consultoria técnica nem execução especializada.</strong><br>Não inclui auditorias, <em>copywriting</em> ou implementação feita por mim.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:4.5rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
+    <blockquote class="quote-block" style="margin-top:4.5rem; margin-bottom:1.8rem;"><p class="papel" style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:15.5px;"><strong>O meu papel é escutar, questionar, formular hipóteses, ligar pontos e apresentar recomendações concretas. As decisões finais continuam a ser sempre tuas.</strong></p></blockquote>
   </div>
 </section>
 
@@ -1204,7 +1208,7 @@
     <div id="bioRest"><p>O meu percurso foi sendo consolidado pelo meu próprio desenvolvimento pessoal e profissional e pelo acompanhamento de outras pessoas nos seus processos de autoconhecimento, a compreender crenças e padrões que as afastam de si e a aproximarem-se da sua essência, na forma como se veem, escolhem e vivem.</p></div>
     <p style="margin-top:1.2rem;">Hoje, junto estas duas vertentes numa prática que combina capacidade de análise e escuta atenta, com clareza, sensibilidade e frontalidade, em diferentes áreas da vida.</p>
     <blockquote class="quote-block" style="margin-top:2.2rem;">
-      <p style="line-height:1.3; font-size:21px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras, <br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
+      <p class="tuconsegues" style="line-height:1.3; font-size:21px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras, <br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
       <p class="attrib">— feedback de uma cliente num áudio durante um acompanhamento comigo</p>
     </blockquote>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar a explorar a CEEN desde início</a>
@@ -1591,7 +1595,7 @@
 
 <div class="popup popup-conv" id="popupConv" aria-label="Convite para comunidades">
   <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Fechar">×</button>
-  <p class="popup-conv-msg">“Foi fenomenal! Obrigada pela tua partilha e entrega incrível!”</p>
+  <p class="popup-conv-msg">“Foi fenomenal!<br>Obrigada pela tua partilha<br>e entrega incrível!”</p>
   <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">Vamos cocriar na tua comunidade ou empresa?</a>
 </div>
 <div class="popup" id="popup">
