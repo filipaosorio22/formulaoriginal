@@ -162,6 +162,9 @@
   .fold-body p.fold-cta { text-align:center !important; margin:1.6rem 0 0.4rem; }
   .testimonial-photos-ph .ph img { width:100%; height:auto; display:block; border-radius:12px; }
   @media (max-width:560px){ .testimonial-photos-ph{ width:100%; } .testimonial-photos-ph.open{ grid-template-columns:1fr; } }
+  .testimonial-photos-ph.one { grid-template-columns:1fr; width:38%; margin-left:0; margin-right:auto; }
+  .testimonial-photos-ph.one:hover, .testimonial-photos-ph.one.open { width:70%; }
+  @media (max-width:560px){ .testimonial-photos-ph.one { width:62%; } .testimonial-photos-ph.one.open { width:100%; } }
 
   .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.3rem; }
   @media (max-width:680px){ .pricing-grid{ grid-template-columns:1fr; } }
@@ -377,7 +380,7 @@
   @media (max-width:640px){ .pause .pause-quote.nobreak { white-space:normal; } }
   .pause:has(.pause-quote.two) { padding-top:0; margin-top:-0.2rem; padding-bottom:74px; }
   .pause:has(.pause-quote.nobreak) { padding-top:88px; }
-  .pause .pause-quote.two { white-space:nowrap; max-width:none; font-size:min(27px, calc((100vw - 56px) / 23)); padding:0.8rem 0.5rem; }
+  .pause .pause-quote.two { white-space:nowrap; max-width:none; font-size:min(27px, calc((100vw - 56px) / 19)); padding:0.8rem 0.5rem; }
   @media (min-width:900px){ .two-col.dimbox { margin-left:-26px; margin-right:-26px; } }
   .fmt { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:1.6rem 0 2rem; }
   .fmt-card { border-radius:9px; padding:1.4rem 1.4rem 1.3rem; display:flex; flex-direction:column; }
@@ -433,7 +436,7 @@
   html[data-theme="dark"] .cover { background-image:linear-gradient(120deg,#4a3430,#4a3a40,#4f4430,#523a36,#4a3a40,#4a3430); }
   html[data-theme="dark"] .pause .pause-quote:before { display:none; }
   html[data-theme="dark"] .cta-btn:hover, html[data-theme="dark"] .cta-btn:active, html[data-theme="dark"] .cta-btn:focus-visible { background-image:linear-gradient(120deg,#6a4838,#6a4a53,#6e5a34,#6a4a53,#6a4838); color:#f4e8d6; box-shadow:0 8px 18px rgba(0,0,0,0.35); }
-  html[data-theme="dark"] .popup { background:#26211c; }
+  html[data-theme="dark"] .popup, html[data-theme="dark"] .popup.popup-conv { background:#26211c; }
   html[data-theme="dark"] .popup-btn:hover { background-image:linear-gradient(120deg,#6a4838,#6a4a53,#6e5a34,#6a4a53,#6a4838); color:#f4e8d6; }
   html[data-theme="dark"] .callout.lilac { background:#3a3040; }
   html[data-theme="dark"] .callout.grayD { background:#332d25; }
@@ -473,20 +476,6 @@
     h2.faqh { margin-bottom:1.8rem; }
     #bioRest p, #bioRest + p { text-align:left !important; }
   }
-  .wab-wrap { border-radius:12px; padding:9px; background:linear-gradient(135deg,#d3d0c1 0%,#7e8c69 52%,#a89073 100%); display:flex; height:100%; box-sizing:border-box; }
-  .testimonial-photos-ph { align-items:stretch; }
-  .testimonial-photos-ph .ph { height:100%; }
-  .wab { flex:1; background:#fff; border-radius:16px; padding:1.05em 1.1em; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-size:1.85cqi; line-height:1.5; color:#171717; text-align:left; box-sizing:border-box; }
-  .wab p { margin:0 0 0.9em; font-size:inherit; line-height:inherit; text-align:left; hyphens:none; color:#171717; }
-  .wab p:last-of-type { margin-bottom:0; }
-  .wab .hl { background:#f5dfe3; color:#4b3a3d; }
-  .wab .ul { text-decoration:underline; text-decoration-color:#c98a99; text-decoration-thickness:0.12em; text-underline-offset:0.2em; }
-  .wab .tm { display:block; text-align:right; font-size:0.8em; color:#8a8a8a; margin-top:0.5em; }
-  .trad-note { font-size:13px; font-style:italic; color:var(--ink-soft); text-align:center; margin:1.4rem 0 -0.5rem; }
-  html[data-theme="dark"] .wab { filter:brightness(0.9); }
-  .bk-note { text-align:center; font-size:13px; font-style:italic; color:var(--ink-soft); margin:1.3rem 0 0; }
-  .bk-note a { color:var(--orange); }
-  .aud-note { text-align:center; font-size:13px; font-style:italic; color:var(--ink-soft); margin:-1rem 0 1.4rem; }
   @media (min-width:641px){ #como-funciona-ciclo .frow.two { grid-template-columns:1fr 1fr; } #como-funciona-ciclo .fstep.span2 { grid-column:auto; } }
   @media (min-width:641px){ blockquote.quote-block p.q2 { white-space:nowrap !important; } }
   @media (max-width:640px){
@@ -533,17 +522,22 @@
     .quiz-group { font-size:14px; letter-spacing:0.06em; line-height:1.45; }
     .conv-card { padding:1.7rem 1.3rem 1.9rem; }
   }
-  @media (max-width:640px){
-    blockquote.quote-block p.q1 { white-space:normal; text-wrap:balance; }
-    .aud-l1 { white-space:nowrap; font-size:calc((100vw - 40px)/19); }
-    .aud-l2 { white-space:nowrap; font-size:calc((100vw - 40px)/20.5); }
-  }
   /* n56 */
   .pause .pause-quote.big1 { font-size:clamp(22px,3vw,31px); }
   @media (min-width:641px){ .pause .pause-quote.big1 { white-space:nowrap; max-width:none; } }
   @media (max-width:640px){ .pause .pause-quote.big1:not(.nobreak):not(.two) { font-size:25px; } }
   .pause .pause-quote.duo { white-space:nowrap; max-width:none; font-size:min(20.5px, calc((100vw - 60px) / 48)); line-height:1.45; padding:0.8rem 0.5rem; }
   @media (max-width:640px){ .pause .pause-quote.duo:not(.nobreak):not(.two) { white-space:normal; font-size:18px; } .pause .pause-quote.duo br { display:none; } }
+  /* n57: citação em 2 linhas no telemóvel */
+  @media (max-width:640px){ .pause .pause-quote.nobreak.fit2 { white-space:nowrap; font-size:min(26px, calc((100vw - 90px) / 11.6)); } }
+  /* popup convites: em baixo à esquerda no computador; no telemóvel ocupa o lugar do popup principal */
+  .popup.popup-conv { background:#f6e6d6; right:auto; left:1.4rem; bottom:4.6rem; width:300px; padding:1.9rem 1rem 1rem; }
+  .popup.popup-conv .popup-btn { background:transparent; color:#7a2535; box-shadow:inset 0 0 0 1.5px #7a2535; }
+  .popup.popup-conv .popup-btn:hover { background:linear-gradient(120deg,#f1c9b3,#eacdc7,#eedab2,#f3d3ae,#eacdc7); background-size:300% 300%; background-position:0% 50%; }
+  html[data-theme="dark"] .popup.popup-conv .popup-btn { color:var(--wine); box-shadow:inset 0 0 0 1.5px var(--wine); }
+  .popup-conv-img { display:block; width:100%; height:auto; border-radius:14px; box-shadow:0 1px 6px rgba(26,20,16,0.12); margin:0 0 0.9rem; }
+  @media (max-width:600px){ .popup.popup-conv .popup-eyebrow { display:block; } .popup.popup-conv { left:0.8rem; right:0.8rem; bottom:1.4rem; width:auto; max-width:none; margin:0; } }
+
   .bk-box { background:#faf6ef; border-radius:16px; max-width:640px; width:100%; max-height:90vh; overflow-y:auto; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); padding:1.8rem 1.6rem 1.6rem; }
   .bk-x { position:absolute; top:10px; right:14px; background:none; border:none; font-size:24px; color:#9a7e52; cursor:pointer; z-index:2; }
   .bk-eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 0.3rem; }
@@ -568,7 +562,7 @@
   .bk-pay p { margin:0; font-size:13px; line-height:1.5; }
   .bk-paynote { font-size:13px; line-height:1.5; background:#f8ecdf; border-radius:10px; padding:0.7rem 0.9rem; margin:0 0 1rem; }
   html[data-theme="dark"] .bk-paynote { background:#382c22; } .bk-pay ul { margin:0 0 0.6rem; padding-left:1.1rem; } .bk-pay li { margin:0.25rem 0; } .bk-pay i { color:var(--ink-soft); font-size:12.5px; }
-  .bk-modal-unused { position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem; background:rgba(26,20,16,0.45); }
+  .bk-modal { position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem; background:rgba(26,20,16,0.45); }
   .bk-ta { position:relative; display:block; }
   .bk-ta textarea { padding-right:2.6rem !important; }
   .bk-mic { position:absolute; right:0.4rem; bottom:0.4rem; width:2rem; height:2rem; border-radius:50%; border:1px solid #d9c9ad; background:#faf6ef; cursor:pointer; font-size:15px; line-height:1; }
@@ -583,10 +577,15 @@
   .bk-back { margin:0 0 0.4rem; font-size:13.5px; } .bk-back a { color:var(--wine); }
   .bk-upd { font-size:13.5px; text-align:center; margin:-0.6rem 0 1rem; color:var(--gold-deep); }
   .bk-micnote { font-size:12.5px; color:var(--ink-soft); margin:-0.4rem 0 0.8rem; }
+  .conv-form { max-width:520px; margin:1.8rem auto 0; text-align:left; background:rgba(255,255,255,0.55); border:1px solid #e3d3b8; border-radius:14px; padding:1.4rem 1.3rem 1.2rem; }
+  .conv-ftitle { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--wine); text-align:center; margin:0 0 1rem; }
+  .conv-alt { text-align:center; font-size:13.5px; margin:0.9rem 0 0; } .conv-alt a { color:var(--orange); }
+  .conv-ok { max-width:520px; margin:1.8rem auto 0; text-align:center; background:#f8ecdf; border-radius:14px; padding:1.2rem; }
   @media (max-width:600px){ .bk-box { padding:1.6rem 1rem 1.2rem; } .bk-row { grid-template-columns:1fr; gap:0; } }
   html[data-theme="dark"] .bk-box { background:#26211c; }
   html[data-theme="dark"] .bk-f input, html[data-theme="dark"] .bk-f textarea, html[data-theme="dark"] .bk-f select { background:#1d1915; border-color:#4a4034; }
-  html[data-theme="dark"] .bk-pay, html[data-theme="dark"] .bk-fmt input:checked + span { background:#382c22; }
+  html[data-theme="dark"] .bk-pay, html[data-theme="dark"] .conv-ok, html[data-theme="dark"] .bk-fmt input:checked + span { background:#382c22; }
+  html[data-theme="dark"] .conv-form { background:rgba(0,0,0,0.15); border-color:#4a4034; }
   /* r5: popups em bordô; botão do Ciclo claro, bordô ao passar o rato */
   .popup .popup-eyebrow { color:#7a2535; }
   html[data-theme="dark"] .popup .popup-eyebrow { color:var(--wine); }
@@ -594,17 +593,12 @@
   #popup .popup-btn:hover { background:#7a2535; color:#f7f3ee; transform:translateY(-2px); box-shadow:0 8px 18px rgba(122,37,53,0.16); }
   html[data-theme="dark"] #popup .popup-btn { background-image:linear-gradient(120deg,#6a4838,#6a4a53,#6e5a34,#6a4a53,#6a4838); color:#f4e8d6; }
   html[data-theme="dark"] #popup .popup-btn:hover { background-image:none; background-color:var(--wine); color:#f7f3ee; }
-  .testimonial-photos-ph.one { grid-template-columns:1fr; width:38%; margin-left:0; margin-right:auto; }
-  .testimonial-photos-ph.one:hover, .testimonial-photos-ph.one.open { width:70%; }
-  .testimonial-photos-ph.one .wab { font-size:3.7cqi; }
-  @media (max-width:560px){ .testimonial-photos-ph.one { width:62%; } .testimonial-photos-ph.one.open { width:100%; } }
   /* r6: menos margem à direita no caso */
   .callout.case-callout { padding-right:0.8rem; }
   .callout.case-callout .ctext { padding-right:0.3rem; }
   .callout.case-callout .ctext p, .callout.case-callout .ctext p.callout-label { padding-right:0 !important; max-width:none !important; }
   details.case { padding-right:1rem; }
   details.case .fold-body, details.case .fold-body > p { padding-right:0 !important; max-width:none !important; }
-  @media (min-width:641px){ .callout.case-callout .ctext p.callout-label { font-size:min(15.5px, calc((100vw - 136px)/41)); white-space:nowrap; } }
 
   /* ronda 20 */
   .nav-lang { display:none; }
@@ -679,31 +673,184 @@
   .conv-rest p.t-sm { text-align:left; }
   @media (min-width:601px){ .popup.popup-conv { left:auto; right:1.4rem; } }
 
-  /* round 32 */
-  @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 310px; width:310px; } }
+  /* ronda 32 */
+  @media (min-width:601px){ .popup.popup-conv { left:1.4rem !important; right:auto !important; top:96px !important; bottom:auto !important; width:300px !important; } }
+  @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 310px; width:310px; } .callout.intro-box { padding:1rem 1rem 1rem 2.4rem; } }
   .intro-box .foto-abre img { transform:none !important; object-position:50% 100% !important; }
+  /* Ajuste visual da introdução CEEN */
+  @media (min-width:761px){
+    .callout.intro-box { flex-direction:row !important; gap:2rem; padding:1.5rem 2rem 1.5rem 1.5rem; }
+    .callout.intro-box .foto-abre { flex:0 0 36%; width:36%; min-width:280px; }
+    .callout.intro-box .ctext { flex:1; min-width:0; padding:.45rem 0; }
+  }
+  .intro-box .ctext p { line-height:1.7; margin:0 0 1rem; }
+  .intro-box .ctext p.intro-lead { margin-bottom:.6rem; }
+  .intro-box .ctext p.intro-lead strong { display:block; font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,2.3vw,2.35rem); line-height:1.12; font-weight:600; color:var(--wine); }
+  .intro-box .ctext p:last-child { margin-bottom:0; }
+  @media (max-width:760px){
+    .callout.intro-box { gap:1.2rem; }
+    .intro-box .foto-abre { width:min(300px,86%); height:320px; }
+    .intro-box .ctext p.intro-lead strong { font-size:1.9rem; }
+  }
   /* ronda 33 */
   .fmt-card .fmt-price { font-family:'Spectral',serif !important; font-weight:300 !important; font-size:34px !important; letter-spacing:0; }
   .case-close { font-style:italic; color:var(--orange); margin:1.8rem 0 0; font-size:17px; text-align:center; }
+  .fb-aprofundar { text-align:center; }
+  .fb-aprofundar .quote-block { text-align:center; }
   .fb-aprofundar .testimonial-photos-ph.one { margin-left:auto; margin-right:auto; }
   .pause-quote.two { position:relative; top:-16px; }
   .back-link { display:block; text-align:center; }
-  @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 270px; width:270px; } }
+  @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 340px; width:340px; } }
   .intro-box .foto-abre img { object-position:88% 100% !important; transform:scale(1.07) !important; transform-origin:62% 55% !important; }
+  .popup-conv .popup-rest { display:none; margin-top:.8rem; }
+  .popup-conv.open .popup-rest { display:block; }
+  .popup-conv .tgarr { display:inline-block; transition:transform .2s; font-size:11px; }
+  .popup-conv.open .tgarr { transform:rotate(180deg); }
+  .popup-conv .popup-tg { padding-right:1.6rem !important; }
+  .conv-card h2.section-title { font-size:clamp(27px,3.8vw,34px); margin-bottom:2rem; }
+  .conv-rest p.conv-first { margin-top:3.2rem; }
+  .conv-split { align-items:stretch; }
+  .conv-vid { align-self:stretch; display:flex; margin:0 !important; }
+  .conv-vid video { height:100%; object-fit:cover; object-position:50% 20%; }
+  .conv-note { font-size:13px; line-height:1.5; color:var(--ink-soft); margin:1rem 0 0; text-align:center; }
+  .bk-radios { display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; margin-top:.35rem; }
+  .bk-radios label { display:inline-flex; align-items:center; gap:.4rem; font-size:15px; font-weight:400; white-space:nowrap; margin:0; }
+  .bk-radios input { width:auto !important; margin:0; padding:0; }
+  .conv-txt p:last-child { margin-bottom:0; }
+  @media (max-width:640px){ .quiz-pills button br.keep { display:inline; } .conv-vid { height:260px; } }
 
   /* ronda 34 */
   .conv-card::before { content:none !important; }
   .popup .popup-eyebrow, .popup .popup-btn { font-family:'Lora',serif; }
   .quiz-group { color:var(--wine); }
   .pause:has(.pause-quote.two) { padding-top:2.4rem; }
-  .callout.case-callout .case-close { font-style:italic; color:var(--wine); margin:1.4rem 0 0; font-size:17px; text-align:left; }
+  .callout.case-callout .case-close { font-style:italic; color:var(--wine); margin:1.4rem 0 0; font-size:17px; text-align:center; }
   .effort-box { border:1.5px solid rgba(122,37,53,0.55); border-radius:12px; padding:0.85rem 1.1rem; margin-top:1.3rem; }
   .bk-micnote { margin-top:0.5rem; }
   .fb-aprofundar { margin-top:calc(1.8rem + 59px); }
-  .wab .ul2 { text-decoration:underline; text-decoration-color:#c98a99; text-decoration-thickness:0.06em; text-underline-offset:0.2em; }
   @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 312px; width:312px; margin-left:-1.8rem; margin-right:-0.6rem; } }
   .fmt-card p.fmt-n { text-wrap:pretty; }
+  @media (min-width:601px){ .popup.popup-conv { top:78px !important; padding-top:1.5rem !important; } .popup-conv-img { width:76% !important; margin:0 auto 0.55rem !important; } .popup-conv .popup-rest { margin-top:.5rem; } }
   @media (min-width:601px){ #popup { width:232px !important; max-width:232px !important; } }
+
+  /* Polimento visual: introdução e popup de testemunho */
+  @media (min-width:761px){
+    .callout.intro-box { flex-direction:row-reverse !important; padding:1.5rem 1.5rem 1.5rem 2rem; }
+    .callout.intro-box .foto-abre { margin-left:0; margin-right:0; }
+  }
+  .intro-box .ctext p.intro-lead { text-align:left !important; }
+  .intro-box .ctext p.intro-emphasis { font-weight:700; }
+  .popup.popup-conv { border:1px solid rgba(122,37,53,.14); border-radius:18px; box-shadow:0 14px 40px rgba(50,30,24,.18); }
+  .popup.popup-conv .popup-tg { text-align:left !important; font-family:'Lora',serif; font-size:14px !important; line-height:1.45 !important; font-weight:600; color:var(--wine); padding:0 1.6rem 0 .2rem !important; }
+  .popup.popup-conv .tgarr { margin-left:.2rem; }
+  .popup.popup-conv .popup-rest { margin-top:1rem; }
+  .popup-conv-img { width:100%; border-radius:10px; margin-bottom:.9rem; }
+  .popup.popup-conv .popup-btn { display:block; text-align:center; font-size:14px; line-height:1.4; border-radius:12px; padding:.8rem .75rem; }
+  @media (min-width:601px){
+    .popup.popup-conv { width:320px !important; }
+    .popup-conv-img { width:100% !important; }
+  }
+
+  /* Convite para comunidades: mostrar apenas o botão, sem cartão de fundo nem imagem. */
+  .popup.popup-conv {
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    padding:0 !important;
+    width:max-content !important;
+    max-width:calc(100vw - 2rem) !important;
+    border-radius:0 !important;
+  }
+  .popup.popup-conv .popup-btn {
+    background:transparent !important;
+    box-shadow:none !important;
+    border:1px solid var(--wine) !important;
+    color:var(--wine) !important;
+    margin:0 !important;
+  }
+  .popup.popup-conv .popup-btn:hover {
+    background:transparent !important;
+    box-shadow:none !important;
+    transform:translateY(-1px);
+  }
+  .popup.popup-conv .popup-close { background:transparent !important; }
+
+  /* Ajustes pedidos: manter a composição desktop ao redimensionar a janela, sem comprimir o texto. */
+  @media (hover:hover) and (pointer:fine) { html, body { min-width:1100px !important; } }
+  @media (hover:hover) and (pointer:fine) and (max-width:1050px) {
+    .callout.intro-box { flex-direction:row !important; align-items:stretch !important; gap:1.6rem !important; padding:1.5rem 1.5rem 1.5rem 2rem !important; }
+    .callout.intro-box .foto-abre { flex:0 0 340px !important; width:340px !important; height:auto !important; margin:0 !important; }
+    .intro-box .ctext { padding:.35rem 0 !important; }
+    .two-col { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  }
+
+  /* CEEN · Opção A integrada na página oficial */
+  .ceen-option-a .wrap { max-width:1120px; }
+  .ceen-option-a .intro-box {
+    display:grid !important; grid-template-columns:minmax(220px,35%) minmax(0,1fr) !important;
+    gap:clamp(22px,3.2vw,42px) !important; align-items:stretch !important;
+    background:#f2ece5 !important; border:1px solid #e6dbd2; border-radius:9px;
+    padding:clamp(18px,3vw,34px) !important; margin:0 !important;
+  }
+  .ceen-option-a .foto-abre {
+    position:relative !important; display:block !important; width:100% !important; min-width:0 !important;
+    height:auto !important; min-height:365px !important; margin:0 !important; align-self:stretch !important;
+    border-radius:0 !important; box-shadow:none !important; overflow:hidden !important;
+  }
+  .ceen-option-a .foto-abre img {
+    position:absolute !important; inset:0 !important; display:block !important; width:100% !important;
+    height:100% !important; min-height:100% !important; object-fit:cover !important; object-position:center 28% !important;
+    transform:none !important;
+  }
+  .ceen-option-a .foto-abre::after { display:none !important; }
+  .ceen-option-a .ctext { align-self:center; min-width:0; padding:4px 0 !important; }
+  .ceen-option-a .ceen-brand { font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:.17em; color:var(--wine); font-weight:600; margin:0 0:20px; margin-bottom:20px; }
+  .ceen-option-a h1.ceen-headline {
+    font-family:'Cormorant Garamond',serif; font-style:normal; font-weight:600;
+    font-size:clamp(30px,3.5vw,43px); line-height:1.02; text-align:left; margin:0 0 22px;
+    padding:0; color:var(--wine); text-wrap:balance;
+  }
+  .ceen-option-a .intro-box .ctext p { font-size:13px !important; line-height:1.8 !important; margin:0 0 14px !important; text-align:left !important; }
+  .ceen-option-a .intro-box .ctext p.intro-lead { margin-bottom:14px !important; }
+  .ceen-option-a .intro-box .ctext p.intro-lead strong { display:inline; font-family:'Lora',serif; font-size:13px; line-height:1.8; font-weight:600; color:#3e3432; }
+  .ceen-option-a .intro-box .ctext p:last-child { margin-bottom:0 !important; }
+  @media (max-width:760px) {
+    .ceen-option-a .wrap { padding:0 16px; }
+    .ceen-option-a .intro-box { grid-template-columns:minmax(0,1fr) !important; gap:18px !important; padding:14px !important; }
+    .ceen-option-a .foto-abre { width:100% !important; min-height:0 !important; height:auto !important; aspect-ratio:4/3; }
+    .ceen-option-a .foto-abre img { height:100% !important; object-position:center 28% !important; }
+    .ceen-option-a .ctext { padding:4px 3px 8px !important; }
+    .ceen-option-a .ceen-brand { margin-bottom:13px; }
+    .ceen-option-a h1.ceen-headline { font-size:34px; line-height:1.04; margin-bottom:15px; }
+    .ceen-option-a .intro-box .ctext p { font-size:12px !important; }
+  }
+
+
+  /* ronda 36: primeira caixa (opção A) com mais respiração e modo noturno */
+  .ceen-option-a { padding-top:3rem !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box { background:#2a2520 !important; border-color:rgba(240,230,215,.16) !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box .ctext p, html[data-theme="dark"] .ceen-option-a .intro-box .ctext li { color:var(--ink) !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box .ctext p.intro-lead strong { color:#f3e9da !important; }
+  html[data-theme="dark"] .ceen-option-a .ceen-brand, html[data-theme="dark"] .ceen-option-a h1.ceen-headline { color:var(--wine) !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box .ctext strong { color:#f3e9da; }
+
+  /* ronda 36: convite das comunidades, botão mais cuidado (mesma linguagem do botão do Ciclo) */
+  .popup.popup-conv { overflow:visible !important; }
+  .popup.popup-conv .popup-btn {
+    background:linear-gradient(120deg,#f6ddd0,#f1d3cf,#f3e2c2,#f6dcc0,#f1d3cf) !important; background-size:300% 300% !important; background-position:0% 50% !important;
+    border:1px solid rgba(122,37,53,.45) !important; border-radius:16px !important; color:#7a2535 !important;
+    font-family:'Lora',serif; font-size:14.5px !important; font-weight:600; line-height:1.45 !important; letter-spacing:.02em !important; text-transform:none !important;
+    padding:.85rem 1.7rem !important; text-align:center; box-shadow:0 10px 26px rgba(122,37,53,.16) !important;
+    transition:transform .2s, box-shadow .2s, background-position .6s;
+  }
+  .popup.popup-conv .popup-btn:hover { background-position:100% 50% !important; transform:translateY(-2px); box-shadow:0 14px 30px rgba(122,37,53,.22) !important; }
+  .popup.popup-conv .popup-close {
+    position:absolute; top:-9px !important; right:-9px !important; width:24px; height:24px; padding:0; border-radius:50%;
+    background:#fffaf3 !important; border:1px solid rgba(122,37,53,.35) !important; color:#7a2535; font-size:15px; line-height:20px; display:grid; place-items:center; z-index:3;
+  }
+  html[data-theme="dark"] .popup.popup-conv .popup-btn { background:linear-gradient(120deg,#4a3532,#4e3a40,#4f4128,#4a3532) !important; background-size:300% 300% !important; color:#f2d3d9 !important; border-color:rgba(228,167,179,.5) !important; box-shadow:0 10px 26px rgba(0,0,0,.4) !important; }
+  html[data-theme="dark"] .popup.popup-conv .popup-close { background:#2a2520 !important; color:#e4a7b3; border-color:rgba(228,167,179,.45) !important; }
+
   /* ronda 38 */
   .fmt-pick { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:1.6rem 0 0; }
   @media (max-width:760px){ .fmt-pick { grid-template-columns:1fr; } }
@@ -715,6 +862,33 @@
   .fmt-ul li { margin:0 0 .45rem; }
   .fmt-meta { font-family:'Lora',serif; font-size:15px; font-style:italic; color:var(--ink-soft); margin:0 0 1.1rem; }
   .fmt-opt .cta-btn { margin-top:auto; align-self:flex-start; }
+  /* primeira imagem: mini zoom */
+  .ceen-option-a .foto-abre img { transform:scale(1.07) !important; transform-origin:50% 40% !important; }
+  /* vídeo da comunidade acaba alinhado com o texto */
+  .conv-vid { position:relative !important; min-height:0 !important; }
+  .conv-vid video { position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; object-fit:cover !important; object-position:50% 20% !important; }
+  @media (max-width:760px){ .conv-vid { height:280px !important; } }
+  /* convite das comunidades: mensagem em cima, botão mais pequeno */
+  .popup.popup-conv { width:236px !important; padding:0 !important; }
+  .popup.popup-conv .popup-conv-img { display:block !important; width:100% !important; height:auto !important; margin:0 0 .55rem !important; border-radius:12px !important; box-shadow:0 6px 18px rgba(50,30,24,.2) !important; }
+  .popup.popup-conv .popup-btn { font-size:12.5px !important; line-height:1.4 !important; padding:.5rem .9rem !important; border-radius:12px !important; letter-spacing:.01em !important; }
+  @media (max-width:600px){ .popup.popup-conv { width:min(236px,calc(100vw - 2rem)) !important; left:auto !important; right:1rem !important; } }
+
+  /* ronda 39 */
+  .ceen-option-a { padding-top:5.5rem !important; }
+  .ceen-option-a .intro-box .ctext p { font-size:16px !important; line-height:1.75 !important; }
+  .ceen-option-a .intro-box .ctext p.intro-lead strong { font-size:16px !important; }
+  @media (max-width:760px){ .ceen-option-a { padding-top:3.5rem !important; } .ceen-option-a .intro-box .ctext p { font-size:15px !important; } .ceen-option-a .intro-box .ctext p.intro-lead strong { font-size:15px !important; } }
+  .lead.hlbox.hl-far { margin-top:5.6rem !important; }
+  .case-callout .case-close, .callout .case-close { margin-top:2.8rem !important; }
+  .fmt-t { line-height:1.45; }
+  /* convite das comunidades: tudo na mesma caixa */
+  .popup.popup-conv { background:#fffaf3 !important; border:1px solid rgba(122,37,53,.22) !important; border-radius:16px !important; box-shadow:0 14px 36px rgba(50,30,24,.2) !important; padding:1rem 1rem .9rem !important; width:252px !important; }
+  html[data-theme="dark"] .popup.popup-conv { background:#2a2520 !important; border-color:rgba(228,167,179,.3) !important; }
+  .popup.popup-conv .popup-conv-msg { margin:0 0 .8rem; font-family:'Lora',serif; font-style:italic; font-size:14.5px; line-height:1.5; color:var(--wine); text-align:center; }
+  html[data-theme="dark"] .popup.popup-conv .popup-conv-msg { color:#f0cdd3; }
+  .popup.popup-conv .popup-btn { text-transform:none !important; letter-spacing:.01em !important; font-size:13px !important; padding:.55rem .8rem !important; }
+  @media (max-width:600px){ .popup.popup-conv { width:min(252px,calc(100vw - 2rem)) !important; } }
 
   /* ronda 40: tamanhos mais uniformes e site mais reduzido */
   @media (min-width:641px){ body { zoom:1 !important; } html[data-size="compact"] body { zoom:.88 !important; } }
@@ -732,19 +906,83 @@
   p.callout-label { font-size:15.5px !important; }
   .pause-attrib { font-size:15px !important; }
   .pause-quote.big1 { font-size:28px !important; } .pause-quote.two, .pause-quote.nobreak { font-size:24px !important; }
+  /* primeira caixa: largura e espaço iguais aos textos abaixo */
+  .ceen-option-a { padding-top:3.8rem !important; }
+  .ceen-option-a .wrap { max-width:1000px !important; }
+  .ceen-option-a h1.ceen-headline { font-size:clamp(22px,2.2vw,25px) !important; line-height:1.12 !important; margin-bottom:16px !important; text-wrap:initial !important; }
+  .ceen-option-a .intro-box .ctext p, .ceen-option-a .intro-box .ctext p.intro-lead strong { font-size:15.5px !important; line-height:1.7 !important; }
+  .ceen-option-a .intro-box { gap:20px !important; padding:clamp(14px,2vw,24px) !important; }
+  .ceen-option-a .foto-abre { min-height:300px !important; }
     .fmt-card p.fmt-price, .fmt .fmt-card .fmt-price { font-size:30px !important; }
   .quote-block p.attrib, p.attrib { font-size:15px !important; }
+.quote-block p.papel { font-size:15.5px !important; line-height:1.55; }
+  .quote-block p.tuconsegues { font-size:24px !important; line-height:1.3; }
+  #quem-te-acompanha .two-col { grid-template-columns:minmax(0,376px) minmax(0,1fr) !important; }
+  @media (max-width:680px){ #quem-te-acompanha .two-col { grid-template-columns:1fr !important; } }
+  /* popups mais pequenos */
+  .popup.popup-conv { width:200px !important; padding:.75rem .75rem .7rem !important; }
+  .popup.popup-conv .popup-conv-msg { font-size:12.5px !important; margin-bottom:.55rem !important; }
+  .popup.popup-conv .popup-btn { font-size:10.5px !important; padding:.42rem .6rem !important; }
+  .popup:not(.popup-conv) { width:215px !important; padding:.65rem .75rem .7rem !important; }
+  .popup:not(.popup-conv) .popup-eyebrow { font-size:11px !important; line-height:1.4 !important; margin-bottom:.5rem !important; }
+  .popup:not(.popup-conv) .popup-btn { font-size:10.5px !important; padding:8px 12px !important; }
+  @media (max-width:600px){ .popup.popup-conv, .popup:not(.popup-conv) { width:min(215px,calc(100vw - 2rem)) !important; } }
   /* ronda 42 */
+  .ceen-option-a h1.ceen-headline { font-size:clamp(26px,2.5vw,32px) !important; line-height:1.14 !important; }
+  @media (max-width:760px){ .ceen-option-a h1.ceen-headline { font-size:26px !important; } }
+  .ceen-option-a .wrap { max-width:1060px !important; }
   @media (min-width:761px){ #popup { width:178px !important; max-width:178px !important; } }
+  @media (min-width:601px){ .popup.popup-conv { transform:translateX(-26px) scale(.96); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1) !important; } .popup.popup-conv.visible { transform:none; } }
   .sucesso-flex .sf-text p.t-sm { text-align:justify !important; hyphens:auto; }
   @media (min-width:681px){ #quem-te-acompanha .two-col { grid-template-columns:minmax(0,260px) minmax(0,1fr) !important; } }
+  .quote-block p.tuconsegues { font-size:19px !important; line-height:1.35 !important; }
   .fmt-opt:nth-child(1) { background:var(--sessao) !important; } .fmt-opt:nth-child(2) { background:var(--ciclo) !important; }
-  .pause:has(.pause-quote.two) { padding-top:52px !important; padding-bottom:22px !important; margin-top:0 !important; }
+  .conv-split { align-items:stretch !important; }
   .pause.pause-fm { padding-top:19px !important; padding-bottom:33px !important; }
+  .pause:has(.pause-quote.two) { padding-top:66px !important; padding-bottom:8px !important; margin-top:0 !important; }
   /* ronda 43 */
   html body, html body * { hyphens:none !important; -webkit-hyphens:none !important; }
   @media (min-width:761px){ #popup { width:215px !important; max-width:215px !important; } }
   #popup .popup-btn { white-space:nowrap; }
+  .conv-rest { margin-top:2.8rem !important; }
+  /* ronda 44 */
+  @media (min-width:681px){ .quote-block p.tuconsegues { font-size:23px !important; } }
+  @media (min-width:761px){ .ceen-option-a .intro-box .foto-abre img { transform:translateX(-7%) scale(1.14) !important; transform-origin:50% 40% !important; } }
+  /* ronda 47 */
+  .fb-aprofundar.fb-olhas { margin-top:.6rem !important; }
+  @media (max-width:760px){ .pause-quote.two { font-size:min(24px, calc((100vw - 48px) / 19)) !important; } .pause-quote.nobreak { font-size:min(24px, calc((100vw - 40px) / 17)) !important; } }
+  /* ronda 49: pop-up das comunidades como separador na margem (com × para fechar) */
+  .conv-tab-wrap { position:fixed; left:0; top:38%; z-index:190; display:flex; flex-direction:column; align-items:flex-start; gap:6px; transform:translateX(-100%); opacity:0; pointer-events:none; transition:transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s ease; }
+  .conv-tab-wrap.on { transform:none; opacity:1; pointer-events:auto; }
+  .conv-tab { writing-mode:vertical-rl; transform:rotate(180deg); font:500 13px/1 'Lora',serif; letter-spacing:.04em; color:#7a2535; background:linear-gradient(180deg,#f6d9c6,#f1c9b3); border:1px solid rgba(122,37,53,.22); border-left:0; border-radius:0 14px 14px 0; padding:16px 9px; cursor:pointer; box-shadow:0 6px 18px rgba(50,30,24,.16); }
+  .conv-tab:hover { background:linear-gradient(180deg,#f9e3d3,#f4d4c3); }
+  .conv-tab-x { margin-left:5px; width:22px; height:22px; border-radius:50%; border:1px solid rgba(122,37,53,.25); background:#fffaf3; color:#7a2535; font:15px/1 'Lora',serif; padding:0; cursor:pointer; display:grid; place-items:center; }
+  html[data-theme="dark"] .conv-tab { background:#4a3a34; color:#f0d9c9; border-color:rgba(240,217,201,.25); }
+  html[data-theme="dark"] .conv-tab-x { background:#26211c; color:#f0d9c9; border-color:rgba(240,217,201,.25); }
+  @media (min-width:601px){ #popupConv.popup.popup-conv { left:48px !important; top:38% !important; right:auto !important; bottom:auto !important; } }
+  @media (max-width:600px){ .conv-tab-wrap { top:30%; } .conv-tab { font-size:12px; padding:13px 8px; } }
+  /* versão inglesa: caixas WhatsApp, notas e ajustes de texto */
+  .pause .pause-quote.two { white-space:nowrap; max-width:none; font-size:min(27px, calc((100vw - 56px) / 23)); padding:0.8rem 0.5rem; }
+  .wab-wrap { border-radius:12px; padding:9px; background:linear-gradient(135deg,#d3d0c1 0%,#7e8c69 52%,#a89073 100%); display:flex; height:100%; box-sizing:border-box; }
+  .testimonial-photos-ph { align-items:stretch; }
+  .testimonial-photos-ph .ph { height:100%; }
+  .wab { flex:1; background:#fff; border-radius:16px; padding:1.05em 1.1em; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-size:1.85cqi; line-height:1.5; color:#171717; text-align:left; box-sizing:border-box; }
+  .wab p { margin:0 0 0.9em; font-size:inherit; line-height:inherit; text-align:left; hyphens:none; color:#171717; }
+  .wab p:last-of-type { margin-bottom:0; }
+  .wab .hl { background:#f5dfe3; color:#4b3a3d; }
+  .wab .ul { text-decoration:underline; text-decoration-color:#c98a99; text-decoration-thickness:0.12em; text-underline-offset:0.2em; }
+  .wab .tm { display:block; text-align:right; font-size:0.8em; color:#8a8a8a; margin-top:0.5em; }
+  .trad-note { font-size:13px; font-style:italic; color:var(--ink-soft); text-align:center; margin:1.4rem 0 -0.5rem; }
+  html[data-theme="dark"] .wab { filter:brightness(0.9); }
+  .bk-note { text-align:center; font-size:13px; font-style:italic; color:var(--ink-soft); margin:1.3rem 0 0; }
+  .bk-note a { color:var(--orange); }
+  .aud-note { text-align:center; font-size:13px; font-style:italic; color:var(--ink-soft); margin:-1rem 0 1.4rem; }
+    blockquote.quote-block p.q1 { white-space:normal; text-wrap:balance; }
+    .aud-l1 { white-space:nowrap; font-size:min(23px, calc((100vw - 40px)/19)); }
+    .aud-l2 { white-space:nowrap; font-size:min(21px, calc((100vw - 40px)/20.5)); }
+  .testimonial-photos-ph.one .wab { font-size:3.7cqi; }
+  @media (min-width:641px){ .callout.case-callout .ctext p.callout-label { font-size:min(15.5px, calc((100vw - 136px)/41)); white-space:nowrap; } }
+  .wab .ul2 { text-decoration:underline; text-decoration-color:#c98a99; text-decoration-thickness:0.06em; text-underline-offset:0.2em; }
   @media (max-width:760px){ .pause-quote.two { font-size:min(24px, calc((100vw - 48px) / 27)) !important; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
@@ -759,6 +997,7 @@
   <a class="nav-logo" href="index.html">Filipa Osório</a>
   <div class="nav-links">
     <span class="nav-lang">Disponível também em português · <a href="ceen.html" hreflang="pt" lang="pt">Versão em português</a></span>
+    <a href="#convites-parcerias">💌 Invitations and partnerships</a>
   </div>
   <a class="nav-wa" href="https://wa.me/351939479755?text=Hi%2C%20Filipa%21%20%5BYour%20introduction%5D%20I%20saw%20your%20website%20and%20would%20love%20to%20work%20with%20you%2C%20but%20I%20have%20a%20question%20before%20moving%20forward%3A%20%5Byour%20question%5D" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"></path></svg></a>
   <button type="button" class="size-btn" aria-label="View larger" title="View larger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5L21 21"></path><path class="pl" d="M10.5 7.5v6M7.5 10.5h6"></path><path class="mi" d="M7.5 10.5h6"></path></svg></button>
@@ -766,6 +1005,7 @@
   <button class="hamburger" onclick="document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='flex'?'none':'flex';"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#convites-parcerias" onclick="document.getElementById('mobileMenu').style.display='none';">💌 Invitations and partnerships</a>
 </div>
 
 <div class="cover">
@@ -777,17 +1017,20 @@
   </div>
 </div>
 
-<header class="wrap" style="padding:5.8rem 24px 1.6rem;">
-  <h1 class="hero-title">Bring your business closer to who you are and <br>to your moment, allowing it to evolve with you</h1>
-</header>
-
-<section class="tight" style="padding-top:12px;">
+<section class="tight ceen-option-a" style="padding-top:12px;">
   <div class="wrap">
-    <div class="callout grayD intro-callout intro-box"><figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório smiling while working at her laptop"></figure><div class="ctext">
-      <p><strong>CEEN is a one-to-one process of analysis and guidance to help you review how you work and the place you take in your business, without separating these decisions from who you are and what you want to build, with your unique personal energy.</strong></p>
-      <p>We start with one central question about the business, which can relate to others. As I listen, <strong>I pay attention to how you talk about your business, what excites you or holds you back and the weight you give to certain decisions.</strong> I ask questions and reflect back the connections I recognize in what I see and in what you share with me during the session.</p>
-      <p>This way of listening helps us recognize <strong>beliefs, fears and patterns that may be influencing your choices</strong>, even when you are not yet aware of them. We connect what we notice with the reality of your business and with what you want for yourself right now.</p>
-    </div></div>
+    <div class="callout grayD intro-callout intro-box">
+      <figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório smiling while working at her laptop"></figure>
+      <div class="ctext">
+        <div class="ceen-brand">CEEN · FILIPA OSÓRIO</div>
+        <h1 class="ceen-headline">Bring your business closer to<br>who you are and to your current stage of life,<br>allowing it to evolve with you</h1>
+        <p class="intro-lead"><strong>Your business does not exist separately from you.</strong></p>
+        <p class="intro-emphasis">The way you work, the decisions you make and what you want to change are connected to the person you are and the life you want to build.</p>
+        <p>CEEN is <strong>one-to-one work of analysis and guidance</strong> for people who want to look at their business and find a direction that takes into account the reality of the business and the life they want to build.</p>
+        <p>We start from a concrete question and explore, through conversation, what may be influencing your choices. Then we connect it with practical decisions: your offering, prices, communication and the organization of your work.</p>
+        <p>The aim is not to fit you into a formula, but to help you recognize what makes sense to keep, what needs to be reviewed and what other possibilities to consider.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -801,7 +1044,7 @@
 
 <section class="tight" style="padding-top:62px; padding-bottom:62px;">
   <div class="wrap">
-    <blockquote class="quote-block hang"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:21px;">Your business is at the heart of CEEN, but it is never considered in isolation from you.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:19px;">Your identity, energy, capacity, desires and current stage of life help us recognize what still reflects who you are and how you want to continue working and evolving.</span></p></blockquote>
+    <blockquote class="quote-block hang"><p><span style="color:var(--orange); font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; font-size:26px;">Your business is at the center of CEEN, but <br class="mb">it is not observed separately from you.</span><br><span style="color:var(--ink); font-family:'Lora',serif; font-style:normal; font-size:19px;">Your identity, energy, capacity, desires and current stage of life help us recognize what still reflects who you are and how you want to continue working and evolving.</span></p></blockquote>
   </div>
 </section>
 
@@ -811,9 +1054,9 @@
   <div class="wrap">
     <h2 class="section-title">For people who are an essential part <br>of the value their business offers</h2>
     <p class="t-sm">CEEN is for independent professionals and for anyone running a business in which their <strong>knowledge, perspective and way of working</strong> are an essential part of the value it offers.</p>
-    <p class="t-sm"><strong>Your business is already up and running</strong>, but you want to review not only what you offer and how you present it, but also how you organize your weekly tasks, how you deliver your work and how you take your place in your business.</p>
+    <p class="t-sm">It is for people who want to look at their business in an integrated way, considering not only the strategic decisions but also the person making them. For people who recognize that the way they work, the choices they make and the business they build do not exist separately from themselves and who want to better understand how these dimensions relate.</p>
     <p class="t-sm">Perhaps you want to keep doing what you do, but in a different way.<br>Or you feel <strong>the desire to make room for a new direction</strong> that is still hard to imagine as possible.</p>
-    <p class="jump-row-box"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Get to know me and how I work</a></p>
+    <p class="jump-row-box" style="margin-top:3.5rem;"><a class="jump-link" href="#quem-te-acompanha" onclick="jumpToBio(); return false;">Who accompanies you in CEEN</a><span class="jump-sub">(get to know me first)</span></p>
   </div>
 </section>
 
@@ -831,7 +1074,7 @@
     <p class="t-sm">You may already have achieved results that, for you, once represented success, yet still feel that the way you work today no longer reflects who you are. That does not diminish the value of what you have built. It may simply mean that it is time to reshape it so it can evolve with you.</p>
     </div><figure><img src="foto-ceen-costas-v.jpg?v=2" width="340" height="578" alt="Filipa seen from behind, working on her laptop on the living room floor" loading="lazy"></figure></div>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
-      <p class="t-xs"><strong>In CEEN, we do not assume that there is something wrong with you</strong>, that there is an ideal version you should live up to, or a formula for success you have to follow. <strong>In CEEN, the best strategy is the one that makes sense for you!</strong> Alignment does not have to mean the absence of tension; a choice can make sense and still bring fear or discomfort. Just as reviewing what you have built does not diminish your journey; it simply allows you to choose how you want to continue.</p>
+      <p class="t-xs"><strong>In CEEN, we do not assume that there is something wrong with you</strong>, that there is an ideal version you should live up to, or a formula for success you have to follow. <strong>In CEEN, the best strategy is the one that makes sense for you!</strong></p>
     </div></div>
   </div>
 </section>
@@ -848,7 +1091,7 @@
         <ul class="plain">
           <li>You have several services and skills, but you do not know which ones to give space to or how to present them together.</li>
           <li>Your work has evolved, but your offerings and communication still reflect an earlier version of you.</li>
-          <li>You want a more consistent income without having to work more hours.</li>
+          <li>You want to increase or stabilize your income without depending on working more hours.</li>
           <li>Your life has changed, <br>and you need to review how you deliver your work, your availability or your role.</li>
         </ul>
       </div></div>
@@ -857,17 +1100,16 @@
         <ul class="plain">
           <li>You are afraid that changing your offerings or prices could cost you clients, income or recognition.</li>
           <li>You no longer want to deliver a particular service, but find it difficult to let go after everything you have invested.</li>
-          <li>You want to grow, but worry about visibility, expectations or losing your freedom.</li>
+          <li>You want to grow, but worry about exposure, expectations or losing your freedom.</li>
           <li>You feel pressure to follow strategies that seem to work for other people but not for you.</li>
         </ul>
       </div></div>
     </div>
     <div class="callout grayD narrow" style="margin-top:-0.6rem;"><div class="ci">🔍</div><div class="ctext">
       <p><strong>Not every difficulty can be solved with a new strategy.</strong></p>
-      <p><strong>Sometimes, difficulty with charging, delegating or communicating is deeply connected to what that decision means to you, not simply to the lack of a plan.</strong></p>
-      <p>In CEEN, we connect business decisions with who you are and what you are experiencing, because every choice is also influenced by what you want, what you fear and what you are willing and able to sustain, even if that is what success brings.</p>
+      <p>These situations can involve strategic questions while also raising questions about what you value, fear or want to change.</p>
     </div></div>
-    <p class="lead hlbox" style="margin-top:3.6rem;"><strong>Clarity does not make the change for you, but it can reduce the time you spend pursuing a direction that drains you, putting off decisions, or trying to solve solely within your business something that also needs to be recognized within yourself.</strong></p>
+    <p class="lead hlbox hl-far" style="margin-top:3.6rem;"><strong>Clarity does not make the change for you, but it can reduce the time you spend pursuing a direction that drains you, putting off decisions, or trying to solve solely within your business something that also needs to be recognized within yourself.</strong></p>
   </div>
 </section>
 
@@ -882,14 +1124,14 @@
 <section>
   <div class="wrap">
     <h2 class="section-title">An outside perspective to help you see more clearly</h2>
-    <p class="t-sm">When you are immersed in your business <strong>it can be difficult to distinguish what still makes sense from what you maintain out of habit or fear of change.</strong> By reflecting back what I notice in the way you speak and by asking you questions about what seems contradictory, I help you see distinctions that may go unnoticed when you think things through on your own, so that you can recognize what you truly want to keep developing.</p>
-    <p class="casep" style="margin-top:2.6rem;"><strong>This example shows how this work can change a decision about your offerings:</strong></p>
+    <p class="t-sm"><strong>When you are inside your business, it can be difficult to distinguish what still makes sense from what you keep out of habit, security or fear of change.</strong></p>
+    <p class="t-sm">In CEEN, I listen to the way you talk about your work, ask questions and reflect back the connections, differences or contradictions I recognize in what you share. Not to interpret your experience for you, but to help you look at it from another perspective.</p>
 
     <div class="callout brown case-callout"><div class="ci">🪞</div><div class="ctext">
       <p class="callout-label">Reviewing your offerings also means recognizing what no longer reflects who you are</p>
       <p style="margin-top:1.3rem;"><strong>A client came to a session convinced that she wanted to keep investing in certain services.</strong> Rationally, they seemed like the safest options and the ones that made the most sense for her to keep, without even questioning it.</p>
-      <p><strong>Through the questions I asked and the observations I shared about how she spoke about each service</strong>, she came to realize that what she believed she “should” keep no longer matched what she truly wanted to keep and sustain.</p>
-      <p>She decided to focus her offerings and communication on the services that genuinely brought her joy and, after those changes, <strong>began receiving inquiries and making sales again.</strong></p>
+      <p>Through the questions and observations we explored, she recognized that what she believed she <em>should</em> keep no longer matched what she truly wanted to develop and sustain.</p>
+      <p>She decided to focus her offering and communication on the services that sparked the most enthusiasm and, after those changes, <strong>began receiving inquiries and generating sales again.</strong></p>
       <p class="case-close"><strong>CEEN did not choose for her. It helped her see clearly so she could choose.</strong></p>
           </div></div>
 
@@ -913,15 +1155,15 @@
     <div class="two-col dimbox">
       <div class="callout infoA"><div class="ci">⚡</div><div class="ctext">
         <p class="callout-label"><span class="nw">THE ENERGY DIMENSION ·</span><br><span class="nw">THE PERSON BEHIND THE BUSINESS</span></p>
-        <p style="margin-top:1.4rem;">Recognizing what motivates you, holds you back or drains you, and how this influences your choices and the role you want to play in your business.</p>
-        <p>Depending on what is most relevant to your current situation, we may explore your natural energy, desires, beliefs and patterns, the elements that influence what you choose, communicate and can sustain in your day-to-day.</p>
-        <p>We can also look at your workday: which tasks, rhythms and ways of relating to clients energize you, and which drain you. We can also look at which practices help you prepare your energy for the day, if you’d like to explore this dimension further.</p>
+        <p style="margin-top:1.4rem;">We seek to understand what mobilizes, holds back or drains you and how this relates to the choices you make and the role you want to occupy in your business.</p>
+        <p>Depending on the question you bring, we can explore your desires, beliefs, fears and learned patterns, as well as the rhythms, tasks and ways of working that allow you to function better or that leave you without availability for what you want to develop.</p>
+        <p>We do not start from a predefined interpretation of you. We observe what emerges in the conversation and explore what seems relevant to you.</p>
       </div></div>
       <div class="callout infoB"><div class="ci">🧭</div><div class="ctext">
         <p class="callout-label"><span class="nw">THE STRATEGIC DIMENSION ·</span><br><span class="nw">HOW IT TAKES SHAPE IN THE BUSINESS</span></p>
-        <p style="margin-top:1.4rem;">Translating that understanding into clear criteria, priorities and recommendations for your business, with the life you want to build in mind.</p>
-        <p>Depending on the questions you bring and the depth of the work, we may look at offerings, services, pricing, positioning, communication, content, sales pages, your website, delivery formats, responsibilities or decisions.</p>
-        <p>We can also map out the processes of your business, from first contact to delivery, to see what could be simplified, delegated or supported by artificial intelligence, and where your presence truly makes a difference as the central element.</p>
+        <p style="margin-top:1.4rem;">We connect that reading with the concrete reality of your business to identify criteria, priorities and recommendations adjusted to the question you want to work on.</p>
+        <p>Depending on the focus, we can look at your offering, services, pricing, positioning, communication, content, sales pages/website, delivery formats, processes or the organization of your work.</p>
+        <p>We can also map out the processes of your business, from first contact to delivery, to see what can be simplified, delegated or supported by artificial intelligence.</p>
       </div></div>
     </div>
     <p class="lead hlbox" style="margin-top:2.6rem;"><strong>CEEN is this dialogue between energy and strategy.</strong> Observing without turning it into decisions can bring awareness, but no direction. Creating structure without questioning what lies behind your choices can lead you to follow a strategy that does not make sense for you.</p>
@@ -942,7 +1184,8 @@
 <section>
   <div class="wrap">
     <h2 class="section-title vi">An integrated view of your business</h2>
-    <p class="t-sm" style="text-align:left !important;">If you would like to explore the approach in more depth, open the topics below: how different areas of your business influence one another, and how your energy shapes your professional decisions.</p>
+    <p class="t-sm" style="text-align:left !important;"><strong>Your business is not just what you sell</strong>. It is also the structure that supports it, the place you occupy in it, the identity it communicates, the relationships it creates and the balance between what you give and what you receive.</p>
+    <p class="t-sm" style="text-align:left !important;">This view allows us to look at the different areas without assuming that each one works in isolation. We always start from the question you bring and explore only the connections that are relevant to the work.</p>
     <div class="fb-aprofundar">
     <blockquote class="quote-block">
       <p class="q1" style="white-space:normal;"><strong>"You see the person behind the business"</strong></p>
@@ -952,11 +1195,9 @@
     </div>
 
     <details class="fold slower feature">
-      <summary><span class="tri"></span>🧩 Your business as a system</summary>
+      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">🧩 Your business as a system</span></summary>
       <div class="fold-wrap"><div class="fold-body">
-        <p><strong>Your business is not just what you sell. It is also the place you occupy within it, the identity it communicates, the structure that supports it, the relationships it creates, and the balance between what you give and what you receive.</strong></p>
-        <p>Looking at your business as a system means recognizing that your role, its history, identity, structure, relationships and exchanges all influence one another. We start from the question you bring and explore the connections that matter for that work.</p>
-        <p>Depending on your current situation, we may explore:</p>
+        <p>Depending on your moment, we can look at:</p>
         <ul class="plain">
           <li><strong>You and your role</strong>: how you see yourself, make decisions and take your place in the business;</li>
           <li><strong>Identity and positioning</strong>: how you want to be recognized;</li>
@@ -964,32 +1205,32 @@
           <li><strong>Structure and boundaries</strong>: how you organize the work, processes, delivery and responsibilities;</li>
           <li><strong>Belonging and relationships</strong>: the history and people that influence the business;</li>
           <li><strong>Balance in exchanges</strong>: what you give and receive in money, time and energy;</li>
-          <li><strong>Sustainable growth</strong>: what can evolve without losing its identity or quality, or becoming increasingly dependent on you.</li>
+          <li><strong>Sustainable growth</strong>: what can evolve without compromising the quality of the work, your availability or the life you want to build.</li>
         </ul>
-        <p style="margin-top:1.5rem;"><strong>This perspective helps us recognize the connections that matter when deciding what to keep, reshape or transform, since these dimensions influence one another:</strong></p>
-        <p>changing your offerings may call for different communication; growth may require a different structure; and a change within you may transform the place you want to occupy in your business.</p>
-        <p class="effort-box">More effort does not necessarily mean more income. Increasing your results at the expense of your time, willingness or vitality does not make growth sustainable, nor, quite likely, aligned with what you want.</p>
+        <p>The areas influence one another: changing your offering may require different communication; growing may call for a different structure; and a change in how you see yourself may change the place you want to occupy in the business.</p>
+        <p class="effort-box">More effort does not necessarily mean better results. Growing at the cost of more and more hours, availability or exhaustion may not match what you want to build.</p>
       </div></div>
     </details>
 
     <details class="fold slower feature">
-      <summary><span class="tri"></span>⚡ Personal energy as strategic information</summary>
+      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">⚡ Personal energy as strategic information</span></summary>
       <div class="fold-wrap"><div class="fold-body">
-        <p>In CEEN, personal energy is not just about feeling energized or tired. It means the <strong>capacity available to you through the interaction of physical, mental, emotional, social and subtle dimensions</strong>, which influences your ability to create, decide, connect with others and take on responsibilities.</p>
-        <p><strong>A professional decision does not depend on rational analysis alone.</strong> It is also influenced by what you feel you might gain, lose, prove or protect through it, often at an unconscious level. For example:</p>
+        <p>In CEEN, the energy dimension helps us observe your experience beyond <strong>rational analysis</strong>: what sparks your interest, what creates resistance, what worries you and what you feel you can sustain.</p>
+        <p>A professional decision can involve <strong>much more than weighing pros and cons</strong>. It can also touch on security, identity, recognition, freedom or how you anticipate other people’s reactions.</p>
+        <p>For example:</p>
         <ul class="plain">
-          <li><strong>💰 Money</strong>: security, freedom and choice, but also difficulty receiving, charging more or dealing with how others see you;</li>
-          <li><strong>👁️ Visibility</strong>: recognition and impact, but also exposure, criticism or judgment;</li>
-          <li><strong>🚀 Growth</strong>: new possibilities, but also greater responsibility or the fear of losing freedom and quality.</li>
+          <li><strong>💰 Money</strong>: can represent security, freedom and choice, but also bring fear of charging more, of receiving or of being judged on price.</li>
+          <li><strong>👁️ Visibility</strong>: can allow you to reach more people, but also awaken discomfort about exposure, criticism or expectations.</li>
+          <li><strong>🚀 Growth</strong>: can open new possibilities and, at the same time, raise questions about responsibility, autonomy and quality of life.</li>
         </ul>
-        <p style="margin-top:1.5rem;">In CEEN, these elements are always connected to the concrete reality of your business and the choices ahead of you. In this way, we bring strategy, marketing, identity and intention closer together, for a business aligned with you.</p>
+        <p>These possibilities are not conclusions drawn in advance about you. They are themes we can explore when they are relevant to your question, and we always connect them with the reality of the business.</p>
       </div></div>
     </details>
 
     <div class="callout grayD" style="margin-top:1.4rem;"><div class="ci">🪞</div><div class="ctext">
-      <p style="font-size:17px;"><strong>CEEN does not replace technical consultancy or specialist implementation.</strong><br>We may look at offerings, prices, communication, sales pages or decisions, and identify connections and possible changes. In-depth technical audits, comprehensive planning, copywriting and implementation by me are not included.</p>
+      <p style="font-size:17px;"><strong>CEEN does not replace technical consultancy or specialist implementation.</strong><br>It does not include audits, <em>copywriting</em> or implementation done by me.</p>
     </div></div>
-    <blockquote class="quote-block" style="margin-top:3rem; margin-bottom:1.8rem;"><p style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:17px;"><strong>My role is to listen, question, develop hypotheses, connect the dots and offer concrete recommendations. The final decisions always remain yours.</strong></p></blockquote>
+    <blockquote class="quote-block" style="margin-top:4.5rem; margin-bottom:1.8rem;"><p class="papel" style="color:var(--ink); font-style:normal; font-family:'Lora',serif; font-size:15.5px;"><strong>My role is to listen, question, develop hypotheses, connect the dots and present concrete recommendations. The final decisions always remain yours.</strong></p></blockquote>
   </div>
 </section>
 
@@ -1187,7 +1428,6 @@
         <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('ciclo');">Book my CEEN Cycle</a>
       </div>
     </div>
-    <p class="bk-note">The booking page is in Portuguese. If you have any questions about booking, feel free to <a href="https://wa.me/351939479755?text=Hi%20Filipa%2C%20%5BYour%20introduction%5D%20I%27d%20like%20to%20book%20a%20CEEN%20session%2C%20but%20I%20have%20a%20question%20about%20the%20booking%3A%20%5Byour%20question%5D" target="_blank" rel="noopener">send me a message</a>.</p>
   </div>
 </section>
 
@@ -1210,6 +1450,8 @@
 <section id="amostra">
   <div class="wrap-wide">
     <h2 class="section-title">From a conversation to a proposal you can return to</h2>
+    <p class="t-sm">In the CEEN Cycle, the work does not stay only in the conversation. You also receive a Notion document that brings together the observations, the connections identified and the recommendations related to the question we worked on.</p>
+    <p class="t-sm">The document is built from your context and the materials we agree on. It is not a generic formula or a plan that is the same for every business.</p>
     <p class="amostra-legenda" style="margin-bottom:0;">An illustrative example. <br class="mb">Each deliverable depends on the context and the topics explored.</p>
     <iframe class="amostra-frame" src="ciclo-ceen-sample.html" title="Illustrative example of a CEEN Cycle delivery"></iframe>
   </div>
@@ -1236,12 +1478,35 @@
   <div class="wrap">
     <div class="callout grayD softer" style="padding-right:1.7rem;"><div class="ci">↻</div><div class="ctext">
       <p class="callout-label">You can return to CEEN <br class="mb">whenever you need to</p>
-      <p>After a Session or the Cycle, you can move forward independently or book a new CEEN Session whenever decisions, questions or changes arise that you would like to work through with me. You do not need to define your path at CEEN in advance.</p>
+      <p>You do not need to define a path in advance or commit to ongoing support. After a Session or the Cycle, you can move forward independently. If other decisions, questions or changes come up later that you would like to explore, you can book a new CEEN Session.</p>
     </div></div>
   </div>
 </section>
 
 <hr class="div">
+
+<hr class="div">
+
+<section id="convites-parcerias">
+  <div class="wrap">
+    <div class="conv-card">
+      <p class="conv-eyebrow">💌 Invitations and partnerships</p>
+      <div class="conv-split"><div class="conv-txt">
+      <h2 class="section-title">What if we took this conversation to your community or company?</h2>
+      <p class="t-sm"><strong>Beyond the one-to-one work of CEEN, I also bring these themes to gatherings with communities and teams.</strong></p>
+      <p class="t-sm">Some questions take on another dimension when we explore them together: <strong>how we want to work and live, what we wish to create and what contribution we want to make through our work.</strong></p>
+      <p class="t-sm">If you created, run or are part of a community of entrepreneurs or creators, or if you represent a company and would like to bring these themes to a gathering with your team, we can talk.</p>
+      </div><figure class="conv-vid"><video autoplay loop muted playsinline preload="metadata" aria-label="A moment from a gathering with a community"><source src="comunidade-loop.webm" type="video/webm"><source src="comunidade-loop.mp4" type="video/mp4"></video></figure></div>
+      <div class="conv-rest">
+      <p class="t-sm">The format is shaped around the context, the people and the theme that makes sense to explore. We can address the relationship between personal life and work, different definitions of success, the way each person occupies their role and how individual knowledge can contribute to the collective.</p>
+      <p class="t-sm">Each gathering is prepared according to its purpose, respecting participation, each person’s boundaries and the values of the community or company.</p>
+      </div>
+      <div class="conv-aud"><p class="conv-cap">After a gathering with a community</p><div class="aud-wrap"><div class="aud"><audio preload="metadata" src="feedback comunidade.MP3"></audio><button type="button" class="aud-btn" aria-label="Listen"><span class="aud-play"></span><span class="aud-pause"><b></b><b></b></span></button><div class="aud-main"><p class="aud-q">“It was… beyond expectations! <br>It was really, really good!”</p><div class="aud-bar"><div class="aud-wave"><i style="height:22px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:24px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:28px"></i></div><div class="aud-fill"></div></div><span class="aud-t">0:00</span></div></div><details class="tr"><summary>Read the English transcript</summary><div class="tr-body"><div lang="en"><p>Hello, my dear, I’ve finally found a moment to sit down calmly, with the attention I wanted, to send you this thank-you “podcast”, because it truly was… beyond expectations! It was really, really good!</p><p>I believe they all got a lot out of the moment and many of them will certainly get in touch with you to go a little deeper, get to know each other even more and adapt this to their own businesses too. I saw a lot of enthusiasm from them and I’m very happy about that, because I really love bringing new tools and things that can help them thrive more and more, whatever their field (...)</p><p>It’s really, really good and I’m very happy they liked it, and for all your dedication and the incredible moment you gave us, because it was absolutely fabulous and, without being able to put it into words, it really was so, so good and I enjoyed it a lot even for myself!</p><p>I knew I would enjoy it myself, but I was still wondering how they would react, how it would go (...), but it’s absolutely fascinating to see how much we have in common, even though we are all very different from one another, because we really are different people, with different ways of thinking and acting, yet there is so much that brings us together and draws us to each other.</p><p>And it’s so funny to see it, I know it, I believe it, but at the same time these moments end up confirming what we somehow already knew, but now we know it better, you know?</p></div></div></details></div></div>
+      <p class="t-sm">You do not need to arrive with a defined format. We can start from your idea, get to know the context of the community or company and define the theme, the goal and a gathering format that makes sense for the people it is meant for.</p>
+      <p style="margin:1.6rem 0 0; text-align:center;"><a class="cta-btn" href="#" onclick="event.preventDefault(); abrirConvite();">Let’s talk and co-create</a></p>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -1262,25 +1527,25 @@
     <details class="faqmain"><summary class="section-title faqh">Questions you may have before taking the next step</summary>
     <div class="faqbody">
     <details class="fold"><summary><span class="tri"></span>What not to expect from CEEN</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No. CEEN does not replace technical support in management, marketing, finance, accounting or operations. It also does not include technical audits, copywriting or implementation by me. I bring together what I observe in you and your business with my knowledge of strategy and marketing, as well as personal development, to offer tailored possibilities, criteria and recommendations.</p><p>I will help you recognize what may not yet be clear, offer recommendations and suggest possible directions. I do not decide or act for you: the final decisions and practical actions remain yours.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>CEEN does not replace specialized technical support in management, marketing, finance, accounting or operations. It also does not include in-depth technical audits, <em>copywriting</em> or implementation done by me.</p><p>My work consists of listening, analyzing the context, relating what I observe in the business to what you share and presenting possibilities, criteria and recommendations suited to the question. I do not decide or act for you: the final decisions and concrete actions remain yours.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Are the sessions online or in person?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>All CEEN sessions are one-to-one and online: both the Session and the two sessions included in the Cycle.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>All CEEN sessions are online, both in the Session and in the CEEN Cycle.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Does my business need to be structured?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No. Your business may be just starting, growing or being reorganized. If you are just starting, the CEEN Session is the format that makes sense, so we can clarify a central question and your first steps. The CEEN Cycle requires a business that is already up and running and engaging with the real world, with offerings, prices, communication, clients, sales or attempts to make sales, and concrete decisions we can explore.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>You do not need to have everything defined, but we do need a real question to work on.</p><p>The CEEN Session can be useful to explore a concrete question at an early stage or at a moment of reorganization. The CEEN Cycle is more suitable when there is already an active business and materials we can analyze, such as offerings, prices, communication, sales pages or other elements related to the central question.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>Do I need to identify with a particular energy-based approach?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>No. The energy dimension relates to what you are actually experiencing, which is not always immediately visible: attention, emotions, beliefs, habits, capacity and bodily responses. We always use only what makes sense for you.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>No. The energy dimension allows us to explore what you are experiencing and what may influence how you decide, communicate and work: emotions, beliefs, habits, fears, availability and responses to certain situations. We explore what is relevant to your question and makes sense to you.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>How do I choose between the CEEN Session and the CEEN Cycle?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>In the Session, we work on one central question during our meeting, through questions, analysis and recommendations developed together during the session. In the Cycle, we work on one central question across two meetings, with analysis of the agreed materials and a well-reasoned proposal prepared between them.</p><p>Both include a written record in Notion. With the Session, you receive a short summary of the work done during the meeting within five business days. With the Cycle, you receive a well-reasoned proposal based on the analysis carried out between the two meetings. The choice depends on the kind of work you are looking for, not the number of questions you bring.</p><p>You do not need a Session before the Cycle: you can book the CEEN Cycle directly if you are looking for analysis between meetings and a personalized proposal.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>In the Session, we work on one central question during the meeting, with questions, analysis and recommendations in the moment. You receive a short summary and action points in Notion.</p><p>In the Cycle, we work on one central question across two meetings, with analysis of the agreed materials and a well-grounded proposal prepared between them.</p><p>The choice depends on the kind of work you are looking for: talking through and exploring a decision with me, or also having an analysis of the materials and a personalized proposal prepared between meetings.</p><p>You do not need to do a Session before the Cycle.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>What questions can I bring?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p>You can bring a question about your business or a question of your own that you feel is affecting your business, as long as it relates to how you experience your business, make decisions or take your place within it. We can explore identity, beliefs, patterns, fears, visibility, money or responsibility when they are influencing your professional choices.</p><p>If you bring several questions, we agree on the priority for the session. We may explore relevant connections with the other questions, but the work remains focused on what we have agreed to address.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>You can bring a business question or a personal question that you feel is influencing how you run it. We can explore themes such as offering, prices, communication, visibility, money, beliefs, fears, boundaries or the place you occupy in the business, when they are relevant to the central question.</p><p>If you bring several questions, we choose a priority for the work. We can recognize connections with other themes, but that does not mean all the questions are included in the same meeting.</p></div></div>
     </details>
     <details class="fold"><summary><span class="tri"></span>What happens after the meetings? Do I receive support?</summary>
-      <div class="fold-wrap"><div class="fold-body"><p><strong>In the CEEN Session</strong>, no new analysis is included after the meeting. The context review is brief and takes place before the meeting when needed. Analysis, recommendations and decisions are worked through during the session and, within 5 business days, you receive a short summary in Notion with the action points.</p><p><strong>In the CEEN Cycle</strong>, the analysis focuses on the central question and the materials agreed in the first meeting, not on the whole business. Within three days of the first meeting, you send the agreed materials and, if you wish, additional information. During the analysis, I may ask focused questions or request clarification. These exchanges are intended to complete my understanding, not to support implementation.</p><p>Neither format includes implementation or ongoing support. Afterwards, you can move forward independently or book a new CEEN Session so we can keep working on other parts of your business.</p></div></div>
+      <div class="fold-wrap"><div class="fold-body"><p>Neither format includes implementation or ongoing support.</p><p>In the CEEN Session, analysis and recommendations are worked on during the meeting. Within five business days, you receive a short summary and the action points in Notion. In the CEEN Cycle, I analyze the agreed materials between the two meetings and prepare a well-grounded proposal that we explore together in the second session.</p><p>Afterwards, you can move forward independently or book a new CEEN Session whenever you want to work on another question.</p></div></div>
     </details>
     <button type="button" class="faq-close" onclick="var d=this.closest('details.faqmain'); d.open=false; d.scrollIntoView({behavior:'smooth',block:'center'});">↑ Close questions</button>
     </div></details>
@@ -1336,6 +1601,36 @@
   </div>
 </div>
 
+<div id="convModal" class="bk-modal" style="display:none;">
+  <div class="bk-box">
+    <button type="button" class="bk-x" onclick="fecharConvite()" aria-label="Close">×</button>
+    <form id="convForm" novalidate>
+        <p class="bk-title">Let’s talk and co-create</p>
+        <p class="bk-intro">Tell me a little about your community or company and what you imagine. I will reply to you soon.</p>
+        <label class="bk-f">Full name<input name="nome" required autocomplete="name"></label>
+        <label class="bk-f">Email<input name="email" type="email" required autocomplete="email"></label>
+        <div class="bk-f">Phone (WhatsApp)<span class="bk-tel"><select name="cc" class="bk-cc" aria-label="Country code"><option value="+351">🇵🇹 +351</option><option value="+55">🇧🇷 +55</option><option value="+34">🇪🇸 +34</option><option value="+33">🇫🇷 +33</option><option value="+44">🇬🇧 +44</option><option value="+1">🇺🇸 +1</option><option value="+49">🇩🇪 +49</option><option value="+41">🇨🇭 +41</option><option value="+352">🇱🇺 +352</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+32">🇧🇪 +32</option><option value="+353">🇮🇪 +353</option><option value="+46">🇸🇪 +46</option><option value="+244">🇦🇴 +244</option><option value="+258">🇲🇿 +258</option><option value="+238">🇨🇻 +238</option><option value="+61">🇦🇺 +61</option><option value="+971">🇦🇪 +971</option></select><input name="telemovel" type="tel" required autocomplete="tel-national" inputmode="tel"></span></div>
+        <p class="bk-micnote">If you prefer to speak, press the 🗣️ and what you say is written in the text box.</p>
+        <label class="bk-f">Community or company<input name="organizacao" required></label>
+        <label class="bk-f">Tell me about your community or company, and whether you are the person responsible for leading this co-creation.<span class="bk-ta"><textarea name="sobre" rows="3"></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🗣️</button></span></label>
+        <label class="bk-f">What kind of gathering do you imagine? <i>(theme, goal, format)</i><span class="bk-ta"><textarea name="ideia" rows="3"></textarea><button type="button" class="bk-mic" aria-label="Speak instead of typing" title="Speak instead of typing">🗣️</button></span></label>
+        <div class="bk-f">Preferred format
+          <span class="bk-radios"><label><input type="radio" name="formato" value="Online"> Online</label><label><input type="radio" name="formato" value="Presencial"> In person</label><label><input type="radio" name="formato" value="Sem preferência" checked> No preference</label></span></div>
+        <label class="bk-f" id="convLocalW" style="display:none;">Location<input name="localidade" placeholder="e.g. Lisbon"></label>
+        <div class="bk-row">
+          <label class="bk-f">Approximate number of people<input name="pessoas" inputmode="numeric"></label>
+          <label class="bk-f">Approximate date<input name="data" placeholder="e.g. January 2027"></label>
+        </div>
+        <label class="bk-check"><input type="checkbox" name="privacidade" required><span>I agree that Filipa Osório may use this data to reply to me (<a href="privacidade-en.html" target="_blank">Privacy Policy</a>).</span></label>
+        <p class="conv-note">By sending this, you are asking me for information and a quote for the gathering, with no commitment. I will reply soon, by email or WhatsApp, so we can talk about the format and next steps.</p>
+        <p class="bk-err" id="convErr"></p>
+        <p style="text-align:center; margin:1.1rem 0 0;"><button type="submit" class="cta-btn" id="convBtn">Send</button></p>
+        
+    </form>
+    <div id="convOk" class="conv-ok" style="display:none;"><p><strong>Thank you!</strong> I have received your message and will reply to you soon.</p></div>
+  </div>
+</div>
+
 <footer>
   <div class="links">© 2026 Filipa Osório</div>
   <div class="links" style="margin-top:1.1rem;"><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">INSTAGRAM</a><span>•</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">SUBSTACK</a><span>•</span><a href="mailto:mail@filipaosorio.com">EMAIL</a></div>
@@ -1346,6 +1641,12 @@
   <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"></path></svg>
 </a>
 
+<div class="conv-tab-wrap" id="convTabWrap"><button type="button" class="conv-tab-x" id="convTabX" aria-label="Close the tab">×</button><button type="button" class="conv-tab" id="convTab" aria-controls="popupConv" aria-expanded="false">Communities and companies</button></div>
+<div class="popup popup-conv" id="popupConv" aria-label="Invitation for communities">
+  <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Close">×</button>
+  <p class="popup-conv-msg">“It was phenomenal!<br>Thank you for your sharing<br>and incredible delivery!”</p>
+  <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">Shall we co-create in your community or company?</a>
+</div>
 <div class="popup" id="popup">
   <button class="popup-close" onclick="document.getElementById('popup').classList.remove('visible')">×</button>
   <p class="popup-eyebrow" style="text-align:center; margin:0 0 0.8rem; padding:0 0.3rem; text-transform:none; letter-spacing:0.03em; font-size:13px; line-height:1.5;">· CEEN Cycle ·<br>3 places available at this price<br>until the end of 2026</p>
@@ -1490,6 +1791,9 @@
     }
   });
 
+  window.abrirConvite = function(){ var m = document.getElementById('convModal'); m.style.display = 'flex'; };
+  window.fecharConvite = function(){ document.getElementById('convModal').style.display = 'none'; };
+  document.getElementById('convModal').addEventListener('click', function(e){ if (e.target === this) fecharConvite(); });
   (function(){
     var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     var mics = document.querySelectorAll('.bk-mic');
@@ -1507,6 +1811,22 @@
       });
     });
   })();
+
+  document.querySelectorAll('#convForm input[name=formato]').forEach(function(r){ r.addEventListener('change', function(){ var pres = document.querySelector('#convForm input[name=formato]:checked').value === 'Presencial'; document.getElementById('convLocalW').style.display = pres ? '' : 'none'; }); });
+  document.getElementById('convForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var f = this, err = document.getElementById('convErr'), btn = document.getElementById('convBtn');
+    if (!validar(f, err)) return;
+    var d = dados(f);
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var L = ['Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, 'Comunidade ou empresa: ' + d.organizacao, 'Sobre a comunidade/empresa e quem dinamiza: ' + (d.sobre || '—'), '', 'Formato preferido: ' + (d.formato || '—') + (d.formato === 'Presencial' ? ' · Localidade: ' + (d.localidade || '—') : ''), 'Ideia de encontro: ' + (d.ideia || '—'), 'Pessoas: ' + (d.pessoas || '—'), 'Data aproximada: ' + (d.data || '—')];
+    enviar('Convite para encontro · ' + d.organizacao, 'Site · Convites e parcerias', d.email, L).then(function(){
+      f.style.display = 'none'; document.getElementById('convOk').style.display = 'block';
+    }).catch(function(){
+      err.innerHTML = 'Could not send. Please try again or message me on WhatsApp.';
+      btn.disabled = false; btn.textContent = 'Send';
+    });
+  });
 
   // Google Analytics: eventos do Cal.com (so enviados se a pessoa aceitou os cookies de analise)
   window.addEventListener('message', function(e){
@@ -1729,6 +2049,49 @@
     document.querySelectorAll('.quiz-pills button[data-r]').forEach(function(b){ b.addEventListener('click', function(){ var r = b.getAttribute('data-r'); document.querySelectorAll('.fmt-card').forEach(function(c){ c.classList.toggle('on', c.classList.contains(r)); }); }); });
   })();
 
+  // popup de convites: aparece uma vez, a meio da página, e leva à secção das comunidades
+  window.goConvites = function(){
+    var pc = document.getElementById('popupConv'); if (pc) pc.classList.remove('visible');
+    var s = document.getElementById('convites-parcerias');
+    if (s) { s.scrollIntoView({ behavior:'smooth', block:'start' }); return false; }
+    return true;
+  };
+  (function(){
+    var pc = document.getElementById('popupConv'), sec = document.getElementById('convites-parcerias'); if (!pc || !sec) return;
+    var done = false;
+    function show(){
+      if (done) return;
+      var r = sec.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) return; // já está na secção
+      done = true; window.removeEventListener('scroll', check);
+      if (window.innerWidth <= 600) { var p = document.getElementById('popup'); if (p) p.classList.remove('visible'); }
+      var w = document.getElementById('convTabWrap'); try { if (sessionStorage.getItem('fo_convtab_off')) return; } catch(e){} if (w) w.classList.add('on');
+    }
+    function check(){
+      var doc = document.documentElement;
+      if ((window.scrollY + window.innerHeight) / doc.scrollHeight > 0.3) show();
+    }
+    var tab = document.getElementById('convTab');
+    if (tab) tab.addEventListener('click', function(){ var o = !pc.classList.contains('visible'); pc.classList.toggle('visible', o); tab.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+    var tx = document.getElementById('convTabX'), tw = document.getElementById('convTabWrap');
+    if (tx) tx.addEventListener('click', function(){ if (tw) tw.classList.remove('on'); pc.classList.remove('visible'); try { sessionStorage.setItem('fo_convtab_off','1'); } catch(e){} });
+    window.addEventListener('scroll', check, { passive:true });
+    setTimeout(show, 25000); // aparece também ao fim de 25 s, mesmo sem descer
+  })();
+
+  // popup das comunidades: no computador fica por cima do popup do Ciclo, à direita
+  (function(){
+    var pc = document.getElementById('popupConv'), p = document.getElementById('popup'); if (!pc || !p) return;
+    function pos(){
+      if (window.innerWidth <= 600){ pc.style.bottom = ''; pc.style.width = ''; return; }
+      if (true){ pc.style.bottom = ''; pc.style.width = ''; return; }
+      pc.style.width = p.offsetWidth + 'px';
+      var base = parseFloat(getComputedStyle(p).bottom) || 22;
+      pc.style.bottom = (p.classList.contains('visible') ? base + p.offsetHeight + 14 : base) + 'px';
+    }
+    new MutationObserver(pos).observe(p, { attributes:true, attributeFilter:['class'] });
+    new MutationObserver(pos).observe(pc, { attributes:true, attributeFilter:['class'] });
+    window.addEventListener('resize', pos); pos();
+  })();
   // popup de vagas, igual ao do site
   setTimeout(function(){
     var p = document.getElementById('popup');
