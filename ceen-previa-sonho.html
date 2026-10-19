@@ -1065,19 +1065,14 @@
 </section>
 
 <style>
-#sonho-previa{padding-bottom:0;} #sonho-ia{padding-top:24px;}
+#sonho-previa{padding-bottom:0;}
 #sonho-previa .bub-wrap{display:flex;flex-direction:column;gap:12px;margin:2rem 0 0;}
 #sonho-previa .bub{position:relative;display:flex;align-items:baseline;gap:12px;width:fit-content;max-width:100%;padding:8px 22px 8px 16px;border-radius:10px;box-shadow:0 3px 10px rgba(80,50,30,.07);white-space:nowrap;}
 #sonho-previa .bub.l{align-self:flex-start;} #sonho-previa .bub.r{align-self:flex-end;}
 #sonho-previa .bub.sessao{background:var(--sessao);} #sonho-previa .bub.ciclo{background:var(--ciclo);} #sonho-previa .bub.brown{background:var(--brown);}
 #sonho-previa .bub-from{font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);flex:none;}
 #sonho-previa .bub p{margin:0;font-family:'Spectral',Georgia,serif;font-style:italic;font-size:17px;line-height:1.35;color:var(--ink);}
-#sonho-previa .bub-ck{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;border:1px solid var(--gold-deep);background:var(--cream);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
-#sonho-previa .bub-ck:hover{transform:scale(1.15);}
-#sonho-previa .bub-ck[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);}
-#sonho-previa .bub-ck::after{content:"×";color:var(--gold-deep);font-size:14px;line-height:1;}
-#sonho-previa .bub-ck[aria-pressed="true"]::after{content:"×";color:#fff;font-size:14px;line-height:1;font-weight:700;}
-#sonho-previa .bub-me2{align-self:center;margin-top:-4px;text-align:center;font-family:'Spectral',Georgia,serif;font-style:italic;font-size:20px;color:var(--wine);}
+#sonho-previa .bub-ck{position:absolute;top:-7px;right:-7px;width:16px;height:16px;border-radius:50%;border:1px solid var(--wine);background:var(--cream);color:var(--wine);font-size:12px;line-height:14px;text-align:center;pointer-events:none;}
 #sonho-previa .bub-me{align-self:center;margin-top:10px;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:var(--wine);}
 #sonho-previa .bub-hint{font-size:13px;color:var(--ink-soft);margin:1rem 0 0;font-style:italic;}
 #sonho-ia .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:2rem 0 0;position:relative;}
@@ -1086,13 +1081,20 @@
 #sonho-ia .fl h3{margin:0 0 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;color:var(--wine);font-weight:600;line-height:1.2;}
 #sonho-ia .fl p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft);}
 #sonho-ia .fl:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--gold-deep);background:var(--cream);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;z-index:2;}
-#sonho-ia .ai{margin:2.4rem 0 0;padding:30px 28px;border-radius:24px;background:linear-gradient(135deg,#7a2535,#a0475a);color:#fff;position:relative;overflow:hidden;}
-#sonho-ia .ai::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,160,.35),transparent 70%);}
-#sonho-ia .ai .tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:99px;margin-bottom:12px;}
-#sonho-ia .ai h3{margin:0 0 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.15;font-weight:600;color:#fff;}
-#sonho-ia .ai p{margin:0 0 14px;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.92);position:relative;}
-#sonho-ia .ai ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;}
-#sonho-ia .ai li{background:rgba(255,255,255,.14);border-radius:12px;padding:10px 14px;font-size:14.5px;line-height:1.4;color:#fff;}
+#sonho-ia .ai{margin:2.4rem 0 0;padding:34px 30px;border-radius:28px;background:linear-gradient(125deg,#5b1f4a 0%,#7a2535 38%,#c1633f 78%,#e3a85a 100%);background-size:200% 200%;animation:aiShift 14s ease-in-out infinite;color:#fff;position:relative;overflow:hidden;box-shadow:0 14px 40px rgba(122,37,53,.28);}
+@keyframes aiShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media (prefers-reduced-motion:reduce){#sonho-ia .ai{animation:none;}#sonho-ia .ai .sp{animation:none !important;}}
+#sonho-ia .ai::before{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,226,160,.5),transparent 68%);}
+#sonho-ia .ai::after{content:"";position:absolute;left:-80px;bottom:-90px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(190,140,255,.35),transparent 70%);}
+#sonho-ia .ai .sp{position:absolute;font-style:normal;color:#ffe3a6;opacity:.85;animation:twinkle 3.2s ease-in-out infinite;z-index:1;}
+#sonho-ia .ai .s1{top:18px;right:34px;font-size:22px;} #sonho-ia .ai .s2{top:70px;right:84px;font-size:14px;animation-delay:.8s;} #sonho-ia .ai .s3{bottom:26px;right:40px;font-size:18px;animation-delay:1.6s;} #sonho-ia .ai .s4{top:40%;left:calc(100% - 26px);font-size:12px;animation-delay:2.2s;}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(20deg)}}
+#sonho-ia .ai .tag{position:relative;z-index:2;display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.2);padding:5px 14px;border-radius:99px;margin-bottom:14px;}
+#sonho-ia .ai h3{position:relative;z-index:2;margin:0 0 12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;line-height:1.12;font-weight:600;color:#fff;max-width:560px;}
+#sonho-ia .ai p{position:relative;z-index:2;margin:0 0 18px;font-size:16px;line-height:1.65;color:rgba(255,255,255,.95);max-width:640px;}
+#sonho-ia .ai ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;z-index:2;}
+#sonho-ia .ai li{border-radius:14px;padding:12px 16px;font-size:14.5px;line-height:1.4;color:#fff;backdrop-filter:blur(2px);border:1px solid rgba(255,255,255,.22);}
+#sonho-ia .ai li.c1{background:rgba(255,200,140,.22);} #sonho-ia .ai li.c2{background:rgba(255,170,190,.22);} #sonho-ia .ai li.c3{background:rgba(190,170,255,.24);} #sonho-ia .ai li.c4{background:rgba(160,230,210,.2);}
 #sonho-ia .gain{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.6rem 0 0;}
 #sonho-ia .gain div{display:flex;gap:12px;align-items:flex-start;background:var(--gray);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;line-height:1.5;color:var(--ink);}
 #sonho-ia .gain div b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--wine);font-weight:600;line-height:1.2;margin-bottom:2px;}
@@ -1116,17 +1118,22 @@
     <h2 class="section-title">Talvez te tenham dito que tinhas de…</h2>
     <p class="t-sm">Talvez reconheças algumas destas frases:</p>
     <div class="bub-wrap">
-<div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">📱 num reel</span><p>Tens de publicar todos os dias, senão o algoritmo <span style="white-space:nowrap">esquece-se</span> de ti.</p></div>
-<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🎬 numa mentoria</span><p>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</p></div>
-<div class="bub l brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🎙️ num podcast</span><p>Uma agenda cheia é sinal de sucesso.</p></div>
-<div class="bub r sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🎓 numa mentoria</span><p>Lança um curso em 30 dias e passa a ganhar enquanto dormes.</p></div>
-<div class="bub l ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🤝 numa conversa</span><p>Esquece os produtos: o que funciona mesmo são as sessões.</p></div>
-<div class="bub r brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">💬 num grupo</span><p>Tens de estar em todas as redes e responder a tudo, a toda a hora.</p></div>
-<div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">📸 num workshop</span><p>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</p></div>
-<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🧱 num conselho</span><p>Sem equipa, ficas com tudo nas tuas costas.</p></div>
+<div class="bub l sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">📱 num reel</span><p>Tens de publicar todos os dias, senão o algoritmo <span style="white-space:nowrap">esquece-se</span> de ti.</p></div>
+<div class="bub r ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎬 numa mentoria</span><p>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</p></div>
+<div class="bub l brown"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎙️ num podcast</span><p>Uma agenda cheia é sinal de sucesso.</p></div>
+<div class="bub r sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎓 numa mentoria</span><p>Lança um curso em 30 dias e passa a ganhar enquanto dormes.</p></div>
+<div class="bub l ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🤝 numa conversa</span><p>Esquece os produtos: o que funciona mesmo são as sessões.</p></div>
+<div class="bub r brown"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">💬 num grupo</span><p>Tens de estar em todas as redes e responder a tudo, a toda a hora.</p></div>
+<div class="bub l sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">📸 num workshop</span><p>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</p></div>
+<div class="bub r ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🧱 num conselho</span><p>Sem equipa, ficas com tudo nas tuas costas.</p></div>
       <div class="bub-me">…e tu, o que querias mesmo fazer?</div>
-      <div class="bub-me2">E se, para ti, pudesse ser diferente?</div>
     </div>
+  </div>
+</section>
+
+<section class="pause pause-b" style="padding:70px 0;">
+  <div class="wrap-wide">
+    <p class="pause-quote two">E se, para ti, pudesse ser diferente?</p>
   </div>
 </section>
 
@@ -1134,7 +1141,7 @@
   <div class="wrap">
     <h2 class="section-title">Quando o marketing segue a tua energia</h2>
     <p class="t-sm">Não tem de ser assim. O marketing que se sustenta não nasce de copiar o que resulta nos outros, nasce do que está <strong>alinhado contigo</strong>: com quem és, com a energia que tens e com a vida que queres ter.</p>
-    <div class="callout grayD" style="margin:1.8rem 0 0;"><div class="ci">🪞</div><div class="ctext">
+    <div class="callout grayD" style="margin:1.8rem 0 0;"><div class="ci">🌸</div><div class="ctext">
       <p class="t-xs">Já vi centenas de mulheres, nos seus negócios, a <strong>forçar uma estratégia</strong>: a copiar e a seguir o que mentores lhes diziam para fazer, sem terem em conta a pessoa que são, o que querem para a sua vida e a energia que têm. Sem essa parte, nenhuma estratégia se sustenta. <strong>Na CEEN fazemos o trabalho que é difícil de fazer sem apoio:</strong> permitires-te questionar e perceber o que queres realmente para ti. É a partir daí que se avança.</p>
     </div></div>
     <p class="t-sm" style="margin-top:1.8rem;">E é a partir desse lugar alinhado que podes aprender a criar <strong>automatizações</strong> que partilham a tua mensagem por ti, mesmo quando não estás a trabalhar, para te focares no essencial.</p>
@@ -1144,14 +1151,15 @@
       <div class="fl"><div class="n">3</div><h3>Focas-te no essencial</h3><p>O teu tempo e a tua energia ficam para o que só tu fazes: sessões, criação, vida.</p></div>
     </div>
     <div class="ai">
-      <span class="tag">✨ Automatizações com IA</span>
-      <h3>A tua mensagem a trabalhar por ti, mesmo quando descansas</h3>
-      <p>Depois de saberes o que queres dizer e oferecer, a inteligência artificial ajuda a pôr isso a funcionar sem te prender ao computador. Podes aprender a criar, ao teu ritmo e no teu tom:</p>
+      <i class="sp s1">✦</i><i class="sp s2">✧</i><i class="sp s3">✦</i><i class="sp s4">✧</i>
+      <span class="tag">🚀 A novidade que muda o jogo</span>
+      <h3>E se a tecnologia trabalhasse ao serviço da tua alma?</h3>
+      <p>Imagina que o que é teu, a tua voz, a tua mensagem, o teu jeito, ganha asas. A inteligência artificial é a ajuda nova que faltava: não decide por ti nem te substitui. Trata do que é repetitivo para que estejas <strong>inteira no que só tu sabes fazer</strong>. E tu podes aprender a criá-la, ao teu ritmo e no teu tom.</p>
       <ul>
-        <li>✉️ Emails de boas-vindas e acompanhamento que saem sozinhos</li>
-        <li>💬 Respostas às perguntas que mais te fazem</li>
-        <li>🎙️ Uma ideia tua transformada em vários conteúdos</li>
-        <li>🗓️ Marcações, lembretes e propostas já preparadas</li>
+        <li class="c1">✉️ Emails de boas-vindas e acompanhamento que saem sozinhos</li>
+        <li class="c2">💬 Respostas às perguntas que mais te fazem</li>
+        <li class="c3">🎙️ Uma ideia tua transformada em vários conteúdos</li>
+        <li class="c4">🗓️ Marcações, lembretes e propostas já preparadas</li>
       </ul>
     </div>
     <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;color:var(--wine);font-weight:600;margin:2.6rem 0 0;">O que podes ganhar com a CEEN</h3>
@@ -1165,9 +1173,6 @@
     </div>
   </div>
 </section>
-<script>
-document.querySelectorAll('#sonho-previa .bub-ck').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');});});
-</script>
 
 <hr class="div">
 
