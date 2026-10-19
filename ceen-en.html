@@ -1388,14 +1388,14 @@
     // respostas já dadas no formulário do site, preenchidas no Cal.com
     if (BK.tel) c.attendeePhoneNumber = BK.tel;
     if (BK.opcao) c.Opcao = BK.opcao;
-    c.idioma = document.documentElement.lang === 'en' ? 'Inglês' : 'Português';
+    c.idioma = 'English';
     return c;
   }
   function mostrarCalendario(){
     var prompt_ = document.getElementById('calendlyConsentPrompt'), widget = document.getElementById('calendlyWidget');
     if (window.__calLoaded && window.Cal) {
       prompt_.style.display = 'none'; widget.style.display = 'block';
-      if (!widget.dataset.done) { widget.innerHTML = ''; Cal('inline', { elementOrSelector: widget, calLink: 'filipaosorio/ceen', layout: 'month_view', config: calConfig() }); Cal('ui', { theme: calConfig().theme, hideEventTypeDetails: false, layout: 'month_view' }); widget.dataset.done = '1'; }
+      if (!widget.dataset.done) { widget.innerHTML = ''; Cal('inline', { elementOrSelector: widget, calLink: 'filipaosorio/ceen-en', layout: 'month_view', config: calConfig() }); Cal('ui', { theme: calConfig().theme, hideEventTypeDetails: false, layout: 'month_view' }); widget.dataset.done = '1'; }
     } else { prompt_.style.display = 'block'; widget.style.display = 'none'; }
   }
   function atualizaValor(){ var r = document.querySelector('#bkForm input[name=formato]:checked'); if (r) document.getElementById('bkValor1').textContent = r.getAttribute('data-valor'); }
@@ -1448,7 +1448,7 @@
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
     if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
     var corpo = L.join('\n'), anterior = BK.ultimo;
-    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (269€)', formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
+    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'CEEN Cycle (800€)' : 'CEEN Session (269€)', formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
     // só envia o e-mail se for a primeira vez ou se a pessoa mudou alguma resposta
     if (corpo !== anterior) {
       var tinha = !!anterior;
