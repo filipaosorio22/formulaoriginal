@@ -948,13 +948,16 @@
   /* ronda 47 */
   .fb-aprofundar.fb-olhas { margin-top:.6rem !important; }
   @media (max-width:760px){ .pause-quote.two { font-size:min(24px, calc((100vw - 48px) / 19)) !important; } .pause-quote.nobreak { font-size:min(24px, calc((100vw - 40px) / 17)) !important; } }
-  /* ronda 49: pop-up das comunidades como separador na margem */
-  .conv-tab { position:fixed; left:0; top:38%; z-index:190; writing-mode:vertical-rl; transform:translateX(-100%) rotate(180deg); opacity:0; pointer-events:none; transition:transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s ease; font:500 13px/1 'Lora',serif; letter-spacing:.04em; color:#7a2535; background:linear-gradient(180deg,#f6d9c6,#f1c9b3); border:1px solid rgba(122,37,53,.22); border-left:0; border-radius:0 14px 14px 0; padding:16px 9px; cursor:pointer; box-shadow:0 6px 18px rgba(50,30,24,.16); }
-  .conv-tab.on { transform:rotate(180deg); opacity:1; pointer-events:auto; }
+  /* ronda 49: pop-up das comunidades como separador na margem (com × para fechar) */
+  .conv-tab-wrap { position:fixed; left:0; top:38%; z-index:190; display:flex; flex-direction:column; align-items:flex-start; gap:6px; transform:translateX(-100%); opacity:0; pointer-events:none; transition:transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s ease; }
+  .conv-tab-wrap.on { transform:none; opacity:1; pointer-events:auto; }
+  .conv-tab { writing-mode:vertical-rl; transform:rotate(180deg); font:500 13px/1 'Lora',serif; letter-spacing:.04em; color:#7a2535; background:linear-gradient(180deg,#f6d9c6,#f1c9b3); border:1px solid rgba(122,37,53,.22); border-left:0; border-radius:0 14px 14px 0; padding:16px 9px; cursor:pointer; box-shadow:0 6px 18px rgba(50,30,24,.16); }
   .conv-tab:hover { background:linear-gradient(180deg,#f9e3d3,#f4d4c3); }
+  .conv-tab-x { margin-left:5px; width:22px; height:22px; border-radius:50%; border:1px solid rgba(122,37,53,.25); background:#fffaf3; color:#7a2535; font:15px/1 'Lora',serif; padding:0; cursor:pointer; display:grid; place-items:center; }
   html[data-theme="dark"] .conv-tab { background:#4a3a34; color:#f0d9c9; border-color:rgba(240,217,201,.25); }
+  html[data-theme="dark"] .conv-tab-x { background:#26211c; color:#f0d9c9; border-color:rgba(240,217,201,.25); }
   @media (min-width:601px){ #popupConv.popup.popup-conv { left:48px !important; top:38% !important; right:auto !important; bottom:auto !important; } }
-  @media (max-width:600px){ .conv-tab { top:30%; font-size:12px; padding:13px 8px; } }
+  @media (max-width:600px){ .conv-tab-wrap { top:30%; } .conv-tab { font-size:12px; padding:13px 8px; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1624,7 +1627,7 @@
   <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg>
 </a>
 
-<button type="button" class="conv-tab" id="convTab" aria-controls="popupConv" aria-expanded="false">Comunidades e empresas</button>
+<div class="conv-tab-wrap" id="convTabWrap"><button type="button" class="conv-tab-x" id="convTabX" aria-label="Fechar o separador">×</button><button type="button" class="conv-tab" id="convTab" aria-controls="popupConv" aria-expanded="false">Comunidades e empresas</button></div>
 <div class="popup popup-conv" id="popupConv" aria-label="Convite para comunidades">
   <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Fechar">×</button>
   <p class="popup-conv-msg">“Foi fenomenal!<br>Obrigada pela tua partilha<br>e entrega incrível!”</p>
@@ -2047,7 +2050,7 @@
       var r = sec.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) return; // já está na secção
       done = true; window.removeEventListener('scroll', check);
       if (window.innerWidth <= 600) { var p = document.getElementById('popup'); if (p) p.classList.remove('visible'); }
-      var tab = document.getElementById('convTab'); if (tab) tab.classList.add('on');
+      var w = document.getElementById('convTabWrap'); try { if (sessionStorage.getItem('fo_convtab_off')) return; } catch(e){} if (w) w.classList.add('on');
     }
     function check(){
       var doc = document.documentElement;
@@ -2055,6 +2058,8 @@
     }
     var tab = document.getElementById('convTab');
     if (tab) tab.addEventListener('click', function(){ var o = !pc.classList.contains('visible'); pc.classList.toggle('visible', o); tab.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+    var tx = document.getElementById('convTabX'), tw = document.getElementById('convTabWrap');
+    if (tx) tx.addEventListener('click', function(){ if (tw) tw.classList.remove('on'); pc.classList.remove('visible'); try { sessionStorage.setItem('fo_convtab_off','1'); } catch(e){} });
     window.addEventListener('scroll', check, { passive:true });
     setTimeout(show, 25000); // aparece também ao fim de 25 s, mesmo sem descer
   })();
