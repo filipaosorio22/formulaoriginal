@@ -86,31 +86,22 @@ html[data-theme="dark"] .bk-ss { background:#382c22; } html[data-theme="dark"] .
     <p class="lead">Recebi o teu pagamento da sessão de alinhamento (e de aprofundamento).</p>
   </header>
   <div class="card done">
-    <div class="warn"><b>Não feches esta página ainda.</b>Estou a enviar-te o e-mail com a ligação para marcares o dia e a hora da sessão.</div>
-    <div id="st"><p id="msg">A enviar o e-mail…</p>
-    <form id="fm" hidden><label class="lbl" for="em">O teu e-mail</label><input type="email" id="em" required autocomplete="email"><p class="actions"><button class="btn" type="submit">Enviar-me a ligação</button></p></form></div>
-    <div id="ok" hidden><p><b>Feito.</b> Verifica o teu e-mail (e a pasta de spam ou promoções): vais receber a ligação para escolher a data e a hora. Se pedir que confirmes a subscrição, clica em confirmar, é esse passo que liberta a ligação. Já podes fechar esta página.</p></div>
-    <p>Não chegou em alguns minutos? <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Paguei%20a%20sess%C3%A3o%20de%20alinhamento%20e%20ainda%20n%C3%A3o%20recebi%20a%20liga%C3%A7%C3%A3o%20para%20marcar." target="_blank" rel="noopener">Fala comigo por WhatsApp 💌</a> e envio-ta eu.</p>
-    <p>O recibo do Stripe chega ao teu e-mail. <a href="https://cal.com/filipaosorio/alinhamento" hidden id="direct"></a></p>
+    <div class="warn"><b>Falta só escolheres o dia e a hora.</b>Vais ser encaminhada para a página de marcação dentro de <span id="cd">5</span> segundos.</div>
+    <p class="actions"><a class="btn" id="go" href="https://cal.com/filipaosorio/alinhamento">Escolher o dia e a hora</a></p>
+    <p>Se preferires marcar mais tarde, guarda esta ligação: <a id="ln" href="https://cal.com/filipaosorio/alinhamento">cal.com/filipaosorio/alinhamento</a>. Se algo correr mal, <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Paguei%20a%20sess%C3%A3o%20de%20alinhamento%20e%20preciso%20de%20ajuda%20para%20marcar." target="_blank" rel="noopener">fala comigo por WhatsApp 💌</a></p>
+    <p>O recibo do Stripe chega ao teu e-mail.</p>
     <p><a href="leitura-intuitiva.html">← Voltar à Leitura Intuitiva</a></p>
   </div>
 </div>
 <script>
 (function(){
-  var ML='https://assets.mailerlite.com/jsonp/2708796/forms/201738852742727289/subscribe';
-  var $=function(i){return document.getElementById(i)};
-  var email=''; try{ email=localStorage.getItem('fo_align')||''; }catch(e){}
-  try{ var q=new URLSearchParams(location.search).get('email'); if(q) email=q; }catch(e){}
-  window.addEventListener('beforeunload',function(e){ if(!$('ok').hidden) return; e.preventDefault(); e.returnValue=''; });
-  function send(em){
-    $('msg').textContent='A enviar o e-mail…'; $('fm').hidden=true;
-    var b=new FormData(); b.append('fields[email]',em); b.append('ml-submit','1'); b.append('anticsrf','true');
-    fetch(ML,{method:'POST',mode:'no-cors',body:b}).then(done,function(){ fail(); });
-    function done(){ try{ localStorage.removeItem('fo_align'); }catch(e){} $('st').hidden=true; $('ok').hidden=false; window.scrollTo({top:0,behavior:'smooth'}); }
-    function fail(){ $('msg').textContent='Não consegui enviar. Confirma o e-mail e tenta de novo.'; $('fm').hidden=false; }
-  }
-  if(email) send(email); else { $('msg').textContent='Escreve o e-mail que usaste no pagamento:'; $('fm').hidden=false; }
-  $('fm').addEventListener('submit',function(e){ e.preventDefault(); var v=$('em').value.trim(); if(v) send(v); });
+  var base='https://cal.com/filipaosorio/alinhamento', q=[], n='', e='';
+  try{ e=localStorage.getItem('fo_align')||''; n=localStorage.getItem('fo_align_n')||''; }catch(x){}
+  if(n) q.push('name='+encodeURIComponent(n)); if(e) q.push('email='+encodeURIComponent(e));
+  var url=base+(q.length?'?'+q.join('&'):'');
+  document.getElementById('go').href=url; document.getElementById('ln').href=url;
+  var t=5, cd=document.getElementById('cd');
+  var iv=setInterval(function(){ t--; cd.textContent=t; if(t<=0){ clearInterval(iv); try{localStorage.removeItem('fo_align');localStorage.removeItem('fo_align_n');}catch(x){} location.href=url; } },1000);
 })();
 </script>
 </body>

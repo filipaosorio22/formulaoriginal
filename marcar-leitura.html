@@ -265,7 +265,7 @@ window.FO_PAY = {
     var v = sel().value, sn = $('sesNote');
     var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
     sn.hidden = !hasS; $('fam').hidden = !hasS;
-    sn.textContent = v === 'sessaosolo' ? 'A data da sessão não é escolhida agora: depois de confirmado o pagamento, recebes por e-mail a ligação para marcares o dia e a hora que preferires. Depois do pagamento abre-se uma página: não a feches, é ela que envia esse e-mail.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
+    sn.textContent = v === 'sessaosolo' ? 'A data da sessão não é escolhida agora: depois de confirmado o pagamento, és encaminhada logo a seguir para a página onde marcas o dia e a hora que preferires.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
     $('prazo').hidden = v === 'sessaosolo';
   }
   document.querySelectorAll('input[name=op]').forEach(function(x){ x.addEventListener('change', updTotal); });
@@ -343,7 +343,7 @@ window.FO_PAY = {
         .then(function(r){ return r.json(); })
         .then(function(j){
           if (!j || !j.success) throw new Error('falhou');
-          if (link){ try{ if (sel().value === 'sessaosolo') localStorage.setItem('fo_align', email); }catch(e){} }
+          if (link){ try{ if (sel().value === 'sessaosolo') localStorage.setItem('fo_align', email); localStorage.setItem('fo_align_n', nome); }catch(e){} }
           if (link) location.href = link + (link.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(email);
           else finish(true);
         })
