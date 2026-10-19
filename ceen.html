@@ -849,6 +849,38 @@
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
+
+<style id="ceen-moment-visual-proposal">
+/* Proposta localizada para a secção "O que te pede o teu momento presente?" */
+.quiz-box {
+  margin-top: clamp(2rem, 4vw, 3.25rem);
+}
+.quiz-box .quiz-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .45rem;
+  margin: 2rem 0 .65rem;
+  padding: 0 0 .75rem;
+  border-bottom: 1px solid var(--line, rgba(55,53,47,.18));
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  line-height: 1.25;
+  letter-spacing: .01em;
+}
+.quiz-box .quiz-group:first-child { margin-top: 0; }
+.quiz-box .quiz-group-separator { color: var(--orange, #c17f3a); }
+.quiz-box .quiz-note { margin: 0 0 1rem; opacity: .78; }
+@media (prefers-reduced-motion: no-preference) {
+  .quiz-box .quiz-pills button { transition: border-color .2s ease, background-color .2s ease, transform .2s ease; }
+  .quiz-box .quiz-pills button:hover { transform: translateY(-1px); }
+}
+html[data-theme="dark"] .quiz-box .quiz-group {
+  color: var(--ink, #f3ecdf);
+  border-bottom-color: var(--line, rgba(255,255,255,.18));
+}
+html[data-theme="dark"] .quiz-box .quiz-note { color: var(--ink-soft, #d4c9bb); }
+</style>
+
 </head>
 <body>
 
@@ -1187,14 +1219,14 @@
 
     <div class="quiz-box">
       <div id="quizChips">
-        <p class="quiz-group">Quero pensar e decidir contigo · Sessão CEEN</p>
+        <p class="quiz-group">Sessão CEEN <span class="quiz-group-separator">·</span> Quero pensar e decidir contigo</p>
         <p class="quiz-note">Estas frases são apenas exemplos possíveis.</p>
         <div class="quiz-pills">
           <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços e quero <br>pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
           <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar, mas não sei<br class="keep"> por onde começar. Quero olhar para isso contigo e perceber o que faz sentido.”</button>
           <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou a forma <br>como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
         </div>
-        <p class="quiz-group">Quero também que possas analisar o que tenho · Ciclo CEEN</p>
+        <p class="quiz-group">Ciclo CEEN <span class="quiz-group-separator">·</span> Quero também que possas analisar o que tenho</p>
         <p class="quiz-note">Estas frases são apenas exemplos possíveis.</p>
         <div class="quiz-pills">
           <button type="button" data-r="ciclo">“O meu trabalho evoluiu e prefiro que analises os meus <br>materiais para perceber o que já não reflete o que faço hoje.”</button>
