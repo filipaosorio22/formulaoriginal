@@ -1065,6 +1065,7 @@
 </section>
 
 <style>
+#sonho-previa{padding-bottom:0;} #sonho-ia{padding-top:24px;}
 #sonho-previa .bub-wrap{display:flex;flex-direction:column;gap:12px;margin:2rem 0 0;}
 #sonho-previa .bub{position:relative;display:flex;align-items:baseline;gap:12px;width:fit-content;max-width:100%;padding:8px 22px 8px 16px;border-radius:10px;box-shadow:0 3px 10px rgba(80,50,30,.07);white-space:nowrap;}
 #sonho-previa .bub.l{align-self:flex-start;} #sonho-previa .bub.r{align-self:flex-end;}
@@ -1074,7 +1075,9 @@
 #sonho-previa .bub-ck{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;border:1px solid var(--gold-deep);background:var(--cream);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
 #sonho-previa .bub-ck:hover{transform:scale(1.15);}
 #sonho-previa .bub-ck[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);}
-#sonho-previa .bub-ck[aria-pressed="true"]::after{content:"✓";color:#fff;font-size:12px;line-height:1;font-weight:700;}
+#sonho-previa .bub-ck::after{content:"×";color:var(--gold-deep);font-size:14px;line-height:1;}
+#sonho-previa .bub-ck[aria-pressed="true"]::after{content:"×";color:#fff;font-size:14px;line-height:1;font-weight:700;}
+#sonho-previa .bub-me2{align-self:center;margin-top:-4px;text-align:center;font-family:'Spectral',Georgia,serif;font-style:italic;font-size:20px;color:var(--wine);}
 #sonho-previa .bub-me{align-self:center;margin-top:10px;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:var(--wine);}
 #sonho-previa .bub-hint{font-size:13px;color:var(--ink-soft);margin:1rem 0 0;font-style:italic;}
 #sonho-ia .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:2rem 0 0;position:relative;}
@@ -1100,44 +1103,35 @@
 <section id="sonho-previa">
   <div class="wrap">
     <h2 class="section-title">Talvez te tenham dito que tinhas de…</h2>
-    <p class="t-sm">Quem trabalha por conta própria ouve muita coisa sobre o que “tem” de fazer.<br>Talvez reconheças algumas destas frases:</p>
+    <p class="t-sm">Talvez reconheças algumas destas frases:</p>
     <div class="bub-wrap">
-<div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">📱 num reel</span><p>Tens de publicar todos os dias, senão o algoritmo <span style="white-space:nowrap">esquece-se</span> de ti.</p></div>
-<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🎬 numa mentoria</span><p>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</p></div>
-<div class="bub l brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🎙️ num podcast</span><p>Uma agenda cheia é sinal de sucesso.</p></div>
-<div class="bub r sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🚀 num lançamento</span><p>Tens de ter um infoproduto para ganhares sem trocar tempo por dinheiro.</p></div>
-<div class="bub l ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🤝 numa conversa</span><p>Esquece os produtos: o que funciona mesmo são as sessões.</p></div>
-<div class="bub r brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">💬 num grupo</span><p>Tens de estar em todas as redes e responder a tudo, a toda a hora.</p></div>
-<div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">📸 num workshop</span><p>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</p></div>
-<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🧱 num conselho</span><p>Se não tens equipa, vais ter de fazer tudo sozinha/o.</p></div>
+<div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">📱 num reel</span><p>Tens de publicar todos os dias, senão o algoritmo <span style="white-space:nowrap">esquece-se</span> de ti.</p></div>
+<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🎬 numa mentoria</span><p>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</p></div>
+<div class="bub l brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🎙️ num podcast</span><p>Uma agenda cheia é sinal de sucesso.</p></div>
+<div class="bub r sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🎓 numa mentoria</span><p>Lança um curso em 30 dias e passa a ganhar enquanto dormes.</p></div>
+<div class="bub l ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🤝 numa conversa</span><p>Esquece os produtos: o que funciona mesmo são as sessões.</p></div>
+<div class="bub r brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">💬 num grupo</span><p>Tens de estar em todas as redes e responder a tudo, a toda a hora.</p></div>
+<div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">📸 num workshop</span><p>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</p></div>
+<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Marcar frase que já ouvi"></button><span class="bub-from">🧱 num conselho</span><p>Sem equipa, ficas com tudo nas tuas costas.</p></div>
       <div class="bub-me">…e tu, o que querias mesmo fazer?</div>
+      <div class="bub-me2">E se, para ti, pudesse ser diferente?</div>
     </div>
-    <p class="bub-hint">Podes assinalar no canto as frases que já ouviste.</p>
-    <p class="t-sm" style="margin-top:2rem;">Podes ter seguido boa parte disto, até com resultados. E, ainda assim, sentir que o negócio ficou maior do que tu, cheio de tarefas e mais difícil de sustentar do que parecia.</p>
-    <p class="t-sm" style="margin-top:1rem;"><strong>O melhor é o que é o melhor para ti!</strong></p>
-  </div>
-</section>
-
-<section class="pause pause-b" style="padding:0 0 26px;margin-top:-80px;">
-  <div class="wrap-wide">
-    <p class="pause-quote two">E se, para ti, pudesse ser diferente?</p>
   </div>
 </section>
 
 <section id="sonho-ia">
   <div class="wrap">
-    <h2 class="section-title">Quando o que é teu ganha forma</h2>
-    <p class="t-sm">Quando o negócio e a mensagem estão alinhados com quem és, deixa de fazer sentido gastar energia a repeti-los. O que está alinhado contigo pode ganhar forma através de <strong>automatizações</strong>: a tua mensagem a chegar às pessoas certas, no momento certo, mesmo quando não estás a trabalhar, e tu a focares-te no essencial.</p>
+    <h2 class="section-title">Quando o marketing segue a tua energia</h2>
+    <p class="t-sm">Não tem de ser assim. O marketing que se sustenta não nasce de copiar o que resulta nos outros, nasce do que está <strong>alinhado contigo</strong>: com quem és, com a energia que tens e com a vida que queres ter.</p>
     <div class="callout grayD" style="margin:1.8rem 0 0;"><div class="ci">🪞</div><div class="ctext">
-      <p class="t-xs"><strong>A parte que é difícil fazer sozinha/o.</strong> Na CEEN fazemos o trabalho de te permitires questionar e perceber o que queres realmente para ti. É a partir daí que se avança para a estratégia, porque sem essa parte nenhuma estratégia resulta. Percebi-o ao acompanhar centenas de mulheres em mentorias.</p>
+      <p class="t-xs">Já vi centenas de mulheres, nos seus negócios, a <strong>forçar uma estratégia</strong>: a copiar e a seguir o que mentores lhes diziam para fazer, sem terem em conta a pessoa que são, o que querem para a sua vida e a energia que têm. Sem essa parte, nenhuma estratégia se sustenta. <strong>Na CEEN fazemos o trabalho que é difícil de fazer sem apoio:</strong> permitires-te questionar e perceber o que queres realmente para ti. É a partir daí que se avança.</p>
     </div></div>
+    <p class="t-sm" style="margin-top:1.8rem;">E é a partir desse lugar alinhado que podes aprender a criar <strong>automatizações</strong> que partilham a tua mensagem por ti, mesmo quando não estás a trabalhar, para te focares no essencial.</p>
     <div class="flow">
       <div class="fl"><div class="n">1</div><h3>Percebes o que queres</h3><p>Questionas-te com apoio e ficas com clareza sobre o que queres para ti, para o que ofereces e para como queres trabalhar.</p></div>
       <div class="fl"><div class="n">2</div><h3>A estratégia ganha forma</h3><p>A tua mensagem passa para formatos que se repetem sem ti: emails, respostas, conteúdos e percursos, com o apoio de ferramentas como a IA.</p></div>
       <div class="fl"><div class="n">3</div><h3>Focas-te no essencial</h3><p>O teu tempo e a tua energia ficam para o que só tu fazes: sessões, criação, vida.</p></div>
     </div>
-    <div class="ia-close"><p>Menos esforço a parecer. Mais energia a ser.<br>É isso que muda quando o negócio é desenhado à tua medida.</p></div>
-    <p class="t-sm" style="margin-top:1.8rem;">Na CEEN, podemos explorar o que faria sentido <strong>no teu negócio</strong>, e não num modelo igual ao de toda a gente.</p>
   </div>
 </section>
 <script>
