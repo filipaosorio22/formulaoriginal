@@ -1318,7 +1318,7 @@
         <p style="margin-bottom:1.2rem;">To choose the day here, we need to load the Cal.com calendar, which uses its own cookies.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); aceitarEAbrirCalendly();">Accept and continue</a>
       </div>
-      <div id="bkSubstack" class="bk-ss" style="display:none"><p>Thank you, your date is booked! As you asked, there is just one step left to receive Filipa’s writing on Substack:</p><a class="bk-ss-btn" id="bkSubstackLink" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack</a></div>
+      <div id="bkSubstack" class="bk-ss" style="display:none"><p>Thank you, your date is booked! To complete your subscription, there is just one step left to receive the writing on Substack. You are so welcome here:</p><a class="bk-ss-btn" id="bkSubstackLink" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack</a></div>
       <div id="calendlyWidget" style="min-width:280px; height:650px;"></div>
     </div>
   </div>
@@ -1387,7 +1387,6 @@
     if (BK.email) c.email = BK.email;
     // respostas já dadas no formulário do site, preenchidas no Cal.com
     if (BK.tel) c.attendeePhoneNumber = BK.tel;
-    if (BK.contexto) c['mais-info'] = BK.contexto.slice(0, 1000);
     if (BK.opcao) c.Opcao = BK.opcao;
     c.idioma = document.documentElement.lang === 'en' ? 'Inglês' : 'Português';
     return c;
