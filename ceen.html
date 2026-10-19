@@ -54,7 +54,7 @@
   html[data-size="compact"] .size-btn .pl { display:inline; }
   html[data-size="compact"] .size-btn .mi { display:none; }
   .size-btn:hover { background:rgba(201,168,108,0.18); }
-  @media (min-width:641px){ body { zoom:1.11; } html[data-size="compact"] body { zoom:1; } }
+  
   .nav-wa { display:none; width:30px; height:30px; border-radius:50%; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.5); align-items:center; justify-content:center; flex-shrink:0; }
   .nav-wa svg { width:15px; height:15px; }
   br.mb { display:none; }
@@ -886,6 +886,40 @@
   html[data-theme="dark"] .popup.popup-conv .popup-conv-msg { color:#f0cdd3; }
   .popup.popup-conv .popup-btn { text-transform:none !important; letter-spacing:.01em !important; font-size:13px !important; padding:.55rem .8rem !important; }
   @media (max-width:600px){ .popup.popup-conv { width:min(252px,calc(100vw - 2rem)) !important; } }
+
+  /* ronda 40: tamanhos mais uniformes e site mais reduzido */
+  @media (min-width:641px){ body { zoom:.94 !important; } html[data-size="compact"] body { zoom:.84 !important; } }
+  section p.t-sm, section p.t-xs, section .ctext p, section .fold-body p, section .two-col p, section .callout p, .lead.hlbox, section ul.plain li, section p.effort-box { font-size:16px !important; line-height:1.7; }
+  .lead.hlbox { font-size:16.5px !important; }
+  p.t-sm, p.t-xs { font-size:16px !important; }
+  .fpar { font-size:15.5px !important; }
+  section ul.fmt-ul li, .fmt-card li, .fmt-card .fmt-l, .fmt-l { font-size:15.5px !important; }
+  .fmt-price { font-size:30px !important; }
+  h2.section-title { font-size:28px !important; }
+  summary span[style*="Cormorant"] { font-size:23px !important; }
+  .quote-block p { font-size:20px !important; line-height:1.45; }
+  .quote-block.oneline p, p.q1 { font-size:20px !important; }
+  p.flipall, p.fold-cta, p.jump-row-box, .conv-card > p:last-child, p.aud-lead { font-size:16.5px !important; }
+  p.callout-label { font-size:15.5px !important; }
+  .pause-attrib { font-size:15px !important; }
+  .pause-quote.big1 { font-size:28px !important; } .pause-quote.two, .pause-quote.nobreak { font-size:24px !important; }
+  /* primeira caixa: largura e espaço iguais aos textos abaixo */
+  .ceen-option-a { padding-top:3.8rem !important; }
+  .ceen-option-a .wrap { max-width:800px !important; }
+  .ceen-option-a h1.ceen-headline { font-size:clamp(22px,2.2vw,25px) !important; line-height:1.12 !important; margin-bottom:16px !important; text-wrap:initial !important; }
+  .ceen-option-a .intro-box .ctext p, .ceen-option-a .intro-box .ctext p.intro-lead strong { font-size:15.5px !important; line-height:1.7 !important; }
+  .ceen-option-a .intro-box { gap:20px !important; padding:clamp(14px,2vw,24px) !important; }
+  .ceen-option-a .foto-abre { min-height:300px !important; }
+    .fmt-card p.fmt-price, .fmt .fmt-card .fmt-price { font-size:30px !important; }
+  .quote-block p.attrib, p.attrib { font-size:15px !important; }
+/* popups mais pequenos */
+  .popup.popup-conv { width:200px !important; padding:.75rem .75rem .7rem !important; }
+  .popup.popup-conv .popup-conv-msg { font-size:12.5px !important; margin-bottom:.55rem !important; }
+  .popup.popup-conv .popup-btn { font-size:11.5px !important; padding:.42rem .6rem !important; }
+  .popup:not(.popup-conv) { width:215px !important; padding:.65rem .75rem .7rem !important; }
+  .popup:not(.popup-conv) .popup-eyebrow { font-size:11px !important; line-height:1.4 !important; margin-bottom:.5rem !important; }
+  .popup:not(.popup-conv) .popup-btn { font-size:10.5px !important; padding:8px 12px !important; }
+  @media (max-width:600px){ .popup.popup-conv, .popup:not(.popup-conv) { width:min(215px,calc(100vw - 2rem)) !important; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -926,7 +960,7 @@
       <figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure>
       <div class="ctext">
         <div class="ceen-brand">CEEN · FILIPA OSÓRIO</div>
-        <h1 class="ceen-headline">Aproxima o teu negócio de<br>quem és e da tua fase de vida atual,<br>permitindo que ele evolua contigo</h1>
+        <h1 class="ceen-headline">Aproxima o teu negócio de quem és<br>e da tua fase de vida atual,<br>permitindo que ele evolua contigo</h1>
         <p class="intro-lead"><strong>O teu negócio não existe separado de ti.</strong></p>
         <p class="intro-emphasis">A forma como trabalhas, as decisões que tomas e aquilo que queres mudar estão ligados à pessoa que és e à vida que desejas construir.</p>
         <p>A CEEN é um <strong>trabalho individual de análise e orientação</strong> para quem quer olhar para o seu negócio e encontrar uma direção que tenha em conta a realidade do negócio e a vida que quer construir.</p>
@@ -1191,7 +1225,7 @@
       <div class="fold-wrap"><div class="fold-body">
         <ul class="plain small">
           <li>Procuras alguém que decida por ti ou garanta determinados resultados;</li>
-          <li>Precisas de consultoria técnica especializada em gestão, finanças, marketing ou operação;</li>
+          <li>Precisas de consultoria técnica especializada em finanças, marketing ou operação;</li>
           <li>Ainda não existe matéria real do negócio ou marca que possamos observar;</li>
           <li>Procuras implementação ou acompanhamento incluído neste investimento.</li>
         </ul>
@@ -1236,7 +1270,7 @@
       </div>
       <div class="fmt-opt">
         <h3 class="fmt-t">Ciclo CEEN<br>Acrescentar análise aprofundada</h3>
-        <p class="t-sm">Para quando procuras um trabalho com tempo de análise entre sessões e uma proposta personalizada, fundamentada nos materiais acordados.</p>
+        <p class="t-sm">Para quando procuras um trabalho com análise entre sessões e uma proposta personalizada, fundamentada nos materiais acordados.</p>
         <p class="fmt-if">Pode fazer sentido se:</p>
         <ul class="fmt-ul">
           <li>O teu trabalho evoluiu e queres perceber o que já não reflete aquilo que fazes hoje.</li>

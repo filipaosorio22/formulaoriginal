@@ -45,7 +45,7 @@
   html[data-size="compact"] .size-btn .pl { display:inline; }
   html[data-size="compact"] .size-btn .mi { display:none; }
   .size-btn:hover { background:rgba(201,168,108,0.18); }
-  @media (min-width:641px){ body { zoom:1.11; } html[data-size="compact"] body { zoom:1; } }
+  
   .nav-wa { display:none; width:30px; height:30px; border-radius:50%; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.5); align-items:center; justify-content:center; flex-shrink:0; }
   .nav-wa svg { width:15px; height:15px; }
   br.mb { display:none; }
@@ -703,6 +703,25 @@
   .fmt-ul li { margin:0 0 .45rem; }
   .fmt-meta { font-family:'Lora',serif; font-size:15px; font-style:italic; color:var(--ink-soft); margin:0 0 1.1rem; }
   .fmt-opt .cta-btn { margin-top:auto; align-self:flex-start; }
+
+  /* ronda 40: tamanhos mais uniformes e site mais reduzido */
+  @media (min-width:641px){ body { zoom:.94 !important; } html[data-size="compact"] body { zoom:.84 !important; } }
+  section p.t-sm, section p.t-xs, section .ctext p, section .fold-body p, section .two-col p, section .callout p, .lead.hlbox, section ul.plain li, section p.effort-box { font-size:16px !important; line-height:1.7; }
+  .lead.hlbox { font-size:16.5px !important; }
+  p.t-sm, p.t-xs { font-size:16px !important; }
+  .fpar { font-size:15.5px !important; }
+  section ul.fmt-ul li, .fmt-card li, .fmt-card .fmt-l, .fmt-l { font-size:15.5px !important; }
+  .fmt-price { font-size:30px !important; }
+  h2.section-title { font-size:28px !important; }
+  summary span[style*="Cormorant"] { font-size:23px !important; }
+  .quote-block p { font-size:20px !important; line-height:1.45; }
+  .quote-block.oneline p, p.q1 { font-size:20px !important; }
+  p.flipall, p.fold-cta, p.jump-row-box, .conv-card > p:last-child, p.aud-lead { font-size:16.5px !important; }
+  p.callout-label { font-size:15.5px !important; }
+  .pause-attrib { font-size:15px !important; }
+  .pause-quote.big1 { font-size:28px !important; } .pause-quote.two, .pause-quote.nobreak { font-size:24px !important; }
+    .fmt-card p.fmt-price, .fmt .fmt-card .fmt-price { font-size:30px !important; }
+  .quote-block p.attrib, p.attrib { font-size:15px !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1000,7 +1019,7 @@
       <div class="fold-wrap"><div class="fold-body">
         <ul class="plain small">
           <li>You are looking for someone to decide for you or to guarantee specific results;</li>
-          <li>You need specialized technical consultancy in management, finance, marketing or operations;</li>
+          <li>You need specialized technical consultancy in finance, marketing or operations;</li>
           <li>There is not yet any real business or brand material for us to explore;</li>
           <li>You are looking for implementation or ongoing support included in this investment.</li>
         </ul>
