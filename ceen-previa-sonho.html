@@ -1086,6 +1086,17 @@
 #sonho-ia .fl h3{margin:0 0 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;color:var(--wine);font-weight:600;line-height:1.2;}
 #sonho-ia .fl p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft);}
 #sonho-ia .fl:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--gold-deep);background:var(--cream);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;z-index:2;}
+#sonho-ia .ai{margin:2.4rem 0 0;padding:30px 28px;border-radius:24px;background:linear-gradient(135deg,#7a2535,#a0475a);color:#fff;position:relative;overflow:hidden;}
+#sonho-ia .ai::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,160,.35),transparent 70%);}
+#sonho-ia .ai .tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:99px;margin-bottom:12px;}
+#sonho-ia .ai h3{margin:0 0 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.15;font-weight:600;color:#fff;}
+#sonho-ia .ai p{margin:0 0 14px;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.92);position:relative;}
+#sonho-ia .ai ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;}
+#sonho-ia .ai li{background:rgba(255,255,255,.14);border-radius:12px;padding:10px 14px;font-size:14.5px;line-height:1.4;color:#fff;}
+#sonho-ia .gain{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.6rem 0 0;}
+#sonho-ia .gain div{display:flex;gap:12px;align-items:flex-start;background:var(--gray);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;line-height:1.5;color:var(--ink);}
+#sonho-ia .gain div b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--wine);font-weight:600;line-height:1.2;margin-bottom:2px;}
+#sonho-ia .gain span.g{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--sessao),var(--ciclo));display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--wine);font-weight:700;}
 #sonho-ia .ia-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:1.8rem 0 0;}
 #sonho-ia .ia-card{background:var(--gray);border:1px solid var(--line);border-radius:20px;padding:22px 22px 20px;}
 #sonho-ia .ia-ico{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;background:linear-gradient(135deg,var(--sessao),var(--ciclo));margin-bottom:12px;}
@@ -1096,7 +1107,7 @@
 #sonho-ia .ia-after{border-top:1px dashed var(--line);padding-top:10px;color:var(--ink) !important;} #sonho-ia .ia-after span{color:var(--wine);}
 #sonho-ia .ia-close{margin:2.2rem 0 0;padding:26px 24px;border-radius:22px;text-align:center;background:linear-gradient(135deg,var(--sessao),var(--ciclo));}
 #sonho-ia .ia-close p{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.3;color:var(--ink);}
-@media (max-width:700px){#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{flex-direction:column;gap:2px;white-space:normal;align-self:stretch;width:auto;margin-right:6px;} #sonho-ia .flow{grid-template-columns:1fr;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:16px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
+@media (max-width:700px){#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{flex-direction:column;gap:2px;white-space:normal;align-self:stretch;width:auto;margin-right:6px;} #sonho-ia .flow{grid-template-columns:1fr;} #sonho-ia .ai ul,#sonho-ia .gain{grid-template-columns:1fr;} #sonho-ia .ai h3{font-size:26px;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:16px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
 </style>
 <hr class="div">
 
@@ -1131,6 +1142,26 @@
       <div class="fl"><div class="n">1</div><h3>Percebes o que queres</h3><p>Questionas-te com apoio e ficas com clareza sobre o que queres para ti, para o que ofereces e para como queres trabalhar.</p></div>
       <div class="fl"><div class="n">2</div><h3>A estratégia ganha forma</h3><p>A tua mensagem passa para formatos que se repetem sem ti: emails, respostas, conteúdos e percursos, com o apoio de ferramentas como a IA.</p></div>
       <div class="fl"><div class="n">3</div><h3>Focas-te no essencial</h3><p>O teu tempo e a tua energia ficam para o que só tu fazes: sessões, criação, vida.</p></div>
+    </div>
+    <div class="ai">
+      <span class="tag">✨ Automatizações com IA</span>
+      <h3>A tua mensagem a trabalhar por ti, mesmo quando descansas</h3>
+      <p>Depois de saberes o que queres dizer e oferecer, a inteligência artificial ajuda a pôr isso a funcionar sem te prender ao computador. Podes aprender a criar, ao teu ritmo e no teu tom:</p>
+      <ul>
+        <li>✉️ Emails de boas-vindas e acompanhamento que saem sozinhos</li>
+        <li>💬 Respostas às perguntas que mais te fazem</li>
+        <li>🎙️ Uma ideia tua transformada em vários conteúdos</li>
+        <li>🗓️ Marcações, lembretes e propostas já preparadas</li>
+      </ul>
+    </div>
+    <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;color:var(--wine);font-weight:600;margin:2.6rem 0 0;">O que podes ganhar com a CEEN</h3>
+    <div class="gain">
+      <div><span class="g">1</span><span><b>Clareza sobre o que queres</b>Deixas de decidir às cegas e passas a saber para onde vais e porquê.</span></div>
+      <div><span class="g">2</span><span><b>Uma oferta e preços que te representam</b>O que ofereces e quanto cobras passam a refletir quem és hoje.</span></div>
+      <div><span class="g">3</span><span><b>Uma estratégia que consegues sustentar</b>Feita à tua medida, sem copiar o que funciona para os outros.</span></div>
+      <div><span class="g">4</span><span><b>Tempo e energia de volta</b>Com automatizações e IA, menos tarefas repetitivas e mais espaço para o essencial.</span></div>
+      <div><span class="g">5</span><span><b>Confiança para decidir</b>Escolhes com mais segurança, sem pressões nem fórmulas alheias.</span></div>
+      <div><span class="g">6</span><span><b>Uma mensagem que chega às pessoas certas</b>Comunicas com autenticidade e atrais quem se reconhece em ti.</span></div>
     </div>
   </div>
 </section>
