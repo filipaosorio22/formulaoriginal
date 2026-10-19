@@ -4,7 +4,7 @@
 <script>/* visitas da Filipa: ?eu=filipa desliga o Analytics neste browser, ?eu=visita volta a ligar */try{var q=location.search;if(/[?&]eu=filipa\b/.test(q))localStorage.setItem("fo_owner","1");if(/[?&]eu=visita\b/.test(q))localStorage.removeItem("fo_owner");if(localStorage.getItem("fo_owner")==="1")window["ga-disable-G-5CX792T8H9"]=true;}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>CEEN • Desenvolvimento profissional</title>
+<title>CEEN · Desenvolvimento profissional</title>
 <meta name="description" content="Mentoria e consultoria de negócio online para quem empreende e para pequenos negócios: clareza, estratégia e energia para alinhares o teu negócio com quem és e com a tua fase de vida.">
 <link rel="canonical" href="https://filipaosorio.com/ceen.html">
 <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://filipaosorio.com/ceen.html">
 <meta property="og:image" content="https://filipaosorio.com/partilha-ceen.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "CEEN · Clareza, Estratégia e Energia no Negócio", "serviceType": "Mentoria de negócio", "provider": {"@type": "Person", "name": "Filipa Osório", "url": "https://filipaosorio.com/"}, "areaServed": "PT", "availableLanguage": ["pt-PT", "en"], "description": "Mentoria e consultoria de negócio online para quem empreende e para pequenos negócios.", "offers": [{"@type": "Offer", "name": "Sessão CEEN", "price": "269", "priceCurrency": "EUR"}, {"@type": "Offer", "name": "Ciclo CEEN", "price": "800", "priceCurrency": "EUR"}]}</script>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
@@ -846,6 +846,29 @@
   }
   html[data-theme="dark"] .popup.popup-conv .popup-btn { background:linear-gradient(120deg,#4a3532,#4e3a40,#4f4128,#4a3532) !important; background-size:300% 300% !important; color:#f2d3d9 !important; border-color:rgba(228,167,179,.5) !important; box-shadow:0 10px 26px rgba(0,0,0,.4) !important; }
   html[data-theme="dark"] .popup.popup-conv .popup-close { background:#2a2520 !important; color:#e4a7b3; border-color:rgba(228,167,179,.45) !important; }
+
+  /* ronda 38 */
+  .fmt-pick { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:1.6rem 0 0; }
+  @media (max-width:760px){ .fmt-pick { grid-template-columns:1fr; } }
+  .fmt-opt { background:var(--gray); border:1px solid var(--line); border-radius:16px; padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; text-align:left; }
+  .fmt-t { font-family:'Lora',serif; font-size:17px; font-weight:600; line-height:1.4; color:var(--wine); margin:0 0 .8rem; }
+  .fmt-opt .t-sm { margin:0 0 .9rem; text-align:left; }
+  .fmt-if { font-family:'Lora',serif; font-size:15px; font-weight:600; margin:.2rem 0 .4rem; color:var(--gold-deep); }
+  .fmt-ul { margin:0 0 1rem; padding-left:1.2rem; font-family:'Lora',serif; font-size:15.5px; line-height:1.6; }
+  .fmt-ul li { margin:0 0 .45rem; }
+  .fmt-meta { font-family:'Lora',serif; font-size:15px; font-style:italic; color:var(--ink-soft); margin:0 0 1.1rem; }
+  .fmt-opt .cta-btn { margin-top:auto; align-self:flex-start; }
+  /* primeira imagem: mini zoom */
+  .ceen-option-a .foto-abre img { transform:scale(1.07) !important; transform-origin:50% 40% !important; }
+  /* vídeo da comunidade acaba alinhado com o texto */
+  .conv-vid { position:relative !important; min-height:0 !important; }
+  .conv-vid video { position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; object-fit:cover !important; object-position:50% 20% !important; }
+  @media (max-width:760px){ .conv-vid { height:280px !important; } }
+  /* convite das comunidades: mensagem em cima, botão mais pequeno */
+  .popup.popup-conv { width:236px !important; padding:0 !important; }
+  .popup.popup-conv .popup-conv-img { display:block !important; width:100% !important; height:auto !important; margin:0 0 .55rem !important; border-radius:12px !important; box-shadow:0 6px 18px rgba(50,30,24,.2) !important; }
+  .popup.popup-conv .popup-btn { font-size:12.5px !important; line-height:1.4 !important; padding:.5rem .9rem !important; border-radius:12px !important; letter-spacing:.01em !important; }
+  @media (max-width:600px){ .popup.popup-conv { width:min(236px,calc(100vw - 2rem)) !important; left:auto !important; right:1rem !important; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1181,36 +1204,35 @@
 <section style="padding-top:3.8rem;">
   <div class="wrap-wide">
     <h2 class="section-title">O que te pede o teu momento presente?</h2>
-    <p class="t-sm" style="text-align:left;">Na Sessão, trabalhamos uma questão central durante o encontro, com perguntas, análise e recomendações no momento, e recebes um resumo curto no Notion. No Ciclo, trabalhamos uma questão central em dois encontros, com análise dos materiais acordados e uma proposta fundamentada preparada por mim entre eles.</p>
+    <p class="t-sm" style="text-align:left;">A CEEN tem dois formatos, consoante o tipo de trabalho que procuras.</p>
 
-    
-
-    <div class="quiz-box">
-      <div id="quizChips">
-        <p class="quiz-group">Quero pensar e decidir contigo · Sessão CEEN</p>
-        <p class="quiz-note">Estas frases são apenas exemplos possíveis.</p>
-        <div class="quiz-pills">
-          <button type="button" data-r="sessao">“Tenho decisões em aberto sobre a oferta ou os preços e quero <br>pensá-las contigo, com um olhar externo, para sair com clareza.”</button>
-          <button type="button" data-r="sessao">“Sinto que algo no meu negócio precisa de mudar, mas não sei<br class="keep"> por onde começar. Quero olhar para isso contigo e perceber o que faz sentido.”</button>
-          <button type="button" data-r="sessao">“Já sei o que quero rever, o formato do serviço, o preço ou a forma <br>como apresento o que faço, e quero trabalhá-lo contigo agora.”</button>
-        </div>
-        <p class="quiz-group">Quero também que possas analisar o que tenho · Ciclo CEEN</p>
-        <p class="quiz-note">Estas frases são apenas exemplos possíveis.</p>
-        <div class="quiz-pills">
-          <button type="button" data-r="ciclo">“O meu trabalho evoluiu e prefiro que analises os meus <br>materiais para perceber o que já não reflete o que faço hoje.”</button>
-          <button type="button" data-r="ciclo">“Preciso de tempo e de um olhar atento sobre os meus materiais, como a página <br>de vendas, os preços ou as ofertas, e de uma proposta organizada a que possa voltar.”</button>
-          <button type="button" data-r="ciclo">“Prefiro a opção em que dediques tempo a analisar os materiais relacionados <br>com esta questão e prepares uma proposta que possamos explorar num segundo encontro.”</button>
-        </div>
-      </div>
-      <div class="quiz-answer" id="quizAnswerSessao">
+    <div class="fmt-pick">
+      <div class="fmt-opt">
+        <h3 class="fmt-t">Sessão CEEN · Quero pensar e decidir contigo</h3>
+        <p class="t-sm">Para quando tens uma questão central que queres explorar comigo, com perguntas, análise e recomendações trabalhadas durante o encontro.</p>
+        <p class="fmt-if">Pode fazer sentido se:</p>
+        <ul class="fmt-ul">
+          <li>Tens decisões em aberto sobre a oferta, os preços ou a comunicação.</li>
+          <li>Sentes que algo no negócio precisa de mudar, mas ainda não sabes por onde começar.</li>
+          <li>Já sabes o que queres rever e queres explorar possibilidades e próximos passos comigo.</li>
+        </ul>
+        <p class="fmt-meta">Uma sessão individual online, até duas horas, com resumo e pontos de ação no Notion.</p>
         <a class="cta-btn" href="#como-funciona-sessao" onclick="pickDepth('como-funciona-sessao'); return false;">Ver como funciona a Sessão CEEN</a>
       </div>
-      <div class="quiz-answer" id="quizAnswerCiclo">
+      <div class="fmt-opt">
+        <h3 class="fmt-t">Ciclo CEEN · Quero também que analises o que tenho</h3>
+        <p class="t-sm">Para quando procuras um trabalho com tempo de análise entre dois encontros e uma proposta personalizada, fundamentada nos materiais acordados.</p>
+        <p class="fmt-if">Pode fazer sentido se:</p>
+        <ul class="fmt-ul">
+          <li>O teu trabalho evoluiu e queres perceber o que já não reflete aquilo que fazes hoje.</li>
+          <li>Queres que eu analise materiais como a página de vendas, as ofertas, os preços ou a comunicação.</li>
+          <li>Preferes receber uma proposta organizada, que possamos explorar e discutir num segundo encontro.</li>
+        </ul>
         <a class="cta-btn" href="#como-funciona-ciclo" onclick="pickDepth('como-funciona-ciclo'); return false;">Ver como funciona o Ciclo CEEN</a>
       </div>
     </div>
 
-    <p class="lead softbr" style="font-size:16.5px; margin-top:2.8rem; text-align:left;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo CEEN. <br>Podes marcar o Ciclo diretamente se procuras análise e uma proposta personalizada.</p>
+    <p class="lead" style="font-size:16.5px; margin-top:2.4rem; text-align:left;">Não precisas de começar por uma Sessão CEEN para chegares ao Ciclo. Podes escolher diretamente o formato que corresponde ao trabalho de que precisas.</p>
   </div>
 </section>
 
@@ -1543,6 +1565,7 @@
 
 <div class="popup popup-conv" id="popupConv" aria-label="Convite para comunidades">
   <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Fechar">×</button>
+  <img class="popup-conv-img" src="feedback-comunidade-fenomenal.jpg" width="620" height="139" alt="Mensagem de uma cliente: «Foi fenomenal. Obrigada pela tua partilha e entrega incrível»">
   <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">VAMOS COCRIAR NA TUA<br>COMUNIDADE OU EMPRESA?</a>
 </div>
 <div class="popup" id="popup">

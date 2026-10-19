@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>CEEN · Clarity, Strategy and Energy in Business | Filipa Osório</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
@@ -691,6 +691,17 @@
   @media (min-width:761px){ .callout.intro-box .foto-abre { flex:0 0 312px; width:312px; margin-left:-1.8rem; margin-right:-0.6rem; } }
   .fmt-card p.fmt-n { text-wrap:pretty; }
   @media (min-width:601px){ #popup { width:232px !important; max-width:232px !important; } }
+  /* ronda 38 */
+  .fmt-pick { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:1.6rem 0 0; }
+  @media (max-width:760px){ .fmt-pick { grid-template-columns:1fr; } }
+  .fmt-opt { background:var(--gray); border:1px solid var(--line); border-radius:16px; padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; text-align:left; }
+  .fmt-t { font-family:'Lora',serif; font-size:17px; font-weight:600; line-height:1.4; color:var(--wine); margin:0 0 .8rem; }
+  .fmt-opt .t-sm { margin:0 0 .9rem; text-align:left; }
+  .fmt-if { font-family:'Lora',serif; font-size:15px; font-weight:600; margin:.2rem 0 .4rem; color:var(--gold-deep); }
+  .fmt-ul { margin:0 0 1rem; padding-left:1.2rem; font-family:'Lora',serif; font-size:15.5px; line-height:1.6; }
+  .fmt-ul li { margin:0 0 .45rem; }
+  .fmt-meta { font-family:'Lora',serif; font-size:15px; font-style:italic; color:var(--ink-soft); margin:0 0 1.1rem; }
+  .fmt-opt .cta-btn { margin-top:auto; align-self:flex-start; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1018,36 +1029,35 @@
 <section style="padding-top:3.8rem;">
   <div class="wrap-wide">
     <h2 class="section-title">What does this moment in your life call for?</h2>
-    <p class="t-sm" style="text-align:left;">In the Session, we work on one central question during our meeting, through questions, analysis and recommendations developed together during the session. Afterwards, you receive a short summary in Notion. In the Cycle, we work on one central question across two meetings, with analysis of the agreed materials and a well-reasoned proposal prepared by me between them.</p>
+    <p class="t-sm" style="text-align:left;">CEEN comes in two formats, depending on the kind of work you are looking for.</p>
 
-    
-
-    <div class="quiz-box">
-      <div id="quizChips">
-        <p class="quiz-group">I want to think things through and decide with you · CEEN Session</p>
-        <p class="quiz-note">These are just a few possible examples.</p>
-        <div class="quiz-pills">
-          <button type="button" data-r="sessao">“I have some decisions to make about my offerings or prices, and <br>I want to think them through with you, with an outside perspective, so I can leave with clarity.”</button>
-          <button type="button" data-r="sessao">“I feel that something in my business needs to change, but I don’t know where <br>to start. I’d like to look at it with you and understand what makes sense.”</button>
-          <button type="button" data-r="sessao">“I already know what I want to review, the service format, the price <br>or how I present what I do, and I want to work on it with you now.”</button>
-        </div>
-        <p class="quiz-group">I also want you to analyze what I already have · CEEN Cycle</p>
-        <p class="quiz-note">These phrases are just possible examples.</p>
-        <div class="quiz-pills">
-          <button type="button" data-r="ciclo">“My work has evolved, and I would like you to analyze my materials <br>to understand what no longer reflects what I do today.”</button>
-          <button type="button" data-r="ciclo">“I need time and a thoughtful review of my materials, such as my sales <br>page, prices or offerings, and a structured proposal I can return to.”</button>
-          <button type="button" data-r="ciclo">“I’d like you to take time to analyze the materials related to this question <br>and prepare a proposal we can explore together in a second meeting.”</button>
-        </div>
-      </div>
-      <div class="quiz-answer" id="quizAnswerSessao">
+    <div class="fmt-pick">
+      <div class="fmt-opt">
+        <h3 class="fmt-t">CEEN Session · I want to think and decide with you</h3>
+        <p class="t-sm">For when you have a central question you want to explore with me, with questions, analysis and recommendations worked on during the meeting.</p>
+        <p class="fmt-if">It may be right for you if:</p>
+        <ul class="fmt-ul">
+          <li>You have open decisions about your offering, your prices or your communication.</li>
+          <li>You feel something in your business needs to change, but you don’t yet know where to start.</li>
+          <li>You already know what you want to review and want to explore possibilities and next steps with me.</li>
+        </ul>
+        <p class="fmt-meta">A one-to-one online session of up to two hours, with a summary and action points in Notion.</p>
         <a class="cta-btn" href="#como-funciona-sessao" onclick="pickDepth('como-funciona-sessao'); return false;">See how the CEEN Session works</a>
       </div>
-      <div class="quiz-answer" id="quizAnswerCiclo">
+      <div class="fmt-opt">
+        <h3 class="fmt-t">CEEN Cycle · I would also like you to analyze what I have</h3>
+        <p class="t-sm">For when you are looking for work with time for analysis between two meetings and a personalized proposal, grounded in the materials we agree on.</p>
+        <p class="fmt-if">It may be right for you if:</p>
+        <ul class="fmt-ul">
+          <li>Your work has evolved and you want to understand what no longer reflects what you do today.</li>
+          <li>You would like me to analyze materials such as your sales page, your offerings, your prices or your communication.</li>
+          <li>You prefer to receive an organized proposal that we can explore and discuss in a second meeting.</li>
+        </ul>
         <a class="cta-btn" href="#como-funciona-ciclo" onclick="pickDepth('como-funciona-ciclo'); return false;">See how the CEEN Cycle works</a>
       </div>
     </div>
 
-    <p class="lead softbr" style="font-size:16.5px; margin-top:2.8rem; text-align:left;">You do not need to start with a CEEN Session before moving on to the CEEN Cycle. <br>You can book the Cycle directly if you are looking for analysis and a personalized proposal.</p>
+    <p class="lead" style="font-size:16.5px; margin-top:2.4rem; text-align:left;">You do not need to start with a CEEN Session before moving on to the CEEN Cycle. You can choose directly the format that matches the work you need.</p>
   </div>
 </section>
 
