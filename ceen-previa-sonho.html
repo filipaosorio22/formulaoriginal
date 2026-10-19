@@ -1065,19 +1065,17 @@
 </section>
 
 <style>
-#sonho-previa .bub-wrap{display:flex;flex-direction:column;gap:14px;margin:2rem 0 0;}
-#sonho-previa .bub{position:relative;max-width:78%;padding:14px 20px 16px;border-radius:22px;box-shadow:0 6px 16px rgba(80,50,30,.08);}
-#sonho-previa .bub.l{align-self:flex-start;border-bottom-left-radius:6px;transform:rotate(-.7deg);}
-#sonho-previa .bub.r{align-self:flex-end;border-bottom-right-radius:6px;transform:rotate(.7deg);}
+#sonho-previa .bub-wrap{display:flex;flex-direction:column;gap:12px;margin:2rem 0 0;}
+#sonho-previa .bub{position:relative;display:flex;align-items:baseline;gap:12px;width:fit-content;max-width:100%;padding:8px 22px 8px 16px;border-radius:10px;box-shadow:0 3px 10px rgba(80,50,30,.07);white-space:nowrap;}
+#sonho-previa .bub.l{align-self:flex-start;} #sonho-previa .bub.r{align-self:flex-end;}
 #sonho-previa .bub.sessao{background:var(--sessao);} #sonho-previa .bub.ciclo{background:var(--ciclo);} #sonho-previa .bub.brown{background:var(--brown);}
-#sonho-previa .bub-from{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);margin-bottom:4px;}
-#sonho-previa .bub p{margin:0;font-family:'Spectral',Georgia,serif;font-style:italic;font-size:19px;line-height:1.4;color:var(--ink);}
-#sonho-previa .bub-me{align-self:center;margin-top:10px;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:var(--wine);}
-#sonho-previa .bub{max-width:70%;padding-right:50px;}
-#sonho-previa .bub-ck{position:absolute;top:12px;right:14px;width:24px;height:24px;border-radius:50%;border:2px solid var(--gold-deep);background:rgba(255,255,255,.45);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
-#sonho-previa .bub-ck:hover{transform:scale(1.1);}
+#sonho-previa .bub-from{font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);flex:none;}
+#sonho-previa .bub p{margin:0;font-family:'Spectral',Georgia,serif;font-style:italic;font-size:17px;line-height:1.35;color:var(--ink);}
+#sonho-previa .bub-ck{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;border:1px solid var(--gold-deep);background:var(--cream);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
+#sonho-previa .bub-ck:hover{transform:scale(1.15);}
 #sonho-previa .bub-ck[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);}
-#sonho-previa .bub-ck[aria-pressed="true"]::after{content:"✓";color:#fff;font-size:15px;line-height:1;font-weight:700;}
+#sonho-previa .bub-ck[aria-pressed="true"]::after{content:"✓";color:#fff;font-size:12px;line-height:1;font-weight:700;}
+#sonho-previa .bub-me{align-self:center;margin-top:10px;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:var(--wine);}
 #sonho-previa .bub-hint{font-size:13px;color:var(--ink-soft);margin:1rem 0 0;font-style:italic;}
 #sonho-ia .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:2rem 0 0;position:relative;}
 #sonho-ia .fl{background:var(--gray);border:1px solid var(--line);border-radius:20px;padding:22px 20px;position:relative;}
@@ -1095,7 +1093,7 @@
 #sonho-ia .ia-after{border-top:1px dashed var(--line);padding-top:10px;color:var(--ink) !important;} #sonho-ia .ia-after span{color:var(--wine);}
 #sonho-ia .ia-close{margin:2.2rem 0 0;padding:26px 24px;border-radius:22px;text-align:center;background:linear-gradient(135deg,var(--sessao),var(--ciclo));}
 #sonho-ia .ia-close p{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.3;color:var(--ink);}
-@media (max-width:700px){#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{max-width:94%;} #sonho-ia .flow{grid-template-columns:1fr;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:17px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
+@media (max-width:700px){#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{flex-direction:column;gap:2px;white-space:normal;align-self:stretch;width:auto;margin-right:6px;} #sonho-ia .flow{grid-template-columns:1fr;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:16px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
 </style>
 <hr class="div">
 
@@ -1105,9 +1103,9 @@
     <p class="t-sm">Quem trabalha por conta própria ouve muita coisa sobre o que “tem” de fazer.<br>Talvez reconheças algumas destas frases:</p>
     <div class="bub-wrap">
 <div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">📱 num reel</span><p>Tens de publicar todos os dias, senão o algoritmo <span style="white-space:nowrap">esquece-se</span> de ti.</p></div>
-<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🎬 numa mentoria</span><p>Faz vídeos de 30 segundos.<br>Ninguém tem paciência<br>para conteúdos longos.</p></div>
+<div class="bub r ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🎬 numa mentoria</span><p>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</p></div>
 <div class="bub l brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🎙️ num podcast</span><p>Uma agenda cheia é sinal de sucesso.</p></div>
-<div class="bub r sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🚀 num lançamento</span><p>Tens de ter um infoproduto para<br>ganhares sem trocar tempo por dinheiro.</p></div>
+<div class="bub r sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🚀 num lançamento</span><p>Tens de ter um infoproduto para ganhares sem trocar tempo por dinheiro.</p></div>
 <div class="bub l ciclo"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">🤝 numa conversa</span><p>Esquece os produtos: o que funciona mesmo são as sessões.</p></div>
 <div class="bub r brown"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">💬 num grupo</span><p>Tens de estar em todas as redes e responder a tudo, a toda a hora.</p></div>
 <div class="bub l sessao"><button type="button" class="bub-ck" aria-pressed="false" aria-label="Já ouvi esta frase"></button><span class="bub-from">📸 num workshop</span><p>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</p></div>
