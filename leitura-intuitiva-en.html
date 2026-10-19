@@ -1692,14 +1692,7 @@
     gtag('config', 'G-5CX792T8H9');
     window.gtag = gtag;
   };
-  window.__loadCalendly = function(){
-    if (window.__calLoaded) return;
-    window.__calLoaded = true;
-    var s = document.createElement('script');
-    s.src = 'https://assets.calendly.com/assets/external/widget.js';
-    s.async = true;
-    document.body.appendChild(s);
-  };
+  window.__loadCalendly = function(){ /* Calendly já não é usado: as marcações são no Cal.com */ };
   function applyConsent(c){
     if (c.analytics) window.__loadGA();
     if (c.calendly) window.__loadCalendly();
@@ -1928,7 +1921,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), funct
     a.addEventListener('timeupdate', function(){ if (a.duration) { f.style.width = (a.currentTime / a.duration * 100) + '%'; t.textContent = fmt(a.currentTime) + ' / ' + fmt(a.duration); } });
     a.addEventListener('ended', function(){ c.classList.remove('playing'); f.style.width = '0'; t.textContent = fmt(a.duration); });
     b.addEventListener('click', function(){
-      if (a.paused) { var fq = document.getElementById('freqAudio'); if (fq && !fq.paused) { var ft = document.getElementById('freqToggle'); if (ft) ft.click(); else fq.pause(); } a.play(); c.classList.add('playing'); if (typeof gtag === 'function') { gtag('event', 'audio_testemunho', { pagina: 'leitura' }); } }
+      if (a.paused) { var fq = document.getElementById('freqAudio'); if (fq && !fq.paused) { var ft = document.getElementById('freqToggle'); if (ft) ft.click(); else fq.pause(); } a.play(); c.classList.add('playing'); if (typeof gtag === 'function') { gtag('event', 'audio_testemunho', { pagina: location.pathname, idioma: document.documentElement.lang }); } }
       else { a.pause(); c.classList.remove('playing'); }
     });
     bar.addEventListener('click', function(e){ if (a.duration) { var r = bar.getBoundingClientRect(); a.currentTime = (e.clientX - r.left) / r.width * a.duration; } });
@@ -1956,5 +1949,38 @@ Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), funct
 })();
 </script>
 
+<script>
+/* medição de cliques e de secções vistas (só envia se a pessoa aceitou as estatísticas) */
+(function(){
+  try { sessionStorage.setItem('fo_lang', document.documentElement.lang); } catch (e) {}
+  function ev(n, p){ try { if (typeof gtag === 'function') { p = p || {}; p.pagina = location.pathname; p.idioma = document.documentElement.lang; gtag('event', n, p); } } catch (e) {} }
+  function slug(t, n){ return (t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, n); }
+  function secaoDe(el){ var s = el.closest('section'); var h = s && s.querySelector('h2'); return h ? h.textContent.trim().replace(/\s+/g, ' ').slice(0, 60) : ''; }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest && e.target.closest('a, button, summary, [role=button]'); if (!el) return;
+    var lab = (el.getAttribute('aria-label') || el.textContent || '').trim().replace(/\s+/g, ' '); if (!lab) return;
+    var href = el.getAttribute('href') || '';
+    if (href.indexOf('marcar-leitura') > -1) {
+      var u = new URLSearchParams(href.split('?')[1] || '');
+      ev('marcar_leitura_click', { opcao: u.get('oferta') === '1' ? 'oferta' : (u.get('op') || 'leitura') + (u.get('hd') === '1' ? '+hd' : ''), rotulo: lab.slice(0, 80), secao: secaoDe(el) });
+    }
+    var pre = el.tagName === 'SUMMARY' ? 'faq_' : 'clq_';
+    var nome = pre + slug(lab, 30); if (nome.length < 6) return;
+    ev(nome, { rotulo: lab.slice(0, 80), secao: secaoDe(el) });
+  }, true);
+  if ('IntersectionObserver' in window) {
+    var visto = {};
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var h = en.target.querySelector('h2'); var k = slug(h ? h.textContent : en.target.id, 30);
+        if (!k || visto[k]) return; visto[k] = 1; io.unobserve(en.target);
+        ev('sec_' + k, { rotulo: h ? h.textContent.trim().replace(/\s+/g, ' ').slice(0, 80) : k });
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('section').forEach(function(s){ if (s.querySelector('h2')) io.observe(s); });
+  }
+})();
+</script>
 </body>
 </html>

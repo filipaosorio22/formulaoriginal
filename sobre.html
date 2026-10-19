@@ -141,14 +141,7 @@ document.getElementById('hamburger').addEventListener('click', function () {
     gtag('config', 'G-5CX792T8H9');
     window.gtag = gtag;
   };
-  window.__loadCalendly = function(){
-    if (window.__calLoaded) return;
-    window.__calLoaded = true;
-    var s = document.createElement('script');
-    s.src = 'https://assets.calendly.com/assets/external/widget.js';
-    s.async = true;
-    document.body.appendChild(s);
-  };
+  window.__loadCalendly = function(){ /* Calendly já não é usado: as marcações são no Cal.com */ };
   function applyConsent(c){
     if (c.analytics) window.__loadGA();
     if (c.calendly) window.__loadCalendly();

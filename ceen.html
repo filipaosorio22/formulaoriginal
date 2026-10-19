@@ -1713,7 +1713,7 @@
     document.getElementById('cookieVeilCeen').style.display='none';
   };
   window.openCeenCalendly = function(fmt){
-    if (typeof gtag === 'function') { gtag('event', 'marcar_ceen_click', { idioma: document.documentElement.lang, pagina: location.pathname }); }
+    if (typeof gtag === 'function') { gtag('event', 'marcar_ceen_click', { idioma: document.documentElement.lang, pagina: location.pathname, formato: fmt || 'geral' }); }
     document.getElementById('ceenCalendlyModal').style.display = 'flex';
     document.getElementById('cookieVeilCeen').style.display = 'block';
     if (fmt) { var r = document.querySelector('#bkForm input[name=formato][value^="' + (fmt === 'ciclo' ? 'Ciclo' : 'Sessão') + '"]'); if (r) r.checked = true; atualizaValor(); }
@@ -1733,14 +1733,16 @@
       .then(function(r){ return r.json(); }).then(function(j){ if (!j.success) throw new Error(j.message || 'erro'); });
   }
   function dados(form){ var o = {}; new FormData(form).forEach(function(v,k){ o[k] = String(v).trim(); }); if (o.telemovel !== undefined) { var n = o.telemovel.replace(/^0+/, ''); o.telemovel = /^\+/.test(n) ? n : ((o.cc || '') + ' ' + n).trim(); } return o; }
+  function evForm(n, p){ try { if (typeof gtag === 'function') { p = p || {}; p.idioma = document.documentElement.lang; p.pagina = location.pathname; gtag('event', n, p); } } catch (e) {} }
   function validar(form, errEl){
     var bad = Array.prototype.filter.call(form.querySelectorAll('[required]'), function(el){ return el.type === 'checkbox' ? !el.checked : !el.value.trim(); });
     var em = form.querySelector('input[type=email]');
-    if (bad.length) { errEl.textContent = 'Falta preencher os campos assinalados.'; bad.forEach(function(el){ el.classList.add('bk-bad'); el.addEventListener('input', function(){ el.classList.remove('bk-bad'); }, { once:true }); el.addEventListener('change', function(){ el.classList.remove('bk-bad'); }, { once:true }); }); bad[0].focus(); return false; }
-    if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value.trim())) { errEl.textContent = 'O e-mail não parece estar certo.'; em.focus(); return false; }
+    if (bad.length) { evForm('ceen_formulario_erro', { erro: 'campos_em_falta' }); errEl.textContent = 'Falta preencher os campos assinalados.'; bad.forEach(function(el){ el.classList.add('bk-bad'); el.addEventListener('input', function(){ el.classList.remove('bk-bad'); }, { once:true }); el.addEventListener('change', function(){ el.classList.remove('bk-bad'); }, { once:true }); }); bad[0].focus(); return false; }
+    if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value.trim())) { evForm('ceen_formulario_erro', { erro: 'email_invalido' }); errEl.textContent = 'O e-mail não parece estar certo.'; em.focus(); return false; }
     errEl.textContent = ''; return true;
   }
 
+  document.getElementById('bkForm').addEventListener('focusin', function(){ if (window.__bkIni) return; window.__bkIni = 1; evForm('ceen_formulario_iniciado'); });
   document.getElementById('bkForm').addEventListener('submit', function(ev){
     ev.preventDefault();
     var f = this, err = document.getElementById('bkErr');
@@ -1764,7 +1766,7 @@
     document.querySelector('#ceenCalendlyModal .bk-box').scrollTop = 0;
     var wd = document.getElementById('calendlyWidget'); wd.innerHTML = ''; delete wd.dataset.done; document.getElementById('bkSubstack').style.display = 'none';
     mostrarCalendario();
-    if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado');
+    if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado', { idioma: document.documentElement.lang, pagina: location.pathname, formato: d.formato.indexOf('Ciclo') === 0 ? 'ciclo' : 'sessao' });
   });
 
   // aviso curto quando a pessoa marca mesmo a data no Cal.com
