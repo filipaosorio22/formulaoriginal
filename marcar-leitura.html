@@ -265,7 +265,7 @@ window.FO_PAY = {
     var v = sel().value, sn = $('sesNote');
     var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
     sn.hidden = !hasS; $('fam').hidden = !hasS;
-    sn.textContent = v === 'sessaosolo' ? 'A data da sessão não é escolhida agora: depois de confirmado o pagamento, és encaminhada logo a seguir para a página onde marcas o dia e a hora que preferires.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
+    sn.textContent = v === 'sessaosolo' ? 'A data da sessão não é escolhida agora: depois de confirmado o pagamento, és encaminhada logo a seguir para a página onde marcas o dia e a hora que preferires, e recebes também a ligação por e-mail.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
     $('prazo').hidden = v === 'sessaosolo';
   }
   document.querySelectorAll('input[name=op]').forEach(function(x){ x.addEventListener('change', updTotal); });

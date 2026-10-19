@@ -89,7 +89,7 @@ html[data-theme="dark"] .bk-ss { background:#382c22; } html[data-theme="dark"] .
     <div class="warn"><b>Falta só escolheres o dia e a hora.</b>Vais ser encaminhada para a página de marcação dentro de <span id="cd">5</span> segundos.</div>
     <p class="actions"><a class="btn" id="go" href="https://cal.com/filipaosorio/alinhamento">Escolher o dia e a hora</a></p>
     <p>Se preferires marcar mais tarde, guarda esta ligação: <a id="ln" href="https://cal.com/filipaosorio/alinhamento">cal.com/filipaosorio/alinhamento</a>. Se algo correr mal, <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Paguei%20a%20sess%C3%A3o%20de%20alinhamento%20e%20preciso%20de%20ajuda%20para%20marcar." target="_blank" rel="noopener">fala comigo por WhatsApp 💌</a></p>
-    <p>O recibo do Stripe chega ao teu e-mail.</p>
+    <p>Vais receber também a ligação por e-mail (vê o spam ou as promoções se não a encontrares), e o recibo do Stripe.</p>
     <p><a href="leitura-intuitiva.html">← Voltar à Leitura Intuitiva</a></p>
   </div>
 </div>
@@ -100,6 +100,7 @@ html[data-theme="dark"] .bk-ss { background:#382c22; } html[data-theme="dark"] .
   if(n) q.push('name='+encodeURIComponent(n)); if(e) q.push('email='+encodeURIComponent(e));
   var url=base+(q.length?'?'+q.join('&'):'');
   document.getElementById('go').href=url; document.getElementById('ln').href=url;
+  if(e){ try{ var b=new FormData(); b.append('fields[email]',e); if(n) b.append('fields[name]',n.split(' ')[0]); b.append('ml-submit','1'); b.append('anticsrf','true'); fetch('https://assets.mailerlite.com/jsonp/2708796/forms/201738852742727289/subscribe',{method:'POST',mode:'no-cors',body:b}); }catch(x){} }
   var t=5, cd=document.getElementById('cd');
   var iv=setInterval(function(){ t--; cd.textContent=t; if(t<=0){ clearInterval(iv); try{localStorage.removeItem('fo_align');localStorage.removeItem('fo_align_n');}catch(x){} location.href=url; } },1000);
 })();
