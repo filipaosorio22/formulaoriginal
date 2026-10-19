@@ -1064,19 +1064,41 @@
   </div>
 </section>
 
+<style>
+#sonho-previa .sq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.8rem 0 0;}
+#sonho-previa .sq{margin:0;position:relative;background:var(--gray);border:1px solid var(--line);border-radius:18px;padding:30px 22px 20px;box-shadow:0 6px 18px rgba(80,50,30,.06);}
+#sonho-previa .sq:nth-child(odd){transform:rotate(-.6deg);} #sonho-previa .sq:nth-child(even){transform:rotate(.6deg);}
+#sonho-previa .sq-mark{position:absolute;top:2px;left:16px;font-family:'Cormorant Garamond',Georgia,serif;font-size:56px;line-height:1;color:var(--gold);}
+#sonho-previa .sq blockquote{margin:0;font-family:'Spectral',Georgia,serif;font-style:italic;font-size:16.5px;line-height:1.5;color:var(--ink);border:none;padding:0;}
+#sonho-ia .ia-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:1.8rem 0 0;}
+#sonho-ia .ia-card{background:var(--gray);border:1px solid var(--line);border-radius:20px;padding:22px 22px 20px;}
+#sonho-ia .ia-ico{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;background:linear-gradient(135deg,var(--sessao),var(--ciclo));margin-bottom:12px;}
+#sonho-ia .ia-card h3{margin:0 0 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;line-height:1.2;color:var(--wine);font-weight:600;}
+#sonho-ia .ia-card p{margin:0 0 10px;font-size:14.5px;line-height:1.55;color:var(--ink-soft);}
+#sonho-ia .ia-card p span{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;font-weight:700;}
+#sonho-ia .ia-before span{color:var(--gold-deep);} #sonho-ia .ia-before{opacity:.85;}
+#sonho-ia .ia-after{border-top:1px dashed var(--line);padding-top:10px;color:var(--ink) !important;} #sonho-ia .ia-after span{color:var(--wine);}
+#sonho-ia .ia-close{margin:2.2rem 0 0;padding:26px 24px;border-radius:22px;text-align:center;background:linear-gradient(135deg,var(--sessao),var(--ciclo));}
+#sonho-ia .ia-close p{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.3;color:var(--ink);}
+@media (max-width:700px){#sonho-previa .sq-grid,#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .sq{transform:none !important;} #sonho-ia .ia-close p{font-size:22px;}}
+</style>
 <hr class="div">
 
 <section id="sonho-previa">
   <div class="wrap">
     <h2 class="section-title">Talvez te tenham dito que tinhas de…</h2>
     <p class="t-sm">Quem trabalha por conta própria ouve muita coisa sobre o que “tem” de fazer. Talvez reconheças algumas destas frases:</p>
-<div class="callout grayD" style="margin:.8rem 0 0;"><div class="ctext"><p class="t-xs" style="font-style:italic;">«Tens de publicar todos os dias, senão o algoritmo esquece-se de ti.»</p></div></div>
-<div class="callout grayD" style="margin:.8rem 0 0;"><div class="ctext"><p class="t-xs" style="font-style:italic;">«Faz vídeos de 30 segundos, ninguém tem paciência para conteúdos longos.»</p></div></div>
-<div class="callout grayD" style="margin:.8rem 0 0;"><div class="ctext"><p class="t-xs" style="font-style:italic;">«Uma agenda cheia é sinal de sucesso.»</p></div></div>
-<div class="callout grayD" style="margin:.8rem 0 0;"><div class="ctext"><p class="t-xs" style="font-style:italic;">«Tens de ter um curso ou um infoproduto para ganhares sem trocar tempo por dinheiro.»</p></div></div>
-<div class="callout grayD" style="margin:.8rem 0 0;"><div class="ctext"><p class="t-xs" style="font-style:italic;">«Ou então esquece os produtos: o que funciona mesmo são as sessões.»</p></div></div>
-<div class="callout grayD" style="margin:.8rem 0 0;"><div class="ctext"><p class="t-xs" style="font-style:italic;">«Tens de estar em todas as redes e responder a tudo.»</p></div></div>
-    <p class="t-sm" style="margin-top:1.8rem;">Podes ter seguido boa parte disto, até com resultados. E, ainda assim, sentir que o negócio ficou maior do que tu, cheio de tarefas e mais difícil de sustentar do que parecia.</p>
+    <div class="sq-grid">
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Tens de publicar todos os dias, senão o algoritmo esquece-se de ti.</blockquote></figure>
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</blockquote></figure>
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Uma agenda cheia é sinal de sucesso.</blockquote></figure>
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Tens de ter um curso ou um infoproduto para ganhares sem trocar tempo por dinheiro.</blockquote></figure>
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Esquece os produtos: o que funciona mesmo são as sessões.</blockquote></figure>
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Tens de estar em todas as redes e responder a tudo, a toda a hora.</blockquote></figure>
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</blockquote></figure>
+<figure class="sq reveal"><span class="sq-mark">“</span><blockquote>Se não tens equipa, vais ter de fazer tudo sozinha.</blockquote></figure>
+    </div>
+    <p class="t-sm" style="margin-top:2rem;">Podes ter seguido boa parte disto, até com resultados. E, ainda assim, sentir que o negócio ficou maior do que tu, cheio de tarefas e mais difícil de sustentar do que parecia.</p>
   </div>
 </section>
 
@@ -1086,22 +1108,19 @@
   </div>
 </section>
 
-<section>
+<section id="sonho-ia">
   <div class="wrap">
     <h2 class="section-title">O que pode abrir-se com conhecimento de IA</h2>
-    <p class="t-sm">Hoje, muito do que ocupava horas, ou exigia uma equipa, pode ser apoiado por inteligência artificial. Quando conheces bem as possibilidades, o negócio pode ser desenhado de outra forma:</p>
-    <div class="callout grayD" style="margin:1.6rem 0 0;"><div class="ci">⏳</div><div class="ctext">
-      <p class="t-xs"><strong>Menos horas em tarefas que não são o teu valor.</strong> Respostas repetidas, rascunhos, organização, propostas e processos podem ficar parcialmente automatizados, para ficares com o tempo e a energia para o que só tu fazes.</p>
-    </div></div>
-    <div class="callout grayD" style="margin:1rem 0 0;"><div class="ci">🎙️</div><div class="ctext">
-      <p class="t-xs"><strong>Comunicar sem te desgastares.</strong> Uma ideia tua, dita uma vez, pode transformar-se em vários formatos, curtos ou longos, sem teres de publicar todos os dias nem de te forçares a um formato que não é o teu.</p>
-    </div></div>
-    <div class="callout grayD" style="margin:1rem 0 0;"><div class="ci">🧭</div><div class="ctext">
-      <p class="t-xs"><strong>Escolher o modelo que combina contigo.</strong> Sessões, produtos digitais, ou uma combinação, com a IA a apoiar a parte operacional e não a decidir por ti.</p>
-    </div></div>
-    <div class="callout grayD" style="margin:1rem 0 0;"><div class="ci">🗓️</div><div class="ctext">
-      <p class="t-xs"><strong>Uma agenda com espaço</strong>, em que dizes sim ao que faz sentido e não ao resto.</p>
-    </div></div>
+    <p class="t-sm">Muito do que ocupava horas, ou exigia uma equipa, pode hoje ser apoiado por inteligência artificial. Quando conheces bem as possibilidades, o negócio pode ser desenhado de outra forma. Alguns exemplos do que isto pode significar:</p>
+    <div class="ia-grid">
+<div class="ia-card reveal"><div class="ia-ico">✍️</div><h3>Conteúdo sem te desgastares</h3><p class="ia-before"><span>Antes</span>Gravares uma ideia e teres de a reescrever em cinco formatos, ou ficares sem publicar por falta de tempo.</p><p class="ia-after"><span>Com IA a apoiar</span>Uma ideia tua, dita uma vez, pode ser transformada em guião de vídeo curto, texto longo, newsletter e legendas, no teu tom, para escolheres o que publicas e quando.</p></div>
+<div class="ia-card reveal"><div class="ia-ico">💬</div><h3>Atendimento que não te prende</h3><p class="ia-before"><span>Antes</span>Responder às mesmas perguntas, enviar os mesmos emails e lembretes, passar o dia a gerir mensagens.</p><p class="ia-after"><span>Com IA a apoiar</span>Respostas às perguntas frequentes, emails de boas-vindas, lembretes e acompanhamento podem ser preparados e automatizados, com a tua voz e a tua revisão.</p></div>
+<div class="ia-card reveal"><div class="ia-ico">🗂️</div><h3>Sessões e propostas sem trabalho dobrado</h3><p class="ia-before"><span>Antes</span>Passar noites a transformar notas e gravações em resumos, propostas e documentos.</p><p class="ia-after"><span>Com IA a apoiar</span>Notas e transcrições passam a resumos organizados, propostas e próximos passos já em rascunho, prontos para tu rever e ajustar.</p></div>
+<div class="ia-card reveal"><div class="ia-ico">🧠</div><h3>O teu método, multiplicado</h3><p class="ia-before"><span>Antes</span>Teres conhecimento valioso que só chega às pessoas quando estás presente numa sessão.</p><p class="ia-after"><span>Com IA a apoiar</span>O teu critério pode transformar-se em guias, programas ou até um assistente que responde com a tua abordagem, para um produto digital que não te obriga a trocar horas por dinheiro, ou que complementa as tuas sessões.</p></div>
+<div class="ia-card reveal"><div class="ia-ico">📊</div><h3>Números que se leem</h3><p class="ia-before"><span>Antes</span>Folhas de cálculo, faturas e relatórios que evitas abrir porque tomam demasiado tempo.</p><p class="ia-after"><span>Com IA a apoiar</span>Os dados do negócio resumidos em linguagem simples: o que entra, o que sai e o que merece atenção este mês.</p></div>
+<div class="ia-card reveal"><div class="ia-ico">🧭</div><h3>Mais espaço para decidir</h3><p class="ia-before"><span>Antes</span>Decidires o modelo do negócio com cansaço, a seguir o que está na moda.</p><p class="ia-after"><span>Com IA a apoiar</span>Com menos tarefas no prato, sobra espaço para escolheres com calma o modelo que combina contigo: sessões, produtos, ou os dois.</p></div>
+    </div>
+    <div class="ia-close reveal"><p>Não é trocares quem és por uma máquina.<br>É teres ajuda para seres mais tu, com mais tempo para o que só tu fazes.</p></div>
     <p class="t-sm" style="margin-top:1.8rem;">Na CEEN, podemos explorar onde isto faria sentido <strong>no teu negócio</strong>, e não num modelo igual ao de toda a gente.</p>
   </div>
 </section>
