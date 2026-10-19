@@ -821,6 +821,31 @@
     .ceen-option-a .intro-box .ctext p { font-size:12px !important; }
   }
 
+
+  /* ronda 36: primeira caixa (opção A) com mais respiração e modo noturno */
+  .ceen-option-a { padding-top:3rem !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box { background:#2a2520 !important; border-color:rgba(240,230,215,.16) !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box .ctext p, html[data-theme="dark"] .ceen-option-a .intro-box .ctext li { color:var(--ink) !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box .ctext p.intro-lead strong { color:#f3e9da !important; }
+  html[data-theme="dark"] .ceen-option-a .ceen-brand, html[data-theme="dark"] .ceen-option-a h1.ceen-headline { color:var(--wine) !important; }
+  html[data-theme="dark"] .ceen-option-a .intro-box .ctext strong { color:#f3e9da; }
+
+  /* ronda 36: convite das comunidades, botão mais cuidado (mesma linguagem do botão do Ciclo) */
+  .popup.popup-conv { overflow:visible !important; }
+  .popup.popup-conv .popup-btn {
+    background:linear-gradient(120deg,#f6ddd0,#f1d3cf,#f3e2c2,#f6dcc0,#f1d3cf) !important; background-size:300% 300% !important; background-position:0% 50% !important;
+    border:1px solid rgba(122,37,53,.45) !important; border-radius:16px !important; color:#7a2535 !important;
+    font-family:'Lora',serif; font-size:14.5px !important; font-weight:600; line-height:1.45 !important; letter-spacing:.02em !important; text-transform:none !important;
+    padding:.85rem 1.7rem !important; text-align:center; box-shadow:0 10px 26px rgba(122,37,53,.16) !important;
+    transition:transform .2s, box-shadow .2s, background-position .6s;
+  }
+  .popup.popup-conv .popup-btn:hover { background-position:100% 50% !important; transform:translateY(-2px); box-shadow:0 14px 30px rgba(122,37,53,.22) !important; }
+  .popup.popup-conv .popup-close {
+    position:absolute; top:-9px !important; right:-9px !important; width:24px; height:24px; padding:0; border-radius:50%;
+    background:#fffaf3 !important; border:1px solid rgba(122,37,53,.35) !important; color:#7a2535; font-size:15px; line-height:20px; display:grid; place-items:center; z-index:3;
+  }
+  html[data-theme="dark"] .popup.popup-conv .popup-btn { background:linear-gradient(120deg,#4a3532,#4e3a40,#4f4128,#4a3532) !important; background-size:300% 300% !important; color:#f2d3d9 !important; border-color:rgba(228,167,179,.5) !important; box-shadow:0 10px 26px rgba(0,0,0,.4) !important; }
+  html[data-theme="dark"] .popup.popup-conv .popup-close { background:#2a2520 !important; color:#e4a7b3; border-color:rgba(228,167,179,.45) !important; }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -910,7 +935,7 @@
     <div class="sucesso-flex"><div class="sf-text">    <p class="t-sm">Talvez sucesso profissional signifique, para ti, crescer, aumentar o rendimento ou chegar a mais pessoas. Talvez signifique ter mais tempo livre, autonomia, reconhecimento, impacto ou realização.</p>
     <p class="t-sm">Pode significar também tomar decisões com maior confiança, comunicar com autenticidade ou relacionares-te com o teu trabalho com mais leveza e deixares de viver certas questões profissionais com tanto desgaste emocional.</p>
     <p class="t-sm">Podes já ter alcançado resultados que, para ti, antes representaram sucesso e, ainda assim, sentir que a forma como trabalhas hoje deixou de te representar. Isso não retira valor ao que construíste. Pode apenas indicar que chegou o momento de o reformular para acompanhar a tua evolução.</p>
-    </div><figure><img src="foto-ceen-costas-v.jpg" width="340" height="578" alt="Filipa de costas, a trabalhar no portátil no chão da sala" loading="lazy"></figure></div>
+    </div><figure><img src="foto-ceen-costas-v.jpg?v=2" width="340" height="578" alt="Filipa de costas, a trabalhar no portátil no chão da sala" loading="lazy"></figure></div>
     <div class="callout grayD bolha" style="margin:4.75rem 0 0; padding-right:2.2rem;"><div class="ci">🫧</div><div class="ctext">
       <p class="t-xs"><strong>Na CEEN, não partimos do princípio de que há algo de errado contigo</strong>, nem de que existe uma versão ideal à qual deves corresponder ou uma fórmula de sucesso que tens de seguir. <strong>A melhor estratégia é a que faz sentido</strong> para ti e para o teu negócio.</p>
       
@@ -1467,7 +1492,7 @@
         <p>A marcação da tua sessão fica confirmada após a confirmação do pagamento de <strong id="bkValor">269€</strong>. Os métodos de pagamento encontram-se aquando da marcação da data da tua sessão.</p>
       </div>
       <div id="calendlyConsentPrompt" style="display:none; text-align:center; padding:1.5rem 1rem;">
-        <p style="margin-bottom:1.2rem;">Para escolheres o dia aqui, precisamos de carregar o calendário do Calendly, que usa cookies próprios.</p>
+        <p style="margin-bottom:1.2rem;">Para escolheres o dia aqui, precisamos de carregar o calendário do Cal.com, que usa cookies próprios.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); aceitarEAbrirCalendly();">Aceitar e continuar</a>
       </div>
       <div id="bkSubstack" class="bk-ss" style="display:none"><p>Obrigada, a tua data está marcada! Como pediste, falta só um passo para receberes os textos da Filipa no Substack:</p><a class="bk-ss-btn" id="bkSubstackLink" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscrever no Substack</a></div>
@@ -1541,12 +1566,13 @@
   window.__calLoaded = false;
   function loadCalendly(){
     if (window.__calLoaded) return;
-    var s = document.createElement('script');
-    s.src = 'https://assets.calendly.com/assets/external/widget.js';
-    s.async = true;
-    s.onload = function(){ window.__calLoaded = true; };
-    document.body.appendChild(s);
+    window.__calLoaded = true;
+    (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+    Cal('init', { origin: 'https://app.cal.com' });
+    Cal('on', { action: 'bookingSuccessful', callback: function(){ window.postMessage({ foCal: 'booked' }, location.origin); } });
+    Cal('on', { action: 'linkReady', callback: function(){ window.postMessage({ foCal: 'ready' }, location.origin); } });
   }
+  window.__loadCalEmbed = loadCalendly;
   function loadGA(){
     if (window.__gaLoaded) return;
     window.__gaLoaded = true;
@@ -1566,22 +1592,22 @@
   }
   var W3K = 'b2feccdb-b682-491c-8fb8-a56fb482a4ed';
   var BK = {};
-  function calUrl(){
-    var u = 'https://calendly.com/filipaosorio/ceen?hide_gdpr_banner=1';
-    if (BK.nome) u += '&name=' + encodeURIComponent(BK.nome);
-    if (BK.email) u += '&email=' + encodeURIComponent(BK.email);
-    // respostas do Calendly preenchidas: a1 WhatsApp, a3 contexto e questão, a4 site, a5 opção
-    if (BK.tel) u += '&a1=' + encodeURIComponent(BK.tel);
-    if (BK.contexto) u += '&a3=' + encodeURIComponent(BK.contexto);
-    if (BK.links) u += '&a4=' + encodeURIComponent(BK.links);
-    if (BK.opcao) u += '&a5=' + encodeURIComponent(BK.opcao);
-    return u;
+  function calConfig(){
+    var c = { layout: 'month_view', theme: (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light') };
+    if (BK.nome) { c.name = BK.nome; var i = BK.nome.lastIndexOf(' '); if (i > 0) { c.firstName = BK.nome.slice(0, i); c.lastName = BK.nome.slice(i + 1); } }
+    if (BK.email) c.email = BK.email;
+    // respostas já dadas no formulário do site, preenchidas no Cal.com
+    if (BK.tel) c.attendeePhoneNumber = BK.tel;
+    if (BK.contexto) c['mais-info'] = BK.contexto.slice(0, 1000);
+    if (BK.opcao) c.Opcao = BK.opcao;
+    c.idioma = document.documentElement.lang === 'en' ? 'Inglês' : 'Português';
+    return c;
   }
   function mostrarCalendario(){
     var prompt_ = document.getElementById('calendlyConsentPrompt'), widget = document.getElementById('calendlyWidget');
-    if (window.__calLoaded && window.Calendly) {
+    if (window.__calLoaded && window.Cal) {
       prompt_.style.display = 'none'; widget.style.display = 'block';
-      if (!widget.dataset.done) { widget.innerHTML = ''; Calendly.initInlineWidget({ url: calUrl(), parentElement: widget }); widget.dataset.done = '1'; }
+      if (!widget.dataset.done) { widget.innerHTML = ''; Cal('inline', { elementOrSelector: widget, calLink: 'filipaosorio/ceen', layout: 'month_view', config: calConfig() }); Cal('ui', { theme: calConfig().theme, hideEventTypeDetails: false, layout: 'month_view' }); widget.dataset.done = '1'; }
     } else { prompt_.style.display = 'block'; widget.style.display = 'none'; }
   }
   function atualizaValor(){ var r = document.querySelector('#bkForm input[name=formato]:checked'); if (r) document.getElementById('bkValor1').textContent = r.getAttribute('data-valor'); }
@@ -1652,10 +1678,10 @@
     if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado');
   });
 
-  // aviso curto quando a pessoa marca mesmo a data no Calendly
+  // aviso curto quando a pessoa marca mesmo a data no Cal.com
   window.addEventListener('message', function(e){
-    if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
-    var d = e.data; if (!d || d.event !== 'calendly.event_scheduled') return;
+    if (e.origin !== location.origin) return;
+    var d = e.data; if (!d || d.foCal !== 'booked') return;
     if (BK.substack) { var bs = document.getElementById('bkSubstack'); document.getElementById('bkSubstackLink').href = 'https://filipaosorio.substack.com/subscribe?email=' + encodeURIComponent(BK.email); bs.style.display = 'block'; try { bs.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(x){} }
     if (BK.enviado && !BK.reservaAvisada) {
       BK.reservaAvisada = true;
@@ -1700,14 +1726,12 @@
     });
   });
 
-  // Google Analytics: eventos do Calendly (so enviados se a pessoa aceitou os cookies de analise)
+  // Google Analytics: eventos do Cal.com (so enviados se a pessoa aceitou os cookies de analise)
   window.addEventListener('message', function(e){
-    if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
-    var d = e.data; if (!d || typeof d.event !== 'string' || d.event.indexOf('calendly.') !== 0) return;
-    if (typeof gtag !== 'function') return;
-    var map = { 'calendly.event_type_viewed': 'calendly_pagina_vista', 'calendly.date_and_time_selected': 'calendly_data_escolhida', 'calendly.event_scheduled': 'calendly_marcacao_concluida', 'calendly.profile_page_viewed': 'calendly_perfil_visto' };
-    var name = map[d.event]; if (!name) return;
-    gtag('event', name, { idioma: document.documentElement.lang, pagina: location.pathname });
+    if (e.origin !== location.origin) return;
+    var d = e.data; if (!d || !d.foCal || typeof gtag !== 'function') return;
+    var name = { ready: 'calendario_pagina_vista', booked: 'calendario_marcacao_concluida' }[d.foCal];
+    if (name) gtag('event', name, { idioma: document.documentElement.lang, pagina: location.pathname });
   });
 
   // scroll-to-bio e voltar
@@ -2005,14 +2029,14 @@
 (function(){
   var KEY = 'fo_cookie_consent', MAX = 1000*60*60*24*180;
   var T = {
-    pt: { txt: 'Uso cookies para estatísticas (Google Analytics) e para o calendário de marcações (Calendly) funcionar aqui na página e melhorar a tua experiência no site.', more: 'Saber mais', no: 'Recusar', man: 'Gerir preferências', yes: 'Aceitar', title: 'As tuas preferências de cookies', nec: 'Necessários', necd: 'O site em si — sempre ativos, não guardam identificadores.', st: 'Estatísticas', std: 'Ajuda-me a perceber quantas pessoas visitam o site.', cal: 'Calendário de marcações', cald: 'Permite marcares sessões diretamente aqui na página.', back: 'Voltar', save: 'Guardar preferências', priv: 'privacidade.html' },
-    en: { txt: 'I use cookies for statistics (Google Analytics) and so the booking calendar (Calendly) works on this page and improves your experience on the site.', more: 'Learn more', no: 'Decline', man: 'Manage preferences', yes: 'Accept', title: 'Your cookie preferences', nec: 'Necessary', necd: 'The site itself — always on, they do not store identifiers.', st: 'Statistics', std: 'Helps me understand how many people visit the site.', cal: 'Booking calendar', cald: 'Lets you book sessions directly on this page.', back: 'Back', save: 'Save preferences', priv: 'privacidade.html' }
+    pt: { txt: 'Uso cookies para estatísticas (Google Analytics) e para o calendário de marcações (Cal.com) funcionar aqui na página e melhorar a tua experiência no site.', more: 'Saber mais', no: 'Recusar', man: 'Gerir preferências', yes: 'Aceitar', title: 'As tuas preferências de cookies', nec: 'Necessários', necd: 'O site em si — sempre ativos, não guardam identificadores.', st: 'Estatísticas', std: 'Ajuda-me a perceber quantas pessoas visitam o site.', cal: 'Calendário de marcações', cald: 'Permite marcares sessões diretamente aqui na página.', back: 'Voltar', save: 'Guardar preferências', priv: 'privacidade.html' },
+    en: { txt: 'I use cookies for statistics (Google Analytics) and so the booking calendar (Cal.com) works on this page and improves your experience on the site.', more: 'Learn more', no: 'Decline', man: 'Manage preferences', yes: 'Accept', title: 'Your cookie preferences', nec: 'Necessary', necd: 'The site itself — always on, they do not store identifiers.', st: 'Statistics', std: 'Helps me understand how many people visit the site.', cal: 'Booking calendar', cald: 'Lets you book sessions directly on this page.', back: 'Back', save: 'Save preferences', priv: 'privacidade.html' }
   };
   var t = T[(document.documentElement.lang || 'pt').indexOf('en') === 0 ? 'en' : 'pt'];
   function get(){ try { var raw = localStorage.getItem(KEY); if (!raw) return null; var o = JSON.parse(raw); if (!o.ts || Date.now() - o.ts > MAX) return null; return o; } catch(e){ return null; } }
   function set(a, c){ try { localStorage.setItem(KEY, JSON.stringify({ analytics: !!a, calendly: !!c, ts: Date.now() })); } catch(e){} }
   function loadGA(){ if (window.__gaLoaded) return; window.__gaLoaded = true; var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5CX792T8H9'; document.head.appendChild(s); window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); }; gtag('js', new Date()); gtag('config', 'G-5CX792T8H9'); }
-  function loadCal(){ if (window.__calLoaded || window.__calReq) return; window.__calReq = true; var s = document.createElement('script'); s.src = 'https://assets.calendly.com/assets/external/widget.js'; s.async = true; s.onload = function(){ window.__calLoaded = true; }; document.body.appendChild(s); }
+  function loadCal(){ if (window.__calLoaded || window.__calReq) return; window.__calReq = true; if (window.__loadCalEmbed) window.__loadCalEmbed(); }
   function apply(c){ if (c.analytics) loadGA(); if (c.calendly) loadCal(); }
   var F = "font-family:'DM Sans',sans-serif;";
   var BTN = F + 'font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; border-radius:30px; padding:10px 18px; cursor:pointer;';
@@ -2024,7 +2048,7 @@
     '<div id="cookiePrefs" style="display:none; max-width:520px; margin:0 auto;"><p style="font-family:\'Spectral\',serif; font-style:italic; font-size:17px; color:#1a1410; margin:0 0 1rem;">' + t.title + '</p>' +
     '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.9rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" checked disabled style="margin-top:3px;"><span><strong>' + t.nec + '</strong><br><span style="color:#6b5040; font-weight:300;">' + t.necd + '</span></span></label>' +
     '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.9rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" id="prefAnalytics" style="margin-top:3px;"><span><strong>' + t.st + '</strong> — Google Analytics<br><span style="color:#6b5040; font-weight:300;">' + t.std + '</span></span></label>' +
-    '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:1.2rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" id="prefCalendly" style="margin-top:3px;"><span><strong>' + t.cal + '</strong> — Calendly<br><span style="color:#6b5040; font-weight:300;">' + t.cald + '</span></span></label>' +
+    '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:1.2rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" id="prefCalendly" style="margin-top:3px;"><span><strong>' + t.cal + '</strong> — Cal.com<br><span style="color:#6b5040; font-weight:300;">' + t.cald + '</span></span></label>' +
     '<div style="display:flex; gap:0.6rem; justify-content:flex-end;"><button id="cookieBack" style="' + F + 'font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:none; color:#9a7e52; cursor:pointer; text-decoration:underline;">' + t.back + '</button><button id="cookieSavePrefs" style="' + BTN + 'background:#7a2535; border:1px solid #7a2535; color:#f7f3ee;">' + t.save + '</button></div></div></div>';
   document.body.insertAdjacentHTML('beforeend', html);
   function $(id){ return document.getElementById(id); }
