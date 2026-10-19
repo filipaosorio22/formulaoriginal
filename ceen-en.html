@@ -986,6 +986,8 @@
   @media (max-width:760px){ .pause-quote.two { font-size:min(24px, calc((100vw - 48px) / 27)) !important; } }
 
   @media (max-width:640px){ br.nbm { display:none; } .ffront b { font-size:17px; } .ffront span { font-size:16px; } .fback h5 { font-size:17px; } .fpar { font-size:16px !important; } }
+
+  @media (max-width:640px){ .pause .pause-quote.big1.fitm { white-space:nowrap; font-size:min(25px, calc((100vw - 90px)/var(--k))) !important; } blockquote.quote-block.qc { border-left:none; text-align:center; } .amostra-frame { width:calc(100% - 36px); margin:1.8rem auto 1.6rem; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1064,13 +1066,13 @@
 
 <section class="pause pause-b pause-fm" style="padding:26px 0;">
   <div class="wrap-wide">
-    <p class="pause-quote big1">No borrowed formulas. <br class="mb">No trying to fit into someone else’s box!</p>
+    <p class="pause-quote big1 fitm" style="--k:14.5">No borrowed formulas. <br class="mb">No trying to fit into someone else’s box!</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">Your definition of professional success is yours alone</h2>
+    <h2 class="section-title">Your definition of<br class="mb"> professional success is yours alone</h2>
     <div class="sucesso-flex"><div class="sf-text">    <p class="t-sm">For you, professional success may mean growing, increasing your income or reaching more people. It may mean having more free time, more autonomy, recognition, impact or fulfilment.</p>
     <p class="t-sm">Perhaps it is also making decisions with confidence and communicating authentically, or feeling more at ease with your work and no longer experiencing certain professional challenges as such an emotional drain.</p>
     <p class="t-sm">You may already have achieved results that, for you, once represented success, yet still feel that the way you work today no longer reflects who you are. That does not diminish the value of what you have built. It may simply mean that it is time to reshape it so it can evolve with you.</p>
@@ -1215,7 +1217,7 @@
     </details>
 
     <details class="fold slower feature">
-      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">⚡ Personal energy as strategic information</span></summary>
+      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">⚡ Personal energy<br class="mb"> as strategic information</span></summary>
       <div class="fold-wrap"><div class="fold-body">
         <p>In CEEN, the energy dimension helps us observe your experience beyond <strong>rational analysis</strong>: what sparks your interest, what creates resistance, what worries you and what you feel you can sustain.</p>
         <p>A professional decision can involve <strong>much more than weighing pros and cons</strong>. It can also touch on security, identity, recognition, freedom or how you anticipate other people’s reactions.</p>
@@ -1388,7 +1390,7 @@
 
 <section class="tight" style="padding-top:2.6rem;">
   <div class="wrap">
-    <blockquote class="quote-block">
+    <blockquote class="quote-block qc">
       <p class="q1"><strong>“Almost every sentence felt like a key turning in a lock.”</strong></p>
     </blockquote>
     <p style="font-size:15px;">In this testimonial from our work together, a client described what changed when she gained greater awareness, tools and support to deal with what was emerging in the processes of her business:</p>
@@ -1438,7 +1440,7 @@
 <section>
   <div class="wrap-wide">
     <div class="ciclo-split"><div class="callout grayD ciclo-note"><div class="ctext">
-      <p class="oneline-note"><strong>How we define the scope of the CEEN Cycle</strong></p>
+      <p class="oneline-note"><strong>How we define the scope<br class="mb"> of the CEEN Cycle</strong></p>
       <p>In the first meeting, we agree on the aim of the analysis, the materials included and what falls outside it. That agreement guides the analysis work between sessions.</p>
       <p>Over the following three days, you send the agreed materials and, if you wish, additional information related to the focus of the Cycle. This period is for completing the context, not for adding new questions or opening other lines of analysis.</p>
       <p>If a new request comes up, we consider whether it relates directly to the agreed focus. If it requires additional work, it falls outside this Cycle and any new work is agreed separately.</p>
@@ -1890,13 +1892,13 @@
         if (!d.open) return;
         var top = d.getBoundingClientRect().top;
         closeDetail(d, wrap);
-        if (top < 60) smoothScrollTo(top + window.scrollY - 110, 800);
+        smoothScrollTo(function(){ return d.getBoundingClientRect().top + window.scrollY - 110; }, 800);
       });
       body.appendChild(cb);
     }
     summary.addEventListener('click', function(e){
       e.preventDefault();
-      if (d.open) { closeDetail(d, wrap); } else { openDetail(d, wrap); }
+      if (d.open) { var t0 = d.getBoundingClientRect().top; closeDetail(d, wrap); if (t0 < 60) smoothScrollTo(function(){ return d.getBoundingClientRect().top + window.scrollY - 110; }, 800); } else { openDetail(d, wrap); }
     });
   });
 

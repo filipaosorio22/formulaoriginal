@@ -965,6 +965,8 @@
   @media (max-width:600px){ .conv-tab-wrap { top:30%; } .conv-tab { font-size:12px; padding:13px 8px; } }
 
   @media (max-width:640px){ br.nbm { display:none; } .ffront b { font-size:17px; } .ffront span { font-size:16px; } .fback h5 { font-size:17px; } .fpar { font-size:16px !important; } }
+
+  @media (max-width:640px){ .pause .pause-quote.big1.fitm { white-space:nowrap; font-size:min(25px, calc((100vw - 90px)/var(--k))) !important; } blockquote.quote-block.qc { border-left:none; text-align:center; } .amostra-frame { width:calc(100% - 36px); margin:1.8rem auto 1.6rem; } }
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen.html">
@@ -1044,13 +1046,13 @@
 
 <section class="pause pause-b pause-fm" style="padding:26px 0;">
   <div class="wrap-wide">
-    <p class="pause-quote big1">Sem fórmulas alheias <br class="mb">e tentativas de caber em caixinhas!</p>
+    <p class="pause-quote big1 fitm" style="--k:12.8">Sem fórmulas alheias <br class="mb">e tentativas de caber em caixinhas!</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">A tua definição de sucesso profissional é só tua</h2>
+    <h2 class="section-title">A tua definição de<br class="mb"> sucesso profissional é só tua</h2>
     <div class="sucesso-flex"><div class="sf-text">    <p class="t-sm">Talvez sucesso profissional signifique, para ti, crescer, aumentar o rendimento ou chegar a mais pessoas. Talvez signifique ter mais tempo livre, autonomia, reconhecimento, impacto ou realização.</p>
     <p class="t-sm">Pode significar também tomar decisões com maior confiança, comunicar com autenticidade ou relacionares-te com o teu trabalho com mais leveza e deixares de viver certas questões profissionais com tanto desgaste emocional.</p>
     <p class="t-sm">Podes já ter alcançado resultados que, para ti, antes representaram sucesso e, ainda assim, sentir que a forma como trabalhas hoje deixou de te representar. Isso não retira valor ao que construíste. Pode apenas indicar que chegou o momento de o reformular para acompanhar a tua evolução.</p>
@@ -1196,7 +1198,7 @@
     </details>
 
     <details class="fold slower feature">
-      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">⚡ A energia pessoal como informação estratégica</span></summary>
+      <summary><span class="tri"></span><span style="font-size:.92em;font-weight:600;">⚡ A energia pessoal<br class="mb"> como informação estratégica</span></summary>
       <div class="fold-wrap"><div class="fold-body">
         <p>Na CEEN, a dimensão energética ajuda-nos a observar a tua experiência para <strong>além da análise racional</strong>: o que te desperta interesse, o que gera resistência, o que te preocupa e o que sentes que consegues sustentar.</p>
         <p>Uma decisão profissional pode envolver <strong>muito mais do que uma avaliação de vantagens e desvantagens</strong>. Pode também tocar na segurança, na identidade, no reconhecimento, na liberdade ou na forma como antecipas a reação dos outros.</p>
@@ -1372,7 +1374,7 @@
 
 <section class="tight" style="padding-top:2.6rem;">
   <div class="wrap">
-    <blockquote class="quote-block">
+    <blockquote class="quote-block qc">
       <p class="q1"><strong>"Quase em cada frase havia uma chave a rodar"</strong></p>
     </blockquote>
     <p style="font-size:15px;">Neste testemunho de um acompanhamento, a cliente descreveu o que mudou quando passou a ter mais consciência, ferramentas e apoio para lidar com aquilo que ia surgindo nos processos do seu negócio:</p>
@@ -1425,7 +1427,7 @@
 <section>
   <div class="wrap-wide">
     <div class="ciclo-split"><div class="callout grayD ciclo-note"><div class="ctext">
-      <p class="oneline-note"><strong>Como delimitamos o trabalho no Ciclo CEEN</strong></p>
+      <p class="oneline-note"><strong>Como delimitamos o trabalho<br class="mb"> no Ciclo CEEN</strong></p>
       <p>No primeiro encontro, acordamos o objetivo da análise, os materiais incluídos e o que fica fora. Esse acordo orienta o trabalho de análise entre sessões.</p>
       <p>Nos três dias seguintes, envias os materiais acordados e, se quiseres, informação complementar. Este período serve para completar o contexto, não para acrescentar novas questões ou abrir outras frentes de análise.</p>
       <p>Se surgir um novo pedido, avaliamos se está diretamente relacionado com o foco definido. Se implicar trabalho adicional, fica fora deste Ciclo e qualquer novo trabalho é acordado separadamente.</p>
@@ -1881,13 +1883,13 @@
         if (!d.open) return;
         var top = d.getBoundingClientRect().top;
         closeDetail(d, wrap);
-        if (top < 60) smoothScrollTo(top + window.scrollY - 110, 800);
+        smoothScrollTo(function(){ return d.getBoundingClientRect().top + window.scrollY - 110; }, 800);
       });
       body.appendChild(cb);
     }
     summary.addEventListener('click', function(e){
       e.preventDefault();
-      if (d.open) { closeDetail(d, wrap); } else { openDetail(d, wrap); }
+      if (d.open) { var t0 = d.getBoundingClientRect().top; closeDetail(d, wrap); if (t0 < 60) smoothScrollTo(function(){ return d.getBoundingClientRect().top + window.scrollY - 110; }, 800); } else { openDetail(d, wrap); }
     });
   });
 
