@@ -1086,7 +1086,7 @@
 #sonho-ia .ai p{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.3;color:var(--ink);}
 .gain{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.6rem 0 0;}
 .gain div{display:flex;gap:12px;align-items:flex-start;background:var(--gray);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;line-height:1.5;color:var(--ink);}
-.gain div b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--wine);font-weight:600;line-height:1.2;margin-bottom:2px;}
+.gain div b{display:block;white-space:nowrap;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--wine);font-weight:600;line-height:1.2;margin-bottom:2px;}
 .gain span.g{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--sessao),var(--ciclo));display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--wine);font-weight:700;}
 #sonho-ia .ia-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:1.8rem 0 0;}
 #sonho-ia .ia-card{background:var(--gray);border:1px solid var(--line);border-radius:20px;padding:22px 22px 20px;}
@@ -1098,7 +1098,7 @@
 #sonho-ia .ia-after{border-top:1px dashed var(--line);padding-top:10px;color:var(--ink) !important;} #sonho-ia .ia-after span{color:var(--wine);}
 #sonho-ia .ia-close{margin:2.2rem 0 0;padding:26px 24px;border-radius:22px;text-align:center;background:linear-gradient(135deg,var(--sessao),var(--ciclo));}
 #sonho-ia .ia-close p{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.3;color:var(--ink);}
-@media (max-width:700px){#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{flex-direction:column;gap:2px;white-space:normal;align-self:stretch;width:auto;margin-right:6px;} #sonho-ia .flow{grid-template-columns:1fr;} .gain{grid-template-columns:1fr;} #sonho-ia .ai p{font-size:21px;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:16px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
+@media (max-width:700px){.gain div b,#sonho-ia .fl h3{white-space:normal;} #sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{flex-direction:column;gap:2px;white-space:normal;align-self:stretch;width:auto;margin-right:6px;} #sonho-ia .flow{grid-template-columns:1fr;} .gain{grid-template-columns:1fr;} #sonho-ia .ai p{font-size:21px;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:16px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
 </style>
 <hr class="div">
 
@@ -1108,10 +1108,10 @@
     <p class="t-sm">Talvez reconheças algumas destas frases:</p>
     <div class="bub-wrap">
 <div class="bub l sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">📱 num reel</span><p>Tens de publicar todos os dias, senão o algoritmo <span style="white-space:nowrap">esquece-se</span> de ti.</p></div>
-<div class="bub r ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎬 numa mentoria</span><p>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</p></div>
+<div class="bub r ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎬 num vídeo</span><p>Faz vídeos de 30 segundos. Ninguém tem paciência para conteúdos longos.</p></div>
 <div class="bub l brown"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎙️ num podcast</span><p>Uma agenda cheia é sinal de sucesso.</p></div>
-<div class="bub r sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎓 numa mentoria</span><p>Lança um curso em 30 dias e passa a ganhar enquanto dormes.</p></div>
-<div class="bub l ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🤝 numa conversa</span><p>Esquece os produtos: o que funciona mesmo são as sessões.</p></div>
+<div class="bub r sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🎓 numa mentoria</span><p>Fazes um curso num fim-de-semana e passas a ganhar enquanto dormes.</p></div>
+<div class="bub l ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🤝 numa conversa</span><p>Esquece os infoprodutos: o que funciona mesmo são as sessões.</p></div>
 <div class="bub r brown"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">💬 num grupo</span><p>Tens de estar em todas as redes e responder a tudo, a toda a hora.</p></div>
 <div class="bub l sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">📸 num workshop</span><p>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</p></div>
 <div class="bub r ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🧱 num conselho</span><p>Sem equipa, ficas com tudo nas tuas costas.</p></div>
@@ -1119,7 +1119,7 @@
   </div>
 </section>
 
-<section class="pause pause-b" style="padding:120px 0;">
+<section class="pause pause-b" style="padding:190px 0 120px;">
   <div class="wrap-wide">
     <p class="pause-quote two">…e tu, o que querias mesmo fazer?</p>
   </div>
@@ -1130,19 +1130,14 @@
 <section id="sonho-ia">
   <div class="wrap">
     <h2 class="section-title">Quando o marketing segue a tua energia</h2>
-    <p class="t-sm">Não tem de ser assim. O marketing que se sustenta não nasce de copiar o que resulta nos outros, nasce do que está <strong>alinhado contigo</strong>: com quem és, com a energia que tens e com a vida que queres ter.</p>
     <div class="callout grayD" style="margin:1.8rem 0 0;"><div class="ci">🕵🏻‍♀️</div><div class="ctext">
-      <p class="t-xs">Já vi centenas de pessoas, especialmente mulheres, nos seus negócios, a <strong>forçar uma estratégia</strong>: a copiar e a seguir o que mentores lhes diziam para fazer, sem terem em conta a pessoa que são, o que querem para a sua vida e a sua energia pessoal. Sem essa parte, nenhuma estratégia se sustenta. <strong>Na CEEN fazemos o trabalho que é difícil de fazer sem apoio:</strong> permitires-te questionar e perceber o que queres realmente para ti. É a partir daí que se avança.</p>
+      <p class="t-xs">Já vi centenas de pessoas, especialmente mulheres, nos seus negócios, a <strong>forçar uma estratégia</strong>: a copiar e a seguir o que mentores lhes diziam para fazer, sem terem em conta a pessoa que são, o que querem para a sua vida e a sua energia pessoal. O que observo é que sem essa parte nenhuma estratégia se sustenta. <strong>Na CEEN fazemos o trabalho mais difícil de fazer sozinho:</strong> permitires-te abrir outras perspetivas e perceber o que queres realmente para ti. É a partir daí que se avança.</p>
     </div></div>
-    <p class="t-sm" style="margin-top:1.8rem;">E é a partir desse lugar alinhado que podes aprender a criar <strong>automatizações</strong> que partilham a tua mensagem por ti, mesmo quando não estás a trabalhar, para te focares no essencial.</p>
+    <p class="t-sm" style="margin-top:1.8rem;">🚀 E é a partir desse lugar alinhado que podes aprender, também na CEEN, a criar <strong>automatizações</strong> que partilham a tua mensagem, mesmo quando não estás a trabalhar, para te focares no essencial.</p>
     <div class="flow">
-      <div class="fl"><div class="n">1</div><h3>Percebes o que queres</h3><p>Questionas-te com apoio e ganhas clareza sobre o que queres para ti, para o que ofereces e para como queres trabalhar.</p></div>
-      <div class="fl"><div class="n">2</div><h3>A estratégia ganha forma</h3><p>A tua mensagem passa para formatos que se repetem sem ti: emails, respostas, conteúdos e percursos.</p></div>
-      <div class="fl"><div class="n">3</div><h3>Focas-te no essencial</h3><p>O teu tempo e a tua energia ficam para o que só tu fazes: sessões, criação, visão.</p></div>
-    </div>
-    <div class="ai">
-      <span class="tag">🚀 Em breve</span>
-      <p>E, claro, tendo em conta as novidades do momento com o apoio da IA, vem explorar como 🪄</p>
+      <div class="fl"><div class="n">1</div><h3>Percebes o que queres</h3><p>Questionas-te com apoio e ganhas clareza sobre o que ofereces e sobre como queres trabalhar.</p></div>
+      <div class="fl"><div class="n">2</div><h3>A estratégia ganha forma</h3><p>A tua mensagem passa para formatos que se repetem sem ti: e-mails, respostas, conteúdos e percursos.</p></div>
+      <div class="fl"><div class="n">3</div><h3>Focas-te no essencial</h3><p>O teu tempo e a tua energia ficam para o que só tu fazes: visão, criação, sessões.</p></div>
     </div>
   </div>
 </section>
@@ -1475,11 +1470,11 @@
     <h2 class="section-title">O que podes ganhar com a CEEN</h2>
     <div class="gain">
       <div><span class="g">1</span><span><b>Clareza sobre o que queres</b>Deixas de decidir às cegas e passas a saber para onde vais e porquê.</span></div>
-      <div><span class="g">2</span><span><b>Uma oferta e preços que te representam</b>O que ofereces e quanto cobras passam a refletir quem és hoje.</span></div>
-      <div><span class="g">3</span><span><b>Uma estratégia que consegues sustentar</b>Feita à tua medida, sem copiar o que funciona para os outros.</span></div>
+      <div><span class="g">2</span><span><b>Oferta e preços que te representam</b>O que ofereces e quanto cobras passam a refletir quem és hoje.</span></div>
+      <div><span class="g">3</span><span><b>Estratégias que consegues sustentar</b>Feita à tua medida, sem copiar o que funciona para os outros.</span></div>
       <div><span class="g">4</span><span><b>Tempo e energia de volta</b>Com automatizações, menos tarefas repetitivas e mais espaço para o essencial.</span></div>
       <div><span class="g">5</span><span><b>Confiança para decidir</b>Escolhes com mais segurança, sem pressões nem fórmulas alheias.</span></div>
-      <div><span class="g">6</span><span><b>Uma mensagem que chega às pessoas certas</b>Comunicas com autenticidade e atrais quem se reconhece em ti.</span></div>
+      <div><span class="g">6</span><span><b>A mensagem que chega às pessoas certas</b>Comunicas com autenticidade e atrais quem se reconhece em ti.</span></div>
     </div>
   </div>
 </section>
