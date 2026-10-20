@@ -102,7 +102,6 @@ html[data-theme="dark"] .bk-ss { background:#382c22; } html[data-theme="dark"] .
   if(n) q.push('name='+encodeURIComponent(n)); if(e) q.push('email='+encodeURIComponent(e));
   var url=base+(q.length?'?'+q.join('&'):'');
   document.getElementById('go').href=url; document.getElementById('ln').href=url;
-  if(e){ try{ var b=new FormData(); b.append('fields[email]',e); if(n) b.append('fields[name]',n.split(' ')[0]); b.append('ml-submit','1'); b.append('anticsrf','true'); fetch('https://assets.mailerlite.com/jsonp/2708796/forms/201738852742727289/subscribe',{method:'POST',mode:'no-cors',body:b}); }catch(x){} }
   var t=5, cd=document.getElementById('cd');
   var iv=setInterval(function(){ t--; cd.textContent=t; if(t<=0){ clearInterval(iv); try{localStorage.removeItem('fo_align');localStorage.removeItem('fo_align_n');}catch(x){} location.href=url; } },1000);
 })();

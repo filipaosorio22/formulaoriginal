@@ -1788,7 +1788,6 @@
     if (e.origin !== location.origin) return;
     var d = e.data; if (!d || d.foCal !== 'booked') return;
     if (BK.substack) { var bs = document.getElementById('bkSubstack'); document.getElementById('bkSubstackLink').href = 'https://filipaosorio.substack.com/subscribe?email=' + encodeURIComponent(BK.email); bs.style.display = 'block'; try { bs.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(x){} }
-    if (BK.email && !BK.lembrete) { BK.lembrete = true; try { var fm = new FormData(); fm.append('fields[email]', BK.email); if (BK.nome) fm.append('fields[name]', BK.nome.split(' ')[0]); fm.append('ml-submit', '1'); fm.append('anticsrf', 'true'); fetch('https://assets.mailerlite.com/jsonp/2708796/forms/' + (document.documentElement.lang === 'en' ? '201762983981876941' : '201762981579589581') + '/subscribe', { method:'POST', mode:'no-cors', body:fm }); } catch(x){} }
     if (BK.enviado && !BK.reservaAvisada) {
       BK.reservaAvisada = true;
       enviar('Marcou a data · ' + BK.nome + ' · ' + BK.formato, 'Site · CEEN', BK.email, ['A pessoa marcou a data no Calendly.', 'Nome: ' + BK.nome, 'E-mail: ' + BK.email, 'Formato: ' + BK.formato]).catch(function(){ BK.reservaAvisada = false; });
