@@ -1078,16 +1078,16 @@
 #sonho-ia .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:2rem 0 0;position:relative;}
 #sonho-ia .fl{background:var(--gray);border:1px solid var(--line);border-radius:20px;padding:22px 20px;position:relative;}
 #sonho-ia .fl .n{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--sessao),var(--ciclo));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--wine);font-weight:700;margin-bottom:10px;}
-#sonho-ia .fl h3{margin:0 0 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;color:var(--wine);font-weight:600;line-height:1.2;}
+#sonho-ia .fl h3{margin:0 0 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;white-space:nowrap;color:var(--wine);font-weight:600;line-height:1.2;}
 #sonho-ia .fl p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft);}
 #sonho-ia .fl:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--gold-deep);background:var(--cream);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;z-index:2;}
 #sonho-ia .ai{margin:2.6rem auto 0;max-width:560px;padding:22px 26px;border-radius:18px;text-align:center;border:1px solid var(--gold);background:linear-gradient(135deg,rgba(248,226,188,.55),rgba(239,211,184,.35));}
 #sonho-ia .ai .tag{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--wine);margin-bottom:8px;}
 #sonho-ia .ai p{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.3;color:var(--ink);}
-#sonho-ia .gain{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.6rem 0 0;}
-#sonho-ia .gain div{display:flex;gap:12px;align-items:flex-start;background:var(--gray);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;line-height:1.5;color:var(--ink);}
-#sonho-ia .gain div b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--wine);font-weight:600;line-height:1.2;margin-bottom:2px;}
-#sonho-ia .gain span.g{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--sessao),var(--ciclo));display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--wine);font-weight:700;}
+.gain{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.6rem 0 0;}
+.gain div{display:flex;gap:12px;align-items:flex-start;background:var(--gray);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;line-height:1.5;color:var(--ink);}
+.gain div b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--wine);font-weight:600;line-height:1.2;margin-bottom:2px;}
+.gain span.g{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--sessao),var(--ciclo));display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--wine);font-weight:700;}
 #sonho-ia .ia-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:1.8rem 0 0;}
 #sonho-ia .ia-card{background:var(--gray);border:1px solid var(--line);border-radius:20px;padding:22px 22px 20px;}
 #sonho-ia .ia-ico{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;background:linear-gradient(135deg,var(--sessao),var(--ciclo));margin-bottom:12px;}
@@ -1098,7 +1098,7 @@
 #sonho-ia .ia-after{border-top:1px dashed var(--line);padding-top:10px;color:var(--ink) !important;} #sonho-ia .ia-after span{color:var(--wine);}
 #sonho-ia .ia-close{margin:2.2rem 0 0;padding:26px 24px;border-radius:22px;text-align:center;background:linear-gradient(135deg,var(--sessao),var(--ciclo));}
 #sonho-ia .ia-close p{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.3;color:var(--ink);}
-@media (max-width:700px){#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{flex-direction:column;gap:2px;white-space:normal;align-self:stretch;width:auto;margin-right:6px;} #sonho-ia .flow{grid-template-columns:1fr;} #sonho-ia .gain{grid-template-columns:1fr;} #sonho-ia .ai p{font-size:21px;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:16px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
+@media (max-width:700px){#sonho-ia .ia-grid{grid-template-columns:1fr;} #sonho-previa .bub{flex-direction:column;gap:2px;white-space:normal;align-self:stretch;width:auto;margin-right:6px;} #sonho-ia .flow{grid-template-columns:1fr;} .gain{grid-template-columns:1fr;} #sonho-ia .ai p{font-size:21px;} #sonho-ia .fl:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%);} #sonho-previa .bub p{font-size:16px;} #sonho-previa .bub-me{font-size:23px;} #sonho-ia .ia-close p{font-size:22px;}}
 </style>
 <hr class="div">
 
@@ -1115,42 +1115,34 @@
 <div class="bub r brown"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">💬 num grupo</span><p>Tens de estar em todas as redes e responder a tudo, a toda a hora.</p></div>
 <div class="bub l sessao"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">📸 num workshop</span><p>Tens de te mostrar mais, falar para a câmara, dançar se for preciso.</p></div>
 <div class="bub r ciclo"><span class="bub-ck" aria-hidden="true">×</span><span class="bub-from">🧱 num conselho</span><p>Sem equipa, ficas com tudo nas tuas costas.</p></div>
-      <div class="bub-me">…e tu, o que querias mesmo fazer?</div>
     </div>
   </div>
 </section>
 
 <section class="pause pause-b" style="padding:120px 0;">
   <div class="wrap-wide">
-    <p class="pause-quote two">E se, para ti, pudesse ser diferente?</p>
+    <p class="pause-quote two">…e tu, o que querias mesmo fazer?</p>
   </div>
 </section>
+
+<hr class="div">
 
 <section id="sonho-ia">
   <div class="wrap">
     <h2 class="section-title">Quando o marketing segue a tua energia</h2>
     <p class="t-sm">Não tem de ser assim. O marketing que se sustenta não nasce de copiar o que resulta nos outros, nasce do que está <strong>alinhado contigo</strong>: com quem és, com a energia que tens e com a vida que queres ter.</p>
-    <div class="callout grayD" style="margin:1.8rem 0 0;"><div class="ci">🌸</div><div class="ctext">
-      <p class="t-xs">Já vi centenas de mulheres, nos seus negócios, a <strong>forçar uma estratégia</strong>: a copiar e a seguir o que mentores lhes diziam para fazer, sem terem em conta a pessoa que são, o que querem para a sua vida e a energia que têm. Sem essa parte, nenhuma estratégia se sustenta. <strong>Na CEEN fazemos o trabalho que é difícil de fazer sem apoio:</strong> permitires-te questionar e perceber o que queres realmente para ti. É a partir daí que se avança.</p>
+    <div class="callout grayD" style="margin:1.8rem 0 0;"><div class="ci">🕵🏻‍♀️</div><div class="ctext">
+      <p class="t-xs">Já vi centenas de pessoas, especialmente mulheres, nos seus negócios, a <strong>forçar uma estratégia</strong>: a copiar e a seguir o que mentores lhes diziam para fazer, sem terem em conta a pessoa que são, o que querem para a sua vida e a sua energia pessoal. Sem essa parte, nenhuma estratégia se sustenta. <strong>Na CEEN fazemos o trabalho que é difícil de fazer sem apoio:</strong> permitires-te questionar e perceber o que queres realmente para ti. É a partir daí que se avança.</p>
     </div></div>
     <p class="t-sm" style="margin-top:1.8rem;">E é a partir desse lugar alinhado que podes aprender a criar <strong>automatizações</strong> que partilham a tua mensagem por ti, mesmo quando não estás a trabalhar, para te focares no essencial.</p>
     <div class="flow">
-      <div class="fl"><div class="n">1</div><h3>Percebes o que queres</h3><p>Questionas-te com apoio e ficas com clareza sobre o que queres para ti, para o que ofereces e para como queres trabalhar.</p></div>
+      <div class="fl"><div class="n">1</div><h3>Percebes o que queres</h3><p>Questionas-te com apoio e ganhas clareza sobre o que queres para ti, para o que ofereces e para como queres trabalhar.</p></div>
       <div class="fl"><div class="n">2</div><h3>A estratégia ganha forma</h3><p>A tua mensagem passa para formatos que se repetem sem ti: emails, respostas, conteúdos e percursos.</p></div>
-      <div class="fl"><div class="n">3</div><h3>Focas-te no essencial</h3><p>O teu tempo e a tua energia ficam para o que só tu fazes: sessões, criação, vida.</p></div>
+      <div class="fl"><div class="n">3</div><h3>Focas-te no essencial</h3><p>O teu tempo e a tua energia ficam para o que só tu fazes: sessões, criação, visão.</p></div>
     </div>
     <div class="ai">
-      <span class="tag">🚀 Algo extra</span>
-      <p>E há uma novidade extraordinária que torna tudo isto ainda mais leve. Por agora, fica só o trailer.</p>
-    </div>
-    <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;color:var(--wine);font-weight:600;margin:2.6rem 0 0;">O que podes ganhar com a CEEN</h3>
-    <div class="gain">
-      <div><span class="g">1</span><span><b>Clareza sobre o que queres</b>Deixas de decidir às cegas e passas a saber para onde vais e porquê.</span></div>
-      <div><span class="g">2</span><span><b>Uma oferta e preços que te representam</b>O que ofereces e quanto cobras passam a refletir quem és hoje.</span></div>
-      <div><span class="g">3</span><span><b>Uma estratégia que consegues sustentar</b>Feita à tua medida, sem copiar o que funciona para os outros.</span></div>
-      <div><span class="g">4</span><span><b>Tempo e energia de volta</b>Com automatizações, menos tarefas repetitivas e mais espaço para o essencial.</span></div>
-      <div><span class="g">5</span><span><b>Confiança para decidir</b>Escolhes com mais segurança, sem pressões nem fórmulas alheias.</span></div>
-      <div><span class="g">6</span><span><b>Uma mensagem que chega às pessoas certas</b>Comunicas com autenticidade e atrais quem se reconhece em ti.</span></div>
+      <span class="tag">🚀 Em breve</span>
+      <p>Vem aí algo que dá ainda mais asas a tudo isto. Em breve conto-te.</p>
     </div>
   </div>
 </section>
@@ -1472,6 +1464,22 @@
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente2_1.png?v=6" alt="Mensagem de uma cliente sobre o trabalho feito na CEEN" onerror="this.parentElement.textContent='upsell_cliente2_1.png'"></div>
       <div class="ph"><img class="cropt" src="upsell_cliente2_2.png.png?v=6" alt="Mensagem de uma cliente sobre o trabalho feito na CEEN" onerror="this.parentElement.textContent='upsell_cliente2_2.png.png'"><span class="er" style="left:73.4%; margin-top:184%; width:9.7%; padding-top:4%;"></span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="ganhar">
+  <div class="wrap">
+    <h2 class="section-title">O que podes ganhar com a CEEN</h2>
+    <div class="gain">
+      <div><span class="g">1</span><span><b>Clareza sobre o que queres</b>Deixas de decidir às cegas e passas a saber para onde vais e porquê.</span></div>
+      <div><span class="g">2</span><span><b>Uma oferta e preços que te representam</b>O que ofereces e quanto cobras passam a refletir quem és hoje.</span></div>
+      <div><span class="g">3</span><span><b>Uma estratégia que consegues sustentar</b>Feita à tua medida, sem copiar o que funciona para os outros.</span></div>
+      <div><span class="g">4</span><span><b>Tempo e energia de volta</b>Com automatizações, menos tarefas repetitivas e mais espaço para o essencial.</span></div>
+      <div><span class="g">5</span><span><b>Confiança para decidir</b>Escolhes com mais segurança, sem pressões nem fórmulas alheias.</span></div>
+      <div><span class="g">6</span><span><b>Uma mensagem que chega às pessoas certas</b>Comunicas com autenticidade e atrais quem se reconhece em ti.</span></div>
     </div>
   </div>
 </section>
