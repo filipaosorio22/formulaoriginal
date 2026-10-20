@@ -266,7 +266,8 @@ window.FO_PAY = {
     $('tot').textContent = total() + '€';
     var v = sel().value, sn = $('sesNote');
     var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
-    sn.hidden = !hasS; $('fam').hidden = !hasS;
+    sn.hidden = !hasS; $('fam').hidden = !(v === 'sessao' || v === 'rssessao');
+    if (!gift) $('lifeTxt').textContent = v === 'sessaosolo' ? 'Opcional, mas recomendo que partilhes: ajuda-me a preparar a sessão. Escreve como te sair' : 'Não precisas de escrever tudo perfeito, escreve como te sair';
     sn.textContent = v === 'sessaosolo' ? 'A data da sessão não é escolhida agora: depois de confirmado o pagamento, és encaminhada logo a seguir para a página onde marcas o dia e a hora que preferires, e recebes também a ligação por e-mail.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
     $('prazo').hidden = v === 'sessaosolo';
   }
@@ -307,7 +308,7 @@ window.FO_PAY = {
     var data = $('data').value, hora = $('hora').value, local = $('local').value.trim();
     if (data && !validDate(data)){ err.textContent = 'Confirma a data de nascimento (dd/mm/aaaa).'; $('data').focus(); return; }
     if (birthNeeded() && (!data || !hora || !local)){ err.textContent = 'Preciso da data, da hora e do local de nascimento.'; $('data').focus(); return; }
-    if (!gift && !$('q1').value.trim() || !gift && !$('q2').value.trim() || !gift && !$('q3').value.trim()){ err.textContent = 'Responde às três perguntas sobre o teu momento.'; return; }
+    if (base().value !== 'sessaosolo' && (!gift && !$('q1').value.trim() || !gift && !$('q2').value.trim() || !gift && !$('q3').value.trim())){ err.textContent = 'Responde às três perguntas sobre o teu momento.'; return; }
     function famVal(id){ var c = [].map.call(document.querySelectorAll('.fchips[data-for="' + id + '"] input:checked'), function(i){ return i.value; }); var t = $(id).value.trim(); return c.length || t ? c.join(', ') + (c.length && t ? '. ' : '') + t : ''; }
     if (!$('fam').hidden && (!famVal('famA') || !famVal('famH'))){ err.textContent = 'Responde às perguntas sobre os mapas (escolhe uma opção ou escreve).'; return; }
     if (gift && entrega() === 'ja' && !$('rnome').value.trim()){ err.textContent = 'Escreve o nome de quem recebe.'; $('rnome').focus(); return; }
