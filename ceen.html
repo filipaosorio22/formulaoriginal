@@ -401,7 +401,7 @@
   .fcard.work .ffront { padding-top:58px; }
   .fmt-card.on { box-shadow:0 0 0 1px var(--gold), 0 6px 16px rgba(201,168,108,0.16); transform:translateY(-2px); }
   @media (max-width:680px){ .fmt { grid-template-columns:1fr; } }
-  .amostra-frame { color-scheme:light; display:block; width:100%; height:640px; border:0; border-radius:12px; background:var(--cream); margin:1.2rem 0 0.6rem; }
+  .amostra-frame { display:block; width:100%; height:640px; border:0; border-radius:12px; background:var(--cream); margin:1.2rem 0 0.6rem; }
   .amostra-legenda { font-size:15px; font-style:italic; color:var(--ink-soft); text-align:left; }
   .callout.infoC li { font-size:17px; }
   .callout.infoC .ctext { padding-right:2.4rem; }
@@ -445,7 +445,6 @@
   html[data-theme="dark"] .callout.infoC { background:#2e3529; }
   html[data-theme="dark"] details.fold.feature { background:#2c2620; }
   html[data-theme="dark"] .fback { background:#272019; }
-  html[data-theme="dark"] .testimonial-photos-ph img { filter:brightness(0.88); }
   html[data-theme="dark"] #ceenCalendlyModal > div { background:#26211c !important; }
   html[data-theme="dark"] #ceenCalendlyModal p { color:#efe6d8 !important; }
   html[data-theme="dark"] #ceenCalendlyModal button { color:#d3b67f !important; }
@@ -2235,7 +2234,7 @@
   function apply(c){ if (c.analytics) loadGA(); if (c.calendly) loadCal(); }
   var F = "font-family:'DM Sans',sans-serif;";
   var BTN = F + 'font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; border-radius:30px; padding:10px 18px; cursor:pointer;';
-  var html = '<div id="cookieVeil" style="display:none; position:fixed; inset:0; background:rgba(26,20,16,0.35); z-index:998;"></div>' +
+  var html = '<div id="cookieVeil" style="display:none; position:fixed; inset:0; background:transparent; pointer-events:none; z-index:998;"></div>' +
     '<div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem calc(1.25rem + env(safe-area-inset-bottom, 0px)); box-shadow:0 -4px 24px rgba(26,20,16,0.12); max-height:85vh; overflow-y:auto;">' +
     '<div id="cookieSimple" style="max-width:760px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">' +
     '<p style="' + F + 'font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0; text-align:left;">' + t.txt + ' <a href="' + t.priv + '" style="color:#7a2535; text-decoration:underline;">' + t.more + '</a></p>' +
