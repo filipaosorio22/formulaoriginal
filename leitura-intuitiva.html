@@ -1039,6 +1039,29 @@
 
   .ses-feedback-note { font:13px/1.7 'DM Sans',sans-serif; color:var(--ink-soft); margin:1.7rem 0 1rem; }
   .ses-feedback-name { display:block; font:600 13px/1.5 'DM Sans',sans-serif; color:var(--wine); margin-top:.85rem; }
+
+  /* Abertura com a mesma estrutura das páginas de leituras. */
+  main .fo-breadcrumb { margin-bottom:0; }
+  main .hero.astro-hero { width:calc(100vw - 72px); max-width:1100px; position:relative; left:50%; transform:translateX(-50%); margin:0; padding:75px 0 90px !important; min-height:0; display:grid; grid-template-columns:1.25fr 1fr; gap:75px; align-items:center; overflow:visible; }
+  .astro-copy h1 { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(48px,5.6vw,78px); font-style:normal; font-weight:500; line-height:1.04; letter-spacing:-1.8px; margin:0 0 .5em; }
+  .astro-copy h1 em { font-style:italic; font-weight:400; }
+  .astro-copy .fo-eyebrow { margin-bottom:22px; }
+  .astro-copy .astro-lead { font-size:17px; line-height:1.9; margin:25px 0 28px; max-width:590px; }
+  .astro-copy .btn { border-radius:2px; font:13px/1.5 'DM Sans',sans-serif; padding:14px 24px; }
+  .astro-meta { font:11px/1.8 'DM Sans',sans-serif; letter-spacing:.05em; color:var(--ink-soft); margin-top:17px; }
+  .astro-hero .astro-art { min-height:390px; grid-row:auto; }
+  .astro-hero .astro-map { position:relative; width:min(100%,410px); opacity:1; transform:rotate(-5deg); }
+  #quem-te-guia .bio-map .bio-photo { position:relative; height:420px !important; min-height:0 !important; }
+  #quem-te-guia .bio-map .bio-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 66% !important; }
+  .bio-map .bio-map-more { margin-top:1.3rem; }
+  @media(max-width:850px) { main .hero.astro-hero { gap:30px; } }
+  @media(max-width:680px) { #quem-te-guia .bio-map .bio-photo { height:auto !important; aspect-ratio:4/5 !important; } }
+  @media(max-width:620px) {
+    main .hero.astro-hero { width:calc(100vw - 40px); grid-template-columns:1fr; gap:20px; padding:45px 0 55px !important; }
+    .astro-copy h1 { font-size:53px; letter-spacing:-1px; }
+    .astro-hero .astro-art { min-height:290px; grid-row:auto; max-width:320px; width:100%; margin:auto; }
+    .astro-hero .astro-map { width:280px; }
+  }
 </style>
 <link rel="alternate" hreflang="en" href="leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -1073,15 +1096,17 @@
 <main class="page" lang="pt"><p class="fo-breadcrumb"><a href="leituras.html">As leituras</a> / Astrologia + Human Design</p>
 
   <!-- ABERTURA -->
-  <header class="hero">
-    <div class="cover-li">
-      <div class="cover-text">
-    <h1>Leitura Intuitiva</h1>
-    <p class="h1-sub">Uma Leitura totalmente personalizada e única feita com intuição e método</p>
-      </div>
+  <header class="hero astro-hero">
+    <div class="astro-copy">
+      <p class="fo-eyebrow">Astrologia + Human Design</p>
+      <h1>Leitura<br><em>Intuitiva</em></h1>
+      <p class="astro-lead">Uma Leitura totalmente personalizada e única feita com intuição e método.</p>
+      <a class="btn outline" href="#o-que-e">Conhecer a Leitura ↓</a>
+      <p class="astro-meta">Por escrito · até 14 dias úteis · 247 €</p>
     </div>
-    <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
+    <div class="astro-art" aria-hidden="true"><img class="astro-map" src="leituras-assets/astrolabio.svg" alt=""></div>
   </header>
+  <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
 
   <!-- TEXTO SOBRE A FOTO DE FUNDO -->
   <div class="texto-fundo reveal" id="comeco">
@@ -1108,22 +1133,12 @@
       <li><span class="mk">✦</span><span>Queres tomar decisões alinhadas, sem te perderes no ruído da mente</span></li>
     </ul>
     <div class="gold-rule" aria-hidden="true"></div>
-    <p class="jump-row"><a class="jump-link" href="#quem-te-guia" onclick="jumpToBio(); return false;">Começa por conhecer quem te guia</a></p>
+    <p class="jump-row"><a class="jump-link" href="#quem-te-guia" onclick="jumpToBio(); return false;">Conhece-me através dos meus mapas</a></p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
-  <!-- TESTEMUNHOS PARTILHADOS NA PÁGINA GERAL -->
-  <section class="reveal shared-testimonials" id="testemunhos">
-    <p class="fo-eyebrow">A minha forma de fazer leituras</p>
-    <h2>As experiências de quem já recebeu uma Leitura minha</h2>
-    <p class="body-text">Reuni os testemunhos na página geral das minhas leituras. São relatos de Leituras de Aura que fiz anteriormente, identificados como tal, e permitem conhecer essa experiência com o meu trabalho.</p>
-    <a class="btn outline" href="leituras.html#testemunhos">Conhecer os testemunhos →</a>
-  </section>
-
-  <div class="divider"><span></span><span></span></div>
-
-  <!-- O QUE É -->
+<!-- O QUE É -->
   <!-- A MINHA VISÃO DA LEITURA DE MAPAS -->
   <section class="reveal" id="minha-visao">
     <h2>A minha visão da Leitura</h2><p class="body-text">Nem tudo o que nos é familiar continua a fazer sentido. Por vezes, a forma como trabalhamos, nos relacionamos ou usamos o tempo está mais ligada ao que aprendemos a fazer para sentirmos aceitação e segurança do que àquilo que hoje desejamos.</p>
@@ -1144,22 +1159,19 @@
 
   <!-- CONHECE QUEM TE GUIA -->
   <section class="reveal" id="quem-te-guia">
-    <h2>Conhece quem te guia</h2><div class="bio-box"><h3 class="bio-title">Sou a Filipa Osório</h3>
-    <div class="bio"><div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div><div><p class="body-text">Tenho formação e experiência em gestão e estratégia e, há vários anos, estudo o desenvolvimento infantil, o comportamento humano e as crenças e padrões que nos movem sem darmos conta. O meu percurso reúne Coaching, Constelações Familiares, Leitura de Aura, Reiki, ThetaHealing®, innerdance e linguagens simbólicas como os sonhos, a alquimia, a Astrologia e o Human Design, com aplicação aos negócios e às crianças (está mais relacionado do que parece).</p>
-    <p class="body-text">Desta experiência nasceu uma metodologia própria, em que a intuição, a leitura de energia, a interpretação simbólica e a análise fazem parte do mesmo olhar.</p></div></div>
-    <details class="astro"><summary>Um olhar sobre mim pelos olhos da Astrologia e do Human Design</summary><div class="astro-body"><p class="body-text">Com Mercúrio e Vénus em Sagitário, <strong>procuro sentido e liberdade para descobrir e partilhar</strong>. O Sol junto de Marte em Capricórnio dá forma ao que descubro: não quero uma Leitura só bonita de ler, <strong>quero um fio condutor e perguntas a que possas regressar</strong>.</p>
-    <p class="body-text">A Lua em Carneiro oferece-me uma imagem da espontaneidade e intensidade do sentir. A autoridade emocional, no Human Design, acrescenta uma distinção que me ajuda: <strong>sentir alguma coisa com força não significa que tenha de decidir nesse instante</strong>. Foi também assim que reconheci <strong>o valor do trabalho assíncrono</strong>: preparar com atenção e dar espaço para cada pessoa receber e explorar a Leitura e até sessões ou acompanhamentos, no seu tempo.</p>
-    <p class="body-text">Durante anos achei que o meu percurso era dispersão: dois mestrados, cinco anos em gestão, quatro empresas, seis funções. Reconhecer-me como Geradora Manifestante com perfil 3/5 ajudou-me a vê-lo com mais carinho: <strong>experimentar, errar, ajustar e transformar a experiência em algo útil</strong>.</p>
-    <p class="body-text">No Ascendente em Aquário, encontro uma imagem da liberdade de seguir uma forma própria de estar no mundo. No Human Design, o portal 10, onde está o meu Sol consciente e que está associado ao amor-próprio, torna essa reflexão mais íntima: <strong>como posso ser fiel a mim sem precisar de provar a minha diferença ou de a esconder para pertencer?</strong></p>
-    <p class="body-text">Estas linguagens não me deram uma definição de quem sou. <strong>Deram-me perspetivas e perguntas.</strong> É isso que levo para as Leituras e para as sessões: não te encaixar numa descrição, mas <strong>ajudar-te a encontrar mais espaço para seres tu</strong>.</p><button type="button" class="astro-up" aria-label="Fechar este texto" onclick="var d=this.closest('details');d.open=false;d.scrollIntoView({block:'center',behavior:'smooth'});">↑</button></div></details>
-    <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a></div>
+    <h2>Um olhar sobre mim pelos olhos da Astrologia e do Human Design</h2>
+    <div class="bio-box bio-map">
+      <div class="bio"><div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div><div class="astro-body"><p class="body-text">Com Mercúrio e Vénus em Sagitário, <strong>procuro sentido e liberdade para descobrir e partilhar</strong>. O Sol junto de Marte em Capricórnio dá forma ao que descubro: não quero uma Leitura só bonita de ler, <strong>quero um fio condutor e perguntas a que possas regressar</strong>.</p><p class="body-text">A Lua em Carneiro oferece-me uma imagem da espontaneidade e intensidade do sentir. A autoridade emocional, no Human Design, acrescenta uma distinção que me ajuda: <strong>sentir alguma coisa com força não significa que tenha de decidir nesse instante</strong>. Foi também assim que reconheci <strong>o valor do trabalho assíncrono</strong>: preparar com atenção e dar espaço para cada pessoa receber e explorar a Leitura e até sessões ou acompanhamentos, no seu tempo.</p></div></div>
+      <div class="astro-body bio-map-more"><p class="body-text">Durante anos achei que o meu percurso era dispersão: dois mestrados, cinco anos em gestão, quatro empresas, seis funções. Reconhecer-me como Geradora Manifestante com perfil 3/5 ajudou-me a vê-lo com mais carinho: <strong>experimentar, errar, ajustar e transformar a experiência em algo útil</strong>.</p><p class="body-text">No Ascendente em Aquário, encontro uma imagem da liberdade de seguir uma forma própria de estar no mundo. No Human Design, o portal 10, onde está o meu Sol consciente e que está associado ao amor-próprio, torna essa reflexão mais íntima: <strong>como posso ser fiel a mim sem precisar de provar a minha diferença ou de a esconder para pertencer?</strong></p><p class="body-text">Estas linguagens não me deram uma definição de quem sou. <strong>Deram-me perspetivas e perguntas.</strong> É isso que levo para as Leituras e para as sessões: não te encaixar numa descrição, mas <strong>ajudar-te a encontrar mais espaço para seres tu</strong>.</p></div>
+      <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar à Leitura Intuitiva</a>
+    </div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
   <!-- HUMAN DESIGN -->
   <section class="reveal" id="human-design">
-    <h2>Astrologia e aprofundamento com o Human Design</h2><p class="body-text">A Astrologia que uso tem uma leitura alquímica: os planetas representam funções e movimentos, os signos dão-lhes uma qualidade de expressão e as casas situam os temas nas áreas da vida. O Human Design combina referências astrológicas com o I Ching, a Cabala e os chakras numa linguagem própria de autoconhecimento, e oferece outra forma de explorares o teu ritmo, a forma como decides e te relacionas. Interpreto as posições planetárias e os portais como referências simbólicas. Como diz a máxima atribuída a Hermes Trismegisto, «o que está em baixo é como o que está em cima.»</p><h3 class="hdq-t">O que dizem sobre a Leitura de mapa comigo</h3><div class="hdmsgs"><blockquote class="hdmsg"><p class="quote-text">Querida Filipa, sinto que hoje, pela primeira vez há muito tempo, me dediquei a mim de uma forma muito especial e feminina. Estive durante as últimas 4h a navegar nas tuas palavras sobre o meu mapa e acabo com muita paz dentro de mim.</p></blockquote>
+    <h2>Astrologia e aprofundamento com o Human Design</h2><p class="body-text">A Astrologia que uso tem uma leitura alquímica: os planetas representam funções e movimentos, os signos dão-lhes uma qualidade de expressão e as casas situam os temas nas áreas da vida. O Human Design combina referências astrológicas com o I Ching, a Cabala e os chakras numa linguagem própria de autoconhecimento, e oferece outra forma de explorares o teu ritmo, a forma como decides e te relacionas. Interpreto as posições planetárias e os portais como referências simbólicas. Como diz a máxima atribuída a Hermes Trismegisto, «o que está em baixo é como o que está em cima.»</p><h3 class="hdq-t">Experiências de leituras de Human Design</h3><div class="hdmsgs"><blockquote class="hdmsg"><p class="quote-text">Querida Filipa, sinto que hoje, pela primeira vez há muito tempo, me dediquei a mim de uma forma muito especial e feminina. Estive durante as últimas 4h a navegar nas tuas palavras sobre o meu mapa e acabo com muita paz dentro de mim.</p></blockquote>
       <blockquote class="hdmsg"><p class="quote-text">E estou mesmo feliz por estar a fazer esta jornada deste autoconhecimento através do Human Design contigo. E é assim, nunca explorei a área com mais ninguém, mas confesso que estou mesmo... Opa, espantada, de certa maneira, com esta forma toda que tu criaste de fazer este acompanhamento. Está mesmo lindo.</p><small class="hdnote">transcrição de um áudio</small></blockquote>
       <blockquote class="hdmsg"><p class="quote-text">A base não é nova, mas realmente a forma como trouxeste a (mesma) informação fez-me mais sentido, como se tivesse ressoado a outro nível ☺️</p></blockquote>
       <blockquote class="hdmsg"><p class="quote-text">Encaixou como peças de puzzle 🧩 E acima de tudo está num "idioma" que ressoa ✨ Que trabalho lindo, Filipa. Muito entusiasmada por fazer este mergulho contigo 💙</p></blockquote>
@@ -1216,12 +1228,7 @@
   <!-- SESSÃO DE APROFUNDAMENTO -->
   <section class="reveal" id="sessao">
     <div class="ses-box"><p class="ses-eye">Para ires mais fundo</p><h2>Sessão de alinhamento (e aprofundamento)</h2><p class="ses-lead">Por vezes, compreender um padrão não chega para responder de outra forma. Podemos reconhecer o que acontece e, ainda assim, ter dificuldade em dizer não, decidir, expressar uma necessidade ou avançar com algo que desejamos. Nesta sessão partimos de uma situação concreta da tua vida. Não precisas de chegar com tudo em ordem: pode ser uma pergunta, um conflito ou algo que sentes e ainda não sabes explicar.</p><div class="ses-steps"><div class="ses-st"><span>1</span><b>Nomear</b><p>Dar palavras ao que acontece: o que sentes, como respondes e o que acreditas nessa situação.</p></div><div class="ses-st"><span>2</span><b>Compreender</b><p>Explorar o que essas respostas procuram proteger e o que te custa mantê-las hoje, sem as tratar como falhas.</p></div><div class="ses-st"><span>3</span><b>Experimentar</b><p>Encontrar uma perspetiva a cultivar e um passo possível: expressar uma necessidade, comunicar um limite, responder de outra forma.</p></div></div><p class="ses-p">Se já recebeste a Leitura, não começamos do zero: partimos do que ela despertou. Também podes marcar só a sessão (179€) e partir diretamente do tema que queres trabalhar. Com a Leitura, a sessão custa 150€. As práticas que integro dependem do que trazes e do que combinamos.</p><div class="ses-solo"><a class="btn" href="marcar-leitura.html?op=sessaosolo">Marcar só a sessão · 179€</a></div></div><h3 class="hdq-t sesq-t">O que dizem sobre as sessões comigo</h3>
-    <div class="sesimgs">
-      <img src="feedback-sessao-one-in-a-kind.jpg?v=3" alt="Testemunho de uma cliente sobre a sessão: «a sessão que tivemos foi one-in-a-kind»" loading="lazy">
-      <img src="feedback-sessao-esta-viagem.jpg?v=2" alt="Testemunho de uma cliente: «Esta viagem tem sido tão incrível… Veio sossegar o meu espírito desassossegado»" loading="lazy">
-    </div>
-  
-  <p class="ses-feedback-note">Experiências de sessões e de acompanhamento individual. Excertos editados a partir de mensagens e áudios partilhados ao longo desses processos.</p><div class="hdmsgs ses-feedbacks"><blockquote class="hdmsg"><p>Quando li as crenças escritas, as chaves da sessão, os pontos que tocámos, os insights… <strong>senti estrutura sem perder profundidade.</strong> Senti que alguém segurou a parte que eu sozinha não conseguia organizar sem cair no controlo.</p><p>E, acima de tudo, <strong>senti cuidado.</strong> Porque sei que aquilo levou tempo, energia e presença tua!</p><cite class="ses-feedback-name">Bruna</cite></blockquote><blockquote class="hdmsg"><p>Obrigada por toda a atenção em cada palavra e pelas perguntas que trazes. Já dei por mim a escrever e a refletir sobre a vida que sonho para os próximos anos a partir de uma sugestão tua. <strong>Sinto que estou, pouquinho a pouquinho, a aceder a uma vida minha tão maior.</strong></p><cite class="ses-feedback-name">Lili</cite></blockquote><blockquote class="hdmsg"><p><strong>Sinto que saio sempre muito nutrido das nossas conversas.</strong> Mas, mais do que o dinheiro, o que tenho sentido é muito mais clareza sobre o meu potencial.</p><p>O impacto que estás a ter é impagável. Obrigado por me ouvires e por tudo o que trazes. <strong>Deixas as coisas mais fáceis.</strong></p><cite class="ses-feedback-name">Sérgio</cite></blockquote><blockquote class="hdmsg"><p>Uma das coisas que mais me tem ajudado é <strong>a tua capacidade de ouvir e captar aquilo que digo e, a partir daí, mostrares-me uma perspetiva diferente.</strong> A confiança que transmites, a tua versatilidade e a relação que criámos ajudam-me imenso.</p><p>Criaste um espaço onde me sinto à vontade para me expressar, partilhar questões e desabafar.</p><cite class="ses-feedback-name">Cristina</cite></blockquote><blockquote class="hdmsg"><p>Para mim, muita da leveza que trazes vem de <strong>não me sentir julgada.</strong> Há abertura para dizer aquilo que estou a pensar e a sentir. Não há aquela sensação de estar a pedir demasiado ou de haver uma resposta certa e outra errada.</p><p>Ao mesmo tempo, <strong>trazes profundidade e consegues levar a conversa até onde é preciso ir.</strong> Com a tua sensibilidade, identificas os pontos que precisam de ser olhados naquele momento.</p><cite class="ses-feedback-name">Cristiana</cite></blockquote></div>
+<p class="ses-feedback-note">Experiências de sessões e de acompanhamento individual. Inclui mensagens transcritas e excertos editados de mensagens e áudios partilhados ao longo desses processos.</p><div class="hdmsgs ses-feedbacks"><blockquote class="hdmsg"><p>Bom dia!!! Amei, ainda estou a absorver toda a informação.</p><p>No entanto, quero dizer-te que a sessão que tivemos foi <strong>one-in-a-kind.</strong> Foi das <strong>melhores experiências que já tive, mais reveladoras</strong> e só pensava que adorava <u>causar um impacto tão grande e bom em alguém como aquele que senti contigo.</u></p></blockquote><blockquote class="hdmsg"><p>Esta viagem tem sido tão incrível... <strong>Veio sossegar o meu espírito desassossegado</strong> e <u>confirmar que não é suposto em encaixar-me em padrões que não foram criados por mim</u> e em caixas pré-fabricadas por alguém que achou que toda a gente vive pelas mesmas convicções.</p><p><strong>Sinto que finalmente estou no meu caminho de auto-descoberta</strong> e consciência plena do papel que vim desempenhar nesta vida.<br>Sou um ser livre, nascido do cosmos, em constante transmutação.</p><p>Estou muito curiosa para onde esta viagem me leva a seguir. Para já, vou desfrutando do caminho ✨</p></blockquote><blockquote class="hdmsg"><p>Quando li as crenças escritas, as chaves da sessão, os pontos que tocámos, os insights… <strong>senti estrutura sem perder profundidade.</strong> Senti que alguém segurou a parte que eu sozinha não conseguia organizar sem cair no controlo.</p><p>E, acima de tudo, <strong>senti cuidado.</strong> Porque sei que aquilo levou tempo, energia e presença tua!</p></blockquote><blockquote class="hdmsg"><p>Obrigada por toda a atenção em cada palavra e pelas perguntas que trazes. Já dei por mim a escrever e a refletir sobre a vida que sonho para os próximos anos a partir de uma sugestão tua. <strong>Sinto que estou, pouquinho a pouquinho, a aceder a uma vida minha tão maior.</strong></p></blockquote><blockquote class="hdmsg"><p><strong>Sinto que saio sempre muito nutrido das nossas conversas.</strong> Mas, mais do que o dinheiro, o que tenho sentido é muito mais clareza sobre o meu potencial.</p><p>O impacto que estás a ter é impagável. Obrigado por me ouvires e por tudo o que trazes. <strong>Deixas as coisas mais fáceis.</strong></p></blockquote><blockquote class="hdmsg"><p>Uma das coisas que mais me tem ajudado é <strong>a tua capacidade de ouvir e captar aquilo que digo e, a partir daí, mostrares-me uma perspetiva diferente.</strong> A confiança que transmites, a tua versatilidade e a relação que criámos ajudam-me imenso.</p><p>Criaste um espaço onde me sinto à vontade para me expressar, partilhar questões e desabafar.</p></blockquote><blockquote class="hdmsg"><p>Para mim, muita da leveza que trazes vem de <strong>não me sentir julgada.</strong> Há abertura para dizer aquilo que estou a pensar e a sentir. Não há aquela sensação de estar a pedir demasiado ou de haver uma resposta certa e outra errada.</p><p>Ao mesmo tempo, <strong>trazes profundidade e consegues levar a conversa até onde é preciso ir.</strong> Com a tua sensibilidade, identificas os pontos que precisam de ser olhados naquele momento.</p></blockquote></div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
