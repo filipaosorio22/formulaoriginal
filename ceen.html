@@ -953,9 +953,9 @@
   .fb-aprofundar.fb-olhas { margin-top:.6rem !important; }
   @media (max-width:760px){ .pause-quote.two { font-size:min(24px, calc((100vw - 48px) / 19)) !important; } .pause-quote.nobreak { font-size:min(24px, calc((100vw - 40px) / 17)) !important; } }
   /* ronda 49: pop-up das comunidades como separador na margem (com × para fechar) */
-  .conv-tab-wrap { position:fixed; left:0; top:38%; z-index:190; display:flex; flex-direction:column; align-items:flex-start; gap:6px; transform:translateX(-100%); opacity:0; pointer-events:none; transition:transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s ease; }
+  .conv-tab-wrap { position:fixed; left:8px; top:38%; z-index:190; display:flex; flex-direction:column; align-items:flex-start; gap:6px; transform:translateX(-160%); opacity:0; pointer-events:none; transition:transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s ease; }
   .conv-tab-wrap.on { transform:none; opacity:1; pointer-events:auto; }
-  .conv-tab { writing-mode:vertical-rl; transform:rotate(180deg); font:500 13px/1 'Lora',serif; letter-spacing:.04em; color:#7a2535; background:linear-gradient(180deg,#f6d9c6,#f1c9b3); border:1px solid rgba(122,37,53,.22); border-left:0; border-radius:0 14px 14px 0; padding:16px 9px; cursor:pointer; box-shadow:0 6px 18px rgba(50,30,24,.16); }
+  .conv-tab { writing-mode:vertical-rl; transform:rotate(180deg); font:500 13px/1 'Lora',serif; letter-spacing:.04em; color:#7a2535; background:linear-gradient(180deg,#f6d9c6,#f1c9b3); border:1px solid rgba(122,37,53,.22); border-radius:999px; padding:20px 10px; cursor:pointer; box-shadow:0 6px 18px rgba(50,30,24,.16); }
   .conv-tab:hover { background:linear-gradient(180deg,#f9e3d3,#f4d4c3); }
   .conv-tab-x { margin-left:5px; width:22px; height:22px; border-radius:50%; border:1px solid rgba(122,37,53,.25); background:#fffaf3; color:#7a2535; font:15px/1 'Lora',serif; padding:0; cursor:pointer; display:grid; place-items:center; }
   html[data-theme="dark"] .conv-tab { background:#4a3a34; color:#f0d9c9; border-color:rgba(240,217,201,.25); }
