@@ -964,7 +964,7 @@
   .astro-up { display:block; margin:0.4rem auto 0; background:none; border:1px solid var(--gline); color:var(--wine); border-radius:50%; width:38px; height:38px; font-size:19px; line-height:1; cursor:pointer; }
   .astro-up:hover { background:var(--tint); }
   #se-sentes { margin-top:3.4rem; }
-  .bio-box .bio-photo img, #quem-te-guia .bio-box .bio-photo img { transform:scale(1.12) !important; transform-origin:50% 30% !important; }
+  .bio-box .bio-photo img, #quem-te-guia .bio-box .bio-photo img { transform:none !important; transform-origin:50% 30% !important; }
   html .gift-top.txt .gt-x { display:block !important; }
   .gift-top .gt-x { display:none; background:none; border:0; color:var(--ink-soft); font-size:22px; line-height:1; cursor:pointer; padding:0 4px; align-self:flex-start; }
   html .gift-top.txt p { white-space:normal !important; }
@@ -1062,6 +1062,19 @@
     .astro-hero .astro-art { min-height:290px; grid-row:auto; max-width:320px; width:100%; margin:auto; }
     .astro-hero .astro-map { width:280px; }
   }
+
+  /* Texto com a mesma escala de O que recebes; fotografia sem ampliação. */
+  main { --reading-text-size:16.5px; }
+  main p.body-text, main .bio-box p.body-text, main .bio-box .bio p.body-text,
+  main .astro-copy .astro-lead, main .ses-lead, main .ses-p, main .hdmsg p {
+    font-size:var(--reading-text-size) !important; line-height:1.7 !important;
+  }
+  #quem-te-guia .bio-map .bio { align-items:stretch !important; }
+  #quem-te-guia .bio-map .bio-photo { height:auto !important; aspect-ratio:auto !important; align-self:stretch; }
+  #quem-te-guia .bio-map .bio-photo img { transform:none !important; object-fit:cover; object-position:50% 50% !important; }
+  .astro-hero .astro-map.astro-combined-map { width:min(100%,480px); transform:none; opacity:1; }
+  @media(max-width:680px) { #quem-te-guia .bio-map .bio-photo { aspect-ratio:500/876 !important; } }
+  @media(max-width:620px) { .astro-hero .astro-map.astro-combined-map { width:320px; } }
 </style>
 <link rel="alternate" hreflang="en" href="leitura-intuitiva-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
@@ -1102,9 +1115,9 @@
       <h1>Leitura<br><em>Intuitiva</em></h1>
       <p class="astro-lead">Uma Leitura totalmente personalizada e única feita com intuição e método.</p>
       <a class="btn outline" href="#o-que-e">Conhecer a Leitura ↓</a>
-      <p class="astro-meta">Por escrito · até 14 dias úteis · 247 €</p>
+      <p class="astro-meta">Por escrito · até 14 dias úteis</p>
     </div>
-    <div class="astro-art" aria-hidden="true"><img class="astro-map" src="leituras-assets/astrolabio.svg" alt=""></div>
+    <div class="astro-art"><img class="astro-map astro-combined-map" src="leituras-assets/mapa-astral-human-design.svg" alt="Composição ilustrativa de um mapa astral integrado com o corpo gráfico de Human Design."></div>
   </header>
   <div class="tagline"><p>Quem és quando deixas de ser o que o mundo espera de ti?</p></div>
 
