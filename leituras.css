@@ -62,3 +62,12 @@
 #testemunhos .car-slide{flex:0 0 min(31%,300px)}
 #testemunhos .car-slide img{height:auto;aspect-ratio:900/1100;object-fit:contain}
 @media(max-width:620px){#testemunhos .car-slide{flex-basis:min(76%,285px)}}
+
+/* Pré-visualização reversível: ilustrações astrais e cartas em traço delicado. */
+.hero-art.hub-art.readings-opening>img.map-art{width:min(88%,430px);left:45%;top:10px;opacity:.82;transform:translateX(-50%)!important;filter:none}
+.hero-art.hub-art.readings-opening>img.reading-card-strength{width:160px;right:13%;top:96px;transform:rotate(3deg);opacity:.58;filter:none;box-shadow:none}
+.hero-art:not(.hub-art)>img{filter:none;opacity:.72;box-shadow:none}
+.hero-art:not(.hub-art) .back-card{opacity:.35}
+.example-art img{filter:none;opacity:.8;box-shadow:none}
+@media(max-width:850px) and (min-width:621px){.hero-art.hub-art.readings-opening>img.reading-card-strength{width:138px;right:8%;top:82px}}
+@media(max-width:620px){.hero-art.hub-art.readings-opening>img.map-art{width:min(84%,320px);left:43%;top:8px}.hero-art.hub-art.readings-opening>img.reading-card-strength{width:132px;right:8%;top:92px}.hero-art:not(.hub-art)>img{opacity:.7}}
