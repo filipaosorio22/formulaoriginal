@@ -1884,6 +1884,8 @@ var consent = getConsent();
   window.addEventListener('message', function(e){
     if (e.origin !== location.origin) return;
     var d = e.data; if (!d || d.foCal !== 'booked') return;
+    var pay = document.querySelector('#bkStep2 .bk-pay');
+    if (pay) { pay.innerHTML = '<p><strong>Para confirmares a tua marcação:</strong> faz o pagamento de <strong>' + document.getElementById('bkValor').textContent + '</strong> por MB WAY (+351 932 903 134), transferência bancária (PT50 0269 0739 00200646231 79) ou Revolut (Revtag @filipaosorio) e envia o comprovativo para o meu <a href="https://wa.me/351939479755" target="_blank" rel="noopener">WhatsApp (+351 939 479 755)</a>.</p>'; try { pay.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(x){} }
     if (BK.substack) { var bs = document.getElementById('bkSubstack'); document.getElementById('bkSubstackLink').href = 'https://filipaosorio.substack.com/subscribe?email=' + encodeURIComponent(BK.email); bs.style.display = 'block'; try { bs.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(x){} }
     if (BK.enviado && !BK.reservaAvisada) {
       BK.reservaAvisada = true;
