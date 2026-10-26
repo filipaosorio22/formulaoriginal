@@ -51,3 +51,14 @@
 .readings-opening{min-height:455px}.hero-art.hub-art.readings-opening>img.map-art{width:min(86%,390px);left:42%;top:15px;opacity:.74;transform:translateX(-50%) rotate(-5deg)!important}.hero-art.hub-art.readings-opening>img.reading-card{position:absolute;margin:0;max-width:none;height:auto;box-shadow:8px 14px 28px #40201d26;filter:saturate(.82)}.hero-art.hub-art.readings-opening>img.reading-card-lovers{width:174px;right:2%;top:42px;transform:rotate(8deg)}.hero-art.hub-art.readings-opening>img.reading-card-fool{width:165px;right:18%;bottom:8px;transform:rotate(-7deg)}
 @media(max-width:850px) and (min-width:621px){.hero-art.hub-art.readings-opening>img.map-art{width:min(88%,335px);left:42%}.hero-art.hub-art.readings-opening>img.reading-card-lovers{width:140px;right:0}.hero-art.hub-art.readings-opening>img.reading-card-fool{width:138px;right:14%;bottom:5px}}
 @media(max-width:620px){.hero-art.hub-art.readings-opening{min-height:355px}.hero-art.hub-art.readings-opening>img.map-art{width:min(83%,305px);left:41%;top:0}.hero-art.hub-art.readings-opening>img.reading-card-lovers{width:138px;right:0;top:32px}.hero-art.hub-art.readings-opening>img.reading-card-fool{width:134px;right:20%;bottom:0}}
+
+/* Abertura editorial: roda natal e carta simbólica da Força. */
+.hero-art.hub-art.readings-opening>img.map-art{width:min(88%,430px);left:42%;top:4px;opacity:.92;transform:translateX(-50%) rotate(-3deg)!important}
+.hero-art.hub-art.readings-opening>img.reading-card-strength{position:absolute;width:190px;right:7%;top:86px;margin:0;transform:rotate(6deg);opacity:.94;filter:none;box-shadow:8px 14px 28px #40201d26}
+@media(max-width:850px) and (min-width:621px){.hero-art.hub-art.readings-opening>img.map-art{width:min(88%,350px);left:42%}.hero-art.hub-art.readings-opening>img.reading-card-strength{width:155px;right:2%;top:80px}}
+@media(max-width:620px){.hero-art.hub-art.readings-opening>img.map-art{width:min(84%,320px);left:42%;top:4px}.hero-art.hub-art.readings-opening>img.reading-card-strength{width:148px;right:3%;top:88px}}
+/* Testemunhos da Leitura de Aura: apresentação compacta em carrossel. */
+#testemunhos .car-track{gap:1rem}
+#testemunhos .car-slide{flex:0 0 min(31%,300px)}
+#testemunhos .car-slide img{height:auto;aspect-ratio:900/1100;object-fit:contain}
+@media(max-width:620px){#testemunhos .car-slide{flex-basis:min(76%,285px)}}
