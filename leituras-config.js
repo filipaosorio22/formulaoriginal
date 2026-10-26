@@ -1,1 +1,1 @@
-window.TAROT_CONFIG={preview:true,price:44,regularPrice:88,launchLimit:10,paymentLink:"",launchPaymentLink:"https://buy.stripe.com/9B69AT7RjbJ15ql0Z0fw40E",regularPaymentLink:"https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H",web3formsKey:""};
+window.TAROT_CONFIG={preview:true,price:44,regularPrice:88,launchLimit:5,paymentLink:"",launchPaymentLink:"https://buy.stripe.com/9B69AT7RjbJ15ql0Z0fw40E",regularPaymentLink:"https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H",web3formsKey:""};
