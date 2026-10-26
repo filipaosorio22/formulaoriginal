@@ -962,6 +962,11 @@
   html[data-theme="dark"] .conv-tab-x { background:#26211c; color:#f0d9c9; border-color:rgba(240,217,201,.25); }
   @media (min-width:601px){ #popupConv.popup.popup-conv { left:48px !important; top:38% !important; right:auto !important; bottom:auto !important; } }
   @media (max-width:600px){ .conv-tab-wrap { top:30%; } .conv-tab { font-size:12px; padding:13px 8px; } }
+  /* pop-up das comunidades: mais redondo e sem quebras forçadas na frase */
+  .popup.popup-conv { border-radius:28px !important; width:236px !important; padding:1rem 1rem .9rem !important; }
+  .popup.popup-conv .popup-conv-msg { text-wrap:balance; }
+  .popup.popup-conv .popup-btn { border-radius:999px !important; }
+  @media (max-width:600px){ .popup.popup-conv { width:min(236px,calc(100vw - 2rem)) !important; } }
 
   @media (max-width:640px){ br.nbm { display:none; } .ffront b { font-size:17px; } .ffront span { font-size:16px; } .fback h5 { font-size:17px; } .fpar { font-size:16px !important; } }
 
@@ -1733,7 +1738,7 @@
 <div class="conv-tab-wrap" id="convTabWrap"><button type="button" class="conv-tab-x" id="convTabX" aria-label="Fechar o separador">×</button><button type="button" class="conv-tab" id="convTab" aria-controls="popupConv" aria-expanded="false">Comunidades e empresas</button></div>
 <div class="popup popup-conv" id="popupConv" aria-label="Convite para comunidades">
   <button class="popup-close" onclick="document.getElementById('popupConv').classList.remove('visible')" aria-label="Fechar">×</button>
-  <p class="popup-conv-msg">“Foi fenomenal!<br>Obrigada pela tua partilha<br>e entrega incrível!”</p>
+  <p class="popup-conv-msg">“Foi fenomenal! Obrigada pela tua partilha e entrega incrível!”</p>
   <a class="popup-btn" href="#convites-parcerias" onclick="return goConvites();">Vamos cocriar na tua comunidade ou empresa?</a>
 </div>
 <div class="popup" id="popup">
