@@ -107,3 +107,18 @@ html body h3,html body .session-details h3{font-size:30px}
 #testemunhos .car-slide{flex:0 0 min(30%,300px);max-width:300px}
 #testemunhos .car-slide img{height:auto;max-height:335px;aspect-ratio:900/1100;object-fit:contain;background:transparent}
 @media(max-width:620px){#testemunhos .car-slide{flex-basis:min(82%,300px);max-width:300px}}
+
+
+/* Ajustes pedidos: dois testemunhos de cada vez e opções de leitura com o mesmo peso. */
+#testemunhos .car-track{gap:14px;justify-content:flex-start}
+#testemunhos .car-slide{flex:0 0 calc(50% - 7px);max-width:calc(50% - 7px)}
+#testemunhos .car-slide img{height:auto;max-height:335px;aspect-ratio:900/1100;object-fit:contain}
+.reading-option .btn,.reading-option .btn.outline{background:transparent;color:var(--wine);border-color:var(--wine)}
+.reading-option .btn:hover,.reading-option .btn.outline:hover{background:var(--wine);color:var(--bg)}
+@media(max-width:620px){#testemunhos .car-slide{flex-basis:86%;max-width:86%}}
+
+/* Mostrar dois testemunhos de Aura por passagem, também em ecrãs pequenos. */
+#testemunhos .car-track{gap:12px;justify-content:flex-start}
+#testemunhos .car-slide{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}
+#testemunhos .car-slide img{height:auto;max-height:335px;aspect-ratio:900/1100;object-fit:contain}
+@media(max-width:620px){#testemunhos .car-slide{flex-basis:calc(50% - 6px);max-width:calc(50% - 6px)}#testemunhos .car-slide img{max-height:270px}}
