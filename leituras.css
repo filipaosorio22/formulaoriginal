@@ -82,3 +82,12 @@ html body h3,html body .session-details h3{font-size:30px}
 .hero-art.hub-art.readings-opening>img.map-art{z-index:1}
 .hero-art.hub-art.readings-opening>img.reading-card-wheel{z-index:2;width:clamp(150px,17vw,190px);height:auto;aspect-ratio:1024/1792;object-fit:contain;right:7%;top:55px;max-height:none}
 @media(max-width:620px){html body .hero h1,html body .session-hero h1{font-size:40px}html body h2,html body .section-title{font-size:34px}html body h3,html body .session-details h3{font-size:27px}#testemunhos .car-slide{flex-basis:86%}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:140px;right:4%;top:60px}}
+
+
+/* Ajuste pedido: testemunhos mais compactos e carta inteira na abertura das Leituras. */
+#testemunhos .car-track{justify-content:center;gap:22px}
+#testemunhos .car-slide{flex:0 0 min(38%,370px);max-width:370px}
+#testemunhos .car-slide img{width:100%;height:auto;max-height:460px;aspect-ratio:900/1100;object-fit:contain;object-position:center}
+.hero-art.hub-art.readings-opening{overflow:visible}
+.hero-art.hub-art.readings-opening>img.reading-card-wheel{position:absolute;z-index:5;width:clamp(130px,15vw,165px);height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;right:8%;top:64px;transform:rotate(2deg);opacity:.96}
+@media(max-width:620px){#testemunhos .car-slide{flex-basis:min(78%,310px);max-width:310px}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:126px;right:5%;top:58px}}
