@@ -1,12 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 700" role="img" aria-labelledby="title desc">
-<title id="title">Carta simbólica com um globo</title>
-<desc id="desc">Carta de contorno bordô e dourado, com um único globo de linhas delicadas ao centro.</desc>
-<rect x="9" y="9" width="382" height="682" rx="18" fill="#fffdf8" fill-opacity=".88" stroke="#7a2535" stroke-width="2"/>
-<rect x="18" y="18" width="364" height="664" rx="13" fill="none" stroke="#b18a4e" stroke-width="1"/>
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="200" cy="350" r="96" stroke="#7a2535" stroke-width="1.8"/>
-  <path d="M104 350h192M200 254c-29 27-43 59-43 96s14 69 43 96M200 254c29 27 43 59 43 96s-14 69-43 96" stroke="#b18a4e" stroke-width="1.4"/>
-  <path d="M119 310c24 13 51 20 81 20s57-7 81-20M119 390c24-13 51-20 81-20s57 7 81 20" stroke="#b18a4e" stroke-width="1.2"/>
+<title id="title">Carta com um globo terrestre</title>
+<desc id="desc">Um globo terrestre com continentes dourados, oceanos em creme e meridianos bordô, apoiado num suporte delicado.</desc>
+<defs>
+ <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffdf8"/><stop offset="1" stop-color="#f2e5cf"/></linearGradient>
+ <radialGradient id="ocean" cx=".32" cy=".28" r=".8"><stop stop-color="#fffdf3"/><stop offset=".62" stop-color="#efe0bd"/><stop offset="1" stop-color="#c7a46a"/></radialGradient>
+ <linearGradient id="land" x2=".8" y2="1"><stop stop-color="#c3a05c"/><stop offset="1" stop-color="#956e39"/></linearGradient>
+ <linearGradient id="metal" x2="1" y2="0"><stop stop-color="#875b31"/><stop offset=".45" stop-color="#d8b77a"/><stop offset="1" stop-color="#976e3f"/></linearGradient>
+ <clipPath id="sphere"><circle cx="200" cy="326" r="116"/></clipPath>
+</defs>
+<rect x="9" y="9" width="382" height="682" rx="18" fill="url(#paper)" stroke="#7a2535" stroke-width="2"/>
+<rect x="21" y="21" width="358" height="658" rx="12" fill="none" stroke="#b18a4e" stroke-width="1"/>
+<ellipse cx="202" cy="523" rx="72" ry="9" fill="#9b743c" opacity=".1"/>
+<!-- An inclined meridian and a stand make the symbol read as a globe. -->
+<path d="M247 196A139 139 0 0 1 153 456" fill="none" stroke="#7a2535" stroke-width="8" stroke-linecap="round"/>
+<path d="M247 196A139 139 0 0 1 153 456" fill="none" stroke="url(#metal)" stroke-width="3"/>
+<path d="M200 454v43m-35 21c2-13 17-20 35-21 18 1 33 8 35 21z" fill="url(#metal)" stroke="#8e653a" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="200" cy="326" r="116" fill="url(#ocean)"/>
+<g clip-path="url(#sphere)">
+ <g fill="none" stroke="#9a7049" stroke-width=".9" opacity=".38">
+  <ellipse cx="200" cy="326" rx="50" ry="116"/><ellipse cx="200" cy="326" rx="93" ry="116"/>
+  <path d="M84 326h232M98 271q102 30 204 0M98 381q102-30 204 0M124 239q76 20 152 0M124 413q76-20 152 0"/>
+ </g>
+ <!-- Atlantic-facing land silhouettes, with Europe and Africa in the centre. -->
+ <g fill="url(#land)" stroke="#8c6338" stroke-width=".8" stroke-linejoin="round">
+  <path d="M107 239l23-17 25 1 5 11-14 13-5 17-13 3-2 18-10 8-7-8-13-1-9-21zM121 293l13 6 4 14 14 6 2 10-12 4-11-12-8-5z"/>
+  <path d="M146 329l20 8 14 20-3 19-11 12-4 21-10 15-8-8-2-25-9-17-5-20 7-20z"/>
+  <path d="M181 218l17-8 12 8-5 16-13 12-10-6z"/>
+  <path d="M211 262l9-14 9-4 5-17 9 2-4 17 13 8 12-7 18 11 10 21-12 13-19-3-9 9-14-4-8-12-12 1-6-10-11 5-6-7z"/>
+  <path d="M215 300l20-6 24 14 10 20-10 19-6 22-15 17-12-3-7-23-12-15-4-25zM270 365l5 2-3 17-5 7-2-8z"/>
+  <path d="M274 293l14-8 16 9 13-3 8 35-16 13-13-8-5-16-11-8z"/>
+ </g>
+ <ellipse cx="164" cy="268" rx="53" ry="37" fill="#fff" opacity=".1" transform="rotate(-35 164 268)"/>
 </g>
+<circle cx="200" cy="326" r="116" fill="none" stroke="#7a2535" stroke-width="2"/>
+<path d="M243 204l6-16M151 448l-6 16" stroke="#8e653a" stroke-width="4" stroke-linecap="round"/>
 </svg>
-

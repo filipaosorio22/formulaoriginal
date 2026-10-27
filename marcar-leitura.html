@@ -175,7 +175,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <p class="total">Total: <b id="tot">197€</b></p>
       <p class="prazo" id="prazo">✦ Prazo de entrega da Leitura:<br><b>até 14 dias úteis</b> após a confirmação do pagamento e a receção de todos os dados.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura do Mapa Natal</a> e a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
-      <label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo de desenvolvimento pessoal do Substack da Filipa (opcional, podes cancelar quando quiseres)</span></label>
+      <label class="chk"><input type="checkbox" id="inicioImediato" name="inicioImediato" required><span>Peço expressamente que a preparação da minha leitura comece após a confirmação do pagamento e a receção dos dados, mesmo durante os 14 dias de livre resolução. Se desistir antes da conclusão, pode ser devido o valor proporcional ao trabalho já realizado. Reconheço que perco o direito de livre resolução quando o serviço estiver integralmente prestado.</span></label><label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo de desenvolvimento pessoal do Substack da Filipa (opcional, podes cancelar quando quiseres)</span></label>
       <p class="err" id="err" role="alert"></p>
       <div class="actions"><button class="btn" type="submit" id="go">Enviar pelo WhatsApp</button></div>
       <p class="hint" style="text-align:center;margin-top:26px">As tuas respostas são enviadas para o meu e-mail e<br>segues para o pagamento seguro com cartão (Stripe).</p>
@@ -321,11 +321,13 @@ window.FO_PAY = {
     function famVal(id){ var c = [].map.call(document.querySelectorAll('.fchips[data-for="' + id + '"] input:checked'), function(i){ return i.value; }); var t = $(id).value.trim(); return c.length || t ? c.join(', ') + (c.length && t ? '. ' : '') + t : ''; }
     if (!$('fam').hidden && (!famVal('famA') || !famVal('famH'))){ err.textContent = 'Responde às perguntas sobre os mapas (escolhe uma opção ou escreve).'; return; }
     if (gift && entrega() === 'ja' && !$('rnome').value.trim()){ err.textContent = 'Escreve o nome de quem recebe.'; $('rnome').focus(); return; }
+    if (!$('inicioImediato').checked){ err.textContent = 'Para iniciar a preparação da leitura, confirma o pedido de início e as condições de livre resolução.'; return; }
     if (!$('ok').checked){ err.textContent = 'Para continuares, aceita os termos e a política de privacidade.'; return; }
 
     var L = [];
     L.push(gift ? 'Olá, Filipa! Quero oferecer uma Leitura do Mapa Natal.' : base().value === 'sessaosolo' ? 'Olá, Filipa! Quero marcar uma sessão de alinhamento (e aprofundamento).' : 'Olá, Filipa! Quero marcar a minha Leitura do Mapa Natal.');
     L.push('');
+    L.push('Pedido expresso de início durante o prazo de livre resolução: confirmado. Perda do direito após prestação integral: reconhecida.');
     L.push('Escolha: ' + NAMES[sel().value] + ($('hd').checked ? ' + Human Design' : '') + ' (' + total() + '€)');
     if (gift) L.push('Entrega: ' + (entrega() === 'ja' ? 'Leitura pronta para oferecer' : 'cartão de oferta'));
     L.push('Nome: ' + nome);
