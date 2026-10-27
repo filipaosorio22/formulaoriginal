@@ -125,3 +125,10 @@ html body h3,html body .session-details h3{font-size:30px}
 
 /* Tom bordô mais suave, apenas na página geral das Leituras Intuitivas. */
 .readings-hub{--wine:#8c626a}
+
+/* Destaque para os seis testemunhos acrescentados à página da sessão. */
+.session-feedbacks .new-feedback{border:1px solid #b18a4e;border-left:4px solid var(--wine);background:linear-gradient(135deg,#f3dfd4 0%,#fffaf2 76%);box-shadow:0 9px 24px rgba(70,38,32,.09);padding:30px 25px 23px}
+.session-feedbacks .new-feedback:before{color:var(--wine);font-size:48px}
+.session-feedbacks .new-feedback u{font-weight:600;text-decoration-color:var(--wine);text-decoration-thickness:2px;text-underline-offset:4px}
+.session-feedbacks .new-feedback strong{font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:4px}
+.session-investment{background:var(--bg);border-top:1px solid var(--line)}
