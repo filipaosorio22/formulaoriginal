@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 700" role="img" aria-labelledby="title desc">
+<title id="title">O Mundo — carta simbólica ilustrada</title>
+<desc id="desc">Uma figura em movimento dentro de uma grinalda, em traço dourado sobre fundo bordô, rodeada por estrelas e símbolos dos quatro elementos.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#70283a"/><stop offset=".52" stop-color="#501827"/><stop offset="1" stop-color="#38121f"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#bd8c62" stop-opacity=".26"/><stop offset="1" stop-color="#bd8c62" stop-opacity="0"/></radialGradient>
+ <g id="leaf" fill="none" stroke="#d6b17d" stroke-width="1.6" stroke-linecap="round"><path d="M0 0 Q-13-10-9-24 Q2-18 0 0Z"/><path d="M0 1 Q13-9 10-23 Q-1-17 0 1Z"/><path d="M0 0v29"/></g>
+ <g id="star" fill="none" stroke="#e3c99f" stroke-width="1.5"><path d="M0-11 2.3-2.3 11 0 2.3 2.3 0 11-2.3 2.3-11 0-2.3-2.3Z"/><circle r="2" fill="#e3c99f" stroke="none"/></g>
+ <g id="spark" fill="#e3c99f"><circle r="2"/><path d="M0-8v16M-8 0h16" stroke="#e3c99f" stroke-width="1"/></g>
+</defs>
+<rect x="7" y="7" width="386" height="686" rx="17" fill="url(#bg)"/>
+<rect x="17" y="17" width="366" height="666" rx="13" fill="none" stroke="#d6b17d" stroke-width="1.5"/>
+<rect x="25" y="25" width="350" height="650" rx="10" fill="none" stroke="#d6b17d" stroke-opacity=".45"/>
+<circle cx="200" cy="327" r="163" fill="url(#glow)"/>
+<!-- Quiet corner flourishes -->
+<g fill="none" stroke="#d6b17d" stroke-width="1.5" opacity=".9"><path d="M37 78Q37 37 78 37M322 37q41 0 41 41M37 622q0 41 41 41m244 0q41 0 41-41"/><path d="M38 53h28M52 39v28M334 39v28m-14-14h28M38 647h28m-14-14v28m282-14h28m-14-14v28"/></g>
+<!-- Four elemental emblems, original line motifs -->
+<g fill="none" stroke="#e3c99f" stroke-width="1.5" opacity=".9">
+ <path d="M78 119q20-24 40 0-20 25-40 0Zm10 0h20m-10-10v20"/>
+ <path d="M282 119q20-24 40 0-20 25-40 0Zm10 0h20m-10-10v20"/>
+ <path d="M78 545q20-24 40 0-20 25-40 0Zm10 0h20m-10-10v20"/>
+ <path d="M282 545q20-24 40 0-20 25-40 0Zm10 0h20m-10-10v20"/>
+</g>
+<g transform="translate(200 328)" fill="none" stroke="#d6b17d" stroke-width="2.2" stroke-linecap="round">
+ <!-- leafy oval wreath -->
+ <path d="M-72 126C-139 89-145-13-111-91-82-157-22-176 0-178 22-176 82-157 111-91c34 78 28 180-39 217"/>
+ <path d="M-58 132C-124 84-125-12-93-86-68-144-17-161 0-164 17-161 68-144 93-86c32 74 31 170-35 218" opacity=".55"/>
+</g>
+<g>
+ <use href="#leaf" transform="translate(141 438) rotate(-65)"/><use href="#leaf" transform="translate(104 400) rotate(-42)"/><use href="#leaf" transform="translate(83 349) rotate(-22)"/><use href="#leaf" transform="translate(78 295) rotate(5)"/><use href="#leaf" transform="translate(91 246) rotate(28)"/><use href="#leaf" transform="translate(119 204) rotate(48)"/><use href="#leaf" transform="translate(159 174) rotate(70)"/>
+ <use href="#leaf" transform="translate(259 438) rotate(65)"/><use href="#leaf" transform="translate(296 400) rotate(42)"/><use href="#leaf" transform="translate(317 349) rotate(22)"/><use href="#leaf" transform="translate(322 295) rotate(-5)"/><use href="#leaf" transform="translate(309 246) rotate(-28)"/><use href="#leaf" transform="translate(281 204) rotate(-48)"/><use href="#leaf" transform="translate(241 174) rotate(-70)"/>
+</g>
+<!-- dancing figure, draped and unbound -->
+<g stroke="#edcf9d" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M193 253q-18-29 5-46 18-4 24 15 5 20-12 34" fill="none" stroke-width="4"/>
+ <circle cx="210" cy="191" r="13" fill="#edcf9d" stroke-width="1.5"/>
+ <path d="M199 206q-14 17-20 42l-7 43q-2 11 7 15 10 2 13-11l12-35 4 48q0 17-5 34l-18 61q-4 13 7 16 9 2 14-10l24-52 17 48q4 12 15 8 9-4 3-17l-24-69q-6-19-4-39l5-47q3-15-9-28-13-12-34-7Z" fill="#6d2537" stroke-width="3"/>
+ <!-- streaming scarf -->
+ <path d="M199 212q-32-18-53-8-19 10-37 35 30-12 55 4 17 11 31 20m43-49q27-17 53-8 18 8 33 26-29-8-49 10-13 11-26 20" fill="none" stroke-width="4"/>
+ <path d="M203 244q-19 14-29 38m54-40q17 14 23 38m-58 69-10 38m44-45 15 43" fill="none" stroke-width="2" opacity=".8"/>
+</g>
+<!-- constellation and quiet stars -->
+<g fill="none" stroke="#cfaa76" stroke-width="1" opacity=".72"><path d="m130 141 16-11 15 13m94-8 15-12 16 13m-162 365 17 11 15-13m94 8 15 12 16-13"/><path d="M126 328h20m108 0h20M200 129v18m0 359v18"/></g>
+<use href="#star" x="146" y="130"/><use href="#star" x="254" y="130"/><use href="#star" x="146" y="525"/><use href="#star" x="254" y="525"/>
+<use href="#spark" x="200" y="112"/><use href="#spark" x="200" y="544"/><use href="#spark" x="63" y="329"/><use href="#spark" x="337" y="329"/>
+<text x="200" y="600" text-anchor="middle" fill="#f0d9b6" font-family="Georgia,serif" font-size="19" letter-spacing="5">O MUNDO</text>
+<path d="M132 618h48m40 0h48" stroke="#d6b17d" stroke-width="1" opacity=".75"/><circle cx="200" cy="618" r="3" fill="#d6b17d"/>
+<text x="200" y="648" text-anchor="middle" fill="#d6b17d" font-family="Georgia,serif" font-size="9" letter-spacing="3">XXI · UM CICLO INTEIRO</text>
+</svg>

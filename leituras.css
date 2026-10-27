@@ -91,3 +91,12 @@ html body h3,html body .session-details h3{font-size:30px}
 .hero-art.hub-art.readings-opening{overflow:visible}
 .hero-art.hub-art.readings-opening>img.reading-card-wheel{position:absolute;z-index:5;width:clamp(130px,15vw,165px);height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;right:8%;top:64px;transform:rotate(2deg);opacity:.96}
 @media(max-width:620px){#testemunhos .car-slide{flex-basis:min(78%,310px);max-width:310px}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:126px;right:5%;top:58px}}
+
+
+/* Três testemunhos visíveis e o Mundo inteiro na abertura. */
+#testemunhos .car-track{justify-content:flex-start;gap:18px}
+#testemunhos .car-slide{flex:0 0 min(31%,320px);max-width:320px}
+#testemunhos .car-slide img{width:100%;height:auto;max-height:390px;aspect-ratio:900/1100;object-fit:contain;object-position:center}
+.hero-art.hub-art.readings-opening{overflow:visible}
+.hero-art.hub-art.readings-opening>img.reading-card-wheel{position:absolute;z-index:5;width:clamp(125px,14vw,155px);height:auto;max-height:none;aspect-ratio:4/7;object-fit:contain;right:8%;top:62px;transform:rotate(2deg);opacity:1}
+@media(max-width:620px){#testemunhos .car-slide{flex-basis:min(78%,310px);max-width:310px}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:126px;right:5%;top:58px}}
