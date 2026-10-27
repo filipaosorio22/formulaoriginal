@@ -94,7 +94,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .done{text-align:center}
 .done p{color:var(--muted)}
 </style>
-</head>
+<style>.tarot-gift-offer{margin-top:24px;padding:22px;border:1px solid #c7aa72;background:#c7aa7210;border-radius:12px}.tarot-gift-offer h3{color:var(--wine,#7a2535);font-size:24px;margin:0 0 12px}.tarot-gift-offer p{line-height:1.7}.tarot-gift-offer .choice{margin-top:15px}</style></head>
 <body>
 <a class="wa-float" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Estava%20a%20fazer%20a%20marca%C3%A7%C3%A3o%20da%20minha%20Leitura%20mas%20tenho%20uma%20d%C3%BAvida%3A%20%28a%20tua%20d%C3%BAvida%29." target="_blank" rel="noopener" aria-label="Falar comigo no WhatsApp"><svg viewBox="0 0 32 32" fill="#1f9d55" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.597 3.5 15.5c0 2.33.64 4.513 1.75 6.385L3 29l7.277-2.207A12.46 12.46 0 0 0 16 28.5C22.904 28.5 28.5 22.904 28.5 16S22.904 3 16.001 3zm0 22.773c-1.98 0-3.86-.53-5.47-1.456l-.392-.228-4.32 1.31 1.33-4.21-.254-.42a10.24 10.24 0 0 1-1.592-5.27c0-5.676 4.63-10.288 10.33-10.288 5.7 0 10.33 4.612 10.33 10.288 0 5.676-4.63 10.274-10.33 10.274zm5.664-7.71c-.31-.156-1.833-.903-2.117-1.007-.284-.104-.49-.156-.697.157-.206.312-.8 1.006-.98 1.213-.18.208-.362.234-.672.078-.31-.156-1.31-.482-2.495-1.535-.922-.822-1.545-1.837-1.726-2.15-.18-.312-.02-.48.136-.636.14-.14.31-.364.465-.546.155-.182.207-.312.31-.52.104-.208.052-.39-.026-.546-.078-.156-.697-1.68-.955-2.303-.252-.606-.508-.524-.697-.534l-.594-.01c-.206 0-.542.078-.826.39-.284.312-1.083 1.058-1.083 2.582 0 1.524 1.11 2.998 1.265 3.206.155.208 2.187 3.34 5.3 4.683.74.32 1.318.511 1.768.654.743.236 1.42.202 1.954.123.596-.089 1.833-.75 2.092-1.473.258-.724.258-1.345.18-1.474-.077-.13-.283-.208-.593-.364z"/></svg></a>
 <div class="wrap">
@@ -106,16 +106,16 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
   <form id="f" novalidate>
     <div class="card">
-      <h2>A tua escolha</h2><p class="sub">Neste regresso, as primeiras cinco Leituras Natal têm um valor especial: 197€ (depois, 247€). Um miminho para quem já acompanha o meu trabalho. O limite é comum às opções com ou sem sessão e Revolução Solar.</p>
+      <h2>A tua escolha</h2><p class="sub">A Leitura Natal custa 247 €. Neste regresso, as primeiras cinco pessoas que o desejarem podem receber uma Leitura do Momento complementar, sem custo, em troca de um testemunho honesto. A oferta abrange também os combos.</p>
       <p class="sub" id="opSub">Escolhe a Leitura que queres.</p>
       <div id="ops">
-        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="197" checked><span><b>Leitura do Mapa Natal</b><br>Leitura do mapa astral e do Human Design, história simbólica, perguntas, práticas e envio de Reiki para o tema que trazes.</span><span class="pr">197€</span></label>
-        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="347"><span><b>Leitura com sessão de alinhamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">347€</span></label>
+        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="247" checked><span><b>Leitura do Mapa Natal</b><br>Leitura do mapa astral e do Human Design, história simbólica, perguntas, práticas e envio de Reiki para o tema que trazes.</span><span class="pr">247€</span></label>
+        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="397"><span><b>Leitura com sessão de alinhamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">397€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="179"><span><b>Sessão de alinhamento (e aprofundamento), sem Leitura</b><br>Uma sessão individual de até 1h30, a partir do tema que queres trabalhar.</span><span class="pr">179€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Juntar a Revolução Solar · +100€</b><br>Mais informação sobre o teu momento atual: sobre os temas e possibilidades do teu ciclo anual, em diálogo com o teu mapa natal.</span></label>
-      <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
+      <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label><div id="tarotGiftOffer" class="tarot-gift-offer"><h3>Um miminho neste regresso</h3><p>O mapa natal dá uma visão mais ampla de ti; o Tarot pode aprofundar uma pergunta concreta do teu momento. Ofereço esse complemento às primeiras cinco pessoas que o escolham, incluindo quem quiser juntar a sessão ou a Revolução Solar.</p><label class="choice"><input type="checkbox" id="ofertaTarot"><span><b>Quero receber a Leitura do Momento (valor: 88 €) como oferta</b><br>Opcional, sem custo adicional. As cinco ofertas têm um limite comum, confirmado no Stripe.</span></label><div id="tarotGiftConsent" hidden><label class="choice"><input type="checkbox" id="testemunhoTarot"><span>Em troca desta oferta, comprometo-me a partilhar um testemunho honesto sobre como foi a minha experiência com o Tarot, sem obrigação de ser positivo. A publicação será anónima; o uso do meu nome, voz ou imagem exige autorização separada.</span></label><p class="hint">No pagamento podes acrescentar a sessão de integração (+150 €) e/ou a Revolução Solar (+100 €). A leitura de Tarot é entregue em áudio, até 5 dias úteis após o pagamento e a receção do tema e contexto necessários. Podes indicar o teu tema nas perguntas abaixo ou combiná-lo comigo depois.</p></div></div>
     </div>
 
     <div class="card" id="giftCard" hidden>
@@ -172,7 +172,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     </div>
 
     <div class="card">
-      <p class="total">Total: <b id="tot">197€</b></p>
+      <p class="total">Total: <b id="tot">247€</b></p>
       <p class="prazo" id="prazo">✦ Prazo de entrega da Leitura:<br><b>até 14 dias úteis</b> após a confirmação do pagamento e a receção de todos os dados.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura do Mapa Natal</a> e a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
       <label class="chk"><input type="checkbox" id="inicioImediato" name="inicioImediato" required><span>Peço expressamente que a preparação da minha leitura comece após a confirmação do pagamento e a receção dos dados, mesmo durante os 14 dias de livre resolução. Se desistir antes da conclusão, pode ser devido o valor proporcional ao trabalho já realizado. Reconheço que perco o direito de livre resolução quando o serviço estiver integralmente prestado.</span></label><label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo de desenvolvimento pessoal do Substack da Filipa (opcional, podes cancelar quando quiseres)</span></label>
@@ -193,16 +193,17 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 // Pagamento: quando estiverem preenchidos, o formulário envia as respostas por e-mail (Web3Forms)
 // e abre o link de pagamento do Stripe certo. Enquanto estiverem vazios, segue por WhatsApp.
 window.FO_PAY = {
+  tarotGift: "https://buy.stripe.com/7sYaEX0oR6oHf0VePQfw40R",
   web3formsKey: 'b2feccdb-b682-491c-8fb8-a56fb482a4ed',
   stripe: {
-    'leitura': 'https://buy.stripe.com/cNi8wP0oR6oH6up8rsfw40I',
-    'leitura+hd': 'https://buy.stripe.com/cNi8wP0oR6oH6up8rsfw40I',
-    'rs': 'https://buy.stripe.com/6oU9AT5Jb3cvbOJ4bcfw40L',
-    'rs+hd': 'https://buy.stripe.com/6oU9AT5Jb3cvbOJ4bcfw40L',
-    'rssessao': 'https://buy.stripe.com/28E4gz8Vn6oH4mh4bcfw40K',
-    'rssessao+hd': 'https://buy.stripe.com/28E4gz8Vn6oH4mh4bcfw40K',
-    'sessao': 'https://buy.stripe.com/8x200j1sVdR9cSN0Z0fw40J',
-    'sessao+hd': 'https://buy.stripe.com/8x200j1sVdR9cSN0Z0fw40J',
+    'leitura': 'https://buy.stripe.com/00w7sL8Vn6oHg4Z8rsfw40N',
+    'leitura+hd': 'https://buy.stripe.com/00w7sL8Vn6oHg4Z8rsfw40N',
+    'rs': 'https://buy.stripe.com/14AdR91sV7sL6up5fgfw40P',
+    'rs+hd': 'https://buy.stripe.com/14AdR91sV7sL6up5fgfw40P',
+    'rssessao': 'https://buy.stripe.com/4gM7sL3B314nf0V6jkfw40Q',
+    'rssessao+hd': 'https://buy.stripe.com/4gM7sL3B314nf0V6jkfw40Q',
+    'sessao': 'https://buy.stripe.com/eVq4gzefH28r2e9bDEfw40O',
+    'sessao+hd': 'https://buy.stripe.com/eVq4gzefH28r2e9bDEfw40O',
     'sessaosolo': 'https://buy.stripe.com/dRmcN5b3vfZh9GBcHIfw40G',
     'rssolo': 'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'
   }
@@ -261,7 +262,13 @@ window.FO_PAY = {
   function hdOk(){ return true; }
   function updTotal(){
     var solo = base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
-    $('rs').closest('label').hidden = solo;
+    if(solo){$('ofertaTarot').checked=false;$('testemunhoTarot').checked=false;}
+    $('tarotGiftOffer').hidden=solo||gift;
+    var withTarot=$('ofertaTarot').checked&&!solo&&!gift;
+    $('tarotGiftConsent').hidden=!withTarot;
+    $('testemunhoTarot').required=withTarot;
+    $('rs').closest('label').hidden = solo||withTarot;
+    document.querySelector('[data-op="sessao"]').hidden=withTarot;
     $('hd').checked = !solo;
     $('tot').textContent = total() + '€';
     var v = sel().value, sn = $('sesNote');
@@ -281,6 +288,7 @@ window.FO_PAY = {
     $('prazo').hidden = v === 'sessaosolo';
   }
   document.querySelectorAll('input[name=op]').forEach(function(x){ x.addEventListener('change', updTotal); });
+  $('ofertaTarot').addEventListener('change',function(){if(this.checked){document.querySelector('input[name=op][value=leitura]').checked=true;$('rs').checked=false;}else{$('testemunhoTarot').checked=false;}updTotal();});
   $('hd').addEventListener('change', updTotal);
   $('rs').addEventListener('change', updTotal);
   updTotal();
@@ -322,6 +330,7 @@ window.FO_PAY = {
     if (!$('fam').hidden && (!famVal('famA') || !famVal('famH'))){ err.textContent = 'Responde às perguntas sobre os mapas (escolhe uma opção ou escreve).'; return; }
     if (gift && entrega() === 'ja' && !$('rnome').value.trim()){ err.textContent = 'Escreve o nome de quem recebe.'; $('rnome').focus(); return; }
     if (!$('inicioImediato').checked){ err.textContent = 'Para iniciar a preparação da leitura, confirma o pedido de início e as condições de livre resolução.'; return; }
+    if ($('ofertaTarot').checked&&!$('testemunhoTarot').checked){err.textContent='Para receberes esta oferta, confirma o compromisso de partilhar um testemunho honesto sobre o Tarot, ou retira a opção da oferta.';$('testemunhoTarot').focus();return;}
     if (!$('ok').checked){ err.textContent = 'Para continuares, aceita os termos e a política de privacidade.'; return; }
 
     var L = [];
@@ -329,6 +338,7 @@ window.FO_PAY = {
     L.push('');
     L.push('Pedido expresso de início durante o prazo de livre resolução: confirmado. Perda do direito após prestação integral: reconhecida.');
     L.push('Escolha: ' + NAMES[sel().value] + ($('hd').checked ? ' + Human Design' : '') + ' (' + total() + '€)');
+    if ($('ofertaTarot').checked) L.push('Oferta complementar de Tarot: pedida. Compromisso de testemunho honesto: aceite, sem obrigação de ser positivo. Publicação anónima; identificação exige autorização separada. Extras escolhidos e valor final confirmados no Stripe.');
     if (gift) L.push('Entrega: ' + (entrega() === 'ja' ? 'Leitura pronta para oferecer' : 'cartão de oferta'));
     L.push('Nome: ' + nome);
     L.push('E-mail: ' + email);
@@ -343,7 +353,7 @@ window.FO_PAY = {
     qs.forEach(function(x){ var v = $(x[0]).value.trim(); if (v){ L.push(''); L.push(x[1].replace(/\s*\(opcional\)\s*$/, '')); L.push(v); } });
     if ($('sub').checked) L.push('\nSubstack: quer subscrever');
     try { if ($('sub').checked) localStorage.setItem('fo_sub', email); else localStorage.removeItem('fo_sub'); } catch (e) {}
-    var PAY = window.FO_PAY || {}, link = PAY.stripe && PAY.stripe[sel().value + ($('hd').checked ? '+hd' : '')];
+    var PAY = window.FO_PAY || {}, link = $('ofertaTarot').checked ? PAY.tarotGift : PAY.stripe && PAY.stripe[sel().value + ($('hd').checked ? '+hd' : '')];
     var url = 'https://wa.me/351939479755?text=' + encodeURIComponent(L.join('\n'));
     function finish(viaEmail){
       $('doneEmail').hidden = !viaEmail; $('doneWa').hidden = viaEmail;
