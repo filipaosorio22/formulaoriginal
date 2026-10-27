@@ -122,3 +122,6 @@ html body h3,html body .session-details h3{font-size:30px}
 #testemunhos .car-slide{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}
 #testemunhos .car-slide img{height:auto;max-height:335px;aspect-ratio:900/1100;object-fit:contain}
 @media(max-width:620px){#testemunhos .car-slide{flex-basis:calc(50% - 6px);max-width:calc(50% - 6px)}#testemunhos .car-slide img{max-height:270px}}
+
+/* Tom bordô mais suave, apenas na página geral das Leituras Intuitivas. */
+.readings-hub{--wine:#8c626a}
