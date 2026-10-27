@@ -1040,7 +1040,7 @@
 </style>
 <link rel="alternate" hreflang="en" href="https://filipaosorio.com/ceen-en.html">
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/ceen-completa.html">
-<link rel="stylesheet" href="site-nav.css?v=20261027menu"></head>
+<link rel="stylesheet" href="site-nav.css?v=20261027menu"><style>.ceen-option-a .foto-abre video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:none}</style></head>
 <body>
 
 <div class="langbar">Also available in English · <a href="ceen-en.html" hreflang="en" lang="en">English version</a></div>
@@ -1067,7 +1067,7 @@
 <section class="tight ceen-option-a" style="padding-top:12px;">
   <div class="wrap">
     <div class="callout grayD intro-callout intro-box">
-      <figure class="foto-abre"><img src="foto-ceen.jpg?v=2" width="417" height="740" alt="Filipa Osório a sorrir, a trabalhar no portátil"></figure>
+      <figure class="foto-abre"><video autoplay muted loop playsinline controls preload="metadata" poster="assets/ceen-atendimento-911-poster.jpg" aria-label="Filipa Osório num momento de atendimento, vídeo sem som"><source src="assets/ceen-atendimento-911-sem-som.mp4" type="video/mp4"></video></figure>
       <div class="ctext">
         <div class="ceen-brand">CEEN · FILIPA OSÓRIO</div>
         <h1 class="ceen-headline">Aproxima o teu negócio de quem és e da tua fase de vida atual, permitindo que ele evolua contigo</h1>
@@ -1265,7 +1265,7 @@
     <div class="fb-aprofundar">
     <blockquote class="quote-block">
       <p class="q1" style="white-space:normal;"><strong>"Logo de seguida tinha recebido o contacto pelo meu website"</strong></p>
-      <p class="attrib">— uma outra cliente depois de estruturarmos juntas o seu serviço</p>
+      <p class="attrib">,  uma outra cliente depois de estruturarmos juntas o seu serviço</p>
     </blockquote>
     <div class="testimonial-photos-ph one"><div class="ph"><img src="feedback-cliente-pacote.jpg?v=5" width="922" height="920" alt="Mensagem de uma cliente: depois de estruturarmos o pacote de atendimento para crianças e jovens, recebeu logo um pedido pelo website, o preço foi aceite e a sessão já está marcada."></div></div>
   
@@ -1304,7 +1304,7 @@
 <section class="pause">
   <div class="wrap-wide">
     <p class="pause-quote nobreak fit2">“Nunca ninguém tinha olhado <br class="mb">para o meu negócio desta forma!”</p>
-    <p class="pause-attrib">— comentário de uma cliente durante uma Sessão CEEN</p>
+    <p class="pause-attrib">,  comentário de uma cliente durante uma Sessão CEEN</p>
   </div>
 </section>
 
@@ -1367,7 +1367,7 @@
   <div class="wrap">
     <blockquote class="quote-block oneline">
       <p><strong>"Transformam dúvidas em direção, desalinhamento em alinhamento e confusão mental em clareza."</strong></p>
-      <p class="attrib">— mensagem transcrita de um áudio de uma cliente num acompanhamento</p>
+      <p class="attrib">,  mensagem transcrita de um áudio de uma cliente num acompanhamento</p>
     </blockquote>
     <div class="testimonial-photos-ph">
       <div class="ph"><img src="upsell_cliente1_1.png?v=6" alt="Mensagem de uma cliente a agradecer pelo acompanhamento" onerror="this.parentElement.textContent='upsell_cliente1_1.png'"></div>
@@ -1394,7 +1394,7 @@
     <p style="margin-top:1.2rem;">Hoje, junto estas duas vertentes numa prática que combina capacidade de análise e escuta atenta, com clareza, sensibilidade e frontalidade, em diferentes áreas da vida.</p>
     <blockquote class="quote-block" style="margin-top:2.2rem;">
       <p class="tuconsegues" style="line-height:1.3; font-size:21px;"><strong>"Tu consegues tão bem captar, dirigir, interpretar e transformar em palavras,<br>em orientações, em conselhos, em sugestões e em reflexões em conjunto."</strong></p>
-      <p class="attrib">— feedback de uma cliente num áudio durante um acompanhamento comigo</p>
+      <p class="attrib">,  feedback de uma cliente num áudio durante um acompanhamento comigo</p>
     </blockquote>
     <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Voltar a explorar a CEEN desde início</a>
     </div>
@@ -1927,7 +1927,7 @@ var consent = getConsent();
     var f = this, err = document.getElementById('bkErr');
     if (!validar(f, err)) return;
     var d = dados(f);
-    var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || '—'), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || '—'), 'Como chegou: ' + (d.origem || '—')];
+    var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || ', '), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || ', '), 'Como chegou: ' + (d.origem || ', ')];
     if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
     var corpo = L.join('\n'), anterior = BK.ultimo;
     BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (269€)', formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
@@ -1989,7 +1989,7 @@ var consent = getConsent();
     if (!validar(f, err)) return;
     var d = dados(f);
     btn.disabled = true; btn.textContent = 'A enviar…';
-    var L = ['Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, 'Comunidade ou empresa: ' + d.organizacao, 'Sobre a comunidade/empresa e quem dinamiza: ' + (d.sobre || '—'), '', 'Formato preferido: ' + (d.formato || '—') + (d.formato === 'Presencial' ? ' · Localidade: ' + (d.localidade || '—') : ''), 'Ideia de encontro: ' + (d.ideia || '—'), 'Pessoas: ' + (d.pessoas || '—'), 'Data aproximada: ' + (d.data || '—')];
+    var L = ['Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, 'Comunidade ou empresa: ' + d.organizacao, 'Sobre a comunidade/empresa e quem dinamiza: ' + (d.sobre || ', '), '', 'Formato preferido: ' + (d.formato || ', ') + (d.formato === 'Presencial' ? ' · Localidade: ' + (d.localidade || ', ') : ''), 'Ideia de encontro: ' + (d.ideia || ', '), 'Pessoas: ' + (d.pessoas || ', '), 'Data aproximada: ' + (d.data || ', ')];
     enviar('Convite para encontro · ' + d.organizacao, 'Site · Convites e parcerias', d.email, L).then(function(){
       f.style.display = 'none'; document.getElementById('convOk').style.display = 'block';
     }).catch(function(){
@@ -2032,7 +2032,7 @@ var consent = getConsent();
     smoothScrollTo(window.__savedScrollY || 0, 2400);
   };
 
-  // toggles suaves — controlamos a abertura à mão, para animar sem saltos
+  // toggles suaves, controlamos a abertura à mão, para animar sem saltos
   function closeDetail(d, wrap){
     wrap.style.maxHeight = wrap.scrollHeight + 'px';
     requestAnimationFrame(function(){ wrap.style.maxHeight = '0px'; });
@@ -2305,8 +2305,8 @@ var consent = getConsent();
 (function(){
   var KEY = 'fo_cookie_consent', MAX = 1000*60*60*24*180;
   var T = {
-    pt: { txt: 'Uso cookies para estatísticas (Google Analytics e leitura de como a página é usada) e para o calendário de marcações (Cal.com) funcionar aqui na página e melhorar a tua experiência no site.', more: 'Saber mais', no: 'Recusar', man: 'Gerir preferências', yes: 'Aceitar', title: 'As tuas preferências de cookies', nec: 'Necessários', necd: 'O site em si — sempre ativos, não guardam identificadores.', st: 'Estatísticas', std: 'Ajuda-me a perceber quantas pessoas visitam o site e como o percorrem (mapas de calor e gravações anónimas).', cal: 'Calendário de marcações', cald: 'Permite marcares sessões diretamente aqui na página.', back: 'Voltar', save: 'Guardar preferências', priv: 'privacidade.html' },
-    en: { txt: 'I use cookies for statistics (Google Analytics and how the page is used) and so the booking calendar (Cal.com) works on this page and improves your experience on the site.', more: 'Learn more', no: 'Decline', man: 'Manage preferences', yes: 'Accept', title: 'Your cookie preferences', nec: 'Necessary', necd: 'The site itself — always on, they do not store identifiers.', st: 'Statistics', std: 'Helps me understand how many people visit the site and how they move through it (heatmaps and anonymous recordings).', cal: 'Booking calendar', cald: 'Lets you book sessions directly on this page.', back: 'Back', save: 'Save preferences', priv: 'privacidade.html' }
+    pt: { txt: 'Uso cookies para estatísticas (Google Analytics e leitura de como a página é usada) e para o calendário de marcações (Cal.com) funcionar aqui na página e melhorar a tua experiência no site.', more: 'Saber mais', no: 'Recusar', man: 'Gerir preferências', yes: 'Aceitar', title: 'As tuas preferências de cookies', nec: 'Necessários', necd: 'O site em si, sempre ativos, não guardam identificadores.', st: 'Estatísticas', std: 'Ajuda-me a perceber quantas pessoas visitam o site e como o percorrem (mapas de calor e gravações anónimas).', cal: 'Calendário de marcações', cald: 'Permite marcares sessões diretamente aqui na página.', back: 'Voltar', save: 'Guardar preferências', priv: 'privacidade.html' },
+    en: { txt: 'I use cookies for statistics (Google Analytics and how the page is used) and so the booking calendar (Cal.com) works on this page and improves your experience on the site.', more: 'Learn more', no: 'Decline', man: 'Manage preferences', yes: 'Accept', title: 'Your cookie preferences', nec: 'Necessary', necd: 'The site itself, always on, they do not store identifiers.', st: 'Statistics', std: 'Helps me understand how many people visit the site and how they move through it (heatmaps and anonymous recordings).', cal: 'Booking calendar', cald: 'Lets you book sessions directly on this page.', back: 'Back', save: 'Save preferences', priv: 'privacidade.html' }
   };
   var t = T[(document.documentElement.lang || 'pt').indexOf('en') === 0 ? 'en' : 'pt'];
   function get(){ try { var raw = localStorage.getItem(KEY); if (!raw) return null; var o = JSON.parse(raw); if (!o.ts || Date.now() - o.ts > MAX) return null; return o; } catch(e){ return null; } }
@@ -2323,8 +2323,8 @@ var consent = getConsent();
     '<div style="display:flex; gap:0.6rem; flex-shrink:0; flex-wrap:wrap;"><button id="cookieReject" style="' + BTN + 'background:transparent; border:1px solid #7a2535; color:#7a2535;">' + t.no + '</button><button id="cookieManage" style="' + BTN + 'background:transparent; border:1px solid #9a7e52; color:#9a7e52;">' + t.man + '</button><button id="cookieAcceptAll" style="' + BTN + 'background:#7a2535; border:1px solid #7a2535; color:#f7f3ee;">' + t.yes + '</button></div></div>' +
     '<div id="cookiePrefs" style="display:none; max-width:520px; margin:0 auto;"><p style="font-family:\'Spectral\',serif; font-style:italic; font-size:17px; color:#1a1410; margin:0 0 1rem;">' + t.title + '</p>' +
     '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.9rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" checked disabled style="margin-top:3px;"><span><strong>' + t.nec + '</strong><br><span style="color:#6b5040; font-weight:300;">' + t.necd + '</span></span></label>' +
-    '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.9rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" id="prefAnalytics" style="margin-top:3px;"><span><strong>' + t.st + '</strong> — Google Analytics + Microsoft Clarity<br><span style="color:#6b5040; font-weight:300;">' + t.std + '</span></span></label>' +
-    '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:1.2rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" id="prefCalendly" style="margin-top:3px;"><span><strong>' + t.cal + '</strong> — Cal.com<br><span style="color:#6b5040; font-weight:300;">' + t.cald + '</span></span></label>' +
+    '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.9rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" id="prefAnalytics" style="margin-top:3px;"><span><strong>' + t.st + '</strong>, Google Analytics + Microsoft Clarity<br><span style="color:#6b5040; font-weight:300;">' + t.std + '</span></span></label>' +
+    '<label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:1.2rem; ' + F + 'font-size:13px; color:#1a1410; line-height:1.5;"><input type="checkbox" id="prefCalendly" style="margin-top:3px;"><span><strong>' + t.cal + '</strong>, Cal.com<br><span style="color:#6b5040; font-weight:300;">' + t.cald + '</span></span></label>' +
     '<div style="display:flex; gap:0.6rem; justify-content:flex-end;"><button id="cookieBack" style="' + F + 'font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:none; color:#9a7e52; cursor:pointer; text-decoration:underline;">' + t.back + '</button><button id="cookieSavePrefs" style="' + BTN + 'background:#7a2535; border:1px solid #7a2535; color:#f7f3ee;">' + t.save + '</button></div></div></div>';
   document.body.insertAdjacentHTML('beforeend', html);
   function $(id){ return document.getElementById(id); }
