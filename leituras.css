@@ -59,9 +59,9 @@
 @media(max-width:620px){.hero-art.hub-art.readings-opening>img.map-art{width:min(84%,320px);left:42%;top:4px}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:148px;right:3%;top:88px}}
 /* Testemunhos da Leitura de Aura: apresentação compacta em carrossel. */
 #testemunhos .car-track{gap:1rem}
-#testemunhos .car-slide{flex:0 0 min(31%,300px)}
-#testemunhos .car-slide img{height:auto;aspect-ratio:900/1100;object-fit:contain}
-@media(max-width:620px){#testemunhos .car-slide{flex-basis:min(76%,285px)}}
+#testemunhos .car-slide{flex:0 0 calc(50% - .5rem)}
+#testemunhos .car-slide img{height:440px;aspect-ratio:auto;object-fit:cover;object-position:top center}
+@media(max-width:620px){#testemunhos .car-slide{flex-basis:86%}}
 
 /* Pré-visualização reversível: ilustrações astrais e cartas em traço delicado. */
 .hero-art.hub-art.readings-opening>img.map-art{width:min(88%,430px);left:45%;top:10px;opacity:.82;transform:translateX(-50%)!important;filter:none}
