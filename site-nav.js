@@ -17,7 +17,7 @@ menus.forEach(menu=>{
  group.addEventListener('keydown',e=>{if(e.key==='Escape'){open(false);toggle.focus();}if(e.key==='ArrowDown'&&e.target===toggle){e.preventDefault();open(true);panel.querySelector('a').focus();}});
  document.addEventListener('click',e=>{if(!group.contains(e.target))open(false);});
  if(![...menu.querySelectorAll('a[href]')].some(a=>/sessao-alinhamento\.html/.test(a.getAttribute('href')))){
-  const a=document.createElement('a');a.href='sessao-alinhamento.html';a.className='l site-session-link';a.textContent='Sessão de Alinhamento';if(location.pathname.endsWith('/sessao-alinhamento.html'))a.setAttribute('aria-current','page');group.after(a);
+  const a=document.createElement('a');a.href='sessao-alinhamento.html';a.className='l site-session-link';a.innerHTML='Sessão de Alinhamento<br>(e aprofundamento)';if(location.pathname.endsWith('/sessao-alinhamento.html'))a.setAttribute('aria-current','page');group.after(a);
  }
 });
 })();
