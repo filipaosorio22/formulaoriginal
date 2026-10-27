@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://filipaosorio.com/ceen.html</loc></url>
-  <url><loc>https://filipaosorio.com/</loc></url>
-  <url><loc>https://filipaosorio.com/leitura-intuitiva.html</loc></url>
-  <url><loc>https://filipaosorio.com/mapa-astral.html</loc></url>
-  <url><loc>https://filipaosorio.com/termos-ceen.html</loc></url>
-  <url><loc>https://filipaosorio.com/termos-leitura-intuitiva.html</loc></url>
-  <url><loc>https://filipaosorio.com/privacidade.html</loc></url>
-  <url><loc>https://filipaosorio.com/sobre.html</loc></url>
+  <url><loc>https://filipaosorio.com/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://filipaosorio.com/ceen.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://filipaosorio.com/ceen-completa.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://filipaosorio.com/artigos.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://filipaosorio.com/sobre.html</loc><lastmod>2026-10-27</lastmod></url>
 </urlset>
