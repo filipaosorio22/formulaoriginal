@@ -54,9 +54,9 @@
 
 /* Abertura editorial: roda natal e carta simbólica da Força. */
 .hero-art.hub-art.readings-opening>img.map-art{width:min(88%,430px);left:42%;top:4px;opacity:.92;transform:translateX(-50%) rotate(-3deg)!important}
-.hero-art.hub-art.readings-opening>img.reading-card-strength{position:absolute;width:190px;right:7%;top:86px;margin:0;transform:rotate(6deg);opacity:.94;filter:none;box-shadow:8px 14px 28px #40201d26}
-@media(max-width:850px) and (min-width:621px){.hero-art.hub-art.readings-opening>img.map-art{width:min(88%,350px);left:42%}.hero-art.hub-art.readings-opening>img.reading-card-strength{width:155px;right:2%;top:80px}}
-@media(max-width:620px){.hero-art.hub-art.readings-opening>img.map-art{width:min(84%,320px);left:42%;top:4px}.hero-art.hub-art.readings-opening>img.reading-card-strength{width:148px;right:3%;top:88px}}
+.hero-art.hub-art.readings-opening>img.reading-card-wheel{position:absolute;width:190px;right:7%;top:86px;margin:0;transform:rotate(6deg);opacity:.94;filter:none;box-shadow:8px 14px 28px #40201d26}
+@media(max-width:850px) and (min-width:621px){.hero-art.hub-art.readings-opening>img.map-art{width:min(88%,350px);left:42%}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:155px;right:2%;top:80px}}
+@media(max-width:620px){.hero-art.hub-art.readings-opening>img.map-art{width:min(84%,320px);left:42%;top:4px}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:148px;right:3%;top:88px}}
 /* Testemunhos da Leitura de Aura: apresentação compacta em carrossel. */
 #testemunhos .car-track{gap:1rem}
 #testemunhos .car-slide{flex:0 0 min(31%,300px)}
@@ -65,9 +65,9 @@
 
 /* Pré-visualização reversível: ilustrações astrais e cartas em traço delicado. */
 .hero-art.hub-art.readings-opening>img.map-art{width:min(88%,430px);left:45%;top:10px;opacity:.82;transform:translateX(-50%)!important;filter:none}
-.hero-art.hub-art.readings-opening>img.reading-card-strength{width:158px;right:13%;top:96px;transform:rotate(3deg);opacity:.5;filter:none;box-shadow:none}
+.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:158px;right:13%;top:96px;transform:rotate(3deg);opacity:.5;filter:none;box-shadow:none}
 .hero-art:not(.hub-art)>img{filter:none;opacity:.62;box-shadow:none}
 .hero-art:not(.hub-art) .back-card{opacity:.35}
 .example-art img{filter:grayscale(.35) sepia(.12);opacity:.62;box-shadow:none}
-@media(max-width:850px) and (min-width:621px){.hero-art.hub-art.readings-opening>img.reading-card-strength{width:136px;right:8%;top:82px}}
-@media(max-width:620px){.hero-art.hub-art.readings-opening>img.map-art{width:min(84%,320px);left:43%;top:8px}.hero-art.hub-art.readings-opening>img.reading-card-strength{width:132px;right:8%;top:92px}.hero-art:not(.hub-art)>img{opacity:.7}}
+@media(max-width:850px) and (min-width:621px){.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:136px;right:8%;top:82px}}
+@media(max-width:620px){.hero-art.hub-art.readings-opening>img.map-art{width:min(84%,320px);left:43%;top:8px}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:132px;right:8%;top:92px}.hero-art:not(.hub-art)>img{opacity:.7}}

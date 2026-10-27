@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" fill="none"><defs><radialGradient id="paper"><stop stop-color="#fffdf9" stop-opacity=".72"/><stop offset="1" stop-color="#eadcc6" stop-opacity=".35"/></radialGradient><linearGradient id="aspect" x1="70" y1="80" x2="480" y2="470"><stop stop-color="#a8753e"/><stop offset=".5" stop-color="#752d3b"/><stop offset="1" stop-color="#b99a67"/></linearGradient></defs><circle cx="280" cy="280" r="258" fill="url(#paper)"/><g stroke="#8c6d50" stroke-opacity=".45"><circle cx="280" cy="280" r="235"/><circle cx="280" cy="280" r="204"/><circle cx="280" cy="280" r="174"/></g><g stroke="#8e7458" stroke-opacity=".48" stroke-width="1.05"><path d="M280 45v470M45 280h470M114 114l332 332M446 114 114 446"/><path d="m280 76 52 204-52 204-52-204 52-204Z"/><path d="m76 280 204-52 204 52-204 52L76 280Z"/></g><g stroke="#8c3f48" stroke-opacity=".52" stroke-width="1"><path d="M280 76v30M382 103l-12 27M457 178l-27 12M484 280h-31M457 382l-27-12M382 457l-12-27M280 484v-31M178 457l12-27M103 382l27-12M76 280h31M103 178l27 12M178 103l12 27"/></g>
+<!-- Doze signos: glifos desenhados em traço, sem caracteres emoji. -->
+<g stroke="#7a3440" stroke-opacity=".82" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(268 50)"><path d="M5 20c0-9 3-13 7-7 4-6 7-2 7 7M12 12v8"/></g>
+<g transform="translate(371 78)"><path d="M5 10c0-4 3-6 7 0 4-6 7-4 7 0M12 10v3m0 0a4 4 0 1 0 0 8 4 4 0 1 0 0-8Z"/></g>
+<g transform="translate(441 158)"><path d="M5 6h14M7 6v14m10-14v14M5 20h14"/></g>
+<g transform="translate(467 268)"><path d="M7 7c5-4 9 0 5 4l-5 4m10-8c-5-4-9 0-5 4l5 4M7 7l-2-2m12 2 2-2"/></g>
+<g transform="translate(441 373)"><circle cx="8" cy="8" r="3.7"/><path d="M11 9c7 0 8 6 5 9-2 2-5 2-6 1"/></g>
+<g transform="translate(371 445)"><path d="M6 5v15l5-8 5 8V5m0 15c5 0 7 2 6 4-1 2-4 2-6 0"/></g>
+<g transform="translate(268 476)"><path d="M5 7c4-5 10-5 14 0M12 7v7m-8 0h16m-14 0a6 3 0 1 0 12 0"/></g>
+<g transform="translate(165 445)"><path d="M6 5v15l5-8 5 8V5m0 15 5 4m-4-4 4-1"/></g>
+<g transform="translate(93 373)"><path d="M5 5 19 19M11 5h8v8M5 14h8v5"/></g>
+<g transform="translate(62 268)"><path d="M5 6c4 0 7 3 7 7 0 3-2 5-5 7m7-14c4-1 7 1 7 4 0 4-3 7-7 9"/></g>
+<g transform="translate(93 158)"><path d="M4 8c3-3 6-3 9 0s6 3 9 0M4 15c3-3 6-3 9 0s6 3 9 0"/></g>
+<g transform="translate(165 78)"><path d="M5 5c4 0 7 4 7 8s-3 8-7 8m14-16c-4 0-7 4-7 8s3 8 7 8M7 13h10"/></g>
+</g>
+<g stroke="url(#aspect)" stroke-width="1.35" stroke-opacity=".72"><path d="M171 191 337 143 398 292 238 400 171 191Z"/><path d="m171 191 227 101M337 143l-99 257M180 343l218-51"/></g><g fill="#7c3440" fill-opacity=".72"><circle cx="171" cy="191" r="3.4"/><circle cx="337" cy="143" r="3.4"/><circle cx="398" cy="292" r="3.4"/><circle cx="238" cy="400" r="3.4"/><circle cx="180" cy="343" r="3.4"/></g><g stroke="#927756" stroke-opacity=".72" stroke-width="1.15"><circle cx="170" cy="184" r="8"/><path d="M170 171v-5m0 36v-5m-13-13h-5m36 0h-5"/><path d="M338 130c-8 10-8 23 0 30 8-7 8-20 0-30Z"/><circle cx="398" cy="292" r="6"/><path d="M398 298v8m-4-4h8"/><circle cx="237" cy="400" r="6"/><path d="m242 395 8-8m-3 0h3v3"/><path d="M180 335c-5 4-5 14 0 17m0-17c5 4 5 14 0 17m0-7h10"/></g><text x="280" y="284" fill="#7c3440" fill-opacity=".74" font-family="Georgia,serif" font-size="12" letter-spacing="2.4" text-anchor="middle">MAPA NATAL</text><circle cx="280" cy="280" r="6" fill="#b2915a" fill-opacity=".84"/><circle cx="280" cy="280" r="15" stroke="#b2915a" stroke-opacity=".5"/></svg>
