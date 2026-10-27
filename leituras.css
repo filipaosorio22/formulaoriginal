@@ -132,3 +132,7 @@ html body h3,html body .session-details h3{font-size:30px}
 .session-feedbacks .new-feedback u{font-weight:600;text-decoration-color:var(--wine);text-decoration-thickness:2px;text-underline-offset:4px}
 .session-feedbacks .new-feedback strong{font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:4px}
 .session-investment{background:var(--bg);border-top:1px solid var(--line)}
+
+/* Botão de áudio para entrar na frequência nas páginas das leituras. */
+.freq{position:fixed;bottom:1.15rem;left:1.15rem;z-index:90;background:var(--paper);border:1px solid var(--gold);border-radius:30px;padding:9px 16px;font:11px/1.4 var(--sans);letter-spacing:.04em;color:var(--wine);cursor:pointer;box-shadow:0 2px 10px rgba(26,20,16,.12);transition:background .2s,color .2s,border-color .2s}
+.freq:hover,.freq[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);color:var(--bg)}
