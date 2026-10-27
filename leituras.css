@@ -100,3 +100,10 @@ html body h3,html body .session-details h3{font-size:30px}
 .hero-art.hub-art.readings-opening{overflow:visible}
 .hero-art.hub-art.readings-opening>img.reading-card-wheel{position:absolute;z-index:5;width:clamp(125px,14vw,155px);height:auto;max-height:none;aspect-ratio:4/7;object-fit:contain;right:8%;top:62px;transform:rotate(2deg);opacity:1}
 @media(max-width:620px){#testemunhos .car-slide{flex-basis:min(78%,310px);max-width:310px}.hero-art.hub-art.readings-opening>img.reading-card-wheel{width:126px;right:5%;top:58px}}
+
+
+/* Testemunhos mais compactos, sem grandes áreas vazias nos cartões. */
+#testemunhos .car-track{gap:14px}
+#testemunhos .car-slide{flex:0 0 min(30%,300px);max-width:300px}
+#testemunhos .car-slide img{height:auto;max-height:335px;aspect-ratio:900/1100;object-fit:contain;background:transparent}
+@media(max-width:620px){#testemunhos .car-slide{flex-basis:min(82%,300px);max-width:300px}}
