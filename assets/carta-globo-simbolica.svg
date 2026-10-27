@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 700" role="img" aria-labelledby="title desc">
+<title id="title">Carta simbólica com um globo</title>
+<desc id="desc">Carta de contorno bordô e dourado, com um único globo de linhas delicadas ao centro.</desc>
+<rect x="9" y="9" width="382" height="682" rx="18" fill="#fffdf8" fill-opacity=".88" stroke="#7a2535" stroke-width="2"/>
+<rect x="18" y="18" width="364" height="664" rx="13" fill="none" stroke="#b18a4e" stroke-width="1"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="200" cy="350" r="96" stroke="#7a2535" stroke-width="1.8"/>
+  <path d="M104 350h192M200 254c-29 27-43 59-43 96s14 69 43 96M200 254c29 27 43 59 43 96s-14 69-43 96" stroke="#b18a4e" stroke-width="1.4"/>
+  <path d="M119 310c24 13 51 20 81 20s57-7 81-20M119 390c24-13 51-20 81-20s57 7 81 20" stroke="#b18a4e" stroke-width="1.2"/>
+</g>
+</svg>
+
