@@ -16,8 +16,8 @@
 <meta property="og:image" content="https://filipaosorio.com/novahero.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Leitura do Mapa Natal", "serviceType": "Leitura de mapa astral", "provider": {"@type": "Person", "name": "Filipa Osório", "url": "https://filipaosorio.com/"}, "areaServed": "PT", "availableLanguage": ["pt-PT", "en"], "description": "Leitura escrita do mapa astral, astrologia, Human Design e intuição.", "offers": [{"@type": "Offer", "name": "Leitura do Mapa Natal", "price": "197", "priceCurrency": "EUR", "priceValidUntil": "2026-12-31"}, {"@type": "Offer", "name": "Leitura + sessão de alinhamento", "price": "347", "priceCurrency": "EUR"}]}</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-fo-48.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-fo-48.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -241,7 +241,7 @@
   .offer-featured { border:1.5px solid var(--wine); }
   .offer-badge { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--wine); color:var(--btn-ink); font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; padding:4px 12px; border-radius:20px; white-space:nowrap; }
   .offer-name { font-family:'Spectral',serif; font-size:21px; font-style:italic; color:var(--ink); text-align:center; }
-  .price-note { text-align:center; font-size:12px; color:var(--muted); margin:-0.6rem 0 1rem; }
+  .price-note { text-align:center; font-size:11px; color:var(--muted); margin:-0.6rem 0 1rem; }
   .offer-price { font-family:'Spectral',serif; font-size:34px; font-weight:300; color:var(--wine); text-align:center; margin:0.2rem 0 1rem; }
   .offer-was { text-align:center; font-family:'DM Sans',sans-serif; font-size:13.5px; color:var(--ink-soft); margin:-0.6rem 0 1rem; }
   .offer-was s { color:var(--ink-soft); opacity:.75; }
@@ -1123,7 +1123,13 @@
 <link rel="alternate" hreflang="pt" href="https://filipaosorio.com/leitura-intuitiva.html">
 <meta name="robots" content="noindex,nofollow"><style>
 .fo-eyebrow{font:11px/1.7 'Lora',Georgia,serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold-deep);margin:0 0 12px}.fo-breadcrumb{font:12px/1.7 'Lora',Georgia,serif;color:var(--ink-soft);padding-top:115px;margin-bottom:-85px}.shared-testimonials{text-align:center;border:1px solid var(--gline);padding:30px 24px;margin:25px 0}.shared-testimonials h2{margin-top:12px}.shared-testimonials .btn{margin-top:15px}.shared-testimonials .body-text{text-align:center} .cover-li .fo-eyebrow{position:relative;z-index:1;color:var(--gold-deep);padding-top:20px}
-</style></head>
+</style><style>/* Escala de títulos alinhada visualmente à CEEN nesta versão. */
+main h1,main .astro-copy h1{font-size:clamp(38px,4vw,46px)!important;letter-spacing:-.5px!important;line-height:1.08!important}
+main h2,main .astro-perspective h2{font-size:clamp(30px,3.3vw,44px)!important;letter-spacing:-.4px!important;line-height:1.12!important}
+main h3{font-size:30px!important}
+@media(max-width:700px){main h1,main .astro-copy h1{font-size:40px!important}main h2,main .astro-perspective h2{font-size:34px!important}main h3{font-size:27px!important}}
+</style>
+</head>
 <body>
 
 <div class="langbar">PRÉ-VISUALIZAÇÃO · página em revisão · pedidos e pagamentos desativados</div>
@@ -1284,7 +1290,7 @@
       <div class="offer" data-ses="0">
         <p class="offer-name">Leitura do Mapa Natal</p>
         <p class="offer-price">197€</p>
-        <p class="price-note">Até 31 de dezembro de 2026 · depois, 247€</p>
+        <p class="price-note">Até 31 de dezembro · depois, 247€</p>
         <ul>
           <li>Leitura dos teus mapas, orientada pelo teu tema e contexto</li>
           <li>História simbólica personalizada</li>
