@@ -1,0 +1,21 @@
+/* Shared reading layouts, quiet cream panels and accessible night colours. */
+html body.fo-reading-page .hero.astro-hero.essence-opening{width:min(1100px,calc(100% - 72px))!important;margin:100px auto 0!important;padding:52px 0 40px!important;box-sizing:border-box;text-align:left!important;gap:40px!important}
+html body.fo-reading-page :is(.hero.astro-hero.essence-opening,.hero.tarot-hero) h1{font-size:clamp(38px,4vw,46px)!important;line-height:1.08!important;letter-spacing:-.5px!important}
+html body.fo-reading-page .moment-question-section>.wrap{display:block!important;max-width:760px}
+html body.fo-reading-page .moment-question-section h2{margin-bottom:26px}
+html body.readings-hub .reading-sun.reading-sun-card{width:clamp(145px,17vw,195px)!important;height:auto!important;aspect-ratio:2/3!important;top:50px!important;right:3%!important;transform:rotate(7deg)!important;filter:drop-shadow(0 9px 13px #39251720)}
+html body.readings-hub .reading-emphasis{font:400 15px/1.8 'Lora',Georgia,serif!important}
+html body.readings-hub .aura-audio-testimonial details>summary{font:400 11.5px/1.6 'DM Sans',sans-serif!important;letter-spacing:.02em!important;padding:12px 0!important}
+html body.readings-hub .aura-audio-testimonial .feat-full .body-text{font-size:14px!important;line-height:1.85!important}
+html body.fo-reading-page #perguntas details>summary,html body.fo-reading-page .faqs details>summary{font-size:14px!important;line-height:1.6!important}
+html body.fo-reading-page #perguntas .ans,html body.fo-reading-page #perguntas .ans p,html body.fo-reading-page .faqs .answer,html body.fo-reading-page .faqs .answer p{font-size:14px!important;line-height:1.85!important}
+html:not([data-theme=dark]) body.fo-reading-page :is(.offer-description,.audio-block){background:#f6efe5!important}
+html:not([data-theme=dark]) body.fo-reading-page .offer-purchase{background:#efe4d4!important}
+html[data-theme=dark] body.readings-hub main .hero a.btn,html[data-theme=dark] body.readings-hub main .ending a.btn{background:#7a2535!important;color:#fff8ef!important;border-color:#b77885!important}
+html[data-theme=dark] body.fo-reading-page #a-tua-leitura .reading-reiki{background:#34262b!important;background-image:none!important;border:1px solid #9b6572!important;box-shadow:none!important}
+html[data-theme=dark] body.fo-reading-page #a-tua-leitura .reading-reiki :is(p,h3,strong){color:#f2e6df!important}
+#perspetiva-audio{scroll-margin-top:110px}
+@media(max-width:700px){html body.fo-reading-page .hero.astro-hero.essence-opening{width:calc(100% - 40px)!important;margin-top:88px!important;padding:35px 0 30px!important;grid-template-columns:1fr!important;text-align:left!important}html body.readings-hub .reading-sun.reading-sun-card{width:140px!important;top:30px!important}}
+/* Centre the wider Essence opening on the viewport while keeping its text sections narrow. */
+html body.fo-reading-page main.page>.hero.astro-hero.essence-opening{width:min(1100px,calc(100vw - 72px))!important;max-width:none!important;position:relative;left:50%;transform:translateX(-50%);margin-left:0!important;margin-right:0!important}
+@media(max-width:700px){html body.fo-reading-page main.page>.hero.astro-hero.essence-opening{width:calc(100vw - 40px)!important}}
