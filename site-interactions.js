@@ -10,12 +10,9 @@
   d.addEventListener('click',e=>{const r=d.getBoundingClientRect();if(e.target===d&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))close(d);});
   d.addEventListener('cancel',()=>{if(d===gift){try{sessionStorage.setItem('fo_gift_seen_20261028','1');}catch(e){}}});
  });
- if(location.hash==='#miminho-dialog')open(gift);
+ 
  if(location.hash==='#convites-dialog')open(partnership);
- // A quiet reminder once per session, with a permanent way to reopen it.
- if(gift){let seen=false;try{seen=sessionStorage.getItem('fo_gift_seen_20261028')==='1';}catch(e){}
-  if(!seen)setTimeout(()=>{if(document.visibilityState!=='visible'||document.querySelector('dialog[open]')||document.activeElement?.matches('input,textarea,select'))return;try{sessionStorage.setItem('fo_gift_seen_20261028','1');}catch(e){}open(gift);},12000);
- }
+ document.querySelectorAll('.readings-submenu-toggle').forEach(button=>{const menu=button.closest('.readings-menu');button.addEventListener('click',()=>{const isOpen=menu.classList.toggle('is-open');button.setAttribute('aria-expanded',String(isOpen));});menu.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.classList.remove('is-open');button.setAttribute('aria-expanded','false');button.focus();}});});
  document.querySelectorAll('[data-bio-start]').forEach(a=>a.addEventListener('click',e=>{
   const section=document.getElementById('quem-te-acompanha');if(!section)return;e.preventDefault();e.stopImmediatePropagation();
   const start=scrollY,end=start+section.getBoundingClientRect().top-24;
