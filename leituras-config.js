@@ -1,8 +1,8 @@
 /* One catalogue for Portuguese and English. No private API keys. */
 (()=>{const preview=location.protocol==='file:'||!['filipaosorio.com','www.filipaosorio.com'].includes(location.hostname)||new URLSearchParams(location.search).has('preview');
-const links={leitura:'https://buy.stripe.com/00w7sL8Vn6oHg4Z8rsfw40N',rs:'https://buy.stripe.com/14AdR91sV7sL6up5fgfw40P',sessao:'https://buy.stripe.com/eVq4gzefH28r2e9bDEfw40O',rssessao:'https://buy.stripe.com/4gM7sL3B314nf0V6jkfw40Q',sessaosolo:'https://buy.stripe.com/dRmcN5b3vfZh9GBcHIfw40G',rssolo:'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'};
+const links={leitura:'https://buy.stripe.com/bJe4gz2wZ9AT5qlcHIfw40Y',rs:'https://buy.stripe.com/8x24gzefH28r3idgXYfw410',sessao:'https://buy.stripe.com/dRmeVd3B39AT9GB234fw40Z',rssessao:'https://buy.stripe.com/5kQ5kD2wZ7sL5ql234fw411',sessaosolo:'https://buy.stripe.com/14A5kD1sVfZhdWRcHIfw412',rssolo:'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'};
 Object.keys(links).forEach(k=>{links[k+'+hd']=links[k]});
-window.FO_SITE_CONFIG={preview,prices:{natal:247,sessionCombo:397,solarReturn:100,moment:88,alignment:179},giftLimit:5};
+window.FO_SITE_CONFIG={preview,prices:{natal:197,sessionCombo:305,solarReturn:100,moment:88,alignment:125,sessionAddon:108,sessionDurationMinutes:60},giftLimit:5};
 window.FO_PAY={preview,tarotGift:'https://buy.stripe.com/aFa9ATfjL6oH5qlazAfw40S',web3formsKey:'b2feccdb-b682-491c-8fb8-a56fb482a4ed',stripe:links};
 window.TAROT_CONFIG={preview,promotionLink:"https://buy.stripe.com/aFa9ATfjL6oH5qlazAfw40S",price:88,regularPrice:88,paymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',regularPaymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',web3formsKey:window.FO_PAY.web3formsKey};
 if(preview){window['ga-disable-G-5CX792T8H9']=true;document.documentElement.dataset.foPreview='true';}
