@@ -41,7 +41,7 @@ if(form){
   if(promotionConsent){promotionConsent.required=promo;if(!promo)promotionConsent.checked=false;}
   const wrapper=by('momentoPromoConsentWrap');if(wrapper)wrapper.hidden=!promo;
   document.querySelectorAll('[data-moment-price]').forEach(n=>n.textContent=(english?'€':'')+cfg.price+(english?'':' €'));
-  document.querySelectorAll('.form-price strong').forEach(n=>n.textContent=(english?'Moment Reading · €':'Leitura de Momento · ')+cfg.price+(english?'':' €'));
+  document.querySelectorAll('.form-price strong').forEach(n=>n.textContent=(english?'The Now Reading · €':'Leitura de Momento · ')+cfg.price+(english?'':' €'));
  }
  if(promotionOption){promotionOption.checked=new URLSearchParams(location.search).get('miminho')==='1';promotionOption.addEventListener('change',syncPromotion);syncPromotion();}
 
@@ -56,7 +56,7 @@ if(form){
   if(!requestRef)requestRef=cfg.preview!==false?'DEMONSTRACAO':('tarot_'+crypto.randomUUID().replace(/-/g,''));
   const promotionNote=promotionOption?.checked?'Oferta de regresso partilhada: Momento 44 EUR; opcional Essência +197 EUR, total 241 EUR. Testemunho honesto aceite, sem obrigação de ser positivo. Opção final confirmada no Stripe.\n\n':'';
   const message=promotionNote+'Pedido expresso de preparação nas 24 horas após pagamento e dados completos: confirmado. Perda do direito após prestação integral: reconhecida.\n\nReferência do pedido: '+requestRef+'\nEstado: aguarda confirmação do pagamento\n\nLeitura de Momento · '+(cfg.price||88)+' €\nEntrega em áudio · até 5 dias úteis após pagamento e receção do contexto\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>labels[id]+': '+data[id]).join('\n\n');
-  if(cfg.preview!==false){by('resumoTexto').textContent=english?('Moment Reading · €'+(cfg.price||88)+'\nPersonalised audio · within 5 business days after payment and receipt of your context\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>({nome:'First name',apelido:'Last name',email:'Email',telefone:'Mobile / WhatsApp',nif:'Tax ID',tema:'Theme or question',contexto:'Context',desejo:'What I’d like to understand',idioma:'Reading language'}[id])+': '+data[id]).join('\n\n')):message;by('pedidoResumo').hidden=false;form.hidden=true;by('resumoTitle').focus();by('pedidoResumo').scrollIntoView({block:'center',behavior:'smooth'});return;}
+  if(cfg.preview!==false){by('resumoTexto').textContent=english?('The Now Reading · €'+(cfg.price||88)+'\nPersonalised audio · within 5 business days after payment and receipt of your context\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>({nome:'First name',apelido:'Last name',email:'Email',telefone:'Mobile / WhatsApp',nif:'Tax ID',tema:'Theme or question',contexto:'Context',desejo:'What I’d like to understand',idioma:'Reading language'}[id])+': '+data[id]).join('\n\n')):message;by('pedidoResumo').hidden=false;form.hidden=true;by('resumoTitle').focus();by('pedidoResumo').scrollIntoView({block:'center',behavior:'smooth'});return;}
   if(!cfg.paymentLink||!/^https:\/\/buy\.stripe\.com\//.test(cfg.paymentLink)||!cfg.web3formsKey){status.textContent=ui('O pedido online ainda não está disponível. Tenta novamente mais tarde.');return;}
   const submit=by('submitPedido');submitting=true;submit.disabled=true;submit.textContent=ui('A preparar o pagamento…');
   try{
