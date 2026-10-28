@@ -19,7 +19,7 @@
   const top=Math.max(0,scrollY+target.getBoundingClientRect().top-(document.querySelector('.site-header')?.offsetHeight||0)-22);
   const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
   const start=scrollY,time=performance.now(),old=root.style.scrollBehavior;root.style.scrollBehavior='auto';
-  function frame(now){const p=reduced?1:Math.min(1,(now-time)/650);const ease=p<.5?2*p*p:1-((-2*p+2)**2)/2;scrollTo(0,start+(top-start)*ease);if(p<1)scrolling=requestAnimationFrame(frame);else{root.style.scrollBehavior=old;history.replaceState(null,'',a.hash);}}
+  function frame(now){const p=reduced?1:Math.min(1,(now-time)/1000);const ease=p;scrollTo(0,start+(top-start)*ease);if(p<1)scrolling=requestAnimationFrame(frame);else{root.style.scrollBehavior=old;history.replaceState(null,'',a.hash);}}
   scrolling=requestAnimationFrame(frame);
  },true);
  document.querySelectorAll('.readings-menu').forEach(menu=>{menu.addEventListener('mouseleave',()=>{menu.classList.remove('is-open');menu.querySelector('button')?.setAttribute('aria-expanded','false');});});
