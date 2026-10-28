@@ -4,7 +4,7 @@
  const get=id=>document.getElementById(id),preview=window.FO_SITE_CONFIG?.preview!==false;
  let identity=null;
  try{const saved=JSON.parse(sessionStorage.getItem(KEY)||'null');if(saved&&saved.expires>Date.now())identity=saved;}catch{}
- const collectionEnabled=config.collectionEnabled!==false||preview;
+ const collectionEnabled=config.collectionEnabled!==false;
  const api=window.FO_MAPS={identity,authorized:!collectionEnabled};
  const safeSet=v=>{api.identity=identity=v;try{sessionStorage.setItem(KEY,JSON.stringify(v));}catch{}};
  const validEmail=s=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s);
