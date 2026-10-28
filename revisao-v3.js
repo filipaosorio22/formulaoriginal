@@ -2,7 +2,7 @@
  const root=document.documentElement;
  if(new URLSearchParams(location.search).get('embed')==='1')root.classList.add('is-map-embed');
  const toggle=document.querySelector('[data-site-theme]');
- const current=()=>root.getAttribute('data-theme')|| (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+ const current=()=>root.getAttribute('data-theme')||'light';
  function paint(){if(toggle){toggle.dataset.current=current();toggle.setAttribute('aria-pressed',String(current()==='dark'));}}
  function syncFrames(){document.querySelectorAll('iframe').forEach(f=>{try{if(f.contentDocument?.documentElement)f.contentDocument.documentElement.setAttribute('data-theme',current());}catch(e){}});}
  try{const saved=localStorage.getItem('fo_theme');if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved);}catch(e){}

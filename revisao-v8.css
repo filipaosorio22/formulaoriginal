@@ -1,0 +1,59 @@
+/* Shared reading openings and focused editorial adjustments. */
+html body.fo-reading-page.readings-hub main>.wrap>.hero,
+html body.fo-reading-page main>.wrap>.hero.tarot-hero,
+html body.fo-reading-page main.page>.hero.astro-hero.essence-opening{
+ width:min(1100px,calc(100vw - 72px))!important;
+ margin:0 auto!important;padding:58px 0 64px!important;
+ display:grid!important;grid-template-columns:1.12fr 1fr!important;gap:50px!important;
+ align-items:center!important;min-height:0!important;border:0!important;
+}
+html body.fo-reading-page main.page>.hero.astro-hero.essence-opening{position:relative;left:50%;transform:translateX(-50%);margin-left:0!important;margin-right:0!important}
+html body.fo-reading-page.readings-hub main>.wrap,
+html body.fo-reading-page main:has(>.wrap>.hero.tarot-hero)>.wrap:first-child{width:100%;max-width:none;padding:0}
+html body.fo-reading-page.readings-hub main .hero h1,
+html body.fo-reading-page main.page .hero.astro-hero .astro-copy h1,
+html body.fo-reading-page main .hero.tarot-hero h1{font:500 clamp(38px,4vw,46px)/1.08 'Cormorant Garamond',Georgia,serif!important;letter-spacing:-.5px!important;margin:0 0 .5em!important}
+html body.fo-reading-page .hero :is(.eyebrow,.fo-eyebrow){display:block;margin:0 0 18px!important;font:400 10px/1.6 'DM Sans',Arial,sans-serif!important;letter-spacing:.2em!important;text-transform:uppercase;color:var(--gold,#b18a4e)}
+html body.fo-reading-page .hero.astro-hero .astro-art{grid-row:auto!important}
+html body.readings-hub .hero-art.hub-art.readings-opening>img.reading-sun.reading-sun-card{width:clamp(175px,20vw,230px)!important;top:42px!important;right:4%!important;transform:rotate(17deg)!important;transform-origin:center!important}
+html body.readings-hub .tools-emphasis{font-weight:600;color:var(--wine,#7a2535)}
+html body.readings-hub .tools-emphasis u{text-decoration-color:#c9a86c;text-decoration-thickness:2px;text-underline-offset:5px}
+html body.readings-hub .reading-perspective p{line-height:1.95;margin-bottom:1.35em}
+html body.fo-reading-page main .reading-reiki{margin-top:52px!important}
+html body.fo-reading-page main .reading-reiki h3{font-size:19px!important;line-height:1.4!important}
+html body.readings-hub #testemunhos .aura-audio-testimonial .feat-quote{color:#7a2535!important}
+html body.readings-hub #testemunhos .feedback-note,
+html body.readings-hub #testemunhos .feedback-note p{font:400 16px/1.85 'Lora',Georgia,serif!important}
+html body.fo-reading-page main.page #perguntas>h2,
+html body.fo-reading-page .section>.wrap:has(>.faqs)>h2{font:500 clamp(30px,3.3vw,38px)/1.15 'Cormorant Garamond',Georgia,serif!important;margin-bottom:24px!important}
+html body.fo-reading-page #perguntas .faqs>details,
+html body.fo-reading-page .faqs>details{border:0!important;border-bottom:1px solid var(--line,#dcd0bd)!important;border-radius:0!important;background:transparent!important;padding:0!important;margin:0!important}
+html body.fo-reading-page #perguntas .faqs>details>summary,
+html body.fo-reading-page .faqs>details>summary{display:flex!important;align-items:center;justify-content:space-between;gap:20px;list-style:none;font:500 16px/1.6 'DM Sans',Arial,sans-serif!important;letter-spacing:0!important;color:var(--wine,#7a2535);padding:20px 0!important;cursor:pointer}
+html body.fo-reading-page .faqs>details>summary::-webkit-details-marker{display:none}
+html body.fo-reading-page .faqs>details>summary::after{content:'+'!important;position:static!important;float:none!important;font:400 22px/1 'DM Sans',Arial,sans-serif!important;color:inherit}
+html body.fo-reading-page .faqs>details[open]>summary::after{content:'−'!important;transform:none!important}
+html body.fo-reading-page #perguntas .faqs>details :is(.ans,.ans p),
+html body.fo-reading-page .faqs>details :is(.answer,.answer p){font:400 15px/1.85 'Lora',Georgia,serif!important;color:var(--ink,#382e29);padding:0 0 18px!important;margin:0!important}
+html body.fo-reading-page .hero.tarot-hero .tarot-opening-photo{align-self:start!important;position:relative;top:-12px;max-width:390px;width:100%;justify-self:center;margin:0!important}
+html body.fo-reading-page .hero.tarot-hero .tarot-opening-photo img{width:100%!important;transform:translateY(-3%) scale(1.28)!important;transform-origin:50% 38%!important;object-position:50% 35%!important;opacity:1!important}
+/* Panels use the theme palette; embedded photos retain their original colours. */
+html[data-theme=dark] body.fo-reading-page{--card:#29221e;--card2:#302722;--tint2:#342c26;--cream:#1d1917;--bg2:#29221e;--ink-soft:#d1c1af;--gline:#786044}
+html[data-theme=dark] body.fo-reading-page main :is(.reading-comparison thead th,.translated-feedback,.bio-box,.deliv,.hdmsg,.notion-preview,.moment-question-section,.demo-context,.callout,.form-section,.form-price,.booking-review){background:#29221e!important;background-image:none!important;color:#f0e6da!important;border-color:#786044!important}
+html[data-theme=dark] body.fo-reading-page main .reading-comparison :is(th,td){border-color:#786044!important}
+html[data-theme=dark] body.fo-reading-page main :is(input:not([type=checkbox]):not([type=radio]),textarea,select){background:#241f1b!important;color:#f0e6da!important;border-color:#9e8057!important;color-scheme:dark}
+html[data-theme=dark] body.readings-hub #testemunhos .aura-audio-testimonial{background:#29221e!important}
+html[data-theme=dark] body.readings-hub #testemunhos .aura-audio-testimonial .feat-quote{color:#efb4bf!important}
+html[data-theme=dark] body.fo-reading-page main .tools-emphasis{color:#efb4bf!important}
+html[data-theme=dark] body.fo-reading-page #perguntas .faqs>details>summary,
+html[data-theme=dark] body.fo-reading-page .faqs>details>summary{color:#efb4bf!important}
+html[data-theme=dark] body.fo-reading-page #perguntas .faqs>details :is(.ans,.ans p),
+html[data-theme=dark] body.fo-reading-page .faqs>details :is(.answer,.answer p){color:#f0e6da!important}
+@media(max-width:700px){
+ html body.fo-reading-page.readings-hub main>.wrap>.hero,
+ html body.fo-reading-page main>.wrap>.hero.tarot-hero,
+ html body.fo-reading-page main.page>.hero.astro-hero.essence-opening{width:calc(100vw - 40px)!important;grid-template-columns:1fr!important;gap:30px!important;padding:36px 0 40px!important;text-align:left!important}
+ html body.readings-hub .hero-art.hub-art.readings-opening>img.reading-sun.reading-sun-card{width:165px!important;top:42px!important;right:8%!important;transform:rotate(15deg)!important}
+ html body.fo-reading-page .hero.tarot-hero .tarot-opening-photo{top:0;max-width:330px}
+ html body.fo-reading-page main .reading-reiki{margin-top:38px!important}
+}
