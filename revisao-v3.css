@@ -89,3 +89,26 @@ html.is-map-embed body>.site-header,html.is-map-embed .site-footer,html.is-map-e
 .direct-testimonial{max-width:650px;margin:32px auto;text-align:center}.direct-testimonial video{display:block;width:100%;height:min(70vh,620px);object-fit:contain;background:#211b17;border-radius:12px}.direct-testimonial figcaption{font:11px/1.6 'DM Sans',sans-serif;color:var(--muted,#6f6355);margin-top:10px}.translated-feedback{height:100%;min-height:300px}.translated-feedback details img{display:block;width:100%;height:350px;object-fit:contain;object-position:center;transition:transform .25s}.translated-feedback details{overflow:hidden}.translated-feedback details img:hover{transform:scale(1.1)}
 
 html body #giftTop,html body #popup[hidden]{display:none!important}
+
+html[data-theme=dark] body.readings-hub,html[data-theme=dark] body.readings-hub main{background:#1d1915!important;color:#efe6d8!important}html[data-theme=dark] body.readings-hub .section,html[data-theme=dark] body.readings-hub .hero,html[data-theme=dark] body.readings-hub .reading-option,html[data-theme=dark] body.readings-hub .reading-reiki{background:#25201a!important;color:#efe6d8!important}html[data-theme=dark] body.readings-hub h1,html[data-theme=dark] body.readings-hub h2,html[data-theme=dark] body.readings-hub h3,html[data-theme=dark] body.readings-hub p,html[data-theme=dark] body.readings-hub .lead{color:#efe6d8!important}html[data-theme=dark] body .steps3>div>span{color:#d6b984!important;border-color:#c9a86c!important}html[data-theme=dark] body .offer a,html[data-theme=dark] body .btn{border-color:#c9a86c!important;color:#d6b984!important}html body.readings-hub h1,html body.readings-hub h2{font-size:clamp(26px,3vw,38px)!important}html body .reading-reiki{border:1px solid #7a2535!important;border-radius:18px!important;padding:24px;background:linear-gradient(145deg,#fbf6ef,#f4e9e1)!important}html[data-theme=dark] body .reading-reiki{background:#29221e!important;border-color:#d48a96!important}html body .car-slide:last-child{border:2px solid #c9a86c!important}html body .home-bio .bio-thread{text-align:left!important}html body .home-bio h2{text-align:left!important;margin-top:52px!important}html body .home-bio .bio-thread strong{color:#7a2535}html body .reading-opening{zoom:1.05}
+/* refinements requested in the follow-up */
+html body>nav:not(.site-main-nav){display:none!important}
+html body .home-portrait img{object-fit:cover!important;transform:scale(1.06);filter:saturate(1.08) contrast(1.025) sepia(.035)}
+html body .home-bio .bio-thread{text-align:left!important;padding-left:25px!important}
+html body .home-bio h2{margin-top:70px!important;text-align:left!important}
+html body .readings-hub .reading-option h3{font-size:24px!important}
+html body .readings-hub .car-slide:last-child{border:2px solid #c9a86c!important;background:#211b17!important}
+html body .readings-hub .car-slide:nth-last-child(2){background:transparent!important}
+html[data-theme=dark] body.readings-hub,html[data-theme=dark] body.readings-hub main{background:#1d1915!important;color:#efe6d8!important}
+html[data-theme=dark] body.readings-hub .section,html[data-theme=dark] body.readings-hub .hero,html[data-theme=dark] body.readings-hub .reading-option{background:#25201a!important;color:#efe6d8!important}
+html[data-theme=dark] body.readings-hub h1,html[data-theme=dark] body.readings-hub h2,html[data-theme=dark] body.readings-hub h3,html[data-theme=dark] body.readings-hub p,html[data-theme=dark] body.readings-hub .lead{color:#efe6d8!important}
+html[data-theme=dark] body .steps3>div>span{color:#d6b984!important;border-color:#c9a86c!important}
+html[data-theme=dark] body .offer a{border-color:#c9a86c!important;color:#d6b984!important}
+html body .reading-reiki{border:1px solid #7a2535!important;border-radius:18px!important;padding:24px!important;background:linear-gradient(145deg,#fbf6ef,#f4e9e1)!important}
+html[data-theme=dark] body .reading-reiki{background:#29221e!important;border-color:#d48a96!important}
+html body .preview-read-more{display:inline-flex;border:1px solid #7a2535;border-radius:24px;background:transparent;color:#7a2535;padding:7px 14px;font:12px 'DM Sans',sans-serif;cursor:default}
+html[data-theme=dark] body .preview-read-more{border-color:#d48a96;color:#e7afb8;background:transparent}
+html[data-theme=dark] body #o-que-e,html[data-theme=dark] body .delivery-preview{background:#25201a!important;color:#efe6d8!important}
+html body .testemunho-video,html body .car-video{border:2px solid #c9a86c!important;border-radius:14px!important}
+html body .car-slide:nth-last-child(2){background:transparent!important}
+html body .home-portrait img{transform-origin:50% 40%}

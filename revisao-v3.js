@@ -6,6 +6,9 @@
  function paint(){if(toggle){toggle.dataset.current=current();toggle.setAttribute('aria-pressed',String(current()==='dark'));}}
  function syncFrames(){document.querySelectorAll('iframe').forEach(f=>{try{if(f.contentDocument?.documentElement)f.contentDocument.documentElement.setAttribute('data-theme',current());}catch(e){}});}
  try{const saved=localStorage.getItem('fo_theme');if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved);}catch(e){}
+ const reviewQuery=new URLSearchParams(location.search),reviewTheme=reviewQuery.get('theme');
+ if(reviewQuery.has('preview')&&['light','dark'].includes(reviewTheme))root.setAttribute('data-theme',reviewTheme);
+ root.setAttribute('data-theme',current());
  toggle?.addEventListener('click',()=>{const next=current()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('fo_theme',next);}catch(e){}paint();syncFrames();});
  new MutationObserver(()=>{paint();syncFrames();}).observe(root,{attributes:true,attributeFilter:['data-theme']});paint();
  document.addEventListener('load',e=>{if(e.target.tagName==='IFRAME')syncFrames();},true);

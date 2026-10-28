@@ -299,18 +299,9 @@ html.embed body{background:transparent}
 .privacy .firstmap{display:block;margin:10px auto 0;padding:8px 12px;border:1px solid var(--wine);border-radius:10px;background:rgba(122,37,53,.06);color:var(--wine);font-weight:500;font-size:14.5px;line-height:1.5;max-width:460px}
 .crossend{margin:18px auto 0;text-align:center;font-family:var(--sans);font-size:15px;padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,.35)}.crossend a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
 </style>
-<script>
-/* link de confirmação do e-mail (MailerLite) → desbloqueia e abre o último mapa */
-(function(){var u=new URLSearchParams(location.search);if(u.get('confirmado')!=='1')return;
-try{localStorage.setItem('hdDesbloqueado','1');if(localStorage.getItem('fo_both')==='1')localStorage.setItem('mapaDesbloqueado','1');}catch(e){}
-var q='',both='';try{var P=JSON.parse(localStorage.getItem('fo_people')||'[]');if(P.length)q=P[P.length-1].q;both=localStorage.getItem('fo_both')||'';}catch(e){}
-var last='';try{last=localStorage.getItem('fo_last')||'';}catch(e){}
-if(q){location.replace('human-design.html'+'?'+q+(both==='1'?'&tambem=hd':'')+'#mapa');return;}
-document.addEventListener('DOMContentLoaded',function(){var d=document.createElement('div');d.setAttribute('style','position:relative;z-index:50;background:#f4ead6;color:#5b2a35;text-align:center;padding:14px 18px;font:15px/1.5 Georgia,serif');d.textContent='E-mail confirmado ✦ Gera o teu mapa abaixo e vê-lo-ás completo, já desbloqueado.';document.body.insertBefore(d,document.body.firstChild);});
-})();
-</script>
-<script src="site-config.js?v=20261028v3"></script><link rel="stylesheet" href="site-nav.css?v=20261028v3"><script src="site-ui.js?v=20261028v3" defer></script><script src="site-interactions.js?v=20261028v3" defer></script><link rel="stylesheet" href="revisao-v3.css?v=20261028v3"><script src="revisao-v3.js?v=20261028v3" defer></script></head>
-<body><header class="site-header"><nav class="site-main-nav" aria-label="Menu principal"><a class="site-brand" href="index.html">Filipa Osório</a><div class="nav-links"><a href="index.html">Início</a><a href="ceen.html">CEEN</a><div class="readings-menu"><a href="leituras.html">Leituras Intuitivas</a><button class="readings-submenu-toggle" type="button" aria-expanded="false" aria-label="Páginas das Leituras">⌄</button><div class="readings-submenu"><a href="leituras.html">Leituras Intuitivas</a><a href="leitura-intuitiva.html">Leitura de Essência</a><a href="tarot.html">Leitura de Momento</a></div></div><a href="artigos.html">Artigos</a><a href="#convites-dialog" data-partnerships-open aria-haspopup="dialog">Convites e parcerias</a></div><div class="site-tools"><button type="button" class="site-theme" data-site-theme aria-label="Alternar modo claro e noturno"><span data-mode-icon="dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg></span><span data-mode-icon="light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></span></button><a class="site-language" href="leitura-intuitiva-en.html#o-que-e" title="About these charts in English" aria-label="Read about these charts in English" hreflang="en"><span class="selected">PT</span>/<span>EN</span></a></div><button class="theme-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button><button class="size-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button></nav></header>
+
+<script src="site-config.js?v=20261028v4"></script><link rel="stylesheet" href="site-nav.css?v=20261028v4"><script src="site-ui.js?v=20261028v4" defer></script><script src="site-interactions.js?v=20261028v4" defer></script><link rel="stylesheet" href="revisao-v3.css?v=20261028v4"><script src="revisao-v3.js?v=20261028v4" defer></script><link rel="stylesheet" href="revisao-v4.css?v=20261028v4"><script src="revisao-v4.js?v=20261028v4" defer></script><script src="mapas-config.js?v=20261028v4"></script><script src="mapas-client.js?v=20261028v4"></script></head>
+<body data-map-page><header class="site-header"><nav class="site-main-nav" aria-label="Menu principal"><a class="site-brand" href="index.html">Filipa Osório</a><div class="nav-links"><a href="index.html">Início</a><a href="ceen.html">CEEN</a><div class="readings-menu"><a href="leituras.html">Leituras Intuitivas</a><button class="readings-submenu-toggle" type="button" aria-expanded="false" aria-label="Páginas das Leituras">⌄</button><div class="readings-submenu"><a href="leituras.html">Leituras Intuitivas</a><a href="leitura-intuitiva.html">Leitura de Essência</a><a href="tarot.html">Leitura de Momento</a></div></div><a href="artigos.html">Artigos</a><a href="#convites-dialog" data-partnerships-open aria-haspopup="dialog">Convites e parcerias</a></div><div class="site-tools"><button type="button" class="site-theme" data-site-theme aria-label="Alternar modo claro e noturno"><span data-mode-icon="dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg></span><span data-mode-icon="light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></span></button><a class="site-language" href="leitura-intuitiva-en.html#o-que-e" title="About these charts in English" aria-label="Read about these charts in English" hreflang="en"><span class="selected">PT</span>/<span>EN</span></a></div><button class="theme-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button><button class="size-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button></nav></header>
 <div class="wrap">
   <div class="top" hidden><button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar modo claro/escuro">☾</button></div>
   <header>
@@ -351,7 +342,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.createEle
     <div class="gen"><span class="lbl">Linguagem do texto</span><label><input type="radio" name="gen" value="f"> feminino</label><label><input type="radio" name="gen" value="m"> masculino</label></div>
     <p class="err" id="err" role="alert"></p>
     <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu Human Design</button></div>
-    <p class="privacy"><b>✦</b> O desenho é calculado aqui, no teu browser.<br>Nesta fase não fico com nenhum dos teus dados: só os guardo se, mais à frente, me deres autorização para te enviar mais informação.<br><b class="firstmap">O primeiro mapa e/ou desenho que geras deve ser o teu, logo a seguir podes gerar os de outras pessoas, se quiseres.</b></p>
+    <p class="privacy">O mapa é calculado no teu navegador. Para receberes e-mails da Filipa, podes subscrever separadamente na <a href="artigos.html">página dos Artigos</a>.</p>
   </form>
 
   <section class="intro" id="intro">
@@ -1012,12 +1003,13 @@ function render(hd, info, keep){
   html += pillar('Perfil', '<span>' + hd.profile + '</span>', 'Perfil ' + hd.profile, P[0], [P[1]], 2);
   html += pillar('Centros', ICONS.centres, nDef + ' de 9 centros definidos', '',
     [defNames.length ? 'Definidos em ti: ' + joinPt(defNames) + '. ' + TXT.centres.defined : 'Nenhum centro definido: tudo em ti é abertura. ' + TXT.centres.defined, TXT.centres.open], 3);
-  html += '<p class="hdclose">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a transformar as crenças que reconheces em ti. Nas sessões de alinhamento vamos mais longe: com outras ferramentas e o meu método único, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
+  html += '<p class="hdclose map-benefit-original">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a transformar as crenças que reconheces em ti. Nas sessões de alinhamento vamos mais longe: com outras ferramentas e o meu método único, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
   restHtml = html;
   lastHD = hd; lastInfo = info;
   if (info.name && !$('gNome').value) $('gNome').value = info.name;
   try { var fe = localStorage.getItem('fo_email'); if (fe && !$('gEmail').value) $('gEmail').value = fe; } catch (x) {}
   setLocked(!unlocked());
+  if(window.FO_MAPS && !keep) window.FO_MAPS.onRendered({kind:'hd',info:info,summary:{tipo:TXT.types[hd.type].name,autoridade:TXT.auth[hd.authority].name,perfil:hd.profile}},function(){setLocked(false);});
   var res = $('result'); res.hidden = false;
   if (!keep) requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
 }
@@ -1040,8 +1032,8 @@ function variables(hd){
     sentido: SENSES[sun.tone]
   };
 }
-// ---------- gate: MailerLite (grupo Human Design) ----------
-var ML_URL = 'https://assets.mailerlite.com/jsonp/2708796/forms/201215536048113230/subscribe'; window.FO_ML = ML_URL;
+// ---------- gate: subscrição anterior (grupo Human Design) ----------
+
 var lastHD = null, lastInfo = null, tipoHtml = '', restHtml = '';
 function setGender(g, silent){
   try { localStorage.setItem('fo_gen', g); } catch (x) {}
@@ -1054,7 +1046,7 @@ function setGender(g, silent){
 Array.prototype.forEach.call(document.querySelectorAll('input[name="gen"]'), function(r){ r.addEventListener('change', function(){ if (r.checked) setGender(r.value); }); });
 Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), function(b){ b.addEventListener('click', function(){ setGender(b.getAttribute('data-g')); }); });
 setGender(genPick(), true);
-function unlocked(){ try { return localStorage.getItem('hdDesbloqueado') === '1'; } catch (e) { return false; } }
+function unlocked(){ return !!window.FO_MAPS?.authorized; }
 function setLocked(on){
   // desbloqueado: primeiro a informação geral, depois o tipo junto com autoridade, perfil e centros
   $('pillars').innerHTML = on ? tipoHtml : '';
@@ -1075,76 +1067,8 @@ function setLocked(on){
   c.addEventListener('change', upd);
   window.foGateOther = function(other, name){ curName = name || ''; $('gOutro').value = other ? curName : ''; c.checked = !!other; upd(); };
 })();
-// mapas de outras pessoas: só se vêem depois de a pessoa deixar o seu próprio e-mail (fica associado na ficha do MailerLite)
-window.foNeedMail = function(){
-  var old = document.getElementById('mailWall'); if (old) return;
-  var w = document.createElement('div'); w.id = 'mailWall'; w.className = 'mailwall'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true');
-  w.innerHTML = '<div class="mwbox"><h3>Qual o teu e-mail?</h3>' +
-    '<input id="wNome" type="text" maxlength="60" placeholder="O teu nome" autocomplete="given-name"><input id="wEmail" type="email" maxlength="120" placeholder="O teu e-mail" autocomplete="email" inputmode="email">' +
-    '<label class="chk"><input type="checkbox" id="wOk"><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser.</span></label>' +
-    '<p class="err" id="wErr" role="alert"></p><button class="btn" type="button" id="wBtn">Ver o mapa</button></div>';
-  document.body.appendChild(w);
-  var gn = $('gNome').value; if (gn) $('wNome').value = gn;
-  $('wBtn').addEventListener('click', function(){
-    var n = $('wNome').value.trim(), em = $('wEmail').value.trim(), e = $('wErr');
-    if (!n){ e.textContent = 'Escreve o teu nome.'; return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ e.textContent = 'Confirma o teu e-mail.'; return; }
-    if (!$('wOk').checked){ e.textContent = 'Marca a caixa para aceitares receber os meus e-mails.'; return; }
-    e.textContent = ''; $('gNome').value = n; $('gEmail').value = em; $('gOk').checked = true;
-    $('gate').dispatchEvent(new Event('submit', { cancelable: true }));
-    setTimeout(function(){ if ($('mailWall')) e.textContent = $('gErr').textContent; }, 900);
-  });
-  document.addEventListener('fo-mail', function(){ var m = document.getElementById('mailWall'); if (m) m.remove(); });
-};
-$('gate').addEventListener('submit', function(e){
-  e.preventDefault();
-  var nome = $('gNome').value.trim(), email = $('gEmail').value.trim(), err = $('gErr');
-  if (!nome){ err.textContent = 'Escreve o teu nome.'; $('gNome').focus(); return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent = 'Confirma o teu e-mail.'; $('gEmail').focus(); return; }
-  if (!$('gOk').checked){ err.innerHTML = 'Falta só um passo: marca a caixa para aceitares receber<br>os meus e-mails e veres o que preparei para ti ✦'; return; }
-  err.textContent = '';
-  var b = new URLSearchParams();
-  b.append('fields[name]', nome);
-  b.append('fields[email]', email);
-  var apel = ($('gApelido').value || '').trim(); if (apel) b.append('fields[last_name]', apel);
-  // só o primeiro mapa gerado neste navegador (o da própria pessoa) atualiza os dados da ficha
-  var other = $('gOutra').checked, ownChart = !other;
-  if (other){ var on_ = ($('gOutro').value || '').trim(); if (!on_){ err.textContent = 'Escreve o nome da outra pessoa.'; $('gOutro').focus(); return; } }
-  if (lastInfo && lastHD && ownChart){
-    b.append('fields[data_nascimento]', lastInfo.y + '-' + pad(lastInfo.mo) + '-' + pad(lastInfo.d));
-    b.append('fields[hora_nascimento]', pad(lastInfo.hh) + ':' + pad(lastInfo.mi));
-    b.append('fields[local_nascimento]', lastInfo.place.name);
-    try { b.append('fields[hd_tipo]', TXT_F.types[lastHD.type].name); b.append('fields[hd_autoridade]', TXT.auth[lastHD.authority].name); b.append('fields[hd_perfil]', lastHD.profile); } catch (x) {}
-  }
-  try { var hh = JSON.parse(localStorage.getItem('fo_hist') || '[]'); if (hh.length) b.append('fields[historico_mapas]', hh.slice(-6).join(' | ').slice(-250)); } catch (x) {}
-  b.append('ml-submit', '1'); b.append('anticsrf', 'true');
-  var btn = $('gBtn'); btn.disabled = true; btn.textContent = 'A enviar…';
-  function done(){
-    try { localStorage.setItem('fo_email', email); } catch (x) {}
-    document.dispatchEvent(new Event('fo-mail'));
-    try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_last', 'hd'); } catch (x) {}
-    var again = false; try { again = localStorage.getItem('fo_pend_hd') === '1'; localStorage.setItem('fo_pend_hd', '1'); } catch (x) {}
-    pendente($('gate'), again);
-    if (!again) showOk(nome.split(' ')[0], '.pillars');
-  }
-  fetch(ML_URL, { method: 'POST', mode: 'no-cors', body: b }).then(done, function(){
-    btn.disabled = false; btn.textContent = '✦ Ver o meu desenho completo';
-    err.textContent = 'Não consegui enviar. Verifica a ligação e tenta de novo.';
-  });
-});
+// mapas de outras pessoas: só se vêem depois de a pessoa deixar o seu próprio e-mail (fica associado na ficha do subscrição anterior)
 
-function pendente(g, again){
-  g.innerHTML = '<h3>Quase lá ✦</h3><p style="font-family:var(--sans);font-size:14.5px;color:var(--muted);line-height:1.6;margin:8px 0 0">' + (again
-    ? 'Se já tinhas confirmado a subscrição, não vais receber outro e-mail de confirmação.'
-    : 'Enviei-te um e-mail. Clica no link de confirmação e esta página abre-se completa, já desbloqueada (confere no spam).') + '</p>' +
-    (again ? '<p style="margin:16px 0 0"><a class="btn" href="human-design.html?confirmado=1" style="text-decoration:none">Já confirmei, ver o meu mapa completo</a></p>' : '');
-}
-function showOk(first, target){
-  var pop = $('okPop'); var ot = $('okTitle'); ot.textContent = ''; ot.appendChild(document.createTextNode('Obrigada, ' + first + '! Enviei-te um e-mail')); ot.appendChild(document.createElement('br')); ot.appendChild(document.createTextNode('para confirmares a subscrição.'));
-  pop.hidden = false;
-  function close(){ pop.hidden = true; var t = document.querySelector(target); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  $('okX').onclick = close; $('okGo').onclick = close;
-}
 function joinPt(a){ return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' e ' + a[a.length - 1]; }
 function pad(n){ return (n < 10 ? '0' : '') + n; }
 function describe(hd){
@@ -1201,12 +1125,11 @@ function describe(hd){
       var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
       a.href = 'mapa-astral.html?' + q.toString() + '#mapa';
       foWho(info, q.toString());
-      var other = false; try { other = localStorage.getItem('fo_own') !== q.toString() || /[?&]outra=1/.test(location.search); } catch (x) {}
+      var other = !!window.FO_MAPS?.identity?.other; if(other) q.set('outra','1');
       try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
       if (window.foGateOther) window.foGateOther(other, info.name || '');
       try { if (other && !/embed=1/.test(location.search) && !localStorage.getItem('fo_email') && window.foNeedMail) window.foNeedMail(); } catch (x) {}
-      try { var em = localStorage.getItem('fo_email'), un = localStorage.getItem('hdDesbloqueado') === '1' || localStorage.getItem('mapaDesbloqueado') === '1';
-        if (em && un && window.FO_ML){ var Ls = JSON.parse(localStorage.getItem('fo_hist') || '[]'), bb = new URLSearchParams(); bb.append('fields[email]', em); bb.append('fields[historico_mapas]', Ls.slice(-6).join(' | ').slice(-250)); bb.append('ml-submit', '1'); bb.append('anticsrf', 'true'); fetch(window.FO_ML, { method: 'POST', mode: 'no-cors', body: bb }); } } catch (x) {}
+
       p.hidden = false;
       window.foCrossEnd(a.href, p);
     } catch (e) {}
