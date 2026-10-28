@@ -92,3 +92,8 @@ html body .gift-dialog h2{padding-right:50px}
 @media(max-width:700px){html body .hero.astro-hero.essence-opening .astro-art{margin-inline:auto!important;justify-content:center!important;align-self:center}html body .hero.astro-hero.essence-opening .astro-art img{margin-inline:auto!important}}
 
 html body .gift-dialog .gift-subtitle{margin:-4px 0 18px;font-style:italic;color:#96703e;line-height:1.5}
+
+/* Dark mode: lighter version of the astro + Human Design drawing so the wheel stays visible */
+html body img.fo-dark-art.fo-dark-art.fo-dark-art.fo-dark-art{display:none!important}
+html[data-theme=dark] body img.fo-light-art.fo-light-art.fo-light-art.fo-light-art{display:none!important}
+html[data-theme=dark] body img.fo-dark-art.fo-dark-art.fo-dark-art.fo-dark-art{display:block!important}
