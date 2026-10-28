@@ -1,9 +1,10 @@
 'use strict';
+const readingAssetBase=new URL('.',document.currentScript.src).href;
 (()=>{const button=document.getElementById('freqToggle'),audio=document.getElementById('freqAudio');if(!button||!audio)return;const en=document.documentElement.lang.startsWith('en'),labels=en?['🔊 Tune into the frequency','🔊 Back to silence']:['🔊 Entrar na frequência','🔊 Sentir em silêncio'];const paint=()=>{button.textContent=audio.paused?labels[0]:labels[1];button.setAttribute('aria-pressed',String(!audio.paused));};button.addEventListener('click',()=>{if(audio.paused){audio.play().then(paint).catch(()=>{button.textContent=labels[0];button.setAttribute('aria-pressed','false');});}else{audio.pause();paint();}});audio.addEventListener('ended',paint);paint();})();
 if(window.TAROT_CONFIG&&window.TAROT_CONFIG.preview===false)document.querySelectorAll('.preview').forEach(el=>el.hidden=true);
 const archetypes={
  enamorados:{title:'Os Enamorados',kicker:'Escolha · valores · relação',image:'assets/enamorados-rws-original.jpg?v=20261027rws',caption:'Os Enamorados · Ilustração original inspirada no Rider–Waite–Smith.',intro:'O nome pode fazer pensar imediatamente no amor. Mas esta carta também pode abrir uma reflexão sobre escolhas, sobre o que valorizas e sobre como concilias diferentes desejos.',
- relacoes:['Numa pergunta sobre uma relação, pode ser um convite a olhar para a forma como te ligas a alguém e para aquilo que escolhes cultivar nesse vínculo.','«O que desejo viver nesta relação — e o que preciso de respeitar em mim?»','Também podemos explorar uma tensão: estou a escolher por vontade própria, por medo de perder ou para corresponder ao que esperam de mim?'],
+ relacoes:['Numa pergunta sobre uma relação, pode ser um convite a olhar para a forma como te ligas a alguém e para aquilo que escolhes cultivar nesse vínculo.','«O que desejo viver nesta relação ,  e o que preciso de respeitar em mim?»','Também podemos explorar uma tensão: estou a escolher por vontade própria, por medo de perder ou para corresponder ao que esperam de mim?'],
  trabalho:['Numa escolha profissional, o mesmo símbolo pode trazer a relação entre o que valorizas e os caminhos que estás a considerar.','«O que está realmente em jogo nesta escolha: segurança, liberdade, pertença ou outra coisa?»','Podemos olhar para o que cada opção representa para ti, sem transformar a carta numa ordem para ficar ou sair.'],
  pessoal:['Quando o tema é a tua relação contigo, a escolha pode ser interior: conciliar desejos diferentes ou reconhecer uma vontade que tens deixado de lado.','«Onde estou a dizer que sim para ser aceite, quando sinto que preciso de outra coisa?»','Outra perspetiva pode ser a dificuldade em escolher, não por falta de opções, mas porque cada caminho implica deixar algo para trás.']},
  louco:{title:'O Louco',kicker:'Começo · abertura · primeiro passo',image:'assets/louco-rws-original.jpg?v=20261027rws',caption:'O Louco · Ilustração original inspirada no Rider–Waite–Smith.',intro:'Uma imagem de partida e de abertura ao que ainda não conheces. Pode convidar a experimentar um caminho novo ou a olhar com cuidado para a diferença entre confiança e precipitação.',
@@ -16,7 +17,7 @@ function renderExample(){
  const c=archetypes[activeCard],v=c[activeContext];
  const el=id=>document.getElementById(id);
  if(!el('exampleCard'))return;
- el('exampleCard').src=c.image;el('exampleCard').alt=document.documentElement.lang.startsWith('en')?(activeCard==='enamorados'?'The Lovers — illustrative card':'The Fool — illustrative card'):activeCard==='enamorados'?'Os Enamorados — ilustração inspirada no Rider–Waite–Smith':'Ilustração simbólica da carta O Louco';el('cardCaption').textContent=c.caption;
+ el('exampleCard').src=new URL(c.image,readingAssetBase).href;el('exampleCard').alt=document.documentElement.lang.startsWith('en')?(activeCard==='enamorados'?'The Lovers ,  illustrative card':'The Fool ,  illustrative card'):activeCard==='enamorados'?'Os Enamorados ,  ilustração inspirada no Rider–Waite–Smith':'Ilustração simbólica da carta O Louco';el('cardCaption').textContent=c.caption;
  el('cardTitle').textContent=c.title;el('cardKicker').textContent=c.kicker;el('cardIntro').textContent=c.intro;
  el('contextText').textContent=v[0];el('contextQuestion').textContent=v[1];el('contextNuance').textContent=v[2];
  el('perspective').setAttribute('aria-labelledby','tab-'+activeContext);
@@ -48,8 +49,10 @@ if(form){
   try{
    const response=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:cfg.web3formsKey,subject:'Pedido Tarot · '+requestRef+' · '+data.nome+' '+data.apelido,from_name:'Site · Leitura de Tarot',replyto:data.email,email:data.email,message})});
    const result=await response.json();if(!response.ok||!result.success)throw new Error('submit_failed');
-   const dest=new URL(cfg.paymentLink);dest.searchParams.set('prefilled_email',data.email);dest.searchParams.set('client_reference_id',requestRef);location.assign(dest.toString());
+   const dest=new URL(cfg.paymentLink);dest.searchParams.set('prefilled_email',data.email);dest.searchParams.set('client_reference_id',requestRef);dest.searchParams.set('locale',english?'en':'pt');location.assign(dest.toString());
   }catch(error){status.textContent=ui('Não foi possível enviar o teu pedido. Nenhum pagamento foi iniciado. Podes tentar novamente.');submitting=false;submit.disabled=false;submit.textContent=ui('Enviar e continuar para pagamento');}
  });
  by('voltarForm').addEventListener('click',()=>{by('pedidoResumo').hidden=true;form.hidden=false;by('nome').focus();});
 }
+
+renderExample();

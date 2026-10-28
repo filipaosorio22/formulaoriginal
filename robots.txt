@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://filipaosorio.com/sitemap.xml

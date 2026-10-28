@@ -1,0 +1,10 @@
+/* One catalogue for Portuguese and English. No private API keys. */
+(()=>{const preview=location.protocol==='file:'||!['filipaosorio.com','www.filipaosorio.com'].includes(location.hostname)||new URLSearchParams(location.search).has('preview');
+const links={leitura:'https://buy.stripe.com/00w7sL8Vn6oHg4Z8rsfw40N',rs:'https://buy.stripe.com/14AdR91sV7sL6up5fgfw40P',sessao:'https://buy.stripe.com/eVq4gzefH28r2e9bDEfw40O',rssessao:'https://buy.stripe.com/4gM7sL3B314nf0V6jkfw40Q',sessaosolo:'https://buy.stripe.com/dRmcN5b3vfZh9GBcHIfw40G',rssolo:'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'};
+Object.keys(links).forEach(k=>{links[k+'+hd']=links[k]});
+window.FO_SITE_CONFIG={preview,prices:{natal:247,sessionCombo:397,solarReturn:100,moment:88,alignment:179},giftLimit:5};
+window.FO_PAY={preview,tarotGift:'https://buy.stripe.com/7sYaEX0oR6oHf0VePQfw40R',web3formsKey:'b2feccdb-b682-491c-8fb8-a56fb482a4ed',stripe:links};
+window.TAROT_CONFIG={preview,price:88,regularPrice:88,paymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',regularPaymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',web3formsKey:window.FO_PAY.web3formsKey};
+if(preview){window['ga-disable-G-5CX792T8H9']=true;document.documentElement.dataset.foPreview='true';}
+document.addEventListener('DOMContentLoaded',()=>{if(preview)document.querySelectorAll('form').forEach(f=>{if(['f','tarotForm','mpForm','partnershipForm'].includes(f.id))return;f.addEventListener('submit',e=>{e.preventDefault();e.stopImmediatePropagation();const en=document.documentElement.lang.startsWith('en');let status=f.querySelector('[data-local-status]');if(!status){status=document.createElement('p');status.dataset.localStatus='';status.setAttribute('role','status');f.append(status);}status.textContent=en?'Preview: nothing has been sent.':'Pré-visualização: nenhum dado foi enviado.';},true);});});
+})();
