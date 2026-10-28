@@ -40,8 +40,8 @@ if(form){
   const promo=!!promotionOption?.checked;cfg.price=promo?44:88;cfg.paymentLink=promo?cfg.promotionLink:regularPayment;
   if(promotionConsent){promotionConsent.required=promo;if(!promo)promotionConsent.checked=false;}
   const wrapper=by('momentoPromoConsentWrap');if(wrapper)wrapper.hidden=!promo;
-  document.querySelectorAll('[data-moment-price]').forEach(n=>n.textContent=(english?'€':'')+cfg.price+(english?'':' €'));
-  document.querySelectorAll('.form-price strong').forEach(n=>n.textContent=(english?'The Now Reading · €':'Leitura de Momento · ')+cfg.price+(english?'':' €'));
+  document.querySelectorAll('[data-moment-price]').forEach(n=>n.textContent=(english?'€':'')+cfg.price+(english?'':'€'));
+  document.querySelectorAll('.form-price strong').forEach(n=>n.textContent=(english?'The Now Reading · €':'Leitura de Momento · ')+cfg.price+(english?'':'€'));
  }
  if(promotionOption){promotionOption.checked=new URLSearchParams(location.search).get('miminho')==='1';promotionOption.addEventListener('change',syncPromotion);syncPromotion();}
 

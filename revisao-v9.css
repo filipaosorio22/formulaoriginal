@@ -18,7 +18,7 @@ body.fo-image-open{overflow:hidden}
 .tf-bg.fo-video-manual-playing video{display:block!important}
 .tf-bg.fo-video-manual-playing img{display:none!important}
 html body.readings-hub .hero-art.hub-art.readings-opening>img.reading-sun.reading-sun-card{top:auto!important;bottom:5px!important;right:3%!important;transform:rotate(12deg)!important}
-html body.readings-hub #testemunhos .aura-audio-testimonial .feat-quote{font-size:clamp(18px,2vw,21px)!important;line-height:1.4!important;color:#7a2535!important}
+html body.readings-hub #testemunhos .aura-audio-testimonial .feat-quote{font-size:clamp(15px,1.6vw,17px)!important;line-height:1.45!important;color:#7a2535!important}
 html[data-theme=dark] body.readings-hub #testemunhos .aura-audio-testimonial .feat-quote{color:#f0c7ce!important}
 html body.fo-reading-page #human-design .hdmsg{border:1px solid #7a2535!important}
 html[data-theme=dark] body.fo-reading-page #human-design .hdmsg{border-color:#b76a7c!important}
@@ -59,7 +59,7 @@ html body .conv-split .conv-vid video{object-position:center center!important;tr
  html.fo-mobile-nav-ready body main :is(.small,.eyebrow,.meta,.fineprint,.hint,.sub,.hdnote,.ses-note){font-size:13px!important;line-height:1.6!important;letter-spacing:.04em!important;white-space:normal!important}
  html.fo-mobile-nav-ready body main .offer-name{font-size:23px!important;line-height:1.3!important}
  html.fo-mobile-nav-ready body main :is(.offer-price,.session-value){font-size:34px!important;line-height:1.2!important}
- html.fo-mobile-nav-ready body main :is(.feat-quote,.aud-q){font-size:18px!important;line-height:1.45!important}
+ html.fo-mobile-nav-ready body main :is(.feat-quote,.aud-q){font-size:15px!important;line-height:1.5!important}
  html.fo-mobile-nav-ready body main :is(.btn,button[type=submit],.submit-button){font-size:16px!important;line-height:1.4!important;min-height:44px;white-space:normal!important;box-sizing:border-box;max-width:100%}
  html.fo-mobile-nav-ready body :is(input,select,textarea){font-size:16px!important;line-height:1.5!important;box-sizing:border-box;max-width:100%}
  html.fo-mobile-nav-ready body form label{font-size:15px!important;line-height:1.5!important}
@@ -97,3 +97,59 @@ html body .gift-dialog .gift-subtitle{margin:-4px 0 18px;font-style:italic;color
 html body img.fo-dark-art.fo-dark-art.fo-dark-art.fo-dark-art{display:none!important}
 html[data-theme=dark] body img.fo-light-art.fo-light-art.fo-light-art.fo-light-art{display:none!important}
 html[data-theme=dark] body img.fo-dark-art.fo-dark-art.fo-dark-art.fo-dark-art{display:block!important}
+
+/* v15 mobile: centred portrait, quote and photo */
+@media(max-width:680px){
+ html body .home-bio .bio-portrait{margin-left:auto!important;margin-right:auto!important}
+}
+@media(max-width:640px){
+ html body .pause .pause-quote.big1.fitm{padding-left:0!important;padding-right:0!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+ html body .sucesso-flex{align-items:center}
+ html body .sucesso-flex figure{align-self:center!important;margin-left:auto!important;margin-right:auto!important;text-align:center}
+ html body .sucesso-flex figure img{margin-inline:auto!important}
+}
+@media(max-width:700px){html body blockquote.quote-block p.q1{white-space:normal!important;font-size:clamp(16px,4.7vw,20px)!important;overflow-wrap:break-word}}
+
+/* v15 dark mode: readable Menu button, submenu links and theme icons */
+html[data-theme=dark] body .site-main-nav .mobile-menu-toggle,html[data-theme=dark] body .site-main-nav .mobile-menu-toggle span{color:#f0c7ce!important}
+html[data-theme=dark] body .site-main-nav .readings-submenu a,html[data-theme=dark] body .site-main-nav .readings-menu a{color:#f0c7ce!important}
+html[data-theme=dark] body .site-main-nav .readings-submenu a[aria-current=page]{color:#fff!important}
+html[data-theme=dark] body .site-theme span{opacity:.9!important;color:#f0c7ce}
+html[data-theme=dark] body .site-theme[data-current=light] [data-mode-icon=light],html[data-theme=dark] body .site-theme[data-current=dark] [data-mode-icon=dark]{opacity:1!important;background:#c9a86c55;color:#fff}
+
+/* Videos autoplay by themselves; no manual play button */
+.fo-video-play,html body .fo-video-play{display:none!important}
+@media(prefers-reduced-motion:reduce){html body .tf-bg video{display:block!important}html body .tf-bg img{display:none!important}html body .tf-foto .tf-bg video{display:none!important}html body .tf-foto .tf-bg img{display:block!important}}
+
+/* Floating miminho card: close X */
+html body .gift-launcher{position:fixed}
+html body .gift-launcher.is-dismissed{display:none!important}
+html body .gift-launcher strong{padding-right:26px}
+html body .gift-launcher .gift-launcher-close{position:absolute;top:6px;right:6px;width:32px;height:32px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:inherit;font:22px/1 Arial,sans-serif;cursor:pointer}
+html body .gift-launcher .gift-launcher-close:hover,html body .gift-launcher .gift-launcher-close:focus-visible{background:rgba(255,255,255,.3)}
+
+/* Moment Reading purchase card: launch price line */
+html body .offer-purchase .launch-price{margin:10px 0 0;font:500 16px/1.4 'Lora',Georgia,serif;color:#7a2535}
+html[data-theme=dark] body .offer-purchase .launch-price{color:#f0c7ce}
+
+/* Session testimonials: swipe carousel with every testimonial shown in full */
+html body .text-carousel{position:relative;margin:30px auto 0;max-width:980px}
+html body .text-carousel .tc-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 4px 16px;align-items:stretch;scroll-padding-inline:4px}
+html body .text-carousel .tc-track::-webkit-scrollbar{display:none}
+html body .text-carousel .tc-track:focus-visible{outline:2px solid #c9a86c;outline-offset:3px;border-radius:12px}
+html body .text-carousel .tc-slide{flex:0 0 min(88%,430px);scroll-snap-align:center;position:relative;box-sizing:border-box;padding:38px 24px 26px;border:1px solid #cfb888;border-radius:20px 6px 20px 6px;background:linear-gradient(135deg,#fffaf2 0%,#f4e9d6 100%);box-shadow:0 6px 22px #3b152512}
+html body .text-carousel .tc-slide::before{content:'“';position:absolute;top:4px;left:18px;font:46px/1 'Cormorant Garamond',Georgia,serif;color:#b18a4e}
+html body .text-carousel .tc-slide .hdmsg{margin:0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;max-width:none!important}
+html body .text-carousel .tc-slide .hdmsg::before,html body .text-carousel .tc-slide .hdmsg::after{display:none!important}
+html body .text-carousel .tc-slide p{font-size:15px!important;line-height:1.7!important;margin:0 0 12px}
+html body .text-carousel .tc-slide p:last-child{margin-bottom:0}
+html[data-theme=dark] body .text-carousel .tc-slide{background:linear-gradient(135deg,#2b2420 0%,#241e1b 100%);border-color:#6b5a3d;box-shadow:none}
+html[data-theme=dark] body .text-carousel .tc-slide p{color:#efe6d8}
+html body .text-carousel .tc-arrow{position:absolute;top:calc(50% - 22px);z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid #c9a86c;background:#faf6ef;color:#7a2535;font:22px/1 Arial,sans-serif;cursor:pointer;display:none;place-items:center;padding:0;box-shadow:0 2px 10px #0002}
+html body .text-carousel .tc-prev{left:-18px}html body .text-carousel .tc-next{right:-18px}
+html[data-theme=dark] body .text-carousel .tc-arrow{background:#2b2420;color:#f0c7ce}
+@media(hover:hover) and (min-width:760px){html body .text-carousel .tc-arrow{display:grid}}
+html body .text-carousel .tc-dots{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:6px}
+html body .text-carousel .tc-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#cfb888;cursor:pointer}
+html body .text-carousel .tc-dots button[aria-current=true]{background:#7a2535;transform:scale(1.25)}
+html body .text-carousel .swipe-hint{text-align:center;font:13px/1.6 'DM Sans',sans-serif;opacity:.75;margin:10px 0 0}

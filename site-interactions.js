@@ -5,6 +5,12 @@
  function close(dialog){if(!dialog)return;dialog.close();dialog.__trigger?.focus();if(dialog===gift){try{sessionStorage.setItem('fo_gift_seen_20261028','1');}catch(e){}}}
  document.querySelectorAll('[data-partnerships-open]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();open(partnership,a);}));
  document.querySelectorAll('[data-gift-open]').forEach(a=>a.addEventListener('click',()=>open(gift,a)));
+ document.querySelectorAll('.gift-launcher').forEach(l=>{
+  try{if(sessionStorage.getItem('fo_gift_launcher_closed')==='1')l.classList.add('is-dismissed');}catch(e){}
+  l.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target===l){e.preventDefault();open(gift,l);}});
+  const x=l.querySelector('.gift-launcher-close');
+  if(x)x.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();l.classList.add('is-dismissed');try{sessionStorage.setItem('fo_gift_launcher_closed','1');}catch(err){}});
+ });
  document.querySelectorAll('.site-dialog').forEach(d=>{
   d.querySelectorAll('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>close(d)));
   d.addEventListener('click',e=>{const r=d.getBoundingClientRect();if(e.target===d&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))close(d);});
@@ -13,11 +19,34 @@
  
  if(location.hash==='#convites-dialog')open(partnership);
  document.querySelectorAll('.readings-submenu-toggle').forEach(button=>{const menu=button.closest('.readings-menu');button.addEventListener('click',()=>{const isOpen=menu.classList.toggle('is-open');button.setAttribute('aria-expanded',String(isOpen));});menu.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.classList.remove('is-open');button.setAttribute('aria-expanded','false');button.focus();}});});
+ // Swipe carousels of text cards (session testimonials).
+ document.querySelectorAll('[data-text-carousel]').forEach(c=>{
+  const track=c.querySelector('.tc-track'),dotsBox=c.querySelector('.tc-dots'),slides=[...track.children],dots=[];
+  slides.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(i+1)+' / '+slides.length);b.addEventListener('click',()=>track.scrollTo({left:s.offsetLeft-track.offsetLeft-(track.clientWidth-s.clientWidth)/2,behavior:'smooth'}));dotsBox.append(b);dots.push(b);});
+  function active(){const mid=track.scrollLeft+track.clientWidth/2;let best=0,bd=1e9;slides.forEach((s,i)=>{const d=Math.abs(s.offsetLeft-track.offsetLeft+s.clientWidth/2-mid);if(d<bd){bd=d;best=i;}});dots.forEach((d,i)=>d.setAttribute('aria-current',String(i===best)));}
+  track.addEventListener('scroll',active,{passive:true});window.addEventListener('resize',active);active();
+  const step=()=>(slides[0]?slides[0].getBoundingClientRect().width:track.clientWidth)+18;
+  c.querySelector('.tc-prev').addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
+  c.querySelector('.tc-next').addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
+ });
+ // Smooth scroll that recomputes its destination every frame, so late layout shifts on mobile (images, accordions) cannot make it land in the wrong place.
+ function offsetTop(){const h=document.querySelector('.site-header'),pos=h?getComputedStyle(h).position:'';return h&&(pos==='sticky'||pos==='fixed')?h.offsetHeight+16:24;}
+ function glideTo(getTarget,duration){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dest=()=>Math.max(0,getTarget().getBoundingClientRect().top+scrollY-offsetTop());
+  if(reduce){scrollTo(0,dest());return;}
+  const root=document.documentElement,old=root.style.scrollBehavior;root.style.scrollBehavior='auto';
+  const start=scrollY,t0=performance.now();
+  function frame(t){const p=Math.min(1,(t-t0)/duration),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;scrollTo(0,start+(dest()-start)*e);if(p<1)requestAnimationFrame(frame);else{scrollTo(0,dest());setTimeout(()=>{scrollTo(0,dest());root.style.scrollBehavior=old;},350);}}
+  requestAnimationFrame(frame);
+ }
  document.querySelectorAll('[data-bio-start]').forEach(a=>a.addEventListener('click',e=>{
   const section=document.getElementById('quem-te-acompanha');if(!section)return;e.preventDefault();e.stopImmediatePropagation();
-  const start=scrollY,end=start+section.getBoundingClientRect().top-24;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){scrollTo(0,end);return;}
-  const t0=performance.now();function frame(t){const p=Math.min(1,(t-t0)/1500);scrollTo(0,start+(end-start)*p);if(p<1)requestAnimationFrame(frame);else history.replaceState(null,'','#quem-te-acompanha');}requestAnimationFrame(frame);
+  glideTo(()=>section.querySelector('h2')||section,1500);
+ }),true);
+ document.querySelectorAll('[data-bio-back]').forEach(a=>a.addEventListener('click',e=>{
+  const target=document.querySelector('.pause-fm')||document.querySelector('[data-bio-start]');if(!target)return;e.preventDefault();e.stopImmediatePropagation();
+  glideTo(()=>target,1500);
  }),true);
  // Entering from the gift popup selects only the optional gift; consent stays unchecked.
  if(new URLSearchParams(location.search).get('miminho')==='1'){

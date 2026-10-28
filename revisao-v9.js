@@ -29,19 +29,17 @@
    button.addEventListener('click',()=>{trigger=button;full.src=img.currentSrc||img.src;full.alt=img.alt;dialog.showModal();document.body.classList.add('fo-image-open');viewport.scrollTo(0,0);});
   });
  }
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- document.querySelectorAll('video:not([data-testimonial-video])').forEach(video=>{
-  video.muted=true;video.defaultMuted=true;video.setAttribute('muted','');video.playsInline=true;video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');video.loop=true;video.controls=false;video.removeAttribute('controls');video.disablePictureInPicture=true;video.disableRemotePlayback=true;video.preload='auto';
-  const button=document.createElement('button');button.type='button';button.className='fo-video-play';button.hidden=true;button.textContent=say('▶ Reproduzir vídeo','▶ Play video');button.setAttribute('aria-label',say('Reproduzir vídeo sem som','Play muted video'));
-  const host=video.parentElement;host.classList.add('fo-video-host');
-  const background=host.classList.contains('tf-bg');
-  if(background){button.classList.add('fo-background-play');host.parentElement.append(button);}else host.append(button);
-  const play=()=>{if(reduced.matches||document.hidden)return;video.muted=true;video.autoplay=true;try{const result=video.play();if(result?.catch)result.catch(()=>{button.hidden=false;});}catch(e){button.hidden=false;}};
-  video.addEventListener('playing',()=>{button.hidden=true;});
-  button.addEventListener('click',()=>{video.muted=true;host.classList.add('fo-video-manual-playing');video.play().then(()=>{button.hidden=true;}).catch(()=>{button.hidden=false;});});
-  video.addEventListener('loadeddata',play);video.addEventListener('canplay',play);
-  window.addEventListener('pageshow',play);document.addEventListener('visibilitychange',play);
-  const sync=()=>{if(reduced.matches){video.autoplay=false;video.pause();button.hidden=false;}else play();};
-  reduced.addEventListener('change',sync);sync();
+ // Silent looping videos start by themselves. If a phone blocks autoplay (low-power mode, data saver), they retry silently on the first touch or scroll instead of showing a play button.
+ const videos=[...document.querySelectorAll('video:not([data-testimonial-video])')];
+ videos.forEach(video=>{
+  video.muted=true;video.defaultMuted=true;video.setAttribute('muted','');video.playsInline=true;video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');video.loop=true;video.autoplay=true;video.controls=false;video.removeAttribute('controls');video.disablePictureInPicture=true;video.disableRemotePlayback=true;video.preload='auto';
+  const host=video.parentElement;if(host)host.classList.add('fo-video-host');
+  const play=()=>{if(!video.paused&&!video.ended)return;video.muted=true;try{const result=video.play();if(result&&result.catch)result.catch(()=>{});}catch(e){}};
+  video.addEventListener('loadeddata',play);video.addEventListener('canplay',play);video.addEventListener('pause',()=>{if(!document.hidden&&!video.ended&&video.__wantPlay)setTimeout(play,150);});
+  video.addEventListener('playing',()=>{video.__wantPlay=true;});
+  if('IntersectionObserver' in window){new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)play();}),{threshold:.1}).observe(video);}
+  window.addEventListener('pageshow',play);document.addEventListener('visibilitychange',()=>{if(!document.hidden)play();});
+  ['touchstart','pointerdown','click','scroll','keydown'].forEach(ev=>window.addEventListener(ev,play,{passive:true,once:ev!=='scroll'}));
+  play();
  });
 })();
