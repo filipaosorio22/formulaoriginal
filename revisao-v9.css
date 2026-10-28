@@ -87,3 +87,6 @@ html body .mo-row .gift-validity{display:block;margin-top:9px;font:500 13px/1.5 
 /* Miminho popup: close X always visible at top right, stays in view while scrolling */
 html body .gift-dialog .dialog-close{position:sticky!important;top:6px!important;float:none!important;display:grid!important;margin:0 0 -44px auto!important;width:44px!important;height:44px!important;z-index:30;background:#7a2535!important;color:#fff!important;border:0!important;font:30px/1 Arial,sans-serif!important}
 html body .gift-dialog h2{padding-right:50px}
+
+/* Essence Reading hero image: centred on mobile */
+@media(max-width:700px){html body .hero.astro-hero.essence-opening .astro-art{margin-inline:auto!important;justify-content:center!important;align-self:center}html body .hero.astro-hero.essence-opening .astro-art img{margin-inline:auto!important}}
