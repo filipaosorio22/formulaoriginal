@@ -80,3 +80,5 @@ html body .permission-slips h2{font-size:clamp(32px,4vw,46px);line-height:1.16;c
 html body .permission-slips .permission-close{border-left:2px solid #c9a86c;padding-left:20px;margin-top:28px;color:#7a2535}
 html[data-theme=dark] body .permission-slips{background:#29221e;color:#efe6d8}
 html[data-theme=dark] body .permission-slips :is(h2,.permission-close){color:#edcfaa}
+
+html body .mo-row .gift-validity{display:block;margin-top:9px;font:500 13px/1.5 "DM Sans",sans-serif;color:inherit}
