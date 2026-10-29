@@ -4,7 +4,7 @@ const links={leitura:'https://buy.stripe.com/bJe4gz2wZ9AT5qlcHIfw40Y',rs:'https:
 Object.keys(links).forEach(k=>{links[k+'+hd']=links[k]});
 window.FO_SITE_CONFIG={preview,prices:{natal:197,sessionCombo:297,solarReturn:100,moment:88,alignment:125,sessionAddon:100,sessionAddonMoment:109,sessionDurationMinutes:60},giftLimit:5};
 window.FO_PAY={preview,web3formsKey:'b2feccdb-b682-491c-8fb8-a56fb482a4ed',stripe:links};
-window.TAROT_CONFIG={preview,promotionLink:"https://buy.stripe.com/aFa9ATfjL6oH5qlazAfw40S",price:88,regularPrice:88,paymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',regularPaymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',web3formsKey:window.FO_PAY.web3formsKey};
+window.TAROT_CONFIG={preview,launchActive:true,promotionLink:"https://buy.stripe.com/aFa9ATfjL6oH5qlazAfw40S",price:44,regularPrice:88,paymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',regularPaymentLink:'https://buy.stripe.com/eVqcN50oR7sLbOJ9vwfw40H',web3formsKey:window.FO_PAY.web3formsKey};
 if(preview){window['ga-disable-G-5CX792T8H9']=true;document.documentElement.dataset.foPreview='true';}
 document.addEventListener('DOMContentLoaded',()=>{if(preview)document.querySelectorAll('form').forEach(f=>{if(['f','tarotForm','mpForm','form','partnershipForm'].includes(f.id))return;f.addEventListener('submit',e=>{e.preventDefault();e.stopImmediatePropagation();const en=document.documentElement.lang.startsWith('en');let status=f.querySelector('[data-local-status]');if(!status){status=document.createElement('p');status.dataset.localStatus='';status.setAttribute('role','status');f.append(status);}status.textContent=en?'Preview: nothing has been sent.':'Pré-visualização: nenhum dado foi enviado.';},true);});});
 })();

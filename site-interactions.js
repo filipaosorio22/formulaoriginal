@@ -51,17 +51,17 @@
  const form=document.getElementById('partnershipForm');
  if(!form)return;
  const format=form.elements.formato,local=form.querySelector('[data-partnership-location]');
- format.addEventListener('change',()=>{local.hidden=format.value!=='Presencial';});
+ format?.addEventListener('change',()=>{if(local)local.hidden=format.value!=='Presencial';});
  const preview=window.FO_SITE_CONFIG?.preview!==false,button=form.querySelector('[type=submit]'),status=form.querySelector('[role=status]'),review=partnership.querySelector('.partnership-review');
  button.textContent=preview?say('Rever o meu convite','Review my invitation'):say('Enviar o meu convite','Send my invitation');
  partnership.querySelector('[data-edit-partnership]').addEventListener('click',()=>{review.hidden=true;form.hidden=false;button.focus();});
  form.addEventListener('submit',async e=>{
   e.preventDefault();if(button.disabled||!form.reportValidity())return;status.textContent='';
   const data=Object.fromEntries(new FormData(form));
-  if(['nome','email','telemovel','organizacao','ideia'].some(k=>!String(data[k]||'').trim())){status.textContent=say('Preenche os campos obrigatórios.','Please complete all required fields.');return;}
-  if(String(data.telemovel).replace(/\D/g,'').length<7){status.textContent=say('Confirma o telemóvel, incluindo o indicativo.','Please check your mobile number, including the country code.');form.elements.telemovel.focus();return;}
+  if(['nome','email','organizacao','ideia'].some(k=>!String(data[k]||'').trim())){status.textContent=say('Preenche os campos obrigatórios.','Please complete all required fields.');return;}
+
   const labels={nome:say('Nome','Name'),email:'Email',telemovel:say('Telemóvel','Mobile'),organizacao:say('Comunidade ou empresa','Community or company'),sobre:say('Sobre e papel','Context and role'),ideia:say('Ideia para o encontro','Gathering idea'),formato:say('Formato','Format'),localidade:say('Localidade','Location'),pessoas:say('Pessoas','People'),data:say('Data','Date')};
-  const message=Object.keys(labels).filter(k=>data[k]&&(k!=='localidade'||format.value==='Presencial')).map(k=>labels[k]+': '+data[k]).join('\n\n')+'\n\n'+say('Privacidade: consentimento para resposta confirmado.','Privacy: consent to receive a reply confirmed.');
+  const message=Object.keys(labels).filter(k=>data[k]&&(k!=='localidade'||!format||format.value==='Presencial')).map(k=>labels[k]+': '+data[k]).join('\n\n')+'\n\n'+say('Privacidade: consentimento para resposta confirmado.','Privacy: consent to receive a reply confirmed.');
   if(preview){review.querySelector('pre').textContent=message;form.hidden=true;review.hidden=false;review.focus();return;}
   const key=window.FO_PAY?.web3formsKey;if(!key){status.textContent=say('O envio ainda não está disponível.','Sending is not available yet.');return;}
   button.disabled=true;button.textContent=say('A enviar…','Sending…');

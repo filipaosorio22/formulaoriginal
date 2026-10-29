@@ -37,13 +37,13 @@ if(form){
  const promotionOption=by('momentoPromo'),promotionConsent=by('momentoPromoConsent');
  const regularPayment=cfg.paymentLink;
  function syncPromotion(){
-  const promo=!!promotionOption?.checked;cfg.price=promo?44:88;cfg.paymentLink=promo?cfg.promotionLink:regularPayment;
+  const promo=cfg.launchActive===true||!!promotionOption?.checked;cfg.price=promo?44:88;cfg.paymentLink=promo?cfg.promotionLink:regularPayment;
   if(promotionConsent){promotionConsent.required=promo;if(!promo)promotionConsent.checked=false;}
   const wrapper=by('momentoPromoConsentWrap');if(wrapper)wrapper.hidden=!promo;
   document.querySelectorAll('[data-moment-price]').forEach(n=>n.textContent=(english?'€':'')+cfg.price+(english?'':'€'));
   document.querySelectorAll('.form-price strong').forEach(n=>n.textContent=(english?'The Now Reading · €':'Leitura de Momento · ')+cfg.price+(english?'':'€'));
  }
- if(promotionOption){promotionOption.checked=new URLSearchParams(location.search).get('miminho')==='1';promotionOption.addEventListener('change',syncPromotion);syncPromotion();}
+ if(promotionOption){promotionOption.checked=cfg.launchActive===true||new URLSearchParams(location.search).get('miminho')==='1';promotionOption.addEventListener('change',syncPromotion);syncPromotion();}
 
  if(!cfg.preview){by('submitPedido').textContent=ui('Enviar e continuar para pagamento');by('formNotice').textContent=ui('As tuas respostas são enviadas à Filipa e segues para o pagamento seguro no Stripe.');}
  form.addEventListener('submit',async e=>{
