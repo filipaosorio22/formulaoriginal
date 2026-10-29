@@ -1,14 +1,47 @@
-# Paginas retiradas do ar (os ficheiros continuam guardados no repositorio).
-# Para voltar a publicar uma pagina, apaga a linha correspondente e faz commit.
+# Public pages restricted as requested on 2026-10-29. Originals retained in Git.
 exclude:
   - Mentoria.html
-  - mentoria.html
-  - mentoria-2.html
-  - mentoria1518.html
   - alquimia.html
+  - ceen-backup-2026-10-18.html
+  - ceen-backup-before-intro-shortening-2026-10-18.html
+  - ceen-caixa-opcoes-2026-10-18.html
+  - ceen-inicio-previa.html
+  - ceen-landing.html
+  - ceen-opcao-contemporanea-2026-10-19.html
+  - ceen-opcao-editorial-2026-10-19.html
+  - ceen-opcao-imagem-2026-10-19.html
+  - ceen-previa-comecar.html
+  - ceen-previa-sonho.html
+  - ceen-preview-visual-2026-10-18.html
+  - ceen-preview.html
+  - ceen-proposta-visual-sugestoes-2026-10-18.html
   - eventos.html
+  - formula_original.html
+  - geral-862bee5154-a.html
+  - geral-862bee5154-b.html
+  - geral-862bee5154-c.html
+  - geral-862bee5154-compacta.html
+  - geral-862bee5154.html
+  - geral-en-862bee5154-compacta.html
+  - geral-en-862bee5154.html
+  - human-design.html
+  - leitura-intuitiva-en.html
+  - leitura-intuitiva.html
+  - leituras-en.html
+  - leituras.html
+  - mapa-astral.html
   - mapa_essencial.html
+  - marcar-leitura-en.html
+  - marcar-leitura.html
+  - mentoria-2.html
+  - mentoria.html
+  - mentoria1518.html
+  - old_ceen.html
+  - old_ceen_en.html
+  - pedir-tarot-en.html
+  - pedir-tarot.html
   - preview-inicio.html
+  - quiz-leitura.html
   - sobre.html
-# Mantidas no ar por precaucao (acesso e confirmacao para clientes ja existentes):
-# aula-acesso.html, confirmacao-mapa.html, obrigada-mapa.html
+  - tarot-en.html
+  - tarot.html

@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="pt-PT">
+<head><meta name="robots" content="noindex,nofollow,noarchive"><script src="/theme-init.js?v=20261028v8"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-fo-48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Mapa Astral Grátis Online · Calcula o teu Mapa Natal | Filipa Osório</title>
+<meta name="description" content="Cálculo do mapa astral grátis: Sol, Lua, Ascendente, planetas e casas do teu mapa natal, com textos de astrologia em português de Portugal.">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Mapa Astral Grátis Online · Calcula o teu Mapa Natal | Filipa Osório">
+<meta property="og:description" content="Cálculo do mapa astral grátis: Sol, Lua, Ascendente, planetas e casas do teu mapa natal, com textos de astrologia em português de Portugal.">
+<meta property="og:url" content="https://filipaosorio.com/mapa-astral.html">
+<meta property="og:image" content="https://filipaosorio.com/novahero.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Como é feito o cálculo do mapa astral?", "acceptedAnswer": {"@type": "Answer", "text": "O mapa astral, ou mapa natal, é uma fotografia do céu no momento e no lugar em que nasceste. A partir da data, da hora e do local de nascimento, calculo a posição do Sol, da Lua e dos planetas nos 12 signos, o Ascendente, o Meio do Céu e as 12 casas (sistema Placidus). O cálculo é feito no teu próprio browser, com efemérides astronómicas."}}, {"@type": "Question", "name": "Porque é que preciso da hora de nascimento?", "acceptedAnswer": {"@type": "Answer", "text": "A hora define o Ascendente e as casas do mapa, que mudam a cada poucos minutos. Sem a hora exata, o Sol e a maioria dos planetas ficam certos, mas o Ascendente e as casas podem não estar. Se não souberes a hora, podes pedi-la na tua certidão de nascimento."}}, {"@type": "Question", "name": "O que são o Sol, a Lua e o Ascendente?", "acceptedAnswer": {"@type": "Answer", "text": "São os 3 pilares do mapa astral. O signo solar fala da tua essência, o signo lunar das tuas emoções e da tua alma, e o Ascendente da forma como chegas ao mundo e como os outros te veem."}}, {"@type": "Question", "name": "O mapa astral é grátis?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O cálculo do mapa astral é gratuito. Se quiseres ir mais longe, a Leitura Intuitiva junta estes pontos às casas e às ligações do teu mapa, numa leitura escrita sobre o momento que estás a viver."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Mapa Astral Grátis", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any", "inLanguage": "pt-PT", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Filipa Osório", "url": "https://filipaosorio.com/"}}</script>
+<script>
+  try { var t = localStorage.getItem('fo_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef; --ink:#2b241c; --muted:#6f6355; --soft:#8c7f6e;
+  --gold:#c9a86c; --deep:#9a7e52; --wine:#7a2535;
+  --card:#fffdf9; --field:#fffefb; --line:rgba(154,126,82,.30); --line-soft:rgba(154,126,82,.16);
+  --disc1:#fffbf4; --disc2:#f3e9d8; --star:#b8955a;
+  --glyph:#7d6440; --shadow:0 1px 2px rgba(80,60,30,.05),0 12px 40px -18px rgba(120,90,40,.28);
+  --serif:'Spectral','Lora',Georgia,'Times New Roman',serif;
+  --body:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --sym:'DejaVu Sans','Segoe UI Symbol','Apple Symbols','Noto Sans Symbols 2','Noto Sans Symbols',sans-serif;
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --bg:#1d1915; --ink:#efe6d8; --muted:#bfb19c; --soft:#a39581;
+  --gold:#c9a86c; --deep:#d6b984; --wine:#d48a96;
+  --card:#25201a; --field:#211c17; --line:rgba(201,168,108,.30); --line-soft:rgba(201,168,108,.15);
+  --disc1:#2a231b; --disc2:#1c1814; --star:#e2c891;
+  --glyph:#e0c48f; --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;transition:background .4s,color .4s}
+.wrap{max-width:660px;margin:0 auto;padding:40px 16px 64px}
+a{color:var(--deep)}
+.top{display:flex;justify-content:flex-end;margin-bottom:-8px}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--deep);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:16px;line-height:1;display:grid;place-items:center}
+.theme-btn:hover{border-color:var(--gold)}
+header{text-align:center;margin-bottom:30px}
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--deep);margin:0 0 14px}
+.kicker span{color:var(--gold);letter-spacing:0;margin:0 .6em}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,8vw,48px);line-height:1.1;margin:0 0 14px;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--deep)}
+.lead{color:var(--muted);margin:0 auto;max-width:30em;font-size:16.5px}
+.rule{display:flex;align-items:center;gap:12px;color:var(--gold);margin:22px auto 0;max-width:200px;font-size:12px}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* form */
+.card{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;box-shadow:var(--shadow);padding:26px 22px}
+form .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+.full{grid-column:1/-1}
+label.lbl{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.opt{text-transform:none;letter-spacing:0;font-weight:400;color:var(--soft)}
+input[type=text],input[type=email],input[type=date],input[type=time],input[type=number],select{
+  width:100%;font:inherit;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--field);
+  border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px;outline:none;appearance:none;-webkit-appearance:none;
+  transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,108,.18)}
+input:disabled{opacity:.45}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),linear-gradient(135deg,var(--deep) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+.combo{position:relative}
+.combo ul{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 4px);margin:0;padding:6px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:300px;overflow:auto}
+.combo li{padding:9px 10px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.combo li small{color:var(--soft);font-size:13px;white-space:nowrap}
+.combo li.active,.combo li:hover{background:rgba(201,168,108,.16)}
+.combo li.other{color:var(--deep);border-top:1px solid var(--line-soft);margin-top:4px;border-radius:0 0 8px 8px}
+.hint{font-family:var(--sans);font-size:13px;color:var(--soft);margin:7px 0 0}
+.hint a,.bday a{color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.bday{font-family:var(--body);font-style:italic;font-size:15px;line-height:1.6;color:var(--muted);text-align:center;max-width:32em;margin:20px auto 0}
+.bday[hidden]{display:none}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);cursor:pointer}
+.manual{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.manual[hidden]{display:none}
+.err{color:var(--wine);font-family:var(--sans);font-size:14px;margin:14px 0 0;min-height:0}
+.err:empty{display:none}
+.actions{margin-top:22px;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:.04em;
+  color:#2b1f10;background:linear-gradient(135deg,#e2c891 0%,#c9a86c 45%,#a8854f 100%);border:0;border-radius:999px;padding:14px 30px;min-height:50px;cursor:pointer;text-decoration:none;
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 10px 24px -12px rgba(154,126,82,.75);transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.04);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 14px 28px -12px rgba(154,126,82,.85)}
+.btn:focus-visible,.theme-btn:focus-visible,.linkbtn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.privacy{font-family:var(--sans);font-size:13px;color:var(--soft);text-align:center;margin:16px auto 0;max-width:34em;line-height:1.5}
+.privacy b{color:var(--gold);font-weight:400}
+
+/* result */
+#result{margin-top:44px}
+#result[hidden]{display:none}
+.res-head{text-align:center;margin-bottom:10px}
+.res-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,6vw,34px);margin:0 0 4px}
+.res-head p{margin:0;font-family:var(--sans);font-size:14px;color:var(--muted)}
+.res-head .note{color:var(--soft);font-size:13px;margin-top:6px}
+.wheel{width:100%;max-width:600px;margin:6px auto 0;display:block;aspect-ratio:1/1;overflow:visible}
+.wheel text{font-family:var(--sans)}
+.wheel .zg{font-family:var(--sym);font-size:23px;fill:var(--glyph)}
+.wheel .pg{font-family:var(--sym);font-size:24px;fill:var(--ink)}
+.wheel .pg.lum{fill:var(--deep)}
+.wheel .pg.pt{font-size:19px;fill:var(--deep)}
+.wheel .pd{font-size:12px;fill:var(--muted);letter-spacing:.02em}
+.wheel .rx{fill:var(--wine)}
+.wheel .hn{font-size:11px;fill:var(--soft);letter-spacing:.04em}
+.wheel .ax{font-size:12.5px;font-weight:600;letter-spacing:.12em;fill:var(--wine)}
+.wheel .ring{fill:none;stroke:var(--gold)}
+.wheel .tick{stroke:var(--gold)}
+.wheel .cusp{stroke:var(--gold);stroke-opacity:.38;stroke-width:.8}
+.wheel .axis{stroke:var(--deep);stroke-width:1.3}
+.wheel .ptr{stroke:var(--deep);stroke-opacity:.55;stroke-width:.7}
+.wheel .dot{fill:var(--deep)}
+.wheel .asp{stroke:var(--gold);fill:none}
+.wheel .asp.hard{stroke:var(--deep)}
+.wheel .star{fill:var(--star)}
+.wheel .spark{font-family:var(--sym);fill:var(--gold)}
+@media (max-width:480px){
+  .wheel .pd{display:none}
+  .wheel .pg{font-size:27px}
+  .wheel .zg{font-size:26px}
+  .wheel .hn{font-size:13px}
+  .wheel .ax{font-size:15px}
+}
+
+/* animation */
+.anim .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s cubic-bezier(.5,0,.2,1) forwards}
+.anim .fade{opacity:0;animation:fade 1s ease forwards}
+.anim .rise{opacity:0;transform-box:fill-box;transform-origin:center;animation:rise .9s cubic-bezier(.3,.7,.3,1) forwards}
+.anim .disc{opacity:0;transform-origin:320px 320px;animation:disc 1.2s cubic-bezier(.3,.7,.3,1) forwards}
+.twinkle{animation:twinkle var(--d,4s) ease-in-out var(--dl,0s) infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes disc{from{opacity:0;transform:scale(.94) rotate(-8deg)}to{opacity:1;transform:none}}
+@keyframes twinkle{0%,100%{opacity:var(--o1,.15)}50%{opacity:var(--o2,.8)}}
+.reveal{opacity:0;transform:translateY(10px);animation:reveal .8s ease forwards}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .anim .draw{animation:none;stroke-dashoffset:0}
+  .anim .fade,.anim .rise,.anim .disc,.reveal{animation:none;opacity:1;transform:none}
+  .twinkle{animation:none}
+  .btn,.btn:hover{transition:none;transform:none}
+}
+
+.planets{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 26px;font-family:var(--sans);font-size:14.5px}
+.planets[hidden]{display:none}
+.planets li{display:grid;grid-template-columns:26px 1fr auto;align-items:baseline;gap:6px;padding:8px 2px;border-bottom:1px solid var(--line-soft)}
+.planets .g{font-family:var(--sym);color:var(--deep);font-size:17px;text-align:center}
+.planets .n{color:var(--ink)}
+.planets .n small{color:var(--soft);font-size:13px}
+.planets .v{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.planets .v .r{color:var(--wine);margin-left:3px}
+
+.pillars{margin-top:46px;text-align:center}
+.pillars h3,.cta h3{font-family:var(--serif);font-weight:300;font-size:clamp(25px,5.6vw,31px);margin:0 0 4px}
+.pillars .sub{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.04em;margin:0 0 22px}
+.pillar{position:relative;text-align:left;display:grid;grid-template-columns:50px 1fr;gap:16px;align-items:start;padding:20px 20px 20px 18px;margin-bottom:12px;background:var(--card);border:1px solid var(--line-soft);border-radius:16px}
+.pillar .ic{width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--sym);font-size:22px;color:var(--deep)}
+.pillar .k{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin:2px 0 2px}
+.pillar h4{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 6px;line-height:1.25}
+.pillar h4 .zs{font-family:var(--sym);color:var(--gold);font-size:18px;margin-left:6px}
+.pillar p{margin:0;color:var(--muted);font-style:italic;font-size:16px;line-height:1.55}
+
+.layers{margin-top:34px;text-align:center}
+.layers h3{font-family:var(--serif);font-weight:300;font-size:clamp(23px,5.2vw,28px);margin:0 0 4px}
+.layers .sub{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.04em;margin:0 0 18px}
+.layers .ask{text-align:left;font-family:var(--serif);font-size:clamp(17px,4.4vw,19px);font-weight:300;line-height:1.55;color:var(--ink);margin:0 auto 20px;max-width:30em}
+.layers .ask em{color:var(--deep)}
+.layers .ask.mc{border:1px solid var(--line-soft);border-radius:14px;padding:16px 18px;background:var(--card);text-align:left}
+.layers .ask.mc strong{font-style:italic;font-weight:400;color:var(--wine)}
+.layers .pillar h4 small{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.02em;margin-left:6px;white-space:nowrap}
+.layers .close{font-family:var(--body);font-style:italic;color:#faf3e6;font-size:16px;line-height:1.65;margin:22px auto 0;max-width:34em;padding:20px 22px;border-radius:16px;background:linear-gradient(135deg,#7a2535,#5e1b29);border:0.5px solid var(--gold);text-align:left}
+
+.cta{margin-top:40px;text-align:center;padding:34px 22px 30px;border-radius:20px;border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.16),transparent 70%),var(--card);position:relative;overflow:hidden}
+.cta .spk{position:absolute;color:var(--gold);font-family:var(--sym);opacity:.55;font-size:13px}
+.cta p.big{font-family:var(--serif);font-size:clamp(19px,4.6vw,22px);font-weight:300;line-height:1.45;margin:0 auto 24px;max-width:24em}
+.cta p.big em{color:var(--deep)}
+.soft{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:14.5px;color:var(--deep);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line)}
+.again{text-align:center;margin-top:22px;font-family:var(--sans);font-size:14px}
+footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;font-size:12px}
+
+@media (max-width:480px){
+  .wrap{padding-top:22px}
+  .card{padding:22px 16px;border-radius:16px}
+  form .grid{grid-template-columns:1fr}
+  .manual{grid-template-columns:1fr}
+  .planets{grid-template-columns:1fr}
+  .pillar{grid-template-columns:42px 1fr;gap:13px;padding:18px 16px}
+  .pillar .ic{width:42px;height:42px;font-size:19px}
+  .btn{width:100%;padding:14px 18px}
+}
+/* gate: Lua, Ascendente e camadas depois de nome + email */
+.locked{position:relative}
+.locked.on .lk{filter:blur(7px);opacity:.55;pointer-events:none;user-select:none;max-height:260px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.locked:not(.on) .gate{display:none}
+.gate{position:relative;margin:-150px auto 0;max-width:30em;text-align:center;padding:28px 22px 22px;border-radius:20px;border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.18),transparent 70%),var(--card);box-shadow:var(--shadow)}
+.gate h3{font-family:var(--serif);font-style:italic;color:var(--wine);font-weight:300;font-size:clamp(22px,5vw,27px);margin:0 0 6px;line-height:1.25}
+.gate .sub{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 18px}
+.gate .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;text-align:left}
+.gate .chk{display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5;margin:14px 0 0}
+.gate .chk a{color:var(--deep)}
+.gate .chk input{width:18px;height:18px;min-height:0;margin:2px 0 0;flex:none;accent-color:#9a7e52}
+.gate .ok{font-family:var(--serif);font-size:19px;color:var(--deep);margin:6px 0 0}
+@media (max-width:480px){.gate .grid{grid-template-columns:1fr}.gate{margin-top:-120px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* tipos de letra como no resto do site: títulos em Cormorant Garamond, subtítulos em Spectral itálico bordô */
+h1{font-family:'Cormorant Garamond',var(--serif);font-weight:700;color:var(--wine);letter-spacing:0}
+h1 em{font-style:normal;color:var(--wine)}
+.res-head h2,.pillars h3,.cta h3,.layers h3,.gate h3{font-style:italic;color:var(--wine)}
+.hn{font-family:var(--sans);font-size:11px;fill:var(--soft);opacity:.85}
+.seo{margin-top:48px;padding-top:28px;border-top:1px solid var(--line-soft)}
+.seo h2{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--wine);font-size:clamp(23px,5vw,28px);text-align:center;margin:0 0 18px}
+.seo h3{font-family:var(--serif);font-weight:400;font-size:19px;margin:22px 0 6px}
+.seo p{margin:0;color:var(--muted);font-size:16px}
+.pos{margin:22px 0 0;border:1px solid var(--line-soft);border-radius:14px;background:var(--card);padding:4px 16px}
+.pos[hidden]{display:none}
+.pos summary{cursor:pointer;list-style:none;font-family:var(--serif);font-style:italic;color:var(--wine);font-size:19px;padding:12px 0;display:flex;justify-content:space-between;align-items:center}
+.pos summary::-webkit-details-marker{display:none}
+.pos summary::after{content:"+";font-family:var(--sans);font-style:normal;color:var(--deep);font-size:20px}
+.pos[open] summary::after{content:"−"}
+.pos .planets{margin:0 0 12px}
+
+.cross{margin:14px auto 0;text-align:center;font-family:var(--sans);font-size:14px}
+.cross a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
+.cross.both{padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,0.35);font-size:15px}
+
+.okpop[hidden]{display:none}
+.okpop{position:fixed;inset:0;z-index:400;background:rgba(26,20,16,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.okbox{position:relative;max-width:440px;width:100%;background:var(--card);border:1px solid var(--gold);border-radius:18px;padding:30px 26px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.okbox .okx{position:absolute;top:8px;right:12px;background:none;border:0;font-size:24px;color:var(--soft);cursor:pointer}
+.okbox .oktitle{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.35;color:var(--wine);margin:0 0 12px}
+.okbox p{font-family:var(--sans);font-size:14.5px;line-height:1.65;color:var(--ink);margin:0 0 18px}
+.okbox p b{color:var(--wine)}
+.fbt{position:fixed;left:16px;bottom:16px;z-index:300;max-width:340px;background:linear-gradient(135deg,#f6ecd2,#faf3e6);border:0.5px solid var(--gold);border-radius:20px 20px 20px 5px;padding:14px 38px 12px 16px;box-shadow:0 10px 30px rgba(26,20,16,.22);font-family:var(--body);font-size:15px;line-height:1.55;color:#1a1410;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s;pointer-events:none}
+.fbt.on{opacity:1;transform:none;pointer-events:auto}
+.fbt .fbx{position:absolute;top:4px;right:8px;background:none;border:0;font-size:20px;color:#7a6a58;cursor:pointer}
+.fbt u{text-decoration-color:#c9a86c;text-decoration-thickness:2px;text-underline-offset:3px}
+.fbt small{display:block;text-align:right;font-family:var(--sans);font-size:11px;color:#9a7e52;margin-top:4px}
+@media (max-width:520px){.fbt{left:10px;right:10px;max-width:none;bottom:10px}}
+
+.dual .wrap{max-width:1320px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;align-items:start}
+.dual .wrap>*{grid-column:1/-1}
+.dual .wrap>#result,.dual .wrap>#hdCol{grid-column:auto}
+.dual .wrap>.cta{max-width:640px;width:100%;justify-self:center;box-sizing:border-box}
+.dual .wrap>.again,.dual .wrap>.bday{text-align:center}
+#hdCol{position:relative}
+.dual #hdCol::before{content:'';position:absolute;left:-21px;top:20px;bottom:20px;width:1px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
+@media (max-width:1000px){.dual #hdCol::before{display:none}}
+#hdCol iframe{width:100%;border:0;display:block;min-height:900px;background:transparent}
+@media (max-width:1000px){.dual .wrap{display:block;max-width:660px}}
+
+.who-wrap{position:relative;display:inline-block}
+.whobtn{font:inherit;color:inherit;background:none;border:0;border-bottom:1px dotted currentColor;padding:0;cursor:pointer}
+.whomenu{position:absolute;left:50%;top:calc(100% + 8px);transform:translateX(-50%);z-index:50;min-width:230px;background:var(--card,#fff);border:.5px solid var(--gold,#c9a86c);border-radius:12px;box-shadow:0 10px 28px rgba(26,20,16,.18);padding:6px;font-family:'DM Sans',sans-serif;font-style:normal;font-size:14px;text-align:left}
+.whomenu[hidden]{display:none}
+.whomenu button{display:block;width:100%;text-align:left;background:none;border:0;border-radius:8px;padding:8px 12px;font:inherit;color:var(--ink,#333);cursor:pointer}
+.whomenu button:hover{background:rgba(201,168,108,.22)}
+.whomenu button.cur{font-weight:600;color:var(--wine,#7a2535)}
+.whomenu button.nw{border-top:.5px solid var(--gold,#c9a86c);border-radius:0 0 8px 8px;margin-top:4px;color:var(--wine,#7a2535)}
+.pos{border:0;background:none;padding:0;margin:18px 0 0;text-align:center}
+.pos summary{display:block;font-family:var(--sans);font-style:normal;font-size:14px;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);padding:0}
+.pos summary::after{content:none}
+.pos[open] summary{margin-bottom:10px}
+.pos .planets{text-align:left}
+.gout{margin-top:6px}#gOutroWrap{margin-top:8px}#gOutroWrap input{width:100%;box-sizing:border-box}
+.mailwall{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;background:rgba(26,20,16,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:16px}
+.mwbox{background:var(--bg);border:1px solid var(--line);border-radius:16px;max-width:420px;width:100%;padding:24px;text-align:left;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)}
+.mwbox h3{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--wine);margin:0 0 8px}.mwbox p{font-size:14.5px;line-height:1.6;color:var(--muted);margin:0 0 12px}
+.mwbox input[type=text],.mwbox input[type=email]{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.mwbox .chk{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;margin:6px 0}.mwbox .btn{width:100%;margin-top:8px}
+.gen{display:flex;gap:16px;align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;margin:10px 0 0;flex-wrap:wrap}.gen .lbl{margin:0}.gen label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.genrow{font-family:var(--sans);font-size:13px;color:var(--muted);margin:6px 0 0;text-align:center}.genrow .linkbtn{font-size:13px}
+.privacy .firstmap{display:block;margin:10px auto 0;padding:8px 12px;border:1px solid var(--wine);border-radius:10px;background:rgba(122,37,53,.06);color:var(--wine);font-weight:500;font-size:14.5px;line-height:1.5;max-width:460px}
+.crossend{margin:18px auto 0;text-align:center;font-family:var(--sans);font-size:15px;padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,.35)}.crossend a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
+</style>
+
+<script src="/site-config.js?v=20261029v14"></script><link rel="stylesheet" href="/site-nav.css?v=20261028v4"><script src="/site-ui.js?v=20261029v14" defer></script><script src="/site-interactions.js?v=20261029r3v13" defer></script><link rel="stylesheet" href="/revisao-v3.css?v=20261028v4"><script src="/revisao-v3.js?v=20261028v8" defer></script><link rel="stylesheet" href="/revisao-v4.css?v=20261028v4"><script src="/revisao-v4.js?v=20261028v9" defer></script><script src="/mapas-config.js?v=20261029v10separate"></script><script src="/mapas-client.js?v=20261028v4"></script><link rel="stylesheet" href="/revisao-v8.css?v=20261028v8"><link rel="stylesheet" href="/revisao-v9.css?v=20261028v15"><script src="/revisao-v9.js?v=20261028v10" defer></script><link rel="stylesheet" href="/revisao-v10.css?v=20261029v10"></head>
+<body data-map-page><header class="site-header"><nav class="site-main-nav" aria-label="Menu principal"><a class="site-brand" href="/revisao-1c84d0e0a3b438d872a2d26b/p-index.html">Filipa Osório</a><button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu-links">Menu <span aria-hidden="true">☰</span></button><div class="nav-links" id="site-menu-links"><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-index.html">Início</a><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-ceen.html">CEEN</a><div class="readings-menu"><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-leituras.html">Leituras Intuitivas</a><button class="readings-submenu-toggle" type="button" aria-expanded="false" aria-label="Páginas das Leituras">⌄</button><div class="readings-submenu"><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-leituras.html">Leituras Intuitivas</a><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-leitura-intuitiva.html">Leitura de Essência</a><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-tarot.html">Leitura de Momento</a></div></div><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-sessao-alinhamento.html">Sessão de Alinhamento</a><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-artigos.html">Artigos</a><a href="#convites-dialog" data-partnerships-open aria-haspopup="dialog">Convites e parcerias</a></div><div class="site-tools"><button type="button" class="site-theme" data-site-theme aria-label="Alternar modo claro e noturno"><span data-mode-icon="light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></span><span data-mode-icon="dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg></span></button><a class="site-language" href="/revisao-1c84d0e0a3b438d872a2d26b/p-leitura-intuitiva-en.html#o-que-e" title="About these charts in English" aria-label="Read about these charts in English" hreflang="en"><span class="selected">PT</span>/<span>EN</span></a></div><button class="theme-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button><button class="size-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button></nav></header>
+<div class="wrap">
+  <div class="top" hidden><button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar modo claro/escuro">☾</button></div>
+  <header>
+    <p class="kicker"><span>✦</span>Leitura Intuitiva<span>✦</span></p>
+    <h1>O teu <em>mapa astral</em></h1>
+    <p class="lead">Cálculo do mapa astral grátis, com o céu no instante em que nasceste. Indica a data, a hora e o local de nascimento e o teu mapa natal aparece aqui, traçado a dourado.</p>
+    <div class="rule">✦</div>
+  </header>
+
+  <form class="card" id="form" novalidate autocomplete="off">
+    <div class="grid">
+      <div class="full">
+        <label class="lbl" for="nome">Nome</label>
+        <input type="text" id="nome" maxlength="60" placeholder="Como te chamas?" required autocomplete="given-name">
+      </div>
+      <div>
+        <label class="lbl" for="data">Data de nascimento</label>
+        <input type="text" id="data" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10" required>
+      </div>
+      <div>
+        <label class="lbl" for="hora">Hora de nascimento</label>
+        <input type="time" id="hora" required aria-describedby="horaHint">
+        <p class="hint" id="horaHint">Confirma se nasceste durante o dia ou à noite (AM ou PM). Não sabes a hora? Pergunta a quem possa saber ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada.</p>
+      </div>
+      <div class="full">
+        <label class="lbl" for="local">Local de nascimento</label>
+        <div class="combo">
+          <input type="text" id="local" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="localList" placeholder="Escreve a cidade, ex.: Coimbra">
+          <ul id="localList" role="listbox" hidden></ul>
+        </div>
+        <p class="hint" id="localHint">Não encontras a tua cidade? <button type="button" class="linkbtn" id="outraBtn">Outra cidade</button></p>
+        <div class="manual" id="manual" hidden>
+          <div>
+            <label class="lbl" for="lat">Latitude <span class="opt">(Norte +, Sul −)</span></label>
+            <input type="number" id="lat" step="0.0001" min="-90" max="90" placeholder="38.7223" inputmode="decimal">
+          </div>
+          <div>
+            <label class="lbl" for="lon">Longitude <span class="opt">(Este +, Oeste −)</span></label>
+            <input type="number" id="lon" step="0.0001" min="-180" max="180" placeholder="-9.1393" inputmode="decimal">
+          </div>
+          <div style="grid-column:1/-1">
+            <label class="lbl" for="tz">Fuso horário</label>
+            <select id="tz"></select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gen"><span class="lbl">Linguagem do texto</span><label><input type="radio" name="gen" value="f"> feminino</label><label><input type="radio" name="gen" value="m"> masculino</label></div>
+    <p class="err" id="err" role="alert"></p>
+    <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu mapa</button></div>
+    <p class="privacy">O mapa é calculado no teu navegador. Para receberes e-mails da Filipa, podes subscrever separadamente na <a href="/revisao-1c84d0e0a3b438d872a2d26b/p-artigos.html">página dos Artigos</a>.</p>
+  </form>
+
+  <section id="result" hidden aria-live="polite">
+    <div class="res-head">
+      <h2 id="resTitle">O teu céu</h2>
+      <p id="resMeta"></p>
+      <p class="genrow">Texto em: <button type="button" class="linkbtn" data-g="f">feminino</button> · <button type="button" class="linkbtn" data-g="m">masculino</button></p>
+      <p class="cross" id="crossNote" hidden><span class="c1">Queres ver também o teu Human Design? </span><a id="crossLink" href="/revisao-1c84d0e0a3b438d872a2d26b/p-human-design.html">✦ Ver o meu Human Design</a></p>
+      <p class="note" id="resNote" hidden></p>
+    </div>
+    <svg class="wheel" id="wheel" viewBox="0 0 640 640" role="img" aria-labelledby="wheelDesc"><desc id="wheelDesc">Mapa natal</desc></svg>
+    <details class="pos" id="posBox">
+      <summary>Ver as posições planetárias</summary>
+      <ul class="planets" id="planets"></ul>
+    </details>
+
+    <div class="cta">
+      <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
+      <p class="big">O mapa é só o desenho.<br>Com <em>a Leitura Intuitiva</em> podes transformá-lo<br>em ação alinhada no teu momento presente.</p>
+      <a class="btn" href="/revisao-1c84d0e0a3b438d872a2d26b/p-marcar-leitura.html">Quero a minha Leitura</a><br>
+      <a class="soft" href="/revisao-1c84d0e0a3b438d872a2d26b/p-leitura-intuitiva.html#como-funciona">Ver como funciona</a>
+    </div>
+
+    <div class="pillars">
+      <h3>3 pilares do mapa astral</h3>
+      <p class="sub">Sol · Lua · Ascendente</p>
+      <div id="pillars"></div>
+    </div>
+
+    <div class="locked" id="locked">
+      <div class="lk" id="lk">
+        <div id="pillars2"></div>
+        <div class="layers" id="layers" hidden></div>
+      </div>
+      <form class="gate" id="gate" novalidate>
+        <h3>Descobre mais do teu mapa</h3>
+        <p class="sub">Partilha o teu nome e e-mail para conheceres um bocadinho<br>mais da minha visão sobre o teu mapa, antes da Leitura.</p>
+        <div class="grid">
+          <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" name="fields[name]" maxlength="60" autocomplete="given-name" required></div>
+          <div><label class="lbl" for="gApelido">Apelido</label><input type="text" id="gApelido" maxlength="60" autocomplete="family-name"></div>
+          <div style="grid-column:1/-1"><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" name="fields[email]" maxlength="120" autocomplete="email" inputmode="email" required></div>
+        </div>
+        <label class="chk gout"><input type="checkbox" id="gOutra"><span>Este mapa é de outra pessoa</span></label>
+          <p class="gcons" id="gCons" hidden style="font-size:12.5px;color:var(--ink-soft);margin:0.3rem 0 0">Ao gerares o mapa de outra pessoa, deves ter consentimento.</p>
+        <div id="gOutroWrap" hidden><label class="lbl" for="gOutro">Nome da outra pessoa</label><input type="text" id="gOutro" maxlength="60"></div>
+          <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="/revisao-1c84d0e0a3b438d872a2d26b/p-privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
+        <p class="err" id="gErr" role="alert"></p>
+        <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver alguns insights do meu mapa</button></div>
+      </form>
+    </div>
+
+    <p class="bday" id="bday" hidden>O teu aniversário está perto: é o momento da tua Revolução Solar, o início de um novo ciclo anual. <a href="https://wa.me/351939479755?text=Ol%C3%A1+Filipa%2C+vi+o+meu+mapa+e+gostava+de+saber+mais+sobre+a+Revolu%C3%A7%C3%A3o+Solar." target="_blank" rel="noopener">Fala comigo</a> se quiseres juntá-la à tua Leitura.</p>
+    <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
+  </section>
+
+  <section class="seo" aria-labelledby="seoT">
+    <h2 id="seoT">Sobre o cálculo do mapa astral</h2>
+    <h3>Como é feito o cálculo do mapa astral?</h3>
+    <p>O mapa astral, ou mapa natal, é uma fotografia do céu no momento e no lugar em que nasceste. A partir da data, da hora e do local de nascimento, calculo a posição do Sol, da Lua e dos planetas nos 12 signos, o Ascendente, o Meio do Céu e as 12 casas (sistema Placidus). O cálculo é feito no teu próprio browser, com efemérides astronómicas.</p>
+    <h3>Porque é que preciso da hora de nascimento?</h3>
+    <p>A hora define o Ascendente e as casas do mapa, que mudam a cada poucos minutos. Sem a hora exata, o Sol e a maioria dos planetas ficam certos, mas o Ascendente e as casas podem não estar. Se não souberes a hora, podes pedi-la na tua certidão de nascimento.</p>
+    <h3>O que são o Sol, a Lua e o Ascendente?</h3>
+    <p>São os 3 pilares do mapa astral. O signo solar fala da tua essência, o signo lunar das tuas emoções e da tua alma, e o Ascendente da forma como chegas ao mundo e como os outros te veem.</p>
+    <h3>O mapa astral é grátis?</h3>
+    <p>Sim. O cálculo do mapa astral é gratuito. Se quiseres ir mais longe, a Leitura Intuitiva junta estes pontos às casas e às ligações do teu mapa, numa Leitura escrita sobre o momento que estás a viver.</p>
+  </section>
+  <footer class="site-footer"><p>© 2026 Filipa Osório</p><div><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">Instagram</a><span>·</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Substack</a><span>·</span><a href="mailto:mail@filipaosorio.com">E-mail</a></div><div><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-termos-ceen.html">Termos e condições CEEN</a><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-termos-leitura-intuitiva.html">Termos das Leituras</a><a href="/revisao-1c84d0e0a3b438d872a2d26b/p-privacidade.html">Política de Privacidade</a><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a></div></footer>
+<div class="okpop" id="okPop" role="dialog" aria-modal="true" aria-labelledby="okTitle" hidden><div class="okbox"><button class="okx" type="button" id="okX" aria-label="Fechar">×</button><p class="oktitle" id="okTitle"></p><p>Se não o vires, espreita a pasta de lixo eletrónico e marca-o como «não é spam». Guarda também <b>mail@filipaosorio.com</b> nos teus contactos para receberes tudo na caixa principal.</p><button class="btn" type="button" id="okGo">Continuar</button></div></div>
+</div>
+
+<script src="/astronomy.browser.min.js"></script>
+<script src="/quiron.js"></script>
+<script>
+(function(){
+'use strict';
+
+// CORE-BEGIN
+var BODIES = [
+  {k:'Sun',     n:'Sol',      g:'☉'},
+  {k:'Moon',    n:'Lua',      g:'☽'},
+  {k:'Mercury', n:'Mercúrio', g:'☿'},
+  {k:'Venus',   n:'Vénus',    g:'♀'},
+  {k:'Mars',    n:'Marte',    g:'♂'},
+  {k:'Jupiter', n:'Júpiter',  g:'♃'},
+  {k:'Saturn',  n:'Saturno',  g:'♄'},
+  {k:'Uranus',  n:'Úrano',    g:'♅'},
+  {k:'Neptune', n:'Neptuno',  g:'♆'},
+  {k:'Pluto',   n:'Plutão',   g:'♇'}
+];
+var SIGNS = ['Carneiro','Touro','Gémeos','Caranguejo','Leão','Virgem','Balança','Escorpião','Sagitário','Capricórnio','Aquário','Peixes'];
+var SIGN_GLYPHS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+var D2R = Math.PI/180;
+function norm(a){ a %= 360; return a < 0 ? a + 360 : a; }
+
+var fmtCache = {};
+function tzOffsetMin(ms, tz){
+  var f = fmtCache[tz] || (fmtCache[tz] = new Intl.DateTimeFormat('en-US', {
+    timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', era: 'short'
+  }));
+  var p = {}; f.formatToParts(new Date(ms)).forEach(function(x){ p[x.type] = x.value; });
+  var y = +p.year; if (p.era && /^B/.test(p.era)) y = 1 - y;
+  var h = +p.hour; if (h === 24) h = 0;
+  var d = new Date(0); d.setUTCFullYear(y, +p.month - 1, +p.day); d.setUTCHours(h, +p.minute, +p.second, 0);
+  return (d.getTime() - Math.floor(ms/1000)*1000) / 60000;
+}
+// Local wall-clock time in an IANA zone -> UTC ms (iterative, DST/historical aware)
+function localToUTC(y, mo, d, h, mi, tz){
+  var base = new Date(0); base.setUTCFullYear(y, mo - 1, d); base.setUTCHours(h, mi, 0, 0);
+  var local = base.getTime(), utc = local, off = 0;
+  for (var i = 0; i < 5; i++){
+    off = tzOffsetMin(utc, tz);
+    var next = local - off*60000;
+    if (next === utc) break;
+    utc = next;
+  }
+  return { utc: utc, offsetMin: off };
+}
+function bodyLon(A, key, t){
+  if (key === 'Sun') return A.SunPosition(t).elon;
+  if (key === 'Moon') return A.EclipticGeoMoon(t).lon;
+  return A.Ecliptic(A.GeoVector(A.Body[key], t, true)).elon;
+}
+function angles(A, t, lat, lon){
+  var T = t.tt / 36525;
+  var eps = (23.4392911 - 0.0130042*T) * D2R;
+  var ramc = norm(A.SiderealTime(t)*15 + lon) * D2R;
+  var mc = norm(Math.atan2(Math.sin(ramc), Math.cos(ramc)*Math.cos(eps)) / D2R);
+  var asc = norm(Math.atan2(Math.cos(ramc), -(Math.sin(ramc)*Math.cos(eps) + Math.tan(lat*D2R)*Math.sin(eps))) / D2R);
+  return { asc: asc, mc: mc, ramc: ramc, eps: eps };
+}
+// House cusps: Placidus (semi-arc iteration); Porphyry above ~66° latitude, where Placidus breaks down
+function houseCusps(a, lat){
+  var c = new Array(12), sys = 'Placidus';
+  c[0] = a.asc; c[9] = a.mc;
+  var phi = lat * D2R, eps = a.eps, ramc = a.ramc;
+  function lonFromRA(ra){ return norm(Math.atan2(Math.sin(ra), Math.cos(ra) * Math.cos(eps)) / D2R); }
+  // f: fraction of the semi-arc; above: diurnal (cusps 11, 12) or nocturnal (cusps 2, 3)
+  function plac(f, above){
+    var ra = above ? ramc + f * Math.PI / 2 : ramc + Math.PI - f * Math.PI / 2, lam = 0;
+    for (var i = 0; i < 30; i++){
+      lam = lonFromRA(ra);
+      var dec = Math.asin(Math.sin(eps) * Math.sin(lam * D2R)), x = -Math.tan(phi) * Math.tan(dec);
+      if (x < -1 || x > 1) return NaN;
+      var dsa = Math.acos(x), nra = above ? ramc + f * dsa : ramc + Math.PI - f * (Math.PI - dsa);
+      if (Math.abs(nra - ra) < 1e-9){ ra = nra; break; }
+      ra = nra;
+    }
+    return lonFromRA(ra);
+  }
+  if (Math.abs(lat) < 66){
+    c[10] = plac(1/3, true); c[11] = plac(2/3, true); c[1] = plac(2/3, false); c[2] = plac(1/3, false);
+  }
+  if (!(Math.abs(lat) < 66) || [c[10], c[11], c[1], c[2]].some(isNaN)){
+    sys = 'Porphyry';
+    var q1 = norm(a.asc - a.mc), q2 = norm(a.mc + 180 - a.asc);
+    c[10] = norm(a.mc + q1 / 3); c[11] = norm(a.mc + 2 * q1 / 3);
+    c[1] = norm(a.asc + q2 / 3); c[2] = norm(a.asc + 2 * q2 / 3);
+  }
+  // opposite cusps (+180°): 7 = DSC, 4 = IC, 5 ↔ 11, 6 ↔ 12, 8 ↔ 2, 9 ↔ 3
+  c[6] = norm(c[0] + 180); c[3] = norm(c[9] + 180);
+  c[4] = norm(c[10] + 180); c[5] = norm(c[11] + 180); c[7] = norm(c[1] + 180); c[8] = norm(c[2] + 180);
+  return { cusps: c, sys: sys };
+}
+function computeChart(A, utcMs, lat, lon){
+  var t = A.MakeTime(new Date(utcMs)), t1 = t.AddDays(1);
+  var planets = BODIES.map(function(b){
+    var l0 = norm(bodyLon(A, b.k, t)), l1 = norm(bodyLon(A, b.k, t1));
+    var dl = ((l1 - l0 + 540) % 360) - 180;
+    return { key: b.k, name: b.n, glyph: b.g, lon: l0, retro: dl < 0 };
+  });
+  var a = angles(A, t, lat, lon);
+  var h = houseCusps(a, lat);
+  var points = [];
+  var ch0 = chironLon(utcMs);
+  if (ch0 !== null){ var ch1 = chironLon(utcMs + 864e5); points.push({ key: 'Chiron', name: 'Quíron', glyph: '⚷', lon: ch0, retro: (((ch1 - ch0 + 540) % 360) - 180) < 0, point: true }); }
+  points.push({ key: 'Lilith', name: 'Lilith', glyph: '⚸', lon: lilithLon(t.tt), retro: false, point: true });
+  return { planets: planets, points: points, asc: a.asc, mc: a.mc, cusps: h.cusps, houseSys: h.sys };
+}
+// Quíron: tabela de 10 em 10 dias (quiron.js), 1900-2060
+function chironLon(ms){
+  var C = window.FO_CHIRON; if (!C) return null;
+  var x = (ms - C.t0) / C.step, i = Math.floor(x);
+  if (i < 0 || i >= C.v.length - 1) return null;
+  var a = C.v[i] / 100, b = C.v[i + 1] / 100, d = ((b - a + 540) % 360) - 180;
+  return norm(a + d * (x - i));
+}
+// Lilith (Lua Negra média): apogeu médio da órbita da Lua (Meeus), d = dias desde J2000 TT
+function lilithLon(d){
+  var T = d / 36525;
+  return norm(83.3532465 + 4069.0137287*T - 0.0103200*T*T - T*T*T/80053 + T*T*T*T/18999000 + 180);
+}
+function signOf(l){ return Math.floor(norm(l)/30); }
+function angDist(a, b){ var d = Math.abs(norm(a - b)); return d > 180 ? 360 - d : d; }
+function fmtDeg(l){
+  var x = norm(l) % 30, d = Math.floor(x), m = Math.round((x - d)*60);
+  if (m === 60){ d += 1; m = 0; }
+  return d + '°' + (m < 10 ? '0' : '') + m + '′';
+}
+// CORE-END
+
+if (typeof document === 'undefined') return;
+var A = window.Astronomy;
+var VS = '︎';
+
+// ---------- cities: name|country|lat|lon|tz ----------
+var RAW = [
+// Portugal — capitais de distrito
+'Aveiro|Portugal|40.6405|-8.6538|Europe/Lisbon','Beja|Portugal|38.0151|-7.8632|Europe/Lisbon','Braga|Portugal|41.5454|-8.4265|Europe/Lisbon',
+'Bragança|Portugal|41.8061|-6.7567|Europe/Lisbon','Castelo Branco|Portugal|39.8222|-7.4909|Europe/Lisbon','Coimbra|Portugal|40.2033|-8.4103|Europe/Lisbon',
+'Évora|Portugal|38.5714|-7.9135|Europe/Lisbon','Faro|Portugal|37.0194|-7.9304|Europe/Lisbon','Guarda|Portugal|40.5373|-7.2658|Europe/Lisbon',
+'Leiria|Portugal|39.7436|-8.8071|Europe/Lisbon','Lisboa|Portugal|38.7223|-9.1393|Europe/Lisbon','Portalegre|Portugal|39.2967|-7.4285|Europe/Lisbon',
+'Porto|Portugal|41.1579|-8.6291|Europe/Lisbon','Santarém|Portugal|39.2362|-8.6859|Europe/Lisbon','Setúbal|Portugal|38.5244|-8.8882|Europe/Lisbon',
+'Viana do Castelo|Portugal|41.6932|-8.8329|Europe/Lisbon','Vila Real|Portugal|41.3006|-7.7441|Europe/Lisbon','Viseu|Portugal|40.6566|-7.9125|Europe/Lisbon',
+// Portugal — outras
+'Almada|Portugal|38.6790|-9.1569|Europe/Lisbon','Amadora|Portugal|38.7538|-9.2308|Europe/Lisbon','Sintra|Portugal|38.8029|-9.3817|Europe/Lisbon',
+'Cascais|Portugal|38.6979|-9.4215|Europe/Lisbon','Oeiras|Portugal|38.6969|-9.3146|Europe/Lisbon','Loures|Portugal|38.8309|-9.1685|Europe/Lisbon',
+'Odivelas|Portugal|38.7930|-9.1830|Europe/Lisbon','Seixal|Portugal|38.6401|-9.1015|Europe/Lisbon','Barreiro|Portugal|38.6631|-9.0724|Europe/Lisbon',
+'Vila Franca de Xira|Portugal|38.9553|-8.9897|Europe/Lisbon','Vila Nova de Gaia|Portugal|41.1239|-8.6118|Europe/Lisbon','Matosinhos|Portugal|41.1821|-8.6891|Europe/Lisbon',
+'Maia|Portugal|41.2357|-8.6199|Europe/Lisbon','Gondomar|Portugal|41.1444|-8.5322|Europe/Lisbon','Guimarães|Portugal|41.4425|-8.2918|Europe/Lisbon',
+'Barcelos|Portugal|41.5388|-8.6151|Europe/Lisbon','Vila Nova de Famalicão|Portugal|41.4076|-8.5198|Europe/Lisbon','Póvoa de Varzim|Portugal|41.3804|-8.7609|Europe/Lisbon',
+'Figueira da Foz|Portugal|40.1508|-8.8618|Europe/Lisbon','Covilhã|Portugal|40.2806|-7.5045|Europe/Lisbon','Chaves|Portugal|41.7400|-7.4707|Europe/Lisbon',
+'Torres Vedras|Portugal|39.0911|-9.2586|Europe/Lisbon','Caldas da Rainha|Portugal|39.4036|-9.1386|Europe/Lisbon','Tomar|Portugal|39.6019|-8.4092|Europe/Lisbon',
+'Elvas|Portugal|38.8810|-7.1630|Europe/Lisbon','Sines|Portugal|37.9560|-8.8698|Europe/Lisbon','Portimão|Portugal|37.1386|-8.5376|Europe/Lisbon',
+'Lagos|Portugal|37.1028|-8.6731|Europe/Lisbon','Albufeira|Portugal|37.0891|-8.2479|Europe/Lisbon','Loulé|Portugal|37.1381|-8.0197|Europe/Lisbon',
+'Olhão|Portugal|37.0260|-7.8411|Europe/Lisbon','Tavira|Portugal|37.1275|-7.6506|Europe/Lisbon','Lamego|Portugal|41.0970|-7.8098|Europe/Lisbon',
+// Madeira
+'Funchal|Madeira, Portugal|32.6669|-16.9241|Atlantic/Madeira','Câmara de Lobos|Madeira, Portugal|32.6500|-16.9770|Atlantic/Madeira',
+'Santa Cruz|Madeira, Portugal|32.6881|-16.7937|Atlantic/Madeira','Machico|Madeira, Portugal|32.7190|-16.7663|Atlantic/Madeira',
+'Ribeira Brava|Madeira, Portugal|32.6726|-17.0634|Atlantic/Madeira','Porto Santo|Madeira, Portugal|33.0617|-16.3420|Atlantic/Madeira',
+// Açores
+'Ponta Delgada|Açores, Portugal|37.7412|-25.6756|Atlantic/Azores','Ribeira Grande|Açores, Portugal|37.8211|-25.5194|Atlantic/Azores',
+'Angra do Heroísmo|Açores, Portugal|38.6551|-27.2156|Atlantic/Azores','Praia da Vitória|Açores, Portugal|38.7333|-27.0667|Atlantic/Azores',
+'Horta|Açores, Portugal|38.5363|-28.6269|Atlantic/Azores','Madalena do Pico|Açores, Portugal|38.5361|-28.5283|Atlantic/Azores',
+'Velas|Açores, Portugal|38.6806|-28.2083|Atlantic/Azores','Vila do Porto|Açores, Portugal|36.9447|-25.1450|Atlantic/Azores',
+'Santa Cruz das Flores|Açores, Portugal|39.4533|-31.1275|Atlantic/Azores',
+// Brasil
+'São Paulo|Brasil|-23.5505|-46.6333|America/Sao_Paulo','Rio de Janeiro|Brasil|-22.9068|-43.1729|America/Sao_Paulo','Brasília|Brasil|-15.7939|-47.8828|America/Sao_Paulo',
+'Belo Horizonte|Brasil|-19.9167|-43.9345|America/Sao_Paulo','Salvador|Brasil|-12.9777|-38.5016|America/Bahia','Fortaleza|Brasil|-3.7319|-38.5267|America/Fortaleza',
+'Recife|Brasil|-8.0476|-34.8770|America/Recife','Manaus|Brasil|-3.1190|-60.0217|America/Manaus','Curitiba|Brasil|-25.4284|-49.2733|America/Sao_Paulo',
+'Porto Alegre|Brasil|-30.0346|-51.2177|America/Sao_Paulo','Belém|Brasil|-1.4558|-48.4902|America/Belem','Goiânia|Brasil|-16.6869|-49.2648|America/Sao_Paulo',
+'São Luís|Brasil|-2.5307|-44.3068|America/Fortaleza','Maceió|Brasil|-9.6658|-35.7353|America/Maceio','Natal|Brasil|-5.7945|-35.2110|America/Fortaleza',
+'Teresina|Brasil|-5.0919|-42.8034|America/Fortaleza','João Pessoa|Brasil|-7.1195|-34.8450|America/Fortaleza','Aracaju|Brasil|-10.9472|-37.0731|America/Maceio',
+'Cuiabá|Brasil|-15.6014|-56.0979|America/Cuiaba','Campo Grande|Brasil|-20.4697|-54.6201|America/Campo_Grande','Florianópolis|Brasil|-27.5954|-48.5480|America/Sao_Paulo',
+'Vitória|Brasil|-20.3155|-40.3128|America/Sao_Paulo','Palmas|Brasil|-10.2491|-48.3243|America/Araguaina','Porto Velho|Brasil|-8.7612|-63.9004|America/Porto_Velho',
+'Rio Branco|Brasil|-9.9754|-67.8249|America/Rio_Branco','Macapá|Brasil|0.0349|-51.0694|America/Belem','Boa Vista|Brasil|2.8235|-60.6758|America/Boa_Vista',
+'Campinas|Brasil|-22.9099|-47.0626|America/Sao_Paulo','Guarulhos|Brasil|-23.4543|-46.5337|America/Sao_Paulo','Santos|Brasil|-23.9608|-46.3336|America/Sao_Paulo',
+'Niterói|Brasil|-22.8832|-43.1034|America/Sao_Paulo','Juiz de Fora|Brasil|-21.7642|-43.3496|America/Sao_Paulo','Uberlândia|Brasil|-18.9186|-48.2772|America/Sao_Paulo',
+'Ribeirão Preto|Brasil|-21.1775|-47.8103|America/Sao_Paulo','Sorocaba|Brasil|-23.5015|-47.4526|America/Sao_Paulo','Londrina|Brasil|-23.3045|-51.1696|America/Sao_Paulo',
+'Joinville|Brasil|-26.3045|-48.8487|America/Sao_Paulo','Caxias do Sul|Brasil|-29.1678|-51.1794|America/Sao_Paulo','Feira de Santana|Brasil|-12.2664|-38.9663|America/Bahia',
+// África lusófona
+'Luanda|Angola|-8.8390|13.2894|Africa/Luanda','Huambo|Angola|-12.7761|15.7392|Africa/Luanda','Benguela|Angola|-12.5763|13.4055|Africa/Luanda',
+'Lobito|Angola|-12.3644|13.5366|Africa/Luanda','Lubango|Angola|-14.9177|13.4925|Africa/Luanda','Cabinda|Angola|-5.5500|12.2000|Africa/Luanda',
+'Maputo|Moçambique|-25.9692|32.5732|Africa/Maputo','Beira|Moçambique|-19.8436|34.8389|Africa/Maputo','Nampula|Moçambique|-15.1165|39.2666|Africa/Maputo',
+'Quelimane|Moçambique|-17.8786|36.8883|Africa/Maputo','Tete|Moçambique|-16.1564|33.5867|Africa/Maputo',
+'Praia|Cabo Verde|14.9330|-23.5133|Atlantic/Cape_Verde','Mindelo|Cabo Verde|16.8901|-24.9804|Atlantic/Cape_Verde','Espargos|Cabo Verde|16.7550|-22.9450|Atlantic/Cape_Verde',
+'Bissau|Guiné-Bissau|11.8636|-15.5977|Africa/Bissau','São Tomé|São Tomé e Príncipe|0.3365|6.7273|Africa/Sao_Tome',
+'Joanesburgo|África do Sul|-26.2041|28.0473|Africa/Johannesburg',
+// Espanha
+'Madrid|Espanha|40.4168|-3.7038|Europe/Madrid','Barcelona|Espanha|41.3874|2.1686|Europe/Madrid','Valência|Espanha|39.4699|-0.3763|Europe/Madrid',
+'Sevilha|Espanha|37.3891|-5.9845|Europe/Madrid','Málaga|Espanha|36.7213|-4.4214|Europe/Madrid','Bilbau|Espanha|43.2630|-2.9350|Europe/Madrid',
+'Vigo|Espanha|42.2406|-8.7207|Europe/Madrid','Santiago de Compostela|Espanha|42.8782|-8.5448|Europe/Madrid','Salamanca|Espanha|40.9701|-5.6635|Europe/Madrid',
+'Badajoz|Espanha|38.8794|-6.9707|Europe/Madrid','Las Palmas de Gran Canaria|Espanha|28.1235|-15.4363|Atlantic/Canary',
+// França
+'Paris|França|48.8566|2.3522|Europe/Paris','Lyon|França|45.7640|4.8357|Europe/Paris','Marselha|França|43.2965|5.3698|Europe/Paris',
+'Toulouse|França|43.6047|1.4442|Europe/Paris','Bordéus|França|44.8378|-0.5792|Europe/Paris','Nice|França|43.7102|7.2620|Europe/Paris',
+'Lille|França|50.6292|3.0573|Europe/Paris','Nantes|França|47.2184|-1.5536|Europe/Paris','Estrasburgo|França|48.5734|7.7521|Europe/Paris',
+// Reino Unido e Irlanda
+'Londres|Reino Unido|51.5074|-0.1278|Europe/London','Manchester|Reino Unido|53.4808|-2.2426|Europe/London','Birmingham|Reino Unido|52.4862|-1.8904|Europe/London',
+'Liverpool|Reino Unido|53.4084|-2.9916|Europe/London','Bristol|Reino Unido|51.4545|-2.5879|Europe/London','Edimburgo|Reino Unido|55.9533|-3.1883|Europe/London',
+'Jersey (St Helier)|Reino Unido|49.1868|-2.1100|Europe/Jersey','Dublin|Irlanda|53.3498|-6.2603|Europe/Dublin',
+// Suíça, Luxemburgo, Benelux, Alemanha, Itália
+'Genebra|Suíça|46.2044|6.1432|Europe/Zurich','Lausana|Suíça|46.5197|6.6323|Europe/Zurich','Zurique|Suíça|47.3769|8.5417|Europe/Zurich',
+'Berna|Suíça|46.9480|7.4474|Europe/Zurich','Basileia|Suíça|47.5596|7.5886|Europe/Zurich','Sion|Suíça|46.2331|7.3606|Europe/Zurich',
+'Luxemburgo|Luxemburgo|49.6116|6.1319|Europe/Luxembourg','Esch-sur-Alzette|Luxemburgo|49.4958|5.9806|Europe/Luxembourg',
+'Bruxelas|Bélgica|50.8503|4.3517|Europe/Brussels','Amesterdão|Países Baixos|52.3676|4.9041|Europe/Amsterdam','Roterdão|Países Baixos|51.9244|4.4777|Europe/Amsterdam',
+'Berlim|Alemanha|52.5200|13.4050|Europe/Berlin','Hamburgo|Alemanha|53.5511|9.9937|Europe/Berlin','Munique|Alemanha|48.1351|11.5820|Europe/Berlin',
+'Frankfurt|Alemanha|50.1109|8.6821|Europe/Berlin','Colónia|Alemanha|50.9375|6.9603|Europe/Berlin','Estugarda|Alemanha|48.7758|9.1829|Europe/Berlin',
+'Düsseldorf|Alemanha|51.2277|6.7735|Europe/Berlin','Roma|Itália|41.9028|12.4964|Europe/Rome','Milão|Itália|45.4642|9.1900|Europe/Rome',
+// EUA
+'Nova Iorque|EUA|40.7128|-74.0060|America/New_York','Newark|EUA|40.7357|-74.1724|America/New_York','Boston|EUA|42.3601|-71.0589|America/New_York',
+'Fall River|EUA|41.7015|-71.1550|America/New_York','New Bedford|EUA|41.6362|-70.9342|America/New_York','Providence|EUA|41.8240|-71.4128|America/New_York',
+'Washington, D.C.|EUA|38.9072|-77.0369|America/New_York','Miami|EUA|25.7617|-80.1918|America/New_York','Orlando|EUA|28.5383|-81.3792|America/New_York',
+'Chicago|EUA|41.8781|-87.6298|America/Chicago','Houston|EUA|29.7604|-95.3698|America/Chicago','Denver|EUA|39.7392|-104.9903|America/Denver',
+'Phoenix|EUA|33.4484|-112.0740|America/Phoenix','Los Angeles|EUA|34.0522|-118.2437|America/Los_Angeles','São Francisco|EUA|37.7749|-122.4194|America/Los_Angeles',
+'San José (Califórnia)|EUA|37.3382|-121.8863|America/Los_Angeles','Honolulu|EUA|21.3069|-157.8583|Pacific/Honolulu',
+// Canadá
+'Toronto|Canadá|43.6532|-79.3832|America/Toronto','Montreal|Canadá|45.5019|-73.5674|America/Toronto','Otava|Canadá|45.4215|-75.6972|America/Toronto',
+'Vancouver|Canadá|49.2827|-123.1207|America/Vancouver','Calgary|Canadá|51.0447|-114.0719|America/Edmonton','Winnipeg|Canadá|49.8954|-97.1385|America/Winnipeg',
+// Outros com comunidades lusófonas
+'Caracas|Venezuela|10.4806|-66.9036|America/Caracas','Macau|China|22.1987|113.5439|Asia/Macau','Díli|Timor-Leste|-8.5569|125.5603|Asia/Dili'
+];
+var CITIES = RAW.map(function(s){ var p = s.split('|'); return { name: p[0], country: p[1], lat: +p[2], lon: +p[3], tz: p[4], label: p[0] + ', ' + p[1] }; });
+function fold(s){ return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
+CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
+
+// ---------- texts ----------
+var TXT_F = {
+  // Textos baseados nas notas de estudo da Filipa (Astrologia Alquímica da Alma)
+  sol: [
+    'O Sol está exaltado em Carneiro: a tua essência é a da guerreira que veio aprender a coragem de começar e de abrir caminho.',
+    'A tua essência é a da construtora: brilhas quando constróis na matéria com beleza e constância, e te permites o prazer e o teu valor.',
+    'A tua luz é mensageira: a tua essência pede-te que comuniques, ligues pessoas e ideias e espalhes o que sabes.',
+    'A tua essência é a do cuidado: vieste nutrir, proteger e gerar vida, e há nisso algo de profundamente alquímico.',
+    'O Sol está em casa em Leão: a tua essência veio aprender a deixar-se ver, e o teu brilho existe para inspirar os outros.',
+    'A tua essência é a da alquimista paciente: discernes o que tem valor, purificas e realizas, e brilhas quando sabes que és útil.',
+    'A tua essência procura paz, beleza e equilíbrio, mas o caminho do teu Sol começa por encontrar essa paz dentro de ti.',
+    'A tua essência vive na profundidade: vieste morrer e renascer muitas vezes, e trazer do lodo aquilo que tem valor.',
+    'A tua essência é uma flecha apontada ao novo: vieste descobrir terras que ninguém pisou e viver segundo as tuas convicções.',
+    'A tua essência é a da cabra que sobe a montanha: sabes onde queres chegar e fazes o caminho com método, paciência e resiliência.',
+    'A tua essência pede-te que sejas diferente: o teu brilho não é só teu, existe para renovar o coletivo e ver o futuro antes dos outros.',
+    'A tua essência vive entre mundos: inspiração, entrega e fé, e uma ligação ao divino que não cabe em palavras.'
+  ],
+  lua: [
+    'Sentes com intensidade e de imediato, e é essa chama emocional que te dá um enorme poder de realização.',
+    'A Lua está exaltada em Touro: a tua alma encontra alimento na calma, na natureza e no prazer dos sentidos.',
+    'As tuas emoções precisam de passar por palavras: falar, escrever e trocar ideias é a forma de a tua alma se mover.',
+    'A Lua está em casa em Caranguejo: sentes em marés, com uma memória funda e uma intuição que cuida e protege.',
+    'O teu coração precisa de ser visto e reconhecido, e responde com generosidade, criatividade e entusiasmo.',
+    'Sossegas por dentro quando pões ordem por fora: a tua alma quer ser útil, e aprende que já és suficiente.',
+    'A tua alma procura harmonia e beleza nas relações, e aprende a receber amor sem deixar o teu valor nas mãos do outro.',
+    'Sentes fundo e confias devagar: não te entregas facilmente, mas quando te entregas é por inteiro.',
+    'A tua alma precisa de horizonte: liberdade, movimento e otimismo são o que mantém o teu rio interior a correr.',
+    'Guardas as emoções com seriedade: precisas de estrutura para te sentires em segurança, e o teu caminho é abrir o coração.',
+    'Sentes através do coletivo: a tua alma precisa de liberdade, de ser diferente e de se ligar a algo maior.',
+    'A tua alma sente como o mar: absorve o invisível, sonha, intui e precisa de silêncio para voltar a ti.'
+  ],
+  asc: [
+    'A roupa com que chegas ao mundo é a da coragem: iniciativa, frontalidade e vontade de abrir caminho.',
+    'Chegas ao mundo com uma presença serena e os pés na terra: transmites constância, beleza e gosto pelo que tem valor.',
+    'O mundo conhece-te pela curiosidade e pela palavra: a tua roupa é feita de perguntas, ideias e ligações.',
+    'A tua porta de entrada é cuidadora e intuitiva: quem chega perto sente-se acolhido, e tu sentes tudo antes de falar.',
+    'Chegas como quem entra em palco: há em ti uma presença nobre, que pede para ser vista e inspira quem está à volta.',
+    'Apresentas-te com discrição e um olhar fino: reparas no detalhe, pões ordem e tornas tudo mais claro à tua volta.',
+    'Abres caminho com diplomacia e sentido estético: a tua primeira linguagem é a harmonia, e vês com clareza o que o outro precisa.',
+    'Tens uma presença magnética e profunda: os outros sentem a tua intensidade antes de te conhecerem.',
+    'Chegas com entusiasmo e otimismo no olhar: a vida, para ti, é território novo por descobrir.',
+    'Apresentas-te com firmeza e método: inspiras confiança e transmites que sabes para onde vais.',
+    'O mundo vê-te como alguém original: chegas para fazer diferente e trazes um sopro de futuro a qualquer sala.',
+    'Apareces com suavidade e um toque de mistério: há algo de sonhador e inspirado na forma como olhas o mundo.'
+  ],
+  // casas: [nome curto, uma linha]
+  casa: [
+    ['O ponto de partida', 'Como inicias, como te apresentas e como habitas o teu corpo.'],
+    ['Os valores', 'Como constróis na matéria, a tua relação com o dinheiro e com o merecimento.'],
+    ['O canal', 'Como pensas, aprendes e comunicas aquilo que recebes.'],
+    ['As raízes', 'O teu lar interno, a família de origem e a base que te deixa crescer.'],
+    ['O palco', 'O prazer, a criatividade e o brilho que nasce de seres quem és.'],
+    ['O ritmo', 'O quotidiano, a saúde e o trabalho de todos os dias.'],
+    ['O outro', 'As parcerias duradouras e o equilíbrio entre quem és e quem está ao teu lado.'],
+    ['A transformação', 'O mistério, o poder e a arte de morrer e renascer.'],
+    ['O ir além', 'A liberdade, a sabedoria e as convicções que te abrem caminho.'],
+    ['A montanha', 'A missão, o reconhecimento e o legado que vieste deixar.'],
+    ['A tribo', 'O coletivo, os grupos e o que vens oferecer ao mundo, com visão de futuro.'],
+    ['O grande mar', 'O inconsciente, as memórias, a intuição e a forma como vives a espiritualidade.']
+  ]
+};
+var MASC = [['a da guerreira que','a do guerreiro que'],['a da construtora:','a do construtor:']];
+function genPick(){ var g = 'f'; try { g = localStorage.getItem('fo_gen') === 'm' ? 'm' : 'f'; } catch (x) {} return g; }
+function buildTXT(g){ if (g !== 'm') return TXT_F; var t = JSON.stringify(TXT_F); MASC.forEach(function(p){ t = t.split(p[0]).join(p[1]); }); return JSON.parse(t); }
+var TXT = buildTXT(genPick());
+// regente de cada signo, segundo a lista de regências das aulas (Carneiro → Peixes)
+var RULER = ['Mars','Venus','Mercury','Moon','Sun','Mercury','Venus','Pluto','Jupiter','Saturn','Saturn','Jupiter'];
+var RULER_ART = { Sun:'o Sol', Moon:'a Lua' };
+
+// ---------- DOM ----------
+var $ = function(id){ return document.getElementById(id); };
+var form = $('form'), inLocal = $('local'), list = $('localList'), manual = $('manual');
+var chosen = null, activeIdx = -1, shown = [];
+
+// theme toggle
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  $('themeBtn').textContent = t === 'dark' ? '☀' + VS : '☾';
+  try { localStorage.setItem('fo_theme', t); } catch (e) {}
+}
+$('themeBtn').textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' + VS : '☾';
+$('themeBtn').addEventListener('click', function(){
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+// tz select
+var TZS = CITIES.map(function(c){ return c.tz; }).filter(function(v, i, a){ return a.indexOf(v) === i; }).sort();
+$('tz').innerHTML = TZS.map(function(z){ return '<option value="' + z + '"' + (z === 'Europe/Lisbon' ? ' selected' : '') + '>' + z.replace(/_/g, ' ') + '</option>'; }).join('');
+
+
+// combobox
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function renderList(){
+  var q = fold(inLocal.value);
+  if (!q){ closeList(); return; }
+  var starts = [], contains = [];
+  CITIES.forEach(function(c){
+    if (c.f.indexOf(q) === 0 || c.fl.indexOf(q) === 0) starts.push(c);
+    else if (c.fl.indexOf(q) > -1) contains.push(c);
+  });
+  shown = starts.concat(contains).slice(0, 7);
+  activeIdx = shown.length ? 0 : -1;
+  var html = shown.map(function(c, i){
+    return '<li role="option" id="opt' + i + '" data-i="' + i + '"' + (i === activeIdx ? ' class="active" aria-selected="true"' : '') + '>' + esc(c.name) + ' <small>' + esc(c.country) + '</small></li>';
+  }).join('');
+  html += '<li role="option" class="other" data-i="other" id="optOther">Outra cidade (coordenadas manuais)</li>';
+  list.innerHTML = html; list.hidden = false; inLocal.setAttribute('aria-expanded', 'true');
+}
+function closeList(){ list.hidden = true; inLocal.setAttribute('aria-expanded', 'false'); }
+function pick(i){
+  if (i === 'other'){ openManual(); closeList(); return; }
+  var c = shown[i]; if (!c) return;
+  chosen = c; inLocal.value = c.label; closeList(); manual.hidden = true; $('err').textContent = '';
+}
+function openManual(){
+  chosen = null; manual.hidden = false; $('lat').focus();
+}
+inLocal.addEventListener('input', function(){ chosen = null; renderList(); });
+inLocal.addEventListener('focus', function(){ if (inLocal.value && !chosen) renderList(); });
+inLocal.addEventListener('keydown', function(e){
+  if (list.hidden) return;
+  var n = list.children.length;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+    e.preventDefault();
+    activeIdx = (activeIdx + (e.key === 'ArrowDown' ? 1 : -1) + n) % n;
+    Array.prototype.forEach.call(list.children, function(li, i){ li.classList.toggle('active', i === activeIdx); });
+    list.children[activeIdx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter'){
+    e.preventDefault();
+    var li = list.children[activeIdx]; if (li) pick(li.getAttribute('data-i') === 'other' ? 'other' : +li.getAttribute('data-i'));
+  } else if (e.key === 'Escape'){ closeList(); }
+});
+list.addEventListener('mousedown', function(e){
+  var li = e.target.closest('li'); if (!li) return; e.preventDefault();
+  pick(li.getAttribute('data-i') === 'other' ? 'other' : +li.getAttribute('data-i'));
+});
+inLocal.addEventListener('blur', function(){ setTimeout(closeList, 120); });
+$('outraBtn').addEventListener('click', function(){ manual.hidden = !manual.hidden; if (!manual.hidden){ chosen = null; $('lat').focus(); } });
+
+function resolvePlace(){
+  if (chosen) return chosen;
+  var q = fold(inLocal.value);
+  if (q && manual.hidden){
+    var exact = CITIES.filter(function(c){ return c.f === q || c.fl === q; });
+    if (exact.length) return exact[0];
+    var pre = CITIES.filter(function(c){ return c.fl.indexOf(q) === 0; });
+    if (pre.length === 1) return pre[0];
+  }
+  if (!manual.hidden){
+    var lat = parseFloat($('lat').value), lon = parseFloat($('lon').value);
+    if (isFinite(lat) && isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180){
+      var nm = inLocal.value.trim() || (lat.toFixed(2) + '°, ' + lon.toFixed(2) + '°');
+      return { name: nm, label: nm, lat: lat, lon: lon, tz: $('tz').value };
+    }
+  }
+  return null;
+}
+
+// data dd/mm/aaaa (máscara) e conversão para aaaa-mm-dd
+function maskD(el){ el.addEventListener('input', function(){ var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2); if (d.length > 2) o += '/' + d.slice(2, 4); if (d.length > 4) o += '/' + d.slice(4); this.value = o; }); }
+function isoD(v){ var m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v || ''); if (!m) return ''; var d = +m[1], mo = +m[2], y = +m[3], t = new Date(y, mo - 1, d); return (t.getFullYear() === y && t.getMonth() === mo - 1 && t.getDate() === d) ? m[3] + '-' + m[2] + '-' + m[1] : ''; }
+function fmtD(v){ var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : ''; }
+maskD($('data'));
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var err = $('err'); err.textContent = '';
+  if (!$('nome').value.trim()){ err.textContent = 'Escreve o teu nome.'; $('nome').focus(); return; }
+  var dv = isoD($('data').value);
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dv);
+  if (!m){ err.textContent = 'Indica a tua data de nascimento.'; $('data').focus(); return; }
+  var y = +m[1], mo = +m[2], d = +m[3];
+  if (y < 1900 || y > 2100){ err.textContent = 'Escolhe uma data entre 1900 e 2100.'; return; }
+  var tm = /^(\d{1,2}):(\d{2})/.exec($('hora').value);
+  if (!tm){ err.textContent = 'Indica a hora de nascimento.'; $('hora').focus(); return; }
+  var hh = +tm[1], mi = +tm[2];
+  var place = resolvePlace();
+  if (!place){
+    err.textContent = manual.hidden ? 'Escolhe a cidade na lista, ou usa “Outra cidade” para indicar as coordenadas.' : 'Indica a latitude e a longitude (em graus decimais).';
+    (manual.hidden ? inLocal : $('lat')).focus(); return;
+  }
+  if (!A){ err.textContent = 'Não foi possível carregar o motor de cálculo. Recarrega a página.'; return; }
+  var conv = localToUTC(y, mo, d, hh, mi, place.tz);
+  var chart = computeChart(A, conv.utc, place.lat, place.lon);
+  var info_ = { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, place: place, utc: conv.utc, off: conv.offsetMin };
+  render(chart, info_);
+  if (window.FO_CROSS) window.FO_CROSS(info_);
+});
+// dados vindos do pop-up da página da Leitura: desenha logo o mapa
+(function(){
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.get('nome')) $('nome').value = q.get('nome').slice(0, 60);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(q.get('data') || '')) $('data').value = fmtD(q.get('data'));
+    if (/^\d{2}:\d{2}$/.test(q.get('hora') || '')) $('hora').value = q.get('hora');
+    var nm = (q.get('local') || '').slice(0, 80), lat = parseFloat(q.get('lat')), lon = parseFloat(q.get('lon')), tz = q.get('tz') || '';
+    if (nm && isFinite(lat) && isFinite(lon) && TZS.indexOf(tz) > -1){
+      var pais = (q.get('pais') || '').slice(0, 60);
+      chosen = { name: nm, country: pais, lat: lat, lon: lon, tz: tz, label: nm + (pais ? ', ' + pais : '') };
+      inLocal.value = chosen.label;
+      if ($('data').value && $('hora').value) setTimeout(function(){ form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true })); }, 60);
+    } else if (nm){
+      inLocal.value = nm;
+      inLocal.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  } catch (e) {}
+})();
+$('editBtn').addEventListener('click', function(){ var seoEl = document.querySelector('.seo'); if (seoEl) seoEl.hidden = false; form.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('data').focus({ preventScroll: true }); });
+
+// ---------- wheel ----------
+var C = 320, R0 = 284, R1 = 244, RP = 207, RH = 160, RA = 130;
+function rng(seed){ return function(){ seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }; }
+function f1(n){ return Math.round(n * 10) / 10; }
+
+function render(ch, info){
+  var ref = ch.asc; // Ascendant placed at the left
+  function ang(l){ return (180 + (l - ref)) * D2R; }
+  function P(l, r){ var a = ang(l); return [f1(C + r * Math.cos(a)), f1(C - r * Math.sin(a))]; }
+  function line(l, r1, r2, cls, extra){ var p = P(l, r1), q = P(l, r2); return '<line class="' + cls + '" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '"' + (extra || '') + '/>'; }
+  var s = [];
+  s.push('<defs><radialGradient id="discG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--disc1)"/><stop offset="1" stop-color="var(--disc2)"/></radialGradient>' +
+    '<clipPath id="discClip"><circle cx="' + C + '" cy="' + C + '" r="' + R1 + '"/></clipPath></defs>');
+  // disc + stars
+  s.push('<g class="disc"><circle cx="' + C + '" cy="' + C + '" r="' + R0 + '" fill="url(#discG)"/>');
+  var rand = rng((info.y * 372 + info.mo * 31 + info.d) * 97 + info.hh * 60 + info.mi);
+  s.push('<g clip-path="url(#discClip)">');
+  for (var i = 0; i < 70; i++){
+    var rr = Math.sqrt(rand()) * (R1 - 4), aa = rand() * 2 * Math.PI;
+    if (rr > RA - 5 && rr < RH + 5) rr = rr < (RA + RH) / 2 ? RA - 8 - rand() * 20 : RH + 8 + rand() * 20;
+    var x = f1(C + rr * Math.cos(aa)), y = f1(C + rr * Math.sin(aa));
+    var big = rand() < 0.18, rad = big ? 1.4 : (0.5 + rand() * 0.6);
+    s.push('<circle class="star twinkle" cx="' + x + '" cy="' + y + '" r="' + f1(rad) + '" style="--d:' + (3 + rand() * 4).toFixed(1) + 's;--dl:-' + (rand() * 6).toFixed(1) + 's;--o1:' + (0.08 + rand() * 0.12).toFixed(2) + ';--o2:' + (big ? 0.75 : 0.45).toFixed(2) + '"/>');
+  }
+  for (i = 0; i < 6; i++){
+    var r2 = RA * 0.25 + rand() * (R1 - 30 - RA * 0.25), a2 = rand() * 2 * Math.PI;
+    s.push('<text class="spark twinkle" x="' + f1(C + r2 * Math.cos(a2)) + '" y="' + f1(C + r2 * Math.sin(a2)) + '" font-size="' + (7 + Math.round(rand() * 6)) + '" text-anchor="middle" dominant-baseline="central" style="--d:' + (4 + rand() * 3).toFixed(1) + 's;--dl:-' + (rand() * 5).toFixed(1) + 's;--o1:.1;--o2:.6">✦</text>');
+  }
+  s.push('</g></g>');
+
+  // rings
+  s.push('<g>');
+  [[R0, 1.1, .9], [R1, 1, .9], [RH, .7, .55], [RA, .8, .7]].forEach(function(r, k){
+    s.push('<circle class="ring draw" pathLength="1" cx="' + C + '" cy="' + C + '" r="' + r[0] + '" stroke-width="' + r[1] + '" stroke-opacity="' + r[2] + '" transform="rotate(180 ' + C + ' ' + C + ')" style="animation-delay:' + (k * 0.12) + 's"/>');
+  });
+  s.push('<circle class="ring draw" pathLength="1" cx="' + C + '" cy="' + C + '" r="' + (R0 - 5) + '" stroke-width=".5" stroke-opacity=".45" style="animation-delay:.1s"/>');
+  s.push('</g>');
+
+  // ticks + sign divisions + glyphs
+  s.push('<g class="fade" style="animation-delay:.5s">');
+  for (var dg = 0; dg < 360; dg++){
+    var len = dg % 30 === 0 ? 0 : (dg % 10 === 0 ? 9 : (dg % 5 === 0 ? 6 : 3.5));
+    if (len) s.push(line(dg, R1, R1 - len, 'tick', ' stroke-width="' + (dg % 5 === 0 ? .8 : .5) + '" stroke-opacity="' + (dg % 5 === 0 ? .8 : .55) + '"'));
+  }
+  for (var z = 0; z < 12; z++){
+    s.push(line(z * 30, R0 - 5, R1, 'tick', ' stroke-width=".9" stroke-opacity=".85"'));
+    var gp = P(z * 30 + 15, (R0 - 5 + R1) / 2);
+    s.push('<text class="zg" x="' + gp[0] + '" y="' + gp[1] + '" text-anchor="middle" dominant-baseline="central">' + SIGN_GLYPHS[z] + VS + '</text>');
+  }
+  s.push('</g>');
+
+  // houses
+  {
+    s.push('<g class="fade" style="animation-delay:.8s">');
+    ch.cusps.forEach(function(c, k){
+      if (k % 3 !== 0){ s.push(line(c, RA, RH, 'cusp')); s.push(line(c, RH, R1, 'cusp', ' stroke-opacity=".2"')); }
+      var hp = P(c + norm(ch.cusps[(k + 1) % 12] - c) / 2, (RA + RH) / 2); // number in the middle of the (unequal) house
+      s.push('<text class="hn" x="' + hp[0] + '" y="' + hp[1] + '" text-anchor="middle" dominant-baseline="central">' + (k + 1) + '</text>');
+    });
+    // axes ASC–DSC, MC–IC
+    s.push(line(ch.asc, RA, R0 + 10, 'axis'));
+    s.push(line(ch.asc + 180, RA, R0 + 4, 'axis', ' stroke-opacity=".6"'));
+    s.push(line(ch.mc, RA, R0 + 10, 'axis'));
+    s.push(line(ch.mc + 180, RA, R0 + 4, 'axis', ' stroke-opacity=".6"'));
+    s.push('<circle class="dot" cx="' + P(ch.asc, R0 + 10)[0] + '" cy="' + P(ch.asc, R0 + 10)[1] + '" r="2.4"/>');
+    s.push('<circle class="dot" cx="' + P(ch.mc, R0 + 10)[0] + '" cy="' + P(ch.mc, R0 + 10)[1] + '" r="2.4"/>');
+    s.push(axisLabel('ASC', ch.asc));
+    s.push(axisLabel('MC', ch.mc));
+    s.push('</g>');
+  }
+  function axisLabel(t, l){
+    // label just outside the outer ring, offset sideways along the ring so it never sits on the line
+    var p = P(l + (t === 'ASC' ? -4.5 : 4.5), R0 + 15);
+    var a = ang(l), cx = Math.cos(a), cy = -Math.sin(a);
+    var anchor = Math.abs(cx) < .35 ? 'middle' : (cx < 0 ? 'end' : 'start');
+    if (t === 'ASC') anchor = 'middle';
+    var px = p[0], py = p[1];
+    if (t === 'ASC'){ var q = P(l - 6, R0 + 4); px = q[0] - 1; py = q[1] + 14; anchor = 'start'; }
+    return '<text class="ax" x="' + px + '" y="' + py + '" text-anchor="' + anchor + '" dominant-baseline="central">' + t + '</text>';
+  }
+
+  // aspects
+  var ASP = [{a:180, hard:1}, {a:90, hard:1}, {a:120}, {a:60}];
+  var asp = [];
+  for (i = 0; i < ch.planets.length; i++) for (var j = i + 1; j < ch.planets.length; j++){
+    var dd = Math.abs(norm(ch.planets[i].lon - ch.planets[j].lon)); if (dd > 180) dd = 360 - dd;
+    ASP.forEach(function(A2){
+      var orb = Math.abs(dd - A2.a);
+      if (orb <= 6) asp.push({ i: i, j: j, hard: A2.hard, orb: orb });
+    });
+  }
+  s.push('<g>');
+  asp.sort(function(a, b){ return b.orb - a.orb; }).forEach(function(x, k){
+    var p = P(ch.planets[x.i].lon, RA), q = P(ch.planets[x.j].lon, RA);
+    var op = (0.85 - x.orb / 6 * 0.5).toFixed(2);
+    s.push('<line class="asp draw' + (x.hard ? ' hard' : '') + '" pathLength="1" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '" stroke-width="' + (x.hard ? .8 : .7) + '" stroke-opacity="' + op + '"' + (x.hard ? '' : '') + ' style="animation-delay:' + (1.4 + k * 0.06).toFixed(2) + 's;animation-duration:1.2s"/>');
+  });
+  // small marks on the aspect ring at exact degrees
+  ch.planets.concat(ch.points || []).forEach(function(p){ var q = P(p.lon, RA); s.push('<circle class="dot fade" cx="' + q[0] + '" cy="' + q[1] + '" r="1.6" style="animation-delay:1.3s"/>'); });
+  s.push('</g>');
+
+  // planets with collision spreading
+  var MIN = 10;
+  var all = ch.planets.concat(ch.points || []);
+  var items = spread(all.map(function(p, k){ return { k: k, lon: p.lon }; }), MIN);
+  s.push('<g>');
+  items.forEach(function(itm, n){
+    var p = all[itm.k];
+    var e = P(p.lon, R1), g0 = P(itm.pos, R1 - 14), gp = P(itm.pos, RP), dp = P(itm.pos, RP - 24), rp = P(itm.pos, RP - 38);
+    var delay = (1 + n * 0.09).toFixed(2);
+    s.push('<g class="rise" style="animation-delay:' + delay + 's">' +
+      '<polyline class="ptr" fill="none" points="' + e.join(',') + ' ' + g0.join(',') + ' ' + P(itm.pos, RP + 15).join(',') + '"/>' +
+      '<text class="pg' + (p.key === 'Sun' || p.key === 'Moon' ? ' lum' : '') + (p.point ? ' pt' : '') + '" x="' + gp[0] + '" y="' + gp[1] + '" text-anchor="middle" dominant-baseline="central"><title>' + p.name + ' em ' + SIGNS[signOf(p.lon)] + ' ' + fmtDeg(p.lon) + (p.retro ? ' (retrógrado)' : '') + '</title>' + p.glyph + VS + '</text>' +
+      '<text class="pd" x="' + dp[0] + '" y="' + dp[1] + '" text-anchor="middle" dominant-baseline="central">' + Math.floor(norm(p.lon) % 30) + '°</text>' +
+      (p.retro ? '<text class="pd rx" x="' + rp[0] + '" y="' + rp[1] + '" text-anchor="middle" dominant-baseline="central">℞</text>' : '') +
+      '</g>');
+  });
+  s.push('</g>');
+
+  var svg = $('wheel');
+  svg.classList.remove('anim'); void svg.getBoundingClientRect();
+  svg.innerHTML = '<desc id="wheelDesc">' + esc(describe(ch, info)) + '</desc>' + s.join('');
+  svg.classList.add('anim');
+
+  // header
+  var who = info.name ? 'Mapa astral • ' + esc(info.name) : 'Mapa astral';
+  $('resTitle').innerHTML = who;
+  var ds = pad(info.d) + '/' + pad(info.mo) + '/' + info.y, ts = pad(info.hh) + ':' + pad(info.mi);
+  $('resMeta').textContent = 'Nascida/o a ' + ds + ', às ' + ts + ' (hora legal: ' + fmtOff(info.off) + ') · ' + info.place.name;
+  var note = $('resNote'), tzNote = offNote(info);
+  if (ch.houseSys === 'Porphyry') tzNote += (tzNote ? ' ' : '') + '(a esta latitude, as casas foram calculadas pelo sistema Porfírio)';
+  note.hidden = !tzNote; note.textContent = tzNote;
+
+  // birthday within 45 days: Revolução Solar hint
+  $('bday').hidden = !nearBirthday(info.mo, info.d, 45);
+
+  // planet list
+  var rows = ch.planets.concat(ch.points || []).map(function(p){
+    return '<li><span class="g" aria-hidden="true">' + p.glyph + VS + '</span><span class="n">' + p.name + ' <small>em ' + SIGNS[signOf(p.lon)] + '</small></span><span class="v">' + fmtDeg(p.lon) + (p.retro ? '<span class="r" title="retrógrado">℞</span>' : '') + '</span></li>';
+  });
+  {
+    rows.push('<li><span class="g" aria-hidden="true" style="font-family:var(--sans);font-size:11px;letter-spacing:.05em">ASC</span><span class="n">Ascendente <small>em ' + SIGNS[signOf(ch.asc)] + '</small></span><span class="v">' + fmtDeg(ch.asc) + '</span></li>');
+    rows.push('<li><span class="g" aria-hidden="true" style="font-family:var(--sans);font-size:11px;letter-spacing:.05em">MC</span><span class="n">Meio do Céu <small>em ' + SIGNS[signOf(ch.mc)] + '</small></span><span class="v">' + fmtDeg(ch.mc) + '</span></li>');
+  }
+  $('planets').innerHTML = rows.join('');
+
+  // pillars
+  var sun = signOf(ch.planets[0].lon), moon = signOf(ch.planets[1].lon);
+  var html = pillar('Sol', '☉', SIGNS[sun], SIGN_GLYPHS[sun], TXT.sol[sun], 0);
+  $('pillars').innerHTML = html;
+  var as = signOf(ch.asc);
+  $('pillars2').innerHTML = pillar('Lua', '☽', SIGNS[moon], SIGN_GLYPHS[moon], TXT.lua[moon], 1) +
+    pillar('Ascendente', 'AC', SIGNS[as], SIGN_GLYPHS[as], TXT.asc[as], 2);
+  lastInfo = info;
+  lastSum = { sol: 'Sol em ' + SIGNS[sun] + '. ' + TXT.sol[sun], lua: 'Lua em ' + SIGNS[moon] + '. ' + TXT.lua[moon], asc: 'Ascendente em ' + SIGNS[as] + '. ' + TXT.asc[as] };
+  if (info.name && !$('gNome').value) $('gNome').value = info.name;
+  try { var fe = localStorage.getItem('fo_email'); if (fe && !$('gEmail').value) $('gEmail').value = fe; } catch (x) {}
+  setLocked(!unlocked());
+
+  // layers: house of the Sun + ruler of the Sun's sign
+  var lay = $('layers');
+  {
+    var sunP = ch.planets[0], hS = houseOf(ch, sunP.lon);
+    var rk = RULER[sun], rP = ch.planets.filter(function(p){ return p.key === rk; })[0], hR = houseOf(ch, rP.lon);
+    var rName = RULER_ART[rk] || rP.name;
+    var lh = '<h3>O que a Leitura revela</h3><p class="sub">Para lá do signo</p>';
+    lh += '<p class="ask">Tens Sol em ' + SIGNS[sun] + ', mas sabias que a casa do mapa astral onde ele se encontra fala da área da tua vida em que essas características se expressam? E sabes que tem relação com a casa onde está o regente do signo, neste caso <em>' + (rk === 'Sun' ? 'o próprio Sol' : rName) + '</em>? Na Leitura Intuitiva recebes toda essa história.</p>';
+    // Meio do Céu: signo, regente do Ascendente e planeta mais perto do MC
+    var mcS = signOf(ch.mc), ark = RULER[as], aName = RULER_ART[ark] || ch.planets.filter(function(p){ return p.key === ark; })[0].name;
+    var near = ch.planets.slice().sort(function(x, y){ return angDist(x.lon, ch.mc) - angDist(y.lon, ch.mc); })[0];
+    var mcTxt = 'O teu Meio do Céu está em ' + SIGNS[mcS] + '. É o ponto mais alto do céu no instante em que nasceste: a montanha que a tua alma veio subir. Não é só a tua profissão, é a presença que vieste acender no mundo, e chega com maturidade. Há muito para reconhecer na forma como o teu Ascendente em ' + SIGNS[as] + ', o planeta mais próximo deste ponto e o resto do teu mapa se ligam a esta montanha, e é esse trabalho profundo de reconhecimento que fazemos juntas na análise da tua Leitura.';
+    lh += '<p class="ask mc"><strong>O teu Meio do Céu • Profissional e o teu legado</strong><br>' + mcTxt + '</p>';
+    lastSum.mc = mcTxt;
+    lh += '<p class="close map-benefit-original">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a transformar as crenças que reconheces em ti. Nas sessões de alinhamento vamos mais longe: com outras ferramentas e o meu método único, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
+    lay.innerHTML = lh; lay.hidden = false;
+  }
+
+  if(window.FO_MAPS) window.FO_MAPS.onRendered({kind:'astral',info:info,summary:lastSum},function(){setLocked(false);});
+  var res = $('result'); res.hidden = false;
+  var seoEl = document.querySelector('.seo'); if (seoEl) seoEl.hidden = true;
+  requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
+}
+function spread(items, MIN){
+  // cluster-based spreading: overlapping glyphs are fanned out evenly around their mean longitude
+  items.sort(function(a, b){ return a.lon - b.lon; });
+  var n = items.length, bestGap = -1, start = 0;
+  for (var i = 0; i < n; i++){
+    var g = norm(items[(i + 1) % n].lon - items[i].lon); if (n === 1) g = 360;
+    if (g > bestGap){ bestGap = g; start = (i + 1) % n; }
+  }
+  var lin = [];
+  for (i = 0; i < n; i++){ var it = items[(start + i) % n]; it.x = i === 0 ? it.lon : lin[i - 1].x + norm(it.lon - lin[i - 1].lon); lin.push(it); }
+  var blocks = lin.map(function(it){ return { m: [it], c: it.x }; });
+  var changed = true;
+  while (changed){
+    changed = false;
+    for (i = 0; i < blocks.length - 1; i++){
+      var L = blocks[i], R = blocks[i + 1];
+      var lEnd = L.c + (L.m.length - 1) / 2 * MIN, rStart = R.c - (R.m.length - 1) / 2 * MIN;
+      if (rStart - lEnd < MIN){
+        var m = L.m.concat(R.m);
+        blocks.splice(i, 2, { m: m, c: m.reduce(function(s, it){ return s + it.x; }, 0) / m.length });
+        changed = true; break;
+      }
+    }
+  }
+  blocks.forEach(function(bl){ bl.m.forEach(function(it, k){ it.pos = norm(bl.c + (k - (bl.m.length - 1) / 2) * MIN); }); });
+  return lin;
+}
+function houseOf(ch, lon){
+  for (var i = 0; i < 12; i++){
+    var a = ch.cusps[i], b = ch.cusps[(i + 1) % 12];
+    if (norm(lon - a) < norm(b - a)) return i + 1;
+  }
+  return 1;
+}
+function layer(icon, kind, title, text, n, tag){
+  return '<div class="pillar reveal" style="animation-delay:' + (0.4 + n * 0.12) + 's"><div class="ic" aria-hidden="true">' + icon + VS + '</div><div><p class="k">' + kind + '</p><h4>' + title + (tag ? '<small>' + tag + '</small>' : '') + '</h4><p>' + text + '</p></div></div>';
+}
+function pillar(kind, icon, title, zg, text, n){
+  var icStyle = icon === 'AC' ? ' style="font-family:var(--sans);font-size:13px;letter-spacing:.06em"' : '';
+  return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true"' + icStyle + '>' + icon + (icon === 'AC' ? '' : VS) + '</div><div><p class="k">' + kind + '</p><h4>' + title + (zg ? '<span class="zs" aria-hidden="true">' + zg + VS + '</span>' : '') + '</h4><p>' + text + '</p></div></div>';
+}
+// gate: subscrição anterior (grupo do mapa astral)
+(function(){
+  var g = genPick();
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="gen"]'), function(r){ r.checked = r.value === g; r.addEventListener('change', function(){ if (r.checked){ try { localStorage.setItem('fo_gen', r.value); } catch (x) {} } }); });
+  Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), function(b){ b.style.fontWeight = b.getAttribute('data-g') === g ? '700' : '400'; b.addEventListener('click', function(){ try { localStorage.setItem('fo_gen', b.getAttribute('data-g')); } catch (x) {} location.reload(); }); });
+})();
+
+var lastInfo = null, lastSum = null;
+function unlocked(){ return !!window.FO_MAPS?.authorized; }
+function setLocked(on){
+  $('locked').classList.toggle('on', on);
+  $('posBox').hidden = false;
+  $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
+  if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
+}
+// «este mapa é de outra pessoa»: a ficha fica com os dados de quem subscreve, nunca com os da outra pessoa
+(function(){
+  $('gOutra').addEventListener('change', function(){ $('gCons').hidden = !this.checked; });
+  var c = $('gOutra'), w = $('gOutroWrap'), l = document.querySelector('label[for="gNome"]'), curName = '';
+  function upd(){
+    w.hidden = !c.checked; l.textContent = c.checked ? 'O teu nome' : 'Nome';
+    if (c.checked){ if (!$('gOutro').value) $('gOutro').value = curName; if (curName && $('gNome').value === curName) $('gNome').value = ''; }
+    else if (!$('gNome').value && curName) $('gNome').value = curName;
+  }
+  c.addEventListener('change', upd);
+  window.foGateOther = function(other, name){ curName = name || ''; $('gOutro').value = other ? curName : ''; c.checked = !!other; upd(); };
+})();
+// mapas de outras pessoas: só se vêem depois de a pessoa deixar o seu próprio e-mail (fica associado na ficha do subscrição anterior)
+
+function pad(n){ return (n < 10 ? '0' : '') + n; }
+function fmtOff(o){
+  var sg = o >= 0 ? '+' : '−', ao = Math.abs(Math.round(o));
+  return 'UTC' + sg + Math.floor(ao / 60) + (ao % 60 ? ':' + pad(ao % 60) : '');
+}
+// short note when the legal time on that date differs from what the same zone uses today
+function offNote(info){
+  var tz = info.place.tz;
+  // mainland Portugal on Central European Time: 27 Sep 1992 01:00 UTC to 31 Mar 1996 01:00 UTC
+  if (tz === 'Europe/Lisbon' && info.utc >= Date.UTC(1992, 8, 27, 1) && info.utc < Date.UTC(1996, 2, 31, 1))
+    return '(entre 1992 e 1996 Portugal esteve no fuso da Europa Central)';
+  var ref = localToUTC(2015, info.mo, info.d, info.hh, info.mi, tz).offsetMin;
+  if (Math.round(ref) !== Math.round(info.off)) return '(nessa data, a hora legal deste lugar era diferente da de hoje)';
+  return '';
+}
+function nearBirthday(mo, d, days){
+  var now = new Date(), t = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()), best = Infinity;
+  for (var k = -1; k <= 1; k++){
+    var y = now.getFullYear() + k;
+    var leap = y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0);
+    var dd = (mo === 2 && d === 29 && !leap) ? 28 : d;
+    best = Math.min(best, Math.abs(Date.UTC(y, mo - 1, dd) - t) / 864e5);
+  }
+  return best <= days;
+}
+function describe(ch, info){
+  var t = 'Mapa natal. ' + ch.planets.map(function(p){ return p.name + ' em ' + SIGNS[signOf(p.lon)] + ' ' + fmtDeg(p.lon) + (p.retro ? ' retrógrado' : ''); }).join('; ');
+  t += '; Ascendente em ' + SIGNS[signOf(ch.asc)] + ' ' + fmtDeg(ch.asc) + '; Meio do Céu em ' + SIGNS[signOf(ch.mc)] + ' ' + fmtDeg(ch.mc);
+  return t + '.';
+}
+})();
+</script>
+<script>
+// ligação para ver também o outro desenho com os mesmos dados
+(function(){
+
+  function foWho(info, qs){
+    window.foCurQs = qs; try { if (!localStorage.getItem('fo_own') && !/[?&]outra=1/.test(location.search)) localStorage.setItem('fo_own', qs); } catch (x) {}
+    try {
+      var P = []; try { P = JSON.parse(localStorage.getItem('fo_people') || '[]'); } catch (x) {}
+      P = P.filter(function(o){ return o.q !== qs; }); P.push({ n: info.name || 'Sem nome', q: qs, d: info.d + '/' + info.mo + '/' + info.y });
+      P = P.slice(-8); try { localStorage.setItem('fo_people', JSON.stringify(P)); } catch (x) {}
+      var T = document.getElementById('resTitle'), nm = info.name; if (!T || !nm) return;
+      var tx = T.textContent, i = tx.lastIndexOf(nm); if (i < 0) return;
+      var pre = tx.slice(0, i), wrap = document.createElement('span'); wrap.className = 'who-wrap';
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'whobtn'; btn.textContent = nm + ' '; var ar = document.createElement('span'); ar.textContent = '▾'; ar.style.cssText = 'font-size:.5em;vertical-align:.25em;font-family:DM Sans,sans-serif'; btn.appendChild(ar); btn.setAttribute('aria-haspopup', 'true');
+      var menu = document.createElement('div'); menu.className = 'whomenu'; menu.hidden = true;
+      P.slice().reverse().forEach(function(o){
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = o.n + ' · ' + o.d; if (o.q === qs) b.className = 'cur';
+        b.addEventListener('click', function(){ goPerson(o.q); }); menu.appendChild(b);
+      });
+      var nw = document.createElement('button'); nw.type = 'button'; nw.className = 'nw'; nw.textContent = '＋ Gerar um novo mapa';
+      nw.addEventListener('click', function(){ menu.hidden = true; newMap(); }); menu.appendChild(nw);
+      wrap.appendChild(btn); wrap.appendChild(menu); T.textContent = pre; T.appendChild(wrap);
+      btn.addEventListener('click', function(e){ e.stopPropagation(); menu.hidden = !menu.hidden; });
+      document.addEventListener('click', function(){ menu.hidden = true; });
+    } catch (x) {}
+  }
+  function goPerson(q){ location.href = '/revisao-1c84d0e0a3b438d872a2d26b/p-mapa-astral.html?' + q + (new URLSearchParams(location.search).get('tambem') ? '&tambem=hd' : '') + '#mapa'; }
+  function newMap(){ document.getElementById('editBtn').click(); }
+  window.addEventListener('message', function(e){ var d = e.data || {}; if (d.fo === 'new') newMap(); if (d.fo === 'go' && typeof d.q === 'string') goPerson(d.q); });
+  var p = document.getElementById('crossNote'), a = document.getElementById('crossLink'); if (!p || !a) return;
+  var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
+  try { localStorage.setItem('fo_both', both ? '1' : '0'); } catch (x) {}
+  if (both) p.classList.add('both');
+  window.foCrossEnd = function(href, p){
+    try {
+      var ce = document.getElementById('crossEnd');
+      if (!ce){ ce = document.createElement('p'); ce.id = 'crossEnd'; ce.className = 'crossend'; var cta = document.querySelector('.cta'); if (cta) cta.parentNode.insertBefore(ce, cta); else return; }
+      ce.innerHTML = p.querySelector('.c1').outerHTML + '<a href="' + href + '">' + p.querySelector('a').textContent + '</a>';
+    } catch (e) {}
+  };
+  window.FO_CROSS = function(info){
+    try {
+      function pad(n){ return (n < 10 ? '0' : '') + n; }
+      var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
+      a.href = 'human-design.html?' + q.toString() + '';
+      foWho(info, q.toString());
+      var other = !!window.FO_MAPS?.identity?.other; if(other) q.set('outra','1');
+      try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
+      if (window.foGateOther) window.foGateOther(other, info.name || '');
+      try { if (other && !/embed=1/.test(location.search) && !localStorage.getItem('fo_email') && window.foNeedMail) window.foNeedMail(); } catch (x) {}
+
+      if (both){
+        document.body.classList.add('dual');
+        var col = document.getElementById('hdCol');
+        if (!col){
+          col = document.createElement('section'); col.id = 'hdCol';
+          col.innerHTML = '<iframe id="hdFrame" title="O teu Human Design" scrolling="no"></iframe>';
+          var res = document.getElementById('result'); res.parentNode.insertBefore(col, res.nextSibling);
+          window.addEventListener('message', function(e){ if (e.data && e.data.fo === 'hdh') document.getElementById('hdFrame').style.height = (e.data.h + 8) + 'px'; });
+        }
+        var hf = document.getElementById('hdFrame'); hf.style.minHeight = '640px'; hf.src = 'human-design.html?' + q.toString() + '&embed=1&r=' + Date.now();
+        var anc = col; ['.cta', '#bday', '.again'].forEach(function(sel){ var el = document.querySelector(sel); if (el){ anc.parentNode.insertBefore(el, anc.nextSibling); anc = el; } });
+        p.hidden = true;
+      } else { p.hidden = false; window.foCrossEnd(a.href, p); }
+    } catch (e) {}
+  };
+})();
+</script>
+<dialog id="convites-dialog" class="site-dialog" aria-labelledby="convites-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Fechar">×</button><div class="dialog-heading"><span class="eyebrow">Convites e parcerias</span><h2 id="convites-title">Vamos conversar e cocriar.</h2><p>Conta-me um pouco sobre a tua comunidade ou empresa e o encontro que imaginas. Não precisas de ter um formato definido.</p></div><form id="partnershipForm"><div class="dialog-grid"><label>Nome e apelido<input name="nome" required autocomplete="name" maxlength="150"></label><label>E-mail<input name="email" type="email" required autocomplete="email" maxlength="254"></label><label>Comunidade ou empresa<input name="organizacao" required maxlength="200"></label></div><label>Que encontro imaginas? Tema, objetivo, formato<textarea name="ideia" rows="3" required maxlength="5000"></textarea></label><label data-partnership-location>Localidade<input name="localidade" maxlength="200"></label><div class="dialog-grid"><label>Data aproximada<input name="data" placeholder="Por exemplo, janeiro de 2027" maxlength="100"></label></div><label class="dialog-check"><input type="checkbox" name="privacidade" required><span>Aceito que a Filipa Osório use estes dados para me responder. <a href="/revisao-1c84d0e0a3b438d872a2d26b/p-privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label><p class="dialog-note">Este é um pedido de informação e de proposta, sem compromisso.</p><p class="dialog-status" role="status" aria-live="polite"></p><button class="dialog-primary" type="submit">Rever o meu convite</button></form><section class="partnership-review" hidden tabindex="-1"><h3>O teu convite, para rever</h3><p>Pré-visualização local. Nenhum dado foi enviado.</p><pre></pre><button class="dialog-primary" type="button" data-edit-partnership>Voltar e editar</button></section></dialog></body>
+</html>
+
