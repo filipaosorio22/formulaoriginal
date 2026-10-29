@@ -54,7 +54,7 @@ if(form){
   for(const id of ['nome','apelido','email','telefone','tema','contexto']){if(!data[id]){status.textContent=english?'Please complete this field.':'Preenche o campo «'+labels[id]+'».';by(id).focus();return;}}
   if(data.telefone.replace(/\D/g,'').length<7){status.textContent=ui('Confirma o número de telemóvel, incluindo o indicativo.');by('telefone').focus();return;}
   if(!requestRef)requestRef=cfg.preview!==false?'DEMONSTRACAO':('tarot_'+crypto.randomUUID().replace(/-/g,''));
-  const promotionNote=promotionOption?.checked?'Oferta de regresso partilhada: Momento 44 EUR; opcional Essência +197 EUR, total 241 EUR. Testemunho honesto aceite, sem obrigação de ser positivo. Opção final confirmada no Stripe.\n\n':'';
+  const promotionNote=promotionOption?.checked?(english?'Return promotion: Now Reading 44 EUR, limited to the first five people. Honest testimonial agreed, with no obligation to be positive.\n\n':'Promoção de regresso: Leitura de Momento 44 EUR, limitada às primeiras cinco pessoas. Testemunho honesto aceite, sem obrigação de ser positivo.\n\n'):'';
   const message=promotionNote+'Pedido expresso de preparação nas 24 horas após pagamento e dados completos: confirmado. Perda do direito após prestação integral: reconhecida.\n\nReferência do pedido: '+requestRef+'\nEstado: aguarda confirmação do pagamento\n\nLeitura de Momento · '+(cfg.price||88)+' €\nEntrega em áudio · até 5 dias úteis após pagamento e receção do contexto\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>labels[id]+': '+data[id]).join('\n\n');
   if(cfg.preview!==false){by('resumoTexto').textContent=english?('The Now Reading · €'+(cfg.price||88)+'\nPersonalised audio · within 5 business days after payment and receipt of your context\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>({nome:'First name',apelido:'Last name',email:'Email',telefone:'Mobile / WhatsApp',nif:'Tax ID',tema:'Theme or question',contexto:'Context',desejo:'What I’d like to understand',idioma:'Reading language'}[id])+': '+data[id]).join('\n\n')):message;by('pedidoResumo').hidden=false;form.hidden=true;by('resumoTitle').focus();by('pedidoResumo').scrollIntoView({block:'center',behavior:'smooth'});return;}
   if(!cfg.paymentLink||!/^https:\/\/buy\.stripe\.com\//.test(cfg.paymentLink)||!cfg.web3formsKey){status.textContent=ui('O pedido online ainda não está disponível. Tenta novamente mais tarde.');return;}
@@ -69,3 +69,4 @@ if(form){
 }
 
 renderExample();
+

@@ -48,10 +48,6 @@
   const target=document.querySelector('.pause-fm')||document.querySelector('[data-bio-start]');if(!target)return;e.preventDefault();e.stopImmediatePropagation();
   glideTo(()=>target,1500);
  }),true);
- // Entering from the gift popup selects only the optional gift; consent stays unchecked.
- if(new URLSearchParams(location.search).get('miminho')==='1'){
-  const option=document.getElementById('ofertaTarot');if(option&&!option.checked){option.checked=true;option.dispatchEvent(new Event('change',{bubbles:true}));}
- }
  const form=document.getElementById('partnershipForm');
  if(!form)return;
  const format=form.elements.formato,local=form.querySelector('[data-partnership-location]');
@@ -74,3 +70,4 @@
   finally{button.disabled=false;button.textContent=say('Enviar o meu convite','Send my invitation');}
  });
 })();
+
