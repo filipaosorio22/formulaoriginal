@@ -174,7 +174,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <div class="card">
       <p class="total">Total: <b id="tot">125€</b></p>
       <p class="prazo" id="prazo">✦ Prazo de entrega da Leitura:<br><b>até 14 dias úteis</b> após a confirmação do pagamento e a receção de todos os dados.</p>
-      <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura de Essência</a> e a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
+      <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a id="termosLink" href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos da Leitura de Essência</a> e a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
       <label class="chk"><input type="checkbox" id="inicioImediato" name="inicioImediato" required><span>Peço expressamente que a preparação da minha Leitura comece nas 24 horas seguintes à confirmação do pagamento e à receção de todos os dados necessários, mesmo durante os 14 dias de livre resolução. Se desistir antes da conclusão, pode ser devido um valor proporcional ao trabalho efetivamente realizado. Reconheço que perco o direito de livre resolução quando o serviço estiver integralmente prestado, com o meu consentimento prévio.</span></label><label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo de desenvolvimento pessoal do Substack da Filipa (opcional, podes cancelar quando quiseres)</span></label>
       <p class="err" id="err" role="alert"></p>
       <div class="actions"><button class="btn" type="submit" id="go">Enviar pelo WhatsApp</button></div>
@@ -248,6 +248,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     var solo = base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
     $('inicioImediato').closest('label').hidden = solo; $('inicioImediato').required = !solo;
     $('rs').closest('label').hidden = solo;
+    var tl = $('termosLink'); if (tl){ tl.href = solo ? 'termos-ceen.html' : 'termos-leitura-intuitiva.html'; tl.textContent = solo ? 'termos da sessão de alinhamento' : 'termos da Leitura de Essência'; }
     document.querySelector('[data-op="sessao"]').hidden=false;
     $('hd').checked = !solo;
     $('tot').textContent = total() + '€';
