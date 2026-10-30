@@ -1139,9 +1139,10 @@ function describe(hd){
     try {
       function pad(n){ return (n < 10 ? '0' : '') + n; }
       var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
+      // mapa de outra pessoa: o desenho ao lado e a ligação «ver também» continuam marcados como de outra pessoa
+      var other = !!window.FO_MAPS?.identity?.other || new URLSearchParams(location.search).get('outra') === '1'; if(other) q.set('outra','1');
       a.href = '/revisao-f5eca2e9b966693a4e5d621b/p-mapa-astral.html?' + q.toString() + '#mapa';
       foWho(info, q.toString());
-      var other = !!window.FO_MAPS?.identity?.other; if(other) q.set('outra','1');
       try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
       if (window.foGateOther) window.foGateOther(other, info.name || '');
       try { if (other && !/embed=1/.test(location.search) && !localStorage.getItem('fo_email') && window.foNeedMail) window.foNeedMail(); } catch (x) {}
