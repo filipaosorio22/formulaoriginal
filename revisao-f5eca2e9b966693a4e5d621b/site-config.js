@@ -1,5 +1,5 @@
 /* One catalogue for Portuguese and English. No private API keys. */
-(()=>{const preview=true;
+(()=>{const preview=false;
 const links={leitura:'https://buy.stripe.com/bJe4gz2wZ9AT5qlcHIfw40Y',rs:'https://buy.stripe.com/8x24gzefH28r3idgXYfw410',sessao:'https://buy.stripe.com/00w3cvc7zdR9bOJ4bcfw413',rssessao:'https://buy.stripe.com/00w5kD6Nf4gz2e97nofw414',sessaosolo:'https://buy.stripe.com/14A5kD1sVfZhdWRcHIfw412',rssolo:'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'};
 Object.keys(links).forEach(k=>{links[k+'+hd']=links[k]});
 // Essência + Momento a 44€ (primeiras 5, limite de 5 compras em cada link)

@@ -12,6 +12,8 @@ window.foSendMap=function(kind,email,info,extra){
  if(!other){
   const parts=(info.name||'').trim().split(/\s+/);f.FIRSTNAME=parts.shift()||'';f.LASTNAME=parts.join(' ');
   f.DATA_NASCIMENTO=pad(info.d)+'-'+pad(info.mo)+'-'+info.y;f.HORA_NASCIMENTO=pad(info.hh)+':'+pad(info.mi);f.LOCAL_NASCIMENTO=info.place.name+(info.place.country?', '+info.place.country:'');
+  // linguagem do texto escolhida pela pessoa (feminino por omissão, como no site)
+  try{f.GENERO=localStorage.getItem('fo_gen')==='m'?'masculino':'feminino';}catch(e){f.GENERO='feminino';}
   Object.assign(f,extra||{});
  }
  const key='fo_brevo_'+kind+'_'+email+'_'+(other?'outra':f.DATA_NASCIMENTO+f.HORA_NASCIMENTO);
