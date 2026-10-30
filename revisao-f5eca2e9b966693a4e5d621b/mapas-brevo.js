@@ -1,6 +1,9 @@
 /* Envia o contacto de quem desenha um mapa para o formulário do Brevo (sem chaves privadas; o e-mail nunca vai no URL).
    Colar aqui o endereço «action» de cada formulário do Brevo. Vazio = não envia. */
-window.FO_BREVO_MAPS={astral:'',hd:''};
+window.FO_BREVO_MAPS={
+ astral:'https://24dad009.sibforms.com/serve/MUIFAIH4vbda_y9weJ6HD-PRSOZ_7LoOntLPWPpsGi-aSsnaQ93OsWvohZsKlqh5VCFOT3F-rd-YIvasNpznaRyPApPAHRizOzIZAdJ8iln7Q35xJ8aYWEueJFlVe_yysn-bV85dVMDO1FRBIpwuMBibntm7GBQk19Kf_rKDTYiJA_hCKLda30O33Gb2qSyaYYzuykwbAicCrmoqnA==',
+ hd:'https://24dad009.sibforms.com/serve/MUIFADjPFn2CLqUQ0mCKf3CbWxB-g4Gfg0kxkSC-6K_akgDLn6TUcJh0_SZGHG1xWX4mYc13_tcuw2VmV-fePv4OIIE_k4YSU_flbJ9g6Qh6rXAMDBTst29GVrxPuQvt-KDtnTiV73MgS_9-SBXuBuOheSqkTVIX8eaNK9MJwSALxXjEFs7LlmZO5-g2TeQ9vNaj5qQNsOOzj8N6Lg=='
+};
 window.foSendMap=function(kind,email,info,extra){
  const url=(window.FO_BREVO_MAPS||{})[kind];if(!url||!email)return;
  const pad=n=>String(n).padStart(2,'0'),other=new URLSearchParams(location.search).get('outra')==='1';

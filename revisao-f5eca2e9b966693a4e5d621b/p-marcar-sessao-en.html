@@ -116,6 +116,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Add the Solar Return · +€100</b><br>Further insight into your current moment: the themes and possibilities of your annual cycle, in dialogue with your birth chart.</span></label>
       <label class="choice" id="momWrap"><input type="checkbox" id="mom"><span><b>Add the Now Reading · +€44</b><br>Half price, for the first 5 people: an audio reading on a specific question in your life right now.</span></label>
+      <label class="chk" id="momTestWrap" hidden><input type="checkbox" id="momTest"><span>I agree to share a testimonial about my experience with the Now Reading. Publishing my name, voice or image requires my separate permission.</span></label>
       <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
     </div>
 
@@ -248,7 +249,7 @@ function total(){ return +sel().getAttribute('data-p') + (momOn() ? 44 : 0); }
   function hdOk(){ return true; }
   function updTotal(){
     var solo = base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
-    $('rs').closest('label').hidden = solo; $('momWrap').hidden = solo || gift; if ($('momWrap').hidden) $('mom').checked = false;
+    $('rs').closest('label').hidden = solo; $('momWrap').hidden = solo || gift; if ($('momWrap').hidden) $('mom').checked = false; $('momTestWrap').hidden = !momOn(); $('momTest').required = momOn();
     $('hd').checked = !solo;
     $('tot').textContent = total() + '€';
     var v = sel().value, sn = $('sesNote');
@@ -295,7 +296,8 @@ function total(){ return +sel().getAttribute('data-p') + (momOn() ? 44 : 0); }
  const fail=(pt,english,id)=>{err.textContent=say(pt,english);if(id)$(id).focus();};
  if(!$('nome').value.trim())return fail('Escreve o teu nome.','Please enter your first name.','nome');
  if(!$('apelido').value.trim())return fail('Escreve o teu apelido.','Please enter your last name.','apelido');
- if(raw.replace(/\D/g,'').length<7)return fail('Confirma o teu telemóvel.','Please check your mobile number.','tel');
+ if(momOn()&&!$('momTest').checked)return fail('Confirma o compromisso de partilhar o teu testemunho, ou retira a Leitura de Momento.','Please confirm you will share your testimonial, or remove the Now Reading.','momTest');
+  if(raw.replace(/\D/g,'').length<7)return fail('Confirma o teu telemóvel.','Please check your mobile number.','tel');
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))return fail('Confirma o teu e-mail.','Please check your email.','email');
  const birth=[$('data').value,$('hora').value,$('local').value.trim()];
  if(birth[0]&&!validDate(birth[0]))return fail('Confirma a data de nascimento.','Please check your birth date.','data');
@@ -308,7 +310,7 @@ function total(){ return +sel().getAttribute('data-p') + (momOn() ? 44 : 0); }
  const ref=isPreview?'DEMONSTRACAO':('natal_'+crypto.randomUUID().replace(/-/g,''));
  const language=$('idioma')?$('idioma').value:(en?'English':'Português');
  const names={leitura:say('Leitura de Essência','Essence Reading'),rs:say('Leitura de Essência + Revolução Solar','Essence Reading + Solar Return'),sessao:say('Leitura de Essência + sessão','Essence Reading + alignment session'),rssessao:say('Leitura de Essência + Revolução Solar + sessão','Essence Reading + Solar Return + alignment session'),sessaosolo:say('Sessão de alinhamento','Alignment session')};
- const lines=[say('Referência: ','Reference: ')+ref,say('Estado: aguarda confirmação do pagamento','Status: awaiting payment confirmation'),say('Nome: ','Name: ')+name,'Email: '+email,say('Telemóvel: ','Mobile: ')+(raw.startsWith('+')?raw:cc+' '+raw),say('Idioma da leitura: ','Session language: ')+language,say('Escolha: ','Choice: ')+names[sel().value],say('Total base: ','Base total: ')+total()+' €']; if(momOn())lines.push(say('Leitura de Momento a 44€ (oferta das primeiras 5 pessoas): sim','Now Reading at €44 (first 5 people offer): yes'));
+ const lines=[say('Referência: ','Reference: ')+ref,say('Estado: aguarda confirmação do pagamento','Status: awaiting payment confirmation'),say('Nome: ','Name: ')+name,'Email: '+email,say('Telemóvel: ','Mobile: ')+(raw.startsWith('+')?raw:cc+' '+raw),say('Idioma da leitura: ','Session language: ')+language,say('Escolha: ','Choice: ')+names[sel().value],say('Total base: ','Base total: ')+total()+' €']; if(momOn())lines.push(say('Leitura de Momento a 44€ (oferta das primeiras 5 pessoas): sim. Compromisso de testemunho sobre a experiência: aceite.','Now Reading at €44 (first 5 people offer): yes. Testimonial about the experience: agreed.'));
  if(gift)lines.push(say('Oferta a outra pessoa: ','Gift to another person: ')+$('rnome').value.trim(),say('Entrega: ','Delivery: ')+entrega());
  if($('nif').value.trim())lines.push(say('NIF: ','Tax ID: ')+$('nif').value.trim());
  if(birth.some(Boolean))lines.push(say('Nascimento: ','Birth details: ')+birth.join(', '));
