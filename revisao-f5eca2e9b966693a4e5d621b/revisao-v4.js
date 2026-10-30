@@ -3,7 +3,7 @@
  const path=location.pathname.split('/').pop().replace(/^p-/,'');
  if(/^(leituras|tarot|pedir-tarot)(-en)?\.html$/.test(path))document.body.classList.add('fo-reading-page');
  const deliveryAssets=new URL('/assets/',document.currentScript.src).href;
- function syncDelivery(){const dark=root.getAttribute('data-theme')==='dark';document.querySelectorAll('[data-delivery-image]').forEach(img=>{img.src=deliveryAssets+'exemplo-entrega-essencia'+(en?'-en':'')+(dark?'-dark':'')+'.svg?v=20261028v9';const source=img.parentElement.querySelector('source');if(source)source.media=dark?'all':'not all';});}
+ function syncDelivery(){const dark=root.getAttribute('data-theme')==='dark';document.querySelectorAll('[data-delivery-image]').forEach(img=>{img.src=deliveryAssets+'exemplo-entrega-essencia'+(en?'-en':'')+(dark?'-dark':'')+'.svg?v=20261030caixa';const source=img.parentElement.querySelector('source');if(source)source.media=dark?'all':'not all';});}
  new MutationObserver(syncDelivery).observe(root,{attributes:true,attributeFilter:['data-theme']});syncDelivery();
  const fmt=t=>{t=Number.isFinite(t)?Math.max(0,t):0;return Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');};
  document.querySelectorAll('.audio-block audio:not([data-classic-audio])').forEach((audio,index)=>{

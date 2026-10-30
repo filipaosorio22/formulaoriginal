@@ -10,3 +10,16 @@ html.fo-mobile-nav-ready body .site-header .site-main-nav .nav-links{column-gap:
 html.fo-mobile-nav-ready body .site-header .site-main-nav .nav-links .readings-menu{display:block!important;position:static!important;width:100%!important;margin:0!important;padding:0!important}
 html.fo-mobile-nav-ready body .site-header .site-main-nav .nav-links .readings-menu>.readings-submenu{display:none!important}
 }
+
+/* 30/10: no telemóvel, as Leituras aparecem no menu (Essência e Momento por baixo) */
+@media(max-width:900px){
+html.fo-mobile-nav-ready body .site-header .site-main-nav .nav-links .readings-menu>.readings-submenu,
+html body .site-header .site-main-nav .nav-links .readings-menu>.readings-submenu{display:block!important;position:static!important;min-width:0!important;border:0!important;box-shadow:none!important;background:transparent!important;padding:0 0 0 18px!important;margin:0!important}
+html body .site-header .site-main-nav .nav-links .readings-submenu>a:first-child{display:none!important}
+html body .site-header .site-main-nav .nav-links .readings-submenu>a{font-size:.92em!important;padding:8px 12px!important;opacity:.9}
+}
+/* botão «Um miminho de regresso!» numa linha */
+html body .gift-launcher strong{white-space:nowrap!important;font-size:13.5px!important}
+@media(max-width:760px){html body .gift-launcher strong{font-size:12.5px!important}}
+/* testemunho transcrito mais pequeno */
+html body.readings-hub .aura-audio-testimonial .feat-full .body-text{font-size:13px!important;line-height:1.75!important}
