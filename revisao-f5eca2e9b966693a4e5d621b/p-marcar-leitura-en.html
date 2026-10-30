@@ -115,6 +115,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Add the Solar Return · +€100</b><br>Further insight into your current moment: the themes and possibilities of your annual cycle, in dialogue with your birth chart.</span></label>
+      <label class="choice" id="momWrap"><input type="checkbox" id="mom"><span><b>Add the Now Reading · +€44</b><br>Half price, for the first 5 people: an audio reading on a specific question in your life right now.</span></label>
       <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
     </div>
 
@@ -242,11 +243,12 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     var ses = base().value === 'sessao', rs = $('rs').checked;
     return { value: rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura'), getAttribute: function(){ return String(+base().getAttribute('data-p') + (rs ? 100 : 0)); } };
   }
-  function total(){ return +sel().getAttribute('data-p'); }
+  function momOn(){ var m = $('mom'); return !!(m && m.checked && !$('momWrap').hidden); }
+function total(){ return +sel().getAttribute('data-p') + (momOn() ? 44 : 0); }
   function hdOk(){ return true; }
   function updTotal(){
     var solo = base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
-    $('rs').closest('label').hidden = solo;
+    $('rs').closest('label').hidden = solo; $('momWrap').hidden = solo || gift; if ($('momWrap').hidden) $('mom').checked = false;
     document.querySelector('[data-op="sessao"]').hidden=false;
     $('hd').checked = !solo;
     $('tot').textContent = total() + '€';
@@ -259,6 +261,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   document.querySelectorAll('input[name=op]').forEach(function(x){ x.addEventListener('change', updTotal); });
   $('hd').addEventListener('change', updTotal);
   $('rs').addEventListener('change', updTotal);
+  $('mom').addEventListener('change', updTotal);
+  if (new URLSearchParams(location.search).get('momento') === '1') $('mom').checked = true;
   updTotal();
 
   (function(){
@@ -305,7 +309,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
  const ref=isPreview?'DEMONSTRACAO':('natal_'+crypto.randomUUID().replace(/-/g,''));
  const language=$('idioma')?$('idioma').value:(en?'English':'Português');
  const names={leitura:say('Leitura de Essência','Essence Reading'),rs:say('Leitura de Essência + Revolução Solar','Essence Reading + Solar Return'),sessao:say('Leitura de Essência + sessão','Essence Reading + alignment session'),rssessao:say('Leitura de Essência + Revolução Solar + sessão','Essence Reading + Solar Return + alignment session'),sessaosolo:say('Sessão de alinhamento','Alignment session')};
- const lines=[say('Referência: ','Reference: ')+ref,say('Estado: aguarda confirmação do pagamento','Status: awaiting payment confirmation'),say('Nome: ','Name: ')+name,'Email: '+email,say('Telemóvel: ','Mobile: ')+(raw.startsWith('+')?raw:cc+' '+raw),say('Idioma da leitura: ','Reading language: ')+language,say('Escolha: ','Choice: ')+names[sel().value],say('Total base: ','Base total: ')+total()+' €'];
+ const lines=[say('Referência: ','Reference: ')+ref,say('Estado: aguarda confirmação do pagamento','Status: awaiting payment confirmation'),say('Nome: ','Name: ')+name,'Email: '+email,say('Telemóvel: ','Mobile: ')+(raw.startsWith('+')?raw:cc+' '+raw),say('Idioma da leitura: ','Reading language: ')+language,say('Escolha: ','Choice: ')+names[sel().value],say('Total base: ','Base total: ')+total()+' €']; if(momOn())lines.push(say('Leitura de Momento a 44€ (oferta das primeiras 5 pessoas): sim','Now Reading at €44 (first 5 people offer): yes'));
  if(gift)lines.push(say('Oferta a outra pessoa: ','Gift to another person: ')+$('rnome').value.trim(),say('Entrega: ','Delivery: ')+entrega());
  if($('nif').value.trim())lines.push(say('NIF: ','Tax ID: ')+$('nif').value.trim());
  if(birth.some(Boolean))lines.push(say('Nascimento: ','Birth details: ')+birth.join(', '));
@@ -318,7 +322,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   if(!panel){panel=document.createElement('section');panel.id='bookingReview';panel.className='booking-review';const title=document.createElement('h2');title.tabIndex=-1;title.textContent=say('O teu pedido, para rever','Your request, ready to review');const note=document.createElement('p');note.textContent=say('Pré-visualização local. Nenhum dado foi enviado e nenhum pagamento foi iniciado.','Local preview. No information was sent and no payment was initiated.');const pre=document.createElement('pre');const back=document.createElement('button');back.type='button';back.className='btn';back.textContent=say('Voltar e editar','Back and edit');back.onclick=()=>{panel.hidden=true;$('f').hidden=false;$('go').focus();};panel.append(title,note,pre,back);$('f').after(panel);}
   panel.querySelector('pre').textContent=lines.join('\n\n');panel.hidden=false;$('f').hidden=true;panel.querySelector('h2').focus();panel.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});return;
  }
- const link=cfg.stripe?.[sel().value];
+ const link=cfg.stripe?.[sel().value+(momOn()?'+momento':'')];
  if(!cfg.web3formsKey||!/^https:\/\/buy\.stripe\.com\//.test(link||''))return fail('O pedido ainda não está disponível.','Online requests are not available yet.');
  btn.disabled=true;btn.textContent=say('A preparar o pagamento…','Preparing payment…');
  try{
