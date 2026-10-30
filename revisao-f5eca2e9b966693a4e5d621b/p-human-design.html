@@ -1,0 +1,1165 @@
+<!doctype html>
+<html lang="pt-PT">
+<head><meta name="robots" content="noindex,nofollow,noarchive"><script src="/revisao-f5eca2e9b966693a4e5d621b/preview-review.js"></script><link rel="stylesheet" href="/revisao-f5eca2e9b966693a4e5d621b/preview-review.css"><script src="/theme-init.js?v=20261028v8"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-fo-48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>O teu Human Design · Leitura Intuitiva</title>
+<meta name="description" content="Desenha o teu corpo gráfico de Human Design: tipo, estratégia, autoridade e perfil, calculados no teu browser.">
+<script>
+  try { var t = localStorage.getItem('fo_theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef; --ink:#2b241c; --muted:#6f6355; --soft:#8c7f6e;
+  --gold:#c9a86c; --deep:#9a7e52; --wine:#7a2535;
+  --card:#fffdf9; --field:#fffefb; --line:rgba(154,126,82,.30); --line-soft:rgba(154,126,82,.16);
+  --disc1:#fffbf4; --disc2:#f3e9d8; --star:#b8955a;
+  --glyph:#7d6440; --shadow:0 1px 2px rgba(80,60,30,.05),0 12px 40px -18px rgba(120,90,40,.28);
+  --cfill:rgba(201,168,108,.42); --cfill2:rgba(226,200,145,.55); --chan:rgba(154,126,82,.20); --gate-off:#a89a86;
+  --serif:'Spectral','Lora',Georgia,'Times New Roman',serif;
+  --body:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --sym:'DejaVu Sans','Segoe UI Symbol','Apple Symbols','Noto Sans Symbols 2','Noto Sans Symbols',sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1d1915; --ink:#efe6d8; --muted:#bfb19c; --soft:#a39581;
+    --gold:#c9a86c; --deep:#d6b984; --wine:#d48a96;
+    --card:#25201a; --field:#211c17; --line:rgba(201,168,108,.30); --line-soft:rgba(201,168,108,.15);
+    --disc1:#2a231b; --disc2:#1c1814; --star:#e2c891;
+    --glyph:#e0c48f; --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px -18px rgba(0,0,0,.7);
+    --cfill:rgba(201,168,108,.30); --cfill2:rgba(226,200,145,.40); --chan:rgba(201,168,108,.16); --gate-off:#8a7c69;
+    color-scheme:dark;
+  }
+}
+html[data-theme="dark"]{
+  --bg:#1d1915; --ink:#efe6d8; --muted:#bfb19c; --soft:#a39581;
+  --gold:#c9a86c; --deep:#d6b984; --wine:#d48a96;
+  --card:#25201a; --field:#211c17; --line:rgba(201,168,108,.30); --line-soft:rgba(201,168,108,.15);
+  --disc1:#2a231b; --disc2:#1c1814; --star:#e2c891;
+  --glyph:#e0c48f; --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px -18px rgba(0,0,0,.7);
+  --cfill:rgba(201,168,108,.30); --cfill2:rgba(226,200,145,.40); --chan:rgba(201,168,108,.16); --gate-off:#8a7c69;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;transition:background .4s,color .4s}
+.wrap{max-width:660px;margin:0 auto;padding:40px 16px 64px}
+a{color:var(--deep)}
+.top{display:flex;justify-content:flex-end;margin-bottom:-8px}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--deep);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:16px;line-height:1;display:grid;place-items:center}
+.theme-btn:hover{border-color:var(--gold)}
+header{text-align:center;margin-bottom:30px}
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--deep);margin:0 0 14px}
+.kicker span{color:var(--gold);letter-spacing:0;margin:0 .6em}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,8vw,48px);line-height:1.1;margin:0 0 14px;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--deep)}
+.lead{color:var(--muted);margin:0 auto;max-width:30em;font-size:16.5px}
+.rule{display:flex;align-items:center;gap:12px;color:var(--gold);margin:22px auto 0;max-width:200px;font-size:12px}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* form */
+.card{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;box-shadow:var(--shadow);padding:26px 22px}
+form .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+.full{grid-column:1/-1}
+label.lbl{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.opt{text-transform:none;letter-spacing:0;font-weight:400;color:var(--soft)}
+input[type=text],input[type=email],input[type=date],input[type=time],select{
+  width:100%;font:inherit;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--field);
+  border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px;outline:none;appearance:none;-webkit-appearance:none;
+  transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,108,.18)}
+input:disabled{opacity:.45}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--deep) 50%),linear-gradient(135deg,var(--deep) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+.check{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:8px;cursor:pointer;user-select:none}
+.check input{accent-color:var(--deep);width:16px;height:16px;margin:0}
+.combo{position:relative}
+.combo ul{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 4px);margin:0;padding:6px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:300px;overflow:auto}
+.combo li{padding:9px 10px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.combo li small{color:var(--soft);font-size:13px;white-space:nowrap}
+.combo li.active,.combo li:hover{background:rgba(201,168,108,.16)}
+.combo li.other{color:var(--deep);border-top:1px solid var(--line-soft);margin-top:4px;border-radius:0 0 8px 8px}
+.hint{font-family:var(--sans);font-size:13px;color:var(--soft);margin:7px 0 0}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);cursor:pointer}
+.manual{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.manual[hidden]{display:none}
+.err{color:var(--wine);font-family:var(--sans);font-size:14px;margin:14px 0 0;min-height:0}
+.err:empty{display:none}
+.actions{margin-top:22px;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:500;font-size:15.5px;letter-spacing:.04em;
+  color:#2b1f10;background:linear-gradient(135deg,#e2c891 0%,#c9a86c 45%,#a8854f 100%);border:0;border-radius:999px;padding:14px 30px;min-height:50px;cursor:pointer;text-decoration:none;
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 10px 24px -12px rgba(154,126,82,.75);transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.04);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 14px 28px -12px rgba(154,126,82,.85)}
+.btn:focus-visible,.theme-btn:focus-visible,.linkbtn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.privacy{font-family:var(--sans);font-size:13px;color:var(--soft);text-align:center;margin:16px auto 0;max-width:34em;line-height:1.5}
+.privacy b{color:var(--gold);font-weight:400}
+
+/* intro */
+.intro{margin:30px auto 0;text-align:left;max-width:34em}
+.intro h2{text-align:center}
+.intro h2{font-family:var(--serif);font-weight:300;font-size:clamp(22px,5vw,26px);margin:0 0 8px}
+.intro p{margin:0;color:var(--muted);font-size:16px}
+
+/* result */
+#result{margin-top:44px}
+#result[hidden]{display:none}
+.res-head{text-align:center;margin-bottom:6px}
+.res-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,6vw,34px);margin:0 0 4px}
+.res-head p{margin:0;font-family:var(--sans);font-size:14px;color:var(--muted)}
+.res-head .note{color:var(--soft);font-size:13px;margin-top:6px}
+
+.chart-wrap{position:relative;max-width:440px;margin:10px auto 0}
+.chart-wrap::before{content:"";position:absolute;inset:6% 4%;border-radius:50%;background:radial-gradient(closest-side,var(--disc1),transparent);opacity:.9;pointer-events:none}
+.body{position:relative;width:100%;display:block;aspect-ratio:420/652;overflow:visible}
+.body text{font-family:var(--sans)}
+.body .cl{fill:none;stroke:var(--deep);stroke-opacity:.4;stroke-width:2;stroke-linecap:round}
+.body .cf{fill:none;stroke-width:3.4;stroke-linecap:round}
+.body .cf.p{stroke:var(--wine)}
+.body .cf.d{stroke:var(--gold)}
+.body .ctr{fill:var(--bg);stroke:var(--deep);stroke-width:1.3;stroke-opacity:.8;stroke-linejoin:round}
+.body .ctr.def{fill:url(#cg);stroke:var(--deep);stroke-opacity:1;stroke-width:1.6}
+.body .gc{fill:var(--bg);stroke:var(--deep);stroke-opacity:.7;stroke-width:1}
+.body .gc.p{fill:var(--wine);stroke:none}
+.body .gc.d{fill:var(--gold);stroke:none}
+.body .gb{fill:var(--card,#fffaf0);stroke:var(--deep);stroke-opacity:.35;stroke-width:.8}
+.body .gb.p{fill:var(--wine);stroke:none}
+.body .gb.d{fill:var(--gold);stroke:none}
+.body .gn.on.wp{fill:#fff}
+.body .gn.on.both{fill:#fff;stroke:rgba(40,20,10,.6);stroke-width:.6px;paint-order:stroke}
+.body .gn{font-size:7.4px;fill:var(--soft);text-anchor:middle;dominant-baseline:central;letter-spacing:-.02em}
+.body .gn.on{fill:var(--ink);font-weight:700}
+.bgrid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
+.bgrid .chart-wrap{margin:0 auto;width:100%}
+.acol{font-family:var(--sans);font-size:13.5px}
+.acol h4{margin:0 0 6px;font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-align:center}
+.acol.des h4{color:var(--deep)}.acol.pers h4{color:var(--wine)}
+.acol ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;max-width:260px;margin:0 auto}
+.acol li{display:flex;align-items:baseline;justify-content:center;gap:6px;padding:3px 6px;border-radius:6px;font-variant-numeric:tabular-nums}
+.acol.des li{background:rgba(201,168,108,.22)}
+.acol.pers li{background:rgba(122,37,53,.12)}
+.acol .g{font-family:var(--sym);width:1.2em;text-align:center}
+.acol.des .g{color:var(--deep)}.acol.pers .g{color:var(--wine)}
+.acol .v{color:var(--ink)}
+.bgrid .des{order:2}.bgrid .pers{order:3}.bgrid .chart-wrap{order:1}
+@media (min-width:700px){
+  .bgrid{grid-template-columns:104px minmax(0,440px) 104px;gap:10px;justify-content:center;align-items:start}
+  .bgrid .des{order:1}.bgrid .chart-wrap{order:2}.bgrid .pers{order:3}
+  .acol ul{grid-template-columns:1fr;gap:4px;max-width:none}
+  .acol h4{font-size:10.5px;letter-spacing:.12em}
+}
+.legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;font-family:var(--sans);font-size:12.5px;color:var(--soft);margin:6px 0 0}
+.legend i{display:inline-block;width:18px;height:3.5px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.legend .sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid var(--deep);background:var(--cfill)}
+.legend .sw.o{background:transparent;border-color:var(--gold)}
+
+/* animation */
+.anim .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s cubic-bezier(.5,0,.2,1) forwards}
+.anim .fade{opacity:0;animation:fade 1s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+.reveal{opacity:0;transform:translateY(10px);animation:reveal .8s ease forwards}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .anim .draw{animation:none;stroke-dashoffset:0}
+  .anim .fade,.reveal{animation:none;opacity:1;transform:none}
+  .btn,.btn:hover{transition:none;transform:none}
+}
+
+.facts{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 26px;font-family:var(--sans);font-size:14.5px}
+.facts li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 2px;border-bottom:1px solid var(--line-soft)}
+.facts .k{color:var(--soft);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.facts .v{color:var(--ink);text-align:right}
+
+.acts{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:0 26px;font-family:var(--sans);font-size:13.5px}
+.acts h4{margin:0 0 4px;font-weight:500;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+.acts h4 i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:7px}
+.acts ul{list-style:none;margin:0;padding:0}
+.acts li{display:grid;grid-template-columns:22px 1fr auto;gap:6px;padding:4px 2px;border-bottom:1px solid var(--line-soft);color:var(--muted)}
+.acts .g{font-family:var(--sym);color:var(--deep);text-align:center}
+.acts .v{color:var(--ink);font-variant-numeric:tabular-nums}
+details.more{margin-top:18px;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center}
+details.more summary{cursor:pointer;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+details.more[open] summary{margin-bottom:6px}
+
+.pillars{margin-top:46px;text-align:center}
+.pillars h3,.cta h3{font-family:var(--serif);font-weight:300;font-size:clamp(25px,5.6vw,31px);margin:0 0 4px}
+.pillars .sub{font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.04em;margin:0 0 22px}
+.pillar{position:relative;text-align:left;display:grid;grid-template-columns:50px 1fr;gap:16px;align-items:start;padding:20px 20px 20px 18px;margin-bottom:12px;background:var(--card);border:1px solid var(--line-soft);border-radius:16px}
+.pillar .ic{width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--deep);font-family:var(--sans);font-size:14px;font-weight:500}
+.pillar .ic svg{width:22px;height:22px;overflow:visible}
+.pillar .ic svg *{fill:var(--cfill);stroke:var(--deep);stroke-width:1.3;stroke-linejoin:round}
+.pillar .k{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin:2px 0 2px}
+.pillar h4{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 6px;line-height:1.25}
+.pillar h4 small{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--deep);font-weight:300}
+.pillar p{margin:0;color:var(--muted);font-style:italic;font-size:16px;line-height:1.55}
+.pillar p + p{margin-top:8px}
+.pillar dl{margin:10px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-family:var(--sans);font-size:14px}
+.pillar dt{color:var(--soft);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding-top:2px}
+.pillar dd{margin:0;color:var(--ink)}
+
+.cta{margin-top:40px;text-align:center;padding:34px 22px 30px;border-radius:20px;border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.16),transparent 70%),var(--card);position:relative;overflow:hidden}
+.cta .spk{position:absolute;color:var(--gold);font-family:var(--sym);opacity:.55;font-size:13px}
+.cta p.big{font-family:var(--serif);font-size:clamp(19px,4.6vw,22px);font-weight:300;line-height:1.45;margin:0 auto 24px;max-width:24em}
+.cta p.big em{color:var(--deep)}
+.soft{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:14.5px;color:var(--deep);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line)}
+.again{text-align:center;margin-top:22px;font-family:var(--sans);font-size:14px}
+footer{margin-top:40px;text-align:center;color:var(--gold);letter-spacing:.6em;font-size:12px}
+
+@media (max-width:480px){
+  .wrap{padding-top:22px}
+  .card{padding:22px 16px;border-radius:16px}
+  form .grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .acts{gap:0 14px;font-size:13px}
+  .pillar{grid-template-columns:42px 1fr;gap:13px;padding:18px 16px}
+  .pillar .ic{width:42px;height:42px}
+  .btn{width:100%;padding:14px 18px}
+}
+/* gate: Autoridade, Perfil e Centros depois de nome + email */
+.locked{position:relative}
+.lk .facts{margin:0 0 22px;text-align:left}
+.locked.on .lk{filter:blur(7px);opacity:.55;pointer-events:none;user-select:none;max-height:260px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.locked:not(.on) .gate{display:none}
+.gate{position:relative;margin:-150px auto 0;max-width:30em;text-align:center;padding:28px 22px 22px;border-radius:20px;border:1px solid var(--line);
+  background:radial-gradient(120% 90% at 50% 0%,rgba(201,168,108,.18),transparent 70%),var(--card);box-shadow:var(--shadow)}
+.gate h3{font-family:var(--serif);font-weight:300;font-size:clamp(22px,5vw,27px);margin:0 0 6px;line-height:1.25}
+.gate .sub{font-family:var(--body);font-style:italic;color:var(--muted);font-size:15.5px;margin:0 0 18px}
+.gate .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;text-align:left}
+.gate .chk{display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5;margin:14px 0 0}
+.gate .chk a{color:var(--deep)}
+.gate .chk input{width:18px;height:18px;min-height:0;margin:2px 0 0;flex:none;accent-color:#9a7e52}
+@media (max-width:480px){.gate .grid{grid-template-columns:1fr}.gate{margin-top:-120px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* tipos de letra como no resto do site: títulos em Cormorant Garamond, subtítulos em Spectral itálico bordô */
+h1{font-family:'Cormorant Garamond',var(--serif);font-weight:700;color:var(--wine);letter-spacing:0}
+h1 em{font-style:normal;color:var(--wine)}
+.res-head h2,.pillars h3,.cta h3,.layers h3,.gate h3{font-style:italic;color:var(--wine)}
+
+.cross{margin:14px auto 0;text-align:center;font-family:var(--sans);font-size:14px}
+.cross a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
+.cross.both{padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,0.35);font-size:15px}
+
+.okpop[hidden]{display:none}
+.okpop{position:fixed;inset:0;z-index:400;background:rgba(26,20,16,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.okbox{position:relative;max-width:440px;width:100%;background:var(--card);border:1px solid var(--gold);border-radius:18px;padding:30px 26px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.okbox .okx{position:absolute;top:8px;right:12px;background:none;border:0;font-size:24px;color:var(--soft);cursor:pointer}
+.okbox .oktitle{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.35;color:var(--wine);margin:0 0 12px}
+.okbox p{font-family:var(--sans);font-size:14.5px;line-height:1.65;color:var(--ink);margin:0 0 18px}
+.okbox p b{color:var(--wine)}
+.fbt{position:fixed;left:16px;bottom:16px;z-index:300;max-width:340px;background:linear-gradient(135deg,#f6ecd2,#faf3e6);border:0.5px solid var(--gold);border-radius:20px 20px 20px 5px;padding:14px 38px 12px 16px;box-shadow:0 10px 30px rgba(26,20,16,.22);font-family:var(--body);font-size:15px;line-height:1.55;color:#1a1410;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s;pointer-events:none}
+.fbt.on{opacity:1;transform:none;pointer-events:auto}
+.fbt .fbx{position:absolute;top:4px;right:8px;background:none;border:0;font-size:20px;color:#7a6a58;cursor:pointer}
+.fbt u{text-decoration-color:#c9a86c;text-decoration-thickness:2px;text-underline-offset:3px}
+.fbt small{display:block;text-align:right;font-family:var(--sans);font-size:11px;color:#9a7e52;margin-top:4px}
+@media (max-width:520px){.fbt{left:10px;right:10px;max-width:none;bottom:10px}}
+
+html.embed .top,html.embed header,html.embed #form,html.embed #intro,html.embed footer,html.embed .cta,html.embed .again,html.embed .cross,html.embed .fbt{display:none!important}
+html.embed .wrap{padding-top:0;padding-bottom:8px}
+html.embed body{background:transparent}
+
+.who-wrap{position:relative;display:inline-block}
+.whobtn{font:inherit;color:inherit;background:none;border:0;border-bottom:1px dotted currentColor;padding:0;cursor:pointer}
+.whomenu{position:absolute;left:50%;top:calc(100% + 8px);transform:translateX(-50%);z-index:50;min-width:230px;background:var(--card,#fff);border:.5px solid var(--gold,#c9a86c);border-radius:12px;box-shadow:0 10px 28px rgba(26,20,16,.18);padding:6px;font-family:'DM Sans',sans-serif;font-style:normal;font-size:14px;text-align:left}
+.whomenu[hidden]{display:none}
+.whomenu button{display:block;width:100%;text-align:left;background:none;border:0;border-radius:8px;padding:8px 12px;font:inherit;color:var(--ink,#333);cursor:pointer}
+.whomenu button:hover{background:rgba(201,168,108,.22)}
+.whomenu button.cur{font-weight:600;color:var(--wine,#7a2535)}
+.whomenu button.nw{border-top:.5px solid var(--gold,#c9a86c);border-radius:0 0 8px 8px;margin-top:4px;color:var(--wine,#7a2535)}
+.gout{margin-top:6px}#gOutroWrap{margin-top:8px}#gOutroWrap input{width:100%;box-sizing:border-box}
+.bgrid,.bgrid .chart-wrap{display:block}.bgrid .chart-wrap{max-width:440px;margin:6px auto 0}
+.pos{margin:14px auto 4px;text-align:center}
+.pos summary{cursor:pointer;list-style:none;display:block;font-family:var(--sans);font-size:14px;color:var(--deep);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.pos summary::-webkit-details-marker{display:none}
+.pos[open] summary{margin-bottom:12px}
+.posgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;max-width:560px;margin:0 auto;text-align:left}
+@media(max-width:560px){.posgrid{grid-template-columns:1fr}}
+.acol ul{grid-template-columns:1fr;max-width:none;gap:3px}
+.acol li{justify-content:flex-start}
+.acol li .n{flex:1;color:var(--muted)}
+.acol h4{text-align:left;letter-spacing:.12em}
+.hdclose{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.6;color:var(--wine);text-align:center;margin:18px 0 0}
+.gen{display:flex;gap:16px;align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;margin:10px 0 0;flex-wrap:wrap}.gen .lbl{margin:0}.gen label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.genrow{font-family:var(--sans);font-size:13px;color:var(--muted);margin:6px 0 0;text-align:center}.genrow .linkbtn{font-size:13px}
+.mailwall{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;background:rgba(26,20,16,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:16px}
+.mwbox{background:var(--bg);border:1px solid var(--line);border-radius:16px;max-width:420px;width:100%;padding:24px;text-align:left;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)}
+.mwbox h3{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--wine);margin:0 0 8px}.mwbox p{font-size:14.5px;line-height:1.6;color:var(--muted);margin:0 0 12px}
+.mwbox input[type=text],.mwbox input[type=email]{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.mwbox .chk{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;margin:6px 0}.mwbox .btn{width:100%;margin-top:8px}
+.privacy .firstmap{display:block;margin:10px auto 0;padding:8px 12px;border:1px solid var(--wine);border-radius:10px;background:rgba(122,37,53,.06);color:var(--wine);font-weight:500;font-size:14.5px;line-height:1.5;max-width:460px}
+.crossend{margin:18px auto 0;text-align:center;font-family:var(--sans);font-size:15px;padding:12px 16px;border:0.5px solid var(--gold);border-radius:12px;background:rgba(240,222,182,.35)}.crossend a{color:var(--wine);text-decoration:underline;text-underline-offset:3px}
+</style>
+
+<script src="/revisao-f5eca2e9b966693a4e5d621b/site-config.js?v=20261029r3v13"></script><link rel="stylesheet" href="/revisao-f5eca2e9b966693a4e5d621b/site-nav.css?v=20261028v4"><script src="/revisao-f5eca2e9b966693a4e5d621b/site-ui.js?v=20261028v9" defer></script><script src="/revisao-f5eca2e9b966693a4e5d621b/site-interactions.js?v=20261029r3v13" defer></script><link rel="stylesheet" href="/revisao-v3.css?v=20261028v4"><script src="/revisao-f5eca2e9b966693a4e5d621b/revisao-v3.js?v=20261028v8" defer></script><link rel="stylesheet" href="/revisao-v4.css?v=20261028v4"><script src="/revisao-f5eca2e9b966693a4e5d621b/revisao-v4.js?v=20261028v9" defer></script><script src="/mapas-config.js?v=20261029v10separate"></script><script src="/mapas-client.js?v=20261028v4"></script><link rel="stylesheet" href="/revisao-v8.css?v=20261028v8"><link rel="stylesheet" href="/revisao-v9.css?v=20261028v15"><script src="/revisao-f5eca2e9b966693a4e5d621b/revisao-v9.js?v=20261028v10" defer></script><link rel="stylesheet" href="/revisao-v10.css?v=20261029v10"></head>
+<body data-map-page><header class="site-header"><nav class="site-main-nav" aria-label="Menu principal"><a class="site-brand" href="/revisao-f5eca2e9b966693a4e5d621b/p-index.html">Filipa Osório</a><button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu-links">Menu <span aria-hidden="true">☰</span></button><div class="nav-links" id="site-menu-links"><a href="/revisao-f5eca2e9b966693a4e5d621b/p-index.html">Início</a><a href="/revisao-f5eca2e9b966693a4e5d621b/p-ceen.html">CEEN</a><div class="readings-menu"><a href="/revisao-f5eca2e9b966693a4e5d621b/p-leituras.html">Leituras Intuitivas</a><button class="readings-submenu-toggle" type="button" aria-expanded="false" aria-label="Páginas das Leituras">⌄</button><div class="readings-submenu"><a href="/revisao-f5eca2e9b966693a4e5d621b/p-leituras.html">Leituras Intuitivas</a><a href="/revisao-f5eca2e9b966693a4e5d621b/p-leitura-intuitiva.html">Leitura de Essência</a><a href="/revisao-f5eca2e9b966693a4e5d621b/p-tarot.html">Leitura de Momento</a></div></div><a href="/revisao-f5eca2e9b966693a4e5d621b/p-sessao-alinhamento.html">Sessão de Alinhamento</a><a href="/revisao-f5eca2e9b966693a4e5d621b/p-artigos.html">Artigos</a><a href="#convites-dialog" data-partnerships-open aria-haspopup="dialog">Convites e parcerias</a></div><div class="site-tools"><button type="button" class="site-theme" data-site-theme aria-label="Alternar modo claro e noturno"><span data-mode-icon="light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></span><span data-mode-icon="dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg></span></button><a class="site-language" href="/revisao-f5eca2e9b966693a4e5d621b/p-leitura-intuitiva-en.html#o-que-e" title="About these charts in English" aria-label="Read about these charts in English" hreflang="en"><span class="selected">PT</span>/<span>EN</span></a></div><button class="theme-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button><button class="size-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button></nav></header>
+<div class="wrap">
+  <div class="top" hidden><button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar modo claro/escuro">☾</button></div>
+  <header>
+    <p class="kicker"><span>✦</span>Leitura Intuitiva<span>✦</span></p>
+    <h1>O teu <em>Human Design</em></h1>
+    <p class="lead">O desenho da energia com que chegaste. Indica a data, a hora e o lugar e o teu corpo gráfico aparece aqui, traçado a dourado.</p>
+    <div class="rule">✦</div>
+  </header>
+
+  <form class="card" id="form" novalidate autocomplete="off">
+    <div class="grid">
+      <div class="full">
+        <label class="lbl" for="nome">Nome</label>
+        <input type="text" id="nome" maxlength="60" placeholder="Como te chamas?" required autocomplete="given-name">
+      </div>
+      <div>
+        <label class="lbl" for="data">Data de nascimento</label>
+        <input type="text" id="data" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" maxlength="10" required>
+      </div>
+      <div>
+        <label class="lbl" for="hora">Hora de nascimento</label>
+        <input type="time" id="hora" required aria-describedby="horaHint">
+        <p class="hint" id="horaHint">Confirma se nasceste durante o dia ou à noite (AM ou PM). Não sabes a hora? Pergunta a quem possa saber ou <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">pede a tua certidão de nascimento</a>, onde a hora costuma estar registada.</p>
+      </div>
+      <div class="full">
+        <label class="lbl" for="local">Local de nascimento</label>
+        <div class="combo">
+          <input type="text" id="local" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="localList" placeholder="Escreve a cidade, ex.: Coimbra">
+          <ul id="localList" role="listbox" hidden></ul>
+        </div>
+        <p class="hint" id="localHint">Não encontras a tua cidade? <button type="button" class="linkbtn" id="outraBtn">Outra cidade</button></p>
+        <div class="manual" id="manual" hidden>
+          <label class="lbl" for="tz">Fuso horário <span class="opt">(o do lugar onde nasceste)</span></label>
+          <select id="tz"></select>
+        </div>
+      </div>
+    </div>
+    <div class="gen"><span class="lbl">Linguagem do texto</span><label><input type="radio" name="gen" value="f"> feminino</label><label><input type="radio" name="gen" value="m"> masculino</label></div>
+    <p class="err" id="err" role="alert"></p>
+    <div class="actions"><button class="btn" type="submit">✦ Desenhar o meu Human Design</button></div>
+    <p class="privacy">O mapa é calculado no teu navegador. Para receberes e-mails da Filipa, podes subscrever separadamente na <a href="/revisao-f5eca2e9b966693a4e5d621b/p-artigos.html">página dos Artigos</a>.</p>
+  </form>
+
+  <section class="intro" id="intro">
+    <h2>O que é o Human Design</h2>
+    <p id="introText"></p>
+  </section>
+
+  <section id="result" hidden aria-live="polite">
+    <div class="res-head">
+      <h2 id="resTitle">O teu desenho</h2>
+      <p id="resMeta"></p>
+      <p class="genrow">Texto em: <button type="button" class="linkbtn" data-g="f">feminino</button> · <button type="button" class="linkbtn" data-g="m">masculino</button></p>
+      <p class="cross" id="crossNote" hidden><span class="c1">Queres ver também o teu mapa astral? </span><a id="crossLink" href="/revisao-f5eca2e9b966693a4e5d621b/p-mapa-astral.html">✦ Ver o meu mapa astral</a></p>
+      <p class="note" id="resNote" hidden></p>
+    </div>
+    <div class="bgrid">
+      <div class="chart-wrap">
+        <svg class="body" id="body" viewBox="0 0 420 652" role="img" aria-labelledby="bodyDesc"><desc id="bodyDesc">Corpo gráfico de Human Design</desc></svg>
+      </div>
+    </div>
+    <details class="pos" id="posBox">
+      <summary>Ver as posições planetárias</summary>
+      <div class="posgrid"><div class="acol des" id="actsD"></div><div class="acol pers" id="actsP"></div></div>
+    </details>
+    <p class="legend" aria-hidden="true"><span><span class="sw"></span>centro definido</span><span><span class="sw o"></span>centro indefinido</span><span><i style="background:var(--wine)"></i>Personalidade (consciente)</span><span><i style="background:var(--gold)"></i>Design (inconsciente)</span></p>
+
+    <div class="cta">
+      <span class="spk" style="top:16px;left:22px">✦</span><span class="spk" style="top:40px;right:30px;font-size:9px">✦</span><span class="spk" style="bottom:22px;left:40px;font-size:9px">✦</span><span class="spk" style="bottom:18px;right:22px">✦</span>
+      <p class="big" id="ctaText"></p>
+      <a class="btn" href="/revisao-f5eca2e9b966693a4e5d621b/p-marcar-leitura.html?op=leitura&amp;hd=1">Quero a minha Leitura</a><br>
+      <a class="soft" href="/revisao-f5eca2e9b966693a4e5d621b/p-leitura-intuitiva.html#como-funciona">Ver como funciona</a><br>
+    </div>
+
+    <div class="pillars">
+      <h3>O teu desenho em quatro chaves</h3>
+      <p class="sub">Tipo · Autoridade · Perfil · Centros</p>
+      <div id="pillars"></div>
+      <div class="locked" id="locked">
+        <div class="lk" id="lk"><ul class="facts" id="facts"></ul><div id="pillars2"></div></div>
+        <form class="gate" id="gate" novalidate>
+          <h3>Descobre mais do teu desenho</h3>
+          <p class="sub">Partilha o teu nome e e-mail para conheceres um bocadinho<br>mais da minha visão sobre o teu mapa, antes da Leitura.</p>
+          <div class="grid">
+            <div><label class="lbl" for="gNome">Nome</label><input type="text" id="gNome" maxlength="60" autocomplete="given-name" required></div>
+            <div><label class="lbl" for="gApelido">Apelido</label><input type="text" id="gApelido" maxlength="60" autocomplete="family-name"></div>
+            <div style="grid-column:1/-1"><label class="lbl" for="gEmail">E-mail</label><input type="email" id="gEmail" maxlength="120" autocomplete="email" inputmode="email" required></div>
+          </div>
+          <label class="chk gout"><input type="checkbox" id="gOutra"><span>Este mapa é de outra pessoa</span></label>
+          <p class="gcons" id="gCons" hidden style="font-size:12.5px;color:var(--ink-soft);margin:0.3rem 0 0">Ao gerares o mapa de outra pessoa, deves ter consentimento.</p>
+          <div id="gOutroWrap" hidden><label class="lbl" for="gOutro">Nome da outra pessoa</label><input type="text" id="gOutro" maxlength="60"></div>
+          <label class="chk"><input type="checkbox" id="gOk" required><span>Aceito receber e-mails da Filipa Osório sobre desenvolvimento pessoal. Posso cancelar a subscrição quando quiser. <a href="/revisao-f5eca2e9b966693a4e5d621b/p-privacidade.html#emails" target="_blank" rel="noopener">Política de privacidade</a></span></label>
+          <p class="err" id="gErr" role="alert"></p>
+          <div class="actions"><button class="btn" type="submit" id="gBtn">✦ Ver o meu desenho completo</button></div>
+        </form>
+      </div>
+    </div>
+
+    <p class="again"><button type="button" class="linkbtn" id="editBtn">Gerar um novo mapa</button></p>
+  </section>
+  <footer class="site-footer"><p>© 2026 Filipa Osório</p><div><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">Instagram</a><span>·</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Substack</a><span>·</span><a href="mailto:mail@filipaosorio.com">E-mail</a></div><div><a href="/revisao-f5eca2e9b966693a4e5d621b/p-termos-ceen.html">Termos e condições CEEN</a><a href="/revisao-f5eca2e9b966693a4e5d621b/p-termos-leitura-intuitiva.html">Termos das Leituras</a><a href="/revisao-f5eca2e9b966693a4e5d621b/p-privacidade.html">Política de Privacidade</a><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a></div></footer>
+<div class="okpop" id="okPop" role="dialog" aria-modal="true" aria-labelledby="okTitle" hidden><div class="okbox"><button class="okx" type="button" id="okX" aria-label="Fechar">×</button><p class="oktitle" id="okTitle"></p><p>Se não o vires, espreita a pasta de lixo eletrónico e marca-o como «não é spam». Guarda também <b>mail@filipaosorio.com</b> nos teus contactos para receberes tudo na caixa principal.</p><button class="btn" type="button" id="okGo">Continuar</button></div></div>
+<div class="fbt" id="fbt" role="status" aria-live="polite"><button class="fbx" type="button" id="fbX" aria-label="Fechar">×</button><div id="fbBody"></div><small>mensagem de uma cliente</small></div>
+</div>
+
+<script>
+if (/[?&]embed=1/.test(location.search)) { document.documentElement.classList.add('embed'); Element.prototype.scrollIntoView = function(){}; }
+</script>
+<script src="/astronomy.browser.min.js"></script>
+<script>
+(function(){
+'use strict';
+
+// HD-CORE-BEGIN
+var GATE_ORDER = [41,19,13,49,30,55,37,63,22,36,25,17,21,51,42,3,27,24,2,23,8,20,16,35,45,12,15,52,39,53,62,56,31,33,7,4,29,59,40,64,47,6,46,18,48,57,32,50,28,44,1,43,14,34,9,5,26,11,10,58,38,54,61,60];
+var CENTER_GATES = {
+  head:   [64,61,63],
+  ajna:   [47,24,4,17,43,11],
+  throat: [62,23,56,35,12,45,33,8,31,20,16],
+  g:      [1,13,25,46,2,15,10,7],
+  heart:  [21,40,26,51],
+  spleen: [48,57,44,50,32,28,18],
+  sp:     [6,37,22,36,30,55,49],
+  sacral: [5,14,29,59,9,3,42,27,34],
+  root:   [53,60,52,19,39,41,58,38,54]
+};
+var CHANNELS = [[1,8],[2,14],[3,60],[4,63],[5,15],[6,59],[7,31],[9,52],[10,20],[10,34],[10,57],[11,56],[12,22],[13,33],[16,48],[17,62],[18,58],[19,49],[20,34],[20,57],[21,45],[23,43],[24,61],[25,51],[26,44],[27,50],[28,38],[29,46],[30,41],[32,54],[34,57],[35,36],[37,40],[39,55],[42,53],[47,64]];
+var GATE_CENTER = {};
+Object.keys(CENTER_GATES).forEach(function(c){ CENTER_GATES[c].forEach(function(g){ GATE_CENTER[g] = c; }); });
+var MOTORS = ['sacral','sp','heart','root'];
+var ACT_KEYS = ['Sun','Earth','NorthNode','SouthNode','Moon','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto'];
+var D2R_HD = Math.PI / 180;
+function hdNorm(a){ a %= 360; return a < 0 ? a + 360 : a; }
+
+// ecliptic longitude -> gate + line (Rave mandala: Gate 41 starts at 302°)
+function gateLine(lon){
+  var x = hdNorm(lon - 302), idx = Math.floor(x / 5.625);
+  if (idx > 63) idx = 63;
+  var line = Math.floor((x - idx * 5.625) / 0.9375) + 1;
+  if (line > 6) line = 6;
+  return { gate: GATE_ORDER[idx], line: line };
+}
+function hdSunLon(A, t){ return A.SunPosition(t).elon; }
+// true (osculating) lunar node from the Moon's geocentric state, true ecliptic of date
+function trueNodeLon(A, t){
+  var s = A.RotateState(A.Rotation_EQJ_ECT(t), A.GeoMoonState(t));
+  var hx = s.y * s.vz - s.z * s.vy, hy = s.z * s.vx - s.x * s.vz;
+  return hdNorm(Math.atan2(hx, -hy) / D2R_HD);
+}
+function hdBodyLon(A, key, t){
+  if (key === 'Sun') return hdSunLon(A, t);
+  if (key === 'Earth') return hdNorm(hdSunLon(A, t) + 180);
+  if (key === 'NorthNode') return trueNodeLon(A, t);
+  if (key === 'SouthNode') return hdNorm(trueNodeLon(A, t) + 180);
+  if (key === 'Moon') return A.EclipticGeoMoon(t).lon;
+  return A.Ecliptic(A.GeoVector(A.Body[key], t, true)).elon;
+}
+// Design: the moment the Sun was exactly 88° of arc before the birth Sun
+function designTime(A, t0){
+  var target = hdNorm(hdSunLon(A, t0) - 88);
+  var t = t0.AddDays(-88 / 0.9856);
+  for (var i = 0; i < 30; i++){
+    var d = ((hdSunLon(A, t) - target + 540) % 360) - 180;
+    if (Math.abs(d) < 1e-8) break;
+    t = t.AddDays(-d / 0.9856);
+  }
+  return t;
+}
+function activations(A, t){
+  return ACT_KEYS.map(function(k){
+    var lon = hdNorm(hdBodyLon(A, k, t)), gl = gateLine(lon);
+    return { key: k, lon: lon, gate: gl.gate, line: gl.line };
+  });
+}
+function computeHD(A, utcMs){
+  var tP = A.MakeTime(new Date(utcMs)), tD = designTime(A, tP);
+  var pers = activations(A, tP), des = activations(A, tD);
+  var gates = {};
+  pers.forEach(function(a){ (gates[a.gate] = gates[a.gate] || {}).p = true; });
+  des.forEach(function(a){ (gates[a.gate] = gates[a.gate] || {}).d = true; });
+  var channels = CHANNELS.filter(function(c){ return gates[c[0]] && gates[c[1]]; });
+  var defined = {};
+  channels.forEach(function(c){ defined[GATE_CENTER[c[0]]] = true; defined[GATE_CENTER[c[1]]] = true; });
+  // adjacency between defined centres
+  var adj = {};
+  channels.forEach(function(c){
+    var a = GATE_CENTER[c[0]], b = GATE_CENTER[c[1]];
+    (adj[a] = adj[a] || []).push(b); (adj[b] = adj[b] || []).push(a);
+  });
+  function reach(from){
+    var seen = {}, st = [from]; seen[from] = true;
+    while (st.length){ var x = st.pop(); (adj[x] || []).forEach(function(y){ if (!seen[y]){ seen[y] = true; st.push(y); } }); }
+    return seen;
+  }
+  var fromThroat = defined.throat ? reach('throat') : {};
+  var motorThroat = MOTORS.some(function(m){ return fromThroat[m]; });
+  var nDef = Object.keys(defined).length;
+  var type;
+  if (!nDef) type = 'reflector';
+  else if (defined.sacral) type = motorThroat ? 'mg' : 'generator';
+  else type = motorThroat ? 'manifestor' : 'projector';
+  var authority;
+  if (!nDef) authority = 'lunar';
+  else if (defined.sp) authority = 'emotional';
+  else if (defined.sacral) authority = 'sacral';
+  else if (defined.spleen) authority = 'splenic';
+  else if (defined.heart) authority = 'ego';
+  else if (defined.g) authority = 'self';
+  else authority = 'mental';
+  // definition: connected components of defined centres
+  var comp = 0, done = {};
+  Object.keys(defined).forEach(function(c){ if (!done[c]){ comp++; var r = reach(c); Object.keys(r).forEach(function(k){ done[k] = true; }); } });
+  var profile = pers[0].line + '/' + des[0].line;
+  return { tP: tP, tD: tD, pers: pers, des: des, gates: gates, channels: channels, defined: defined,
+           type: type, authority: authority, definition: comp, profile: profile };
+}
+// HD-CORE-END
+
+if (typeof document === 'undefined') return;
+var A = window.Astronomy;
+var VS = '︎';
+
+// ---------- timezone helpers (same as mapa-astral) ----------
+var fmtCache = {};
+function tzOffsetMin(ms, tz){
+  var f = fmtCache[tz] || (fmtCache[tz] = new Intl.DateTimeFormat('en-US', {
+    timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', era: 'short'
+  }));
+  var p = {}; f.formatToParts(new Date(ms)).forEach(function(x){ p[x.type] = x.value; });
+  var y = +p.year; if (p.era && /^B/.test(p.era)) y = 1 - y;
+  var h = +p.hour; if (h === 24) h = 0;
+  var d = new Date(0); d.setUTCFullYear(y, +p.month - 1, +p.day); d.setUTCHours(h, +p.minute, +p.second, 0);
+  return (d.getTime() - Math.floor(ms/1000)*1000) / 60000;
+}
+function localToUTC(y, mo, d, h, mi, tz){
+  var base = new Date(0); base.setUTCFullYear(y, mo - 1, d); base.setUTCHours(h, mi, 0, 0);
+  var local = base.getTime(), utc = local, off = 0;
+  for (var i = 0; i < 5; i++){
+    off = tzOffsetMin(utc, tz);
+    var next = local - off*60000;
+    if (next === utc) break;
+    utc = next;
+  }
+  return { utc: utc, offsetMin: off };
+}
+
+// ---------- cities: name|country|lat|lon|tz (same list as mapa-astral) ----------
+var RAW = [
+// Portugal — capitais de distrito
+'Aveiro|Portugal|40.6405|-8.6538|Europe/Lisbon','Beja|Portugal|38.0151|-7.8632|Europe/Lisbon','Braga|Portugal|41.5454|-8.4265|Europe/Lisbon',
+'Bragança|Portugal|41.8061|-6.7567|Europe/Lisbon','Castelo Branco|Portugal|39.8222|-7.4909|Europe/Lisbon','Coimbra|Portugal|40.2033|-8.4103|Europe/Lisbon',
+'Évora|Portugal|38.5714|-7.9135|Europe/Lisbon','Faro|Portugal|37.0194|-7.9304|Europe/Lisbon','Guarda|Portugal|40.5373|-7.2658|Europe/Lisbon',
+'Leiria|Portugal|39.7436|-8.8071|Europe/Lisbon','Lisboa|Portugal|38.7223|-9.1393|Europe/Lisbon','Portalegre|Portugal|39.2967|-7.4285|Europe/Lisbon',
+'Porto|Portugal|41.1579|-8.6291|Europe/Lisbon','Santarém|Portugal|39.2362|-8.6859|Europe/Lisbon','Setúbal|Portugal|38.5244|-8.8882|Europe/Lisbon',
+'Viana do Castelo|Portugal|41.6932|-8.8329|Europe/Lisbon','Vila Real|Portugal|41.3006|-7.7441|Europe/Lisbon','Viseu|Portugal|40.6566|-7.9125|Europe/Lisbon',
+// Portugal — outras
+'Almada|Portugal|38.6790|-9.1569|Europe/Lisbon','Amadora|Portugal|38.7538|-9.2308|Europe/Lisbon','Sintra|Portugal|38.8029|-9.3817|Europe/Lisbon',
+'Cascais|Portugal|38.6979|-9.4215|Europe/Lisbon','Oeiras|Portugal|38.6969|-9.3146|Europe/Lisbon','Loures|Portugal|38.8309|-9.1685|Europe/Lisbon',
+'Odivelas|Portugal|38.7930|-9.1830|Europe/Lisbon','Seixal|Portugal|38.6401|-9.1015|Europe/Lisbon','Barreiro|Portugal|38.6631|-9.0724|Europe/Lisbon',
+'Vila Franca de Xira|Portugal|38.9553|-8.9897|Europe/Lisbon','Vila Nova de Gaia|Portugal|41.1239|-8.6118|Europe/Lisbon','Matosinhos|Portugal|41.1821|-8.6891|Europe/Lisbon',
+'Maia|Portugal|41.2357|-8.6199|Europe/Lisbon','Gondomar|Portugal|41.1444|-8.5322|Europe/Lisbon','Guimarães|Portugal|41.4425|-8.2918|Europe/Lisbon',
+'Barcelos|Portugal|41.5388|-8.6151|Europe/Lisbon','Vila Nova de Famalicão|Portugal|41.4076|-8.5198|Europe/Lisbon','Póvoa de Varzim|Portugal|41.3804|-8.7609|Europe/Lisbon',
+'Figueira da Foz|Portugal|40.1508|-8.8618|Europe/Lisbon','Covilhã|Portugal|40.2806|-7.5045|Europe/Lisbon','Chaves|Portugal|41.7400|-7.4707|Europe/Lisbon',
+'Torres Vedras|Portugal|39.0911|-9.2586|Europe/Lisbon','Caldas da Rainha|Portugal|39.4036|-9.1386|Europe/Lisbon','Tomar|Portugal|39.6019|-8.4092|Europe/Lisbon',
+'Elvas|Portugal|38.8810|-7.1630|Europe/Lisbon','Sines|Portugal|37.9560|-8.8698|Europe/Lisbon','Portimão|Portugal|37.1386|-8.5376|Europe/Lisbon',
+'Lagos|Portugal|37.1028|-8.6731|Europe/Lisbon','Albufeira|Portugal|37.0891|-8.2479|Europe/Lisbon','Loulé|Portugal|37.1381|-8.0197|Europe/Lisbon',
+'Olhão|Portugal|37.0260|-7.8411|Europe/Lisbon','Tavira|Portugal|37.1275|-7.6506|Europe/Lisbon','Lamego|Portugal|41.0970|-7.8098|Europe/Lisbon',
+// Madeira
+'Funchal|Madeira, Portugal|32.6669|-16.9241|Atlantic/Madeira','Câmara de Lobos|Madeira, Portugal|32.6500|-16.9770|Atlantic/Madeira',
+'Santa Cruz|Madeira, Portugal|32.6881|-16.7937|Atlantic/Madeira','Machico|Madeira, Portugal|32.7190|-16.7663|Atlantic/Madeira',
+'Ribeira Brava|Madeira, Portugal|32.6726|-17.0634|Atlantic/Madeira','Porto Santo|Madeira, Portugal|33.0617|-16.3420|Atlantic/Madeira',
+// Açores
+'Ponta Delgada|Açores, Portugal|37.7412|-25.6756|Atlantic/Azores','Ribeira Grande|Açores, Portugal|37.8211|-25.5194|Atlantic/Azores',
+'Angra do Heroísmo|Açores, Portugal|38.6551|-27.2156|Atlantic/Azores','Praia da Vitória|Açores, Portugal|38.7333|-27.0667|Atlantic/Azores',
+'Horta|Açores, Portugal|38.5363|-28.6269|Atlantic/Azores','Madalena do Pico|Açores, Portugal|38.5361|-28.5283|Atlantic/Azores',
+'Velas|Açores, Portugal|38.6806|-28.2083|Atlantic/Azores','Vila do Porto|Açores, Portugal|36.9447|-25.1450|Atlantic/Azores',
+'Santa Cruz das Flores|Açores, Portugal|39.4533|-31.1275|Atlantic/Azores',
+// Brasil
+'São Paulo|Brasil|-23.5505|-46.6333|America/Sao_Paulo','Rio de Janeiro|Brasil|-22.9068|-43.1729|America/Sao_Paulo','Brasília|Brasil|-15.7939|-47.8828|America/Sao_Paulo',
+'Belo Horizonte|Brasil|-19.9167|-43.9345|America/Sao_Paulo','Salvador|Brasil|-12.9777|-38.5016|America/Bahia','Fortaleza|Brasil|-3.7319|-38.5267|America/Fortaleza',
+'Recife|Brasil|-8.0476|-34.8770|America/Recife','Manaus|Brasil|-3.1190|-60.0217|America/Manaus','Curitiba|Brasil|-25.4284|-49.2733|America/Sao_Paulo',
+'Porto Alegre|Brasil|-30.0346|-51.2177|America/Sao_Paulo','Belém|Brasil|-1.4558|-48.4902|America/Belem','Goiânia|Brasil|-16.6869|-49.2648|America/Sao_Paulo',
+'São Luís|Brasil|-2.5307|-44.3068|America/Fortaleza','Maceió|Brasil|-9.6658|-35.7353|America/Maceio','Natal|Brasil|-5.7945|-35.2110|America/Fortaleza',
+'Teresina|Brasil|-5.0919|-42.8034|America/Fortaleza','João Pessoa|Brasil|-7.1195|-34.8450|America/Fortaleza','Aracaju|Brasil|-10.9472|-37.0731|America/Maceio',
+'Cuiabá|Brasil|-15.6014|-56.0979|America/Cuiaba','Campo Grande|Brasil|-20.4697|-54.6201|America/Campo_Grande','Florianópolis|Brasil|-27.5954|-48.5480|America/Sao_Paulo',
+'Vitória|Brasil|-20.3155|-40.3128|America/Sao_Paulo','Palmas|Brasil|-10.2491|-48.3243|America/Araguaina','Porto Velho|Brasil|-8.7612|-63.9004|America/Porto_Velho',
+'Rio Branco|Brasil|-9.9754|-67.8249|America/Rio_Branco','Macapá|Brasil|0.0349|-51.0694|America/Belem','Boa Vista|Brasil|2.8235|-60.6758|America/Boa_Vista',
+'Campinas|Brasil|-22.9099|-47.0626|America/Sao_Paulo','Guarulhos|Brasil|-23.4543|-46.5337|America/Sao_Paulo','Santos|Brasil|-23.9608|-46.3336|America/Sao_Paulo',
+'Niterói|Brasil|-22.8832|-43.1034|America/Sao_Paulo','Juiz de Fora|Brasil|-21.7642|-43.3496|America/Sao_Paulo','Uberlândia|Brasil|-18.9186|-48.2772|America/Sao_Paulo',
+'Ribeirão Preto|Brasil|-21.1775|-47.8103|America/Sao_Paulo','Sorocaba|Brasil|-23.5015|-47.4526|America/Sao_Paulo','Londrina|Brasil|-23.3045|-51.1696|America/Sao_Paulo',
+'Joinville|Brasil|-26.3045|-48.8487|America/Sao_Paulo','Caxias do Sul|Brasil|-29.1678|-51.1794|America/Sao_Paulo','Feira de Santana|Brasil|-12.2664|-38.9663|America/Bahia',
+// África lusófona
+'Luanda|Angola|-8.8390|13.2894|Africa/Luanda','Huambo|Angola|-12.7761|15.7392|Africa/Luanda','Benguela|Angola|-12.5763|13.4055|Africa/Luanda',
+'Lobito|Angola|-12.3644|13.5366|Africa/Luanda','Lubango|Angola|-14.9177|13.4925|Africa/Luanda','Cabinda|Angola|-5.5500|12.2000|Africa/Luanda',
+'Maputo|Moçambique|-25.9692|32.5732|Africa/Maputo','Beira|Moçambique|-19.8436|34.8389|Africa/Maputo','Nampula|Moçambique|-15.1165|39.2666|Africa/Maputo',
+'Quelimane|Moçambique|-17.8786|36.8883|Africa/Maputo','Tete|Moçambique|-16.1564|33.5867|Africa/Maputo',
+'Praia|Cabo Verde|14.9330|-23.5133|Atlantic/Cape_Verde','Mindelo|Cabo Verde|16.8901|-24.9804|Atlantic/Cape_Verde','Espargos|Cabo Verde|16.7550|-22.9450|Atlantic/Cape_Verde',
+'Bissau|Guiné-Bissau|11.8636|-15.5977|Africa/Bissau','São Tomé|São Tomé e Príncipe|0.3365|6.7273|Africa/Sao_Tome',
+'Joanesburgo|África do Sul|-26.2041|28.0473|Africa/Johannesburg',
+// Espanha
+'Madrid|Espanha|40.4168|-3.7038|Europe/Madrid','Barcelona|Espanha|41.3874|2.1686|Europe/Madrid','Valência|Espanha|39.4699|-0.3763|Europe/Madrid',
+'Sevilha|Espanha|37.3891|-5.9845|Europe/Madrid','Málaga|Espanha|36.7213|-4.4214|Europe/Madrid','Bilbau|Espanha|43.2630|-2.9350|Europe/Madrid',
+'Vigo|Espanha|42.2406|-8.7207|Europe/Madrid','Santiago de Compostela|Espanha|42.8782|-8.5448|Europe/Madrid','Salamanca|Espanha|40.9701|-5.6635|Europe/Madrid',
+'Badajoz|Espanha|38.8794|-6.9707|Europe/Madrid','Las Palmas de Gran Canaria|Espanha|28.1235|-15.4363|Atlantic/Canary',
+// França
+'Paris|França|48.8566|2.3522|Europe/Paris','Lyon|França|45.7640|4.8357|Europe/Paris','Marselha|França|43.2965|5.3698|Europe/Paris',
+'Toulouse|França|43.6047|1.4442|Europe/Paris','Bordéus|França|44.8378|-0.5792|Europe/Paris','Nice|França|43.7102|7.2620|Europe/Paris',
+'Lille|França|50.6292|3.0573|Europe/Paris','Nantes|França|47.2184|-1.5536|Europe/Paris','Estrasburgo|França|48.5734|7.7521|Europe/Paris',
+// Reino Unido e Irlanda
+'Londres|Reino Unido|51.5074|-0.1278|Europe/London','Manchester|Reino Unido|53.4808|-2.2426|Europe/London','Birmingham|Reino Unido|52.4862|-1.8904|Europe/London',
+'Liverpool|Reino Unido|53.4084|-2.9916|Europe/London','Bristol|Reino Unido|51.4545|-2.5879|Europe/London','Edimburgo|Reino Unido|55.9533|-3.1883|Europe/London',
+'Jersey (St Helier)|Reino Unido|49.1868|-2.1100|Europe/Jersey','Dublin|Irlanda|53.3498|-6.2603|Europe/Dublin',
+// Suíça, Luxemburgo, Benelux, Alemanha, Itália
+'Genebra|Suíça|46.2044|6.1432|Europe/Zurich','Lausana|Suíça|46.5197|6.6323|Europe/Zurich','Zurique|Suíça|47.3769|8.5417|Europe/Zurich',
+'Berna|Suíça|46.9480|7.4474|Europe/Zurich','Basileia|Suíça|47.5596|7.5886|Europe/Zurich','Sion|Suíça|46.2331|7.3606|Europe/Zurich',
+'Luxemburgo|Luxemburgo|49.6116|6.1319|Europe/Luxembourg','Esch-sur-Alzette|Luxemburgo|49.4958|5.9806|Europe/Luxembourg',
+'Bruxelas|Bélgica|50.8503|4.3517|Europe/Brussels','Amesterdão|Países Baixos|52.3676|4.9041|Europe/Amsterdam','Roterdão|Países Baixos|51.9244|4.4777|Europe/Amsterdam',
+'Berlim|Alemanha|52.5200|13.4050|Europe/Berlin','Hamburgo|Alemanha|53.5511|9.9937|Europe/Berlin','Munique|Alemanha|48.1351|11.5820|Europe/Berlin',
+'Frankfurt|Alemanha|50.1109|8.6821|Europe/Berlin','Colónia|Alemanha|50.9375|6.9603|Europe/Berlin','Estugarda|Alemanha|48.7758|9.1829|Europe/Berlin',
+'Düsseldorf|Alemanha|51.2277|6.7735|Europe/Berlin','Roma|Itália|41.9028|12.4964|Europe/Rome','Milão|Itália|45.4642|9.1900|Europe/Rome',
+// EUA
+'Nova Iorque|EUA|40.7128|-74.0060|America/New_York','Newark|EUA|40.7357|-74.1724|America/New_York','Boston|EUA|42.3601|-71.0589|America/New_York',
+'Fall River|EUA|41.7015|-71.1550|America/New_York','New Bedford|EUA|41.6362|-70.9342|America/New_York','Providence|EUA|41.8240|-71.4128|America/New_York',
+'Washington, D.C.|EUA|38.9072|-77.0369|America/New_York','Miami|EUA|25.7617|-80.1918|America/New_York','Orlando|EUA|28.5383|-81.3792|America/New_York',
+'Chicago|EUA|41.8781|-87.6298|America/Chicago','Houston|EUA|29.7604|-95.3698|America/Chicago','Denver|EUA|39.7392|-104.9903|America/Denver',
+'Phoenix|EUA|33.4484|-112.0740|America/Phoenix','Los Angeles|EUA|34.0522|-118.2437|America/Los_Angeles','São Francisco|EUA|37.7749|-122.4194|America/Los_Angeles',
+'San José (Califórnia)|EUA|37.3382|-121.8863|America/Los_Angeles','Honolulu|EUA|21.3069|-157.8583|Pacific/Honolulu',
+// Canadá
+'Toronto|Canadá|43.6532|-79.3832|America/Toronto','Montreal|Canadá|45.5019|-73.5674|America/Toronto','Otava|Canadá|45.4215|-75.6972|America/Toronto',
+'Vancouver|Canadá|49.2827|-123.1207|America/Vancouver','Calgary|Canadá|51.0447|-114.0719|America/Edmonton','Winnipeg|Canadá|49.8954|-97.1385|America/Winnipeg',
+// Outros com comunidades lusófonas
+'Caracas|Venezuela|10.4806|-66.9036|America/Caracas','Macau|China|22.1987|113.5439|Asia/Macau','Díli|Timor-Leste|-8.5569|125.5603|Asia/Dili'
+];
+var CITIES = RAW.map(function(s){ var p = s.split('|'); return { name: p[0], country: p[1], lat: +p[2], lon: +p[3], tz: p[4], label: p[0] + ', ' + p[1] }; });
+function fold(s){ return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
+CITIES.forEach(function(c){ c.f = fold(c.name); c.fl = fold(c.label); });
+
+// ---------- texts (from Filipa's Notion notes; see hd-textos.md) ----------
+var TXT_F = {
+  intro: 'O Human Design combina diferentes tradições simbólicas numa proposta de autoconhecimento. Aqui podes gerar gratuitamente o teu corpo gráfico e usá-lo como ponto de partida para explorar perguntas sobre ti, não como uma definição de quem és ou de como deves viver.',
+  types: {
+    mg: { name: 'Geradora Manifestante', nick: 'a multipotencial', strategy: 'Responder e informar', signature: 'Satisfação e paz',
+      text: ['Tens a força constante do Sacral e uma garganta ligada a um motor: és rápida, tens muitas paixões e não vieste para fazer sempre a mesma coisa. Vieste abrir caminhos e criar o novo, e não precisas de fazer sentido para ninguém.',
+             'A tua estratégia é esperar que a vida te traga algo a que responder, sentir o «sim» do corpo, provar e informar quem vai ser tocado pela tua decisão. Quando vives assim, a assinatura é satisfação e paz.'] },
+    generator: { name: 'Geradora', nick: 'a criadora', strategy: 'Responder à vida', signature: 'Satisfação',
+      text: ['Tens acesso constante à força vital do Sacral: uma energia que te deixa continuar quando outros já pararam. O teu desafio não é a capacidade, é o discernimento: saber onde a pões.',
+             'A tua estratégia é responder ao que a vida te traz, em vez de forçar. Quando fazes o que te entusiasma, a assinatura é satisfação.'] },
+    manifestor: { name: 'Manifestadora', nick: 'a iniciadora', strategy: 'Seguir as urgências e informar', signature: 'Paz',
+      text: ['Vieste iniciar e pôr as coisas em movimento sem depender de ninguém. A tua energia chega em ondas: age na onda, descansa depois.',
+             'A tua estratégia é seguir as tuas urgências e informar antes de agir. Informar não é pedir licença: é abrir caminho. Quando vives assim, a assinatura é paz.'] },
+    projector: { name: 'Projetora', nick: 'a guia', strategy: 'Aguardar o reconhecimento', signature: 'Sucesso',
+      text: ['Vês o que os outros ainda não viram e sabes guiar a energia de quem está à tua volta. Estás aqui para ser valorizada pelo que vês, não pelo que fazes.',
+             'A tua estratégia é aguardar o convite e o reconhecimento nas grandes decisões, e cuidar do teu descanso enquanto isso. Quando vives assim, a assinatura é sucesso.'] },
+    reflector: { name: 'Refletora', nick: 'a mística', strategy: 'Aguardar um ciclo lunar', signature: 'Encantamento',
+      text: ['Todos os teus centros são indefinidos: és espelho do ambiente e das pessoas com quem estás, e sentes como ninguém o movimento da Lua.',
+             'A tua estratégia é dar tempo às grandes decisões, um ciclo lunar inteiro, e escolher bem onde e com quem vives. Quando vives assim, a assinatura é encantamento.'] }
+  },
+  auth: {
+    emotional: { name: 'Emocional', line: 'A clareza não chega no momento: chega com o tempo. Deixa a onda emocional passar antes de decidir; muitas vezes, uma boa noite de sono já te mostra o caminho.' },
+    sacral:    { name: 'Sacral', line: 'O teu corpo sabe antes da mente: um «sim» que vibra por dentro. Se não é um grande sim, é não.' },
+    splenic:   { name: 'Esplénica', line: 'A tua intuição fala uma só vez, baixinho, no momento presente. Confia nesse primeiro sinal, mesmo sem o conseguires explicar.' },
+    ego:       { name: 'do Ego', line: 'Decides a partir do que o teu coração realmente deseja. A pergunta é simples: o que é que eu quero?' },
+    self:      { name: 'Autoprojetada', line: 'A clareza vem de te ouvires falar. Pergunta-te: sou o tipo de pessoa que tomaria esta decisão?' },
+    mental:    { name: 'Ambiental', line: 'Decides melhor no ambiente certo, sem pressa, a falar em voz alta para te ouvires a ti.' },
+    lunar:     { name: 'Lunar', line: 'Dá às grandes decisões um ciclo lunar inteiro, 28 dias, e repara no que se mantém verdadeiro.' }
+  },
+  profiles: {
+    '1/3': ['A instauradora da verdade e do conhecimento', 'Investigas a fundo e aprendes na pele: precisas de bases sólidas para te lançares à experiência.'],
+    '1/4': ['A professora omnisciente', 'Aprofundas o que te fascina e partilhas o que descobres com as tuas pessoas.'],
+    '2/4': ['A génia tranquila', 'Talentos naturais que pedem recolhimento e que chegam ao mundo através das tuas ligações.'],
+    '2/5': ['A heroína relutante', 'Entre a paz da tua caverna e as pessoas que te procuram para soluções práticas.'],
+    '3/5': ['A grande experimentadora da vida', 'Aprendes a fazer: na tua vida não há erros, só aprendizagens que se tornam soluções para os outros.'],
+    '3/6': ['O contraste vivo', 'Vives com intensidade, e cada experiência transforma-se em sabedoria para partilhar.'],
+    '4/6': ['A figura real de autoridade', 'Coração do teu grupo: a tua sabedoria chega aos outros através das tuas relações.'],
+    '4/1': ['Vida «bónus»', 'Segues o teu caminho, fiel ao coração, e partilhas o que descobres com quem te é próximo.'],
+    '5/1': ['A solucionadora de desafios', 'As pessoas veem em ti soluções; a tua base de conhecimento torna-as práticas.'],
+    '5/2': ['A heroína automotivada', 'Um talento raro que só sai da caverna quando tu própria o reconheces.'],
+    '6/2': ['O humano exemplar', 'Uma alma antiga que mostra, pelo exemplo, que há poder em ser quem és.'],
+    '6/3': ['A aventureira responsável', 'Sábia e divertida: és um farol para um mundo onde a singularidade de cada pessoa é honrada.']
+  },
+  centres: {
+    defined: 'Os centros a dourado são definidos: energia constante, aquilo com que podes contar em ti e que transmites sempre.',
+    open: 'Os centros indefinidos são onde recebes e amplificas a energia dos outros. É aí que mora o maior potencial de sabedoria, e também o maior condicionamento.'
+  },
+  cta: 'O desenho é só o mapa. <em>A Leitura Intuitiva</em> pode incluir insights do teu Human Design, por mais 100€: para o sentires no corpo e o viveres, não apenas para o conheceres como mais informação.'
+};
+var MASC = [['Geradora Manifestante', 'Gerador Manifestante'], ['"name":"Geradora"', '"name":"Gerador"'], ['Manifestadora', 'Manifestador'], ['Projetora', 'Projetor'], ['Refletora', 'Refletor'], ['"a multipotencial"', '"o multipotencial"'], ['"a criadora"', '"o criador"'], ['"a iniciadora"', '"o iniciador"'], ['"a guia"', '"o guia"'], ['"a mística"', '"o místico"'], ['és rápida', 'és rápido'], ['ser valorizada', 'ser valorizado'], ['foste feita', 'foste feito'], ['A instauradora da verdade', 'O instaurador da verdade'], ['A professora omnisciente', 'O professor omnisciente'], ['A génia tranquila', 'O génio tranquilo'], ['A heroína relutante', 'O herói relutante'], ['A grande experimentadora', 'O grande experimentador'], ['A solucionadora de desafios', 'O solucionador de desafios'], ['A heroína automotivada', 'O herói automotivado'], ['tu própria', 'tu próprio'], ['A aventureira responsável', 'O aventureiro responsável'], ['Sábia e divertida', 'Sábio e divertido']];
+
+function genPick(){ var g = 'f'; try { g = localStorage.getItem('fo_gen') === 'm' ? 'm' : 'f'; } catch (x) {} return g; }
+function buildTXT(g){
+  if (g !== 'm') return TXT_F;
+  var t = JSON.stringify(TXT_F); MASC.forEach(function(p){ t = t.split(p[0]).join(p[1]); }); return JSON.parse(t);
+}
+var TXT = buildTXT(genPick());
+var CENTRE_NAMES = { head: 'Cabeça', ajna: 'Ajna', throat: 'Garganta', g: 'G', heart: 'Coração', spleen: 'Esplénico', sp: 'Plexo Solar', sacral: 'Sacral', root: 'Raiz' };
+var CENTRE_ORDER = ['head','ajna','throat','g','heart','spleen','sp','sacral','root'];
+var DEF_NAMES = ['Sem definição', 'Singular', 'Bipartida', 'Tripartida', 'Quadripartida'];
+var ACT_INFO = {
+  Sun: ['☉', 'Sol'], Earth: ['⊕', 'Terra'], NorthNode: ['☊', 'Nodo Norte'], SouthNode: ['☋', 'Nodo Sul'], Moon: ['☽', 'Lua'],
+  Mercury: ['☿', 'Mercúrio'], Venus: ['♀', 'Vénus'], Mars: ['♂', 'Marte'], Jupiter: ['♃', 'Júpiter'], Saturn: ['♄', 'Saturno'],
+  Uranus: ['♅', 'Úrano'], Neptune: ['♆', 'Neptuno'], Pluto: ['♇', 'Plutão']
+};
+
+// ---------- DOM ----------
+var $ = function(id){ return document.getElementById(id); };
+var form = $('form'), inLocal = $('local'), list = $('localList'), manual = $('manual');
+var chosen = null, activeIdx = -1, shown = [];
+$('introText').textContent = TXT.intro;
+$('ctaText').innerHTML = TXT.cta;
+
+// theme toggle (follows the system until the visitor chooses)
+var mq = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
+function curTheme(){ var t = document.documentElement.getAttribute('data-theme'); return t || (mq && mq.matches ? 'dark' : 'light'); }
+function paintBtn(){ $('themeBtn').textContent = curTheme() === 'dark' ? '☀' + VS : '☾'; }
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t); paintBtn();
+  try { localStorage.setItem('fo_theme', t); } catch (e) {}
+}
+paintBtn();
+if (mq && mq.addEventListener) mq.addEventListener('change', paintBtn);
+$('themeBtn').addEventListener('click', function(){ setTheme(curTheme() === 'dark' ? 'light' : 'dark'); });
+
+// tz select
+var TZS = CITIES.map(function(c){ return c.tz; }).filter(function(v, i, a){ return a.indexOf(v) === i; }).sort();
+$('tz').innerHTML = TZS.map(function(z){ return '<option value="' + z + '"' + (z === 'Europe/Lisbon' ? ' selected' : '') + '>' + z.replace(/_/g, ' ') + '</option>'; }).join('');
+
+
+
+// combobox
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function renderList(){
+  var q = fold(inLocal.value);
+  if (!q){ closeList(); return; }
+  var starts = [], contains = [];
+  CITIES.forEach(function(c){
+    if (c.f.indexOf(q) === 0 || c.fl.indexOf(q) === 0) starts.push(c);
+    else if (c.fl.indexOf(q) > -1) contains.push(c);
+  });
+  shown = starts.concat(contains).slice(0, 7);
+  activeIdx = shown.length ? 0 : -1;
+  var html = shown.map(function(c, i){
+    return '<li role="option" id="opt' + i + '" data-i="' + i + '"' + (i === activeIdx ? ' class="active" aria-selected="true"' : '') + '>' + esc(c.name) + ' <small>' + esc(c.country) + '</small></li>';
+  }).join('');
+  html += '<li role="option" class="other" data-i="other" id="optOther">Outra cidade (escolher o fuso horário)</li>';
+  list.innerHTML = html; list.hidden = false; inLocal.setAttribute('aria-expanded', 'true');
+}
+function closeList(){ list.hidden = true; inLocal.setAttribute('aria-expanded', 'false'); }
+function pick(i){
+  if (i === 'other'){ openManual(); closeList(); return; }
+  var c = shown[i]; if (!c) return;
+  chosen = c; inLocal.value = c.label; closeList(); manual.hidden = true; $('err').textContent = '';
+}
+function openManual(){ chosen = null; manual.hidden = false; $('tz').focus(); }
+inLocal.addEventListener('input', function(){ chosen = null; renderList(); });
+inLocal.addEventListener('focus', function(){ if (inLocal.value && !chosen) renderList(); });
+inLocal.addEventListener('keydown', function(e){
+  if (list.hidden) return;
+  var n = list.children.length;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+    e.preventDefault();
+    activeIdx = (activeIdx + (e.key === 'ArrowDown' ? 1 : -1) + n) % n;
+    Array.prototype.forEach.call(list.children, function(li, i){ li.classList.toggle('active', i === activeIdx); });
+    list.children[activeIdx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter'){
+    e.preventDefault();
+    var li = list.children[activeIdx]; if (li) pick(li.getAttribute('data-i') === 'other' ? 'other' : +li.getAttribute('data-i'));
+  } else if (e.key === 'Escape'){ closeList(); }
+});
+list.addEventListener('mousedown', function(e){
+  var li = e.target.closest('li'); if (!li) return; e.preventDefault();
+  pick(li.getAttribute('data-i') === 'other' ? 'other' : +li.getAttribute('data-i'));
+});
+inLocal.addEventListener('blur', function(){ setTimeout(closeList, 120); });
+$('outraBtn').addEventListener('click', function(){ manual.hidden = !manual.hidden; if (!manual.hidden){ chosen = null; $('tz').focus(); } });
+
+function resolvePlace(){
+  if (chosen) return chosen;
+  var q = fold(inLocal.value);
+  if (q && manual.hidden){
+    var exact = CITIES.filter(function(c){ return c.f === q || c.fl === q; });
+    if (exact.length) return exact[0];
+    var pre = CITIES.filter(function(c){ return c.fl.indexOf(q) === 0; });
+    if (pre.length === 1) return pre[0];
+  }
+  if (!manual.hidden){
+    var tz = $('tz').value, nm = inLocal.value.trim() || tz.split('/').pop().replace(/_/g, ' ');
+    return { name: nm, label: nm, tz: tz };
+  }
+  return null;
+}
+
+// data dd/mm/aaaa (máscara) e conversão para aaaa-mm-dd
+function maskD(el){ el.addEventListener('input', function(){ var d = this.value.replace(/\D/g, '').slice(0, 8), o = d.slice(0, 2); if (d.length > 2) o += '/' + d.slice(2, 4); if (d.length > 4) o += '/' + d.slice(4); this.value = o; }); }
+function isoD(v){ var m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v || ''); if (!m) return ''; var d = +m[1], mo = +m[2], y = +m[3], t = new Date(y, mo - 1, d); return (t.getFullYear() === y && t.getMonth() === mo - 1 && t.getDate() === d) ? m[3] + '-' + m[2] + '-' + m[1] : ''; }
+function fmtD(v){ var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : ''; }
+maskD($('data'));
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var err = $('err'); err.textContent = '';
+  if (!$('nome').value.trim()){ err.textContent = 'Escreve o teu nome.'; $('nome').focus(); return; }
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoD($('data').value));
+  if (!m){ err.textContent = 'Indica a tua data de nascimento (dd/mm/aaaa).'; $('data').focus(); return; }
+  var y = +m[1], mo = +m[2], d = +m[3];
+  if (y < 1900 || y > 2100){ err.textContent = 'Escolhe uma data entre 1900 e 2100.'; return; }
+  var know = true, hh = 12, mi = 0;
+  if (know){
+    var tm = /^(\d{1,2}):(\d{2})/.exec($('hora').value);
+    if (!tm){ err.textContent = 'Indica a hora de nascimento.'; $('hora').focus(); return; }
+    hh = +tm[1]; mi = +tm[2];
+  }
+  var place = resolvePlace();
+  if (!place){
+    err.textContent = manual.hidden ? 'Escolhe a cidade na lista, ou usa «Outra cidade» para indicar o fuso horário.' : 'Escolhe o fuso horário.';
+    (manual.hidden ? inLocal : $('tz')).focus(); return;
+  }
+  if (!A){ err.textContent = 'Não foi possível carregar o motor de cálculo. Recarrega a página.'; return; }
+  var conv = localToUTC(y, mo, d, hh, mi, place.tz);
+  var hd = computeHD(A, conv.utc);
+  var stable = null;
+  if (!know){
+    // does type / authority / profile hold for the whole day?
+    stable = { type: true, authority: true, profile: true };
+    for (var h = 0; h < 24; h++){
+      var alt = computeHD(A, localToUTC(y, mo, d, h, 30, place.tz).utc);
+      ['type','authority','profile'].forEach(function(k){ if (alt[k] !== hd[k]) stable[k] = false; });
+    }
+  }
+  var info_ = { name: $('nome').value.trim(), y: y, mo: mo, d: d, hh: hh, mi: mi, know: know, place: place, off: conv.offsetMin, stable: stable };
+  render(hd, info_);
+  if (window.FO_CROSS) window.FO_CROSS(info_);
+});
+// dados vindos do formulário da página da Leitura: desenha logo o Human Design
+(function(){
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.get('nome')) $('nome').value = q.get('nome').slice(0, 60);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(q.get('data') || '')) $('data').value = fmtD(q.get('data'));
+    if (/^\d{2}:\d{2}$/.test(q.get('hora') || '')) $('hora').value = q.get('hora');
+    var nm = (q.get('local') || '').slice(0, 80), lat = parseFloat(q.get('lat')), lon = parseFloat(q.get('lon')), tz = q.get('tz') || '';
+    if (nm && isFinite(lat) && isFinite(lon) && TZS.indexOf(tz) > -1){
+      var pais = (q.get('pais') || '').slice(0, 60);
+      chosen = { name: nm, country: pais, lat: lat, lon: lon, tz: tz, label: nm + (pais ? ', ' + pais : '') };
+      inLocal.value = chosen.label;
+      if ($('data').value && $('hora').value) setTimeout(function(){ form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true })); }, 60);
+    } else if (nm){
+      inLocal.value = nm;
+      inLocal.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  } catch (e) {}
+})();
+$('editBtn').addEventListener('click', function(){ form.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('data').focus({ preventScroll: true }); });
+
+// ---------- bodygraph geometry (viewBox 420 x 652) ----------
+var SHAPES = {
+  head:   [[210,16],[254,86],[166,86]],
+  ajna:   [[166,108],[254,108],[210,178]],
+  throat: [[176,204],[244,204],[244,272],[176,272]],
+  g:      [[210,298],[254,342],[210,386],[166,342]],
+  heart:  [[256,380],[318,412],[250,442]],
+  spleen: [[44,430],[128,496],[44,562]],
+  sp:     [[376,430],[376,562],[292,496]],
+  sacral: [[176,456],[244,456],[244,524],[176,524]],
+  root:   [[176,572],[244,572],[244,640],[176,640]]
+};
+var GP = {
+  64:[186,86],61:[210,86],63:[234,86],
+  47:[186,108],24:[210,108],4:[234,108],17:[188,143],43:[210,174],11:[232,143],
+  62:[192,204],23:[210,204],56:[228,204],16:[176,222],20:[176,250],35:[244,218],12:[244,236],45:[244,256],31:[192,272],8:[210,272],33:[228,272],
+  1:[210,300],7:[194.6,313.4],13:[225.4,313.4],10:[168,342],25:[252,342],15:[194.6,370.6],2:[210,384],46:[225.4,370.6],
+  21:[268.4,386.4],51:[254.2,398.6],26:[251.2,429.6],40:[294.2,422.5],
+  48:[60.8,443.2],57:[77.6,456.4],44:[94.4,469.6],50:[111.2,482.8],32:[111.2,509.2],28:[90.2,525.7],18:[69.2,542.2],
+  36:[359.2,443.2],22:[342.4,456.4],37:[325.6,469.6],6:[308.8,482.8],49:[308.8,509.2],55:[329.8,525.7],30:[350.8,542.2],
+  5:[192,456],14:[210,456],29:[228,456],34:[176,472],27:[176,506],59:[244,506],42:[192,524],3:[210,524],9:[228,524],
+  53:[192,572],60:[210,572],52:[228,572],54:[176,590],38:[176,610],58:[176,628],19:[244,590],39:[244,610],41:[244,628]
+};
+var VIA = { '20-34': [148,360] }; // route around the G centre
+function centroid(pts){ var x = 0, y = 0; pts.forEach(function(p){ x += p[0]; y += p[1]; }); return [x / pts.length, y / pts.length]; }
+var CENTROID = {}; Object.keys(SHAPES).forEach(function(c){ CENTROID[c] = centroid(SHAPES[c]); });
+function r1(n){ return Math.round(n * 10) / 10; }
+function labelPos(g){
+  var p = GP[g], c = CENTROID[GATE_CENTER[g]], dx = c[0] - p[0], dy = c[1] - p[1], L = Math.sqrt(dx*dx + dy*dy) || 1;
+  var k = Math.min(11.5, L * 0.62);
+  return [r1(p[0] + dx / L * k), r1(p[1] + dy / L * k)];
+}
+
+function rrect(pts, r){
+  var n = pts.length, d = '';
+  for (var i = 0; i < n; i++){
+    var p0 = pts[(i + n - 1) % n], p1 = pts[i], p2 = pts[(i + 1) % n];
+    var v1 = [p0[0] - p1[0], p0[1] - p1[1]], v2 = [p2[0] - p1[0], p2[1] - p1[1]];
+    var l1 = Math.sqrt(v1[0]*v1[0] + v1[1]*v1[1]), l2 = Math.sqrt(v2[0]*v2[0] + v2[1]*v2[1]);
+    var rr = Math.min(r, l1 / 2.4, l2 / 2.4);
+    var a = [p1[0] + v1[0] / l1 * rr, p1[1] + v1[1] / l1 * rr], c = [p1[0] + v2[0] / l2 * rr, p1[1] + v2[1] / l2 * rr];
+    d += (i ? 'L' : 'M') + r1(a[0]) + ' ' + r1(a[1]) + 'Q' + p1[0] + ' ' + p1[1] + ' ' + r1(c[0]) + ' ' + r1(c[1]);
+  }
+  return d + 'Z';
+}
+function renderBody(hd, info){
+  var s = [];
+  s.push('<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--cfill2)"/><stop offset="1" stop-color="var(--cfill)"/></linearGradient></defs>');
+  var on = {}; hd.channels.forEach(function(c){ on[c[0] + '-' + c[1]] = true; });
+  // centres
+  s.push('<g>');
+  CENTRE_ORDER.forEach(function(c, i){
+    var tri = SHAPES[c].length === 3;
+    s.push('<path class="ctr' + (hd.defined[c] ? ' def' : '') + ' fade" style="animation-delay:' + (i * 0.05).toFixed(2) + 's" d="' + rrect(SHAPES[c], tri ? 11 : 17) + '"><title>' + CENTRE_NAMES[c] + (hd.defined[c] ? ' (definido)' : ' (indefinido)') + '</title></path>');
+  });
+  s.push('</g>');
+  // channels: thin lines joining round gates; each half takes the colour of its activation
+  s.push('<g>');
+  var k = 0;
+  function off(a, b, d){ var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.sqrt(dx*dx + dy*dy) || 1; return [-dy / L * d, dx / L * d]; }
+  CHANNELS.forEach(function(c){
+    var a = labelPos(c[0]), b = labelPos(c[1]), key = c[0] + '-' + c[1], via = VIA[key];
+    var mid = via || [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+    [[c[0], a], [c[1], b]].forEach(function(half){
+      var g = hd.gates[half[0]], p0 = half[1];
+      function ln(cls, o, st){ return '<path class="' + cls + '" d="M' + r1(p0[0] + o[0]) + ' ' + r1(p0[1] + o[1]) + 'L' + r1(mid[0] + o[0]) + ' ' + r1(mid[1] + o[1]) + '"' + (st ? ' style="' + st + '"' : '') + '/>'; }
+      s.push(ln('cl', [0, 0]));
+      if (g){
+        var dl = 'animation-delay:' + (0.4 + (k++) * 0.03).toFixed(2) + 's';
+        if (g.p && g.d){ var o = off(p0, mid, 1.6); s.push(ln('cf d fade', o, dl) + ln('cf p fade', [-o[0], -o[1]], dl)); }
+        else s.push(ln('cf ' + (g.p ? 'p' : 'd') + ' fade', [0, 0], dl));
+      }
+    });
+  });
+  s.push('</g>');
+  // portas: bolas com o número, dentro do centro; os traços saem diretamente delas
+  s.push('<g class="fade" style="animation-delay:.4s">');
+  Object.keys(GP).forEach(function(g){
+    var gg = hd.gates[g];
+    var lp = labelPos(g), lx = r1(lp[0]), ly = r1(lp[1]), BR = 5.6;
+    if (gg && gg.p && gg.d){
+      s.push('<path class="gb d" d="M' + lx + ' ' + (ly - BR) + 'A' + BR + ' ' + BR + ' 0 0 0 ' + lx + ' ' + (ly + BR) + 'Z"/><path class="gb p" d="M' + lx + ' ' + (ly - BR) + 'A' + BR + ' ' + BR + ' 0 0 1 ' + lx + ' ' + (ly + BR) + 'Z"/>');
+    } else s.push('<circle class="gb' + (gg ? ' ' + (gg.p ? 'p' : 'd') : '') + '" cx="' + lx + '" cy="' + ly + '" r="' + BR + '"/>');
+    s.push('<text class="gn' + (gg ? ' on' + (gg.p && !gg.d ? ' wp' : (gg.p && gg.d ? ' both' : '')) : '') + '" x="' + lx + '" y="' + ly + '">' + g + '</text>');
+  });
+  s.push('</g>');
+  // setas do topo: Design (esquerda, ouro) e Personalidade (direita, bordô)
+  s.push('<g class="fade" style="animation-delay:.6s"><path d="M118 40H84l8-8M84 40l8 8" fill="none" stroke="var(--gold)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M302 40h34l-8-8M336 40l-8 8" fill="none" stroke="var(--wine)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g>');
+  var svg = $('body');
+  svg.classList.remove('anim'); void svg.getBoundingClientRect();
+  svg.innerHTML = '<desc id="bodyDesc">' + esc(describe(hd)) + '</desc>' + s.join('');
+  svg.classList.add('anim');
+}
+
+var ICONS = {
+  type: '<svg viewBox="0 0 22 22" aria-hidden="true"><polygon points="11,1 21,11 11,21 1,11"/></svg>',
+  auth: '<svg viewBox="0 0 22 22" aria-hidden="true"><polygon points="20,2 20,20 3,11"/></svg>',
+  centres: '<svg viewBox="0 0 22 22" aria-hidden="true"><rect x="3" y="3" width="16" height="16"/></svg>'
+};
+function pillar(kind, icon, title, sub, body, n, extra){
+  return '<div class="pillar reveal" style="animation-delay:' + (n * 0.12) + 's"><div class="ic" aria-hidden="true">' + icon + '</div><div><p class="k">' + kind + '</p><h4>' + title + (sub ? ' <small>' + sub + '</small>' : '') + '</h4>' +
+    body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + (extra || '') + '</div></div>';
+}
+function render(hd, info, keep){
+  renderBody(hd, info);
+  var T = TXT.types[hd.type], Au = TXT.auth[hd.authority], P = TXT.profiles[hd.profile] || ['', ''];
+  // header
+  $('resTitle').textContent = info.name ? 'Human Design • ' + info.name : 'Human Design';
+  var date = new Date(Date.UTC(2000, info.mo - 1, info.d)); date.setUTCFullYear(info.y);
+  var ds = date.toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  $('resMeta').textContent = ds + (info.know ? ' · ' + pad(info.hh) + ':' + pad(info.mi) : '') + ' · ' + info.place.name;
+  var note = $('resNote'); note.hidden = false;
+  if (!info.know){
+    var st = info.stable, keep = [], vary = [];
+    [['type','o tipo'],['authority','a autoridade'],['profile','o perfil']].forEach(function(x){ (st[x[0]] ? keep : vary).push(x[1]); });
+    note.textContent = 'Sem a hora de nascimento, o desenho foi calculado para o meio-dia: a Lua e algumas portas podem mudar. ' +
+      (vary.length ? 'Nesse dia, ' + joinPt(vary) + ' ' + (vary.length > 1 ? 'mudam' : 'muda') + ' consoante a hora, por isso vale a pena confirmar.' : 'O tipo, a autoridade e o perfil mantêm-se ao longo de todo esse dia.');
+  } else {
+    var o = info.off, sg = o >= 0 ? '+' : '−', ao = Math.abs(Math.round(o));
+    note.textContent = 'Hora local UTC' + sg + Math.floor(ao / 60) + (ao % 60 ? ':' + pad(ao % 60) : '') + ' (fuso e horário de verão da época).';
+  }
+  // facts
+  var nDef = CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).length;
+  var V = variables(hd);
+  var facts = [
+    ['Tipo', T.name], ['Autoridade', Au.name], ['Perfil', hd.profile],
+    ['Tema do não-ser', NOTSELF[hd.type]], ['Definição', DEF_NAMES[Math.min(hd.definition, 4)]],
+    ['Ambiente', V.ambiente]
+  ];
+  $('facts').innerHTML = facts.map(function(f){ return '<li><span class="k">' + f[0] + '</span><span class="v">' + esc(f[1]) + '</span></li>'; }).join('');
+  // activations
+  function col(arr, title, cls){
+    return '<h4>' + title + '</h4><ul>' + arr.map(function(a){
+      var inf = ACT_INFO[a.key];
+      return '<li><span class="g" aria-hidden="true">' + inf[0] + VS + '</span><span class="n">' + inf[1] + '</span><span class="v">' + a.gate + '.' + a.line + '</span></li>';
+    }).join('') + '</ul>';
+  }
+  $('actsD').innerHTML = col(hd.des, 'Design (inconsciente)');
+  $('actsP').innerHTML = col(hd.pers, 'Personalidade (consciente)');
+  // pillars
+  var defNames = CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).map(function(c){ return CENTRE_NAMES[c]; });
+  var html = '';
+  html += pillar('Tipo', ICONS.type, T.name, T.nick, T.text.slice(0, 1), 0);
+  tipoHtml = html; html = '';
+  html += pillar('Autoridade', ICONS.auth, 'Autoridade ' + Au.name, '', [Au.line], 1);
+  html += pillar('Perfil', '<span>' + hd.profile + '</span>', 'Perfil ' + hd.profile, P[0], [P[1]], 2);
+  html += pillar('Centros', ICONS.centres, nDef + ' de 9 centros definidos', '',
+    [defNames.length ? 'Definidos em ti: ' + joinPt(defNames) + '. ' + TXT.centres.defined : 'Nenhum centro definido: tudo em ti é abertura. ' + TXT.centres.defined, TXT.centres.open], 3);
+  html += '<p class="hdclose map-benefit-original">Na Leitura, recebes perguntas e práticas para o teu dia-a-dia, para começares a transformar as crenças que reconheces em ti. Nas sessões de alinhamento vamos mais longe: com outras ferramentas e o meu método único, para que possas transcender o teu mapa, integrando tudo o que ele te propõe.</p>';
+  restHtml = html;
+  lastHD = hd; lastInfo = info;
+  if (info.name && !$('gNome').value) $('gNome').value = info.name;
+  try { var fe = localStorage.getItem('fo_email'); if (fe && !$('gEmail').value) $('gEmail').value = fe; } catch (x) {}
+  setLocked(!unlocked());
+  if(window.FO_MAPS && !keep) window.FO_MAPS.onRendered({kind:'hd',info:info,summary:{tipo:TXT.types[hd.type].name,autoridade:TXT.auth[hd.authority].name,perfil:hd.profile}},function(){setLocked(false);});
+  var res = $('result'); res.hidden = false;
+  if (!keep) requestAnimationFrame(function(){ res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
+}
+// ---------- variáveis (cor e tom das ativações de Design) ----------
+var NOTSELF = { mg: 'Frustração e raiva', generator: 'Frustração', manifestor: 'Raiva', projector: 'Amargura', reflector: 'Desilusão' };
+var DIGEST = [['Apetite','consecutivo','alternado'],['Gosto','aberto','fechado'],['Sede','quente','fria'],['Toque','calmo','nervoso'],['Som','alto','baixo'],['Luz','direta','indireta']];
+var ENVIRON = [['Cavernas','seletivas','misturadas'],['Mercados','internos','externos'],['Cozinhas','húmidas','secas'],['Montanhas','ativas','passivas'],['Vales','estreitos','largos'],['Margens','naturais','artificiais']];
+var SENSES = ['Olfato','Paladar','Visão exterior','Visão interior','Sentir','Tato'];
+function colorTone(lon){
+  var x = hdNorm(lon - 302) % 0.9375, c = Math.min(5, Math.floor(x / 0.15625));
+  var t = Math.min(5, Math.floor((x - c * 0.15625) / (0.15625 / 6)));
+  return { color: c, tone: t };
+}
+function variables(hd){
+  var sun = colorTone(hd.des[0].lon), node = colorTone(hd.des[2].lon);
+  var dg = DIGEST[sun.color], en = ENVIRON[node.color];
+  return {
+    digestao: dg[0] + ' (' + dg[sun.tone < 3 ? 1 : 2] + ')',
+    ambiente: en[0] + ' (' + en[node.tone < 3 ? 1 : 2] + ')',
+    sentido: SENSES[sun.tone]
+  };
+}
+// ---------- gate: subscrição anterior (grupo Human Design) ----------
+
+var lastHD = null, lastInfo = null, tipoHtml = '', restHtml = '';
+function setGender(g, silent){
+  try { localStorage.setItem('fo_gen', g); } catch (x) {}
+  TXT = buildTXT(g);
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="gen"]'), function(r){ r.checked = r.value === g; });
+  Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), function(b){ b.style.fontWeight = b.getAttribute('data-g') === g ? '700' : '400'; });
+  $('introText').textContent = TXT.intro; $('ctaText').innerHTML = TXT.cta;
+  if (lastHD && lastInfo) render(lastHD, lastInfo, true);
+}
+Array.prototype.forEach.call(document.querySelectorAll('input[name="gen"]'), function(r){ r.addEventListener('change', function(){ if (r.checked) setGender(r.value); }); });
+Array.prototype.forEach.call(document.querySelectorAll('.genrow [data-g]'), function(b){ b.addEventListener('click', function(){ setGender(b.getAttribute('data-g')); }); });
+setGender(genPick(), true);
+function unlocked(){ return !!window.FO_MAPS?.authorized; }
+function setLocked(on){
+  // desbloqueado: primeiro a informação geral, depois o tipo junto com autoridade, perfil e centros
+  $('pillars').innerHTML = on ? tipoHtml : '';
+  $('pillars2').innerHTML = on ? restHtml : tipoHtml + restHtml;
+  $('locked').classList.toggle('on', on);
+  $('lk').setAttribute('aria-hidden', on ? 'true' : 'false');
+  if (on) $('lk').setAttribute('inert', ''); else $('lk').removeAttribute('inert');
+}
+// «este mapa é de outra pessoa»: a ficha fica com os dados de quem subscreve, nunca com os da outra pessoa
+(function(){
+  $('gOutra').addEventListener('change', function(){ $('gCons').hidden = !this.checked; });
+  var c = $('gOutra'), w = $('gOutroWrap'), l = document.querySelector('label[for="gNome"]'), curName = '';
+  function upd(){
+    w.hidden = !c.checked; l.textContent = c.checked ? 'O teu nome' : 'Nome';
+    if (c.checked){ if (!$('gOutro').value) $('gOutro').value = curName; if (curName && $('gNome').value === curName) $('gNome').value = ''; }
+    else if (!$('gNome').value && curName) $('gNome').value = curName;
+  }
+  c.addEventListener('change', upd);
+  window.foGateOther = function(other, name){ curName = name || ''; $('gOutro').value = other ? curName : ''; c.checked = !!other; upd(); };
+})();
+// mapas de outras pessoas: só se vêem depois de a pessoa deixar o seu próprio e-mail (fica associado na ficha do subscrição anterior)
+
+function joinPt(a){ return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' e ' + a[a.length - 1]; }
+function pad(n){ return (n < 10 ? '0' : '') + n; }
+function describe(hd){
+  var T = TXT.types[hd.type];
+  return 'Corpo gráfico. Tipo: ' + T.name + '. Autoridade ' + TXT.auth[hd.authority].name + '. Perfil ' + hd.profile + '. Centros definidos: ' +
+    (CENTRE_ORDER.filter(function(c){ return hd.defined[c]; }).map(function(c){ return CENTRE_NAMES[c]; }).join(', ') || 'nenhum') +
+    '. Canais: ' + (hd.channels.map(function(c){ return c[0] + '-' + c[1]; }).join(', ') || 'nenhum') + '.';
+}
+})();
+</script>
+<script>
+// ligação para ver também o outro desenho com os mesmos dados
+(function(){
+
+  function foWho(info, qs){
+    window.foCurQs = qs; try { if (!localStorage.getItem('fo_own') && !/[?&]outra=1/.test(location.search)) localStorage.setItem('fo_own', qs); } catch (x) {}
+    try {
+      var P = []; try { P = JSON.parse(localStorage.getItem('fo_people') || '[]'); } catch (x) {}
+      P = P.filter(function(o){ return o.q !== qs; }); P.push({ n: info.name || 'Sem nome', q: qs, d: info.d + '/' + info.mo + '/' + info.y });
+      P = P.slice(-8); try { localStorage.setItem('fo_people', JSON.stringify(P)); } catch (x) {}
+      var T = document.getElementById('resTitle'), nm = info.name; if (!T || !nm) return;
+      var tx = T.textContent, i = tx.lastIndexOf(nm); if (i < 0) return;
+      var pre = tx.slice(0, i), wrap = document.createElement('span'); wrap.className = 'who-wrap';
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'whobtn'; btn.textContent = nm + ' '; var ar = document.createElement('span'); ar.textContent = '▾'; ar.style.cssText = 'font-size:.5em;vertical-align:.25em;font-family:DM Sans,sans-serif'; btn.appendChild(ar); btn.setAttribute('aria-haspopup', 'true');
+      var menu = document.createElement('div'); menu.className = 'whomenu'; menu.hidden = true;
+      P.slice().reverse().forEach(function(o){
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = o.n + ' · ' + o.d; if (o.q === qs) b.className = 'cur';
+        b.addEventListener('click', function(){ goPerson(o.q); }); menu.appendChild(b);
+      });
+      var nw = document.createElement('button'); nw.type = 'button'; nw.className = 'nw'; nw.textContent = '＋ Gerar um novo mapa';
+      nw.addEventListener('click', function(){ menu.hidden = true; newMap(); }); menu.appendChild(nw);
+      wrap.appendChild(btn); wrap.appendChild(menu); T.textContent = pre; T.appendChild(wrap);
+      btn.addEventListener('click', function(e){ e.stopPropagation(); menu.hidden = !menu.hidden; });
+      document.addEventListener('click', function(){ menu.hidden = true; });
+    } catch (x) {}
+  }
+  var EMB = window.parent !== window;
+  function goPerson(q){ if (EMB) parent.postMessage({ fo: 'go', q: q }, '*'); else location.href = '/revisao-f5eca2e9b966693a4e5d621b/p-human-design.html?' + q; }
+  function newMap(){ if (EMB) parent.postMessage({ fo: 'new' }, '*'); else document.getElementById('editBtn').click(); }
+  var p = document.getElementById('crossNote'), a = document.getElementById('crossLink'); if (!p || !a) return;
+  var q0 = new URLSearchParams(location.search), both = q0.get('tambem');
+  try { if (!/embed=1/.test(location.search)) localStorage.setItem('fo_both', both ? '1' : '0'); } catch (x) {}
+  if (both) p.classList.add('both');
+  window.foCrossEnd = function(href, p){
+    try {
+      var ce = document.getElementById('crossEnd');
+      if (!ce){ ce = document.createElement('p'); ce.id = 'crossEnd'; ce.className = 'crossend'; var cta = document.querySelector('.cta'); if (cta) cta.parentNode.insertBefore(ce, cta); else return; }
+      ce.innerHTML = p.querySelector('.c1').outerHTML + '<a href="' + href + '">' + p.querySelector('a').textContent + '</a>';
+    } catch (e) {}
+  };
+  window.FO_CROSS = function(info){
+    try {
+      function pad(n){ return (n < 10 ? '0' : '') + n; }
+      var q = new URLSearchParams({ nome: info.name || '', data: info.y + '-' + pad(info.mo) + '-' + pad(info.d), hora: pad(info.hh) + ':' + pad(info.mi), local: info.place.name, pais: info.place.country || '', lat: info.place.lat, lon: info.place.lon, tz: info.place.tz });
+      a.href = '/revisao-f5eca2e9b966693a4e5d621b/p-mapa-astral.html?' + q.toString() + '#mapa';
+      foWho(info, q.toString());
+      var other = !!window.FO_MAPS?.identity?.other; if(other) q.set('outra','1');
+      try { var L = JSON.parse(localStorage.getItem('fo_hist') || '[]'); var lab = (info.name || 'sem nome') + ' ' + info.d + '/' + info.mo + '/' + info.y + ' ' + info.hh + ':' + (info.mi < 10 ? '0' : '') + info.mi + ' ' + info.place.name + (other ? ' (outra pessoa)' : ''); if (L.indexOf(lab) < 0) L.push(lab); localStorage.setItem('fo_hist', JSON.stringify(L.slice(-12))); } catch (x) {}
+      if (window.foGateOther) window.foGateOther(other, info.name || '');
+      try { if (other && !/embed=1/.test(location.search) && !localStorage.getItem('fo_email') && window.foNeedMail) window.foNeedMail(); } catch (x) {}
+
+      p.hidden = false;
+      window.foCrossEnd(a.href, p);
+    } catch (e) {}
+  };
+})();
+</script>
+<script>
+// embed (lado a lado com o mapa astral): avisa a página-mãe da altura
+(function(){
+  if (!document.documentElement.classList.contains('embed') || !window.parent) return;
+  function post(){ parent.postMessage({ fo: 'hdh', h: document.documentElement.scrollHeight }, '*'); }
+  if (window.ResizeObserver) new ResizeObserver(post).observe(document.body);
+  window.addEventListener('load', post); setInterval(post, 1500);
+  // se o desenho não arrancou sozinho (dados vindos do mapa), tenta outra vez
+  setTimeout(function(){ var r = document.getElementById('result'), f = document.getElementById('form'); if (r && r.hidden && f && f.requestSubmit && document.getElementById('data').value && document.getElementById('hora').value) f.requestSubmit(); }, 2500);
+})();
+// pop-up com feedback de clientes quando o desenho aparece
+(function(){
+  if (document.documentElement.classList.contains('embed')) return;
+  var box = document.getElementById('fbt'), body = document.getElementById('fbBody'), res = document.getElementById('result');
+  if (!box || !res) return;
+  var MSG = ['A forma como descreves e falas sobre o Human Design é <u>apaixonante</u>. Vibra mesmo!!!!',
+             '<u>Encaixou como peças de puzzle</u> 🧩<br>E acima de tudo está num “idioma” que ressoa ✨ Que trabalho lindo, Filipa. Muito entusiasmada por fazer este mergulho contigo 💙'];
+  var i = 0, started = false, closed = false;
+  try { closed = sessionStorage.getItem('hdFbX') === '1'; } catch (e) {}
+  function show(){ if (closed) return; body.innerHTML = MSG[i % MSG.length]; box.classList.add('on'); i++; if (i < 4) setTimeout(function(){ box.classList.remove('on'); setTimeout(show, 700); }, 11000); else setTimeout(function(){ box.classList.remove('on'); }, 11000); }
+  document.getElementById('fbX').addEventListener('click', function(){ closed = true; box.classList.remove('on'); try { sessionStorage.setItem('hdFbX', '1'); } catch (e) {} });
+  new MutationObserver(function(){ if (!res.hidden && !started){ started = true; setTimeout(show, 7000); } }).observe(res, { attributes: true, attributeFilter: ['hidden'] });
+})();
+</script>
+<dialog id="convites-dialog" class="site-dialog" aria-labelledby="convites-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Fechar">×</button><div class="dialog-heading"><span class="eyebrow">Convites e parcerias</span><h2 id="convites-title">Vamos conversar e cocriar.</h2><p>Conta-me um pouco sobre a tua comunidade ou empresa e o encontro que imaginas. Não precisas de ter um formato definido.</p></div><form id="partnershipForm"><div class="dialog-grid"><label>Nome e apelido<input name="nome" required autocomplete="name" maxlength="150"></label><label>E-mail<input name="email" type="email" required autocomplete="email" maxlength="254"></label><label>Comunidade ou empresa<input name="organizacao" required maxlength="200"></label></div><label>Que encontro imaginas? Tema, objetivo, formato<textarea name="ideia" rows="3" required maxlength="5000"></textarea></label><label data-partnership-location>Localidade<input name="localidade" maxlength="200"></label><div class="dialog-grid"><label>Data aproximada<input name="data" placeholder="Por exemplo, janeiro de 2027" maxlength="100"></label></div><label class="dialog-check"><input type="checkbox" name="privacidade" required><span>Aceito que a Filipa Osório use estes dados para me responder. <a href="/revisao-f5eca2e9b966693a4e5d621b/p-privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label><p class="dialog-note">Este é um pedido de informação e de proposta, sem compromisso.</p><p class="dialog-status" role="status" aria-live="polite"></p><button class="dialog-primary" type="submit">Rever o meu convite</button></form><section class="partnership-review" hidden tabindex="-1"><h3>O teu convite, para rever</h3><p>Pré-visualização local. Nenhum dado foi enviado.</p><pre></pre><button class="dialog-primary" type="button" data-edit-partnership>Voltar e editar</button></section></dialog></body>
+</html>
+
