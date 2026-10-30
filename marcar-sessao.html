@@ -246,6 +246,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   function hdOk(){ return true; }
   function updTotal(){
     var solo = base().value === 'sessaosolo'; if (solo){ $('hd').checked = false; $('rs').checked = false; }
+    $('inicioImediato').closest('label').hidden = solo; $('inicioImediato').required = !solo;
     $('rs').closest('label').hidden = solo;
     document.querySelector('[data-op="sessao"]').hidden=false;
     $('hd').checked = !solo;
@@ -309,7 +310,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
  if(birthNeeded()&&birth.some(v=>!v))return fail('Preciso da data, hora e local de nascimento.','Please provide your birth date, time and place.','data');
  if(gift&&entrega()==='ja'&&!$('rnome').value.trim())return fail('Escreve o nome de quem recebe.','Please enter the recipient’s name.','rnome');
  if(!$('ok').checked)return fail('Aceita os termos e a política de privacidade.','Please accept the terms and privacy policy.','ok');
- if(!$('inicioImediato').checked)return fail('Confirma o pedido de início e as condições de livre resolução.','Please confirm the request to begin and the withdrawal conditions.','inicioImediato');
+ if(base().value!=='sessaosolo'&&!$('inicioImediato').checked)return fail('Confirma o pedido de início e as condições de livre resolução.','Please confirm the request to begin and the withdrawal conditions.','inicioImediato');
  const cfg=window.FO_PAY||{},isPreview=cfg.preview!==false;
  const ref=isPreview?'DEMONSTRACAO':('natal_'+crypto.randomUUID().replace(/-/g,''));
  const language=$('idioma')?$('idioma').value:(en?'English':'Português');

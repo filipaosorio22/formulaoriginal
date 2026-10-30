@@ -254,6 +254,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     var hasS = v === 'sessao' || v === 'rssessao' || v === 'sessaosolo';
     sn.hidden = !hasS; $('fam').hidden = !hasS || solo;
     ['q1','q2','q3'].forEach(function(id){ var w = $(id) && $(id).closest('.full'); if (w) w.hidden = solo; });
+    $('inicioImediato').closest('label').hidden = solo; $('inicioImediato').required = !solo;
     $('q4l').textContent = solo ? 'Queres falar algo desde já? (opcional)' : $('q4l').textContent;
     $('birthCard').hidden = solo;
     if (!gift) {
@@ -312,7 +313,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
  if(!gift&&base().value!=='sessaosolo'&&['q1','q2'].some(id=>!$(id).value.trim()))return fail('Responde às duas perguntas sobre o teu momento.','Please answer the two questions about your current situation.','q1');
  if(gift&&entrega()==='ja'&&!$('rnome').value.trim())return fail('Escreve o nome de quem recebe.','Please enter the recipient’s name.','rnome');
  if(!$('ok').checked)return fail('Aceita os termos e a política de privacidade.','Please accept the terms and privacy policy.','ok');
- if(!$('inicioImediato').checked)return fail('Confirma o pedido de início e as condições de livre resolução.','Please confirm the request to begin and the withdrawal conditions.','inicioImediato');
+ if(base().value!=='sessaosolo'&&!$('inicioImediato').checked)return fail('Confirma o pedido de início e as condições de livre resolução.','Please confirm the request to begin and the withdrawal conditions.','inicioImediato');
  const cfg=window.FO_PAY||{},isPreview=cfg.preview!==false;
  const ref=isPreview?'DEMONSTRACAO':('natal_'+crypto.randomUUID().replace(/-/g,''));
  const language=$('idioma')?$('idioma').value:(en?'English':'Português');
