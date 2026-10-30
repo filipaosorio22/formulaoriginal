@@ -1,26 +1,26 @@
 /* Formulário da Leitura de Momento com o mesmo aspeto do formulário da Leitura de Essência */
-html body #tarotForm{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;max-width:none}
-html body #tarotForm>section{background:#fffdf8!important;border:1px solid #ece2cf!important;border-radius:18px!important;box-shadow:0 8px 26px rgba(57,37,31,.07)!important;padding:24px 20px!important;margin:0 0 18px!important}
-html body #tarotForm h2{font-family:'Cormorant Garamond',Georgia,serif!important;font-style:italic!important;font-weight:400!important;color:#7a2535!important;font-size:27px!important;line-height:1.25!important;margin:0 0 12px!important;border:0!important;padding:0!important}
-html body #tarotForm .fields{display:grid!important;grid-template-columns:1fr 1fr!important;gap:16px 14px!important}
-html body #tarotForm .field.full,html body #tarotForm .field:has(textarea){grid-column:1/-1!important}
-html body #tarotForm .field>label{display:block!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:12.5px!important;font-weight:500!important;letter-spacing:.06em!important;text-transform:uppercase!important;color:#7a6a5a!important;margin:0 0 6px!important}
-html body #tarotForm .field>label span{text-transform:none!important;letter-spacing:0!important;font-weight:400!important}
-html body #tarotForm input:not([type=checkbox]):not([type=radio]),html body #tarotForm select,html body #tarotForm textarea{font-family:'DM Sans',Arial,sans-serif!important;font-size:16px!important;border:1px solid #dcc79c!important;border-radius:10px!important;background:#fffdf8!important;min-height:46px!important;padding:11px 12px!important;box-shadow:none!important}
-html body #tarotForm textarea{min-height:130px!important}
-html body #tarotForm .hint{font-family:'DM Sans',Arial,sans-serif!important;font-size:13px!important;color:#7a6a5a!important}
-html body #tarotForm .launch-prices{display:block!important}
-html body #tarotForm .launch-prices p{display:block!important;border:1px solid #dcc79c!important;border-radius:12px!important;padding:12px 14px!important;margin:0 0 10px!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:15px!important;line-height:1.45!important;background:transparent!important;color:#3a302b!important}
-html body #tarotForm .launch-prices p:first-child{border-color:#c9a86c!important;background:rgba(201,168,108,.10)!important}
-html body #tarotForm .launch-prices strong{font-family:'DM Sans',Arial,sans-serif!important;font-weight:600!important;color:#3a302b!important}
-html body #tarotForm .promo-choice>.small{font-family:'DM Sans',Arial,sans-serif!important;font-size:13px!important;color:#7a6a5a!important;margin:6px 0 12px!important}
-html body #tarotForm .dialog-check,html body #tarotForm label.check{display:flex!important;gap:10px!important;align-items:flex-start!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:14px!important;line-height:1.5!important;color:#7a6a5a!important;margin:10px 0 0!important}
-html body #tarotForm .dialog-check input,html body #tarotForm label.check input{margin-top:3px!important;flex:none!important;accent-color:#a8854f!important;width:16px!important;height:16px!important}
-html body #tarotForm .form-total{background:#fffdf8!important;border:1px solid #ece2cf!important;border-radius:18px!important;padding:18px 20px!important;margin:0 0 14px!important;font-family:'DM Sans',Arial,sans-serif!important}
-@media(max-width:640px){html body #tarotForm .fields{grid-template-columns:1fr!important}}
-html[data-theme=dark] body #tarotForm>section,html[data-theme=dark] body #tarotForm .form-total{background:#26201e!important;border-color:#3d3330!important}
-html[data-theme=dark] body #tarotForm input:not([type=checkbox]):not([type=radio]),html[data-theme=dark] body #tarotForm select,html[data-theme=dark] body #tarotForm textarea{background:#1d1716!important;border-color:#5a4a3d!important;color:#efe6dc!important}
-html[data-theme=dark] body #tarotForm h2{color:#e3a6b4!important}
-html[data-theme=dark] body #tarotForm .launch-prices p,html[data-theme=dark] body #tarotForm .launch-prices strong{color:#efe6dc!important;border-color:#5a4a3d!important}
-html[data-theme=dark] body #tarotForm .field>label,html[data-theme=dark] body #tarotForm .dialog-check,html[data-theme=dark] body #tarotForm label.check,html[data-theme=dark] body #tarotForm .hint{color:#b3a597!important}
-html body #tarotForm .fields>.field:not(.full):not(:has(textarea)){grid-column:auto!important;width:auto!important}
+html body :is(#tarotForm,#segundaForm){background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;max-width:none}
+html body :is(#tarotForm,#segundaForm)>section{background:#fffdf8!important;border:1px solid #ece2cf!important;border-radius:18px!important;box-shadow:0 8px 26px rgba(57,37,31,.07)!important;padding:24px 20px!important;margin:0 0 18px!important}
+html body :is(#tarotForm,#segundaForm) h2{font-family:'Cormorant Garamond',Georgia,serif!important;font-style:italic!important;font-weight:400!important;color:#7a2535!important;font-size:27px!important;line-height:1.25!important;margin:0 0 12px!important;border:0!important;padding:0!important}
+html body :is(#tarotForm,#segundaForm) .fields{display:grid!important;grid-template-columns:1fr 1fr!important;gap:16px 14px!important}
+html body :is(#tarotForm,#segundaForm) .field.full,html body :is(#tarotForm,#segundaForm) .field:has(textarea){grid-column:1/-1!important}
+html body :is(#tarotForm,#segundaForm) .field>label{display:block!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:12.5px!important;font-weight:500!important;letter-spacing:.06em!important;text-transform:uppercase!important;color:#7a6a5a!important;margin:0 0 6px!important}
+html body :is(#tarotForm,#segundaForm) .field>label span{text-transform:none!important;letter-spacing:0!important;font-weight:400!important}
+html body :is(#tarotForm,#segundaForm) input:not([type=checkbox]):not([type=radio]),html body :is(#tarotForm,#segundaForm) select,html body :is(#tarotForm,#segundaForm) textarea{font-family:'DM Sans',Arial,sans-serif!important;font-size:16px!important;border:1px solid #dcc79c!important;border-radius:10px!important;background:#fffdf8!important;min-height:46px!important;padding:11px 12px!important;box-shadow:none!important}
+html body :is(#tarotForm,#segundaForm) textarea{min-height:130px!important}
+html body :is(#tarotForm,#segundaForm) .hint{font-family:'DM Sans',Arial,sans-serif!important;font-size:13px!important;color:#7a6a5a!important}
+html body :is(#tarotForm,#segundaForm) .launch-prices{display:block!important}
+html body :is(#tarotForm,#segundaForm) .launch-prices p{display:block!important;border:1px solid #dcc79c!important;border-radius:12px!important;padding:12px 14px!important;margin:0 0 10px!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:15px!important;line-height:1.45!important;background:transparent!important;color:#3a302b!important}
+html body :is(#tarotForm,#segundaForm) .launch-prices p:first-child{border-color:#c9a86c!important;background:rgba(201,168,108,.10)!important}
+html body :is(#tarotForm,#segundaForm) .launch-prices strong{font-family:'DM Sans',Arial,sans-serif!important;font-weight:600!important;color:#3a302b!important}
+html body :is(#tarotForm,#segundaForm) .promo-choice>.small{font-family:'DM Sans',Arial,sans-serif!important;font-size:13px!important;color:#7a6a5a!important;margin:6px 0 12px!important}
+html body :is(#tarotForm,#segundaForm) .dialog-check,html body :is(#tarotForm,#segundaForm) label.check{display:flex!important;gap:10px!important;align-items:flex-start!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:14px!important;line-height:1.5!important;color:#7a6a5a!important;margin:10px 0 0!important}
+html body :is(#tarotForm,#segundaForm) .dialog-check input,html body :is(#tarotForm,#segundaForm) label.check input{margin-top:3px!important;flex:none!important;accent-color:#a8854f!important;width:16px!important;height:16px!important}
+html body :is(#tarotForm,#segundaForm) .form-total{background:#fffdf8!important;border:1px solid #ece2cf!important;border-radius:18px!important;padding:18px 20px!important;margin:0 0 14px!important;font-family:'DM Sans',Arial,sans-serif!important}
+@media(max-width:640px){html body :is(#tarotForm,#segundaForm) .fields{grid-template-columns:1fr!important}}
+html[data-theme=dark] body :is(#tarotForm,#segundaForm)>section,html[data-theme=dark] body :is(#tarotForm,#segundaForm) .form-total{background:#26201e!important;border-color:#3d3330!important}
+html[data-theme=dark] body :is(#tarotForm,#segundaForm) input:not([type=checkbox]):not([type=radio]),html[data-theme=dark] body :is(#tarotForm,#segundaForm) select,html[data-theme=dark] body :is(#tarotForm,#segundaForm) textarea{background:#1d1716!important;border-color:#5a4a3d!important;color:#efe6dc!important}
+html[data-theme=dark] body :is(#tarotForm,#segundaForm) h2{color:#e3a6b4!important}
+html[data-theme=dark] body :is(#tarotForm,#segundaForm) .launch-prices p,html[data-theme=dark] body :is(#tarotForm,#segundaForm) .launch-prices strong{color:#efe6dc!important;border-color:#5a4a3d!important}
+html[data-theme=dark] body :is(#tarotForm,#segundaForm) .field>label,html[data-theme=dark] body :is(#tarotForm,#segundaForm) .dialog-check,html[data-theme=dark] body :is(#tarotForm,#segundaForm) label.check,html[data-theme=dark] body :is(#tarotForm,#segundaForm) .hint{color:#b3a597!important}
+html body :is(#tarotForm,#segundaForm) .fields>.field:not(.full):not(:has(textarea)){grid-column:auto!important;width:auto!important}

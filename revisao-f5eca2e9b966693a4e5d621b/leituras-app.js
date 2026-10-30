@@ -52,7 +52,7 @@ if(form){
  form.addEventListener('submit',async e=>{
   e.preventDefault();if(submitting)return;const status=by('formStatus');status.textContent='';if(!form.reportValidity())return;
   if(promotionOption?.checked&&!promotionConsent?.checked){status.textContent=english?'Please confirm you will share your testimonial, or deselect the offer.':'Confirma o compromisso de partilhar o teu testemunho ou retira a oferta.';promotionConsent?.focus();return;}
-  const labels={nome:'Nome',apelido:'Apelido',email:'E-mail',telefone:'Telemóvel / WhatsApp',nif:'NIF',tema:'Tema ou pergunta',contexto:'Contexto',tema2:'2.º tema ou pergunta',contexto2:'Contexto do 2.º tema',outraNome:'2.ª Leitura para (nome) · essa pessoa envia o tema e o contexto por mensagem',outraEmail:'E-mail dessa pessoa',desejo:'O que gostaria de compreender',idioma:'Idioma da leitura'};
+  const labels={nome:'Nome',apelido:'Apelido',email:'E-mail',telefone:'Telemóvel / WhatsApp',nif:'NIF',tema:'Tema ou pergunta',contexto:'Contexto',tema2:'2.º tema ou pergunta',contexto2:'Contexto do 2.º tema',outraNome:'2.ª Leitura para (nome) · essa pessoa preenche o formulário da 2.ª Leitura',outraEmail:'E-mail dessa pessoa',desejo:'O que gostaria de compreender',idioma:'Idioma da leitura'};
   const data={};Object.keys(labels).forEach(id=>data[id]=by(id)?by(id).value.trim():'');
   const other=cfg.two&&by('outraPessoa')?.checked;if(!other){data.outraNome='';data.outraEmail='';}
   if(other){data.tema2='';data.contexto2='';data.outraEmail='';}

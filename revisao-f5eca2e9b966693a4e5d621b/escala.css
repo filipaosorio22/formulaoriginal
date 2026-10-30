@@ -1,0 +1,14 @@
+/* Escala de tamanhos única (proposta de 30/10/2026). Só ativa com html[data-escala]. */
+html[data-escala][data-escala][data-escala] body h1:not(dialog *):not(.site-header *){font-size:48px!important;line-height:1.15!important}
+html[data-escala][data-escala][data-escala] body h2:not(dialog *):not(.site-header *):not(.site-footer *):not(.feedback-title){font-size:34px!important;line-height:1.2!important}
+html[data-escala][data-escala][data-escala] body h3:not(dialog *):not(.site-header *):not(.site-footer *){font-size:24px!important;line-height:1.3!important}
+html[data-escala][data-escala][data-escala] body :is(main,section) :is(p,li):not(dialog *):not(blockquote *):not(.small):not(.hint):not(.eyebrow):not(.fineprint):not(.meta):not(.err):not(.privacy):not(.mp-foot):not(.swipe-hint):not(.launch-price):not(.price):not(.feat-eyebrow):not(.aud-q):not(.feat-quote):not(.kicker):not(.callout-label):not(.t-xs):not(.form-price *):not(.choice *):not(.card .sub):not(#tarotForm *):not(#f *){font-size:17px!important;line-height:1.7!important}
+html[data-escala][data-escala][data-escala] body :is(blockquote p,.quote-text,.feat-full .body-text):not(dialog *){font-size:16px!important;line-height:1.7!important}
+html[data-escala][data-escala][data-escala] body :is(.small,.fineprint,.meta,.hint):not(dialog *){font-size:14px!important}
+@media(max-width:760px){
+html[data-escala][data-escala][data-escala] body h1:not(dialog *):not(.site-header *){font-size:34px!important}
+html[data-escala][data-escala][data-escala] body h2:not(dialog *):not(.site-header *):not(.site-footer *):not(.feedback-title){font-size:27px!important}
+html[data-escala][data-escala][data-escala] body h3:not(dialog *):not(.site-header *):not(.site-footer *){font-size:21px!important}
+html[data-escala][data-escala][data-escala] body :is(main,section) :is(p,li):not(dialog *):not(blockquote *):not(.small):not(.hint):not(.eyebrow):not(.fineprint):not(.meta):not(.err):not(.privacy):not(.mp-foot):not(.swipe-hint):not(.launch-price):not(.price):not(.feat-eyebrow):not(.aud-q):not(.feat-quote):not(.kicker):not(.callout-label):not(.t-xs):not(.form-price *):not(.choice *):not(.card .sub):not(#tarotForm *):not(#f *){font-size:16px!important}
+html[data-escala][data-escala][data-escala] body :is(blockquote p,.quote-text,.feat-full .body-text):not(dialog *){font-size:15px!important}
+}
