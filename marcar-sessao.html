@@ -109,8 +109,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2>A tua escolha</h2><p class="sub"></p>
       <p class="sub" id="opSub">Escolhe a Leitura que queres.</p>
       <div id="ops">
-        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="197"><span><b>Leitura de Essência</b><br>Leitura do mapa astral e do Human Design, história simbólica, perguntas, práticas e envio de Reiki para o tema que trazes.</span><span class="pr">197€</span></label>
-        <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de alinhamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
+        <label class="choice" data-op="leitura" hidden><input type="radio" name="op" value="leitura" data-p="197"><span><b>Leitura de Essência</b><br>Leitura do mapa astral e do Human Design, história simbólica, perguntas, práticas e envio de Reiki para o tema que trazes.</span><span class="pr">197€</span></label>
+        <label class="choice" data-op="sessao" hidden><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de alinhamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="125" checked><span><b>Sessão de Alinhamento, sem Leitura</b><br>Uma sessão individual com duração de 1 hora, a partir do tema que queres trabalhar.</span><span class="pr">125€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
@@ -249,7 +249,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     $('inicioImediato').closest('label').hidden = solo; $('inicioImediato').required = !solo;
     $('rs').closest('label').hidden = solo;
     var tl = $('termosLink'); if (tl){ tl.href = solo ? 'termos-ceen.html' : 'termos-leitura-intuitiva.html'; tl.textContent = solo ? 'termos da sessão de alinhamento' : 'termos da Leitura de Essência'; }
-    document.querySelector('[data-op="sessao"]').hidden=false;
     $('hd').checked = !solo;
     $('tot').textContent = total() + '€';
     var v = sel().value, sn = $('sesNote');
