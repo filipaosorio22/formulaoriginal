@@ -1,0 +1,11 @@
+/* Escala de tamanhos combinada a 31/10/2026: título principal 48px, títulos de secção 35px (mais pequenos na CEEN), texto fora das caixas 16,5px. O texto dentro das caixas fica como está. Desliga-se com ?escala=antiga. */
+html[data-escala][data-escala][data-escala] body h1:not(dialog *):not(.site-header *):not(.review-navigation *){font-size:48px!important;line-height:1.15!important}
+html[data-escala][data-escala][data-escala] body h2:not(dialog *):not(.site-header *):not(.site-footer *):not(.feedback-title){font-size:35px!important;line-height:1.2!important}
+html[data-escala][data-escala-ceen][data-escala] body h2:not(dialog *):not(.site-header *):not(.site-footer *):not(.feedback-title){font-size:30px!important}
+html[data-escala][data-escala][data-escala] body :is(p,li)[data-fora]:not(.small):not(.hint):not(.eyebrow):not(.fineprint):not(.meta):not(.err):not(.privacy):not(.mp-foot):not(.swipe-hint):not(.launch-price):not(.price):not(.feat-eyebrow):not(.aud-q):not(.feat-quote):not(.kicker):not(.callout-label):not(.t-xs):not(.quote-text){font-size:16.5px!important;line-height:1.7!important}
+@media(max-width:760px){
+html[data-escala][data-escala][data-escala] body h1:not(dialog *):not(.site-header *):not(.review-navigation *){font-size:34px!important}
+html[data-escala][data-escala][data-escala] body h2:not(dialog *):not(.site-header *):not(.site-footer *):not(.feedback-title){font-size:27px!important}
+html[data-escala][data-escala-ceen][data-escala] body h2:not(dialog *):not(.site-header *):not(.site-footer *):not(.feedback-title){font-size:24px!important}
+html[data-escala][data-escala][data-escala] body :is(p,li)[data-fora]:not(.small):not(.hint):not(.eyebrow):not(.fineprint):not(.meta):not(.err):not(.privacy):not(.mp-foot):not(.swipe-hint):not(.launch-price):not(.price):not(.feat-eyebrow):not(.aud-q):not(.feat-quote):not(.kicker):not(.callout-label):not(.t-xs):not(.quote-text){font-size:16px!important}
+}
