@@ -118,3 +118,7 @@ html body .site-main-nav .readings-menu{gap:0!important}html body .site-main-nav
 html body .site-main-nav .nav-links .readings-submenu-toggle{width:16px!important;min-width:16px!important;max-width:16px!important;padding:0!important;margin-left:3px!important}
 
 html body .site-main-nav .nav-links .readings-submenu-toggle{width:12px!important;min-width:12px!important;max-width:12px!important;margin-left:2px!important;margin-right:-12px!important}
+
+/* menu: só uma barra por baixo da página atual */
+.nav-links a[aria-current],.site-main-nav a[aria-current],.nav-links a[aria-current]:hover{text-decoration:none!important}
+html body .site-main-nav a[aria-current=page],html body .site-main-nav a[aria-current=page]:hover{text-decoration:none!important}
