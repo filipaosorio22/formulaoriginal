@@ -1,5 +1,10 @@
 # Public pages restricted as requested on 2026-10-29. Originals retained in Git.
 exclude:
+  - leituras-en.html
+  - tarot-en.html
+  - leitura-intuitiva-en.html
+  - marcar-leitura-en.html
+  - pedir-tarot-en.html
   - Mentoria.html
   - alquimia.html
   - ceen-backup-2026-10-18.html
