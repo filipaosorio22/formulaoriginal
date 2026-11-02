@@ -112,3 +112,7 @@ html[data-theme=dark] body #o-que-e,html[data-theme=dark] body .delivery-preview
 html body .testemunho-video,html body .car-video{border:2px solid #c9a86c!important;border-radius:14px!important}
 html body .car-slide:nth-last-child(2){background:transparent!important}
 html body .home-portrait img{transform-origin:50% 40%}
+
+html body .site-main-nav .readings-menu{gap:0!important}html body .site-main-nav .readings-submenu-toggle{width:auto!important;min-width:0!important;padding:0 0 0 3px!important}
+
+html body .site-main-nav .nav-links .readings-submenu-toggle{width:16px!important;min-width:16px!important;max-width:16px!important;padding:0!important;margin-left:3px!important}
