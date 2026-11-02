@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102a"></script>
+<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102b"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Book a Essence Reading | Filipa Osório</title>
@@ -116,7 +116,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice"><input type="checkbox" id="rs"><span><b>Add your current yearly cycle · +72€</b><br>More insight into your current moment: the themes and possibilities of your yearly cycle, in dialogue with your birth chart.</span></label>
       <label class="choice" id="momW"><input type="checkbox" id="mom"><span><b id="momT">Add the Now Reading · +80€</b><br><span id="momD">An audio reading, with a written action proposal, on a specific theme you are living.</span></span></label>
-      <div id="qmW" hidden style="margin-top:10px"><label class="lbl" for="qm">Which theme would you like to bring to the Now Reading?</label><textarea id="qm" placeholder="A decision, a wish that isn’t arriving, a situation that keeps repeating…"></textarea><div class="promo44" style="margin-top:12px"><label class="chk"><input type="checkbox" id="usaCodigo"><span><b>I will use the REGRESSO code</b> (first 5 people)</span></label><label class="chk" id="testWrap" hidden><input type="checkbox" id="momConsent"><span>I commit to sharing a testimonial about my experience. Any publication with my name, voice or image requires my separate permission.</span></label></div></div>
+      <div id="qmW" hidden style="margin-top:10px"><label class="lbl" for="qm">Which theme would you like to bring to the Now Reading?</label><textarea id="qm" placeholder="A decision, a wish that isn’t arriving, a situation that keeps repeating…"></textarea></div>
       <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
     </div>
 
@@ -256,7 +256,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     if (solo || gift){ $('mom').checked = false; }
     $('momW').hidden = solo || gift;
     $('momT').textContent = 'Add the Now Reading · +80€';
-    $('momD').textContent = promo44 ? 'An audio reading, with a written action proposal, on a specific theme you are living. With the REGRESSO code, applied at checkout, it costs 44€ (first 5 people).' : 'An audio reading, with a written action proposal, on a specific theme you are living.';
+    $('momD').textContent = 'An audio reading, with a written action proposal, on a specific theme you are living.';
     $('qmW').hidden = !$('mom').checked;
     var tl = $('termosLink'); if (tl){ tl.href = solo ? 'termos-ceen-en.html' : 'termos-leitura-intuitiva-en.html'; tl.textContent = solo ? 'alignment session terms' : 'Essence Reading terms'; }
     document.querySelector('[data-op="sessao"]').hidden=false;
@@ -333,7 +333,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
  const cfg=window.FO_PAY||{},isPreview=cfg.preview!==false;
  const ref=isPreview?'DEMONSTRACAO':('natal_'+crypto.randomUUID().replace(/-/g,''));
  const language=$('idioma')?$('idioma').value:(en?'English':'Português');
- const names={leitura:say('Leitura da Essência','Essence Reading'),rs:say('Leitura da Essência + ciclo anual','Essence Reading + yearly cycle'),sessao:say('Leitura da Essência + sessão','Essence Reading + alignment session'),rssessao:say('Leitura da Essência + ciclo anual + sessão','Essence Reading + yearly cycle + alignment session'),rssessao_m44:say('Leitura da Essência + ciclo anual + sessão + Leitura do Momento (44€, oferta de abertura)','Essence + yearly cycle + session + Now Reading (€44 offer)'),rssessao_m80:say('Leitura da Essência + ciclo anual + sessão + Leitura do Momento','Essence + yearly cycle + session + Now Reading'),sessaosolo:say('Sessão de alinhamento','Alignment session'),leitura_m44:say('Leitura da Essência + Leitura do Momento (44€, oferta de abertura)','Essence + Now Reading (€44 offer)'),rs_m44:say('Leitura da Essência + ciclo anual + Leitura do Momento (44€, oferta de abertura)','Essence + yearly cycle + Now Reading (€44 offer)'),sessao_m44:say('Leitura da Essência + sessão + Leitura do Momento (44€, oferta de abertura)','Essence + session + Now Reading (€44 offer)'),leitura_m80:say('Leitura da Essência + Leitura do Momento','Essence + Now Reading'),rs_m80:say('Leitura da Essência + ciclo anual + Leitura do Momento','Essence + yearly cycle + Now Reading'),sessao_m80:say('Leitura da Essência + sessão + Leitura do Momento','Essence + session + Now Reading')};
+ const names={leitura:say('Leitura da Essência','Essence Reading'),rs:say('Leitura da Essência + ciclo anual','Essence Reading + yearly cycle'),sessao:say('Leitura da Essência + sessão','Essence Reading + alignment session'),rssessao:say('Leitura da Essência + ciclo anual + sessão','Essence Reading + yearly cycle + alignment session'),rssessao_m80:say('Leitura da Essência + ciclo anual + sessão + Leitura do Momento','Essence + yearly cycle + session + Now Reading'),sessaosolo:say('Sessão de alinhamento','Alignment session'),leitura_m80:say('Leitura da Essência + Leitura do Momento','Essence + Now Reading'),rs_m80:say('Leitura da Essência + ciclo anual + Leitura do Momento','Essence + yearly cycle + Now Reading'),sessao_m80:say('Leitura da Essência + sessão + Leitura do Momento','Essence + session + Now Reading')};
  const lines=[say('Referência: ','Reference: ')+ref,say('Estado: aguarda confirmação do pagamento','Status: awaiting payment confirmation'),say('Nome: ','Name: ')+name,'Email: '+email,say('Telemóvel: ','Mobile: ')+(raw.startsWith('+')?raw:cc+' '+raw),say('Idioma da leitura: ','Reading language: ')+language,say('Escolha: ','Choice: ')+names[sel().value],say('Total base: ','Base total: ')+total()+'€'];
  if(gift)lines.push(say('Oferta a outra pessoa: ','Gift to another person: ')+$('rnome').value.trim(),say('Entrega: ','Delivery: ')+entrega());
  if($('nif').value.trim())lines.push(say('NIF: ','Tax ID: ')+$('nif').value.trim());

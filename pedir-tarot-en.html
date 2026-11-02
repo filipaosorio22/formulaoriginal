@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102a"></script>
+<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102b"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Book my Now Reading | Filipa Osório</title>
@@ -151,7 +151,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
     <div class="card">
       <p class="total">Total: <b id="tot">80€</b></p>
-      <div class="promo44" id="momentoPromoConsentWrap"><label class="chk"><input type="checkbox" id="usaCodigo"><span><b>I will use the REGRESSO code</b> (first 5 people)</span></label><label class="chk" id="testWrap" hidden><input type="checkbox" id="momentoPromoConsent"><span>I commit to sharing a testimonial about my experience. Any publication with my name, voice or image requires my separate permission.</span></label></div>
+      
       <p class="prazo" id="prazo">Reading delivery time:<br><b>within 7 business days</b> after payment is confirmed and all details are received.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>I have read and accept the <a id="termosLink" href="termos-leitura-intuitiva-en.html" target="_blank" rel="noopener">reading terms</a> and the <a href="privacidade-en.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
       <label class="chk"><input type="checkbox" id="inicioImediato" name="inicioImediato" required><span>I expressly request that preparation of my reading begin within 24 hours after payment is confirmed and all required details are received. I understand that, because this is a personalised reading, the work begins as soon as Filipa starts my reading and that, from that moment, the amount can no longer be refunded in full.</span></label><label class="chk"><input type="checkbox" id="sub"><span>I would like to receive personal development content from Filipa’s Substack (optional, you can unsubscribe at any time)</span></label>
@@ -171,7 +171,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   $('themeBtn').textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' + VS : '☾';
 
   var C = window.TAROT_CONFIG || {}, promoOn = window.FO_PROMO44 !== false;
-  var LINKS = { promo: C.promotionLink, promocombo: C.promoComboLink, normal: C.regularPaymentLink || C.paymentLink, combo: C.comboLink, sessaosolo: ((window.FO_PAY || {}).stripe || {}).sessaosolo };
+  var LINKS = { normal: C.regularPaymentLink || C.paymentLink, combo: C.comboLink, sessaosolo: ((window.FO_PAY || {}).stripe || {}).sessaosolo };
   var NAMES = { normal: 'Leitura do Momento (EN)', combo: 'Leitura do Momento + sessão de alinhamento (EN)', sessaosolo: 'Sessão de alinhamento, sem Leitura (EN)' };
   var q = new URLSearchParams(location.search);
   if (!promoOn) document.querySelectorAll('.promo44,#momentoPromoConsentWrap').forEach(function(n){ n.remove(); });

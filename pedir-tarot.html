@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="pt-PT">
-<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102a"></script>
+<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102b"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marcar a minha Leitura do Momento | Filipa Osório</title>
@@ -151,7 +151,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
     <div class="card">
       <p class="total">Total: <b id="tot">80€</b></p>
-      <div class="promo44" id="momentoPromoConsentWrap"><label class="chk"><input type="checkbox" id="usaCodigo"><span><b>Vou usar o código REGRESSO</b> (primeiras 5 pessoas)</span></label><label class="chk" id="testWrap" hidden><input type="checkbox" id="momentoPromoConsent"><span>Comprometo-me a partilhar um testemunho sobre a minha experiência. Qualquer publicação com o meu nome, voz ou imagem exige a minha autorização separada.</span></label></div>
+      
       <p class="prazo" id="prazo">Prazo de entrega da Leitura:<br><b>até 7 dias úteis</b> após a confirmação do pagamento e a receção de todos os dados.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a id="termosLink" href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos das Leituras</a> e a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
       <label class="chk"><input type="checkbox" id="inicioImediato" name="inicioImediato" required><span>Peço expressamente que a preparação da minha Leitura comece nas 24 horas seguintes à confirmação do pagamento e à receção de todos os dados necessários. Compreendo que, por se tratar de uma Leitura personalizada, o trabalho começa no momento em que a Filipa inicia a minha Leitura e que, a partir daí, o valor deixa de poder ser devolvido na totalidade.</span></label><label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo de desenvolvimento pessoal do Substack da Filipa (opcional, podes cancelar quando quiseres)</span></label>
@@ -171,8 +171,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   $('themeBtn').textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' + VS : '☾';
 
   var C = window.TAROT_CONFIG || {}, promoOn = window.FO_PROMO44 !== false;
-  var LINKS = { promo: C.promotionLink, promocombo: C.promoComboLink, normal: C.regularPaymentLink || C.paymentLink, combo: C.comboLink, sessaosolo: ((window.FO_PAY || {}).stripe || {}).sessaosolo };
-  var NAMES = { promo: 'Leitura do Momento (44€, oferta de abertura)', promocombo: 'Leitura do Momento a 44€ + sessão de alinhamento (oferta de abertura)', normal: 'Leitura do Momento', combo: 'Leitura do Momento + sessão de alinhamento', sessaosolo: 'Sessão de alinhamento, sem Leitura' };
+  var LINKS = { normal: C.regularPaymentLink || C.paymentLink, combo: C.comboLink, sessaosolo: ((window.FO_PAY || {}).stripe || {}).sessaosolo };
+  var NAMES = { normal: 'Leitura do Momento', combo: 'Leitura do Momento + sessão de alinhamento', sessaosolo: 'Sessão de alinhamento, sem Leitura' };
   var q = new URLSearchParams(location.search);
   if (!promoOn) document.querySelectorAll('.promo44,#momentoPromoConsentWrap').forEach(function(n){ n.remove(); });
   var want = q.get('op');

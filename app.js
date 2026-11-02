@@ -30,7 +30,7 @@ const english=document.documentElement.lang.startsWith('en');
 const ui=s=>english?({'Enviar e continuar para pagamento':'Send and continue to payment','As tuas respostas são enviadas à Filipa e segues para o pagamento seguro no Stripe.':'Your answers are sent to Filipa, then you continue to secure payment with Stripe.','Confirma o número de telemóvel, incluindo o indicativo.':'Check your mobile number, including the country code.','O pedido online ainda não está disponível. Tenta novamente mais tarde.':'Online requests are not available yet. Please try again later.','A preparar o pagamento…':'Preparing your payment…','Não foi possível enviar o teu pedido. Nenhum pagamento foi iniciado. Podes tentar novamente.':'Your request could not be sent. No payment was initiated. You can try again.'}[s]||s):s;
 const form=document.getElementById('tarotForm');
 if(form){
- const by=id=>document.getElementById(id),cfg=window.TAROT_CONFIG||{preview:true,price:44};
+ const by=id=>document.getElementById(id),cfg=window.TAROT_CONFIG||{preview:true,price:80};
  let submitting=false,requestRef=null;
  if(!cfg.preview){by('submitPedido').textContent=ui('Enviar e continuar para pagamento');by('formNotice').textContent=ui('As tuas respostas são enviadas à Filipa e segues para o pagamento seguro no Stripe.');}
  form.addEventListener('submit',async e=>{
