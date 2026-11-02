@@ -545,7 +545,8 @@
   .bk-eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 0.3rem; }
   .bk-title { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:24px; color:var(--wine); text-align:center; margin:0 0 0.6rem; }
   .bk-intro { font-size:14.5px; text-align:center; margin:0 0 1.2rem; }
-  .bk-fmt { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1rem; }
+  .bk-fmt .bk-fmt-semente{grid-column:1/-1}
+.bk-fmt { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1rem; }
   .bk-fmt label { cursor:pointer; }
   .bk-fmt input { position:absolute; opacity:0; }
   .bk-fmt span { display:block; text-align:center; border:1px solid #c9a86c; border-radius:10px; padding:0.7rem 0.4rem; font-size:14px; color:var(--ink-soft); }
@@ -1712,6 +1713,7 @@
         <div class="bk-fmt">
           <label><input type="radio" name="formato" value="Sessão CEEN · 269€" checked data-valor="269€"><span><b>Sessão CEEN</b>269€</span></label>
           <label><input type="radio" name="formato" value="Ciclo CEEN · 800€" data-valor="800€"><span><b>Ciclo CEEN</b>800€</span></label>
+          <label class="bk-fmt-semente"><input type="radio" name="formato" value="Semente CEEN · 350€" data-valor="350€"><span><b>🌱 CEEN Semente</b>350€ · 1.ª sessão de 2 horas e 2.ª de 1 hora, para quem está a começar</span></label>
         </div>
         <p class="bk-paynote">A marcação da tua sessão fica confirmada após a confirmação do pagamento de <strong id="bkValor1">269€</strong>. Os métodos de pagamento encontram-se aquando da marcação da data da tua sessão.</p>
         <label class="bk-f">Nome e apelido<input name="nome" required autocomplete="name"></label>
@@ -1737,6 +1739,7 @@
       <div class="bk-pay">
         <p>A marcação da tua sessão fica confirmada após a confirmação do pagamento de <strong id="bkValor">269€</strong>. Os métodos de pagamento encontram-se aquando da marcação da data da tua sessão.</p>
       </div>
+      <p class="bk-pay" id="bkSoPrimeira" style="display:none"></p>
       <div id="calendlyConsentPrompt" style="display:none; text-align:center; padding:1.5rem 1rem;">
         <p style="margin-bottom:1.2rem;">Para escolheres o dia aqui, precisamos de carregar o calendário do Cal.com, que usa cookies próprios.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); aceitarEAbrirCalendly();">Aceitar e continuar</a>
@@ -1860,7 +1863,7 @@ var consent = getConsent();
       if (!widget.dataset.done) { widget.innerHTML = ''; Cal('inline', { elementOrSelector: widget, calLink: 'filipaosorio/ceen', layout: 'month_view', config: calConfig() }); Cal('ui', { theme: calConfig().theme, hideEventTypeDetails: false, layout: 'month_view' }); widget.dataset.done = '1'; }
     } else { prompt_.style.display = 'block'; widget.style.display = 'none'; }
   }
-  function atualizaValor(){ var r = document.querySelector('#bkForm input[name=formato]:checked'); if (r) document.getElementById('bkValor1').textContent = r.getAttribute('data-valor'); }
+  function atualizaValor(){ var r = document.querySelector('#bkForm input[name=formato]:checked'); if (r) { document.getElementById('bkValor1').textContent = r.getAttribute('data-valor'); } }
   document.querySelectorAll('#bkForm input[name=formato]').forEach(function(r){ r.addEventListener('change', atualizaValor); });
   window.voltarRespostas = function(){
     document.getElementById('bkStep2').style.display = 'none';
@@ -1877,7 +1880,7 @@ var consent = getConsent();
     if (typeof gtag === 'function') { gtag('event', 'marcar_ceen_click', { idioma: document.documentElement.lang, pagina: location.pathname }); }
     document.getElementById('ceenCalendlyModal').style.display = 'flex';
     document.getElementById('cookieVeilCeen').style.display = 'block';
-    if (fmt) { var r = document.querySelector('#bkForm input[name=formato][value^="' + (fmt === 'ciclo' ? 'Ciclo' : 'Sessão') + '"]'); if (r) r.checked = true; atualizaValor(); }
+    if (fmt) { var r = document.querySelector('#bkForm input[name=formato][value^="' + (fmt === 'ciclo' ? 'Ciclo' : (fmt === 'semente' ? 'Semente' : 'Sessão')) + '"]'); if (r) r.checked = true; atualizaValor(); }
     if (BK.enviado) mostrarCalendario();
   };
   window.aceitarEAbrirCalendly = function(){
@@ -1910,7 +1913,7 @@ var consent = getConsent();
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || ', '), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || ', '), 'Como chegou: ' + (d.origem || ', ')];
     if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
     var corpo = L.join('\n'), anterior = BK.ultimo;
-    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : 'Sessão CEEN (269€)', formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
+    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : (d.formato.indexOf('Semente') === 0 ? 'CEEN Semente (350€)' : 'Sessão CEEN (269€)'), formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
     // só envia o e-mail se for a primeira vez ou se a pessoa mudou alguma resposta
     if (corpo !== anterior) {
       var tinha = !!anterior;
@@ -1924,6 +1927,10 @@ var consent = getConsent();
     document.getElementById('bkBtn').textContent = 'Atualizar e continuar';
     document.querySelector('#ceenCalendlyModal .bk-box').scrollTop = 0;
     var wd = document.getElementById('calendlyWidget'); wd.innerHTML = ''; delete wd.dataset.done; document.getElementById('bkSubstack').style.display = 'none';
+    var sp = document.getElementById('bkSoPrimeira'), fm = d.formato;
+    if (fm.indexOf('Semente') === 0) { sp.innerHTML = '<strong>Estás a marcar apenas a primeira sessão</strong> da CEEN Semente (2 horas). A segunda sessão, de 1 hora, acontece até 2 semanas depois da primeira e combinamos a data a seguir.'; sp.style.display = 'block'; }
+    else if (fm.indexOf('Ciclo') === 0) { sp.innerHTML = '<strong>Estás a marcar apenas a primeira sessão</strong> do Ciclo CEEN. As seguintes combinamos contigo a seguir.'; sp.style.display = 'block'; }
+    else { sp.style.display = 'none'; }
     mostrarCalendario();
     if (typeof gtag === 'function') gtag('event', 'formulario_ceen_enviado');
   });
