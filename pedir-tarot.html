@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="pt-PT">
-<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102b"></script>
+<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261102c"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marcar a minha Leitura do Momento | Filipa Osório</title>
@@ -146,12 +146,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
         <div class="full"><label class="lbl" for="q1" id="q1l">Que tema ou pergunta gostarias de explorar?</label><textarea id="q1" required placeholder="Uma escolha, uma relação, um desejo que não chega, uma situação que se repete…"></textarea></div>
         <div class="full"><label class="lbl" for="q2" id="q2l">O que estás a viver em relação a esse tema?</label><textarea id="q2" required placeholder="Evita dados identificativos de outras pessoas."></textarea></div>
         <div class="full" id="q4w"><label class="lbl" for="q4" id="q4l">O que gostarias de compreender ou de olhar de outra maneira? (opcional)</label><textarea id="q4"></textarea></div>
+        <div class="full promo44" id="q5w"><label class="lbl" for="q5" id="q5l">Tema da segunda Leitura (opcional: podes enviá-lo mais tarde, até um mês depois do pagamento)</label><textarea id="q5" placeholder="Pode ser o mesmo tema ou outro."></textarea></div>
       </div>
     </div>
 
     <div class="card">
       <p class="total">Total: <b id="tot">80€</b></p>
       
+      <label class="chk promo44" id="ofertaTestWrap"><input type="checkbox" id="ofertaTest"><span>Comprometo-me a partilhar um testemunho sobre a minha experiência. Qualquer publicação com o meu nome, voz ou imagem exige a minha autorização separada.</span></label>
       <p class="prazo" id="prazo">Prazo de entrega da Leitura:<br><b>até 7 dias úteis</b> após a confirmação do pagamento e a receção de todos os dados.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>Li e aceito os <a id="termosLink" href="termos-leitura-intuitiva.html" target="_blank" rel="noopener">termos das Leituras</a> e a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
       <label class="chk"><input type="checkbox" id="inicioImediato" name="inicioImediato" required><span>Peço expressamente que a preparação da minha Leitura comece nas 24 horas seguintes à confirmação do pagamento e à receção de todos os dados necessários. Compreendo que, por se tratar de uma Leitura personalizada, o trabalho começa no momento em que a Filipa inicia a minha Leitura e que, a partir daí, o valor deixa de poder ser devolvido na totalidade.</span></label><label class="chk"><input type="checkbox" id="sub"><span>Quero receber conteúdo de desenvolvimento pessoal do Substack da Filipa (opcional, podes cancelar quando quiseres)</span></label>
@@ -173,6 +175,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   var C = window.TAROT_CONFIG || {}, promoOn = window.FO_PROMO44 !== false;
   var LINKS = { normal: C.regularPaymentLink || C.paymentLink, combo: C.comboLink, sessaosolo: ((window.FO_PAY || {}).stripe || {}).sessaosolo };
   var NAMES = { normal: 'Leitura do Momento', combo: 'Leitura do Momento + sessão de alinhamento', sessaosolo: 'Sessão de alinhamento, sem Leitura' };
+  var OFERTA = promoOn && !!C.ofertaLink;
+  if (OFERTA){ LINKS.normal = C.ofertaLink; NAMES.normal = '2 Leituras do Momento (oferta de regresso)'; var lab = document.querySelector('[data-op="normal"]'); lab.querySelector('span').innerHTML = '<b>2 Leituras do Momento</b><br>Oferta de regresso para as primeiras 5 pessoas: para o mesmo tema ou para temas diferentes, em simultâneo ou ao longo de um mês a contar do pagamento. Cada uma em áudio, com proposta de ação por escrito e envio de Reiki.'; }
   var q = new URLSearchParams(location.search);
   if (!promoOn) document.querySelectorAll('.promo44,#momentoPromoConsentWrap').forEach(function(n){ n.remove(); });
   var want = q.get('op');
@@ -180,12 +184,13 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   first.checked = true;
 
   function sel(){ return document.querySelector('input[name=momentoOpcao]:checked'); }
-  function isPromo(){ var c = $('usaCodigo'); return !!(c && c.checked && sel().value !== 'sessaosolo'); }
+  function isPromo(){ return OFERTA && sel().value === 'normal'; }
   if ($('usaCodigo')) $('usaCodigo').addEventListener('change', function(){ $('testWrap').hidden = !this.checked; if (!this.checked) $('momentoPromoConsent').checked = false; });
   function upd(){
     var v = sel().value;
     $('tot').textContent = sel().getAttribute('data-p') + '€';
     var solo = v === 'sessaosolo';
+    if ($('q5w')) $('q5w').hidden = !isPromo(); if ($('ofertaTestWrap')){ $('ofertaTestWrap').hidden = !isPromo(); if (!isPromo()) $('ofertaTest').checked = false; }
     $('sesNote').hidden = !solo;
     $('sesNote').textContent = solo ? 'A data da sessão não é escolhida agora: depois de confirmado o pagamento, segues logo para a página onde marcas o dia e a hora que preferires, e recebes também a ligação por e-mail.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
     $('birthCard').hidden = solo; $('prazo').hidden = solo;
@@ -234,13 +239,13 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     var birth = [$('data').value, $('hora').value, $('local').value.trim()];
     if (birth[0] && !validDate(birth[0])) return fail('Confirma a data de nascimento.', 'data');
     if (sel().value !== 'sessaosolo' && ['q1','q2'].some(function(id){ return !$(id).value.trim(); })) return fail('Responde às duas perguntas sobre o tema da tua Leitura.', 'q1');
-    if (isPromo() && !$('momentoPromoConsent').checked) return fail('Para usares o código REGRESSO, aceita o compromisso de partilhar um testemunho.', 'momentoPromoConsent');
+    if (isPromo() && !$('ofertaTest').checked) return fail('Para receberes as 2 Leituras, aceita o compromisso de partilhar um testemunho.', 'ofertaTest');
     if (!$('ok').checked) return fail('Aceita os termos e a política de privacidade.', 'ok');
     if (sel().value !== 'sessaosolo' && !$('inicioImediato').checked) return fail('Confirma o pedido de início e as condições de livre resolução.', 'inicioImediato');
     var cfg = window.FO_PAY || {}, isPreview = cfg.preview !== false, v = sel().value;
     var ref = isPreview ? 'DEMONSTRACAO' : ('tarot_' + crypto.randomUUID().replace(/-/g, ''));
     var lines = ['Referência: ' + ref, 'Estado: aguarda confirmação do pagamento', 'Nome: ' + name, 'Email: ' + email, 'Telemóvel: ' + (raw.charAt(0) === '+' ? raw : cc + ' ' + raw), 'Idioma da leitura: ' + $('idioma').value, 'Escolha: ' + NAMES[v], 'Total: ' + sel().getAttribute('data-p') + '€'];
-    if (isPromo()) lines.push('Código REGRESSO: vai usá-lo e comprometeu-se a partilhar um testemunho.');
+    if (isPromo()){ lines.push('Oferta de regresso: 2 Leituras do Momento. Comprometeu-se a partilhar um testemunho.'); if ($('q5').value.trim()) lines.push('Tema da segunda Leitura: ' + $('q5').value.trim()); }
     if ($('nif').value.trim()) lines.push('NIF: ' + $('nif').value.trim());
     if (birth.some(Boolean)) lines.push('Nascimento: ' + birth.join(', '));
     ['q1','q2','q4'].forEach(function(id){ if ($(id).value.trim()) lines.push($(id + 'l').textContent + ': ' + $(id).value.trim()); });

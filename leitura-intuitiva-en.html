@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261029r3v13"></script><script>window["ga-disable-G-5CX792T8H9"]=true;</script>
+<html lang="pt" data-fo-preview="true">
+<head><script src="/escala.js?v=1"></script><script src="theme-init.js?v=20261028v8"></script><script src="site-config.js?v=20261101r12"></script><script>window["ga-disable-G-5CX792T8H9"]=true;</script>
 <script>/* visitas da Filipa: ?eu=filipa desliga o Analytics neste browser, ?eu=visita volta a ligar */try{var q=location.search;if(/[?&]eu=filipa\b/.test(q))localStorage.setItem("fo_owner","1");if(/[?&]eu=visita\b/.test(q))localStorage.removeItem("fo_owner");if(localStorage.getItem("fo_owner")==="1")window["ga-disable-G-5CX792T8H9"]=true;}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Essence Reading | Astrology and Human Design | Filipa Osório</title>
+
+<title>Essence Reading | Your charts | Filipa Osório</title>
 
 
 <meta property="og:type" content="website">
@@ -13,7 +14,7 @@
 
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Essence Reading","serviceType":"Birth chart reading","provider":{"@type":"Person","name":"Filipa Osório","url":"https://filipaosorio.com/"},"areaServed":"PT","availableLanguage":["pt-PT","en"],"description":"A written reading of the birth chart, astrology, Human Design and intuition.","offers":[{"@type":"Offer","name":"Essence Reading","price":"197","priceCurrency":"EUR"},{"@type":"Offer","name":"Reading + alignment session","price":"297","priceCurrency":"EUR"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Leitura da Essência","serviceType":"Leitura de mapa astral","provider":{"@type":"Person","name":"Filipa Osório","url":"https://filipaosorio.com/"},"areaServed":"PT","availableLanguage":["pt-PT","en"],"description":"Leitura escrita do mapa astral, astrologia, Human Design e intuição.","offers":[{"@type":"Offer","name":"Leitura da Essência","price":"197","priceCurrency":"EUR"},{"@type":"Offer","name":"Leitura + sessão de alinhamento","price":"297","priceCurrency":"EUR"}]}</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23faf6ef%22/><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23faf6ef%22 stroke=%22%23c9a86c%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 font-size=%2238%22 fill=%22%237a2535%22>FO</text></svg>">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-fo-48.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -173,8 +174,8 @@
   .ffront b { font-family:'Spectral',serif; font-weight:400; font-style:italic; font-size:22px; line-height:1.2; color:var(--wine); }
   .fhint { position:absolute; left:0; right:0; bottom:14px; font-family:'DM Sans',sans-serif; font-size:11.5px; color:var(--gold-deep); }
   .fhint::before { content:'↻ '; }
-  @media (hover:hover){ .fhint::after { content:'hover to read'; } }
-  @media (hover:none){ .fhint::after { content:'tap to read'; } }
+  @media (hover:hover){ .fhint::after { content:'passa o rato'; } }
+  @media (hover:none){ .fhint::after { content:'toca para ler'; } }
   .fback { transform:rotateY(180deg); background:var(--card); border:1px solid var(--gold); display:flex; flex-direction:column; justify-content:center; }
   .fback h3 { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:19px; color:var(--wine); margin-bottom:0.5rem; }
   .fback p { font-size:15px; line-height:1.65; color:var(--ink); }
@@ -231,7 +232,7 @@
   .tl-step.lit .tl-dot { background:var(--wine); color:var(--btn-ink); border-color:var(--wine); }
   .tl-step h3 { font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:19px; color:var(--ink); margin:0.15rem 0 0.25rem; }
   .tl-step p { font-size:15.5px; line-height:1.7; color:var(--ink-soft); }
-  .tl-step.opt h3::after { content:'optional'; margin-left:0.5rem; font-family:'DM Sans',sans-serif; font-style:normal; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-deep); border:0.5px solid var(--gline); border-radius:20px; padding:2px 8px; vertical-align:middle; }
+  .tl-step.opt h3::after { content:'opcional'; margin-left:0.5rem; font-family:'DM Sans',sans-serif; font-style:normal; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-deep); border:0.5px solid var(--gline); border-radius:20px; padding:2px 8px; vertical-align:middle; }
 
   /* opções */
   .offers { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:1.6rem; align-items:stretch; }
@@ -931,7 +932,7 @@
   #quem-te-guia .bio-box .bio-photo img { transform:none !important; transform-origin:50% 38% !important; }
 
   /* ronda 30 */
-  .cover-li { height:24vh !important; min-height:165px !important; max-height:215px !important; background:url('../capa-astrolabio.svg') center/cover no-repeat, linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; }
+  .cover-li { height:24vh !important; min-height:165px !important; max-height:215px !important; background:url('capa-astrolabio.svg') center/cover no-repeat, linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; }
   @media (max-width:640px){ .cover-li { min-height:150px !important; } }
   .texto-fundo::before { content:none !important; }
   .tf-bg { position:absolute; inset:1.2rem 0 1.8rem 0; z-index:0; overflow:hidden; border-radius:22px; opacity:0.34; -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 14%, black 80%, transparent 100%); mask-image:linear-gradient(to bottom, transparent 0%, black 14%, black 80%, transparent 100%); pointer-events:none; }
@@ -956,7 +957,7 @@
   .ses-note { display:block; font-size:13px; color:var(--ink-soft); margin-top:0.6rem; }
 
   /* ronda 31 */
-  .cover-li { background:url('../capa-astrolabio.svg') right -60px center/auto 150% no-repeat, linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; background-size:auto 150%, 300% 300% !important; }
+  .cover-li { background:url('capa-astrolabio.svg') right -60px center/auto 150% no-repeat, linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; background-size:auto 150%, 300% 300% !important; }
   @media (max-width:640px){ .cover-li { background-position:right -120px center, 0 0 !important; } }
   .vis-q, .vis-q strong { font-weight:700 !important; }
   main details.astro .astro-body p:first-child { font-family:'Lora',serif !important; font-style:normal !important; font-size:16px !important; color:var(--ink) !important; }
@@ -964,14 +965,14 @@
   .astro-up { display:block; margin:0.4rem auto 0; background:none; border:1px solid var(--gline); color:var(--wine); border-radius:50%; width:38px; height:38px; font-size:19px; line-height:1; cursor:pointer; }
   .astro-up:hover { background:var(--tint); }
   #se-sentes { margin-top:3.4rem; }
-  .bio-box .bio-photo img, #quem-te-guia .bio-box .bio-photo img { transform:scale(1.12) !important; transform-origin:50% 30% !important; }
+  .bio-box .bio-photo img, #quem-te-guia .bio-box .bio-photo img { transform:none !important; transform-origin:50% 30% !important; }
   html .gift-top.txt .gt-x { display:block !important; }
   .gift-top .gt-x { display:none; background:none; border:0; color:var(--ink-soft); font-size:22px; line-height:1; cursor:pointer; padding:0 4px; align-self:flex-start; }
   html .gift-top.txt p { white-space:normal !important; }
 
   /* ronda 32 */
   .cover-li { height:34vh !important; min-height:230px !important; max-height:310px !important; --cd:clamp(380px,62vh,560px); background:linear-gradient(120deg,#f7e9c8,#efd59c,#f9efd6,#e8cb8c,#f5e3b6,#efd59c) !important; background-size:300% 300% !important; }
-  .cover-li::before { content:'' !important; display:block !important; position:absolute; z-index:0; top:50%; right:calc(var(--cd) / -2); width:var(--cd); height:var(--cd); transform:translateY(-50%); background:url('../capa-astrolabio.svg') center/contain no-repeat; pointer-events:none; }
+  .cover-li::before { content:'' !important; display:block !important; position:absolute; z-index:0; top:50%; right:calc(var(--cd) / -2); width:var(--cd); height:var(--cd); transform:translateY(-50%); background:url('capa-astrolabio.svg') center/contain no-repeat; pointer-events:none; }
   @media (max-width:640px){ .cover-li { min-height:220px !important; --cd:380px; } }
   .h2-sub { display:block; margin-top:0.35rem; font-family:'DM Sans',sans-serif; font-size:13.5px; font-weight:400; letter-spacing:0.04em; color:var(--gold-deep); }
   main .body-text, main .aside p, main .ans p, main details.astro .astro-body p, main .hdx-p, main .ses-p, main .feat .feat-ctx, #human-design .body-text, #pratica .body-text { hyphens:none !important; -webkit-hyphens:none !important; }
@@ -1021,8 +1022,103 @@
 
   /* ronda 38 */
   main .deliv { text-align:left !important; }
-</style>
 
+  .astro-hero{max-width:1100px;margin:100px auto 0;padding:4.5rem 36px 4rem;display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;min-height:440px}
+  .astro-copy h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,4.5vw,60px);line-height:1.03;font-weight:500;color:var(--wine);margin:.5rem 0 1.2rem}
+  .astro-copy h1 em{font-weight:400}.astro-lead{max-width:620px;color:var(--ink-soft);font-size:16px;line-height:1.8;margin:0 0 1rem}.astro-link{display:inline-block;margin-top:.7rem;color:var(--wine);font:12px 'DM Sans',sans-serif;letter-spacing:.05em}
+  .astro-art{position:relative;min-height:350px;display:grid;place-items:center;isolation:isolate}.astro-art:before{content:'';position:absolute;inset:8%;background:radial-gradient(ellipse,rgba(201,168,108,.12),transparent 70%);z-index:-1}.astro-art img{position:absolute;box-shadow:none}.astro-map{width:min(100%,360px);opacity:.18;transform:rotate(-5deg)}.astro-card{width:132px;opacity:.26;transform:rotate(7deg) translate(65px,18px);filter:saturate(.55)}
+  .astro-perspective{max-width:730px;margin:0 auto;padding:3.5rem 28px 4rem}.astro-perspective h2{font:500 clamp(32px,4vw,48px)/1.08 'Cormorant Garamond',serif;color:var(--wine);margin:0 0 1.4rem}.astro-perspective p:not(.fo-eyebrow){color:var(--ink-soft);line-height:1.9;margin:0 0 1.1rem}
+  @media(max-width:700px){.astro-hero{margin-top:88px;padding:2.3rem 24px 2rem;grid-template-columns:1fr;gap:0}.astro-art{min-height:240px;grid-row:1}.astro-map{width:260px}.astro-card{width:100px;transform:rotate(7deg) translate(50px,12px)}.astro-copy h1{font-size:clamp(40px,12vw,58px)}.astro-perspective{padding:2.5rem 24px 3rem}}
+  .footer{border-top:1px solid var(--line);padding:2.6rem 24px 4rem!important;margin-top:2rem}.footer .footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}.footer .footer-inner>div{display:flex;justify-content:center;gap:14px 20px;flex-wrap:wrap}.footer .footer-inner a{font:11px/1.7 'DM Sans',sans-serif;text-decoration:none;color:var(--ink-soft)}
+  @media(max-width:700px){.footer .footer-inner{flex-direction:column}.footer .footer-inner>div{gap:10px 16px}}
+
+  /* Ajustes de leitura: foto, testemunhos estáveis e complemento mais discreto. */
+  #quem-te-guia .bio-box .bio-photo img { object-position:50% 60% !important; }
+  .hdmsg { transition:box-shadow .25s, border-color .25s; }
+  .hdmsg:hover { transform:none; }
+  #como-funciona details.comp-tg .tl-extra p.body-text { font-size:14.5px !important; line-height:1.65 !important; margin:0; }
+
+  .ses-feedback-note { font:13px/1.7 'DM Sans',sans-serif; color:var(--ink-soft); margin:1.7rem 0 1rem; }
+  .ses-feedback-name { display:block; font:600 13px/1.5 'DM Sans',sans-serif; color:var(--wine); margin-top:.85rem; }
+
+  /* Abertura com a mesma estrutura das páginas de leituras. */
+  main .fo-breadcrumb { margin-bottom:0; }
+  main .hero.astro-hero { width:calc(100vw - 72px); max-width:1100px; position:relative; left:50%; transform:translateX(-50%); margin:0; padding:75px 0 90px !important; min-height:0; display:grid; grid-template-columns:1.25fr 1fr; gap:75px; align-items:center; overflow:visible; }
+  .astro-copy h1 { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(48px,5.6vw,78px); font-style:normal; font-weight:500; line-height:1.04; letter-spacing:-1.8px; margin:0 0 .5em; }
+  .astro-copy h1 em { font-style:italic; font-weight:400; }
+  .astro-copy .fo-eyebrow { margin-bottom:22px; }
+  .astro-copy .astro-lead { font-size:17px; line-height:1.9; margin:25px 0 28px; max-width:590px; }
+  .astro-copy .btn { border-radius:2px; font:13px/1.5 'DM Sans',sans-serif; padding:14px 24px; }
+  .astro-meta { font:11px/1.8 'DM Sans',sans-serif; letter-spacing:.05em; color:var(--ink-soft); margin-top:17px; }
+  .astro-hero .astro-art { min-height:390px; grid-row:auto; }
+  .astro-hero .astro-map { position:relative; width:min(100%,410px); opacity:1; transform:rotate(-5deg); }
+  #quem-te-guia .bio-map .bio-photo { position:relative; height:420px !important; min-height:0 !important; }
+  #quem-te-guia .bio-map .bio-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 66% !important; }
+  .bio-map .bio-map-more { margin-top:1.3rem; }
+  @media(max-width:850px) { main .hero.astro-hero { gap:30px; } }
+  @media(max-width:680px) { #quem-te-guia .bio-map .bio-photo { height:auto !important; aspect-ratio:4/5 !important; } }
+  @media(max-width:620px) {
+    main .hero.astro-hero { width:calc(100vw - 40px); grid-template-columns:1fr; gap:20px; padding:45px 0 55px !important; }
+    .astro-copy h1 { font-size:53px; letter-spacing:-1px; }
+    .astro-hero .astro-art { min-height:290px; grid-row:auto; max-width:320px; width:100%; margin:auto; }
+    .astro-hero .astro-map { width:280px; }
+  }
+
+  /* Texto com a mesma escala de O que recebes; fotografia sem ampliação. */
+  main { --reading-text-size:16.5px; }
+  main p.body-text, main .bio-box p.body-text, main .bio-box .bio p.body-text,
+  main .astro-copy .astro-lead, main .ses-lead, main .ses-p, main .hdmsg p {
+    font-size:var(--reading-text-size) !important; line-height:1.7 !important;
+  }
+  #quem-te-guia .bio-map .bio { align-items:stretch !important; }
+  #quem-te-guia .bio-map .bio-photo { height:auto !important; aspect-ratio:auto !important; align-self:stretch; }
+  #quem-te-guia .bio-map .bio-photo img { transform:none !important; object-fit:cover; object-position:50% 50% !important; }
+  .astro-hero .astro-map.astro-combined-map { width:min(100%,480px); transform:none; opacity:1; }
+  @media(max-width:680px) { #quem-te-guia .bio-map .bio-photo { aspect-ratio:500/876 !important; } }
+  @media(max-width:620px) { .astro-hero .astro-map.astro-combined-map { width:320px; } }
+
+  /* Escala mais compacta e destaques editoriais da Leitura. */
+  main.page { max-width:740px; }
+  main.page > section { padding-top:2.3rem; padding-bottom:2.3rem; }
+  main h2 { font-size:28px; margin-bottom:1rem; }
+  main .hero.astro-hero { max-width:960px; gap:50px; padding:48px 0 55px !important; }
+  .astro-copy h1 { font-size:clamp(44px,4.8vw,64px); }
+  .astro-copy .astro-lead { margin:20px 0 16px; }
+  .astro-hero .astro-art { min-height:320px; }
+  .astro-hero .astro-map.astro-combined-map { width:min(100%,360px); }
+  #minha-visao > p:first-of-type { border-left:2px solid var(--gold); padding-left:1.1rem; }
+  #minha-visao strong, #o-que-e strong { color:var(--wine); font-weight:600; }
+  #minha-visao .reading-question { font-style:italic; color:var(--wine); text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:4px; }
+  #minha-visao > p:last-child { padding:.9rem 1.1rem; background:var(--tint); border-radius:0 14px 14px 0; margin-bottom:0; }
+  #o-que-e { margin:.8rem 0; padding:1.8rem !important; background:linear-gradient(135deg,var(--tint2),var(--tint)); border:1px solid var(--gline); border-radius:20px 5px 20px 5px; }
+  #o-que-e .reading-key { display:block; margin-top:.7rem; color:var(--ink-soft); font-style:italic; }
+  #o-que-e > p:last-of-type { border-top:1px solid var(--gline); padding-top:1rem; }
+  #o-que-e .mapa-cta { margin-top:1rem; }
+  main #quem-te-guia .bio-map p.body-text { font-size:15px !important; line-height:1.65 !important; }
+  main .hdmsg p, main .feat .feat-full p.body-text { font-size:14.5px !important; line-height:1.65 !important; }
+  main .hdmsg strong, main .feat .feat-full strong { text-decoration:underline; text-decoration-color:var(--gold-deep); text-decoration-thickness:1.5px; text-underline-offset:3px; background:none; padding:0; }
+  main .hdmsg u { text-decoration-color:var(--gold-deep); text-decoration-thickness:1.5px; text-underline-offset:3px; }
+  @media(min-width:681px) { #quem-te-guia .bio-box.bio-map .bio { grid-template-columns:260px 1fr !important; } }
+  @media(max-width:680px) {
+    main.page > section { padding-top:1.8rem; padding-bottom:1.8rem; }
+    main h2 { font-size:26px; }
+    #o-que-e { padding:1.2rem !important; }
+    main .hero.astro-hero { gap:14px; padding:30px 0 35px !important; }
+    .astro-hero .astro-art { min-height:250px; }
+    .astro-hero .astro-map.astro-combined-map { width:270px; max-width:100%; }
+  }
+
+  /* Imagem de abertura em destaque, mantendo a escala compacta. */
+  main .hero.astro-hero { grid-template-columns:1.1fr 1fr; gap:36px; }
+  .astro-hero .astro-art { min-height:370px; }
+  .astro-hero .astro-map.astro-combined-map { width:min(100%,420px); filter:drop-shadow(0 10px 22px rgba(154,126,82,.12)); }
+  @media(max-width:620px) {
+    main .hero.astro-hero { grid-template-columns:1fr; }
+    .astro-hero .astro-art { min-height:310px; }
+    .astro-hero .astro-map.astro-combined-map { width:320px; }
+  }
+.reading-session-link{padding:22px;border:1px solid var(--gline);border-radius:14px;background:var(--tint)}
+</style>
 
 
 <style>
@@ -1033,36 +1129,51 @@ main h2,main .astro-perspective h2{font-size:clamp(30px,3.3vw,44px)!important;le
 main h3{font-size:30px!important}
 @media(max-width:700px){main h1,main .astro-copy h1{font-size:40px!important}main h2,main .astro-perspective h2{font-size:34px!important}main h3{font-size:27px!important}}
 </style>
-<meta name="description" content="A personalised written reading combining Astrology and Human Design, a symbolic story and practical suggestions. From €197. Within 14 business days."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://filipaosorio.com/leitura-intuitiva-en.html"><link rel="alternate" hreflang="pt-PT" href="https://filipaosorio.com/leitura-intuitiva.html"><link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html"><meta property="og:title" content="Essence Reading | Astrology and Human Design | Filipa Osório"><meta property="og:description" content="A personalised written reading combining Astrology and Human Design, a symbolic story and practical suggestions. From €197. Within 14 business days."><meta property="og:url" content="https://filipaosorio.com/leitura-intuitiva-en.html"><meta property="og:locale" content="en_GB"><meta property="og:image" content="https://filipaosorio.com/IMG_5436-original-completa.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Essence Reading | Astrology and Human Design | Filipa Osório"><meta name="twitter:description" content="A personalised written reading combining Astrology and Human Design, a symbolic story and practical suggestions. From €197. Within 14 business days."><meta name="twitter:image" content="https://filipaosorio.com/IMG_5436-original-completa.jpg"><link rel="stylesheet" href="site-nav.css?v=20261028v4"><script src="site-ui.js?v=20261028v9" defer></script><script src="site-interactions.js?v=20261029r3v13" defer></script><link rel="stylesheet" href="revisao-v3.css?v=20261028v4"><script src="revisao-v3.js?v=20261028v8" defer></script><link rel="stylesheet" href="revisao-v4.css?v=20261028v4"><script src="revisao-v4.js?v=20261028v9" defer></script><script src="mapas-config.js?v=20261029v10separate"></script><script src="mapas-client.js?v=20261028v4"></script><link rel="stylesheet" href="revisao-v5.css?v=20261028v5"><script src="revisao-v5.js?v=20261028v5" defer></script><link rel="stylesheet" href="revisao-v6.css?v=20261028v6"><link rel="stylesheet" href="revisao-v7.css">
-<link rel="stylesheet" href="revisao-v8.css?v=20261028v8"><link rel="stylesheet" href="revisao-v9.css?v=20261028v15"><script src="revisao-v9.js?v=20261028v10" defer></script><link rel="stylesheet" href="revisao-v10.css?v=20261029v10"><style data-ronda3>.reading-about-portrait{max-width:300px;margin:24px auto}.reading-about-portrait .bio-photo{width:100%;height:auto}.reading-about-portrait img{width:100%;height:auto;display:block;border-radius:18px}.reading-about-toggle>summary{cursor:pointer;color:var(--wine,#7a2535);padding:14px 0}.reading-about-toggle .bio{display:block!important}.reading-about-toggle[open]>summary{margin-bottom:20px}</style></head>
-<body class="fo-reading-page"><header class="site-header"><nav class="site-main-nav" aria-label="Main menu"><a class="site-brand" href="index-en.html">Filipa Osório</a><button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu-links">Menu <span aria-hidden="true">☰</span></button><div class="nav-links" id="site-menu-links"><a href="index-en.html">Home</a><a href="ceen-resumo-en.html">CEEN</a><div class="readings-menu"><a href="leituras-en.html">Intuitive Readings</a><button class="readings-submenu-toggle" type="button" aria-expanded="false" aria-label="Reading pages">⌄</button><div class="readings-submenu"><a href="leituras-en.html">Intuitive Readings</a><a href="leitura-intuitiva-en.html" aria-current="page">Essence Reading</a><a href="tarot-en.html">The Now Reading</a></div></div><a href="sessao-alinhamento-en.html">Alignment Session</a><a href="artigos-en.html">Articles</a><a href="#convites-dialog" data-partnerships-open aria-haspopup="dialog">Invitations & partnerships</a></div><div class="site-tools"><button type="button" class="site-theme" data-site-theme aria-label="Switch light and dark mode"><span data-mode-icon="light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></span><span data-mode-icon="dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg></span></button><a class="site-language" href="leitura-intuitiva.html" aria-label="Mudar para português" hreflang="pt-PT"><span>PT</span>/<span class="selected">EN</span></a></div><button class="theme-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button><button class="size-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button></nav></header>
+<style id="aura-opening-quote-fit">
+#testemunhos .voice-quote{max-width:860px;margin-inline:auto}
+#testemunhos .voice-quote p{font-size:17px!important;line-height:1.5!important}
+#testemunhos .voice-quote p span{display:block;white-space:nowrap}
+@media(max-width:680px){#testemunhos .voice-quote p{font-size:15px!important}#testemunhos .voice-quote p span{white-space:normal}}
+</style><style id="reiki-reading-note">.reading-reiki{margin-top:24px;padding:20px 22px;border-left:2px solid #b18a4e;background:rgba(177,138,78,.055);border-radius:0 12px 12px 0}.reading-reiki h3{font-size:27px;line-height:1.2;margin:0 0 12px;color:var(--wine)}.reading-reiki p{margin-bottom:0}</style><style id="launch-reading-note">.launch-context{font:14px/1.65 Lora,Georgia,serif;color:var(--ink-soft);margin:12px 0 18px}</style><style>main .hero.astro-hero .astro-copy h1{font-size:clamp(58px,6.6vw,88px)!important;font-weight:600;line-height:1.02!important;letter-spacing:-1.2px!important}main .hero.astro-hero .astro-copy h1 em{font-weight:500}@media(max-width:620px){main .hero.astro-hero .astro-copy h1{font-size:clamp(48px,11vw,62px)!important}}</style><style>.reading-atmosphere{width:min(calc(100% - 44px),820px);margin:36px auto 50px}.reading-atmosphere img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid #d8c5a1}.reading-atmosphere figcaption{font-size:11px;letter-spacing:.08em;color:#8b734f;text-align:center;margin-top:10px}@media(max-width:620px){.reading-atmosphere{width:calc(100% - 32px);margin:22px auto 32px}}</style><meta name="description" content="A personalised written Essence Reading of your charts, with practical proposals. From 197€. Delivered within 14 business days."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://filipaosorio.com/leitura-intuitiva.html"><link rel="alternate" hreflang="en" href="https://filipaosorio.com/leitura-intuitiva-en.html"><link rel="alternate" hreflang="pt-PT" href="https://filipaosorio.com/leitura-intuitiva.html"><meta property="og:title" content="Essence Reading | Your charts | Filipa Osório"><meta property="og:description" content="A personalised written Essence Reading of your charts, with practical proposals. From 197€. Delivered within 14 business days."><meta property="og:url" content="https://filipaosorio.com/leitura-intuitiva.html"><meta property="og:locale" content="en_GB"><meta property="og:image" content="https://filipaosorio.com/IMG_5436-original-completa.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Essence Reading | Your charts | Filipa Osório"><meta name="twitter:description" content="A personalised written Essence Reading of your charts, with practical proposals. From 197€. Delivered within 14 business days."><meta name="twitter:image" content="https://filipaosorio.com/IMG_5436-original-completa.jpg"><link rel="stylesheet" href="site-nav.css?v=20261028v4"><script src="site-ui.js?v=20261028v9" defer></script><script src="site-interactions.js?v=20261029r3v13" defer></script><link rel="stylesheet" href="revisao-v3.css?v=20261028v4"><script src="revisao-v3.js?v=20261028v8" defer></script><link rel="stylesheet" href="revisao-v4.css?v=20261028v4"><script src="revisao-v4.js?v=20261028v9" defer></script><script src="mapas-config.js?v=20261029v10separate"></script><script src="mapas-client.js?v=20261028v4"></script><link rel="stylesheet" href="revisao-v5.css?v=20261028v5"><script src="revisao-v5.js?v=20261028v5" defer></script><link rel="stylesheet" href="revisao-v6.css?v=20261028v6"><link rel="stylesheet" href="revisao-v7.css">
+<link rel="stylesheet" href="revisao-v8.css?v=20261028v8"><link rel="stylesheet" href="revisao-v9.css?v=20261028v15"><script src="revisao-v9.js?v=20261028v10" defer></script><link rel="stylesheet" href="revisao-v10.css?v=20261029v10"><style data-ronda3>.reading-about-portrait{max-width:300px;margin:24px auto}.reading-about-portrait .bio-photo{width:100%;height:auto}.reading-about-portrait img{width:100%;height:auto;display:block;border-radius:18px}.reading-about-toggle>summary{cursor:pointer;color:var(--wine,#7a2535);padding:14px 0}.reading-about-toggle .bio{display:block!important}.reading-about-toggle[open]>summary{margin-bottom:20px}</style><style>.astro-tagline{font:italic 23px/1.35 "Cormorant Garamond",Georgia,serif;color:var(--wine);max-width:500px;margin:18px 0 0}</style><style>.fechar-olhar{display:block;margin:10px auto 0;width:40px;height:40px;border-radius:50%;border:1px solid var(--gold,#b18a4e);background:transparent;color:var(--wine,#7a2535);font-size:18px;cursor:pointer}</style><style>.gift-dialog p{margin:0 0 14px}.gift-dialog .gift-terms{margin-top:6px}.gift-dialog .gift-actions{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:26px;text-align:center}.gift-dialog .gift-actions a{margin:0}</style><style>u.sub-preto{text-decoration-color:#382e29;text-underline-offset:3px}html[data-theme="dark"] u.sub-preto{text-decoration-color:#f1e9de}</style><style id="rs-largo">#testemunhos-mapas .rsmsgs{display:block!important;overflow:visible!important}#testemunhos-mapas .rsmsgs .hdmsg{width:auto!important;max-width:none!important;min-height:0!important;flex:none!important}</style></head>
+<body class="fo-reading-page"><header class="site-header"><nav class="site-main-nav" aria-label="Main menu"><a class="site-brand" href="index-en.html">Filipa Osório</a><button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu-links">Menu <span aria-hidden="true">☰</span></button><div class="nav-links" id="site-menu-links"><a href="index-en.html">Home</a><a href="ceen-en.html">CEEN · Business</a><div class="readings-menu"><a href="leituras-en.html">Intuitive Readings</a><button class="readings-submenu-toggle" type="button" aria-expanded="false" aria-label="Reading pages">⌄</button><div class="readings-submenu"><a href="leituras-en.html">Intuitive Readings</a><a href="tarot-en.html">Now Reading</a><a href="leitura-intuitiva-en.html" aria-current="page">Essence Reading</a></div></div><a href="sessao-alinhamento-en.html">Alignment Session</a><a href="artigos-en.html">Articles</a><a href="#convites-dialog" data-partnerships-open aria-haspopup="dialog">Invitations and partnerships</a></div><div class="site-tools"><button type="button" class="site-theme" data-site-theme aria-label="Toggle light and dark mode"><span data-mode-icon="light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></span><span data-mode-icon="dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg></span></button><a class="site-language" href="leitura-intuitiva.html" aria-label="Mudar para português" hreflang="pt-PT"><span>PT</span>/<span class="selected">EN</span></a></div><button class="theme-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button><button class="size-btn" hidden type="button" aria-hidden="true" tabindex="-1"></button></nav></header>
 
-<div class="langbar">PREVIEW · <a href="leitura-intuitiva-en.html" lang="pt">Português</a></div>
+<div class="langbar">PREVIEW · page under review · requests and payments disabled</div>
 
 
 
 
-<div class="gift-top" id="giftTop" aria-label="Give a Reading as a gift" hidden>
-  <button type="button" class="gt-ic" id="giftTopBtn" aria-expanded="false" aria-label="Give a Reading as a gift">🎁</button>
-  <p><a href="marcar-leitura-en.html?oferta=1">A beautiful, personalized gift<br>Give the Essence Reading to someone special</a></p>
+<div class="gift-top" id="giftTop" aria-label="Give a Reading" hidden>
+  <button type="button" class="gt-ic" id="giftTopBtn" aria-expanded="false" aria-label="Give a Reading">🎁</button>
+  <p><a href="marcar-leitura-en.html?oferta=1">A beautiful, personalised gift<br>Give the Essence Reading to someone special</a></p>
   <button type="button" class="gt-x" id="giftTopX" aria-label="Close">×</button>
 </div>
 <a class="mapa-fab" href="https://filipaosorio.com/mapa-astral.html" data-mp-open>See my chart</a>
 
-<main class="page" lang="en">
+<main class="page" lang="pt">
 
   <!-- ABERTURA -->
-  <header class="hero astro-hero"><div class="astro-copy"><p class="fo-eyebrow">Astrology + Human Design</p><h1>Essence<br><em>Reading</em></h1><p class="astro-lead">A fully personalised and unique Reading,<br>created with intuition and method.</p><p class="astro-meta">Written · within 14 business days</p></div><div class="astro-art"><img class="fo-light-art astro-map astro-combined-map" src="leituras-assets/mapa-astral-human-design.svg" alt="Illustrative composition combining a birth chart and a Human Design bodygraph."><img class="fo-dark-art astro-map astro-combined-map" src="leituras-assets/mapa-astral-human-design-dark.svg?v=2" alt="" aria-hidden="true"></div></header><div class="tagline"><p>Who are you when you stop being what the world expects of you?</p></div>
+  <header class="hero astro-hero essence-opening">
+    <div class="astro-copy">
+      <p class="fo-eyebrow">Your charts, in writing</p>
+      <h1>Essence <em>Reading</em></h1>
+      <p class="astro-tagline">Why do the same patterns<br>repeat in different areas of your life?</p>
+      <p class="astro-lead">When the same theme comes back in different areas of your life, the answer is rarely only in the present. In this Reading, I cross your charts with the reading of your field so you can dive into your unique way of deciding, receiving and moving through life with your unique energy.</p>
+      <p class="astro-meta">In writing, with practical proposals · within 14 business days</p>
+    </div>
+    
+  <div class="astro-art"><img class="fo-light-art astro-map astro-combined-map" src="leituras-assets/mapa-astral-human-design.svg" alt="Integrated illustration of a birth chart and a Human Design bodygraph."><img class="fo-dark-art astro-map astro-combined-map" src="leituras-assets/mapa-astral-human-design-dark.svg?v=2" alt="" aria-hidden="true"></div></header>
+  <div class="tagline"><p>Who are you when you stop being what the world expects of you?</p></div>
 
   <!-- TEXTO SOBRE A FOTO DE FUNDO -->
   <div class="texto-fundo reveal" id="comeco">
     <div class="tf-bg" aria-hidden="true"><video preload="metadata" poster="fundo-leitura-foto.jpg" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback><source src="fundo-leitura4.mp4" type="video/mp4"><source src="fundo-leitura4.webm" type="video/webm"></video><img src="fundo-leitura-foto.jpg" alt=""></div>
-    <p class="body-text"><strong>There is a way of moving through life that is uniquely yours.</strong></p>
-    <p class="body-text">It doesn't show itself only in your rhythm or your energy; <strong>it shows in the patterns you repeat, the choices you make, the stories you tell yourself, the challenges you meet and the way you've grown used to responding to them.</strong></p>
-    <p class="body-text">It also shows <strong>in the relationships you create, in how you work and rest, in how you position and express yourself in the world</strong>; and in ways that are harder to explain: a dream that stays with you, a synchronicity that touched you, or a feeling you can't yet put into words.</p>
-    <p class="body-text">Over time, you absorbed beliefs, references and ways of functioning that made you see life through certain lenses. About love, worth, safety, success, freedom…</p>
-    <p class="body-text">Without realizing it, you began to move between your truth and what you believe the world expects of you, but <strong>you know you are more than those stories and more than the ways you found to adapt and even to belong.</strong></p>
-    <p class="body-text"><strong>The Essence Reading is an invitation to come back to your center.</strong> I weave together the symbolic language of your birth chart and your Human Design with what you share about your moment, to <strong>explore possible patterns, beliefs and dynamics and help you recognize</strong> what you want to keep cultivating and where you wish to choose differently in your life.</p>
+    <p class="body-text"><strong>There is a unique way in which you move through life.</strong></p>
+    <p class="body-text">It doesn’t only show in your rhythm or your energy; <strong>it shows in the patterns you repeat, the choices you make, the stories you tell yourself, the challenges you meet and the way you have learned to respond to them.</strong></p>
+    <p class="body-text">It also shows <strong>in the relationships you create, the way you work and rest, how you position and express yourself in the world</strong>; and in ways that are harder to explain: in a dream that stays with you, a synchronicity that touched you or a feeling you can’t yet put into words.</p>
+    <p class="body-text">Over time, you absorbed beliefs, references and ways of functioning that made you see life through certain lenses. About love, worth, security, success, freedom…</p>
+    <p class="body-text">Without realising it, you began moving between your truth and what you believe the world expects of you, but <strong>you know you are more than those stories and the ways you found to adapt and even to belong.</strong></p>
+    <p class="body-text"><strong>The Essence Reading is an invitation to come back to your centre.</strong> I cross the symbolic language of your birth chart and your Human Design with what you share about your current moment, to <strong>explore possible patterns, beliefs and dynamics and help you recognise</strong> what you want to keep cultivating and where you wish to choose differently in your life.</p>
   </div>
 
   <div class="faixa faixa-ac reveal"><p>What you believe about yourself shapes your choices more than you imagine!</p></div>
@@ -1071,191 +1182,83 @@ main h3{font-size:30px!important}
   <section class="reveal" id="se-sentes">
     <h2>Come and discover new layers of yourself...</h2>
     <ul class="recognize stagger">
-      <li><span class="mk">✦</span><span>You'd like to know yourself better, in your freest essence</span></li>
-      <li><span class="mk">✦</span><span>You recognize something in dreams, symbols and signs in life</span></li>
-      <li><span class="mk">✦</span><span>There are challenges that keep repeating and you want to understand the pattern behind them</span></li>
+      <li><span class="mk">✦</span><span>You want to know more of yourself, in your freest essence</span></li>
+      <li><span class="mk">✦</span><span>You recognise something in dreams, symbols and signs in life</span></li>
+      <li><span class="mk">✦</span><span>There are challenges that repeat and you want to understand the pattern behind them</span></li>
       <li><span class="mk">✦</span><span>You want to build your life with more awareness, confidence and lightness</span></li>
-      <li><span class="mk">✦</span><span>You're going through a transition and are looking for clarity about your process</span></li>
-      <li><span class="mk">✦</span><span>You want to make aligned decisions, without getting lost in the noise of the mind</span></li>
+      <li><span class="mk">✦</span><span>You are going through a transition and looking for clarity about your process</span></li>
+      <li><span class="mk">✦</span><span>You want to make aligned decisions without getting lost in the noise of the mind</span></li>
     </ul>
     <div class="gold-rule" aria-hidden="true"></div>
-    <p class="jump-row"><a class="jump-link" href="#quem-te-guia" onclick="jumpToBio(); return false;">Start by meeting the one who guides you</a></p>
+    <p class="jump-row"><a class="jump-link" href="#quem-te-guia" onclick="jumpToBio(); return false;">Get to know me through my charts</a></p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
-  <section class="reveal shared-testimonials" id="testemunhos"><p class="fo-eyebrow">My approach to readings</p><h2>Experiences from people who have received my readings</h2><p class="body-text">The general readings page brings together testimonials from Aura Readings I offered previously. You can read English translations of all the messages and an English transcript alongside the original Portuguese audio.</p><a class="btn outline" href="leituras-en.html#testemunhos">Read the testimonials →</a></section>
-
-  <div class="divider"><span></span><span></span></div>
-
-  <!-- O QUE É -->
-  <!-- A MINHA VISÃO DA LEITURA DE MAPAS -->
+  <!-- TESTEMUNHOS -->
   
 
   <div class="divider"><span></span><span></span></div>
 
+<!-- O QUE É -->
+  <!-- A MINHA VISÃO DA LEITURA DE MAPAS -->
   <section class="reveal" id="o-que-e">
-    <h2>What the Essence Reading is</h2>
-    <p class="body-text"><strong>Astrology and Human Design form part of an integrated interpretation</strong>, guided by the theme and context you bring. I connect the relevant elements and look for a thread that helps you recognise questions, patterns and possibilities.</p>
+    <h2>What the Essence Reading is</h2><p class="body-text"><strong>Your charts are part of an integrated interpretation</strong>, guided by the theme and the context you bring. I relate the relevant elements and look for a common thread that helps you recognise questions, patterns and possibilities.</p>
     
-    
-    <div class="flip-grid">
-      <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z"/></svg></span><b>The chart as a<br>starting point</b><span class="fhint"></span></div>
-        <div class="fface fback"><h3>The chart as a starting point</h3></div>
-      </div></div>
-      <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym book"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></span><b>A story that's only yours</b><span class="fhint"></span></div>
-        <div class="fface fback"><h3>A story that's only yours</h3></div>
-      </div></div>
-      <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym">☽</span><b>The beliefs<br>behind the chart</b><span class="fhint"></span></div>
-        <div class="fface fback"><h3>The beliefs behind the chart</h3></div>
-      </div></div>
-      <div class="fcard" tabindex="0"><div class="finner">
-        <div class="fface ffront"><span class="sym"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><b>From understanding to practice</b><span class="fhint"></span></div>
-        <div class="fface fback"><h3>From understanding to practice</h3></div>
-      </div></div>
-    </div>
-    <div class="flipall"><button type="button" id="flipAll">see all</button></div>
-    
-    <div class="mapa-cta"><a class="btn outline" href="https://filipaosorio.com/mapa-astral.html" data-mp-open>See my chart</a></div>
-  <figure class="delivery-preview"><img data-delivery-image src="assets/exemplo-entrega-essencia-en.svg?v=20261028v9" alt="Illustrative preview of a personalised written Reading: your reading, charts, story, connections, practical questions and notes." loading="lazy"><figcaption>Fictional example inspired by my Notion delivery template. Each Reading is personalised.</figcaption></figure></section>
+    <figure class="delivery-preview"><img class="fo-light-art" src="assets/exemplo-entrega-essencia-v2.svg" alt="Illustrative example of the written Reading’s structure: your reading, from the Reading to life, and your space for notes." loading="lazy"><img class="fo-dark-art" src="assets/exemplo-entrega-essencia-v2-dark.svg" alt="" aria-hidden="true" loading="lazy"><figcaption>Fictional example based on the delivery structure on Notion. Each Reading is personalised.</figcaption></figure><div class="mapa-cta"><a class="btn outline" href="https://filipaosorio.com/mapa-astral.html" data-mp-open>See my chart</a></div>
+  </section>
+
 
   <div class="divider"><span></span><span></span></div>
 
   <!-- CONHECE QUEM TE GUIA -->
-  <section class="reveal" id="quem-te-guia"><h2>A look at me through Astrology and Human Design</h2><div class="reading-about-portrait"><div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div></div><details class="reading-about-toggle"><summary>Explore my perspective through the charts</summary>
+  <section class="reveal" id="quem-te-guia"><div class="reading-about-portrait"><div class="bio-photo"><img src="novahero.png" alt="Filipa Osório" loading="lazy"></div></div><details class="reading-about-toggle"><summary>A look at me through my charts</summary>
     
     <div class="bio-box bio-map">
-      <div class="bio"><div class="astro-body"><p class="body-text">With Mercury and Venus in Sagittarius, <strong>I seek meaning and the freedom to discover and share</strong>. The Sun alongside Mars in Capricorn gives shape to what I discover: I want more than a Reading that is beautiful to read, <strong>I want a common thread and questions you can return to</strong>.</p><p class="body-text">The Moon in Aries offers me an image of the spontaneity and intensity of feeling. Emotional authority in Human Design adds a distinction I find helpful: <strong>feeling something strongly does not mean I have to decide in that moment</strong>. This also helped me recognise <strong>the value of asynchronous work</strong>: preparing with care and allowing each person time to receive and explore a Reading, a session or an ongoing process.</p></div></div>
-      <div class="astro-body bio-map-more"><p class="body-text">For years I thought my path was scattered: two master’s degrees, five years in management, four companies and six roles. Recognising myself as a Manifesting Generator with a 3/5 profile helped me see it more kindly: <strong>experimenting, making mistakes, adjusting and turning experience into something useful</strong>.</p><p class="body-text">In an Aquarius Ascendant, I find an image of the freedom to follow my own way of being in the world. In Human Design, gate 10, where my conscious Sun sits and which is associated with self-love, makes that reflection more personal: <strong>how can I be true to myself without having to prove my difference or hide it to belong?</strong></p><p class="body-text">These languages did not give me a definition of who I am. <strong>They gave me perspectives and questions.</strong> That is what I bring to Readings and sessions: helping you find <strong>more space to be yourself</strong> rather than fitting you into a description.</p></div>
-      <a class="back-link" href="#" onclick="restoreScroll(); return false;">↑ Back to the Essence Reading</a>
+      <div class="bio"><div class="astro-body">
+        <p class="body-text">For years I thought my path was scattered: two master’s degrees, five years in management, four companies, six roles. Recognising myself as a <u class="sub-preto">Manifesting Generator</u> with <u class="sub-preto">3/5 profile</u> helped me see it with more kindness: <strong>experimenting, getting it wrong, adjusting and turning experience into something useful</strong>, all through the multipotentiality that is part of me.</p>
+        <p class="body-text">In my <u class="sub-preto">Aquarius Ascendant</u>, I find an image of the freedom to follow my own way of being in the world. In Human Design, <u class="sub-preto">gate 10, where my conscious Sun sits</u> and which is associated with self-love, makes this reflection more intimate: <strong>how can I be true to myself without needing to prove my difference or hide it in order to belong?</strong></p>
+        <p class="body-text">My <u class="sub-preto">Moon in Aries</u> offers me an image of spontaneity and intensity of feeling. My <u class="sub-preto">emotional authority</u>, in Human Design, adds a distinction that helps me: <strong>feeling something strongly doesn’t mean I have to decide in that instant</strong>. This is also how I recognised <strong>the value of asynchronous work</strong>: preparing carefully and giving each person space to receive and explore the Reading, and even sessions or ongoing support, in their own time.</p>
+        <p class="body-text">With <u class="sub-preto">Mercury and Venus in Sagittarius</u>, <u class="sub-preto">near the Midheaven</u> which colours my whole chart, <strong>I look for meaning and freedom to discover and share</strong>, asking me to apply it to my legacy in the world. The Sun next to Mars in Capricorn gives shape to what I discover: I don’t want a Reading that is only nice to read, <strong>I want a common thread and questions you can return to</strong>.</p>
+      </div></div>
+      <button class="fechar-olhar" type="button" aria-label="Close" onclick="this.closest('details').open=false;document.getElementById('quem-te-guia').scrollIntoView({behavior:'smooth',block:'start'})">↑</button>
     </div>
   </details></section>
 
   <div class="divider"><span></span><span></span></div>
 
   <!-- HUMAN DESIGN -->
-  <section class="reveal" id="human-design">
-    <h2>Astrology and a deeper look with Human Design</h2>
-    <p class="body-text"><strong>The Astrology I use has an alchemical reading.</strong> In the alchemical approach I follow, <strong>planets represent functions and movements, signs give them a quality of expression and houses place the themes in the different areas of life.</strong> I'm interested in the conversation between these elements and what it can help you explore in your experience. As the maxim attributed to Hermes Trismegistus says, <em>“that which is below is like that which is above.”</em></p>
-    <p class="body-text">Human Design combines astrological references with the I Ching, the Kabbalah and the chakra system in a language of its own for self-knowledge. <strong>It offers another language for exploring your rhythm, how you decide and how you relate.</strong> In this system, planetary positions correspond to activations of gates and lines, which I interpret as symbolic references to deepen that reflection.</p>
-    <h3 class="hdq-t">What people say about the Map Reading with me</h3>
-    <div class="hdmsgs">
-      <blockquote class="hdmsg"><p>My study notebook is turning out to be a luxury, it should count for a grade 🤣🤣🤣 I have no doubts about anything, <strong>your language is so simple and it connects</strong>. I’m really paying attention to this, <u>I even catch myself saying WOW...</u></p></blockquote>
-      <blockquote class="hdmsg"><p>Dear Filipa, I’ve just closed my notebook for today. Today I set out to be with myself and dedicate the time to getting to know myself. For the last 4 hours I have been navigating your words about my chart and <strong>I finish with so much peace inside me</strong>. I feel that today, for the first time in a long time, <u>I dedicated myself to me in a very special and feminine way</u>. I went through each theme without rushing, with a lot of presence and understanding, and I feel at peace.</p></blockquote>
-      <blockquote class="hdmsg"><p>And I’m really happy to be on this journey of self-knowledge through Human Design with you. And the thing is, I had never explored this area with anyone else, but I confess I’m really... Wow, <strong>amazed, in a way, by this whole approach you created</strong> for this support. <u>It’s really beautiful.</u></p><small class="hdnote">transcript of an audio message</small></blockquote>
-      <blockquote class="hdmsg"><p>Good morning, Filipa! I just watched your class. WOW ✨ I really loved it 😍 I knew nothing about Human Design and <strong>it was a very enlightening class because you present the content so clearly and appealingly</strong>. <u>You breathe what you speak and you can feel it in the energy you give off</u> 💙 I loved the explanation about the origin of Human Design, I was won over and found it even more interesting 😊 Thank you for sharing such a useful introduction! I liked it so so so much. Loved learning about neutrinos hahah ✨✨</p></blockquote>
-      <blockquote class="hdmsg"><p>The basis isn't new, but really <strong>the way you brought the (same) information made more sense to me</strong>, <u>as if it had resonated on another level</u> ☺️</p></blockquote>
-      <blockquote class="hdmsg"><p>Loooved it sooo muuuch, <strong>you're really surprising me with how you present the ideas, the concepts</strong>. Wooow and I can't not mention it, I have to tell you that <u>I feel your joooy sooo muuuch</u>, I love it so much 🥹😍</p></blockquote>
-      <blockquote class="hdmsg"><p>Wow! <u>So much good stuff to absorb!!</u> It's something really goood!! 😍😍</p></blockquote>
-      <blockquote class="hdmsg"><p><u>Loooved how</u> <strong>you're introducing me to my chart</strong> 🥹🦋</p></blockquote>
-      <blockquote class="hdmsg"><p>Oh my God, my heart can't take this… seriously, <strong>what you're creating is unique and incredible</strong> and <u>it's so you…</u> ❤️</p></blockquote>
-      <blockquote class="hdmsg"><p><u>It clicked like puzzle pieces</u> 🧩</p><p>And above all <strong>it's in a “language” that resonates</strong> ✨ What beautiful work, Filipa. So excited to take this dive with you 💙</p></blockquote>
-      <blockquote class="hdmsg"><p>Hello dear Filipa, I just stopped by to tell you that <u>our little chat has already had an effect</u>. <strong>Your words and your energy were a comfort I needed.</strong> Thank you and the Universe for this push I needed so much.</p></blockquote>
-      <blockquote class="hdmsg"><p>The way you describe and talk about Human Design is <strong>captivating</strong>. <u>It really vibrates!!!!</u></p></blockquote>
-    </div>
-    <div class="mapa-cta"><p>Curious to see your design?</p><a class="btn outline" href="https://filipaosorio.com/human-design.html" data-mp-open>See my Human Design</a></div>
-  </section>
+  <section class="reveal" id="human-design"><h2>What people say</h2><p class="body-text">The testimonials for the chart readings, the yearly cycle and the Aura Readings are all together on the Readings page, with the audio where I explain my way of reading.</p><p style="text-align:center"><a class="btn outline" href="leituras-en.html#testemunhos-mapas">Read the testimonials</a></p></section>
 
   <div class="divider"><span></span><span></span></div>
 
   <!-- E DEPOIS -->
   <section class="reveal" id="pratica">
-    <h2>“And then, what do I do with this information?”</h2>
-    <p class="body-text"><strong>The Reading is not a set of characteristics for you to keep about yourself.</strong> What makes it useful is the possibility of relating the images and questions you find to concrete situations in your life.</p>
-    <p class="body-text">For example, the Sun in Capricorn can open up a reflection on your relationship with work, responsibility or success. Rather than being left with the idea that you're a responsible or persistent person, it's worth asking: <em>What does fulfilment mean to you? When does commitment turn into overload? Are there moments when you feel you always have to do more to have worth?</em></p>
-    <p class="body-text"><strong>Human Design can add other questions to this exploration.</strong> If your design shows emotional authority, for example, we can look at the relationship between what you feel and the moment you decide. <em>What changes when you don't respond right away? What remains once the initial enthusiasm or discomfort passes? In what situations do you feel pressure to decide before it's your ideal moment?</em></p>
-    <p class="body-text">It's not about concluding that a position in the chart explains your overload or that an authority determines the right way for you to decide. <strong>It's about using these languages to observe your experience more attentively: recognizing what happens, questioning habitual interpretations and discovering other possible responses.</strong></p>
-    <p class="body-text">You don't need to change everything at once, nor turn the Reading into yet another demand about how you should be. You can choose one question, carry it with you for a few days and notice what you discover. <em>What do you recognize? What doesn't fit? What changes when you try responding differently?</em></p>
-    <div class="tabpanel pr-box"><p class="qa-a"><strong>If you'd like to go deeper</strong> into what you discover, or find it hard to do things differently even after recognizing a pattern, <strong>you can do that in the sessions with me.</strong> We start from concrete situations in your life to explore the beliefs, emotions and circumstances involved, drawing on the tools that make sense for what we agree to work on.</p></div>
-  
-    
+    <h2>“And then, what do I do with that information?”</h2><p class="body-text">The Reading is not a set of traits to keep about yourself. What makes it useful is <strong>relating the images and questions to concrete situations in your life</strong>.</p>
+    <p class="body-text">In my case, a Sun in Capricorn can open a reflection on work and responsibility. More than keeping the idea that I am persistent, it helps to ask: <strong>when does commitment turn into overload? Do I always need to do more to have worth?</strong> With my emotional authority in Human Design, I can look at the relationship between what I feel and the moment I decide: <strong>what changes when I don’t respond immediately?</strong></p>
+    <p class="body-text">You don’t need to change everything at once. <strong>Choose one question, carry it with you for a few days</strong> and notice what you recognise, what doesn’t fit and what changes when you respond differently. If you want to go deeper, <strong>you can do so in sessions with me</strong>.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
-  <!-- O QUE RECEBES -->
-  <section class="reveal" id="o-que-recebes">
-    <h2>What you receive</h2>
-    <ul class="clean stagger"><li>A written interpretation of your charts, guided by the theme you share.</li><li>A short personalised symbolic story that gives shape to the themes explored.</li><li>Questions, suggestions for observation and small practices.</li><li>A sending of Reiki, unconditional loving energy, dedicated to the theme you share.</li></ul>
-  </section>
-
-  <div class="divider"><span></span><span></span></div>
 
 
   <!-- TEMAS -->
   <section class="reveal" id="temas">
-    <h2>Which themes would you like to bring?</h2>
-    <p class="recognize-hint">A few examples of themes you can write about in the form, after purchase.</p>
-    <div class="themes ex" id="themes">
-      <span>Identity and self-image</span>
-      <span>Spirituality and inner world</span>
-      <span>Money and abundance</span>
-      <span>Romantic relationships</span>
-      <span>Family relationships</span>
-      <span>Work and career</span>
-      <span>Communication and expression</span>
-      <span>Creativity and pleasure</span>
-      <span>Time and the rhythm of life</span>
-    </div>
-    <p class="soft-note">You don't need to separate what, in your experience, is connected. If more than one resonated with you, you can share your moment with me with complete freedom when you book your Essence Reading.</p>
+    <h2>Which themes would you like to bring?</h2><p class="body-text">Some themes you can bring, written in the form after purchase: <strong>identity and self-image</strong>, <strong>inner world</strong>, <strong>money and abundance</strong>, <strong>romantic relationships</strong>, <strong>family relationships</strong>, <strong>work and career</strong>, <strong>communication</strong>, <strong>creativity and pleasure</strong>, <strong>time and the rhythm of life</strong>. You don’t need to separate what, in your experience and in the present moment, is connected.</p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
   <!-- COMO FUNCIONA -->
   <section class="reveal" id="como-funciona">
-    <h2>How it works</h2>
-    <div class="timeline" id="timeline"><span class="tl-fill" id="tlFill"></span>
-      <div class="tl-step"><span class="tl-dot">1</span><h3>You choose your option</h3><p>The Essence Reading, or the Reading with a alignment session with me after the Reading.</p></div>
-      <div class="tl-step"><span class="tl-dot">2</span><h3>You share your details and your theme</h3><p>Date, time and place of birth, what you're going through and the context you find important.</p></div>
-      <div class="tl-step"><span class="tl-dot">3</span><h3>I prepare your Reading</h3><p>I write your Reading and your story, with intuition and an archetypal look at your chart, linking everything to questions and practical guidance.</p></div>
-      <div class="tl-step"><span class="tl-dot">4</span><h3>You receive your Reading</h3><p>In writing, within 14 working days of payment confirmation.</p></div>
-      <div class="tl-step"><span class="tl-dot">5</span><h3>You read and integrate</h3><p>In your own time, as many times as you like. You can take notes on your reflections and bring concrete examples to the session, if you choose that option.</p></div>
-      <div class="tl-step opt"><span class="tl-dot">6</span><h3>Deepening and alignment session</h3><p>If you choose this option, we go deeper into the themes, work on the relevant beliefs and explore ways of responding to real situations.</p></div>
-    </div>
-    <details class="comp-tg"><summary>Optional add-on: Solar Return</summary>
-    <div class="tl-extra">
-      <div class="tl-extra-g one">
-        <div><b>Your Solar Return · +100€</b><p>More information about your yearly cycle (from birthday to birthday): themes to explore, possibilities to cultivate and questions for the choices you have ahead of you right now, in dialogue with your natal chart.</p></div>
-      </div>
-      <p class="tl-extra-n">You can add the Solar Return when you book your Reading.</p>
-    </div>
-    </details>
-    <div class="rs-box"><p class="rs-bt">What people say about the Solar Return with me</p>
-    <div class="hdmsgs rsmsgs">
-      <blockquote class="hdmsg"><p>Thank you so much for your dedication!</p><p>You basically compiled it into a document that's something bigger than I was expecting, and from what I understood of what you'd planned, but even so I can tell that it's <u>a condensed summary of so much that you had to study, look at, analyze and cross-reference</u> the information and so, thank you so much for all that work, that dedication.</p><p>Then, without a doubt, <strong>it's magical how what the chart revealed is what we had already realized I needed, what the moment I was in was, and above all it's what I truly feel is happening, what I'm living</strong>.</p><p>And above all it was <strong>so good to see that confirmation</strong>, that's basically it, a confirmation of what we had thought for this whole process, for this specific moment, and it aligns very much with what I want too.</p><p>Anyway, all the little points, all the little things you wrote, for a start <u>you wrote in a very clear way, that landed deep inside, resonated deeply and is already very aligned with what I feel, what I want and what I want to work on with myself, with myself and with you too</u>, all the little points were truly wonderful.<br>It was all wonderful and it's something that has to stay with me throughout the whole year, even <strong>the questions you posed, it was really interesting to reflect on them</strong> and I'm aware that if I reread it and ask those same questions five months from now I'll have a different perspective on all those questions and even on what is written.</p><p><strong>Very good! I loved, loved, loved it and let's get to it now!</strong> Let's now deal with this phase of transformation of figuring out the next step we can take in this process to develop what needs to be developed, create space for what needs space and then how to express, how to put all these ideas out there.</p></blockquote>
-    </div>
-    </div>
+    <h2>How your</h2><div class="timeline" id="timeline"><span class="tl-fill" id="tlFill"></span><div class="tl-step"><span class="tl-dot">1</span><h3>You choose your option</h3><p>The Essence Reading, or the Reading with an alignment session.</p></div><div class="tl-step"><span class="tl-dot">2</span><h3>You share your details and your theme</h3><p>Date, time and place of birth and what you are living.</p></div><div class="tl-step"><span class="tl-dot">3</span><h3>I prepare your Reading</h3><p>I write your Reading, linking everything to questions and practical guidance.</p></div><div class="tl-step"><span class="tl-dot">4</span><h3>You receive your Reading</h3><p>In writing, within 14 business days after payment is confirmed.</p></div><div class="tl-step"><span class="tl-dot">5</span><h3>You read and, if you choose, we go deeper</h3><p>You read in your own time, as many times as you like.<br>In the session we work on the relevant beliefs and ways of responding to real situations.</p></div></div><details class="comp-tg"><summary>Optional add-on: your current yearly cycle · +72€ (total 269€)</summary><div class="tl-extra"><p class="body-text">Your yearly cycle (from birthday to birthday): themes to explore, possibilities to cultivate and considerations for the choices ahead, in dialogue with your birth chart. You can add it when you book.</p></div></details>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
   <!-- SESSÃO DE APROFUNDAMENTO -->
-  <section class="reveal" id="sessao">
-    <div class="ses-box">
-      <p class="ses-eye">To go deeper</p>
-      <h2>Alignment (and deepening) session</h2>
-      <p class="ses-lead">Sometimes understanding a pattern isn't enough for us to respond differently. We can recognize what's happening and still find it hard to say no, make a decision, express a need or move forward with something we want.</p>
-      <p class="ses-lead">In this session, we start from a concrete situation in your life to explore the beliefs, emotions and circumstances involved and the possibilities you want to start building. You don't need to arrive with everything organized: we can start with a question, a conflict or something you feel but can't yet explain.</p>
-      <div class="ses-steps">
-        <div class="ses-st"><span>1</span><b>Name it</b><p>Giving words to what's happening: what you feel, how you respond and what you believe about yourself or others in that situation. We can recognize expectations, learned rules or demands you had never stopped to question.</p></div>
-        <div class="ses-st"><span>2</span><b>Understand</b><p>Exploring how those responses may have made sense in your story, what they seek to protect and what it costs you to keep them today. Without treating your ways of protecting yourself as flaws, or assuming there's a single explanation for what you're going through.</p></div>
-        <div class="ses-st"><span>3</span><b>Experiment</b><p>Finding a perspective you want to cultivate and a possible step to take into your life: expressing a need, communicating a boundary or trying a different response in a familiar situation. Not as an imposed task, but as a possibility that makes sense to you.</p></div>
-      </div>
-      <p class="ses-p">The practices I bring in are chosen according to what you bring and what we agree on.</p>
-      <p class="ses-state">The session offers a space for listening and working together, so you can explore how to carry the new perspectives into your life, into the concrete situations of your moment.</p>
-      <p class="ses-p">If you've already received your Reading, we don't start from zero. I know your charts and the context you shared, and we can start from what it stirred up: something you recognized yourself in, an interpretation you wanted to question, or a difficulty that became clearer. It isn't just about explaining more elements of the charts, but about exploring what all of this means in your experience.</p>
-      <div class="ses-solo"><p><b>You can also book a session without first receiving the Essence Reading.</b> In that case, we start directly from the theme you want to work on.</p><a class="btn" href="marcar-leitura-en.html?op=sessaosolo">Book the session only · 125€</a><span class="ses-note">If you choose the Reading with alignment session option, the session price is 100€.</span></div>
-    </div>
-    <h3 class="hdq-t sesq-t">What people say about sessions with me</h3>
-    <div class="sesimgs">
-      <img src="feedback-sessao-one-in-a-kind.jpg?v=3" alt="A client's testimonial about the session: “the session we had was one-in-a-kind”" loading="lazy">
-      <img src="feedback-sessao-esta-viagem.jpg?v=2" alt="A client's testimonial: “This journey has been so incredible… It came to soothe my restless spirit”" loading="lazy">
-    </div>
-  </section>
+  <section class="reveal" id="sessao"><div class="reading-session-link" style="text-align:center"><h2>Want to go deeper into what the Reading awakened?</h2><p class="body-text">In the alignment session, we start from what you recognised in the Reading or from another situation or theme you want to explore.</p><a class="btn session-testimonials-cta" href="sessao-alinhamento-en.html">Discover the session and its testimonials</a></div></section>
 
   <div class="divider"><span></span><span></span></div>
 
@@ -1263,35 +1266,51 @@ main h3{font-size:30px!important}
   <section class="reveal" id="opcoes">
     <h2>Choose your Reading</h2>
     
-    <div class="offers offers2"><div class="offer" data-ses="0"><p class="offer-name">Essence Reading</p><p class="offer-price">197€</p><ul><li>A Reading based on your charts, guided by your theme and the context you share.</li><li>A personalised symbolic story</li><li>Questions and practical suggestions</li><li>The written Reading, to reread at your own pace and return to what makes sense.</li><li>Reiki dedicated to your theme</li></ul><a class="btn outline" href="marcar-leitura-en.html?op=leitura">I’d like my reading</a></div><div class="offer" data-ses="1"><p class="offer-name">Reading with alignment session</p><p class="offer-price">297€</p><ul><li>Everything in the Essence Reading</li><li>A one-to-one session after you read your reading, lasting 1 hour</li><li>Explore the themes, beliefs and patterns relevant to your present moment</li></ul><a class="btn outline" href="marcar-leitura-en.html?op=sessao">I’d like the reading and session</a></div></div><div class="more-opts">
-      <a class="mo-row" id="oferecer" href="marcar-leitura-en.html?oferta=1"><span class="mo-ic">🎁</span><span class="mo-tx"><b>Give a Reading to someone</b><em>With a gift card or with the Reading already prepared. You only need their birth details and their consent for a prepared Reading.<strong class="gift-validity">The gift card is valid for 1 month from the date of purchase.</strong></em></span><span class="mo-pr">from 197€</span></a>
+    <div class="offers offers2">
+      <div class="offer" data-ses="0">
+        <p class="offer-name">Essence Reading</p>
+        <p class="offer-price">197€</p>
+        
+        <ul>
+          <li>A Reading based on your charts, guided by your theme and context</li>
+          <li>Questions and practical guidance</li>
+          <li>The Reading in writing, to reread at your own pace and return to what makes sense.</li>
+        </ul>
+        
+        <a class="btn outline" href="marcar-leitura-en.html?op=leitura">I want my Reading</a>
+      </div>
+      <div class="offer" data-ses="1">
+        <p class="offer-name">Reading with an alignment session</p>
+        <p class="offer-price">297€</p>
+        <ul>
+          <li>Everything in the Essence Reading</li>
+          <li>An individual session with me after you read your Reading (1 hour)</li>
+          <li>We go deeper into the themes and work on<br>the beliefs and patterns relevant to your moment</li>
+        </ul>
+        
+        <a class="btn outline" href="marcar-leitura-en.html?op=sessao">I want the Reading and the session</a>
+      </div>
     </div>
-    <p class="sess-link">Would you prefer to start with a conversation about what you're going through?<br><a href="#sessao">Discover the one-to-one session</a>: you don't need to do a Reading.</p>
-    <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Hi%2C+Filipa%21+%5BYour+introduction%5D+I+saw+your+Intuitive+Reading%2C+but+I+have+a+question+before+moving+forward%3A+%5Byour+question%5D." target="_blank" rel="noopener">Have a question before choosing? Talk to me 💌</a></p>
+    <div class="more-opts">
+      <a class="mo-row" id="oferecer" href="marcar-leitura-en.html?oferta=1"><span class="mo-ic">🎁</span><span class="mo-tx"><b>Give a Reading to someone</b><em>With a gift card or with the Reading ready-made. You only need the person’s birth details and their consent, if you choose the ready-made Reading.<strong class="gift-validity">The gift card is valid for 1 month from purchase.</strong></em></span><span class="mo-pr">from 197€</span></a>
+    </div>
+    <p style="text-align:center; margin-top:0.9rem;"><a class="link-soft" href="https://wa.me/351939479755?text=Ol%C3%A1%2C+Filipa%21+%5BA+tua+apresenta%C3%A7%C3%A3o%5D+Vi+a+tua+Leitura+da+Ess%C3%AAncia%2C+mas+tenho+uma+quest%C3%A3o+antes+de+avan%C3%A7ar%3A+%5Ba+tua+quest%C3%A3o%5D." target="_blank" rel="noopener">Have a question before choosing? Talk to me 💌</a></p>
   </section>
 
   <div class="divider"><span></span><span></span></div>
 
   <!-- PERGUNTAS -->
   <section class="reveal" id="perguntas">
-    <details class="faqmain">
-      <summary><h2>Questions you may still have</h2></summary>
-      <div class="faqbody faq">
-      <details><summary>Do I need to know astrology or Human Design?</summary><div class="ans"><p>No. You don't need to know technical language or follow the chart's design. The Reading is presented in an accessible way, with links to practical life. All you need is to come with curiosity and openness to get to know yourself better.</p></div></details>
-      <details><summary>What if I don't know my birth time?</summary><div class="ans"><p>Ask someone who might know, like a family member, or <a href="https://eportugal.gov.pt/servicos/pedir-uma-certidao-de-nascimento" target="_blank" rel="noopener">request your birth certificate</a>, where the time is usually recorded. The time influences important elements of the chart, and in Human Design even more. If you still can't get it, talk to me before going ahead, so we can see what's possible to explore with the details you have.</p></div></details>
-      <details><summary>What makes this Reading different?</summary><div class="ans"><p>I don't hand you a list of meanings of signs and planets. The Reading is <strong>intuitive</strong>, because my sensitivity takes part in how I recognize associations and build the interpretation. And it is <strong>archetypal</strong>, because I work with human images and themes, such as safety, freedom, desire, belonging and creation, without reducing you to a definition. I don't want you to be left just thinking “this describes me”, but asking “where do I recognize this and what can I try differently?”.</p></div></details>
-      <details><summary>Does the Reading explain every element of my charts?</summary><div class="ans"><p>No. It isn't a complete report of all positions, aspects, centres, channels or gates. The theme you bring, the context you share and my intuitive interpretation guide which elements I go deeper into. Some may receive more attention and others may not be addressed, depending on their relevance to the Reading.</p></div></details>
-      <details><summary>Why a story?</summary><div class="ans"><p>Because a story connects what a list separates. Instead of isolated characteristics, you follow someone who wants something, meets an obstacle and explores possibilities. The characters give shape to tensions you may recognize in yourself. The story is a complement to the Reading, created from the themes of your chart and what you share. It isn't your biography or a prediction: you can recognize yourself, disagree or give it another meaning.</p></div></details>
-      <details><summary>How and when do I receive the Reading?</summary><div class="ans"><p>In writing, within 14 working days of payment confirmation. You can read in your own time, pause, repeat and return to the passages that touch you, as many times as you like.</p></div></details>
-      <details><summary>Is there a live session?</summary><div class="ans"><p>The Reading is written. If you choose the Reading with alignment session, we meet after you've read it, in a session lasting 1 hour: we start from what you recognized, explore patterns and beliefs and shape next steps. You don't need to prepare anything, but you can bring notes and examples.</p></div></details>
-      <details><summary>Will the Reading tell me what to do or predict the future?</summary><div class="ans"><p>No. It offers perspectives, questions and practical suggestions, not decisions or predictions. The chart is not a sentence, it's a starting point. You can recognize yourself, disagree or give another meaning to what you read: your experience is essential.</p></div></details>
-      <details><summary>What is the Solar Return?</summary><div class="ans"><p>Every year, near your birthday, the Sun returns to exactly the position it was in when you were born. The chart of that moment is called the Solar Return and marks the start of a new yearly cycle in your life. In the Reading with Solar Return (+100€), I look at that chart in relation to your natal chart and to what you're living. If your birthday is approaching (about 1 month before), I analyze the new cycle; if you're in the middle of a cycle, I analyze what you're living now and the impacts of your year. You can request it at any time.</p></div></details>
-      <details><summary>Is Human Design included?</summary><div class="ans"><p>Yes. Human Design is always part of the Reading, together with your birth chart: it's not an extra and it can't be bought separately. Astrology speaks of the archetypes and dynamics of your life; Human Design offers another language for exploring your rhythm and how you relate to decisions. In Human Design, I can explore elements such as type, strategy, authority, profile and other points of the design, depending on their relevance to the theme you bring.</p></div></details>
-      <details><summary>Can I give a Reading to someone?</summary><div class="ans"><p>Yes. You only need the birth details of the person receiving it. You can give a card, which the person uses to book with me within 1 month, or the Reading already prepared, in writing. <a href="#oferecer">See how to give one</a>.</p></div></details>
-      
-        <button type="button" class="faq-close" id="faqClose">↑ Close questions</button>
-      </div>
-    </details>
+    <span class="eyebrow">Before you choose</span><h2>Questions you <em>may have</em></h2><div class="faqs"><details><summary>Do I need to know astrology or Human Design?</summary><div class="ans"><p>No. The Reading is presented in an accessible way, connected to practical life. Curiosity and openness are enough.</p></div></details>
+<details><summary>What if I don’t know my time of birth?</summary><div class="ans"><p>Ask someone in your family or check your birth certificate. The time affects important elements of the chart, even more so in Human Design. If you can’t find it, talk to me before going ahead so we can see what is possible.</p></div></details>
+<details><summary>What makes this Reading different?</summary><div class="ans"><p>It isn’t a list of meanings. It is intuitive, because my sensitivity takes part in the interpretation, and archetypal, because I work with human images and themes such as security, freedom, desire and belonging, without reducing you to a definition. It doesn’t explain every element of your charts: the theme and context you share guide what we explore in depth right now.</p></div></details>
+<details><summary>How and when do I receive the Reading? Is there a live session?</summary><div class="ans"><p>In writing, within 14 business days after payment is confirmed, for you to read at your own pace. If you choose the Reading with an alignment session, we meet after you read it, in a one-hour session, starting from what you recognised.</p></div></details>
+<details><summary>Will the Reading tell me what to do or predict the future?</summary><div class="ans"><p>No. It offers perspectives, questions and practical proposals, not decisions or predictions. The chart doesn’t decide for you, nor does it justify or limit what you can be. You can recognise yourself, disagree or give another meaning to what you read.</p></div></details>
+<details><summary>Is Human Design included?</summary><div class="ans"><p>Yes, always, together with the birth chart. Astrology speaks of the archetypes and dynamics of your life; Human Design offers another language for your rhythm and the way you decide (type, strategy, authority, profile, depending on the theme you bring).</p></div></details>
+<details><summary>What is the yearly cycle?</summary><div class="ans"><p>It is the chart of the moment the Sun returns to its position at your birth, close to your birthday, marking a new yearly cycle. In the Reading with your yearly cycle (+72€, total 269€) I look at it in relation to your birth chart and what you are living: if your birthday is coming up (about 1 month before), I look at the new cycle; if you are halfway through, at what you are living now. You can ask for it at any time.</p></div></details>
+<details><summary>Can I give a Reading to someone?</summary><div class="ans"><p>Yes. You only need the recipient’s birth details. You can give a card, which the person uses to book with me within 1 month, or the Reading ready-made, in writing. <a href="#oferecer">See how to give it</a>.</p></div></details>
+
+</div>
   </section>
 
   <div class="divider"><span></span><span></span></div>
@@ -1299,53 +1318,43 @@ main h3{font-size:30px!important}
   <!-- FECHO -->
   <section class="reveal">
     <div class="closing">
-      <p class="t">If this is the Reading you were looking for</p>
-      <p class="body-text">The Reading can open up questions and bring to awareness themes that, if it makes sense to you, we can explore together in individual work on self-knowledge and personal (and professional) development, contracted separately.</p>
-      <p class="body-text">The way you see yourself influences the life you build, and none of those stories is definitive. Let's look at your chart and your moment together, with depth and lightness.</p>
+      <p class="t" style="font-style:normal">If this is the Reading you were looking for</p>
+      <p class="body-text">The Reading can open questions and bring to awareness themes that, if it makes sense for you, we can explore in an <a href="sessao-alinhamento-en.html">alignment session</a>.</p>
+      <p class="body-text">The way you see yourself shapes the life you build, and none of those stories is final. Let’s look at your chart and your moment together, with depth and lightness.</p>
       <a class="btn choose-reading-cta" href="#opcoes" data-scroll="opcoes">Choose my Reading</a>
     </div>
-    <p class="legal">Astrology and Human Design are used in this Reading as symbolic languages of reflection, not as scientific methods of assessment or diagnosis. The interpretation is not a closed definition of who you are nor a prediction of events: it's up to you to recognize what makes sense in light of your experience and question what doesn't. The Reading does not replace medical, psychological or other professional counselling.</p>
+    <p class="legal">Astrology and Human Design are used in this Reading as symbolic languages for reflection, not as scientific methods of assessment or diagnosis. The interpretation is not a fixed definition of who you are nor a prediction of events. The Reading does not replace medical, psychological or other professional advice.</p>
   </section>
 
 </main>
 
-<footer class="site-footer"><p>© 2026 Filipa Osório</p><div><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">Instagram</a><span>·</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Substack</a><span>·</span><a href="mailto:mail@filipaosorio.com">E-mail</a></div><div><a href="termos-ceen-en.html">CEEN terms</a><a href="termos-leitura-intuitiva-en.html">Readings terms</a><a href="privacidade-en.html">Privacy policy</a><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints book</a></div></footer>
+<footer class="site-footer"><p>© 2026 Filipa Osório</p><div><a href="https://www.instagram.com/filipaosorio" target="_blank" rel="noopener">Instagram</a><span>·</span><a href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Substack</a><span>·</span><a href="mailto:mail@filipaosorio.com">E-mail</a></div><div><a href="termos-ceen-en.html">CEEN terms and conditions</a><a href="termos-leitura-intuitiva-en.html">Reading terms</a><a href="privacidade-en.html">Privacy Policy</a><a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Complaints Book</a></div></footer>
 
 <button class="freq" id="freqToggle" type="button">🔊 Tune into the frequency</button>
 <audio id="freqAudio" src="solfejo.mp3" loop preload="none"></audio>
 
-<div class="mpop spop" id="spop" role="dialog" aria-modal="true" aria-labelledby="spTitle" hidden>
-  <div class="mpop-box">
-    <button class="mpop-x" type="button" aria-label="Close" data-sp-close>×</button>
-    <h3 id="spTitle">You don't have to start with the chart</h3>
-    <p class="sp-q">Is there a situation you'd like to understand better, or a way of reacting that's hard for you to change?</p>
-    <p>In an individual session lasting 1 hour, we start from what you're going through to explore beliefs, emotions and possibilities of responding differently, with listening, care and a possible next step.</p>
-    <p>You can book this session without doing the Reading.</p>
-    <a class="btn" href="#sessao" data-sp-go>Discover the one-to-one session</a>
-    <button class="mp-no" type="button" data-sp-close>Not now</button>
-  </div>
-</div>
+
 <div class="mpop" id="mpop" role="dialog" aria-modal="true" aria-labelledby="mpTitle" hidden>
   <div class="mpop-box">
     <button class="mpop-x" type="button" aria-label="Close" data-mp-close>×</button>
     <form id="mpForm" novalidate autocomplete="off">
       <h3 id="mpTitle">Want to see your chart?</h3>
-      <p class="mp-sub">Enter the details below and choose what you want to see: your birth chart, your Human Design chart, or both.</p>
+      <p class="mp-sub">Enter your details below and choose what you want to see: your birth chart, your Human Design chart, or both.</p>
       <div class="mp-grid">
         <div><label class="mp-l" for="mpNome" id="mpNomeL">First name</label><input type="text" id="mpNome" maxlength="60" autocomplete="given-name" required></div>
         <div><label class="mp-l" for="mpApelido" id="mpApelidoL">Last name</label><input type="text" id="mpApelido" maxlength="60" autocomplete="family-name" required></div>
-        <label class="mp-chk mp-full" style="margin:0"><input type="checkbox" id="mpOutra"><span>It's someone else's chart</span></label>
-        <p class="mp-full mp-cons" id="mpCons" hidden style="font-size:12.5px;color:var(--ink-soft);margin:0">When generating someone else's chart, you should have their consent.</p>
-        <div class="mp-full mp-gen" style="font-size:12.5px;color:var(--ink-soft)">Language of the text: <label style="margin:0 8px"><input type="radio" name="mpGen" value="f" checked> female</label><label><input type="radio" name="mpGen" value="m"> male</label></div>
+        <label class="mp-chk mp-full" style="margin:0"><input type="checkbox" id="mpOutra"><span>It’s someone else’s chart</span></label>
+        <p class="mp-full mp-cons" id="mpCons" hidden style="font-size:12.5px;color:var(--ink-soft);margin:0">If you generate someone else’s chart, you must have their consent.</p>
+        <div class="mp-full mp-gen" style="font-size:12.5px;color:var(--ink-soft)">Text language: <label style="margin:0 8px"><input type="radio" name="mpGen" value="f" checked> feminine</label><label><input type="radio" name="mpGen" value="m"> masculine</label></div>
         <div><label class="mp-l" for="mpData">Date of birth</label><input type="text" id="mpData" inputmode="numeric" autocomplete="off" placeholder="dd/mm/yyyy" maxlength="10"></div>
-        <div><label class="mp-l" for="mpHora">Time of birth</label><input type="time" id="mpHora"><small style="display:block;margin-top:4px;font-size:12px;line-height:1.4;color:var(--ink-soft,#7a6a58)">Confirm whether you were born during the day or at night (AM or PM).</small></div>
+        <div><label class="mp-l" for="mpHora">Time of birth</label><input type="time" id="mpHora"><small style="display:block;margin-top:4px;font-size:12px;line-height:1.4;color:var(--ink-soft,#7a6a58)">Check whether you were born during the day or at night (AM or PM).</small></div>
         <div class="mp-full mp-combo"><label class="mp-l" for="mpLocal">Place of birth</label>
-          <input type="text" id="mpLocal" maxlength="80" placeholder="Type the city, e.g.: Coimbra" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="mpList">
+          <input type="text" id="mpLocal" maxlength="80" placeholder="Type the city, e.g. Lisbon" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="mpList">
           <ul id="mpList" role="listbox" hidden></ul>
         </div>
       </div>
       <p class="mp-err" id="mpErr" role="alert"></p>
-      <div class="mp-choice"><button class="btn outline" type="submit" id="mpBtn" value="mapa">See birth chart</button><button class="btn outline" type="submit" id="mpBtnHd" value="hd">See Human Design</button><button class="btn outline" type="submit" id="mpBtnAmbos" value="ambos">See both</button></div>
+      <div class="mp-choice"><button class="btn outline" type="submit" id="mpBtn" value="mapa">See the birth chart</button><button class="btn outline" type="submit" id="mpBtnHd" value="hd">See Human Design</button><button class="btn outline" type="submit" id="mpBtnAmbos" value="ambos">See both</button></div>
       <p class="mp-foot">The chart is calculated in your browser. To receive emails from Filipa, you can subscribe separately on the <a href="artigos-en.html">Articles page</a>.</p>
       <button class="mp-no" type="button" data-mp-close>Not now</button>
     </form>
@@ -1355,7 +1364,7 @@ main h3{font-size:30px!important}
 
 
 <div class="sticky-buy" id="stickyBuy">
-  <span>Essence Reading · <strong>from 197€</strong></span>
+  <span>Essence Reading · <strong>197€</strong></span>
   <a href="#opcoes" data-scroll="opcoes">Choose</a>
 </div>
 
@@ -1501,9 +1510,9 @@ main h3{font-size:30px!important}
 <div id="cookieVeil" style="display:none; position:fixed; inset:0; background:transparent; pointer-events:none; z-index:998;"></div>
 <div id="cookieBanner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:999; background:#faf6ef; border-top:0.5px solid rgba(201,168,108,0.5); padding:1.25rem 1.5rem calc(1.25rem + env(safe-area-inset-bottom, 0px)); box-shadow:0 -4px 24px rgba(26,20,16,0.12); max-height:85vh; overflow-y:auto;">
   <div id="cookieSimple" style="max-width:760px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
-    <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0;">Before you continue: I use statistics cookies (Google Analytics and how the page is used) to understand what helps the people who visit here and so improve your experience on the site. I only activate them if you accept. <a href="privacidade-en.html" style="color:#7a2535; text-decoration:underline;">Learn more</a></p>
+    <p style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:#1a1410; line-height:1.6; flex:1; min-width:220px; margin:0;">I use statistics cookies (Google Analytics and reading how the page is used) to improve your experience on the site.  <a href="privacidade-en.html" style="color:#7a2535; text-decoration:underline;">Learn more</a></p>
     <div style="display:flex; gap:0.6rem; flex-shrink:0; flex-wrap:wrap;">
-      <button id="cookieReject" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:1px solid #7a2535; color:#7a2535; border-radius:30px; padding:10px 18px; cursor:pointer;">Reject</button>
+      <button id="cookieReject" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:1px solid #7a2535; color:#7a2535; border-radius:30px; padding:10px 18px; cursor:pointer;">Decline</button>
       <button id="cookieManage" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:1px solid #9a7e52; color:#9a7e52; border-radius:30px; padding:10px 18px; cursor:pointer;">Manage preferences</button>
       <button id="cookieAcceptAll" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:#7a2535; border:1px solid #7a2535; color:#f7f3ee; border-radius:30px; padding:10px 18px; cursor:pointer;">Accept</button>
     </div>
@@ -1512,11 +1521,11 @@ main h3{font-size:30px!important}
     <p style="font-family:'Spectral',serif; font-style:italic; font-size:17px; color:#1a1410; margin:0 0 1rem;">Your cookie preferences</p>
     <label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.9rem; font-family:'DM Sans',sans-serif; font-size:13px; color:#1a1410; line-height:1.5;">
       <input type="checkbox" checked disabled style="margin-top:3px;">
-      <span><strong>Necessary</strong><br><span style="color:#6b5040; font-weight:300;">The site itself ,  always active, they don't store identifiers.</span></span>
+      <span><strong>Necessary</strong><br><span style="color:#6b5040; font-weight:300;">The site itself, always active, they don’t store identifiers.</span></span>
     </label>
     <label style="display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.9rem; font-family:'DM Sans',sans-serif; font-size:13px; color:#1a1410; line-height:1.5;">
       <input type="checkbox" id="prefAnalytics" style="margin-top:3px;">
-      <span><strong>Statistics</strong> ,  Google Analytics and Microsoft Clarity<br><span style="color:#6b5040; font-weight:300;">Helps me understand how many people visit the site and how they move through it (heatmaps and anonymous recordings).</span></span>
+      <span><strong>Statistics</strong>, Google Analytics and Microsoft Clarity<br><span style="color:#6b5040; font-weight:300;">Helps me understand how many people visit the site and how they move through it (heatmaps and anonymous recordings).</span></span>
     </label>
     <div style="display:flex; gap:0.6rem; justify-content:flex-end;">
       <button id="cookieBack" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; background:transparent; border:none; color:#9a7e52; cursor:pointer; text-decoration:underline;">Back</button>
@@ -1696,12 +1705,12 @@ window.__loadCalendly = function(){
     all.forEach(function(c){ if (c.f.indexOf(q) === 0 || c.fl.indexOf(q) === 0) a.push(c); else if (c.fl.indexOf(q) > -1) b.push(c); });
     shownC = a.concat(b).slice(0, 7); act = shownC.length ? 0 : -1;
     list.innerHTML = shownC.length ? shownC.map(function(c, k){ return '<li role="option" data-i="' + k + '"' + (k === act ? ' class="active"' : '') + '>' + esc(c.name) + '<small>' + esc(c.country) + '</small></li>'; }).join('')
-      : '<li class="none">I can’t find this city here. Type a nearby city, or enter the coordinates on the chart page.</li>';
+      : '<li class="none">Não encontro esta cidade aqui. Escreve uma cidade próxima, ou indica as coordenadas na página do mapa.</li>';
     list.hidden = false; inp.setAttribute('aria-expanded', 'true');
   }
   function pick(k){ var c = shownC[k]; if (!c) return; chosen = c; inp.value = c.name + ', ' + c.country; closeL(); $('mpErr').textContent = ''; }
   inp.addEventListener('input', function(){ chosen = null; render(); });
-  $('mpOutra').addEventListener('change', function(){ $('mpCons').hidden = !this.checked; $('mpNomeL').textContent = this.checked ? 'First name of the person' : 'First name'; $('mpApelidoL').textContent = this.checked ? 'Last name of the person' : 'Last name'; });
+  $('mpOutra').addEventListener('change', function(){ $('mpCons').hidden = !this.checked; $('mpNomeL').textContent = this.checked ? 'Nome da pessoa' : 'Nome'; $('mpApelidoL').textContent = this.checked ? 'Apelido da pessoa' : 'Apelido'; });
   $('mpApelido').addEventListener('input', function(){ $('mpErr').textContent = ''; });
   $('mpNome').addEventListener('input', function(){ $('mpErr').textContent = ''; });
   inp.addEventListener('focus', function(){ if (inp.value && !chosen) render(); });
@@ -1722,12 +1731,12 @@ maskD($('mpData'));
   $('mpForm').addEventListener('submit', function(e){
     e.preventDefault();
     var err = $('mpErr'), data = isoD($('mpData').value), hora = $('mpHora').value;
-    if (!$('mpNome').value.trim()){ err.textContent = 'Please enter your first name.'; $('mpNome').focus(); return; }
-    if (!$('mpApelido').value.trim()){ err.textContent = 'Please enter your last name.'; $('mpApelido').focus(); return; }
-    if (!data){ err.textContent = 'Please check the date of birth (dd/mm/yyyy).'; $('mpData').focus(); return; }
-    if (!hora){ err.textContent = 'The time of birth is missing (you will find it on your birth certificate).'; $('mpHora').focus(); return; }
+    if (!$('mpNome').value.trim()){ err.textContent = 'Escreve o teu nome.'; $('mpNome').focus(); return; }
+    if (!$('mpApelido').value.trim()){ err.textContent = 'Escreve o teu apelido.'; $('mpApelido').focus(); return; }
+    if (!data){ err.textContent = 'Confirma a data de nascimento (dd/mm/aaaa).'; $('mpData').focus(); return; }
+    if (!hora){ err.textContent = 'Falta a hora de nascimento (está na tua certidão de nascimento).'; $('mpHora').focus(); return; }
     if (!chosen && inp.value.trim()){ render(); if (shownC.length === 1) pick(0); }
-    if (!chosen){ err.textContent = 'Please choose your city from the list.'; inp.focus(); render(); return; }
+    if (!chosen){ err.textContent = 'Escolhe a tua cidade na lista.'; inp.focus(); render(); return; }
     var q = new URLSearchParams({ nome: ($('mpNome').value.trim() + ' ' + $('mpApelido').value.trim()), data: data, hora: hora, local: chosen.name, pais: chosen.country, lat: chosen.lat, lon: chosen.lon, tz: chosen.tz });
     if ($('mpOutra').checked) q.append('outra', '1');
     var gsel = pop.querySelector('input[name="mpGen"]:checked'); set('fo_gen', gsel ? gsel.value : 'f');
@@ -1741,7 +1750,7 @@ maskD($('mpData'));
 <script>window.FO_NL_URL = '';</script>
 <script src="newsletter.js?v=20261028v4" defer></script>
 <script>
-// extras da Leitura (Human Design incluído; Revolução Solar +100; sessão +150): atualiza o preço e a ligação
+// extras da Leitura (Human Design incluído; Revolução Solar +72; sessão +150): atualiza o preço e a ligação
 Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), function(card){
   var price = card.querySelector('.offer-price'), btn = card.querySelector('a.btn'), base = parseInt(price.textContent, 10), ses = card.getAttribute('data-ses') === '1';
   var ex = card.querySelectorAll('.hd-add');
@@ -1750,7 +1759,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), funct
     Array.prototype.forEach.call(ex, function(l){ var c = l.querySelector('input').checked; l.classList.toggle('on', c); if (c){ t += +l.getAttribute('data-p'); on[l.getAttribute('data-extra')] = 1; } });
     price.textContent = t + '€';
     var op = on.rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura');
-    btn.setAttribute('href', 'marcar-leitura-en.html?op=' + op + '&hd=1');
+    btn.setAttribute('href', 'marcar-leitura.html?op=' + op + '&hd=1');
   }
   Array.prototype.forEach.call(ex, function(l){ l.querySelector('input').addEventListener('change', upd); });
   upd();
@@ -1825,7 +1834,8 @@ Array.prototype.forEach.call(document.querySelectorAll('.offers2 .offer'), funct
 })();
 </script>
 
-<dialog id="convites-dialog" class="site-dialog" aria-labelledby="convites-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button><div class="dialog-heading"><span class="eyebrow">Invitations and partnerships</span><h2 id="convites-title">Let’s talk and co-create</h2><p>Tell me about your community or company and the gathering you imagine. You do not need a fixed format.</p></div><form id="partnershipForm"><div class="dialog-grid"><label>First and last name<input name="nome" required autocomplete="name" maxlength="150"></label><label>Email<input name="email" type="email" required autocomplete="email" maxlength="254"></label><label>Community or company<input name="organizacao" required maxlength="200"></label></div><label>What kind of gathering do you imagine? Theme, objective, format<textarea name="ideia" rows="3" required maxlength="5000"></textarea></label><label data-partnership-location>Location<input name="localidade" maxlength="200"></label><div class="dialog-grid"><label>Approximate date<input name="data" placeholder="For example, January 2027" maxlength="100"></label></div><label class="dialog-check"><input type="checkbox" name="privacidade" required><span>I agree that Filipa Osório may use these details to reply to me. <a href="privacidade-en.html" target="_blank" rel="noopener">Privacy policy</a>.</span></label><p class="dialog-note">This is a request for information and a proposal, with no commitment.</p><p class="dialog-status" role="status" aria-live="polite"></p><button class="dialog-primary" type="submit">Review my invitation</button></form><section class="partnership-review" hidden tabindex="-1"><h3>Your invitation, ready to review</h3><p>Local preview. No information has been sent.</p><pre></pre><button class="dialog-primary" type="button" data-edit-partnership>Back and edit</button></section></dialog><div class="gift-launcher" role="button" tabindex="0" data-gift-open><strong>A little gift on this return!</strong><span>For you, who have been waiting for the Readings to return</span><button class="gift-launcher-close" type="button" aria-label="Close">×</button></div><dialog id="miminho-dialog" class="site-dialog gift-dialog" aria-labelledby="miminho-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button><h2 id="miminho-title">A little return treat</h2><p class="gift-subtitle">For those who follow my work and were waiting for Readings to return</p><p>Perhaps you have already joined me for an Aura or Human Design reading. Perhaps you have been following my work for a while, even if we have not had a session. As I return to readings, I want to honour your presence and introduce new ways of working together.</p><p class="gift-offer"><strong>You can receive your Now Reading for just €44</strong> (an exclusive offer for the first 5 people).</p><div class="gift-terms"><p>As part of this experience, I ask for a genuine testimonial about what you experienced and what you take with you. You choose how to share it: publishing your name, voice or image requires your separate permission.</p></div><div class="gift-actions"><a class="dialog-primary" href="pedir-tarot-en.html?miminho=1">The Now Reading · €44</a></div></dialog></body>
+<dialog id="convites-dialog" class="site-dialog" aria-labelledby="convites-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button><div class="dialog-heading"><span class="eyebrow">Invitations and partnerships</span><h2 id="convites-title">Let’s talk and co-create</h2><p>Tell me a little about your community or company and the gathering you have in mind. You don’t need a defined format.</p></div><form id="partnershipForm"><div class="dialog-grid"><label>Full name<input name="nome" required autocomplete="name" maxlength="150"></label><label>E-mail<input name="email" type="email" required autocomplete="email" maxlength="254"></label><label>Community or company<input name="organizacao" required maxlength="200"></label></div><label>What gathering do you have in mind? Theme, goal, format<textarea name="ideia" rows="3" required maxlength="5000"></textarea></label><label data-partnership-location>Location<input name="localidade" maxlength="200"></label><div class="dialog-grid"><label>Approximate date<input name="data" placeholder="For example, January 2027" maxlength="100"></label></div><label class="dialog-check"><input type="checkbox" name="privacidade" required><span>I agree that Filipa Osório may use these details to reply to me. <a href="privacidade-en.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label><p class="dialog-note">This is a request for information and a proposal, with no commitment.</p><p class="dialog-status" role="status" aria-live="polite"></p><button class="dialog-primary" type="submit">Review my invitation</button></form><section class="partnership-review" hidden tabindex="-1"><h3>Your invitation, ready to review</h3><p>Local preview. No information was sent.</p><pre></pre><button class="dialog-primary" type="button" data-edit-partnership>Back and edit</button></section></dialog><div class="gift-launcher" role="button" tabindex="0" data-gift-open><strong>A welcome-back gift</strong><span>For you, who follow my work and were waiting for the Readings to return</span><button class="gift-launcher-close" type="button" aria-label="Close">×</button></div><dialog id="miminho-dialog" class="site-dialog gift-dialog" aria-labelledby="miminho-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button><h2 id="miminho-title">A welcome-back gift</h2><p class="gift-subtitle">For those who follow my work and were waiting for the Readings to return</p><p>Perhaps you have already been with me in an Aura or Human Design Reading. Perhaps you have been following my work for a while, even without us having had a session. As the Readings return, I want to honour that you are there and share new ways for us to work together.</p><p class="gift-offer"><strong>The first 5 people receive 2 Now Readings for 80€</strong><br>on the same theme or different themes,<br>at the same time or over one month.</p><div class="gift-terms"><p>As part of this experience, I ask you for a testimonial about how it was and what you take with you. You choose how to give it: any publication with your name, voice or image will be authorised by you, separately.</p></div><div class="gift-actions"><a class="dialog-primary" href="pedir-tarot-en.html?miminho=1">Request my 2 Readings</a></div></dialog></body>
 </html>
+
 
 
