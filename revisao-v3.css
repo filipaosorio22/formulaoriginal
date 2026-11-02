@@ -116,3 +116,5 @@ html body .home-portrait img{transform-origin:50% 40%}
 html body .site-main-nav .readings-menu{gap:0!important}html body .site-main-nav .readings-submenu-toggle{width:auto!important;min-width:0!important;padding:0 0 0 3px!important}
 
 html body .site-main-nav .nav-links .readings-submenu-toggle{width:16px!important;min-width:16px!important;max-width:16px!important;padding:0!important;margin-left:3px!important}
+
+html body .site-main-nav .nav-links .readings-submenu-toggle{width:12px!important;min-width:12px!important;max-width:12px!important;margin-left:2px!important;margin-right:-12px!important}
