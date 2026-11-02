@@ -32,18 +32,23 @@ const english=document.documentElement.lang.startsWith('en');
 const ui=s=>english?({'Enviar e continuar para pagamento':'Send and continue to payment','As tuas respostas são enviadas à Filipa e segues para o pagamento seguro no Stripe.':'Your answers are sent to Filipa, then you continue to secure payment with Stripe.','Confirma o número de telemóvel, incluindo o indicativo.':'Check your mobile number, including the country code.','O pedido online ainda não está disponível. Tenta novamente mais tarde.':'Online requests are not available yet. Please try again later.','A preparar o pagamento…':'Preparing your payment…','Não foi possível enviar o teu pedido. Nenhum pagamento foi iniciado. Podes tentar novamente.':'Your request could not be sent. No payment was initiated. You can try again.'}[s]||s):s;
 const form=document.getElementById('tarotForm');
 if(form){
- const by=id=>document.getElementById(id),cfg=window.TAROT_CONFIG||{preview:true,price:88};
+ const by=id=>document.getElementById(id),cfg=window.TAROT_CONFIG||{preview:true,price:80};
  let submitting=false,requestRef=null;
  const promotionOption=by('momentoPromo'),promotionConsent=by('momentoPromoConsent');
  const regularPayment=cfg.paymentLink;
  function syncPromotion(){
-  const promo=cfg.launchActive===true||!!promotionOption?.checked;cfg.price=promo?44:88;cfg.paymentLink=promo?cfg.promotionLink:regularPayment;
+  const opt=(document.querySelector('input[name="momentoOpcao"]:checked')||{}).value;
+  if(opt&&promotionOption)promotionOption.checked=(opt==='promo'||opt==='promocombo');
+  const promo=!!promotionOption?.checked,combo=opt==='combo',promoCombo=opt==='promocombo';
+  cfg.price=promoCombo?(cfg.promoComboPrice||143):combo?(cfg.comboPrice||179):(promo?44:(cfg.regularPrice||80));
+  cfg.paymentLink=promoCombo?cfg.promoComboLink:combo?cfg.comboLink:(promo?cfg.promotionLink:regularPayment);
+  cfg.label=(combo||promoCombo)?(english?'The Now Reading + one-hour session':'Leitura do Momento + sessão de 1 hora'):(english?'The Now Reading':'Leitura do Momento');
   if(promotionConsent){promotionConsent.required=promo;if(!promo)promotionConsent.checked=false;}
   const wrapper=by('momentoPromoConsentWrap');if(wrapper)wrapper.hidden=!promo;
   document.querySelectorAll('[data-moment-price]').forEach(n=>n.textContent=(english?'€':'')+cfg.price+(english?'':'€'));
-  document.querySelectorAll('.form-price strong').forEach(n=>n.textContent=(english?'The Now Reading · €':'Leitura de Momento · ')+cfg.price+(english?'':'€'));
+  document.querySelectorAll('.form-price strong').forEach(n=>n.textContent=cfg.label+(english?' · €':' · ')+cfg.price+(english?'':'€'));
  }
- if(promotionOption){promotionOption.checked=cfg.launchActive===true||new URLSearchParams(location.search).get('miminho')==='1';promotionOption.addEventListener('change',syncPromotion);syncPromotion();}
+ if(promotionOption){promotionOption.checked=cfg.launchActive===true||new URLSearchParams(location.search).get('miminho')==='1';if(!promotionOption.checked){const n=document.querySelector('input[name="momentoOpcao"][value="normal"]');if(n)n.checked=true;}promotionOption.addEventListener('change',syncPromotion);document.querySelectorAll('input[name="momentoOpcao"]').forEach(r=>r.addEventListener('change',syncPromotion));syncPromotion();}
 
  if(!cfg.preview){by('submitPedido').textContent=ui('Enviar e continuar para pagamento');by('formNotice').textContent=ui('As tuas respostas são enviadas à Filipa e segues para o pagamento seguro no Stripe.');}
  form.addEventListener('submit',async e=>{
@@ -54,9 +59,9 @@ if(form){
   for(const id of ['nome','apelido','email','telefone','tema','contexto']){if(!data[id]){status.textContent=english?'Please complete this field.':'Preenche o campo «'+labels[id]+'».';by(id).focus();return;}}
   if(data.telefone.replace(/\D/g,'').length<7){status.textContent=ui('Confirma o número de telemóvel, incluindo o indicativo.');by('telefone').focus();return;}
   if(!requestRef)requestRef=cfg.preview!==false?'DEMONSTRACAO':('tarot_'+crypto.randomUUID().replace(/-/g,''));
-  const promotionNote=promotionOption?.checked?(english?'Return promotion: Now Reading 44 EUR, limited to the first five people. Honest testimonial agreed, with no obligation to be positive.\n\n':'Promoção de regresso: Leitura de Momento 44 EUR, limitada às primeiras cinco pessoas. Testemunho honesto aceite, sem obrigação de ser positivo.\n\n'):'';
-  const message=promotionNote+'Pedido expresso de preparação nas 24 horas após pagamento e dados completos: confirmado. Perda do direito após prestação integral: reconhecida.\n\nReferência do pedido: '+requestRef+'\nEstado: aguarda confirmação do pagamento\n\nLeitura de Momento · '+(cfg.price||88)+' €\nEntrega em áudio · até 5 dias úteis após pagamento e receção do contexto\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>labels[id]+': '+data[id]).join('\n\n');
-  if(cfg.preview!==false){by('resumoTexto').textContent=english?('The Now Reading · €'+(cfg.price||88)+'\nPersonalised audio · within 5 business days after payment and receipt of your context\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>({nome:'First name',apelido:'Last name',email:'Email',telefone:'Mobile / WhatsApp',nif:'Tax ID',tema:'Theme or question',contexto:'Context',desejo:'What I’d like to understand',idioma:'Reading language'}[id])+': '+data[id]).join('\n\n')):message;by('pedidoResumo').hidden=false;form.hidden=true;by('resumoTitle').focus();by('pedidoResumo').scrollIntoView({block:'center',behavior:'smooth'});return;}
+  const promotionNote=promotionOption?.checked?(english?'Return promotion: Now Reading 44 EUR, limited to the first five people. Honest testimonial agreed, with no obligation to be positive.\n\n':'Promoção de regresso: Leitura do Momento 44 EUR, limitada às primeiras cinco pessoas. Testemunho honesto aceite, sem obrigação de ser positivo.\n\n'):'';
+  const message=promotionNote+'Pedido expresso de preparação nas 24 horas após pagamento e dados completos: confirmado. Perda do direito após prestação integral: reconhecida.\n\nReferência do pedido: '+requestRef+'\nEstado: aguarda confirmação do pagamento\n\n'+(cfg.label||'Leitura do Momento')+' · '+(cfg.price||80)+' €\nEntrega por escrito e em áudio · até 7 dias úteis após pagamento e receção do contexto\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>labels[id]+': '+data[id]).join('\n\n');
+  if(cfg.preview!==false){by('resumoTexto').textContent=english?((cfg.label||'The Now Reading')+' · €'+(cfg.price||80)+'\nWritten and audio · within 7 business days after payment and receipt of your context\n\n'+Object.keys(labels).filter(id=>data[id]).map(id=>({nome:'First name',apelido:'Last name',email:'Email',telefone:'Mobile / WhatsApp',nif:'Tax ID',tema:'Theme or question',contexto:'Context',desejo:'What I’d like to understand',idioma:'Reading language'}[id])+': '+data[id]).join('\n\n')):message;by('pedidoResumo').hidden=false;form.hidden=true;by('resumoTitle').focus();by('pedidoResumo').scrollIntoView({block:'center',behavior:'smooth'});return;}
   if(!cfg.paymentLink||!/^https:\/\/buy\.stripe\.com\//.test(cfg.paymentLink)||!cfg.web3formsKey){status.textContent=ui('O pedido online ainda não está disponível. Tenta novamente mais tarde.');return;}
   const submit=by('submitPedido');submitting=true;submit.disabled=true;submit.textContent=ui('A preparar o pagamento…');
   try{
