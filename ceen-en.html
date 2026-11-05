@@ -1412,7 +1412,7 @@
           <li>Short summary and action points in Notion, within 5 business days after the 2nd session</li>
         </ul>
         <p class="fmt-n fmt-n-nb">Does not include further analysis or ongoing support within this investment.</p>
-        <p class="fmt-small">If you would rather start with a single session (up to 2 hours): <a href="#" onclick="event.preventDefault(); openCeenCalendly('uma');">269€</a>.</p>
+        <p class="fmt-small">If you would rather start with a single session (1h30): <a href="#" onclick="event.preventDefault(); openCeenCalendly('uma');">179€</a>.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('sessao');">Book my 2 CEEN sessions</a>
       </div>
       <div class="fmt-card ciclo">
@@ -1595,7 +1595,7 @@
         <div class="bk-fmt">
           <label><input type="radio" name="formato" value="2 sessões CEEN · 449€" checked data-valor="449€"><span><b>2 CEEN sessions</b>449€</span></label>
           <label><input type="radio" name="formato" value="Ciclo CEEN · 800€" data-valor="800€"><span><b>CEEN Cycle</b>800€</span></label>
-          <label><input type="radio" name="formato" value="1 sessão CEEN · 269€" data-valor="269€"><span><b>1 CEEN session</b>269€</span></label>
+          <label><input type="radio" name="formato" value="1 sessão CEEN · 179€" data-valor="179€"><span><b>1 CEEN session</b>179€</span></label>
         </div>
         <p class="bk-paynote">Your session booking is confirmed once your payment of <strong id="bkValor1">449€</strong> is confirmed. The payment methods are shown when you book the date of your session.</p>
         <label class="bk-f">Full name<input name="nome" required autocomplete="name"></label>
@@ -1794,7 +1794,7 @@ var consent = getConsent();
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || ', '), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || ', '), 'Como chegou: ' + (d.origem || ', ')];
     if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
     var corpo = L.join('\n'), anterior = BK.ultimo;
-    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'CEEN Cycle (800€)' : (d.formato.indexOf('1 sess') === 0 ? 'CEEN · 1 session (269€)' : 'CEEN · 2 sessions (449€)'), formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
+    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'CEEN Cycle (800€)' : (d.formato.indexOf('1 sess') === 0 ? 'CEEN · 1 session (179€)' : 'CEEN · 2 sessions (449€)'), formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
     // só envia o e-mail se for a primeira vez ou se a pessoa mudou alguma resposta
     if (corpo !== anterior) {
       var tinha = !!anterior;

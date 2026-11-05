@@ -1,13 +1,5 @@
 # Public pages restricted as requested on 2026-10-29. Originals retained in Git.
 exclude:
-  - leituras.html
-  - tarot.html
-  - leitura-intuitiva.html
-  - marcar-leitura.html
-  - pedir-tarot.html
-  - mapa-astral.html
-  - human-design.html
-  - obrigada-leitura.html
   - leituras-en.html
   - tarot-en.html
   - leitura-intuitiva-en.html
