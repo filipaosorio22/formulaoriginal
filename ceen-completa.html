@@ -395,6 +395,8 @@
   .fmt-card li { font-size:15.5px; line-height:1.55; margin-bottom:0.35rem; color:var(--ink-soft); }
   .fmt-card p.fmt-n { font-size:14.5px; font-style:italic; color:var(--ink-soft); border-top:1px solid var(--gold); padding-top:0.7rem; margin:auto 0 1rem; text-align:left; min-height:4.6rem; box-sizing:border-box; }
   .fmt-card .cta-btn { align-self:stretch; }
+  .fmt-card p.fmt-small { font-size:13.5px !important; color:var(--ink-soft); margin:-0.3rem 0 1rem; text-align:left; }
+  .fmt-card p.fmt-small a { color:var(--wine); text-decoration:underline; }
   .fmt-card { transition:box-shadow 0.3s ease, transform 0.3s ease; }
   .fstep:has(.fcard.work) .fdot { background:#f1d9cf; color:var(--wine); border-color:rgba(122,37,53,0.5); }
   .fcard.work .fface { border:1px dashed var(--wine); }
@@ -545,7 +547,6 @@
   .bk-eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-deep); text-align:center; margin:0 0 0.3rem; }
   .bk-title { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:24px; color:var(--wine); text-align:center; margin:0 0 0.6rem; }
   .bk-intro { font-size:14.5px; text-align:center; margin:0 0 1.2rem; }
-  .bk-fmt .bk-fmt-semente{grid-column:1/-1}
 .bk-fmt { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1rem; }
   .bk-fmt label { cursor:pointer; }
   .bk-fmt input { position:absolute; opacity:0; }
@@ -1547,6 +1548,7 @@
           <li>Resumo curto e pontos de ação no Notion, até 5 dias úteis depois da 2.ª sessão</li>
         </ul>
         <p class="fmt-n fmt-n-nb">Não inclui análise posterior nem acompanhamento dentro deste investimento.</p>
+        <p class="fmt-small">Se preferires começar só com uma sessão (até 2 horas): <a href="#" onclick="event.preventDefault(); openCeenCalendly('uma');">269€</a>.</p>
         <a class="cta-btn" href="#" onclick="event.preventDefault(); openCeenCalendly('sessao');">Marcar as minhas 2 sessões CEEN</a>
       </div>
       <div class="fmt-card ciclo">
@@ -1620,21 +1622,14 @@
 </style>
 <section id="comecar">
   <div class="wrap">
-    <span class="flash">✨ Oferta flash</span>
-    <h2 class="section-title">CEEN Semente, para quem está a começar o negócio</h2>
+    <h2 class="section-title">Estás a começar o teu negócio?</h2>
     <p class="t-sm">Desde que lancei o site, recebi mensagens de pessoas que estão agora na fase em que eu estava há mais de quatro anos.</p>
-    <p class="t-sm">Com toda a bagagem, a aprendizagem, os erros e os acertos desses anos, e tendo sempre em conta o que faz sentido para ti, juntei a magia do que eu precisava e adoraria ter no meu início, um espaço para eu ser eu com as minhas ideias e forma de ser, para perceber como posso transformar as minhas ideias num negócio alinhado e criar a minha marca pessoal única.</p>
-    <p class="t-sm">É para quem está a começar o seu negócio e marca pessoal e quer começar totalmente alinhado consigo e com as novas formas de trabalhar de hoje.</p>
-    <div class="semente-steps">
-      <div class="fmt-card sessao"><p class="step-n">1</p><h3>A sessão</h3><p class="fmt-l">Alinhamos todas as ideias que tens na cabeça sobre o teu negócio.</p></div>
-      <div class="fmt-card sessao"><p class="step-n">2</p><h3>Um plano de ação concreto</h3><p class="fmt-l">Sais com um plano de ação concreto com os teus primeiros passos.</p></div>
-    </div>
+    <p class="t-sm">Com toda a bagagem, a aprendizagem, os erros e os acertos desses anos, e tendo sempre em conta o que faz sentido para ti, quero ajudar-te a transformar as tuas ideias num negócio alinhado e a criar a tua marca pessoal única.</p>
+    <p class="t-sm">Se estás a começar, ou ainda só tens uma ideia, não precisas de escolher já um formato. Manda-me uma mensagem a contar-me o teu contexto e o que tens em mente, e vejo contigo como podemos avançar.</p>
     <div class="fmt-card ciclo semente-price">
-      <h3>Sessão de planeamento<br>e estruturação de marca pessoal</h3>
-      <p class="fmt-price">179€ <span class="launch">(oferta flash)</span></p>
-      <p class="fmt-l">Para quem quer começar o negócio com clareza sobre o que oferece e sobre como quer trabalhar.</p>
-      <a class="cta-btn" href="https://cal.com/filipaosorio/ceen-semente" onclick="event.preventDefault(); openSemente();">Quero começar a minha Semente</a>
-      <p class="fmt-l wa">Preferes falar primeiro? <a href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Vi%20a%20oferta%20da%20CEEN%20Semente%20e%20quero%20come%C3%A7ar%20o%20meu%20neg%C3%B3cio%20alinhado%20comigo.%20Gostava%20de%20confirmar%20se%20%C3%A9%20para%20mim%20e%20para%20a%20minha%20fase%20atual.%20%5BO%20teu%20contexto%5D" target="_blank" rel="noopener">Diz-me por WhatsApp</a>.</p>
+      <h3>Conta-me o teu contexto</h3>
+      <p class="fmt-l">Quem és, o que fazes hoje e a ideia que gostavas de criar. Respondo-te pessoalmente.</p>
+      <a class="cta-btn" href="https://wa.me/351939479755?text=Ol%C3%A1%2C%20Filipa%21%20Estou%20a%20come%C3%A7ar%20o%20meu%20neg%C3%B3cio%20e%20gostava%20de%20ver%20contigo%20como%20avan%C3%A7ar.%20O%20meu%20contexto%3A%20%5Bquem%20sou%2C%20o%20que%20fa%C3%A7o%20hoje%20e%20a%20minha%20ideia%5D" target="_blank" rel="noopener">Enviar-te uma mensagem</a>
     </div>
   </div>
 </section>
@@ -1749,6 +1744,7 @@
         <div class="bk-fmt">
           <label><input type="radio" name="formato" value="2 sessões CEEN · 449€" checked data-valor="449€"><span><b>2 sessões CEEN</b>449€</span></label>
           <label><input type="radio" name="formato" value="Ciclo CEEN · 800€" data-valor="800€"><span><b>Ciclo CEEN</b>800€</span></label>
+          <label><input type="radio" name="formato" value="1 sessão CEEN · 269€" data-valor="269€"><span><b>1 sessão CEEN</b>269€</span></label>
         </div>
         <p class="bk-paynote">A marcação da tua sessão fica confirmada após a confirmação do pagamento de <strong id="bkValor1">449€</strong>. Os métodos de pagamento encontram-se aquando da marcação da data da tua sessão.</p>
         <label class="bk-f">Nome e apelido<input name="nome" required autocomplete="name"></label>
@@ -1785,45 +1781,6 @@
   </div>
 </div>
 
-<div id="semModal" style="display:none; position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem;">
-  <div class="bk-box">
-    <button type="button" class="bk-x" onclick="fecharSemente()" aria-label="Fechar">×</button>
-    <div id="semStep1" class="bk-step">
-      <p class="bk-eyebrow">Passo 1 de 2</p>
-      <p class="bk-title">Marcar a minha CEEN Semente</p>
-      <p class="bk-intro">Conta-me um pouco sobre ti e as tuas ideias.<br>No passo seguinte escolhes o dia da tua sessão.</p>
-      <p class="bk-upd" id="semUpd" style="display:none;">Podes corrigir as tuas respostas antes de escolheres o dia.</p>
-      <form id="semForm" novalidate>
-        <p class="bk-paynote">A CEEN Semente custa <strong>179€</strong> (oferta flash). A marcação fica confirmada após a confirmação do pagamento; os métodos de pagamento encontram-se aquando da marcação da data.</p>
-        <label class="bk-f">Nome e apelido<input name="nome" required autocomplete="name"></label>
-        <label class="bk-f">e-mail<input name="email" type="email" required autocomplete="email"></label>
-        <div class="bk-f">Telemóvel (WhatsApp)<span class="bk-tel"><select name="cc" class="bk-cc" aria-label="Indicativo do país"><option value="+351">🇵🇹 +351</option><option value="+55">🇧🇷 +55</option><option value="+34">🇪🇸 +34</option><option value="+33">🇫🇷 +33</option><option value="+44">🇬🇧 +44</option><option value="+1">🇺🇸 +1</option><option value="+49">🇩🇪 +49</option><option value="+41">🇨🇭 +41</option><option value="+352">🇱🇺 +352</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+32">🇧🇪 +32</option><option value="+353">🇮🇪 +353</option><option value="+46">🇸🇪 +46</option><option value="+244">🇦🇴 +244</option><option value="+258">🇲🇿 +258</option><option value="+238">🇨🇻 +238</option><option value="+61">🇦🇺 +61</option><option value="+971">🇦🇪 +971</option></select><input name="telemovel" type="tel" required autocomplete="tel-national" inputmode="tel"></span></div>
-        
-        <p class="bk-micnote">Se preferires falar, carrega no 🗣️ e o que disseres é escrito na caixa de texto.</p>
-        <label class="bk-f">Quem és: o teu percurso, a tua formação e o que fazes hoje<span class="bk-ta"><textarea name="background" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Falar em vez de escrever" title="Falar em vez de escrever">🗣️</button></span></label>
-        <label class="bk-f">As tuas ideias de negócio: o que gostavas de criar e para quem<span class="bk-ta"><textarea name="ideias" rows="3" required></textarea><button type="button" class="bk-mic" aria-label="Falar em vez de escrever" title="Falar em vez de escrever">🗣️</button></span></label>
-        <label class="bk-f">O que gostavas de levar da sessão (opcional)<span class="bk-ta"><textarea name="levar" rows="2"></textarea><button type="button" class="bk-mic" aria-label="Falar em vez de escrever" title="Falar em vez de escrever">🗣️</button></span></label>
-        <label class="bk-f">Como chegaste até à CEEN?<input name="origem"></label>
-        <label class="bk-check"><input type="checkbox" name="termos" required><span>Li e aceito os <a href="termos-ceen.html" target="_blank">Termos</a> e a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.</span></label>
-        <label class="bk-check"><input type="checkbox" name="substack" value="sim"><span>Quero também subscrever os textos do Substack (podes cancelar quando quiseres).</span></label>
-        <p class="bk-err" id="semErr"></p>
-        <p style="text-align:center; margin:1.2rem 0 0;"><button type="submit" class="cta-btn" id="semBtn">Continuar para escolher o dia</button></p>
-      </form>
-    </div>
-    <div id="semStep2" class="bk-step" style="display:none;">
-      <p class="bk-back"><a href="#" onclick="event.preventDefault(); voltarSemente();">‹ Rever as minhas respostas</a></p>
-      <p class="bk-eyebrow">Passo 2 de 2</p>
-      <p class="bk-title">Obrigada, <span id="semNome"></span>! Escolhe o dia da tua sessão</p>
-      <div class="bk-pay"><p>A marcação fica confirmada após a confirmação do pagamento de <strong>179€</strong>. Os métodos de pagamento encontram-se aquando da marcação da data.</p></div>
-      <div id="semConsent" style="display:none; text-align:center; padding:1.5rem 1rem;">
-        <p style="margin-bottom:1.2rem;">Para escolheres o dia aqui, precisamos de carregar o calendário do Cal.com, que usa cookies próprios.</p>
-        <a class="cta-btn" href="#" onclick="event.preventDefault(); aceitarSemente();">Aceitar e continuar</a>
-      </div>
-      <div id="semSubstack" class="bk-ss" style="display:none"><p>Obrigada, a tua data está marcada! Para terminares a subscrição, falta só um passo para receberes os textos no Substack, sê muito bem-vinda/o:</p><a class="bk-ss-btn" id="semSubstackLink" href="https://filipaosorio.substack.com/subscribe" target="_blank" rel="noopener">Subscrever no Substack</a></div>
-      <div id="semWidget" style="min-width:280px; height:650px;"></div>
-    </div>
-  </div>
-</div>
 
 
 <div id="convModal" class="bk-modal" style="display:none;">
@@ -1956,7 +1913,7 @@ var consent = getConsent();
     if (typeof gtag === 'function') { gtag('event', 'marcar_ceen_click', { idioma: document.documentElement.lang, pagina: location.pathname }); }
     document.getElementById('ceenCalendlyModal').style.display = 'flex';
     document.getElementById('cookieVeilCeen').style.display = 'block';
-    if (fmt) { var r = document.querySelector('#bkForm input[name=formato][value^="' + (fmt === 'ciclo' ? 'Ciclo' : (fmt === 'semente' ? 'Semente' : '2 sess')) + '"]'); if (r) r.checked = true; atualizaValor(); }
+    if (fmt) { var r = document.querySelector('#bkForm input[name=formato][value^="' + (fmt === 'ciclo' ? 'Ciclo' : (fmt === 'uma' ? '1 sess' : '2 sess')) + '"]'); if (r) r.checked = true; atualizaValor(); }
     if (BK.enviado) mostrarCalendario();
   };
   window.aceitarEAbrirCalendly = function(){
@@ -1989,7 +1946,7 @@ var consent = getConsent();
     var L = ['Formato: ' + d.formato, 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Negócio: ' + d.negocio, 'Há quanto tempo: ' + (d.tempo || ', '), '', 'Questão central: ' + d.questao, '', 'Links: ' + (d.links || ', '), 'Como chegou: ' + (d.origem || ', ')];
     if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
     var corpo = L.join('\n'), anterior = BK.ultimo;
-    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : (d.formato.indexOf('Semente') === 0 ? 'CEEN Semente (179€)' : 'CEEN · 2 sessões (449€)'), formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
+    BK = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), contexto: d.negocio + '\n\n' + d.questao, links: d.links, opcao: d.formato.indexOf('Ciclo') === 0 ? 'Ciclo CEEN (800€)' : (d.formato.indexOf('1 sess') === 0 ? 'CEEN · 1 sessão (269€)' : 'CEEN · 2 sessões (449€)'), formato: d.formato, substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: BK.reservaAvisada };
     // só envia o e-mail se for a primeira vez ou se a pessoa mudou alguma resposta
     if (corpo !== anterior) {
       var tinha = !!anterior;
@@ -2004,7 +1961,7 @@ var consent = getConsent();
     document.querySelector('#ceenCalendlyModal .bk-box').scrollTop = 0;
     var wd = document.getElementById('calendlyWidget'); wd.innerHTML = ''; delete wd.dataset.done; document.getElementById('bkSubstack').style.display = 'none';
     var sp = document.getElementById('bkSoPrimeira'), fm = d.formato;
-    if (fm.indexOf('Semente') === 0) { sp.style.display = 'none'; }
+    if (fm.indexOf('1 sess') === 0) { sp.style.display = 'none'; }
     else if (fm.indexOf('Ciclo') === 0) { sp.innerHTML = '<strong>Estás a marcar apenas a primeira sessão</strong> do Ciclo CEEN. As seguintes combinamos contigo a seguir.'; sp.style.display = 'block'; }
     else { sp.innerHTML = '<strong>Estás a marcar apenas a primeira sessão</strong> das 2 sessões CEEN. A segunda combinamos contigo a seguir.'; sp.style.display = 'block'; }
     mostrarCalendario();
@@ -2024,77 +1981,6 @@ var consent = getConsent();
     }
   });
 
-  // ===== CEEN Semente: formulário (passo 1) e depois calendário Cal (passo 2) =====
-  var SB = {};
-  function semConfig(){
-    var c = { layout: 'month_view', theme: (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light') };
-    if (SB.nome) { c.name = SB.nome; var i = SB.nome.lastIndexOf(' '); if (i > 0) { c.firstName = SB.nome.slice(0, i); c.lastName = SB.nome.slice(i + 1); } }
-    if (SB.email) c.email = SB.email;
-    if (SB.tel) c.attendeePhoneNumber = SB.tel;
-    return c;
-  }
-  function semMostrar(){
-    var pr = document.getElementById('semConsent'), wd = document.getElementById('semWidget');
-    if (window.__calLoaded && window.Cal) {
-      pr.style.display = 'none'; wd.style.display = 'block';
-      if (!wd.dataset.done) { wd.innerHTML = ''; Cal('inline', { elementOrSelector: wd, calLink: 'filipaosorio/ceen-semente', layout: 'month_view', config: semConfig() }); Cal('ui', { theme: semConfig().theme, hideEventTypeDetails: false, layout: 'month_view' }); wd.dataset.done = '1'; }
-    } else { pr.style.display = 'block'; wd.style.display = 'none'; }
-  }
-  window.openSemente = function(){
-    if (typeof gtag === 'function') { gtag('event', 'marcar_semente_click', { pagina: location.pathname }); }
-    document.getElementById('semModal').style.display = 'flex';
-    document.getElementById('cookieVeilCeen').style.display = 'block';
-    if (SB.enviado) semMostrar();
-  };
-  window.fecharSemente = function(){
-    document.getElementById('semModal').style.display = 'none';
-    document.getElementById('cookieVeilCeen').style.display = 'none';
-  };
-  window.voltarSemente = function(){
-    document.getElementById('semStep2').style.display = 'none';
-    document.getElementById('semStep1').style.display = 'block';
-    document.getElementById('semUpd').style.display = 'block';
-    document.getElementById('semBtn').textContent = 'Atualizar e continuar';
-    document.querySelector('#semModal .bk-box').scrollTop = 0;
-  };
-  window.aceitarSemente = function(){
-    try { localStorage.setItem(KEY, JSON.stringify({ ts: Date.now(), analytics:true, calendly:true })); } catch(e){}
-    loadCalendly(); loadGA();
-    var tries = 0;
-    var w = setInterval(function(){ tries++; if (window.__calLoaded || tries > 40) { clearInterval(w); semMostrar(); } }, 150);
-  };
-  document.getElementById('semForm').addEventListener('submit', function(ev){
-    ev.preventDefault();
-    var f = this, err = document.getElementById('semErr');
-    if (!validar(f, err)) return;
-    var d = dados(f);
-    var L = ['CEEN Semente · 179€ (1 sessão de 1h30)', 'Nome: ' + d.nome, 'E-mail: ' + d.email, 'Telemóvel: ' + d.telemovel, '', 'Quem é (percurso, formação, o que faz hoje): ' + d.background, '', 'Ideias de negócio: ' + d.ideias, '', 'O que gostava de levar da sessão: ' + (d.levar || '—'), '', 'Como chegou: ' + (d.origem || '—')];
-    if (d.substack === 'sim') { L.push('', 'Substack: quer subscrever'); }
-    var corpo = L.join('\n'), anterior = SB.ultimo;
-    SB = { nome: d.nome, email: d.email, tel: d.telemovel.replace(/\s/g, ''), substack: d.substack === 'sim', enviado: true, ultimo: anterior, reservaAvisada: SB.reservaAvisada };
-    if (corpo !== anterior) {
-      var tinha = !!anterior;
-      SB.ultimo = corpo;
-      enviar((tinha ? 'ATUALIZAÇÃO · ' : '') + 'Nova marcação CEEN Semente · ' + d.nome, 'Site · CEEN Semente', d.email, L).catch(function(){ SB.ultimo = anterior; });
-    }
-    document.getElementById('semNome').textContent = d.nome.split(' ')[0];
-    document.getElementById('semStep1').style.display = 'none';
-    document.getElementById('semStep2').style.display = 'block';
-    document.getElementById('semBtn').textContent = 'Atualizar e continuar';
-    document.querySelector('#semModal .bk-box').scrollTop = 0;
-    var wd = document.getElementById('semWidget'); wd.innerHTML = ''; delete wd.dataset.done; document.getElementById('semSubstack').style.display = 'none';
-    semMostrar();
-    if (typeof gtag === 'function') gtag('event', 'formulario_semente_enviado');
-  });
-  window.addEventListener('message', function(e){
-    if (e.origin !== location.origin) return;
-    var d = e.data; if (!d || d.foCal !== 'booked' || !SB.enviado) return;
-    if (SB.substack) { var bs = document.getElementById('semSubstack'); document.getElementById('semSubstackLink').href = 'https://filipaosorio.substack.com/subscribe?email=' + encodeURIComponent(SB.email); bs.style.display = 'block'; try { bs.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(x){} }
-    if (!SB.reservaAvisada && !BK.enviado) {
-      SB.reservaAvisada = true;
-      enviar('Marcou a data · CEEN Semente · ' + SB.nome, 'Site · CEEN Semente', SB.email, ['A pessoa marcou a sessão da CEEN Semente no Cal.', 'Nome: ' + SB.nome, 'E-mail: ' + SB.email]).catch(function(){ SB.reservaAvisada = false; });
-    }
-  });
 
   window.abrirConvite = function(){ var m = document.getElementById('convModal'); m.style.display = 'flex'; };
   window.fecharConvite = function(){ document.getElementById('convModal').style.display = 'none'; };
@@ -2508,37 +2394,7 @@ var consent = getConsent();
   }
 })();
 </script>
-<dialog id="convites-dialog" class="site-dialog" aria-labelledby="convites-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Fechar">×</button><div class="dialog-heading"><span class="eyebrow">Convites e parcerias</span><h2 id="convites-title">Vamos conversar e cocriar</h2><p>Conta-me um pouco sobre a tua comunidade ou empresa e o encontro que imaginas. Não precisas de ter um formato definido.</p></div><form id="partnershipForm"><div class="dialog-grid"><label>Nome e apelido<input name="nome" required autocomplete="name" maxlength="150"></label><label>E-mail<input name="email" type="email" required autocomplete="email" maxlength="254"></label><label>Comunidade ou empresa<input name="organizacao" required maxlength="200"></label></div><label>Que encontro imaginas? Tema, objetivo, formato<textarea name="ideia" rows="3" required maxlength="5000"></textarea></label><label data-partnership-location>Localidade<input name="localidade" maxlength="200"></label><div class="dialog-grid"><label>Data aproximada<input name="data" placeholder="Por exemplo, janeiro de 2027" maxlength="100"></label></div><label class="dialog-check"><input type="checkbox" name="privacidade" required><span>Aceito que a Filipa Osório use estes dados para me responder. <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label><p class="dialog-note">Este é um pedido de informação e de proposta, sem compromisso.</p><p class="dialog-status" role="status" aria-live="polite"></p><button class="dialog-primary" type="submit">Rever o meu convite</button></form><section class="partnership-review" hidden tabindex="-1"><h3>O teu convite, para rever</h3><p>Pré-visualização local. Nenhum dado foi enviado.</p><pre></pre><button class="dialog-primary" type="button" data-edit-partnership>Voltar e editar</button></section></dialog><style>
-#popupSemente{text-align:center;padding:1.9rem 1rem 1rem}
-#popupSemente .pf-eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#7a2535;margin:0 0 .6rem}
-#popupSemente .pf-msg{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;line-height:1.15;color:#7a2535;margin:0 0 .9rem}
-@media(min-width:601px){#popupSemente{left:1.4rem !important;right:auto !important;bottom:1.4rem !important;width:290px !important;max-width:290px !important}}
-html[data-theme="dark"] #popupSemente{background:#2a2520}
-html[data-theme="dark"] #popupSemente .pf-msg,html[data-theme="dark"] #popupSemente .pf-eyebrow{color:#f0cdd3}
-</style>
-<div class="popup" id="popupSemente" role="dialog" aria-label="✨ Oferta flash · CEEN Semente">
-  <button class="popup-close" id="popupSementeX" type="button" aria-label="Fechar">×</button>
-  <p class="pf-eyebrow">✨ Oferta flash · CEEN Semente</p>
-  <p class="pf-msg">Estás a pensar começar a tua marca pessoal?</p>
-  <a class="popup-btn" href="#comecar" onclick="return goSemente();">Conhece a CEEN Semente</a>
-</div>
-<script>
-(function(){
-  var p = document.getElementById('popupSemente'), sec = document.getElementById('comecar'); if (!p || !sec) return;
-  var main = document.getElementById('popup');
-  try { if (sessionStorage.getItem('fo_sem_off')) return; } catch(e){}
-  function inView(){ var r = sec.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; }
-  function hide(off){ p.classList.remove('visible'); if (off) { try { sessionStorage.setItem('fo_sem_off','1'); } catch(e){} } }
-  window.goSemente = function(){ hide(true); sec.scrollIntoView({ behavior:'smooth', block:'start' }); if (typeof gtag === 'function') gtag('event', 'popup_semente_click'); return false; };
-  document.getElementById('popupSementeX').addEventListener('click', function(){ hide(true); });
-  setTimeout(function(){
-    if (inView()) return;
-    p.classList.add('visible');
-    if (window.innerWidth <= 600 && main) main.classList.remove('visible');
-  }, 12000);
-  window.addEventListener('scroll', function(){ if (p.classList.contains('visible') && inView()) hide(false); }, { passive:true });
-})();
-</script>
+<dialog id="convites-dialog" class="site-dialog" aria-labelledby="convites-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Fechar">×</button><div class="dialog-heading"><span class="eyebrow">Convites e parcerias</span><h2 id="convites-title">Vamos conversar e cocriar</h2><p>Conta-me um pouco sobre a tua comunidade ou empresa e o encontro que imaginas. Não precisas de ter um formato definido.</p></div><form id="partnershipForm"><div class="dialog-grid"><label>Nome e apelido<input name="nome" required autocomplete="name" maxlength="150"></label><label>E-mail<input name="email" type="email" required autocomplete="email" maxlength="254"></label><label>Comunidade ou empresa<input name="organizacao" required maxlength="200"></label></div><label>Que encontro imaginas? Tema, objetivo, formato<textarea name="ideia" rows="3" required maxlength="5000"></textarea></label><label data-partnership-location>Localidade<input name="localidade" maxlength="200"></label><div class="dialog-grid"><label>Data aproximada<input name="data" placeholder="Por exemplo, janeiro de 2027" maxlength="100"></label></div><label class="dialog-check"><input type="checkbox" name="privacidade" required><span>Aceito que a Filipa Osório use estes dados para me responder. <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label><p class="dialog-note">Este é um pedido de informação e de proposta, sem compromisso.</p><p class="dialog-status" role="status" aria-live="polite"></p><button class="dialog-primary" type="submit">Rever o meu convite</button></form><section class="partnership-review" hidden tabindex="-1"><h3>O teu convite, para rever</h3><p>Pré-visualização local. Nenhum dado foi enviado.</p><pre></pre><button class="dialog-primary" type="button" data-edit-partnership>Voltar e editar</button></section></dialog>
 </body>
 </html>
 
