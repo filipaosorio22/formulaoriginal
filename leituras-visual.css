@@ -1,23 +1,18 @@
-/* Leituras · visual mais leve e variado (fundos alternados, cartões e títulos) */
-html:not([data-theme=dark]) body.fo-reading-page{--l1:#fff8ef;--l2:#fdeee2;--l3:#fbeedc;--l4:#f8e9d3;background:#fbeedc!important}
-/* topo: fundo a toda a largura */
+/* Leituras · visual leve: topo claro e secções que alternam entre dois tons */
+html:not([data-theme=dark]) body.fo-reading-page{--ca:#fffaf3;--cb:#f8e8d0;background:#fffaf3!important}
+/* topo claro, a toda a largura (para as imagens se verem bem) */
 html:not([data-theme=dark]) body.fo-reading-page .hero,
 html:not([data-theme=dark]) body.fo-reading-page .astro-hero{position:relative;isolation:isolate;background:none!important;box-shadow:none!important;clip-path:inset(0 -100vmax)}
 html:not([data-theme=dark]) body.fo-reading-page .hero::before,
-html:not([data-theme=dark]) body.fo-reading-page .astro-hero::before{content:"";position:absolute;top:0;bottom:0;left:-100vmax;right:-100vmax;z-index:-1;background:linear-gradient(135deg,#fde2d2 0%,#fbeedc 55%,#f8e6cb 100%)}
-/* secções de página inteira (leituras e momento) */
-html:not([data-theme=dark]) body.fo-reading-page main>section.section:nth-of-type(4n+1),
-html:not([data-theme=dark]) body.fo-reading-page section.section:nth-of-type(4n+1){background:var(--l1)!important}
-html:not([data-theme=dark]) body.fo-reading-page section.section:nth-of-type(4n+2){background:var(--l2)!important}
-html:not([data-theme=dark]) body.fo-reading-page section.section:nth-of-type(4n+3){background:var(--l3)!important}
-html:not([data-theme=dark]) body.fo-reading-page section.section:nth-of-type(4n+4){background:var(--l4)!important}
-html:not([data-theme=dark]) body.fo-reading-page section.section.tinted{background-image:none!important}
-/* secções da Essência (dentro de um contentor estreito): fundo a toda a largura */
+html:not([data-theme=dark]) body.fo-reading-page .astro-hero::before{content:"";position:absolute;top:0;bottom:0;left:-100vmax;right:-100vmax;z-index:-1;background:linear-gradient(135deg,#fffaf3 0%,#fdf2e6 60%,#fbecd9 100%)}
+/* secções: alternam sempre a cada mudança */
+html:not([data-theme=dark]) body.fo-reading-page section.section{background-image:none!important}
+html:not([data-theme=dark]) body.fo-reading-page section.section:nth-of-type(odd){background:var(--ca)!important}
+html:not([data-theme=dark]) body.fo-reading-page section.section:nth-of-type(even){background:var(--cb)!important}
+/* Essência (secções dentro de um contentor estreito): fundo a toda a largura */
 html:not([data-theme=dark]) body.fo-reading-page section.reveal{position:relative;box-shadow:0 0 0 100vmax var(--c);clip-path:inset(0 -100vmax);background:var(--c);padding-top:54px;padding-bottom:54px}
-html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(4n+1){--c:var(--l1)}
-html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(4n+2){--c:var(--l2)}
-html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(4n+3){--c:var(--l3)}
-html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(4n+4){--c:var(--l4)}
+html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(odd){--c:var(--cb)}
+html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(even){--c:var(--ca)}
 /* títulos */
 body.fo-reading-page section h2{font-size:clamp(30px,3.3vw,42px)!important;line-height:1.15!important}
 body.fo-reading-page section h2 em{color:#9c3b4f}
@@ -27,15 +22,10 @@ html:not([data-theme=dark]) body.fo-reading-page .offer,
 html:not([data-theme=dark]) body.fo-reading-page .hdmsg,
 html:not([data-theme=dark]) body.fo-reading-page .faqs details{background:#fffdf9!important;border:1px solid #efd9c0!important;border-radius:20px!important;box-shadow:0 18px 38px -26px rgba(122,37,53,.38)!important}
 html:not([data-theme=dark]) body.fo-reading-page .fo-col.fo-destaque{border:2px solid #e3b98d!important}
-/* testemunhos em ecrã de conversa: mais claros */
 html:not([data-theme=dark]) body.fo-reading-page .wab-wrap{background:#fbe9d7!important}
+/* testemunhos: sem fundos próprios, seguem a alternância */
 html:not([data-theme=dark]) body.fo-reading-page #testemunhos,
-html:not([data-theme=dark]) body.fo-reading-page #testemunhos-mapas{background:#fde8da!important;background-image:none!important}
+html:not([data-theme=dark]) body.fo-reading-page #testemunhos-mapas{background-image:none!important}
 /* respiração */
 body.fo-reading-page section.section{padding-top:64px!important;padding-bottom:64px!important}
 @media(max-width:700px){body.fo-reading-page section.section{padding-top:44px!important;padding-bottom:44px!important}}
-/* separação clara entre o topo e "Duas leituras" */
-html:not([data-theme=dark]) body.fo-reading-page .hero::before{background:linear-gradient(135deg,#fbd9c6 0%,#fbe6cf 55%,#f6dcc0 100%)}
-html:not([data-theme=dark]) body.readings-hub .hero{border-bottom:1px solid #ecc9ae}
-html:not([data-theme=dark]) body.readings-hub #leituras{background:#fffaf3!important;box-shadow:0 -14px 30px -22px rgba(122,37,53,.35);position:relative}
-html:not([data-theme=dark]) body.readings-hub #leituras+section{background:#f8e6cb!important}
