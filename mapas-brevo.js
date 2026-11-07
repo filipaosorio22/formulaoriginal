@@ -10,7 +10,7 @@ window.foSendMap=function(kind,email,info,extra){
  // sempre os dois mapas: quem desenha só um é levado à página com os dois lado a lado, que envia tudo junto
  if(!other&&!sp.get('tambem')&&!/embed=1/.test(location.search)&&info&&info.place){
   try{const q=new URLSearchParams({nome:info.name||'',data:info.y+'-'+pad(info.mo)+'-'+pad(info.d),hora:pad(info.hh)+':'+pad(info.mi),local:info.place.name,pais:info.place.country||'',lat:info.place.lat,lon:info.place.lon,tz:info.place.tz,tambem:'hd'});
-  location.replace('/mapa-astral.html?'+q.toString()+'#mapa');return;}catch(e){}
+  location.replace('/mapas.html?'+q.toString()+'#mapa');return;}catch(e){}
  }
  const f={EMAIL:email,OPT_IN:'1',email_address_check:'',locale:'pt'};
  // mapa de outra pessoa: só o e-mail de quem pede; os dados de nascimento não ficam na ficha

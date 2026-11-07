@@ -1148,7 +1148,7 @@ main h3{font-size:30px!important}
   <p><a href="marcar-leitura.html?oferta=1">Um presente muito bonito e personalizado<br>Oferece a Leitura da Essência a alguém especial</a></p>
   <button type="button" class="gt-x" id="giftTopX" aria-label="Fechar">×</button>
 </div>
-<a class="mapa-fab" href="https://filipaosorio.com/mapa-astral.html" data-mp-open>Ver os meus mapas</a>
+<a class="mapa-fab" href="https://filipaosorio.com/mapas.html" data-mp-open>Ver os meus mapas</a>
 
 <main class="page" lang="pt">
 
@@ -1205,7 +1205,7 @@ main h3{font-size:30px!important}
   <section class="reveal" id="o-que-e">
     <h2>O que é a Leitura da Essência</h2><p class="body-text"><strong>Os teus mapas fazem parte de uma interpretação integrada</strong>, orientada pelo tema e pelo contexto que trazes. Relaciono os elementos relevantes e procuro um fio condutor que te ajude a reconhecer perguntas, padrões e possibilidades.</p>
     
-    <figure class="delivery-preview"><img class="fo-light-art" src="assets/exemplo-entrega-essencia-v2.svg" alt="Exemplo ilustrativo da estrutura da Leitura escrita: a tua leitura, da Leitura à vida e o teu espaço para notas." loading="lazy"><img class="fo-dark-art" src="assets/exemplo-entrega-essencia-v2-dark.svg" alt="" aria-hidden="true" loading="lazy"><figcaption>Exemplo fictício inspirado na estrutura de entrega no Notion. Cada Leitura é personalizada.</figcaption></figure><div class="mapa-cta"><a class="btn outline" href="https://filipaosorio.com/mapa-astral.html" data-mp-open>Ver os meus mapas</a></div>
+    <figure class="delivery-preview"><img class="fo-light-art" src="assets/exemplo-entrega-essencia-v2.svg" alt="Exemplo ilustrativo da estrutura da Leitura escrita: a tua leitura, da Leitura à vida e o teu espaço para notas." loading="lazy"><img class="fo-dark-art" src="assets/exemplo-entrega-essencia-v2-dark.svg" alt="" aria-hidden="true" loading="lazy"><figcaption>Exemplo fictício inspirado na estrutura de entrega no Notion. Cada Leitura é personalizada.</figcaption></figure><div class="mapa-cta"><a class="btn outline" href="https://filipaosorio.com/mapas.html" data-mp-open>Ver os meus mapas</a></div>
   </section>
 
 
@@ -1730,7 +1730,8 @@ maskD($('mpData'));
     set('mpopFechado', String(Date.now()));
     var v = e.submitter ? e.submitter.value : 'mapa', hd = v === 'hd';
     if (v === 'ambos') q.append('tambem', 'hd');
-    location.href = (hd ? 'human-design.html?' : 'mapa-astral.html?') + q.toString() + (hd ? '' : '#mapa');
+    if (v === 'mapa' || hd) q.append('tambem', 'hd');
+    location.href = 'mapas.html?' + q.toString() + '#mapa';
   });
 })();
 </script>

@@ -151,28 +151,44 @@
     </svg>
 
     <p class="eyebrow">Acesso pessoal</p>
-    <h1>A tua aula está aqui,<br>quando estiveres pronta.</h1>
 
-    <div class="frame">
-      <div class="corner tl"></div>
-      <div class="corner tr"></div>
-      <div class="corner bl"></div>
-      <div class="corner br"></div>
+    <p class="eyebrow">Aula de iniciação ao Human Design</p>
+    <div class="frame" data-aula="iniciacao_human_design" data-yt="x44oz0rAel4">
+      <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
       <div class="video-wrap">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/PAeRLHt8BfQ?modestbranding=1&rel=0&showinfo=0&color=white"
-          title="Aula — Filipa Osório"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        <img src="https://i.ytimg.com/vi/x44oz0rAel4/hqdefault.jpg" alt="Aula de iniciação ao Human Design" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <button type="button" class="play-aula" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#713d4b;color:#fff;border:0;border-radius:999px;padding:.8rem 1.8rem;font:16px Arial,sans-serif;cursor:pointer">Ver a aula</button>
+      </div>
+    </div>
+    <p class="eyebrow" style="margin-top:2.4rem">Aula sobre os tipos de energia</p>
+    <div class="frame" data-aula="tipos_de_energia" data-yt="7UondFFwiGo">
+      <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+      <div class="video-wrap">
+        <img src="https://i.ytimg.com/vi/7UondFFwiGo/hqdefault.jpg" alt="Aula sobre os tipos de energia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <button type="button" class="play-aula" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#713d4b;color:#fff;border:0;border-radius:999px;padding:.8rem 1.8rem;font:16px Arial,sans-serif;cursor:pointer">Ver a aula</button>
       </div>
     </div>
 
     <div class="divider"></div>
     <p class="closing">Antes de qualquer transformação ser partilhada com o mundo lá fora, ela precisa de um espaço só seu. É o que este acesso é.</p>
 
-    <p class="signature">— Filipa</p>
+    <p class="signature">Filipa Osório</p>
   </main>
 
+<script src="/cookies.js?v=20261030"></script>
+<script>
+(function(){
+function ev(n,p){try{if(window.gtag)gtag('event',n,p);}catch(e){}}
+ev('aula_pagina_aberta',{aula_pagina:'aulas_human_design'});
+document.querySelectorAll('.frame[data-aula]').forEach(function(fr){
+  var b=fr.querySelector('.play-aula');
+  b.addEventListener('click',function(){
+    var w=fr.querySelector('.video-wrap');
+    w.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+fr.dataset.yt+'?autoplay=1&modestbranding=1&rel=0&color=white" title="Aula — Filipa Osório" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    ev('aula_ver',{aula_nome:fr.dataset.aula});
+  });
+});
+})();
+</script>
 </body>
 </html>
