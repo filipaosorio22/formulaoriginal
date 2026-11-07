@@ -14,7 +14,7 @@ html:not([data-theme=dark]) body.fo-reading-page section.reveal{position:relativ
 html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(odd){--c:var(--cb)}
 html:not([data-theme=dark]) body.fo-reading-page section.reveal:nth-of-type(even){--c:var(--ca)}
 /* títulos */
-body.fo-reading-page section h2{font-size:clamp(30px,3.3vw,42px)!important;line-height:1.15!important}
+body.fo-reading-page section:not(#testemunhos) h2{font-size:clamp(30px,3.3vw,42px)!important;line-height:1.15!important}
 body.fo-reading-page section h2 em{color:#9c3b4f}
 /* cartões */
 html:not([data-theme=dark]) body.fo-reading-page .fo-col,
