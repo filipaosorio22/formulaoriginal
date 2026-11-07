@@ -34,3 +34,8 @@ html:not([data-theme=dark]) body.fo-reading-page #testemunhos-mapas{background:#
 /* respiração */
 body.fo-reading-page section.section{padding-top:64px!important;padding-bottom:64px!important}
 @media(max-width:700px){body.fo-reading-page section.section{padding-top:44px!important;padding-bottom:44px!important}}
+/* separação clara entre o topo e "Duas leituras" */
+html:not([data-theme=dark]) body.fo-reading-page .hero::before{background:linear-gradient(135deg,#fbd9c6 0%,#fbe6cf 55%,#f6dcc0 100%)}
+html:not([data-theme=dark]) body.readings-hub .hero{border-bottom:1px solid #ecc9ae}
+html:not([data-theme=dark]) body.readings-hub #leituras{background:#fffaf3!important;box-shadow:0 -14px 30px -22px rgba(122,37,53,.35);position:relative}
+html:not([data-theme=dark]) body.readings-hub #leituras+section{background:#f8e6cb!important}
