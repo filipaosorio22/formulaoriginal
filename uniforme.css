@@ -1,0 +1,8 @@
+/* Uniforme · paleta, topo claro e secções que alternam (Leituras e Sessões de Alinhamento) */
+html:not([data-theme=dark]) body.fo-reading-page,html:not([data-theme=dark]) body.session-page{--ca:#fffaf3;--cb:#f8e8d0;background:#fffaf3!important}
+html:not([data-theme=dark]) body .hero,html:not([data-theme=dark]) body .astro-hero,html:not([data-theme=dark]) body .session-hero{position:relative;isolation:isolate;background:none!important;box-shadow:none!important;clip-path:inset(0 -100vmax)}
+html:not([data-theme=dark]) body .hero::before,html:not([data-theme=dark]) body .astro-hero::before,html:not([data-theme=dark]) body .session-hero::before{content:"";position:absolute;top:0;bottom:0;left:-100vmax;right:-100vmax;z-index:-1;background:linear-gradient(135deg,#fffaf3 0%,#fdf2e6 60%,#fbecd9 100%)}
+html:not([data-theme=dark]) body section.section{background-image:none!important}
+html:not([data-theme=dark]) body section.section:nth-of-type(odd){background:var(--ca)!important}
+html:not([data-theme=dark]) body section.section:nth-of-type(even){background:var(--cb)!important}
+html:not([data-theme=dark]) body.session-page section.session-familia{background:var(--cb)!important}
