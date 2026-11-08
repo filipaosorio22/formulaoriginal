@@ -1,6 +1,6 @@
 /* One catalogue for Portuguese and English. No private API keys. */
 (()=>{const preview=location.protocol==='file:'||!['filipaosorio.com','www.filipaosorio.com'].includes(location.hostname)||new URLSearchParams(location.search).has('preview');
-const links={leitura:'https://buy.stripe.com/bJe4gz2wZ9AT5qlcHIfw40Y',rs:'https://buy.stripe.com/8x24gzefH28r3idgXYfw410',sessao:'https://buy.stripe.com/00w3cvc7zdR9bOJ4bcfw413',rssessao:'https://buy.stripe.com/00w5kD6Nf4gz2e97nofw414',sessaosolo:'https://buy.stripe.com/14A5kD1sVfZhdWRcHIfw412',rssolo:'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'};
+const links={leitura:'https://buy.stripe.com/14AcN5gnP3cvf0V7nofw41u',rs:'https://buy.stripe.com/8x24gzefH28r3idgXYfw410',sessao:'https://buy.stripe.com/00w3cvc7zdR9bOJ4bcfw413',rssessao:'https://buy.stripe.com/00w5kD6Nf4gz2e97nofw414',sessaosolo:'https://buy.stripe.com/14A5kD1sVfZhdWRcHIfw412',rssolo:'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k'};
 Object.keys(links).forEach(k=>{links[k+'+hd']=links[k]});
 window.FO_SITE_CONFIG={preview,prices:{natal:197,sessionCombo:297,solarReturn:100,moment:88,alignment:125,sessionAddon:100,sessionAddonMoment:109,sessionDurationMinutes:60},giftLimit:5};
 window.FO_PAY={preview,web3formsKey:'b2feccdb-b682-491c-8fb8-a56fb482a4ed',stripe:links};
