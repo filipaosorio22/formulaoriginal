@@ -107,14 +107,15 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   <form id="f" novalidate>
     <div class="card">
       <h2>Your choice</h2><p class="sub"></p>
-      <p class="sub" id="opSub">Choose the reading you would like.</p>
+      <p class="sub" id="opSub">Choose the reading you would like. Welcome-back price for the readings, during November.</p>
       <div id="ops">
-        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="197" checked><span><b>Essence Reading</b><br>A reading of your charts, questions, practices and Reiki sent to the theme you bring.</span><span class="pr">197€</span></label>
+        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="97" checked><span><b>Essence Reading</b><br>A reading of your charts, questions, practices and Reiki sent to the theme you bring.</span><span class="pr">97€</span></label>
+        <label class="choice" data-op="ciclo"><input type="radio" name="op" value="ciclo" data-p="197"><span><b>Yearly Cycle Reading</b><br>Your birth chart in relation to your yearly cycle chart (from birthday to birthday), in writing.</span><span class="pr">197€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Reading with an alignment session</b><br>Everything in the reading and an individual session with me.</span><span class="pr">297€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="125"><span><b>Alignment session, without a reading</b><br>A one-hour individual session, based on the theme you would like to work on.</span><span class="pr">125€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
-      <label class="choice"><input type="checkbox" id="rs"><span><b>Add your current yearly cycle · +72€</b><br>More insight into your current moment: the themes and possibilities of your yearly cycle, in dialogue with your birth chart.</span></label>
+      <label class="choice" hidden style="display:none"><input type="checkbox" id="rs"><span><b>Add your current yearly cycle · +72€</b><br>More insight into your current moment: the themes and possibilities of your yearly cycle, in dialogue with your birth chart.</span></label>
       <label class="choice" id="momW"><input type="checkbox" id="mom"><span><b id="momT">Add the Now Reading · +80€</b><br><span id="momD">An audio reading, with a written action proposal, on a specific theme you are living.</span></span></label>
       <div id="qmW" hidden style="margin-top:10px"><label class="lbl" for="qm">Which theme would you like to bring to the Now Reading?</label><textarea id="qm" placeholder="A decision, a wish that isn’t arriving, a situation that keeps repeating…"></textarea></div>
       <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
@@ -154,6 +155,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2 id="lifeT">Your current moment</h2>
       <p class="note" id="lifeNote"><span id="lifeTxt">Write the way you speak</span><span class="mic-tip" hidden>, or simply speak, and your words will appear as text when you tap the "Speak instead of typing" button</span>. Don’t worry about the end result and don’t reread it looking for things to correct: the real gold is in the loose sentences and even in what seems contradictory.</p>
       <div class="grid">
+        <div class="full"><label class="lbl" for="foco">Focus of your Reading <span class="opt">(optional)</span></label><select id="foco"><option value="">Choose a focus, or just share what you are feeling</option><option>My life in general</option><option>Money and abundance</option><option>Relationships</option><option>My business (Essence Reading for business)</option><option>Purpose</option><option>Body and energy</option></select></div>
         <div class="full"><label class="lbl" for="q1" id="q1l">What are you living and what theme would you like to explore?</label><textarea id="q1" required></textarea></div>
         <div class="full"><label class="lbl" for="q2" id="q2l">What would you like to understand or change?</label><textarea id="q2" required></textarea></div>
         
@@ -174,7 +176,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     </div>
 
     <div class="card">
-      <p class="total">Total: <b id="tot">197€</b></p>
+      <p class="total">Total: <b id="tot">97€</b></p>
       <p class="prazo" id="prazo">Reading delivery time:<br><b>within 14 business days</b> after your booking is confirmed and all details are received.</p>
       <label class="chk"><input type="checkbox" id="ok"><span>I have read and accept the <a id="termosLink" href="termos-leitura-intuitiva-en.html" target="_blank" rel="noopener">Essence Reading terms</a> and the <a href="privacidade-en.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
       <label class="chk"><input type="checkbox" id="inicioImediato" name="inicioImediato" required><span>I expressly request that preparation of my reading begin within 24 hours after your booking is confirmed and all required details are received. I understand that, because this is a personalised reading, the work begins as soon as Filipa starts my reading and that, from that moment, the amount can no longer be refunded in full.</span></label><label class="chk"><input type="checkbox" id="sub"><span>I would like to receive personal development content from Filipa’s Substack (optional, you can unsubscribe at any time)</span></label>
@@ -208,13 +210,13 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   var gift = q.get('oferta') === '1';
   var op = q.get('op');
   if (op === 'sessaosolo'){ var ss = document.querySelector('[data-op="sessaosolo"]'); ss.hidden = false; ss.querySelector('input').checked = true; op = null; }
-  if (op) { var r = document.querySelector('input[name=op][value="' + (op === 'sessao' || op === 'rssessao' ? 'sessao' : 'leitura') + '"]'); if (r) r.checked = true; if (op === 'rs' || op === 'rssessao') $('rs').checked = true; }
+  if (op) { var r = document.querySelector('input[name=op][value="' + (op === 'ciclo' ? 'ciclo' : (op === 'sessao' || op === 'rssessao' ? 'sessao' : 'leitura')) + '"]'); if (r) r.checked = true; if (op === 'rs' || op === 'rssessao') $('rs').checked = true; }
 
   if (gift) {
     document.title = 'Give an Essence Reading | Filipa Osório';
     $('t1').textContent = 'Give a reading';
     $('lead').textContent = 'What a beautiful gift! I only need the recipient’s birth details. If you know a little about their current moment and what they would like to explore, you can share it with me so the reading is more focused.';
-    $('opSub').textContent = 'You can give the Essence Reading, with or without the current yearly cycle.';
+    $('opSub').textContent = 'You can give the Essence Reading, or the Yearly Cycle Reading (for example, for a birthday).';
     document.querySelector('[data-op="sessao"]').hidden = true;
     document.querySelector('[data-op="sessaosolo"]').hidden = true;
     document.querySelector('input[value="leitura"]').checked = true;
@@ -240,7 +242,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
   function base(){ return document.querySelector('input[name=op]:checked'); }
   function sel(){
-    var bv = base().value; if (bv === 'sessaosolo') return { value: bv, getAttribute: function(){ return '125'; } };
+    var bv = base().value; if (bv === 'ciclo') return { value: 'ciclo', getAttribute: function(){ return '197'; } }; if (bv === 'sessaosolo') return { value: bv, getAttribute: function(){ return '125'; } };
     var ses = base().value === 'sessao', rs = $('rs').checked, mom = $('mom') && $('mom').checked, promo = window.FO_PROMO44 !== false;
     var v = rs ? (ses ? 'rssessao' : 'rs') : (ses ? 'sessao' : 'leitura');
     if (mom) v += '_m80';
@@ -333,14 +335,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
  const cfg=window.FO_PAY||{},isPreview=cfg.preview!==false;
  const ref=isPreview?'DEMONSTRACAO':('natal_'+crypto.randomUUID().replace(/-/g,''));
  const language=$('idioma')?$('idioma').value:(en?'English':'Português');
- const names={leitura:say('Leitura da Essência','Essence Reading'),rs:say('Leitura da Essência + ciclo anual','Essence Reading + yearly cycle'),sessao:say('Leitura da Essência + sessão','Essence Reading + alignment session'),rssessao:say('Leitura da Essência + ciclo anual + sessão','Essence Reading + yearly cycle + alignment session'),rssessao_m80:say('Leitura da Essência + ciclo anual + sessão + Leitura do Momento','Essence + yearly cycle + session + Now Reading'),sessaosolo:say('Sessão de alinhamento','Alignment session'),leitura_m80:say('Leitura da Essência + Leitura do Momento','Essence + Now Reading'),rs_m80:say('Leitura da Essência + ciclo anual + Leitura do Momento','Essence + yearly cycle + Now Reading'),sessao_m80:say('Leitura da Essência + sessão + Leitura do Momento','Essence + session + Now Reading')};
+ const names={ciclo:say('Leitura do Ciclo Anual','Yearly Cycle Reading'),leitura:say('Leitura da Essência','Essence Reading'),rs:say('Leitura da Essência + ciclo anual','Essence Reading + yearly cycle'),sessao:say('Leitura da Essência + sessão','Essence Reading + alignment session'),rssessao:say('Leitura da Essência + ciclo anual + sessão','Essence Reading + yearly cycle + alignment session'),rssessao_m80:say('Leitura da Essência + ciclo anual + sessão + Leitura do Momento','Essence + yearly cycle + session + Now Reading'),sessaosolo:say('Sessão de alinhamento','Alignment session'),leitura_m80:say('Leitura da Essência + Leitura do Momento','Essence + Now Reading'),rs_m80:say('Leitura da Essência + ciclo anual + Leitura do Momento','Essence + yearly cycle + Now Reading'),sessao_m80:say('Leitura da Essência + sessão + Leitura do Momento','Essence + session + Now Reading')};
  const lines=[say('Referência: ','Reference: ')+ref,say('Estado: aguarda confirmação do pagamento','Status: awaiting payment confirmation'),say('Nome: ','Name: ')+name,'Email: '+email,say('Telemóvel: ','Mobile: ')+(raw.startsWith('+')?raw:cc+' '+raw),say('Idioma da leitura: ','Reading language: ')+language,say('Escolha: ','Choice: ')+names[sel().value],say('Total base: ','Base total: ')+total()+'€'];
  if(gift)lines.push(say('Oferta a outra pessoa: ','Gift to another person: ')+$('rnome').value.trim(),say('Entrega: ','Delivery: ')+entrega());
  if($('nif').value.trim())lines.push(say('NIF: ','Tax ID: ')+$('nif').value.trim());
  if($('mom').checked)lines.push(say('Tema da Leitura do Momento: ','Now Reading theme: ')+$('qm').value.trim());
  if($('mom').checked&&$('usaCodigo')&&$('usaCodigo').checked)lines.push(say('Código REGRESSO: vai usá-lo e comprometeu-se a partilhar um testemunho.','REGRESSO code: will use it and committed to sharing a testimonial.'));
  if(birth.some(Boolean))lines.push(say('Nascimento: ','Birth details: ')+birth.join(', '));
- ['q1','q2','q4'].forEach(id=>{if($(id).value.trim())lines.push(($(id+'l')?.textContent||say('Mais sobre mim','More about me'))+': '+$(id).value.trim());});
+ if($('foco')&&$('foco').value)lines.push('Focus: '+$('foco').value);['q1','q2','q4'].forEach(id=>{if($(id).value.trim())lines.push(($(id+'l')?.textContent||say('Mais sobre mim','More about me'))+': '+$(id).value.trim());});
  ['famA','famH'].forEach(id=>{if($('fam').hidden)return;const values=[...document.querySelectorAll('.fchips[data-for="'+id+'"] input:checked')].map(n=>n.value);if($(id).value.trim())values.push($(id).value.trim());if(values.length)lines.push(id+': '+values.join(', '));});
  if($('sub').checked)lines.push(say('Substack: pediu informação para subscrever.','Substack: requested subscription information.'));
  lines.push(say('Termos e privacidade: aceites. Início imediato e condições de livre resolução: confirmados.','Terms and privacy accepted. Immediate start and withdrawal conditions confirmed.'));
