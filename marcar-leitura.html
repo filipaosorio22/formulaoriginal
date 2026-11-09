@@ -110,7 +110,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <p class="sub" id="opSub">Escolhe a Leitura que queres. <span style="font-size:12px;font-style:italic">Preço de retorno às leituras, durante o mês de novembro.</span></p>
       <div id="ops">
         <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="97" checked><span><b>Leitura da Essência</b><br>Leitura dos teus mapas, perguntas, práticas e envio de Reiki para o tema que trazes.</span><span class="pr">97€</span></label>
-        <label class="choice" data-op="ciclo"><input type="radio" name="op" value="ciclo" data-p="197"><span><b>Leitura do Ciclo Anual</b><br>O teu mapa natal em relação com o mapa do teu ciclo anual (de aniversário a aniversário), por escrito.</span><span class="pr">197€</span></label>
+        <label class="choice" data-op="ciclo"><input type="radio" name="op" value="ciclo" data-p="197"><span><b>Leitura do Ciclo Anual</b><br>Leitura geral do teu mapa: o mapa natal em relação com o mapa do teu ciclo anual (de aniversário a aniversário). Por escrito, entrega até 14 dias úteis.</span><span class="pr">197€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de alinhamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="125"><span><b>Sessão de alinhamento, sem Leitura</b><br>Uma sessão individual com duração de 1 hora, a partir do tema que queres trabalhar.</span><span class="pr">125€</span></label>
       </div>
@@ -272,12 +272,12 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     $('q4l').textContent = solo ? 'Queres falar algo desde já? (opcional)' : (gift ? 'Se souberes, conta-me mais sobre essa pessoa.' : 'Se quiseres, conta-me mais sobre ti.');
     $('birthCard').hidden = solo;
     if (!gift) {
-      document.title = solo ? 'Marcar a sessão de alinhamento | Filipa Osório' : 'Marcar a Leitura da Essência | Filipa Osório';
-      $('t1').textContent = solo ? 'Marcar a minha sessão' : 'Marcar a minha Leitura da Essência';
-      $('lead').textContent = solo ? 'Conta-me um pouco sobre o que estás a viver e o tema que queres trabalhar na sessão. Não precisas de chegar com tudo em ordem.' : 'Conta-me um pouco sobre o que estás a viver e o que desejas explorar. As tuas respostas ajudam-me a preparar a Leitura da Essência para o teu momento.';
+      var cic = v === 'ciclo'; document.title = solo ? 'Marcar a sessão de alinhamento | Filipa Osório' : (cic ? 'Marcar o Ciclo Anual | Filipa Osório' : 'Marcar a Leitura da Essência | Filipa Osório');
+      $('t1').textContent = solo ? 'Marcar a minha sessão' : (cic ? 'Marcar o meu Ciclo Anual' : 'Marcar a minha Leitura da Essência');
+      $('lead').textContent = solo ? 'Conta-me um pouco sobre o que estás a viver e o tema que queres trabalhar na sessão. Não precisas de chegar com tudo em ordem.' : (cic ? 'Deixa aqui os teus dados de nascimento e o que estás a viver. Depois segues para o pagamento e eu preparo a tua Leitura do Ciclo Anual.' : 'Conta-me um pouco sobre o que estás a viver e o que desejas explorar. As tuas respostas ajudam-me a preparar a Leitura da Essência para o teu momento.');
       var back = document.querySelector('.top a');
-      back.href = solo ? 'sessao-alinhamento.html' : 'leitura-intuitiva.html';
-      back.textContent = solo ? '← Sessão de alinhamento' : '← Leitura da Essência';
+      back.href = solo ? 'sessao-alinhamento.html' : (cic ? 'leituras.html#ciclo-anual' : 'leitura-intuitiva.html');
+      back.textContent = solo ? '← Sessão de alinhamento' : (cic ? '← Leituras' : '← Leitura da Essência');
       $('opSub').textContent = solo ? 'Uma sessão individual a partir do teu tema. Podes também conhecer as opções com leitura.' : 'Escolhe a Leitura que queres.';
     }
     sn.textContent = v === 'sessaosolo' ? 'A data da sessão não é escolhida agora: depois de confirmado o pagamento, recebes logo a seguir a ligação para a página onde marcas o dia e a hora que preferires, e recebes também a ligação por e-mail.' : 'A sessão não é marcada agora: envio-te as opções de data depois de te entregar a Leitura.';
