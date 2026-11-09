@@ -178,7 +178,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   var LINKS = { normal: C.regularPaymentLink || C.paymentLink, combo: C.comboLink, sessaosolo: ((window.FO_PAY || {}).stripe || {}).sessaosolo };
   var NAMES = { normal: 'Leitura do Momento', combo: 'Leitura do Momento + sessão de alinhamento', essencia: 'Leitura do Momento + Leitura da Essência', essenciaciclo: 'Leitura do Momento + Leitura da Essência com ciclo anual' };
   var OFERTA = promoOn && !!C.ofertaLink;
-  if (OFERTA){ LINKS.normal = C.ofertaLink; NAMES.normal = 'Leitura do Momento com 2 temas (oferta de regresso)'; var lab = document.querySelector('[data-op="normal"]'); lab.querySelector('span').innerHTML = '<b>Leitura do Momento com 2 temas · oferta de regresso</b><br>Oferta de regresso para as primeiras 5 pessoas: dois temas na mesma Leitura, uma única vez. Em áudio, com proposta de ação por escrito e envio de Reiki.'; }
+  if (OFERTA){ LINKS.normal = C.ofertaLink; NAMES.normal = 'Leitura do Momento com 2 temas (oferta de regresso)'; var lab = document.querySelector('[data-op="normal"]'); lab.querySelector('span').innerHTML = '<b>Leitura do Momento com 2 temas · oferta de regresso</b><br>Oferta de regresso para as primeiras 5 pessoas: dois temas na mesma Leitura, uma única vez, ainda um miminho extra para quem já acompanha o meu trabalho. Em áudio, com proposta de ação por escrito e envio de Reiki.'; }
   var q = new URLSearchParams(location.search);
   if (!promoOn) document.querySelectorAll('.promo44,#momentoPromoConsentWrap').forEach(function(n){ n.remove(); });
   var want = q.get('op');

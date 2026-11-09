@@ -178,7 +178,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   var LINKS = { normal: C.regularPaymentLink || C.paymentLink, combo: C.comboLink, sessaosolo: ((window.FO_PAY || {}).stripe || {}).sessaosolo };
   var NAMES = { normal: 'Leitura do Momento (EN)', combo: 'Leitura do Momento + sessão de alinhamento (EN)', essencia: 'Leitura do Momento + Leitura da Essência (EN)', essenciaciclo: 'Leitura do Momento + Leitura da Essência com ciclo anual (EN)' };
   var OFERTA = promoOn && !!C.ofertaLink;
-  if (OFERTA){ LINKS.normal = C.ofertaLink; NAMES.normal = 'Now Reading with 2 themes (welcome-back offer) (EN)'; var lab = document.querySelector('[data-op="normal"]'); lab.querySelector('span').innerHTML = '<b>Now Reading with 2 themes · welcome-back offer</b><br>Welcome-back offer for the first 5 people: two themes in the same reading, one time only. In audio, with a written action proposal and Reiki.'; }
+  if (OFERTA){ LINKS.normal = C.ofertaLink; NAMES.normal = 'Now Reading with 2 themes (welcome-back offer) (EN)'; var lab = document.querySelector('[data-op="normal"]'); lab.querySelector('span').innerHTML = '<b>Now Reading with 2 themes · welcome-back offer</b><br>Welcome-back offer for the first 5 people: two themes in the same reading, one time only, still an extra little gift for those who already follow my work. In audio, with a written action proposal and Reiki.'; }
   var q = new URLSearchParams(location.search);
   if (!promoOn) document.querySelectorAll('.promo44,#momentoPromoConsentWrap').forEach(function(n){ n.remove(); });
   var want = q.get('op');
