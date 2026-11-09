@@ -8,7 +8,7 @@ window.TAROT_CONFIG={preview,launchActive:false,ofertaLink:'https://buy.stripe.c
 if(preview){window['ga-disable-G-5CX792T8H9']=true;document.documentElement.dataset.foPreview='true';}
 document.addEventListener('DOMContentLoaded',()=>{if(preview)document.querySelectorAll('form').forEach(f=>{if(['f','tarotForm','mpForm','form','partnershipForm'].includes(f.id))return;f.addEventListener('submit',e=>{e.preventDefault();e.stopImmediatePropagation();const en=document.documentElement.lang.startsWith('en');let status=f.querySelector('[data-local-status]');if(!status){status=document.createElement('p');status.dataset.localStatus='';status.setAttribute('role','status');f.append(status);}status.textContent=en?'Preview: nothing has been sent.':'Pré-visualização: nenhum dado foi enviado.';},true);});});
 })();
-window.FO_PROMO44=true; /* OFERTA DE REGRESSO: 2 temas na mesma Leitura do Momento por 80€ (link Stripe próprio, limite 5). Quando esgotar, MUDAR PARA false: tira a oferta de todo o site */
+window.FO_PROMO44=false; /* OFERTA DE REGRESSO: 2 temas na mesma Leitura do Momento por 80€ (link Stripe próprio, limite 5). Quando esgotar, MUDAR PARA false: tira a oferta de todo o site */
 window.TAROT_CONFIG.launchActive=window.FO_PROMO44;
 (function(go){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})(function(){if(window.FO_PROMO44!==false)return;document.querySelectorAll('.promo44,.gift-launcher,#miminho-dialog,.launch-price,#momentoPromoConsentWrap').forEach(function(n){n.remove()});var r=document.querySelector('input[name="momentoOpcao"][value="normal"]');if(r&&!document.querySelector('input[name="momentoOpcao"]:checked')){r.checked=true;r.dispatchEvent(new Event('change'))}});
 
