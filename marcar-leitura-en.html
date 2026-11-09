@@ -109,14 +109,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2>Your choice</h2><p class="sub"></p>
       <p class="sub" id="opSub">Choose the reading you would like. Welcome-back price for the readings, during November.</p>
       <div id="ops">
-        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="97" checked><span><b>Essence Reading</b><br>A reading of your charts, questions, practices and Reiki sent to the theme you bring.</span><span class="pr">97€</span></label>
+        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="97" checked><span><b>Essence Reading</b><br>A reading of your charts for the theme you bring, with questions, practices and Reiki.</span><span class="pr">97€</span></label>
         <label class="choice" data-op="ciclo"><input type="radio" name="op" value="ciclo" data-p="197"><span><b>Yearly Cycle Reading</b><br>General reading of your chart: your birth chart in relation to your yearly cycle chart (from birthday to birthday). In writing, delivered within 14 business days.</span><span class="pr">197€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Reading with an alignment session</b><br>Everything in the reading and an individual session with me.</span><span class="pr">297€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="125"><span><b>Alignment session, without a reading</b><br>A one-hour individual session, based on the theme you would like to work on.</span><span class="pr">125€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice" hidden style="display:none"><input type="checkbox" id="rs"><span><b>Add your current yearly cycle · +72€</b><br>More insight into your current moment: the themes and possibilities of your yearly cycle, in dialogue with your birth chart.</span></label>
-      <label class="choice" id="momW"><input type="checkbox" id="mom"><span><b id="momT">Add the Now Reading · +80€</b><br><span id="momD">An audio reading, with a written action proposal, on a specific theme you are living.</span></span></label>
+      <label class="choice" id="momW"><input type="checkbox" id="mom"><span><b id="momT">Add the Now Reading · +80€</b><br><span id="momD">A Reading of your energy field and your unconscious, in audio, with a written action proposal, on a specific theme you are living.</span></span></label>
       <div id="qmW" hidden style="margin-top:10px"><label class="lbl" for="qm">Which theme would you like to bring to the Now Reading?</label><textarea id="qm" placeholder="A decision, a wish that isn’t arriving, a situation that keeps repeating…"></textarea></div>
       <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
     </div>
@@ -258,7 +258,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     if (solo || gift){ $('mom').checked = false; }
     $('momW').hidden = solo || gift;
     $('momT').textContent = 'Add the Now Reading · +80€';
-    $('momD').textContent = 'An audio reading, with a written action proposal, on a specific theme you are living.';
+    $('momD').textContent = 'A Reading of your energy field and your unconscious, in audio, with a written action proposal, on a specific theme you are living.';
     $('qmW').hidden = !$('mom').checked;
     var tl = $('termosLink'); if (tl){ tl.href = solo ? 'termos-ceen-en.html' : 'termos-leitura-intuitiva-en.html'; tl.textContent = solo ? 'alignment session terms' : 'Essence Reading terms'; }
     document.querySelector('[data-op="sessao"]').hidden=false;

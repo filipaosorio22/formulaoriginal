@@ -109,14 +109,14 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <h2>A tua escolha</h2><p class="sub"></p>
       <p class="sub" id="opSub">Escolhe a Leitura que queres. <span style="font-size:12px;font-style:italic">Preço de retorno às leituras, durante o mês de novembro.</span></p>
       <div id="ops">
-        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="97" checked><span><b>Leitura da Essência</b><br>Leitura dos teus mapas, perguntas, práticas e envio de Reiki para o tema que trazes.</span><span class="pr">97€</span></label>
+        <label class="choice" data-op="leitura"><input type="radio" name="op" value="leitura" data-p="97" checked><span><b>Leitura da Essência</b><br>Leitura dos teus mapas para o tema que trazes, com perguntas, práticas e envio de Reiki.</span><span class="pr">97€</span></label>
         <label class="choice" data-op="ciclo"><input type="radio" name="op" value="ciclo" data-p="197"><span><b>Leitura do Ciclo Anual</b><br>Leitura geral do teu mapa: o mapa natal em relação com o mapa do teu ciclo anual (de aniversário a aniversário). Por escrito, entrega até 14 dias úteis.</span><span class="pr">197€</span></label>
         <label class="choice" data-op="sessao"><input type="radio" name="op" value="sessao" data-p="297"><span><b>Leitura com sessão de alinhamento</b><br>Tudo o que está na Leitura e uma sessão individual comigo.</span><span class="pr">297€</span></label>
         <label class="choice" data-op="sessaosolo"><input type="radio" name="op" value="sessaosolo" data-p="125"><span><b>Sessão de alinhamento, sem Leitura</b><br>Uma sessão individual com duração de 1 hora, a partir do tema que queres trabalhar.</span><span class="pr">125€</span></label>
       </div>
       <p class="hint" id="sesNote" hidden></p>
       <label class="choice" hidden style="display:none"><input type="checkbox" id="rs"><span><b>Juntar o teu ciclo anual atual · +72€</b><br>Mais informação sobre o teu momento atual: sobre os temas e possibilidades do teu ciclo anual, em diálogo com o teu mapa natal.</span></label>
-      <label class="choice" id="momW"><input type="checkbox" id="mom"><span><b id="momT">Juntar a Leitura do Momento · +80€</b><br><span id="momD">Uma Leitura em áudio, com proposta de ação por escrito, sobre um tema específico que estejas a viver.</span></span></label>
+      <label class="choice" id="momW"><input type="checkbox" id="mom"><span><b id="momT">Juntar a Leitura do Momento · +80€</b><br><span id="momD">Uma Leitura do teu campo de energia e do teu inconsciente, em áudio, com proposta de ação por escrito, sobre um tema específico que estejas a viver.</span></span></label>
       <div id="qmW" hidden style="margin-top:10px"><label class="lbl" for="qm">Que tema queres trazer para a Leitura do Momento?</label><textarea id="qm" placeholder="Uma decisão, um desejo que não chega, uma situação que se repete…"></textarea></div>
       <label class="choice" hidden><input type="checkbox" id="hd" checked><span></span></label>
     </div>
@@ -258,7 +258,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     if (solo || gift){ $('mom').checked = false; }
     $('momW').hidden = solo || gift;
     $('momT').textContent = 'Juntar a Leitura do Momento · +80€';
-    $('momD').textContent = 'Uma Leitura em áudio, com proposta de ação por escrito, sobre um tema específico que estejas a viver.';
+    $('momD').textContent = 'Uma Leitura do teu campo de energia e do teu inconsciente, em áudio, com proposta de ação por escrito, sobre um tema específico que estejas a viver.';
     $('qmW').hidden = !$('mom').checked;
     var tl = $('termosLink'); if (tl){ tl.href = solo ? 'termos-ceen.html' : 'termos-leitura-intuitiva.html'; tl.textContent = solo ? 'termos da sessão de alinhamento' : 'termos da Leitura da Essência'; }
     document.querySelector('[data-op="sessao"]').hidden=false;
