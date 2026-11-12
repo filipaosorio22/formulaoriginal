@@ -1,0 +1,84 @@
+/* Refinamentos v4: todas as páginas partilham a mesma escala e paleta. */
+html body.fo-reading-page{--wine:#7a2535;--bg:#faf6ef;--paper:#fffdf8;--ink:#382e29;--muted:#6e6256;--line:#dcd0bd;--tint:#f0e7d9}
+html[data-theme=dark] body.fo-reading-page{--bg:#1d1917;--paper:#29221e;--ink:#f0e6da;--muted:#d1c1af;--line:#786044;--tint:#302722;--gold:#d6b984;--wine:#efb4bf;color:var(--ink)!important;background:var(--bg)!important;color-scheme:dark}
+html[data-theme=dark] body.fo-reading-page main,html[data-theme=dark] body.fo-reading-page .wrap{color:var(--ink)}
+html[data-theme=dark] body.fo-reading-page .section,html[data-theme=dark] body.fo-reading-page .hero{background:var(--bg)!important;color:var(--ink)!important}
+html[data-theme=dark] body.fo-reading-page .tinted,html[data-theme=dark] body.fo-reading-page #perspetiva,html[data-theme=dark] body.fo-reading-page .return-reading{background:var(--tint)!important}
+html[data-theme=dark] body.fo-reading-page :is(.reading-option,.audio-block,.offer,.offer-description,.callout,.demo-context){background:var(--paper)!important;border-color:var(--line)!important;color:var(--ink)!important}
+html[data-theme=dark] body.fo-reading-page :is(.offer-purchase,.promo-choice,.form-price,.form-section){background:var(--tint)!important;border-color:var(--line)!important;color:var(--ink)!important}
+html[data-theme=dark] body.fo-reading-page :is(p,li,summary,.lead,.meta,.small,.answer,.perspective){color:var(--ink)!important}
+html[data-theme=dark] body.fo-reading-page :is(h1,h2,h3,h4,.question,.price){color:#edb6c1!important}
+html body.readings-hub .btn,html[data-theme=dark] body.readings-hub .btn{color:#7a2535!important;background:#f9f0e8!important;border-color:#7a2535!important;border-radius:24px!important}
+html body.readings-hub .btn:hover,html body.readings-hub .btn:focus-visible{background:#7a2535!important;color:#fff7ee!important}
+html body.readings-hub .btn.session-gold,html[data-theme=dark] body.readings-hub .btn.session-gold{background:#dec68e!important;border-color:#dec68e!important;color:#392b1b!important}
+html body.readings-hub .btn.session-gold:hover{background:#ead6aa!important;color:#392b1b!important}
+html body.fo-reading-page main h1,html body.fo-reading-page main .hero h1{font-size:clamp(37px,4.2vw,52px)!important;line-height:1.12!important;white-space:normal!important}
+html body.fo-reading-page main h2,html body.readings-hub main .section h2{font-size:clamp(27px,3vw,36px)!important;line-height:1.22!important}
+html body.fo-reading-page main h3,html body.readings-hub .reading-option h3{font-size:clamp(23px,2.5vw,29px)!important;line-height:1.3!important}
+html body .reading-emphasis{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(23px,2.7vw,31px);line-height:1.4;color:var(--wine);border-left:2px solid #b18a4e;padding:10px 0 10px 24px;margin:30px 0}
+html body .home-bio{padding-top:100px!important}
+html body .home-bio .eyebrow,html body .home-bio h2,html body .home-bio .bio-thread{text-align:left!important}
+html body .home-bio h2{margin-top:14px!important}
+html body .home-bio .bio-portrait{overflow:hidden;border-radius:120px 120px 12px 12px}
+html body .home-bio .bio-portrait img{transform:none;filter:none!important}
+/* Bordeaux is kept legible in night mode on an ivory accent panel. */
+html[data-theme=dark] body .home-session h2{display:inline-block;background:#f1ded8;color:#7a2535!important;padding:12px 22px;border-radius:16px}
+html[data-theme=dark] body .intro-copy-justified h3{color:#edb6c1!important}
+html body .intro-copy-justified h3{color:#7a2535}
+html[data-theme=dark] body .steps3>div>span{color:#d6b984!important;border-color:#d6b984!important}
+html[data-theme=dark] body .opt .btn,html[data-theme=dark] body .opt a,html[data-theme=dark] body .option-card .btn{color:#dec68e!important;border-color:#d6b984!important}
+html body.readings-hub #testemunhos .car-slide{aspect-ratio:auto!important;height:auto!important;background:transparent!important;align-self:center!important;border:1px solid #c9a86c!important}
+html body.readings-hub #testemunhos .car-slide img{height:auto!important;max-height:none!important;object-fit:contain!important;transform:none!important}
+html body.readings-hub #testemunhos .car-video{background:#211b17!important;border:2px solid #c9a86c!important}
+html body.readings-hub #testemunhos .car-video video{height:auto!important;max-height:490px!important}
+html body .reading-reiki,html[data-theme=dark] body .reading-reiki{border:1px solid #7a2535!important;border-radius:26px 8px 26px 8px!important;padding:26px!important;box-shadow:0 8px 28px #7a253508;background:linear-gradient(145deg,#fcf6f0,#f2e4dc)!important;color:#382e29!important}
+html body.fo-reading-page .reading-reiki :is(p,h3),html[data-theme=dark] body.fo-reading-page .reading-reiki :is(p,h3){color:#7a2535!important}
+html body .essence-opening{display:block!important;max-width:800px;margin-inline:auto;text-align:center}
+html body .essence-opening .astro-lead{margin-inline:auto}
+html body #como-funciona .tl-step h3{font-size:20px!important}
+html body #como-funciona .tl-step p{font-size:14px!important;line-height:1.75!important}
+html body .offers2 .offer{display:flex!important;flex-direction:column!important;gap:0!important}
+html body .offers2 .offer a.btn{position:static!important;margin-top:auto!important;transform:none!important}
+html body .offers2 .offer ul{margin-bottom:25px}
+html body .delivery-preview{margin:28px auto!important}
+html body .delivery-preview picture{display:block}
+html body .preview-read-more{display:inline-block;margin:12px 0 0;border-radius:20px;font:12px/1.5 'DM Sans',sans-serif;cursor:default}
+html[data-theme=dark] body .delivery-preview{background:transparent!important}
+/* Reusable accessible audio player, matching the burgundy testimonial player. */
+.fo-audio{padding:18px 20px;border:1px solid #c9a86c88;border-radius:18px;background:var(--paper,#fffaf4);margin:20px 0;color:var(--ink,#382e29)}
+.fo-audio audio{width:100%}
+.fo-audio-ui{display:none;align-items:center;gap:15px;flex-wrap:wrap}
+.fo-audio.is-enhanced .fo-audio-ui{display:flex}
+html body .fo-audio.is-enhanced audio{display:none!important}
+.fo-audio-play{width:46px;height:46px;flex:0 0 46px;border:0;border-radius:50%;background:#7a2535;color:#fff7ee;font:18px/1 Arial,sans-serif;cursor:pointer;display:grid;place-items:center}
+.fo-audio-play:hover{background:#571c2a}
+.fo-audio-seek{flex:1;min-width:80px;accent-color:#7a2535}
+.fo-audio-time{font:12px/1.5 'DM Sans',sans-serif;font-variant-numeric:tabular-nums;color:inherit}
+.fo-audio-status{font:12px/1.5 'DM Sans',sans-serif;width:100%;margin:0}
+.fo-audio-status:empty{display:none}
+.map-benefit-shared{max-width:800px;margin:32px auto;text-align:center;padding:24px;line-height:1.8}
+.fo-map-consents{grid-column:1/-1;display:grid;gap:12px;margin-top:12px;font:13px/1.6 'DM Sans',sans-serif}
+.fo-map-consents label{display:flex;align-items:flex-start;gap:10px;text-align:left}
+.fo-map-consents input[type=checkbox]{flex:0 0 17px;width:17px;height:17px;margin-top:3px;accent-color:#7a2535}
+.fo-map-email{grid-column:1/-1}
+.fo-map-email label{display:block;margin-bottom:7px}
+.fo-map-other-name[hidden]{display:none}
+html body .site-footer{float:none!important;position:static!important;flex-basis:100%;grid-column:1/-1}
+@media(max-width:620px){html body .home-bio{padding-top:72px!important}html body.fo-reading-page main h1{font-size:38px!important}.fo-audio{padding:15px}.fo-audio-time{font-size:11px}}
+html.fo-map-saving #result,html.fo-map-saving #hdCol,html.fo-map-failed #result,html.fo-map-failed #hdCol{display:none!important}
+html body[data-map-page] #gate{display:none!important}
+html body.fo-both-maps .map-benefit-original,html.is-map-embed .map-benefit-original{display:none!important}
+html body.fo-both-maps #mapBenefitShared{width:100%;max-width:800px;margin:32px auto;float:none;grid-column:1/-1;text-align:center}
+html body[data-map-page].dual .site-footer{display:block!important;width:100%!important;grid-column:1/-1;clear:both}
+.fo-map-email{font:13px/1.5 'DM Sans',sans-serif;margin:15px 0 0}
+html body.readings-hub #testemunhos .aura-audio-testimonial{max-width:740px;margin:30px auto;padding:26px;border:1px solid #c9a86c;border-radius:18px;background:var(--paper,#fffaf4);text-align:center}
+html body.readings-hub #testemunhos .aura-audio-testimonial .feat-quote{font:italic 24px/1.5 'Cormorant Garamond',Georgia,serif;white-space:normal!important}
+html body.readings-hub #testemunhos .aura-audio-testimonial .feat-ctx{font:12px/1.7 'DM Sans',sans-serif}
+html body.readings-hub #testemunhos .aura-audio-testimonial .audio-block{border:0;padding:0;margin:20px 0 0;background:transparent!important}
+html[data-theme=dark] body .intro-copy-justified h3{display:inline-block;background:#f1ded8;color:#7a2535!important;padding:10px 14px;border-radius:12px}
+html body .home-portrait img{transform:none!important}
+html body .delivery-preview .preview-read-more{pointer-events:none;user-select:none}
+html body .fo-map-other-name input{width:100%}
+html.is-map-embed .fo-map-consents,html.is-map-embed .fo-map-email,html.is-map-embed .fo-map-other-name{display:none!important}
+html[data-theme=dark] body .home-bio .bio-thread strong{color:#edb6c1!important}
+html body.fo-reading-page #como-funciona h3{font-size:20px!important}

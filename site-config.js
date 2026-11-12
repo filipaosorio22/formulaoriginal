@@ -1,0 +1,16 @@
+/* One catalogue for Portuguese and English. No private API keys. */
+(()=>{const preview=/^\/revisao-[a-f0-9]{24}\//.test(location.pathname)||location.protocol==='file:'||!['filipaosorio.com','www.filipaosorio.com'].includes(location.hostname)||new URLSearchParams(location.search).has('preview');
+const links={hd:'https://buy.stripe.com/8x28wP7Rj7sL7yt234fw41C',leitura:'https://buy.stripe.com/14AcN5gnP3cvf0V7nofw41u',ciclo:'https://buy.stripe.com/6oU3cv5JbcN5aKF7nofw41A',rs:'https://buy.stripe.com/28EbJ1efH28raKF4bcfw41e',sessao:'https://buy.stripe.com/00w3cvc7zdR9bOJ4bcfw413',rssessao:'https://buy.stripe.com/3cI9ATgnPfZh3id378fw41n',sessaosolo:'https://buy.stripe.com/7sYaEX2wZeVd1a56jkfw41s',pack:'https://buy.stripe.com/14A00jc7z9AT6up234fw41z',rssolo:'https://buy.stripe.com/fZudR99Zr00j4mhgXYfw40k',leitura_m80:'https://buy.stripe.com/eVqbJ1fjL9ATbOJ7nofw41j',rs_m80:'https://buy.stripe.com/9B600j8Vn7sLdWR4bcfw41k',sessao_m80:'https://buy.stripe.com/6oU7sL5Jb7sL3id9vwfw41l',rssessao_m80:'https://buy.stripe.com/bJecN56NfdR90619vwfw41p'};
+Object.keys(links).forEach(k=>{links[k+'+hd']=links[k]});
+window.FO_SITE_CONFIG={preview,prices:{natal:97,sessionCombo:297,solarReturn:72,moment:80,alignment:179,sessionAddon:100,sessionAddonMoment:99,sessionDurationMinutes:90},giftLimit:5};
+window.FO_PAY={preview,web3formsKey:'b2feccdb-b682-491c-8fb8-a56fb482a4ed',stripe:links};
+window.TAROT_CONFIG={preview,launchActive:false,ofertaLink:'https://buy.stripe.com/9B6fZh1sV8wP7ytbDEfw41q',price:80,regularPrice:80,paymentLink:'https://buy.stripe.com/eVqeVdefHfZhbOJ9vwfw41b',regularPaymentLink:'https://buy.stripe.com/eVqeVdefHfZhbOJ9vwfw41b',comboLink:'https://buy.stripe.com/6oU4gz4F79AT0618rsfw41d',comboPrice:179,web3formsKey:window.FO_PAY.web3formsKey};
+if(preview){window['ga-disable-G-5CX792T8H9']=true;document.documentElement.dataset.foPreview='true';}
+document.addEventListener('DOMContentLoaded',()=>{if(preview)document.querySelectorAll('form').forEach(f=>{if(['f','tarotForm','mpForm','form','partnershipForm'].includes(f.id))return;f.addEventListener('submit',e=>{e.preventDefault();e.stopImmediatePropagation();const en=document.documentElement.lang.startsWith('en');let status=f.querySelector('[data-local-status]');if(!status){status=document.createElement('p');status.dataset.localStatus='';status.setAttribute('role','status');f.append(status);}status.textContent=en?'Preview: nothing has been sent.':'Pré-visualização: nenhum dado foi enviado.';},true);});});
+})();
+window.FO_PROMO44=false; /* OFERTA DE REGRESSO: 2 temas na mesma Leitura do Momento por 80€ (link Stripe próprio, limite 5). Quando esgotar, MUDAR PARA false: tira a oferta de todo o site */
+window.TAROT_CONFIG.launchActive=window.FO_PROMO44;
+(function(go){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})(function(){if(window.FO_PROMO44!==false)return;document.querySelectorAll('.promo44,.gift-launcher,#miminho-dialog,.launch-price,#momentoPromoConsentWrap').forEach(function(n){n.remove()});var r=document.querySelector('input[name="momentoOpcao"][value="normal"]');if(r&&!document.querySelector('input[name="momentoOpcao"]:checked')){r.checked=true;r.dispatchEvent(new Event('change'))}});
+
+
+

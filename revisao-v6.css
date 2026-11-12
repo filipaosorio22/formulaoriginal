@@ -1,0 +1,60 @@
+/* Session page and testimonial reading states. */
+html body.session-page{--wine:#7a2535;--bg:#faf6ef;--paper:#fffdf8;--ink:#382e29;--muted:#6e6256;--line:#dcd0bd;--tint:#f0e7d9;background:var(--bg);color:var(--ink)}
+html[data-theme=dark] body.session-page{--bg:#1d1917;--paper:#29221e;--ink:#f0e6da;--muted:#d1c1af;--line:#786044;--tint:#302722;--gold:#d6b984;--wine:#e3a3b3;background:var(--bg)!important;color:var(--ink)!important;color-scheme:dark}
+html[data-theme=dark] body.session-page .session-hero,html[data-theme=dark] body.session-page .session-investment{background:var(--bg)!important;color:var(--ink)!important}
+html[data-theme=dark] body.session-page .tinted{background:var(--tint)!important}
+html[data-theme=dark] body.session-page :is(h1,h2,h3,h4){color:#e3a3b3!important}
+html[data-theme=dark] body.session-page :is(p,li,.lead,.feedback-note){color:#eaded2!important}
+html[data-theme=dark] body.session-page :is(.eyebrow,.small,.number){color:#d6b984!important}
+html body.session-page .session-details{gap:30px;border-color:var(--line)}
+html body.session-page .session-details a.btn,html[data-theme=dark] body.session-page .session-details a.btn{background:#dec68e!important;color:#7a2535!important;border:1px solid #c9a86c!important;border-radius:24px!important}
+html body.session-page .session-details a.btn:hover{background:#ead6aa!important}
+html body.session-page #testemunhos .session-feedback-grid{columns:initial!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:28px 0 0;align-items:start}
+html body.session-page #testemunhos .session-feedback-card{margin:0;padding:28px 23px 18px;min-height:215px;border:1px solid #cfb888;border-radius:20px 6px 20px 6px;background:#fffaf3;box-shadow:0 5px 22px #442b2010;position:relative;display:flex;flex-direction:column}
+html body.session-page #testemunhos .session-feedback-card::before{content:'“';position:absolute;top:2px;left:18px;font:42px/1 'Cormorant Garamond',Georgia,serif;color:#b18a4e;opacity:.65}
+html body.session-page #testemunhos .session-feedback-excerpt{margin:10px 0 18px;padding:0;border:0;min-height:90px}
+html body.session-page #testemunhos .session-feedback-excerpt p{font:italic 16px/1.65 'Lora',Georgia,serif!important;color:#663440!important;margin:0!important}
+html body.session-page #testemunhos .session-feedback-full{border:0;border-top:1px solid #d8c6a3;margin-top:auto}
+html body.session-page #testemunhos .session-feedback-full>summary{font:12px/1.6 'DM Sans',sans-serif;color:#7a2535;list-style:none;padding:13px 0 0;display:flex;justify-content:space-between;align-items:center;gap:10px;text-decoration:none}
+html body.session-page #testemunhos .session-feedback-full>summary::after{position:static;content:'+';font-size:18px;line-height:1;color:inherit}
+html body.session-page #testemunhos .session-feedback-full[open]>summary::after{content:'−'}
+html body.session-page #testemunhos .session-feedback-full>summary::-webkit-details-marker{display:none}
+html body.session-page #testemunhos .session-feedback-body{padding-top:15px}
+html body.session-page #testemunhos .session-feedback-body .hdmsg{background:transparent!important;border:0!important;border-radius:0!important;margin:0!important;padding:0!important;box-shadow:none!important;color:var(--ink)!important}
+html body.session-page #testemunhos .session-feedback-body .hdmsg::before{content:none!important}
+html body.session-page #testemunhos .session-feedback-body p{font:14px/1.8 'Lora',Georgia,serif!important;margin:0 0 14px!important}
+html body.session-page #testemunhos .session-feedback-body :is(strong,u){color:inherit!important;text-decoration-color:#b18a4e!important;text-decoration-thickness:1px!important}
+html body.session-page #testemunhos .session-feedback-more{margin:28px 0 0;border:0}
+html body.session-page #testemunhos .session-feedback-more>summary{display:flex;justify-content:center;align-items:center;gap:12px;padding:13px 20px;max-width:max-content;margin:auto;border:1px solid #b18a4e;border-radius:25px;font:13px/1.6 'DM Sans',sans-serif;color:#7a2535;background:transparent;list-style:none}
+html body.session-page #testemunhos .session-feedback-more>summary::after{content:'+';position:static;color:inherit;font-size:18px;line-height:1}
+html body.session-page #testemunhos .session-feedback-more[open]>summary::after{content:'−'}
+html body.session-page #testemunhos .session-feedback-more>summary::-webkit-details-marker{display:none}
+html body.session-page #testemunhos .session-feedback-more>summary span{font-size:11px;opacity:.7}
+html body.session-page #testemunhos summary:focus-visible{outline:2px solid #c9a86c;outline-offset:5px}
+html[data-theme=dark] body.session-page #testemunhos .session-feedback-card{background:#29221e!important;border-color:#80694d;box-shadow:none}
+html[data-theme=dark] body.session-page #testemunhos .session-feedback-excerpt p{color:#ecc7d0!important}
+html[data-theme=dark] body.session-page #testemunhos .session-feedback-full{border-color:#786044}
+html[data-theme=dark] body.session-page #testemunhos .session-feedback-full>summary,html[data-theme=dark] body.session-page #testemunhos .session-feedback-more>summary{color:#edb4c2!important}
+html[data-theme=dark] body.session-page #testemunhos .session-feedback-body .hdmsg{color:#eaded2!important}
+/* Home: muted night panel, with burgundy text on the gold buttons. */
+html[data-theme=dark] body .home-actions a.btn{color:#7a2535!important}
+html[data-theme=dark] body .home-session>.wrap{background:#2c2426!important;background-image:none!important;border-color:#80644d!important;box-shadow:none!important}
+html[data-theme=dark] body .home-session>.wrap>h2{display:block!important;background:transparent!important;background-image:none!important;color:#df9bab!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+html[data-theme=dark] body .home-session>.wrap>p{color:#df9bab!important}
+html[data-theme=dark] body .home-session>.wrap>a.btn{color:#7a2535!important;background:#dec68e!important;border-color:#c9a86c!important}
+html[data-theme=dark] body .home-session>.wrap>a.btn:hover{background:#ead6aa!important;color:#7a2535!important}
+/* The CEEN heading is text on the section background, with no separate box. */
+html body .intro-copy-justified h3,html[data-theme=dark] body .intro-copy-justified h3{display:block!important;background:none!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+html[data-theme=dark] body .intro-copy-justified h3{color:#df9bab!important}
+html body .intro-box .foto-abre::after{display:none!important;content:none!important;background:none!important}
+html body .intro-box .foto-abre video{filter:none!important}
+/* Higher specificity is deliberate: earlier revisions set a dark background and a dark title separately. */
+html[data-theme=dark] body.readings-hub.fo-reading-page main #perspetiva .reading-reiki{background:#34262b!important;background-image:none!important;border:1px solid #a96e7f!important;box-shadow:none!important;color:#f2e6df!important}
+html[data-theme=dark] body.readings-hub.fo-reading-page main #perspetiva .reading-reiki h3{color:#f1c4cf!important}
+html[data-theme=dark] body.readings-hub.fo-reading-page main #perspetiva .reading-reiki p{color:#f2e6df!important}
+html[data-theme=dark] body.readings-hub.fo-reading-page main .reading-option a.btn{background:#7a2535!important;border-color:#a85e70!important;color:#fff8ef!important;box-shadow:none!important}
+html[data-theme=dark] body.readings-hub.fo-reading-page main .reading-option a.btn:hover,html[data-theme=dark] body.readings-hub.fo-reading-page main .reading-option a.btn:focus-visible{background:#5d1c2b!important;border-color:#c48696!important;color:#fff8ef!important}
+html[data-theme=dark] body.fo-reading-page main.page a.choose-reading-cta{background:#dec68e!important;border:1px solid #c9a86c!important;color:#7a2535!important}
+html[data-theme=dark] body.fo-reading-page main.page a.choose-reading-cta:hover{background:#ead6aa!important;color:#7a2535!important}
+@media(max-width:920px){html body.session-page #testemunhos .session-feedback-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){html body.session-page #testemunhos .session-feedback-grid{grid-template-columns:1fr;gap:14px}html body.session-page #testemunhos .session-feedback-card{min-height:0;padding:25px 22px 17px}html body.session-page #testemunhos .session-feedback-excerpt{min-height:0}html body.session-page #testemunhos .session-feedback-more>summary{flex-wrap:wrap;gap:7px 10px;text-align:center}}

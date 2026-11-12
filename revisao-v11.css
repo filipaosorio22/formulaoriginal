@@ -1,0 +1,23 @@
+/* Match the homepage section scale and retain the shared PT/EN mobile type rules. */
+html body .permission-slips{padding:40px 0!important;background:transparent!important;border:0!important}
+html body .permission-slips>.wrap.narrow{box-sizing:border-box;width:min(730px,calc(100% - 40px))!important;max-width:730px!important;margin-inline:auto!important;text-align:left!important}
+html body .permission-slips>.wrap.narrow h2{font:500 34px/1.18 'Cormorant Garamond',Georgia,serif!important;letter-spacing:0!important;margin:10px 0 22px!important}
+html body .permission-slips>.wrap.narrow p{font:400 16px/1.75 'Lora',Georgia,serif!important;margin:0 0 16px!important}
+html body .permission-slips>.wrap.narrow .permission-close{margin-top:22px!important;padding-left:16px!important}
+/* Start this paragraph at the same left edge as the portrait, below both biography columns. */
+html body .home-bio .wrap>.bio-thread{grid-column:1/-1!important;grid-row:auto;max-width:100%!important;margin:22px 0 0!important;padding-left:0!important;text-align:left!important;text-align-last:left!important}
+html body .home-bio .bio-thread::before{display:none!important}
+html body.fo-reading-page #a-tua-leitura .session-format-note{margin-inline:auto!important;text-align:center!important}
+html body.session-page #testemunhos .session-testimonials-heading{max-width:730px;margin:0 auto 26px;text-align:left!important}
+html body.session-page #testemunhos .session-testimonials-heading :is(.eyebrow,h2,p){text-align:left!important;margin-left:0!important;margin-right:0!important}
+html body .text-carousel .tc-slide-paired::before{display:none}
+html body .text-carousel .tc-slide-paired{padding-top:26px}
+html body .text-carousel .tc-message+.tc-message{margin-top:14px;padding-top:14px;border-top:1px solid #c9a86c88}
+html body .text-carousel .tc-message-label{display:block;margin-bottom:8px;font:500 11px/1.4 'DM Sans',sans-serif;letter-spacing:.06em;color:#7a2535}
+html[data-theme=dark] body .text-carousel .tc-message-label{color:#edc9a2}
+@media(max-width:700px){
+ html body .permission-slips{padding:28px 0!important}
+ html body .permission-slips>.wrap.narrow h2{font-size:28px!important;line-height:1.2!important;margin-bottom:18px!important}
+ html body .permission-slips>.wrap.narrow p{font-size:16px!important;line-height:1.7!important}
+ html body .home-bio .wrap>.bio-thread{width:min(68vw,260px)!important;max-width:100%!important;margin:22px auto 0!important}
+}

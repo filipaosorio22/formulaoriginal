@@ -1,0 +1,27 @@
+/* The latest published mobile fixes remain in v9; these are the requested editorial changes. */
+html body .home-evolving #evolving-title{color:#7a2535!important}
+html[data-theme=dark] body .home-evolving #evolving-title{color:#e6a0af!important}
+html body .home-bio .wrap{display:grid!important;grid-template-columns:minmax(220px,280px) minmax(0,1fr);column-gap:40px;align-items:start;max-width:1040px!important}
+html body .home-bio .bio-portrait{float:none!important;grid-column:1;grid-row:1/span 6;align-self:start;width:100%!important;max-width:280px!important;margin:0!important}
+html body .home-bio :is(.eyebrow,h2,p){grid-column:2;min-width:0}
+html body .home-bio p,html body .home-bio .bio-thread{text-align:justify!important;text-align-last:left;hyphens:auto;max-width:62ch;line-height:1.8}
+html body .home-bio h2{max-width:22ch}
+html body .home-bio .bio-thread{padding-left:18px!important}
+html body .reading-reiki h3,html body .reading-reiki h3 strong{font-weight:700!important}
+html:not([data-theme=dark]) body .reading-reiki p,html:not([data-theme=dark]) body .reading-reiki p strong{color:#171313!important}
+html body .reading-reiki p strong{font-weight:700!important}
+html body #a-tua-leitura>.wrap>.narrow{margin-left:0!important;margin-right:auto!important;text-align:left!important}
+html body #a-tua-leitura>.wrap>.narrow :is(.eyebrow,h2){text-align:left!important}
+/* Keep the complete introduction above its ambient video, including on small screens. */
+html body.fo-reading-page #comeco.texto-fundo{position:relative!important;isolation:isolate;padding:28px 24px!important;overflow:hidden;border-radius:22px}
+html body.fo-reading-page #comeco.texto-fundo .tf-bg{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none}
+html body.fo-reading-page #comeco.texto-fundo>p{position:relative!important;z-index:1!important;background:transparent!important}
+html body.fo-reading-page #comeco.texto-fundo .tf-bg video{display:block;width:100%;height:100%;object-fit:cover}
+html body .permission-slips .permission-close{max-width:none}
+@media(max-width:700px){
+ html body .home-bio .wrap{grid-template-columns:minmax(0,1fr)!important;gap:0;max-width:620px!important}
+ html body .home-bio .bio-portrait{grid-column:1;grid-row:auto;width:min(68vw,260px)!important;margin:0 auto 28px!important}
+ html body .home-bio :is(.eyebrow,h2,p){grid-column:1;max-width:100%}
+ html body .home-bio p,html body .home-bio .bio-thread{font-size:16px!important;line-height:1.75!important;hyphens:auto}
+ html body.fo-reading-page #comeco.texto-fundo{padding:24px 16px!important}
+}
