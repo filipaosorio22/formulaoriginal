@@ -124,7 +124,7 @@ else if(/^\d+$/.test(limpo)&&c){var n=limpo.replace(/^0+/,'');if(c==='+351'){if(
 if(ok&&/^(\d)\1+$/.test(numero.replace(/^\+\d+ /,'').replace(/\D/g,'')))ok=false;return {ok:ok,numero:numero}};
 function vTel(){var m='';if(tel.value&&!lmTelefone().ok)m=cc.value==='+351'&&!/^\s*(\+|00)/.test(tel.value)?'Escreve um número válido, com 9 algarismos (por exemplo, 912 345 678).':cc.value?'Confirma o número: há algarismos a mais, a menos ou outros caracteres.':'Escreve o número com + e o indicativo do país.';tel.setCustomValidity(m)}
 function vEm(){var v=em.value.trim(),ok=/^[A-Za-z0-9_%+'-]+(\.[A-Za-z0-9_%+'-]+)*@([A-Za-z0-9\u00C0-\u024F]([A-Za-z0-9\u00C0-\u024F-]*[A-Za-z0-9\u00C0-\u024F])?\.)+[A-Za-z]{2,}$/.test(v);em.setCustomValidity(!v||ok?'':'Escreve um e-mail válido, como nome@exemplo.pt.')}
-function ver(){vTel();vEm()}f.addEventListener('input',ver);f.addEventListener('change',ver);window.addEventListener('pageshow',ver);ver()})();</script></body>
+function ver(){vTel();vEm()}f.addEventListener('input',ver);f.addEventListener('change',ver);window.addEventListener('pageshow',ver);ver()})();</script><script src="estatisticas.js?v=1" defer></script></body>
 </html>
 
 
